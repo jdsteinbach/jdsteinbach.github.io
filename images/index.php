@@ -1,0 +1,1 @@
+<?php header( 'Location: http://graceandknowledge.com/pdf/Resume.pdf' ) ; ?>
