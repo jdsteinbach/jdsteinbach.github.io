@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>James Steinbach</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="favicon.ico">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'><style type="text/css" media="screen,projection">
+@import 'includes/style.css';
+</style>
+<!--[if IE]>
+<link rel="stylesheet" href="includes/iestyle.css" type="text/css" media="screen">
+<![endif]-->
+<script type="text/javascript">
+(function(doc) {
+
+	var addEvent = 'addEventListener',
+	 type = 'gesturestart',
+	 qsa = 'querySelectorAll',
+	 scales = [1, 1],
+	 meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
+
+	function fix() {
+		meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
+		doc.removeEventListener(type, fix, true);
+	}
+
+	if ((meta = meta[meta.length - 1]) && addEvent in doc) {
+		fix();
+		scales = [.25, 1.6];
+		doc[addEvent](type, fix, true);
+	}
+
+}(document));
+</script>
+</head>
+
+<body>
+
+<div id="container" class="resume">
+
+<header>
+    <div class="name">James Steinbach</div>
+    <div class="phone">864.326.6144</div>
+    <div class="email">jdsteinbach@gmail.com</div>
+    <div class="address1">26 Kimbell Ct.</div>
+    <div class="address2">Greenville, SC 29617</div>
+</header>
+ 
+<article>
+    <h1>Objectives</h1>
+    <p>To help my company expand its business by reaching new clients and improving internal processes</p>
+    <p>To increase web usability by designing with users in mind</p>
+    <p>To communicate clearly and helpfully with clients</p>
+    
+    <h1>Education</h1>
+    <p>B.A. Bible, Bob Jones University (2005)</p>
+    <p>M.A. Bible, BJU (2007)</p>
+    <p>Ph.D. New Testament Interpretation, BJU (target 2013)</p>
+    
+ 	<h1>Skills</h1>
+   	<h2>Software</h2>
+    <ul>
+      <li>HTML(5) & CSS(3)</li>
+      <li> PHP & MySQL</li>
+      <li>Photoshop</li>
+      <li>Dreamweaver</li>
+      <li>WordPress</li>
+      <li>Rapid Mastery of New Software </li>
+    </ul>
+    <h2>People</h2>
+ 	 <ul>
+ 	   <li>Customer Service</li>
+ 	   <li> Phone & Email Support</li>
+ 	   <li>Teaching Experience</li>
+ 	   <li>Excellent Interpersonal Skills</li>
+ 	   <li>Leadership Experience </li>
+    </ul>
+	<h2>Writing</h2>
+    <ul>
+       <li>Advanced Research & Writing</li>
+       <li>Technical Writing</li>
+       <li>Content Writing</li>
+       <li>SEO </li>
+    </ul>
+    
+    <h1>Experience</h1>
+    <p>Site Manager, Joy Baptist Camp (2007 – 08)</p>
+    <ul>
+        <li>Improved site with page design & layout</li>
+        <li>Maintained office network</li>
+    </ul>
+	<p>Site Manager, SacredAudio.com (2008 – 11)</p>
+	<ul>
+		<li>Ran music download sit</li> 
+        <li>Developed sales tracking with PHP & MySQL</li>
+        <li>Oversaw download management</li>
+        <li>Provided technical support for customers via phone and email</li>
+	</ul>
+	<p>Content Writer, Copy-Hub.com (2009 – 2011)</p>
+    <ul>
+    	<li>Researched and wrote articles on dozens of topics</li>
+        <li>Edited content to improve SEO ranking</li>
+	</ul>
+	<p>Web Designer & Developer, Summit Web Services (2010 – present)</p>
+    <ul>
+    	<li>Designed and coded custom sites</li>
+        <li>Developed and redesigned WordPress themes with CSS3</li>
+        <li>Optimized sites for multiple devices with responsive layout</li>
+	</ul>
+	<p>Ministry Intern, Heritage Bible Church (2011 – present)</p>
+	<ul>
+    	<li>Helped manage website redesign</li>
+        <li>Helped design navigation structure</li>
+        <li>Oversaw content collection and editing</li>
+	</ul>
+    
+    <h1>References</h1>
+ 	<p>Kurt Stephens</p>
+ 	<p>Dick Stratton</p>
+ 	<p>Will Arndt</p>
+ 	<p>Greg Bartlett</p>
+</article>
+
+<footer>
+</footer>
+</div>
+</body>
+</html>
