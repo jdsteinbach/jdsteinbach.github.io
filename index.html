@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>James Steinbach</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="favicon.ico">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'><style type="text/css" media="screen,projection">
+@import 'includes/style.css';
+</style>
+<!--[if IE]>
+<link rel="stylesheet" href="includes/iestyle.css" type="text/css" media="screen">
+<![endif]-->
+<script type="text/javascript">
+(function(doc) {
+
+	var addEvent = 'addEventListener',
+	    type = 'gesturestart',
+	    qsa = 'querySelectorAll',
+	    scales = [1, 1],
+	    meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
+
+	function fix() {
+		meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
+		doc.removeEventListener(type, fix, true);
+	}
+
+	if ((meta = meta[meta.length - 1]) && addEvent in doc) {
+		fix();
+		scales = [.25, 1.6];
+		doc[addEvent](type, fix, true);
+	}
+
+}(document));
+</script>
+</head>
+
+<body>
+
+<div id="container">
+    <div id="image" class="left">
+    	<!--<img src="images/headshot.jpg" />-->
+    </div>
+    <div id="name" class="right">
+        <h1>James Steinbach</h1>
+    </div>
+    <div id="descrip" class="right">
+        <p><span style="font-style:italic;">I love people.</span> I love making a difference in their lives. That's my goal in <a href="http://summitws.com" target="_blank" title="Summit Web Services">web design</a>. It's my goal in <a href="http://graceandknowledge.com" target="_blank" title="Grace and Knowledge - Blog">writing</a>. It's my goal in <a href="http://jamesandaudreyjo.com" target="_blank" title="James and Audrey Jo - Wedding Website">marriage</a>.</p>
+    </div>
+    <div id="lists" class="right">  
+      <div id="past" class="small left">
+        	<h2>What I've done</h2>
+          <p>Eagle Scout (1997)</p>
+            <p>Valedictorian (2001)           
+            <p>B. A. in Bible (2005)            
+            <p>M. A. in Bible (2007)                    </div>
+        <div id="goals" class="small right">
+        	<h2>What I plan to do</h2>
+        	<p>Marry Audrey (2012)</p>
+        	<p>Finish Ph. D. (2013)</p>
+        	<p>Expand web design business</p>
+        	<p>Serve in a newly-started church</p>
+        </div>
+    </div>
+	<div id="links">
+        <a id="twitter" href="http://twitter.com/jdsteinbach" target="_blank"title="Follow me on Twitter.">
+            <span>Follow me on Twitter.</span>
+        </a>
+        <a id="facebook" href="http://facebook.com/jdsteinbach" target="_blank" title="Be my friend on Facebook.">
+            <span>Be my friend on Facebook.</span>
+        </a>
+        <a id="linkedin" href="http://www.linkedin.com/pub/james-steinbach/8/1b9/77b" target="_blank" title="Connect with me on LinkedIn.">
+            <span>Connect with me on LinkedIn.</span>
+        </a>
+        <a id="pinterest" href="http://pinterest.com/jdsteinbach" target="_blank" title="See what I like on Pinterest.">
+            <span>See what I like on Pinterest.</span>
+        </a>
+        <a id="dribbble" class="hidden" href="http://dribbble.com/jdsteinbach" target="_blank" title="Preview my work on Dribbble.">
+            <span>Preview my work on Dribbble.</span>
+        </a>
+	</div>  
+<!-- end #container --></div>
+</body>
+</html>
