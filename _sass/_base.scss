@@ -1,0 +1,202 @@
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/**
+ * Links
+ */
+a {
+	color: $blog-color;
+	text-decoration: none;
+	-webkit-transition: color .3s;
+	transition: color .3s;
+
+	&:visited {
+		color: $blog-color;
+	}
+
+	&:hover {
+		color: darken($blog-color, 10%);
+	}
+
+	.post-content & {
+		border-bottom: 1px solid currentColor;
+	}
+	.site-footer &,
+	.site-header & {
+
+		&,
+		&:visited {
+			color: $brand-color;
+		}
+
+		&:hover {
+			color: darken($brand-color, 10%);
+		}
+	}
+}
+
+/**
+ * Basic styling
+ */
+body {
+	font-family: $base-font-family;
+	font-weight: 300;
+	color: $text-color;
+	background-color: $background-color;
+	//     background: url(/images/bkgd.png) repeat center center fixed;
+	-webkit-text-size-adjust: 100%;
+}
+
+.site-header,
+.page-content,
+.site-footer {
+	@extend %p;
+}
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+	//     margin-bottom: $spacing-unit / 2;
+}
+
+/**
+ * Images
+ */
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+/**
+ * Figures
+ */
+figure > img {
+	display: block;
+}
+
+figcaption {
+	//     font-size: $small-font-size;
+	@extend %sm;
+}
+
+/**
+ * Lists
+ */
+ul, ol {
+//     margin-left: $spacing-unit;
+	@include scale-margin(p, false, false, false, 1);
+}
+
+li {
+	> ul,
+	> ol {
+		margin-bottom: 0;
+	}
+}
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+/**
+ * Blockquotes
+ */
+blockquote {
+	color: $grey-color;
+	border: 2px solid $brand-color;
+	border-width: 2px 0;
+	@extend %bq;
+	@include scale-padding(bq, 1, false, 1, false);
+	font-style: italic;
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+	font-family: monospace;
+	border: 1px solid $grey-color-light;
+	border-radius: 3px;
+	background-color: #eef;
+}
+
+code {
+	padding: .125em .25em;
+	@extend %sm;
+}
+
+pre {
+	padding: .5em;
+	@include scale-padding(p, 0.5, 0.5, 0.5, 0.5);
+	overflow-x: scroll;
+
+	> code {
+		border: 0;
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+/**
+ * Wrapper
+ */
+.wrapper {
+	width: 28em;
+	max-width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	@extend %clearfix;
+	@include scale-padding(p, false, 0.5, false, 0.5);
+}
+
+/**
+ * Clearfix
+ */
+%clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+/**
+ * Icons
+ */
+.icon {
+	> svg {
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		vertical-align: middle;
+
+		path {
+			fill: $grey-color;
+		}
+	}
+}

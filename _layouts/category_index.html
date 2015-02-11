@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="category-archive">
+
+<h1 class="page-heading category">{{ page.title }} Archive</h1>
+
+  <ul class="post-list">
+    {% for post in site.categories[page.category] %}
+      <li>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>

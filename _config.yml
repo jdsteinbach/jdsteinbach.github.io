@@ -1,0 +1,22 @@
+# Site settings
+title: jdsteinbach
+email: jdsteinbach@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Front-end architect. Speaker & writer.<br/>Sass, CSS animation, RWD &amp; WP.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://jdsteinbach.com" # the base hostname & protocol for your site
+permalink: /:categories/:title
+twitter_username: jdsteinbach
+github_username:  jdsteinbach
+author_name: James Steinbach
+category_suffix: "Category Archive"
+# categories:
+#   - CSS
+#   - Sass
+#   - WordPress
+
+# Build settings
+markdown: redcarpet
+
+# gems:
+# - octopress-autoprefixer
