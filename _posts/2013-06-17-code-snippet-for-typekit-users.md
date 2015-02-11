@@ -2,7 +2,7 @@
 title: Code Snippet for Typekit Users
 author: James
 layout: post
-permalink: /tech/code-snippet-for-typekit-users/
+permalink: /css/code-snippet-for-typekit-users/
 categories:
   - CSS
 ---
