@@ -17,7 +17,7 @@ categories:
 So I&#8217;m coding up a new site from our designer and he&#8217;s set some nice quasi-polaroid photo effects: white border, box-shadow, etc. This looks great on rectangular images, of course, but not so much on other images with transparency.
 
 <div class="image-box">
-  <img class="size-full wp-image-1128 alignnone" alt="Normal rectangular photo image" src="http://jdsteinbach.com/wp-content/upload/2013/10/stanley-sm.jpg" width="400" height="300" />
+  <img class="size-full wp-image-1128 alignnone" alt="Normal rectangular photo image" src="http://jdsteinbach.com/wp-content/uploads/2013/10/stanley-sm.jpg" width="400" height="300" />
   <img class="size-full wp-image-1127 alignnone" alt="Fake logo image with transparency" src="http://jdsteinbach.com/wp-content/uploads/2013/10/fake-logo.png" width="400" height="300" />
 </div>
 
