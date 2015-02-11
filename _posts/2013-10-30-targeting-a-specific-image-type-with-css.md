@@ -2,7 +2,7 @@
 title: Targeting a Specific Image Type with CSS
 author: James
 layout: post
-permalink: /tech/targeting-a-specific-image-type-with-css/
+permalink: /css/targeting-a-specific-image-type-with-css/
 categories:
   - CSS
 ---
