@@ -63,6 +63,7 @@ body {
 .site-header,
 .page-content,
 .site-footer {
+	position: relative;
 	@extend %p;
 }
 

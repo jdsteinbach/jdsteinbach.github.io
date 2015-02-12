@@ -52,8 +52,24 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-
+canvas {
+	display:block;
+	vertical-align:bottom;
+}
+#particles-a {
+	position: fixed;
+	z-index: -1;
+	top: 0; right: 0; bottom: 0; left: 0;
+	// width: calc(50% - 16em);
+	background-color: transparent;
+}
+#particles-b {
+	position: fixed;
+	z-index: -1;
+	top: 0; right: 0; bottom: 0; left: auto;
+	width: calc(50% - 16em);
+	background-color: transparent;
+}
 // Our variables
 $base-font-family: Texta, Avenir Next, Avenir, Verdana, sans-serif;
 

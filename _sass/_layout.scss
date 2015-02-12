@@ -5,11 +5,12 @@
 	border-top: 1px solid white; //$brand-color;
 	border-bottom: 1px solid $brand-color;
 	position: relative;
-	background: rgba(#fff, 0.95);
+	background: rgba($background-color, 0.85);
 	position: fixed;
 	top: 0;
 	right: 0;
 	left: 0;
+	z-index: 2;
 }
 
 .site-title {
@@ -86,6 +87,9 @@
 
 .page-content {
 	@include scale-padding(p, 1, false, false, false);
+	.wrapper {
+		background: rgba($background-color, 0.85);
+	}
 }
 
 @media (max-width: 28em) {
@@ -110,6 +114,7 @@
 .site-footer {
 	border-top: 1px solid $grey-color-light;
 	@include scale-padding(p, 1, false, 1, false);
+	background: rgba($background-color, 0.85);
 }
 
 .footer-heading {
