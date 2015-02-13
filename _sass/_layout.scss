@@ -87,8 +87,8 @@
 }
 
 .page-content {
-	@include scale-padding(p, 2, false, false, false);
 	.wrapper {
+		@include scale-padding(p, 2, false, false, false);
 		background: rgba($background-color, 0.85);
 	}
 }
@@ -103,8 +103,8 @@
 	.site-title {
 		font-weight: bold;
 	}
-	.page-content {
-		@include scale-padding(p, 2, false, false, false);
+	.page-content .wrapper {
+		@include scale-padding(p, 4, false, false, false);
 	}
 }
 
