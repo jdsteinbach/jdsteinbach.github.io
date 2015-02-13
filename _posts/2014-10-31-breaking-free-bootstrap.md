@@ -1,6 +1,6 @@
 ---
 title: Breaking Free from Bootstrap
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/sass/breaking-free-bootstrap/
 categories:

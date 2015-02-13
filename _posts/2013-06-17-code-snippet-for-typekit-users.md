@@ -1,6 +1,6 @@
 ---
 title: Code Snippet for Typekit Users
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/code-snippet-for-typekit-users/
 categories:

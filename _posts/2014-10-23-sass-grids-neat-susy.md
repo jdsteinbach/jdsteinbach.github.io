@@ -1,6 +1,6 @@
 ---
 title: 'Sass Grids: From Neat To Susy'
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/sass/sass-grids-neat-susy/
 categories:

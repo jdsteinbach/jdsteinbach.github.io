@@ -1,6 +1,6 @@
 ---
 title: A Cheatsheet for CSS @font-face Declarations
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/cheatsheet-css-font-face-declarations/
 categories:

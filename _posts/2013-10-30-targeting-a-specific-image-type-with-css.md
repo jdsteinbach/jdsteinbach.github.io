@@ -1,6 +1,6 @@
 ---
 title: Targeting a Specific Image Type with CSS
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/targeting-a-specific-image-type-with-css/
 categories:

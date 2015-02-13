@@ -1,6 +1,6 @@
 ---
 title: Sass for WordPress Developers
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/sass/sass-wordpress-developers/
 categories:

@@ -1,6 +1,6 @@
 ---
 title: Managing Color Values with Sass
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/sass/managing-color-values-sass/
 categories:

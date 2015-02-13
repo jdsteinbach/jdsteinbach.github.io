@@ -1,6 +1,6 @@
 ---
 title: 'Custom Post Types: Take WordPress Beyond Blogging'
-author: James
+author: James Steinbach
 layout: post
 permalink: /wordpress/custom-post-types-take-wordpress-beyond-blogging/
 categories:

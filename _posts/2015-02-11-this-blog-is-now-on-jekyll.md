@@ -1,6 +1,6 @@
 ---
 title: 'This blog is now on Jekyll!'
-author: James
+author: James Steinbach
 layout: post
 permalink: /on-jekyll/
 ---

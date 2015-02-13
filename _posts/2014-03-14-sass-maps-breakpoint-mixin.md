@@ -1,6 +1,6 @@
 ---
 title: Sass Maps for Breakpoint Mixin (Update)
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/sass-maps-breakpoint-mixin/
 categories:

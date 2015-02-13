@@ -1,6 +1,6 @@
 ---
 title: 'WordPress Theme Development: Getting Started with Underscores (_s)'
-author: James
+author: James Steinbach
 layout: post
 permalink: /wordpress/wordpress-theme-development-getting-started-underscores-_s/
 categories:

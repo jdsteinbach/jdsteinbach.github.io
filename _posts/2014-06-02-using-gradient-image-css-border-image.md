@@ -1,6 +1,6 @@
 ---
 title: Using a Gradient as the Image in a CSS Border-Image
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/using-gradient-image-css-border-image/
 categories:

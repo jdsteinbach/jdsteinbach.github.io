@@ -1,6 +1,6 @@
 ---
 title: 'CSS Repetition: It&#8217;s Basically Whack-A-Mole'
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/css-repetition-basically-whack-mole/
 categories:
