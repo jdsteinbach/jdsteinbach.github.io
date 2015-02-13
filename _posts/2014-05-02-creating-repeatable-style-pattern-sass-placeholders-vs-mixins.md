@@ -1,6 +1,6 @@
 ---
 title: 'Creating a Repeatable Style Pattern with Sass: Placeholders vs. Mixins'
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/sass/creating-repeatable-style-pattern-sass-placeholders-vs-mixins/
 categories:

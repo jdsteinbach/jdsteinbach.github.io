@@ -1,6 +1,6 @@
 ---
 title: Passing Your Sass to Someone Sass-less
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/sass/passing-sass-someone-sass-less/
 categories:

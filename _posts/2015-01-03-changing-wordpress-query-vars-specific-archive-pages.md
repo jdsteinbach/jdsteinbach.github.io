@@ -1,6 +1,6 @@
 ---
 title: Changing WordPress Query Vars for Specific Archive Pages
-author: James
+author: James Steinbach
 layout: post
 permalink: /wordpress/changing-wordpress-query-vars-specific-archive-pages/
 categories:

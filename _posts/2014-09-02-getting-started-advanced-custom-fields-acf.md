@@ -1,6 +1,6 @@
 ---
 title: Getting Started with Advanced Custom Fields (ACF)
-author: James
+author: James Steinbach
 layout: post
 permalink: /wordpress/getting-started-advanced-custom-fields-acf/
 categories:

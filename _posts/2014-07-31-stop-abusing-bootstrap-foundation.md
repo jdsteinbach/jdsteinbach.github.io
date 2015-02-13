@@ -1,6 +1,6 @@
 ---
 title: Stop (Ab)using Bootstrap / Foundation!
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/stop-abusing-bootstrap-foundation/
 categories:

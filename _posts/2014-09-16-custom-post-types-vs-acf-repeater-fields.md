@@ -1,6 +1,6 @@
 ---
 title: Custom Post Types vs. ACF Repeater Fields
-author: James
+author: James Steinbach
 layout: post
 permalink: /wordpress/custom-post-types-vs-acf-repeater-fields/
 categories:

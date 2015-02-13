@@ -1,6 +1,6 @@
 ---
 title: Sass-based Media Queries With Breakpoint
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/sass/sass-based-media-queries-breakpoint/
 categories:

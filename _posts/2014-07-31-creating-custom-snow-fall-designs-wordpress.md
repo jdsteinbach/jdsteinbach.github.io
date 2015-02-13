@@ -1,6 +1,6 @@
 ---
 title: Creating Custom “Snow Fall” Designs in WordPress
-author: James
+author: James Steinbach
 layout: post
 permalink: /wordpress/creating-custom-snow-fall-designs-wordpress/
 categories:

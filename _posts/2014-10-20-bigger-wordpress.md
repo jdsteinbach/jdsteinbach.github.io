@@ -1,6 +1,6 @@
 ---
 title: Bigger than WordPress
-author: James
+author: James Steinbach
 layout: post
 permalink: /wordpress/bigger-wordpress/
 categories:
