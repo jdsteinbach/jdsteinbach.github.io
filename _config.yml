@@ -17,6 +17,8 @@ category_suffix: "Category Archive"
 
 # Build settings
 markdown: redcarpet
-
+sass:
+  sass_dir: _includes
+  style: compressed
 # gems:
 # - octopress-autoprefixer
