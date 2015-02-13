@@ -25,10 +25,10 @@ Then the article recommended going one step farther and inlining the entire styl
 
 ```
 <style type="text/css">
-  {% capture include_to_scssify %}
-    {% include main.scss %}
-  {% endcapture %}
-  {{ include_to_scssify | scssify }}
+  &lbrace;% capture include_to_scssify %&rbrace;
+    &lbrace;% include main.scss %&rbrace;
+  &lbrace;% endcapture %&rbrace;
+  &lbrace;&lbrace; include_to_scssify | scssify &rbrace;&rbrace;
 </style>
 ```
 
