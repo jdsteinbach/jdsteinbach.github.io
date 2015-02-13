@@ -1,6 +1,6 @@
 ---
 title: Stop Using Needless Sass Mixins
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/sass/stop-using-worthless-sass-mixins/
 categories:

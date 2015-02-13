@@ -17,6 +17,7 @@
 	@extend %p;
 	margin-bottom: 0;
 	float: left;
+	@include scale-padding(p, .5, false, .5, false);
 
 	&,
 	&:visited {}
@@ -32,7 +33,7 @@
 	.page-link {
 		@extend %p;
 		display: inline-block;
-		//      text-transform: capitalize;
+		@include scale-padding(p, .5, false, .5, false);
 
 		&:not(:first-child) {
 			margin-left: 20px;
@@ -86,8 +87,8 @@
 }
 
 .page-content {
-	@include scale-padding(p, 1, false, false, false);
 	.wrapper {
+		@include scale-padding(p, 2, false, false, false);
 		background: rgba($background-color, 0.85);
 	}
 }
@@ -102,8 +103,8 @@
 	.site-title {
 		font-weight: bold;
 	}
-	.page-content {
-		@include scale-padding(p, 2, false, false, false);
+	.page-content .wrapper {
+		@include scale-padding(p, 4, false, false, false);
 	}
 }
 
@@ -202,13 +203,16 @@
 
 .post-meta {
 	@extend %sm;
-	color: $grey-color;
+	display: block;
+	color: $blog-accent;
 	font-style: italic;
 }
 
 .post-link {
 	display: block;
 	@extend %sh;
+	@include scale-margin(sh, 0, false, 0, false);
+
 }
 
 /**

@@ -1,6 +1,6 @@
 ---
 title: The Holy Grail of CSS Animation
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/holy-grail-css-animation/
 

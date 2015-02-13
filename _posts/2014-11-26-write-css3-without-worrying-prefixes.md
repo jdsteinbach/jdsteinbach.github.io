@@ -1,6 +1,6 @@
 ---
 title: Write CSS3 without Worrying about Prefixes
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/sass/write-css3-without-worrying-prefixes/
 categories:

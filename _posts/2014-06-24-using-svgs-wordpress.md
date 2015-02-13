@@ -1,6 +1,6 @@
 ---
 title: Using SVGs in WordPress
-author: James
+author: James Steinbach
 layout: post
 permalink: /wordpress/using-svgs-wordpress/
 categories:

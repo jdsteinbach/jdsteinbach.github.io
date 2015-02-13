@@ -1,6 +1,6 @@
 ---
 title: Scaling Values Across Breakpoints Using Sass
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/sass/scaling-values-across-breakpoints-using-sass/
 categories:

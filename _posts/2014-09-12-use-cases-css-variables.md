@@ -1,6 +1,6 @@
 ---
 title: Use Cases for CSS Variables
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/use-cases-css-variables/
 categories:

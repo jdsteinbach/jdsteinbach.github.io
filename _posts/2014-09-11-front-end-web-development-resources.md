@@ -1,6 +1,6 @@
 ---
 title: Front-End Web Development Resources
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/front-end-web-development-resources/
 categories:

@@ -82,6 +82,7 @@ $text-color: #464646;
 $background-color: #fdfdfd;
 $brand-color: $color-blue;
 $blog-color: darken($color-blue, 10%);
+$blog-accent: darken(adjust-hue($color-blue, 30deg), 35%);
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);

@@ -1,6 +1,6 @@
 ---
 title: Creating a Responsive Grid System with Susy and Breakpoint
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/sass/creating-responsive-grid-system-susy-breakpoint/
 categories:

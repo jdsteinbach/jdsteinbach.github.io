@@ -1,6 +1,6 @@
 ---
 title: Using Sass to Build a Custom Type Scale with Vertical Rhythm
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/sass/using-sass-build-custom-type-scale-vertical-rhythm/
 categories:

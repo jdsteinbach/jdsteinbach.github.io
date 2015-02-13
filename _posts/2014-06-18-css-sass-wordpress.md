@@ -1,6 +1,6 @@
 ---
 title: From CSS to Sass in WordPress
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/css-sass-wordpress/
 categories:

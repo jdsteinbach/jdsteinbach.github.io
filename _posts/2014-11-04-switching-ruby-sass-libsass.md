@@ -1,6 +1,6 @@
 ---
 title: Switching from Ruby Sass to LibSass
-author: James
+author: James Steinbach
 layout: post
 permalink: /css/sass/switching-ruby-sass-libsass/
 categories:
