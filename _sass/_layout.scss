@@ -36,7 +36,7 @@
 		@include scale-padding(p, .5, false, .5, false);
 
 		&:not(:first-child) {
-			margin-left: 20px;
+			@include scale-margin(p, false, false, false, .5);
 		}
 	}
 	/*
