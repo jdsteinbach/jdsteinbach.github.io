@@ -17,9 +17,9 @@ sass:
   style: compressed
 ```
 
-Then the article recommended going one step farther and inlining the entire style sheet into your document. 
+Then the article recommended going one step farther and inlining the entire style sheet into your document.
 
-1. Move your `main.css` (or `style.scss` - whichever is being used in your theme) into your `/_includes/` directory. 
+1. Move your `main.css` (or `style.scss` - whichever is being used in your theme) into your `/_includes/` directory.
 2. Remove the “front matter” from that `.scss` file (everything between `---` and `---`.
 3. In your `<head>` (probably in `/_includes/head.html`), replace the `<link rel=“stylesheet” … >` line with the following:
 
@@ -48,4 +48,4 @@ layout: compress
 
 I’m using [CloudFlare](https://www.cloudflare.com “Visit cloudflare.com”) to manage DNS for this site. For this domain, I went to “CloudFlare Settings” and clicked the “Performance Settings” tab. On that screen, I told CloudFlare to cache resources for 24 days (very aggressive), and minify JS, CSS, & HTML. I realize, doing this after the HTML compression trick above is probably overkill. I may review that, do some testing and remove the compression from Jekyll. We’ll see.
 
-![Screenshot showing 99/100 Google Page Speed Score](/images/99-100-google-page-speed.jpg “Google Page Speed”)
+![Screenshot showing 99/100 Google Page Speed Score](/images/99-100-google-page-speed.jpg "Google Page Speed")
