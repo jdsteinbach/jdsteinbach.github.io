@@ -6,15 +6,15 @@ permalink: /wordpress/custom-post-types-vs-acf-repeater-fields/
 categories:
   - WordPress
 ---
-If you’ve been using WordPress to develop custom sites for long, you’ve probably needed to help clients manage custom types of content. Those content types might include events, staff members, products, FAQs or testimonials. There are three methods you might use to add those content types to the client’s Dashboard. The worst option would be to install a plugin for each one. I don’t recommend that: multiple plugins slow sites down and you’ll probably burn a lot of time making 2-3 different plugins “fit” your design.
+If you’ve been using WordPress to develop custom sites for long, you’ve probably needed to help clients manage custom types of content. Those content types might include events, staff members, products, FAQs or testimonials. There are three methods you might use to add those content types to the client’s Dashboard. The worst option would be to install a plugin for each one. I don’t recommend that: multiple plugins slow sites down and you’ll probably burn a lot of time making 2-3 different plugins &#8220;fit&#8221; your design.
 
 The second method is to create a custom post type of your own. <a title="WP Types Plugin" href="http://wp-types.com/" target="_blank">Types</a>, <a title="WP Custom Post Type UI Plugin" href="https://wordpress.org/plugins/custom-post-type-ui/" target="_blank">Custom Post Type UI</a>, and <a title="WP Pods Plugin" href="http://pods.io/" target="_blank">Pods</a> are the most popular plugins for doing this. You can also use <a title="WordPress Codex: register_post_type()" href="http://codex.wordpress.org/Post_Types#Custom_Post_Types" target="_blank">the WP `register_post_type()` function</a> to add your own to any theme. Creating a custom post type will add a new menu item to the Dashboard’s left menu (similar to “Post” or “Pages”). Each item created in a custom post type will be saved as a unique “post” in WordPress’s database. You can also assign custom fields and custom taxonomies to your custom post types. For instance, you might create an FAQ category to help sort frequently asked questions, or add a field for an email to be attached to an employee profile.
 
-<img class="aligncenter size-full wp-image-1302" src="http://jamessteinbach.com/wp-content/uploads/2014/09/custom-post-types.png" alt="screenshot of a custom post type in the WordPress dashboard" width="800" height="440" />
+<img class="aligncenter size-full wp-image-1302" src="/images/custom-post-types.png" alt="screenshot of a custom post type in the WordPress dashboard" width="800" height="440" />
 
 Another way to allow clients to add multiple pieces of complex information to a post or page is to use the <a title="WP Advanced Custom Fields: Repeater Field" href="http://www.advancedcustomfields.com/add-ons/repeater-field/" target="_blank">Advanced Custom Fields Repeater Field</a> (this field used to be a separate premium add-on, but now is included in <a title="Advanced Custom Fields Pro" href="http://www.advancedcustomfields.com/pro/" target="_blank">ACF Pro</a>). The repeater field lets you create a custom field that accepts multiple rows of complex data. For instance, you might add a slider repeater field to a home page that allows users to add multiple images with titles and links, or an unlimited number of Q/A pairs for a Frequently Asked Questions page.
 
-<img class="aligncenter size-full wp-image-1303" src="http://jamessteinbach.com/wp-content/uploads/2014/09/repeater-field.png" alt="screenshot of a repeater field in the WordPress dashboard" width="890" height="580" />
+<img class="aligncenter size-full wp-image-1303" src="/images/repeater-field.png" alt="screenshot of a repeater field in the WordPress dashboard" width="890" height="580" />
 
 The question to answer now is, which method should you use: custom post types or repeater fields? The short answer is: “It depends.” Let’s explore several criteria that help us decide whether to use a custom post type or a repeater field to manage complex input in WordPress.
 
@@ -56,8 +56,6 @@ Most clients will prefer to edit content for a page on that page’s editor. If 
 
 ## Conclusion
 
-Most of the factors above point toward using a custom post type, but there are some situations where using a repeater field will serve your purposes as well. Other than the non-negotiable feature issues (taxonomies, exportability, etc), it’s important to choose the set-up that will be most usable for your clients. Hopefully this list helps you build a better CMS experience for your clients. Check out the flow chart below for the most important factors to consider.[<img class="aligncenter wp-image-1305 size-full" src="http://jamessteinbach.com/wp-content/uploads/2014/09/CPT-ACF.png" alt="flow chart helping developers choose custom post types of advanced custom fields repeater fields." width="1610" height="535" / data-unveil="true">][1]
+Most of the factors above point toward using a custom post type, but there are some situations where using a repeater field will serve your purposes as well. Other than the non-negotiable feature issues (taxonomies, exportability, etc), it’s important to choose the set-up that will be most usable for your clients. Hopefully this list helps you build a better CMS experience for your clients. Check out the flow chart below for the most important factors to consider.
 
-Please share additional factors or ask follow-up questions in the comments!
-
- [1]: http://jamessteinbach.com/wp-content/uploads/2014/09/CPT-ACF.png
+<img class="aligncenter wp-image-1305 size-full" src="/images/CPT-ACF.png" alt="flow chart helping developers choose custom post types of advanced custom fields repeater fields." width="1610" height="535" / data-unveil="true">

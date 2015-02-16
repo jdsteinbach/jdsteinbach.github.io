@@ -259,6 +259,19 @@
 
 	ul, ol {
 		margin-left: 2em;
+
+		li {
+			@include scale-margin(p, false, false, .5, false);
+		}
+	}
+
+	ul {
+		list-style: disc;
+
+	}
+
+	ol {
+		list-style-type: decimal;
 	}
 
 	img {

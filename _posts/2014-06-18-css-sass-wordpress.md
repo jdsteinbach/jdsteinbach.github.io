@@ -12,7 +12,7 @@ I gave the talk *From CSS to Sass in WordPress* at <a title="WP Summit 2014" hre
 
 ## Missing Slide
 
-[<img class="aligncenter wp-image-1221 size-full" src="http://jamessteinbach.com/wp-content/uploads/2014/06/missing-slide.jpg" alt="WP style.css Comments" width="958" height="718" style="box-shadow: 0 0 .5em rgba(0,0,0,.25);"/>][2]
+[<img class="aligncenter wp-image-1221 size-full" src="/images/missing-slide.jpg" alt="WP style.css Comments" width="958" height="718" style="box-shadow: 0 0 .5em rgba(0,0,0,.25);"/>][2]
 
 ```
 /*!
@@ -47,5 +47,5 @@ Description: From CSS to Sass
 
 [From CSS to Sass in WordPress Slides][1]
 
- [1]: http://jamessteinbach.com/wp-content/uploads/2014/06/CSS-Sass-WP.pdf "From CSS to Sass in WordPress Slides"
- [2]: http://jamessteinbach.com/wp-content/uploads/2014/06/missing-slide.jpg
+ [1]: /images/CSS-Sass-WP.pdf "From CSS to Sass in WordPress Slides"
+ [2]: /images/missing-slide.jpg

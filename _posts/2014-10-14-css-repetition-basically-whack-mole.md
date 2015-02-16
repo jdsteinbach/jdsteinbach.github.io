@@ -13,7 +13,7 @@ Pretty self-explanatory, this one. If you&#8217;ve got four selectors with a few
 
 ## If you never repeat declarations, you&#8217;ll repeat selectors.
 
-If I were going to try this, I&#8217;d build a bunch of Sass %placeholders (all pattern library style) and @extend them from all the appropriate selectors.
+If I were going to try this, I&#8217;d build a bunch of Sass `%placeholder`s (all pattern library style) and `@extend` them from all the appropriate selectors.
 
 ## If you use single-function selectors, you&#8217;ll repeat classes throughout your HTML markup.
 

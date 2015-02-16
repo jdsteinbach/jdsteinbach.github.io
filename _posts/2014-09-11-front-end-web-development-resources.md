@@ -78,7 +78,7 @@ Articles and tutorials in the following topics: coding, design, mobile, graphics
 
 ### <a title="Read SitePoint Articles" href="http://www.sitepoint.com/" target="_blank">SitePoint*</a>
 
-Articles on a wide variety of topics, including several languages (HTML, CSS/Sass, JS, PHP, Ruby), WordPress, UX & design. Sass developers should pay attention to <a title="Hugo Giraudel on Twitter" href="https://twitter.com/hugogiraudel" target="_blank">Hugo Giraudel</a>&#8216;s <a title="Hugo Giraudel's Articles on SitePoint" href="http://www.sitepoint.com/author/hgiraudel/" target="_blank">articles</a>. Also, <a title="Read James Steinbach's Articles on SitePoint" href="http://www.sitepoint.com/author/jsteinbach/" target="_blank">I write for SitePoint</a>.
+Articles on a wide variety of topics, including several languages (HTML, CSS/Sass, JS, PHP, Ruby), WordPress, UX & design. Sass developers should pay attention to <a title="Hugo Giraudel on Twitter" href="https://twitter.com/hugogiraudel" target="_blank">Hugo Giraudel</a>&#8217;s <a title="Hugo Giraudel's Articles on SitePoint" href="http://www.sitepoint.com/author/hgiraudel/" target="_blank">articles</a>. Also, <a title="Read James Steinbach's Articles on SitePoint" href="http://www.sitepoint.com/author/jsteinbach/" target="_blank">I write for SitePoint</a>.
 
 ### <a title="Read CSS Tricks" href="http://css-tricks.com/" target="_blank">CSS-Tricks*</a>
 
@@ -86,7 +86,7 @@ All about CSS, written by <a title="Chris Coyier on Twitter" href="https://twitt
 
 ### <a title="Read CSS Wizardy" href="http://csswizardry.com/" target="_blank">CSS Wizardry</a>
 
-<a title="Harry Roberts on Twitter" href="https://twitter.com/csswizardry" target="_blank">Harry Robert</a>&#8216;s blog, on CSS guidelines
+<a title="Harry Roberts on Twitter" href="https://twitter.com/csswizardry" target="_blank">Harry Robert</a>&#8217;s blog, on CSS guidelines
 
 ### <a title="Read Brad Frost Web" href="http://bradfrostweb.com/" target="_blank">Brad Frost Web*</a>
 
@@ -116,7 +116,7 @@ Web developers with a penchant for typography should read this blog.
 
 Practical case studies for using web-fonts well.
 
-### <a title="Read James Steinbach's Blog" href="http://jamessteinbach.com/blog" target="_blank">James Steinbach*</a>
+### <a title="Read James Steinbach's Blog" href="/" target="_blank">{ jdsteinbach }*</a>
 
 Oh right, you&#8217;re already here. I write about CSS/Sass, WordPress and other front-end topics.
 

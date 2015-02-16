@@ -23,3 +23,5 @@ Using CSS gradients for border-images gives us a lot more customizability than 
 Of course, there&#8217;s a big IE catch: <a title="Can I Use data: border-image" href="http://caniuse.com/border-image" target="_blank">border-image is only supported by IE11</a>. If this ornamentation is necessary, you&#8217;ll want to include a solid border-color fall-back for IE10 & down.
 
 What uses do you see for using CSS gradients as the image in a CSS border-image property? Please share a <a title="CodePen" href="http://codepen.io" target="_blank">CodePen</a>, <a title="JSFiddle" href="http://jsfiddle.net/" target="_blank">JSFiddle</a>, <a title="Dabbblet" href="http://dabblet.com/" target="_blank">Dabbblet</a>, <a title="SassMeister" href="http://sassmeister.com/" target="_blank">SassMeister gist</a>, (or whatever sandbox you prefer!) in the comments below!
+
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>

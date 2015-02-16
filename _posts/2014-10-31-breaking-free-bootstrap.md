@@ -22,5 +22,5 @@ Here are the resources I mentioned near the end of that talk (plus a couple extr
   * <a title="Sassmeister: Online Sass Testing Environment" href="http://sassmeister.com" target="_blank">Sassmeister: Online Sass Sandbox</a>
   * Charlotte Sass: <a title="Sign up for Charlotte Sass meetup emails" href="http://cltsass.com" target="_blank">Mailing List</a> & <a title="Follow @CLTSass on Twitter" href="http://twitter.com/cltsass" target="_blank">Twitter</a>
 
- [1]: http://jamessteinbach.com/wp-content/uploads/2014/10/Breaking-Free-from-Bootstrap.pdf "Download the Breaking Free from Bootstrap slides"
- [2]: http://jamessteinbach.com/css/stop-abusing-bootstrap-foundation/ "Stop (Ab)using Bootstrap / Foundation!"
+ [1]: /images/Breaking-Free-from-Bootstrap.pdf "Download the Breaking Free from Bootstrap slides"
+ [2]: /css/stop-abusing-bootstrap-foundation/ "Stop (Ab)using Bootstrap / Foundation!"

@@ -8,7 +8,7 @@ categories:
 ---
 It&#8217;s time to start exploring use cases for CSS variables, now that <a title="CSS Variable data on Can I Use" href="http://caniuse.com/#feat=css-variables" target="_blank">Firefox supports them</a>. <a title="Chrome no longer supports CSS variables" href="http://stackoverflow.com/questions/18466569/enable-experimental-webkit-features-chrome-css-css3-variables" target="_blank">Chrome has toyed with CSS variables</a> before. That means that **this post & all the embedded pens will only work in Firefox**.
 
-If you&#8217;re a fan of pre-processors, you might share my first reaction to CSS variables: &#8220;I&#8217;m already using variables in [Sass/Less/Stylus]; why introduce something new?&#8221; First, the ability to change these values live in a browser is pretty powerful. Second, native CSS variables will allow us to write lighter, more efficient stylesheets. In a series of follow-up posts to this one, I&#8217;ll go more in-depth comparing pre-processor variables with native CSS variables for each of the use cases introduced below.
+If you&#8217;re a fan of pre-processors, you might share my first reaction to CSS variables: &ldquo;I&#8217;m already using variables in [Sass/Less/Stylus]; why introduce something new?&rdquo; First, the ability to change these values live in a browser is pretty powerful. Second, native CSS variables will allow us to write lighter, more efficient stylesheets. In a series of follow-up posts to this one, I&#8217;ll go more in-depth comparing pre-processor variables with native CSS variables for each of the use cases introduced below.
 
 ## Basic Syntax
 
@@ -28,13 +28,13 @@ p {
 }
 ```
 
-Because that variable is scoped to `:root`, it&#8217;s global. Any place in the stylesheet it appears, it will return that same value. CSS variables can be scoped to any element, however, making it possible to create &#8220;exceptions.&#8221; The following use cases show the power of locally-scoped CSS variables.
+Because that variable is scoped to `:root`, it&#8217;s global. Any place in the stylesheet it appears, it will return that same value. CSS variables can be scoped to any element, however, making it possible to create &ldquo;exceptions.&rdquo; The following use cases show the power of locally-scoped CSS variables.
 
 ## Use Cases
 
 ### Colors
 
-Let&#8217;s look at an example of scoping variables for color changes. In this use case, the &#8220;normal&#8221; color for `<h1>` elements will be the site accent red. However, the site also uses `<h1>` elements for the titles of widgets in the `<aside>` sidebar. We can redeclare the `--color-accent` variable in an `<aside>`: now any `<h1>` in a widget will be orange instead of red.
+Let&#8217;s look at an example of scoping variables for color changes. In this use case, the &ldquo;normal&rdquo; color for `<h1>` elements will be the site accent red. However, the site also uses `<h1>` elements for the titles of widgets in the `<aside>` sidebar. We can redeclare the `--color-accent` variable in an `<aside>`: now any `<h1>` in a widget will be orange instead of red.
 
 ```
 :root{
