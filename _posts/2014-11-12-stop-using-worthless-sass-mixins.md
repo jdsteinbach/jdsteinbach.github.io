@@ -14,7 +14,7 @@ Sass is a powerful tool &#8211; this power makes it easy to misuse. One of the m
 
 ## Box-Shadow Prefixes
 
-This is the exact same issue as above: there are more older browsers that need prefixes for `box-shadow` than for `border-radius`, but it&#8217;s still only <a title="Can I Use data: box-shadow" href="http://caniuse.com/#feat=css-boxshadow" target="_blank">half a percent</a>. And same as before: this is a progressive enhancement. The box might look prettier with a shadow, but lack of `box-shado`w isn&#8217;t going to obscure its content. As Mitch Hedberg says, &#8220;There would never be an escalator temporarily out of order sign, only an escalator temporarily stairs. Sorry for the convenience.&#8221;
+This is the exact same issue as above: there are more older browsers that need prefixes for `box-shadow` than for `border-radius`, but it&#8217;s still only <a title="Can I Use data: box-shadow" href="http://caniuse.com/#feat=css-boxshadow" target="_blank">half a percent</a>. And same as before: this is a progressive enhancement. The box might look prettier with a shadow, but lack of `box-shadow` isn&#8217;t going to obscure its content. As Mitch Hedberg says, &#8220;There would never be an escalator temporarily out of order sign, only an escalator temporarily stairs. Sorry for the convenience.&#8221;
 
 ## Anything with Prefixes
 

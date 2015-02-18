@@ -197,7 +197,7 @@
 
 	> li {
 // 		margin-bottom: $spacing-unit;
-		@include scale-margin(p, false, false, 1, false);
+		@include scale-margin(p, false, false, .5, false);
 	}
 }
 
@@ -206,6 +206,27 @@
 	display: block;
 	color: $blog-accent;
 	font-style: italic;
+	text-align: justify;
+
+	span {
+		display: inline-block;
+		text-align: center;
+	}
+
+	a {
+		display: inline-block;
+		// border: 1px solid $brand-color;
+		// border-radius: .25em;
+		@include scale-padding(p, false, false, false, .25);
+		font-style: normal;
+	}
+
+	&::after {
+		content: '';
+		width: 100%;
+		height: 0px;
+		display: inline-block;
+	}
 }
 
 .post-link {
