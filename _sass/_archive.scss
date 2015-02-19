@@ -44,3 +44,24 @@
 		background-position: left center, center center;
 	}
 }
+.outbound-link {
+	position: relative;
+	padding-right: 2em;
+	svg {
+		display: block;
+		content: '';
+		position: absolute;
+		top: .5em;
+		right: 0;
+		bottom: 0;
+		width: 1em;
+	}
+	svg path {
+		fill: rgba($brand-color, .25) !important;
+		-webkit-transition: fill .3s;
+		transition: fill .3s;
+	}
+	&:hover svg path {
+		fill: $brand-color !important;
+	}
+}
