@@ -1,20 +1,4 @@
 /**
- * Reset some basic elements
- */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
-	margin: 0;
-	padding: 0;
-}
-
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-/**
  * Links
  */
 a {
@@ -48,69 +32,6 @@ a {
 	}
 }
 
-/**
- * Basic styling
- */
-body {
-	font-family: $base-font-family;
-	font-weight: 300;
-	color: $text-color;
-	background-color: $background-color;
-	//     background: url(/images/bkgd.png) repeat center center fixed;
-	-webkit-text-size-adjust: 100%;
-}
-
-.site-header,
-.page-content,
-.site-footer {
-	position: relative;
-	@extend %p;
-}
-
-/**
- * Set `margin-bottom` to maintain vertical rhythm
- */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
-%vertical-rhythm {
-	//     margin-bottom: $spacing-unit / 2;
-}
-
-/**
- * Images
- */
-img {
-	max-width: 100%;
-	vertical-align: middle;
-}
-
-/**
- * Figures
- */
-figure > img {
-	display: block;
-}
-
-figcaption {
-	//     font-size: $small-font-size;
-	@extend %sm;
-}
-
-/**
- * Lists
- */
-ul, ol {
-//     margin-left: $spacing-unit;
-	@include scale-margin(p, false, false, false, 1);
-}
-
-li {
-	> ul,
-	> ol {
-		margin-bottom: 0;
-	}
-}
 
 /**
  * Headings
@@ -153,36 +74,13 @@ code {
 
 pre {
 	padding: .5em;
-	@include scale-padding(p, 0.5, 0.5, 0.5, 0.5);
+	@include scale-padding(p, .5, .5, .5, .5);
 	overflow-x: scroll;
 
 	> code {
 		border: 0;
 		padding-right: 0;
 		padding-left: 0;
-	}
-}
-
-/**
- * Wrapper
- */
-.wrapper {
-	width: 28em;
-	max-width: 100%;
-	margin-right: auto;
-	margin-left: auto;
-	@extend %clearfix;
-	@include scale-padding(p, false, 0.5, false, 0.5);
-}
-
-/**
- * Clearfix
- */
-%clearfix {
-	&:after {
-		content: "";
-		display: table;
-		clear: both;
 	}
 }
 

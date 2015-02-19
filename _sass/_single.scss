@@ -1,0 +1,78 @@
+.post-header {
+	@include scale-margin(p, false, false, 1, false);
+}
+
+.post-title {
+	@extend %sh;
+	@include scale-margin(sh, 1, false, 0, false);
+}
+
+.post-content {
+	@include scale-margin(p, 0, false, 1, false);
+
+	h2 {
+		@extend %sh;
+		@include scale-margin(sh, 1, false, 0.5, false);
+	}
+
+	h3 {
+		@extend %ssh;
+		@include scale-margin(ssh, 1, false, 0.5, false);
+	}
+
+	h4 {
+		@extend %bq;
+		@include scale-margin(bq, 1, false, 0.5, false);
+	}
+
+	p, ul, ol, pre, blockquote, .highlight, .wp-caption {
+		@extend %p;
+		margin-top: 0;
+		margin-bottom: 0;
+		@include scale-margin(p, false, false, 1, false);
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	ul, ol {
+		margin-left: 2em;
+		@include scale-margin(p, false, false, 1, 1);
+
+		li {
+			@include scale-margin(p, false, false, .5, false);
+		}
+		
+		> ul,
+		> ol {
+			margin-bottom: 0;
+		}
+	}
+
+	ul {
+		list-style: disc;
+
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	pre {
+		clear: both;
+	}
+
+	div {
+		max-width: 100%;
+	}
+
+	iframe {
+		@include scale-margin(p, false, false, 1, false);
+	}
+}

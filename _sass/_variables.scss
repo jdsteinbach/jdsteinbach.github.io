@@ -1,0 +1,16 @@
+$base-font-family: Texta, Avenir Next, Avenir, Verdana, sans-serif;
+
+$color-blue: #5CACC4;
+$color-red: #FF5254;
+$color-green: #8CD19D;
+$color-orange: #FCB653;
+
+$text-color: #464646;
+$background-color: #fdfdfd;
+$brand-color: $color-blue;
+$blog-color: darken($color-blue, 10%);
+$blog-accent: darken(adjust-hue($color-blue, 30deg), 35%);
+
+$grey-color: #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark: darken($grey-color, 25%);

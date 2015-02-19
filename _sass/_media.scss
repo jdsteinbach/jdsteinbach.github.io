@@ -1,0 +1,29 @@
+.alignright {
+	float: right;
+	@include scale-margin(p, 0, 0, .5, 1);
+}
+
+.alignleft {
+	float: left;
+	@include scale-margin(p, 0, 1, .5, 0);
+}
+
+.post-content .img-caption > .img-caption-text {
+	font-style: italic;
+	text-align: center;
+	@extend %sm;
+	@include scale-margin(sm, 0, 0, .5, 0);
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+	
+	figure > & {
+		display: block;	
+	}
+}
+
+figcaption {
+	@extend %sm;
+}

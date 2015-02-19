@@ -1,0 +1,51 @@
+.site-header {
+	border-top: 1px solid white; //$brand-color;
+	border-bottom: 1px solid $brand-color;
+	position: relative;
+	background: rgba($background-color, 0.85);
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.site-title {
+	@extend %p;
+	margin-bottom: 0;
+	float: left;
+	@include scale-padding(p, .5, false, .5, false);
+
+	&,
+	&:visited {}
+}
+
+.site-nav {
+	float: right;
+
+	.menu-icon {
+		display: none;
+	}
+
+	.page-link {
+		@extend %p;
+		display: inline-block;
+		@include scale-padding(p, .5, false, .5, false);
+
+		&:not(:first-child) {
+			@include scale-margin(p, false, false, false, .5);
+		}
+	}
+}
+
+@media (max-width: 28em) { // @TO-DO make me min-width // get real @mixins w/ breakpoint
+	.site-title,
+	.site-nav {
+		display: block;
+		float: none;
+		text-align: center;
+	}
+	.site-title {
+		font-weight: bold;
+	}
+}

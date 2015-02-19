@@ -1,0 +1,14 @@
+.post-list {
+	@include scale-margin(p, 1, false, 1, 0);
+	list-style: none;
+
+	> li {
+		@include scale-margin(p, false, false, .5, false);
+	}
+}
+
+.post-link {
+	display: block;
+	@extend %sh;
+	@include scale-margin(sh, 0, false, 0, false);
+}

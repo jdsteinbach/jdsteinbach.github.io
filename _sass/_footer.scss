@@ -1,0 +1,63 @@
+.site-footer {
+	border-top: 1px solid $grey-color-light;
+	@include scale-padding(p, 1, false, 1, false);
+	background: rgba($background-color, 0.85);
+}
+
+.footer-heading {
+	@extend %p;
+	@include scale-margin(p, false, false, 0.5, false);
+}
+
+.contact-list,
+.social-media-list {
+	list-style: none;
+	margin-left: 0;
+}
+
+.footer-col-wrapper {
+	@extend %sm;
+	color: $grey-color;
+	@extend %clearfix;
+}
+
+.footer-col {
+	float: left;
+	@include scale-margin(sm, false, false, 1, false);
+	@include scale-padding(sm, false, false, false, false);
+}
+
+.footer-col-1 {
+	width: 32%;
+}
+
+.footer-col-2 {
+	width: 20%;
+}
+
+.footer-col-3 {
+	width: 48%;
+}
+
+@media (max-width: 28em) { // @TO-DO make me min-width
+	.footer-col-1,
+	.footer-col-2 {
+		width: 50%;
+	}
+
+	.footer-col-3 {
+		width: 100%;
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 20em) { // @TO-DO make me min-width
+	.footer-col {
+		float: none;
+		width: 100%;
+	}
+}
+
+.rss-subscribe {
+	@include scale-margin(p, 1, false, 1, false);
+}
