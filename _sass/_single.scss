@@ -5,6 +5,11 @@
 .post-title {
 	@extend %sh;
 	@include scale-margin(sh, 1, false, 0, false);
+	color: $blog-accent;
+
+	& + .post-meta {
+		color: $grey-color;
+	}
 }
 
 .post-content {
@@ -30,7 +35,7 @@
 		margin-top: 0;
 		margin-bottom: 0;
 		@include scale-margin(p, false, false, 1, false);
-		
+
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -43,7 +48,7 @@
 		li {
 			@include scale-margin(p, false, false, .5, false);
 		}
-		
+
 		> ul,
 		> ol {
 			margin-bottom: 0;

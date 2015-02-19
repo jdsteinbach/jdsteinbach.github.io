@@ -3,7 +3,7 @@
 	list-style: none;
 
 	> li {
-		@include scale-margin(p, false, false, .5, false);
+		@include scale-margin(p, false, false, 0.5, false);
 	}
 }
 
@@ -11,4 +11,36 @@
 	display: block;
 	@extend %sh;
 	@include scale-margin(sh, 0, false, 0, false);
+	background-image:
+		-webkit-linear-gradient(
+			left,
+			$brand-color 0,
+			$brand-color 22.5%,
+			rgba($brand-color, 0.25) 27.5%,
+			$brand-color 30%,
+			$brand-color 100%
+		),
+		-webkit-linear-gradient(
+			top,
+			rgba($brand-color, 0.5) 0,
+			rgba($brand-color, 0.5) 40%,
+			rgba(white, 0.01) 50%,
+			rgba($brand-color, 0.5) 60%,
+			rgba($brand-color, 0.5) 100%
+		);
+
+	background: -o-linear-gradient(transparent, transparent);
+
+	background-size: 400% 1.44382em, 100% 1.44382em;
+	background-repeat: repeat-y;
+	background-position: right center, center center;
+	-webkit-background-clip: text;
+	background-position: center center;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	-webkit-text-fill-color: transparent;
+
+	&:hover {
+		background-position: left center, center center;
+	}
 }
