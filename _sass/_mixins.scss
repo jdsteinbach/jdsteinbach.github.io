@@ -1,6 +1,7 @@
 @function strip-units($value) {
   @return ($value / ($value * 0 + 1));
 }
+
 @mixin px-rem($property, $values...) {
 	$pxValues: ();
 	$remValues: ();
@@ -38,6 +39,15 @@
 @mixin fs($value) {
 	@include px-rem(font-size, $value);
 }
+
+@mixin clearfix {
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
 
 @mixin width-height($x...) {
 	@if length($x) == 1 {

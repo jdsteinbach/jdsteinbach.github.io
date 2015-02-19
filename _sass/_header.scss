@@ -1,5 +1,5 @@
 .site-header {
-	border-top: 1px solid white; //$brand-color;
+	border-top: 1px solid white;
 	border-bottom: 1px solid $brand-color;
 	position: relative;
 	background: rgba($background-color, 0.85);
@@ -12,16 +12,28 @@
 
 .site-title {
 	@extend %p;
+	display: block;
+	float: none;
+	text-align: center;
+	font-weight: bold;
 	margin-bottom: 0;
-	float: left;
 	@include scale-padding(p, .5, false, .5, false);
 
-	&,
-	&:visited {}
+	@include breakpoint(medium) {	
+		float: left;
+		text-align: left;
+	}
 }
 
 .site-nav {
-	float: right;
+	display: block;
+	float: none;
+	text-align: center;
+		
+	@include breakpoint(medium) {	
+		float: right;
+		text-align: right;
+	}
 
 	.menu-icon {
 		display: none;
@@ -35,17 +47,5 @@
 		&:not(:first-child) {
 			@include scale-margin(p, false, false, false, .5);
 		}
-	}
-}
-
-@media (max-width: 28em) { // @TO-DO make me min-width // get real @mixins w/ breakpoint
-	.site-title,
-	.site-nav {
-		display: block;
-		float: none;
-		text-align: center;
-	}
-	.site-title {
-		font-weight: bold;
 	}
 }

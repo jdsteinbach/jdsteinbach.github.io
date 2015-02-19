@@ -20,11 +20,20 @@ $fsizes: (
 
 // Set your breakpoints in a map:
 // Feel free to use any unit you like (px vs ems)
+/*
 $breakpoints: (
 	default: 320px,
 	medium: 750px,
 	large: 1100px,
 	xlarge: 1300px
+);
+*/
+
+$breakpoints: (
+	default: 20em,
+	medium: 37.5em,
+	large: 68em,
+	xlarge: 82em
 );
 
 $bp-fs: (

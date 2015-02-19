@@ -11,14 +11,8 @@ twitter_username: jdsteinbach
 github_username:  jdsteinbach
 author_name: James Steinbach
 category_suffix: "Category Archive"
-# categories:
-#   - CSS
-#   - Sass
-#   - WordPress
 
 # Build settings
 markdown: redcarpet
 sass:
   style: compressed
-# gems:
-# - octopress-autoprefixer

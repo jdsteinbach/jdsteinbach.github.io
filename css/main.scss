@@ -4,20 +4,17 @@
 @charset "utf-8";
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-	"reset",
-	"bourbon/bourbon",
-	"variables",
-	"mixins",
-	"placeholders",
-	"type-tune",
-	"base",
-	"layout",
-	"header",
-	"footer",
-	"archive",
-	"single",
-	"media",
-	"syntax-highlighting",
-	"fonts"
-;
+@import "reset";
+@import "bourbon/bourbon";
+@import "variables";
+@import "mixins";
+@import "type-tune";
+@import "base";
+@import "layout";
+@import "header";
+@import "footer";
+@import "archive";
+@import "single";
+@import "media";
+@import "syntax-highlighting";
+@import "fonts";

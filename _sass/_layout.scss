@@ -7,11 +7,11 @@ body {
 }
 
 .wrapper {
-	width: 28em;
+	width: 30em;
 	max-width: 100%;
 	margin-right: auto;
 	margin-left: auto;
-	@extend %clearfix;
+	@include clearfix;
 	@include scale-padding(p, false, 0.5, false, 0.5);
 }
 
@@ -24,11 +24,11 @@ body {
 
 .page-content {
 	.wrapper {
-		@include scale-padding(p, 2, false, false, false);
+		@include scale-padding(p, 4, false, false, false);
 		background: rgba($background-color, 0.85);
 		
-		@media (max-width: 28em) { // @TO-DO make me min-width
-			@include scale-padding(p, 4, false, false, false);
+		@include breakpoint(medium) {
+			@include scale-padding(p, 2, false, false, false);
 		}
 	}
 }
