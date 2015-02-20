@@ -6,7 +6,7 @@ permalink: /performance/99-100-google-page-speed/
 categories:
   - Performance
 ---
-With all my WordPress sites, it’s taken a *lot* of work to get a Google Page Speed score above 90. When I moved this site to Jekyll & Github pages hosting, I instantly got a 93/100. I wasn’t satisfied (since I hadn’t put any effort into it!), so I started looking for ways to optimize things even more. Garth Braithwaite’s Medium post [“Becoming a Jekyll God”](https://medium.com/design-open/becoming-a-jekyll-god-ef722e93f771 “Read Becoming a Jekyll God on Medium”) had all the tools I needed to get to 99/100.
+With all my WordPress sites, it’s taken a *lot* of work to get a Google Page Speed score above 90. When I moved this site to Jekyll & Github pages hosting, I instantly got a 93/100. I wasn’t satisfied (since I hadn’t put any effort into it!), so I started looking for ways to optimize things even more. Garth Braithwaite’s Medium post &#8220;[Becoming a Jekyll God][2]&#8221; had all the tools I needed to get to 99/100.
 
 ## Inline CSS
 
@@ -25,16 +25,18 @@ Then the article recommended going one step farther and inlining the entire styl
 
 ```
 <style type="text/css">
-  &lbrace;% capture include_to_scssify %&rbrace;
-    &lbrace;% include main.scss %&rbrace;
-  &lbrace;% endcapture %&rbrace;
-  &lbrace;&lbrace; include_to_scssify | scssify &rbrace;&rbrace;
+{% raw %}
+  {% capture include_to_scssify %}
+    {% include main.scss %}
+  {% endcapture %}
+  {{ include_to_scssify | scssify }}
+{% endraw %}
 </style>
 ```
 
 ## Compressed HTML
 
-Compressing HTML was the next huge win for me. This requires an extra `.html` file in `/_layouts/`. You can [download `compress.html` here](https://github.com/penibelst/jekyll-compress-html/releases/tag/v1.1.1 “Download compress.html”).
+Compressing HTML was the next huge win for me. This requires an extra `.html` file in `/_layouts/`. You can [download `compress.html` here][1].
 
 Most likely, your layout files are all calling a single “root” layout file. In the default theme, `page.html` and `post.html` both called `default.html` in their front matter. If that’s the case for you, copy `compress.html` to your `/_layouts/` directory and add the following to the top of `default.html`:
 
@@ -46,6 +48,9 @@ layout: compress
 
 ## Caching
 
-I’m using [CloudFlare](https://www.cloudflare.com “Visit cloudflare.com”) to manage DNS for this site. For this domain, I went to “CloudFlare Settings” and clicked the “Performance Settings” tab. On that screen, I told CloudFlare to cache resources for 24 days (very aggressive), and minify JS, CSS, & HTML. I realize, doing this after the HTML compression trick above is probably overkill. I may review that, do some testing and remove the compression from Jekyll. We’ll see.
+I’m using [CloudFlare](https://www.cloudflare.com "Visit cloudflare.com") to manage DNS for this site. For this domain, I went to “CloudFlare Settings” and clicked the “Performance Settings” tab. On that screen, I told CloudFlare to cache resources for 24 days (very aggressive), and minify JS, CSS, & HTML. I realize, doing this after the HTML compression trick above is probably overkill. I may review that, do some testing and remove the compression from Jekyll. We’ll see.
 
 ![Screenshot showing 99/100 Google Page Speed Score](/images/99-100-google-page-speed.jpg "Google Page Speed")
+
+[1]: https://github.com/penibelst/jekyll-compress-html/releases/tag/v1.1.1 "Download compress.html"
+[2]: https://medium.com/design-open/becoming-a-jekyll-god-ef722e93f771 "I am a Jekyll God"
