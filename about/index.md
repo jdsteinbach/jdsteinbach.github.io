@@ -5,7 +5,7 @@ layout: page
 permalink: /about/
 menu_order: 40
 ---
-<img class="alignleft size-medium wp-image-1154" src="/images/headshot2-opt.jpg" alt="James Steinbach: Profile Photo" width="200" height="300" />
+<img class="alignleft" src="/images/headshot.png" alt="James Steinbach: Profile Photo" width="200" height="174" style="shape-outside:url(/images/headshot.png);shape-margin:1em;"/>
 
 I&#8217;m a Chicago native living in Charlotte, NC, but yearning for the mountains of Denver. When I&#8217;m not building websites, I love to read Cussler, Clancy, Crichton, Baldacci, etc. I&#8217;m usually up for a good laugh: Brooklyn 99, Mindy Project, Tonight Show, Colbert Report. Time with [my wife Audrey][1] & [newborn daughter][2] is always a delight. And I rarely say no to fantastic food & drink.
 
