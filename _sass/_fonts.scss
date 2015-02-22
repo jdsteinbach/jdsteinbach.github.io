@@ -1,46 +1,22 @@
-@font-face {
-	font-family: 'Texta';
-	src: url("webfonts/2D4C2D_2_0.eot");
-	src: url("webfonts/2D4C2D_2_0.eot?#iefix") format("embedded-opentype"),
-		url("webfonts/2D4C2D_2_0.woff2") format("woff2"),
-		url("webfonts/2D4C2D_2_0.woff") format("woff"),
-		url("webfonts/2D4C2D_2_0.ttf") format("truetype");
-	font-style: italic;
-	font-weight: bold;
+@mixin fonts($family, $file, $style, $weight) {
+	@font-face {
+		font-family: $family;
+		src: url("/webfonts/#{$file}.eot");
+		src: url("/webfonts/#{$file}.eot?#iefix") format("embedded-opentype"),
+			url("/webfonts/#{$file}.woff2") format("woff2"),
+			url("/webfonts/#{$file}.woff") format("woff"),
+			url("/webfonts/#{$file}.ttf") format("truetype");
+		font-style: $style;
+		font-weight: $weight;
+	}	
 }
 
+// @include fonts(Texta, 2D4C2D_2_0, italic, bold);
+@include fonts(Texta, 2D4C2D_1_0, italic, bold);
 
-@font-face {
-	font-family: 'Texta';
-	src: url("webfonts/2D4C2D_3_0.eot");
-	src: url("webfonts/2D4C2D_3_0.eot?#iefix") format("embedded-opentype"),
-		url("webfonts/2D4C2D_3_0.woff2") format("woff2"),
-		url("webfonts/2D4C2D_3_0.woff") format("woff"),
-		url("webfonts/2D4C2D_3_0.ttf") format("truetype");
-	font-style: normal;
-	font-weight: bold;
-}
+// @include fonts(Texta, 2D4C2D_3_0, normal, bold);
+@include fonts(Texta, 2D4C2D_4_0, normal, bold);
 
+@include fonts(Texta, 2D4C2D_A_0, italic, 300);
 
-@font-face {
-	font-family: 'Texta';
-	src: url("webfonts/2D4C2D_A_0.eot");
-	src: url("webfonts/2D4C2D_A_0.eot?#iefix") format("embedded-opentype"),
-		url("webfonts/2D4C2D_A_0.woff2") format("woff2"),
-		url("webfonts/2D4C2D_A_0.woff") format("woff"),
-		url("webfonts/2D4C2D_A_0.ttf") format("truetype");
-	font-style: italic;
-	font-weight: 300;
-}
-
-
-@font-face {
-	font-family: 'Texta';
-	src: url("webfonts/2D4C2D_B_0.eot");
-	src: url("webfonts/2D4C2D_B_0.eot?#iefix") format("embedded-opentype"),
-		url("webfonts/2D4C2D_B_0.woff2") format("woff2"),
-		url("webfonts/2D4C2D_B_0.woff") format("woff"),
-		url("webfonts/2D4C2D_B_0.ttf") format("truetype");
-	font-style: normal;
-	font-weight: 300;
-}
+@include fonts(Texta, 2D4C2D_B_0, normal, 300);

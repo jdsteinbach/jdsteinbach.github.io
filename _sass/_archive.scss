@@ -51,10 +51,10 @@
 		display: block;
 		content: '';
 		position: absolute;
-		top: .5em;
+		top: .25em;
 		right: 0;
 		bottom: 0;
-		width: 1em;
+		width: .75em;
 	}
 	svg path {
 		fill: rgba($brand-color, .25) !important;
