@@ -1,5 +1,5 @@
 ---
-title: Why I'm Not Breaking Up with Sass
+title: Why I&#8217;m Not Breaking Up with Sass
 author: James Steinbach
 layout: post
 permalink: /sass/not-breaking-up-sass/

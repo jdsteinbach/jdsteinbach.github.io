@@ -81,3 +81,25 @@
 		@include scale-margin(p, false, false, 1, false);
 	}
 }
+
+#main > * {
+	-webkit-animation: contentIn .75s ease-out;
+	animation: contentIn .75s ease-out;
+}
+
+@-webkit-keyframes contentIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes contentIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

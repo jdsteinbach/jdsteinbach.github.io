@@ -13,6 +13,6 @@ author_name: James Steinbach
 category_suffix: "Category Archive"
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 sass:
   style: compressed
