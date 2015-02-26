@@ -10,17 +10,17 @@ function launchParticlesJS(a,e){var i=document.querySelector("#"+a+" > canvas");
 /* Initialize Particles */
 particlesJS('particles', {
 	particles: {
-		color: '#5CACC4',
+		color: '#245563',
 		shape: 'circle',
-		opacity: .25,
+		opacity: .125,
 		size: 4,
 		size_random: false,
 		nb: 75,
 		line_linked: {
 			enable_auto: true,
 			distance: 500,
-			color: '#5CACC4',
-			opacity: .5,
+			color: '#245563',
+			opacity: .25,
 			width: 1,
 			condensed_mode: {
 				enable: false
