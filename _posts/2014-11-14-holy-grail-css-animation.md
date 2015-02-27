@@ -31,7 +31,7 @@ If all my elements were a fixed height, I could easily transition betweeen `` an
 
 ## Maintains proper easing and timing
 
-One method I&#8217;ve seen suggested is transitioning the `max-height` of the element from `` to `1000px` (or some other fixed measurement higher than any potential element height). However, this method destroys any deliberate easing function or timing. For example, look at the following code (add your own prefixes):
+One method I&#8217;ve seen suggested is transitioning the `max-height` of the element from `0px` to `1000px` (or some other fixed measurement higher than any potential element height). However, this method destroys any deliberate easing function or timing. For example, look at the following code (add your own prefixes):
 
 ```
 .expandable {
