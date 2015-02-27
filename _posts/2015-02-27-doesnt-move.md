@@ -1,5 +1,5 @@
 ---
-title: 'What If It Doesn&#8217;t Need to Move?'
+title: 'Maybe It Doesn&#8217;t Need to Move'
 author: James Steinbach
 layout: post
 permalink: /css/doesnt-move/
