@@ -1,5 +1,36 @@
+.post {
+	@include breakpoint(medium) {
+		@include span(1 at 2);
+	}
+}
+.sidebar {
+	display: none;
+	
+	@include breakpoint(medium) {
+		display: block;
+		@include span(1 at 1);
+		
+		p {
+			@include scale-padding(p, 1, false, false, false);
+		}
+	}
+	
+	.post-meta {
+		span {
+			@include breakpoint(medium) {
+				display: block;
+			}
+		}
+	}
+}
 .post-header {
 	@include scale-margin(p, false, false, 1, false);
+
+	.post-meta {
+		@include breakpoint(medium) {
+			display: none;
+		}
+	}
 }
 
 .post-title {

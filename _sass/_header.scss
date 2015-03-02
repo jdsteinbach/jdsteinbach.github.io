@@ -20,8 +20,7 @@
 	@include scale-padding(p, .5, false, .5, false);
 
 	@include breakpoint(medium) {	
-		float: left;
-		text-align: left;
+		@include span(1 at 1);
 	}
 }
 
@@ -31,7 +30,7 @@
 	text-align: center;
 		
 	@include breakpoint(medium) {	
-		float: right;
+		@include span(1 at 2);
 		text-align: right;
 	}
 

@@ -11,6 +11,7 @@ twitter_username: jdsteinbach
 github_username:  jdsteinbach
 author_name: James Steinbach
 category_suffix: "Category Archive"
+profile_pic: "/images/headshot.png"
 
 # Build settings
 markdown: kramdown
