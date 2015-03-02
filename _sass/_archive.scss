@@ -16,8 +16,8 @@
 .outbound-link,
 .post-link {
 	display: block;
-	@extend %sh;
-	@include scale-margin(sh, 0, false, 0, false);
+	@extend %h;
+	@include scale-margin(h, 0, false, 0, false);
 	background-image:
 		-webkit-linear-gradient(
 			left,

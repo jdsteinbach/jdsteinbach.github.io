@@ -31,8 +31,8 @@
 }
 
 .post-title {
-	@extend %sh;
-	@include scale-margin(sh, 1, false, 0, false);
+	@extend %h;
+	@include scale-margin(h, 1, false, 0, false);
 	color: $blog-accent;
 
 	& + .post-meta {
