@@ -7,7 +7,7 @@ body {
 }
 
 .wrapper {
-	width: 40em;
+	width: 45em;
 	max-width: 100%;
 	margin-right: auto;
 	margin-left: auto;
@@ -26,7 +26,7 @@ body {
 	.wrapper {
 		@include scale-padding(p, 4, false, false, false);
 		background: rgba($background-color, 0.85);
-		
+
 		@include breakpoint(medium) {
 			@include scale-padding(p, 2, false, false, false);
 		}

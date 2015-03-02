@@ -58,4 +58,4 @@ Most clients will prefer to edit content for a page on that page’s editor. If 
 
 Most of the factors above point toward using a custom post type, but there are some situations where using a repeater field will serve your purposes as well. Other than the non-negotiable feature issues (taxonomies, exportability, etc), it’s important to choose the set-up that will be most usable for your clients. Hopefully this list helps you build a better CMS experience for your clients. Check out the flow chart below for the most important factors to consider.
 
-<img class="aligncenter wp-image-1305 size-full" src="/images/CPT-ACF.png" alt="flow chart helping developers choose custom post types of advanced custom fields repeater fields." width="1610" height="535" / data-unveil="true">
+<img class="aligncenter wp-image-1305 size-full" src="/images/CPT-ACF.png" alt="low chart helping developers choose custom post types of advanced custom fields repeater fields." width="1610" height="535">

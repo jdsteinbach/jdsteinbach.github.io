@@ -19,29 +19,27 @@ Now that you’ve seen the short list, let’s look at those points in more deta
 
 According to caniuse, we’ve got [83% global browser support for .woff files (86% in the US)][1]. That’s pretty good. If you’re viewing webfonts as a progressive enhancement, you’d probably have good reason to quit stop with just .woff files:
 
-```
-@font-face {
-	font-family: 'SampleFont';
-	src: url('sample_font') format('woff');
-	font-style: normal;
-	font-weight: normal;
-}
-```
+
+    @font-face {
+      font-family: 'SampleFont';
+      src: url('sample_font') format('woff');
+      font-style: normal;
+      font-weight: normal;
+    }
+
 
 ## .eot if you need to support IE8
 
 An .eot file (embedded open type) is needed for IE<8 (and IE9 running in compatibility mode). This adds another [4% (7% US) to browser support][2], bringing our totals to 87% / 94%. Be sure to include it above the .woff. Notice we&#8217;re linking to the same file twice: the first declaration is for IE9 in compatiblity mode; the second (which is inline with the .woff declaration) is for IE6-8.
 
-```
-@font-face {
-	font-family: 'SampleFont';
-	src: url('sample_font.eot');
-	src: url('sample_font.eot?#iefix') format('embedded-opentype'),
-		url('sample_font.woff') format('woff');
-	font-style: normal;
-	font-weight: normal;
-}
-```
+    @font-face {
+      font-family: 'SampleFont';
+      src: url('sample_font.eot');
+      src: url('sample_font.eot?#iefix') format('embedded-opentype'),
+        url('sample_font.woff') format('woff');
+      font-style: normal;
+      font-weight: normal;
+    }
 
 ## .ttf if you need to support old Androids
 
@@ -49,17 +47,15 @@ These older Android browsers support both .ttf & .svg fonts, so pick whichever y
 
 Supporting these browsers brings our total support to [90% global, 96% US][3].
 
-```
-@font-face {
-	font-family: 'SampleFont';
-	src: url('sample_font.eot');
-	src: url('sample_font.eot?#iefix') format('embedded-opentype'),
-		url('sample_font.woff') format('woff'),
-		url('sample_font.ttf') format('truetype');
-	font-style: normal;
-	font-weight: normal;
-}
-```
+    @font-face {
+      font-family: 'SampleFont';
+      src: url('sample_font.eot');
+      src: url('sample_font.eot?#iefix') format('embedded-opentype'),
+        url('sample_font.woff') format('woff'),
+        url('sample_font.ttf') format('truetype');
+      font-style: normal;
+      font-weight: normal;
+    }
 
 ## .woff2 is gonna be great
 

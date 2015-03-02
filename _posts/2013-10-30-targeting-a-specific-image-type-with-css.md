@@ -32,19 +32,17 @@ My old workaround was to ask our content specialist to add the class &#8220;no-b
 
 Today it hit me that I could use an attribute selector to find any PNG and remove the border, shadow, and background from it. <a title="Attribute Selectors on CSS-Tricks" href="http://css-tricks.com/attribute-selectors/" target="_blank">Attribute selectors are good to go on IE 7+ and all real browsers.</a> It&#8217;s a pretty safe bet that the only image with transparency would be a PNG (if for some reason you&#8217;re still using GIFs, though, just modify this code to include them) and that the normal rectangular photo images would be JPGs. Here&#8217;s the code I use to target them (of course, choose your own border / box-shadow and do your own prefixing):
 
-```
-img {
-  border: border;
-  background: border-color;
-  box-shadow: box-shadow;
-}
+    img {
+      border: border;
+      background: border-color;
+      box-shadow: box-shadow;
+    }
 
-img[src*="png"] {
-  border: none;
-  background: transparent;
-  box-shadow: none;
-}
-```
+    img[src*="png"] {
+      border: none;
+      background: transparent;
+      box-shadow: none;
+    }
 
 Now, as you can see below, the JPG photo image has the correct border / box-shadow, while the PNG displays in all its transparent, frame-less glory.
 

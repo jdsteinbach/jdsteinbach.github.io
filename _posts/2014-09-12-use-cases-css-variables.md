@@ -14,19 +14,15 @@ If you&#8217;re a fan of pre-processors, you might share my first reaction to CS
 
 To define a native CSS variable globally, use the following syntax:
 
-```
-:root{
-  --color-primary: #001f3f;
-}
-```
+    :root{
+      --color-primary: #001f3f;
+    }
 
 To use that variable in a property, call it with the `var()` wrapper:
 
-```
-p {
-  color: var(--color-primary);
-}
-```
+    p {
+      color: var(--color-primary);
+    }
 
 Because that variable is scoped to `:root`, it&#8217;s global. Any place in the stylesheet it appears, it will return that same value. CSS variables can be scoped to any element, however, making it possible to create &ldquo;exceptions.&rdquo; The following use cases show the power of locally-scoped CSS variables.
 
@@ -36,33 +32,29 @@ Because that variable is scoped to `:root`, it&#8217;s global. Any place in the 
 
 Let&#8217;s look at an example of scoping variables for color changes. In this use case, the &ldquo;normal&rdquo; color for `<h1>` elements will be the site accent red. However, the site also uses `<h1>` elements for the titles of widgets in the `<aside>` sidebar. We can redeclare the `--color-accent` variable in an `<aside>`: now any `<h1>` in a widget will be orange instead of red.
 
-```
-:root{
-  --color-accent: #ff4136;
-}
-h1 {
-  color: var(--color-accent);
-}
-aside {
-  --color-accent: #ff851b;
-}
-```
+    :root{
+      --color-accent: #ff4136;
+    }
+    h1 {
+      color: var(--color-accent);
+    }
+    aside {
+      --color-accent: #ff851b;
+    }
 
 ### Font Sizes
 
 Font sizes can be changed with CSS variable scoping as well. This example works well in the same scenario as the sidebar colors above:
 
-```
-:root{
-  --heading-size: 32px;
-}
-h1 {
-  font-size: var(--heading-size);
-}
-aside {
-  --heading-size: 24px;
-}
-```
+    :root{
+      --heading-size: 32px;
+    }
+    h1 {
+      font-size: var(--heading-size);
+    }
+    aside {
+      --heading-size: 24px;
+    }
 
 
 ### SVGs
@@ -77,90 +69,82 @@ In this example, we&#8217;ll only need one set of styles for all our grid elemen
 
 Each container element will display its `.grid-item` children according to the `--grid-width` percentage scoped to that particular container.
 
-```
-:root {
-  --grid-width: 20%;
-}
-.grid-item {
-  float: left;
-  width: var(--grid-width);
-}
-.products-grid {
-  --grid-width: 25%;
-}
-.portfolio-grid {
-  --grid-width: 33%;
-}
-```
+    :root {
+      --grid-width: 20%;
+    }
+    .grid-item {
+      float: left;
+      width: var(--grid-width);
+    }
+    .products-grid {
+      --grid-width: 25%;
+    }
+    .portfolio-grid {
+      --grid-width: 33%;
+    }
 
 
 ### Column Proportions
 
 Body vs. sidebar proportions can be managed with CSS variables as well:
 
-```
-:root{
-  --content-width: 75%;
-  --sidebar-width: 25%;
-}
-.page-content {
-  width: var(--content-width);
-}
-.page-sidebar {
-  width: var(--sidebar-width);
-}
-.has-wide-sidebar {
-  --content-width: 62.5%;
-  --sidebar-width: 37.5%;
-}
-```
+    :root{
+      --content-width: 75%;
+      --sidebar-width: 25%;
+    }
+    .page-content {
+      width: var(--content-width);
+    }
+    .page-sidebar {
+      width: var(--sidebar-width);
+    }
+    .has-wide-sidebar {
+      --content-width: 62.5%;
+      --sidebar-width: 37.5%;
+    }
 
 
 ### Buttons
 
 Next to grid layouts, buttons are everyone&#8217;s favorite place to automate styling. CSS variables are useful here.
 
-```
-:root{
-  --button-color: #ff4136;
-  --button-color-dark: #cc0e03;
-  --button-color-light: #ff7469;
-}
-.button {
-  background-color: var(--button-color);
-  box-shadow: 1px 2px 0 var(--button-color-dark);
-}
-.button:hover {
-  background-color: var(--button-color-dark);
-  box-shadow: 0 0 0 var(--button-color-dark);
-}
-.button:active {
-  background-color: var(--button-color-light);
-  box-shadow: 0 0 0 var(--button-color-dark);
-}
-.contact-form {
-  --button-color: #ff851b;
-  --button-color-dark: #cc5200;
-  --button-color-light: #ffb84e;
-}
-```
+    :root{
+      --button-color: #ff4136;
+      --button-color-dark: #cc0e03;
+      --button-color-light: #ff7469;
+    }
+    .button {
+      background-color: var(--button-color);
+      box-shadow: 1px 2px 0 var(--button-color-dark);
+    }
+    .button:hover {
+      background-color: var(--button-color-dark);
+      box-shadow: 0 0 0 var(--button-color-dark);
+    }
+    .button:active {
+      background-color: var(--button-color-light);
+      box-shadow: 0 0 0 var(--button-color-dark);
+    }
+    .contact-form {
+      --button-color: #ff851b;
+      --button-color-dark: #cc5200;
+      --button-color-light: #ffb84e;
+    }
 
 ### JS Changes
 
 One benefit of native CSS variables is that they can be changed in real time with JavaScript. This is nice for user-enabled theme changing or for easily demoing multiple layouts / color scheme options for a client. The following JS function changes the value of the `--color-primary` variable.
 
-```
-var body = document.getElementsByTagName("body")[0];
-function change_vars(){
-  if ( !body.classList.contains('changed') ) {
-    body.style.setProperty('--color-primary', '#8e44ad');
-    body.classList.add('changed');
-  } else {
-    body.style.setProperty('--color-primary', '#2980b9');
-    body.classList.remove('changed');
-  }
-}
-```
+    var body = document.getElementsByTagName("body")[0];
+    function change_vars(){
+      if ( !body.classList.contains('changed') ) {
+        body.style.setProperty('--color-primary', '#8e44ad');
+        body.classList.add('changed');
+      } else {
+        body.style.setProperty('--color-primary', '#2980b9');
+        body.classList.remove('changed');
+      }
+    }
 
 ## Conclusion
 

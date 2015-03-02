@@ -20,6 +20,6 @@ $grey-color-dark: darken($grey-color, 25%);
 $susy: (
 	container: 100%,
 	columns: 1 2.618,
-	gutters: .1618,
+	gutters: 1 / 2.618,
 	output: isolate
 );

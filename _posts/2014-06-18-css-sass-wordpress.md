@@ -14,18 +14,16 @@ I gave the talk *From CSS to Sass in WordPress* at <a title="WP Summit 2014" hre
 
 [<img class="aligncenter wp-image-1221 size-full" src="/images/missing-slide.jpg" alt="WP style.css Comments" width="958" height="718" style="box-shadow: 0 0 .5em rgba(0,0,0,.25);"/>][2]
 
-```
-/*!
-Theme Name: Sassy Theme
-Theme URI: http://jamessteinbach.com/
-Author: James Steinbach
-Author URI: http://jamessteinbach.com
-Description: From CSS to Sass
-*/
-@import 'variables';
-@import 'bourbon/bourbon';
-//etc all your other imports…
-```
+    /*!
+    Theme Name: Sassy Theme
+    Theme URI: http://jamessteinbach.com/
+    Author: James Steinbach
+    Author URI: http://jamessteinbach.com
+    Description: From CSS to Sass
+    */
+    @import 'variables';
+    @import 'bourbon/bourbon';
+    //etc all your other imports…
 
 ## Additional Reading
 
