@@ -5,4 +5,5 @@ layout: category
 cat_name: css
 permalink: /css/
 menu_order: 10
+cat_logo: css-logo.png
 ---

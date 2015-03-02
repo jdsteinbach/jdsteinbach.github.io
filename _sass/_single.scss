@@ -9,10 +9,7 @@
 	@include breakpoint(medium) {
 		display: block;
 		@include span(1 at 1);
-		
-		p {
-			@include scale-padding(p, 1, false, false, false);
-		}
+		@include scale-padding(p, 1, false, false, false);
 	}
 	
 	.post-meta {
