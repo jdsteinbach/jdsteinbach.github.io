@@ -46,5 +46,7 @@ I’m using [CloudFlare](https://www.cloudflare.com "Visit cloudflare.com") to m
 
 ![Screenshot showing 99/100 Google Page Speed Score](/images/99-100-google-page-speed.jpg "Google Page Speed")
 
+> Note: I&#8217;m constantly playing with things on this site, so the 99/100 may come and go.
+
 [1]: https://github.com/penibelst/jekyll-compress-html/releases/tag/v1.1.1 "Download compress.html"
 [2]: https://medium.com/design-open/becoming-a-jekyll-god-ef722e93f771 "I am a Jekyll God"
