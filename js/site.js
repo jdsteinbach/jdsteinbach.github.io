@@ -12,7 +12,7 @@ particlesJS('particles', {
 	particles: {
 		color: '#245563',
 		shape: 'circle',
-		opacity: .125,
+		opacity: .175,
 		size: 4,
 		size_random: false,
 		nb: 75,
@@ -20,7 +20,7 @@ particlesJS('particles', {
 			enable_auto: true,
 			distance: 500,
 			color: '#245563',
-			opacity: .25,
+			opacity: .33,
 			width: 1,
 			condensed_mode: {
 				enable: false
