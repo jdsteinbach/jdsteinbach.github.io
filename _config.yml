@@ -13,6 +13,9 @@ author_name: James Steinbach
 category_suffix: "Category Archive"
 profile_pic: "/images/headshot.png"
 
+paginate: 8
+paginate_path: "/page:num/"
+
 # Build settings
 markdown: redcarpet
 sass:
