@@ -12,33 +12,50 @@ I gave the talk *From CSS to Sass in WordPress* at <a title="WP Summit 2014" hre
 
 ## Missing Slide
 
-[<img class="aligncenter wp-image-1221 size-full" src="/images/missing-slide.jpg" alt="WP style.css Comments" width="958" height="718" style="box-shadow: 0 0 .5em rgba(0,0,0,.25);"/>][2]
+[This slide was missing][2] the first time I gave this talk at WP Summit.
 
-    /*!
-    Theme Name: Sassy Theme
-    Theme URI: http://jamessteinbach.com/
-    Author: James Steinbach
-    Author URI: http://jamessteinbach.com
-    Description: From CSS to Sass
-    */
-    @import 'variables';
-    @import 'bourbon/bourbon';
-    //etc all your other imports…
+## Compilers
+
+### GUI Compiler Apps
+
+* [Koala](http://koala-app.com/): Free (Windows, Mac, Linux)
+* [Compass.app](http://compass.kkbox.com/): $10 (Windows, Mac, Linux)
+* [Scout](http://mhs.github.io/scout-app): Free (Windows, Mac)
+* [Codekit](http://incident57.com/codekit): $30 (Mac)
+
+### CLI Compilers
+
+* [Ruby Sass](http://sass-lang.com/install)
+* [Ruby Compass](http://compass-style.org/install/)
+
+### Task Runner Compilers
+
+* [Grunt Sass (Ruby)](https://github.com/gruntjs/grunt-contrib-sass)
+* [Grunt Compass (Ruby)](https://github.com/gruntjs/grunt-contrib-compass)
+* [Grunt Sass (node-sass)](https://github.com/sindresorhus/grunt-sass)
+* [Gulp Sass (Ruby)](https://www.npmjs.com/package/gulp-ruby-sass)
+* [Gulp Compass (Ruby)](https://www.npmjs.com/package/gulp-compass)
+* [Gulp Sass (node-sass)](https://www.npmjs.com/package/gulp-sass)
 
 ## Additional Reading
 
-  * “<a title="Compass Compiling and WordPress Themes" href="http://css-tricks.com/compass-compiling-and-wordpress-themes/" target="_blank">Compass Compiling and WordPress Themes</a>,” Chris Coyier
-  * “<a title="How to Use Sass with WordPress" href="http://www.elegantthemes.com/blog/tips-tricks/how-to-use-sass-with-wordpress-a-step-by-step-guide" target="_blank">How to Use Sass with WordPress</a>,” Andy Leverenz
-  * “<a title="Get Your Sass in Line" href="http://www.godbolt.me/blog/get-your-sass-in-line.html" target="_blank">Get Your Sass in Line</a>,” Micah Godbolt
-  * “<a title="Architecture for a Sass Project" href="http://www.sitepoint.com/architecture-sass-project/" target="_blank">Architecture for a Sass Project</a>,” Hugo Giraudel
-  * “<a title="Sass Structure - Layout and Theme Files" href="http://www.cathydutton.co.uk/news/sass-structure-layout-and-theme-files" target="_blank">Sass Structure &#8211; Layout and Theme Files</a>,” &#8211; Cathy Dutton
+* [“Sass for WordPress Developers,” James Steinbach](http://www.sitepoint.com/sass-for-wordpress-developers/)
+* [“Compass Compiling and WordPress Themes,” Chris Coyier](http://css-tricks.com/compass-compiling-and-wordpress-themes/)
+* [“How to Use Sass with WordPress,” Andy Leverenz](http://elegantthemes.com/blog/tips-tricks/how-to-use-sass-with-wordpress-a-step-by-step-guide)
+* [“Getting Sassy with WordPress”, Tracy Rotton](http://wordpress.tv/2014/11/11/tracy-rotton-getting-sassy-with-wordpress/)
+* [“Introduction to Sass for New WordPress Theme Designers,” WPBeginner](http://www.wpbeginner.com/wp-tutorials/introduction-to-sass-for-new-wordpress-theme-designers/)
+* [“A WordPress Development Process Using Sass and Compass”, Yanko Dimitrov](http://code.tutsplus.com/tutorials/a-wordpress-development-process-using-sass-and-compass--cms-21861)
+* [“Get Your Sass in Line,” Micah Godbolt](http://godbolt.me/blog/get-your-sass-in-line.html)
+* [“Architecture for a Sass Project,” Hugo Giraudel](http://sitepoint.com/architecture-sass-project/)
+* [“Sass Partials and the Problems Surrounding Them”, Tim Whitney](https://medium.com/@timodwhit/sass-partials-and-the-problems-surrounding-them-1d9217aa6dee)
+* [“How Evernote handles their Sass Architecture”](http://blog.evernote.com/tech/2014/12/17/evernote-handles-sass-architecture/)
 
 ## Documentation
 
   * <a title="Sass Documentation" href="http://sass-lang.com/" target="_blank">Sass</a>
   * <a title="Compass Documentation" href="http://compass-style.org/" target="_blank">Compass</a>
   * <a title="Bourbon Documentation" href="http://bourbon.io/docs/" target="_blank">Bourbon</a>
-  * <a title="Bourbon Neat Documentation" href="http://neat.bourbon.io/docs/" target="_blank">Bourbon Neat</a>
+  * <a title="Susy Documentation" href="http://susydocs.oddbird.net/" target="_blank">Susy (grids)</a>
   * <a title="SassMeister App" href="http://sassmeister.com/" target="_blank">SassMeister App</a>
 
 ## Full Slides
