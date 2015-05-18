@@ -6,7 +6,7 @@ permalink: /performance/99-100-google-page-speed/
 categories:
   - Performance
 ---
-With all my WordPress sites, it’s taken a *lot* of work to get a Google Page Speed score above 90. When I moved this site to Jekyll & Github pages hosting, I instantly got a 93/100. I wasn’t satisfied (since I hadn’t put any effort into it!), so I started looking for ways to optimize things even more. Garth Braithwaite’s Medium post &#8220;[Becoming a Jekyll God][2]&#8221; had all the tools I needed to get to 99/100.
+With all my WordPress sites, it&#8217;s taken a *lot* of work to get a Google Page Speed score above 90. When I moved this site to Jekyll & Github pages hosting, I instantly got a 93/100. I wasn&#8217;t satisfied (since I hadn&#8217;t put any effort into it!), so I started looking for ways to optimize things even more. Garth Braithwaite&#8217;s Medium post &#8220;[Becoming a Jekyll God][2]&#8221; had all the tools I needed to get to 99/100.
 
 ## Inline CSS
 
@@ -34,7 +34,7 @@ Then the article recommended going one step farther and inlining the entire styl
 
 Compressing HTML was the next huge win for me. This requires an extra `.html` file in `/_layouts/`. You can [download `compress.html` here][1].
 
-Most likely, your layout files are all calling a single “root” layout file. In the default theme, `page.html` and `post.html` both called `default.html` in their front matter. If that’s the case for you, copy `compress.html` to your `/_layouts/` directory and add the following to the top of `default.html`:
+Most likely, your layout files are all calling a single &#8220;root&#8221; layout file. In the default theme, `page.html` and `post.html` both called `default.html` in their front matter. If that&#8217;s the case for you, copy `compress.html` to your `/_layouts/` directory and add the following to the top of `default.html`:
 
     ---
     layout: compress
@@ -42,7 +42,7 @@ Most likely, your layout files are all calling a single “root” layout file. 
 
 ## Caching
 
-I’m using [CloudFlare](https://www.cloudflare.com "Visit cloudflare.com") to manage DNS for this site. For this domain, I went to “CloudFlare Settings” and clicked the “Performance Settings” tab. On that screen, I told CloudFlare to cache resources for 24 days (very aggressive), and minify JS, CSS, & HTML. I realize, doing this after the HTML compression trick above is probably overkill. I may review that, do some testing and remove the compression from Jekyll. We’ll see.
+I&#8217;m using [CloudFlare](https://www.cloudflare.com "Visit cloudflare.com") to manage DNS for this site. For this domain, I went to “CloudFlare Settings” and clicked the “Performance Settings” tab. On that screen, I told CloudFlare to cache resources for 24 days (very aggressive), and minify JS, CSS, &amp; HTML. I realize, doing this after the HTML compression trick above is probably overkill. I may review that, do some testing and remove the compression from Jekyll. We&#8217;ll see.
 
 ![Screenshot showing 99/100 Google Page Speed Score](/images/99-100-google-page-speed.jpg "Google Page Speed")
 
