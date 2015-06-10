@@ -17,7 +17,7 @@ paginate: 8
 paginate_path: "/page:num/"
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 sass:
   style: compressed
 gems:
