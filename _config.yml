@@ -20,3 +20,5 @@ paginate_path: "/page:num/"
 markdown: redcarpet
 sass:
   style: compressed
+gems:
+  - jekyll-redirect-from
