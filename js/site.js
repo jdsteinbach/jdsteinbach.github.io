@@ -78,3 +78,21 @@ function loadCSS( href, before, media, callback ){
 }
 
 loadCSS( "/css/main.css" );
+
+// Load CB data
+
+/**
+ * CB data
+ */
+
+jQuery(document).ready(function($){
+	$.ajax({
+		url: 'http://cb.jdsteinbach.com/api/',
+	}).done(function(data) {
+		if ( data.sold.length > 0 && data.days_left.length > 0 ) {
+			output = '<p>Shirts Sold: <b>'+ data.sold +'</b></p>';
+			output += '<p>Days Left to Order: <b>'+ data.days_left +'</b></p>';
+			$('#available').html(output);
+		}
+	});
+});

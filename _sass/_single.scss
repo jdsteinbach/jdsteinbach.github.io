@@ -131,3 +131,14 @@
 		opacity: 1;
 	}
 }
+
+#available {
+	text-align: center;
+	p {
+		@extend %ssh;
+		display: inline-block;
+		vertical-align: middle;
+		@include scale-padding(ssh, 1, 1, 1, 1);
+		margin-bottom: 0;
+	}
+}

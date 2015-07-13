@@ -22,6 +22,16 @@ img {
 	figure > & {
 		display: block;	
 	}
+
+	.post-content a > & {
+		display: block;
+		transition: opacity .25s;
+		opacity: .9;
+	}
+
+	.post-content a:hover > & {
+		opacity: 1;
+	}
 }
 
 figcaption {
