@@ -138,7 +138,7 @@
 		@extend %ssh;
 		display: inline-block;
 		vertical-align: middle;
-		@include scale-padding(ssh, 1, 1, 1, 1);
+		@include scale-padding(ssh, 0, 1, 1, 1);
 		margin-bottom: 0;
 	}
 }
