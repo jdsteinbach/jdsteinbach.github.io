@@ -8,4 +8,4 @@ categories:
 format: link
 outbound_url: /css-animation/
 ---
-Read my article &#8220;<a href="/css-animation/" title="Planning & Implementing Meaningful UI Animations" target="_blank">Planning &amp; Implementing Meaningful UI Animations</a>&#8221; at SitePoint.
+Check out my slide deck &#8220;<a href="/css-animation/" title="Planning & Implementing Meaningful UI Animations" target="_blank">Planning &amp; Implementing Meaningful UI Animations</a>&#8221; for a helpful introduction to CSS animation.
