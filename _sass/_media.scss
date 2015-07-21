@@ -27,6 +27,8 @@ img {
 		display: block;
 		transition: opacity .25s;
 		opacity: .9;
+		margin-right: auto;
+		margin-left: auto;
 	}
 
 	.post-content a:hover > & {
