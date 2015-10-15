@@ -5,6 +5,8 @@
 	<meta name="theme-color" content="#5CACC4">
 	<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.author_name }}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+	<meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.author_name }}" />
+	<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
 	<style type="text/css">
 	{% capture include_to_scssify %}
 		{% include main.scss %}
