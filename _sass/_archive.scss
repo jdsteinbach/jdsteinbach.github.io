@@ -75,7 +75,7 @@
 .pagination {
 	@extend %sm;
 	@include scale-padding(sm, 1, 0, 0, 0);
-	border: 1px solid $grey-color-light;
+	border: 1px solid $brand-color;
 	border-width: 1px 0;
 	// display: flex;
 	// flex-direction: row;
@@ -108,4 +108,12 @@
 	// .next {
 	// 	float: right;
 	// }
+}
+
+@if $dark {
+	.category-archive + .sidebar p {
+		background-color: $text-color;
+		@include scale-padding(p, 1, 1, 1, 1);
+		border-radius: 3px;
+	}
 }

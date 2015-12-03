@@ -103,10 +103,10 @@ I’ve seen projects that use a number of extendable classes/placeholders to mim
 .error-box {
   @extend %red-box;
 }
-// You'd expect .error-box to be 2nd,
+/* You'd expect .error-box to be 2nd,
 but since the selector is hoisted
 to the %placeholder location,
-it ends up first and won't be red.
+it ends up first and won't be red.*/
 ```
 
 This brings up the front-end game of [“Optimization Whack-A-Mole”](css/css-repetition-basically-whack-mole/) - whenever you remove duplication from one part of your styles, it shows up somewhere else. If you avoid repeating declarations (like with `@extend`), you’ll repeat selectors. If you avoid repeating selectors (like with `@mixin`s), you’ll repeat declarations. If you use utility classes, you’ll repeat classes throughout your HTML markup. All that to say, bending `@extend` to mimic utility classes doesn’t really shorten anything. It only adds cascade issues and selector repetition.

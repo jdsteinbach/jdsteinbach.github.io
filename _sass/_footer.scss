@@ -1,7 +1,7 @@
 .site-footer {
-	border-top: 1px solid $grey-color-light;
+	border-top: 1px solid $brand-color;
 	@include scale-padding(p, 1, false, 1, false);
-	background: rgba($background-color, 0.85);
+	background: rgba($background-color, 0.9);
 }
 
 .footer-heading {

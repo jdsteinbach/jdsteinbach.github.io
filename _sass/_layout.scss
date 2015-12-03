@@ -4,6 +4,11 @@ body {
 	color: $text-color;
 	background-color: $background-color;
 	-webkit-text-size-adjust: 100%;
+
+	@if $dark {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: antialiased;
+	}
 }
 
 .wrapper {
@@ -25,7 +30,7 @@ body {
 .page-content {
 	.wrapper {
 		@include scale-padding(p, 4, false, false, false);
-		background: rgba($background-color, 0.85);
+		background: rgba($background-color, 0.9);
 
 		@include breakpoint(medium) {
 			@include scale-padding(p, 2, false, false, false);

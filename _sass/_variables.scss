@@ -1,6 +1,5 @@
 $base-font-family: Texta, Avenir Next, Avenir, Verdana, sans-serif;
 
-$color-blue: #5CACC4;
 $color-blue: #205D84;
 $color-red: #FF5254;
 $color-green: #8CD19D;
@@ -9,13 +8,31 @@ $color-orange: #FCB653;
 $text-color: #464646;
 $background-color: #fdfdfd;
 $brand-color: $color-blue;
-$blog-color: darken($color-blue, 10%);
 $blog-color: $color-blue;
 $blog-accent: darken(adjust-hue($color-blue, 30deg), 15%);
 
 $grey-color: #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark: darken($grey-color, 25%);
+
+$dark: true;
+
+@if $dark {
+  $color-blue: scale-color(#205D84, $lightness: 75%);
+  $color-red: #FF5254;
+  $color-green: #8CD19D;
+  $color-orange: #FCB653;
+
+  $text-color: #fdfdfd;// #464646;
+  $background-color: #4d4d4d;// #205D84;//#fdfdfd;
+  $brand-color: $color-blue;
+  $blog-color: $color-blue;
+  $blog-accent: $color-blue;
+
+  $grey-color: #a4a4a4;
+  $grey-color-light: darken($grey-color, 40%);
+  $grey-color-dark: lighten($grey-color, 25%);
+}
 
 $susy: (
 	container: 100%,
