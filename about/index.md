@@ -7,7 +7,7 @@ menu_order: 40
 ---
 <img class="alignleft" src="/images/headshot.png" alt="James Steinbach: Profile Photo" width="200" height="174" style="shape-outside:url(/images/headshot.png);shape-margin:1em;"/>
 
-I&#8217;m a Chicago native living in Charlotte, NC, but yearning for the mountains of Denver. When I&#8217;m not building websites, I love to read Cussler, Clancy, Crichton, Baldacci, etc. I&#8217;m usually up for a good laugh: Brooklyn 99, Mindy Project, Tonight Show, Colbert Report. Time with [my wife Audrey][1] & [newborn daughter][2] is always a delight. And I rarely say no to fantastic food & drink.
+I&#8217;m a Chicago native currently enjoying the mountains of Denver after a long sojourn in the Carolinas. When I&#8217;m not building websites, I love to read Clancy, Crichton, Baldacci, etc. I&#8217;m usually up for a good laugh: Brooklyn 99, Mindy Project, Tonight Show, Late Show. Time with [my wife Audrey][1] & [newborn daughter][2] is always a delight. And I rarely say no to fantastic food &amp; drink.
 
 When I am building building websites, I love developing clever animations: motion is one of the best ways to delight users and help them understand their interaction with content. I want to make content accessible to every user, so responsive design is a must. I also want to keep things organized for future me or future developers, so I&#8217;m using Sass as much as possible to keep style code clean and light.
 

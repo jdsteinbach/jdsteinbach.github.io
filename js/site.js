@@ -93,7 +93,7 @@ loadCSS( "/css/main.css" );
 
 jQuery(document).ready(function($){
 	$.ajax({
-		url: 'http://cb.jdsteinbach.com/api/',
+		url: '//cb.jdsteinbach.com/api/',
 	}).done(function(data) {
 		if ( data.sold.length > 0 && data.days_left.length > 0 ) {
 			output = '<p>Shirts Sold: <b>'+ data.sold +'</b></p>';
