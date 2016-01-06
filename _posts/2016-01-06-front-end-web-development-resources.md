@@ -18,6 +18,18 @@ Bi-weekly collection of all-around development articles, topics include CSS, JS
 
 Daily email with 5 links related to design, development & tech.
 
+### <a title="Subscribe to Responsive Design Weekly" href="http://responsivedesignweekly.us4.list-manage.com/subscribe?u=559bc631fe5294fc66f5f7f89&id=df65b6d7c8" target="_blank">Responsive Design Weekly*</a>
+
+Weekly list of responsive design links, includes interviews, tutorials & libraries.
+
+### <a title="Subscribe to CSS Weekly" href="http://css-weekly.com/" target="_blank">CSS Weekly</a>
+
+Weekly email of CSS links, includes tutorials, articles & CSS3 advances.
+
+### <a title="Subscribe to Web Design Weekly" href="http://web-design-weekly.com/" target="_blank">Web Design Weekly*</a>
+
+Weekly email, includes HTML, CSS, pre-processors & JS.
+
 ### <a title="Subscribe to Versioning" href="http://www.sitepoint.com/versioning/" target="_blank">Versioning</a>
 
 Daily email from <a title="SitePoint: Web Development Resources" href="http://sitepoint.com" target="_blank">sitepoint.com</a>, includes front-end, back-end & design articles.
@@ -26,17 +38,9 @@ Daily email from <a title="SitePoint: Web Development Resources" href="http://si
 
 Weekly email of Sass-related links, includes articles, tutorials, events & books, curated by <a title="Stu Robson on Twitter" href="https://twitter.com/sturobson" target="_blank">Stu Robson</a>.
 
-### <a title="Subscribe to CSS Weekly" href="http://css-weekly.com/" target="_blank">CSS Weekly</a>
-
-Weekly email of CSS links, includes tutorials, articles & CSS3 advances.
-
-### <a title="Subscribe to Responsive Design Weekly" href="http://responsivedesignweekly.us4.list-manage.com/subscribe?u=559bc631fe5294fc66f5f7f89&id=df65b6d7c8" target="_blank">Responsive Design Weekly</a>
-
-Weekly list of responsive design links, includes interviews, tutorials & libraries.
-
 ### <a title="Read Open Web Platform Daily" href="http://webplatformdaily.org/" target="_blank">Open Web Platform Daily</a>
 
-Daily links on cutting-edge development topics. Note: at the end of each day, the post is hidden behind a paywall, so read promptly.
+Daily links on cutting-edge development topics. Note: at the end of each day, the post is hidden behind a paywall, so invest in this resource, or read it promptly.
 
 ### <a title="Subscribe to HTML5 Weekly" href="http://html5weekly.com/" target="_blank">HTML5 Weekly</a>
 
@@ -46,11 +50,7 @@ Weekly list of HTML5 links, includes spec discussions, polyfills & job postings.
 
 Weekly list of JS links, includes browser API news, tutorials, and polyfills.
 
-### <a title="Subscribe to Web Design Weekly" href="http://web-design-weekly.com/" target="_blank">Web Design Weekly*</a>
-
-Weekly email, includes HTML, CSS, pre-processors & JS.
-
-### <a title="Subscribe to Web Tools Weekly" href="http://webtoolsweekly.com/" target="_blank">Web Tools Weekly*</a>
+### <a title="Subscribe to Web Tools Weekly" href="http://webtoolsweekly.com/" target="_blank">Web Tools Weekly</a>
 
 Weekly curation of links, focused on JS & CSS libraries or frameworks.
 
@@ -68,31 +68,31 @@ Daily WordPress email, includes news, tutorials & opinions.
 
 ## Blogs
 
-### <a title="Read A List Apart" href="http://alistapart.com/" target="_blank">A List Apart*</a>
-
-Articles and tutorials on a wide range of topics including code, content, design & business.
-
 ### <a title="Read Smashing Magazine" href="http://www.smashingmagazine.com/" target="_blank">Smashing Magazine*</a>
 
 Articles and tutorials in the following topics: coding, design, mobile, graphics, UX design & WordPress.
-
-### <a title="Read SitePoint Articles" href="http://www.sitepoint.com/" target="_blank">SitePoint*</a>
-
-Articles on a wide variety of topics, including several languages (HTML, CSS/Sass, JS, PHP, Ruby), WordPress, UX & design. Sass developers should pay attention to <a title="Hugo Giraudel on Twitter" href="https://twitter.com/hugogiraudel" target="_blank">Hugo Giraudel</a>&#8217;s <a title="Hugo Giraudel's Articles on SitePoint" href="http://www.sitepoint.com/author/hgiraudel/" target="_blank">articles</a>. Also, <a title="Read James Steinbach's Articles on SitePoint" href="http://www.sitepoint.com/author/jsteinbach/" target="_blank">I write for SitePoint</a>.
 
 ### <a title="Read CSS Tricks" href="http://css-tricks.com/" target="_blank">CSS-Tricks*</a>
 
 All about CSS, written by <a title="Chris Coyier on Twitter" href="https://twitter.com/chriscoyier" target="_blank">Chris Coyier</a> and a number of industry-expert guest authors.
 
-### <a title="Read CSS Wizardy" href="http://csswizardry.com/" target="_blank">CSS Wizardry</a>
-
-<a title="Harry Roberts on Twitter" href="https://twitter.com/csswizardry" target="_blank">Harry Robert</a>&#8217;s blog, on CSS guidelines
-
 ### <a title="Read Brad Frost Web" href="http://bradfrostweb.com/" target="_blank">Brad Frost Web*</a>
 
 <a title="Brad Frost on Twitter" href="https://twitter.com/brad_frost" target="_blank">Brad Frost</a> writes great articles on content-first, responsive web design.
 
-### [David Walsh Blog][1]
+### <a title="Read A List Apart" href="http://alistapart.com/" target="_blank">A List Apart</a>
+
+Articles and tutorials on a wide range of topics including code, content, design & business.
+
+### <a title="Read SitePoint Articles" href="http://www.sitepoint.com/" target="_blank">SitePoint</a>
+
+Articles on a wide variety of topics, including several languages (HTML, CSS/Sass, JS, PHP, Ruby), WordPress, UX & design. Sass developers should pay attention to <a title="Hugo Giraudel on Twitter" href="https://twitter.com/hugogiraudel" target="_blank">Hugo Giraudel</a>&#8217;s <a title="Hugo Giraudel's Articles on SitePoint" href="http://www.sitepoint.com/author/hgiraudel/" target="_blank">articles</a>. Also, <a title="Read James Steinbach's Articles on SitePoint" href="http://www.sitepoint.com/author/jsteinbach/" target="_blank">I write for SitePoint</a>.
+
+### <a title="Read CSS Wizardy" href="http://csswizardry.com/" target="_blank">CSS Wizardry</a>
+
+<a title="Harry Roberts on Twitter" href="https://twitter.com/csswizardry" target="_blank">Harry Robert</a>&#8217;s blog, on CSS guidelines
+
+### <a title="Read David Walsh's Blog" href="http://davidwalsh.name/" target="_blank">David Walsh Blog</a>
 
 Articles and tutorials, primarily covering JS & CSS topics.
 
@@ -112,7 +112,7 @@ Great articles on web strategy and philosophy: more related to management than d
 
 Web developers with a penchant for typography should read this blog.
 
-### <a title="Read Typekit Practice" href="http://practice.typekit.com/" target="_blank">Typekit Practice</a>
+### <a title="Read Typekit Practice" href="http://practice.typekit.com/" target="_blank">Typekit Practice*</a>
 
 Practical case studies for using web-fonts well.
 
@@ -174,7 +174,19 @@ $13/mo to stream, $20/mo to download. Four very practical courses: Mobile-First 
 
 ## Podcasts
 
-Sorry, I don&#8217;t listen to podcasts. But, if I did…
+Sorry, I don&#8217;t listen to many podcasts. Here are the ones I do subscribe to:
+
+### <a title="Listen to ShopTalk" href="http://shoptalkshow.com/" target="_blank">ShopTalk*</a>
+
+<a href="http://chriscoyier.net/" title="Chris Coyier" target="_blank">Chris Coyier</a> &amp; <a href="http://daverupert.com/" title="Dave Rupert" target="_blank">Dave Rupert</a> talk about web development with guests. There are also jokes.
+
+### <a title="Listen to A Responsive Web Design Podcast" href="http://responsivewebdesign.com/podcast/" target="_blank">A Responsive Web Design Podcast</a>
+
+<a title="Karen McGrane" href="http://responsivewebdesign.com/about/#bio-mcgrane" target="_blank">Karen McGrane</a> &amp; <a title="Ethan Marcotte" href="http://responsivewebdesign.com/about/#bio-marcotte" target="_blank">Ethan Marcotte</a> interview guests on RWD-related front-end topics.
+
+### <a title="Listen to The Web Ahead" href="http://5by5.tv/webahead" target="_blank">The Web Ahead</a>
+
+<a title="Jen Simmons" href="http://twitter.com/jensimmons" target="_blank">Jen Simmons</a> hosts a podcast to help you keep up with the future of web development.
 
 ### <a title="Watch SassBites on YouTube" href="http://www.youtube.com/user/sassbites" target="_blank">SassBites*</a>
 
@@ -200,6 +212,4 @@ They cover all the major (and many minor) languages in their books.
 
 ## Work in Progress
 
-I&#8217;ll be updating this list as I add valuable resources to my intake. Please suggest your best development resources in the comments!
-
- [1]: http://davidwalsh.name/ "Read the David Walsh Blog"
+I&#8217;ll be updating this list as I add valuable resources to my intake.
