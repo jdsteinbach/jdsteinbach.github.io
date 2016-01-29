@@ -198,7 +198,7 @@ Micah Godbolt&#8217;s Sass video podcast.
 
 $99/year. Access to several dozen books on great topics: Code, Design, WordPress, Content, Freelancing & Graphics. Subscribing for a year lets you download all previously published books as well as two new books published each month during your subscription (PDF, ePub, Mobi).
 
-### <a title="Buy the A Book Apart Library" href="http://www.abookapart.com/collections/complete-library" target="_blank">A Book Apart Library*</a>
+### <a title="Buy the A Book Apart Library" href="http://www.abookapart.com/collections/standards-collection" target="_blank">A Book Apart Library*</a>
 
 $70 (eBooks); $140 (paperbacks). Eleven books by industry experts on several useful topics: HTML, CSS, Responsive Design, Content Strategy, Sass, Web Typography & more.
 

@@ -90,11 +90,7 @@ See the code in action:
   <a href="http://sassmeister.com/gist/c88f9357661530a02f9b">Play with this gist on SassMeister.</a>
 </p>
 
-&nbsp;
-
  [1]: http://css-tricks.com/media-queries-sass-3-2-and-codekit/ "Chris Coyier names his media queries after bears."
  [2]: http://blog.sass-lang.com/posts/184094-sass-33-is-released "Sass 3.3 Release"
  [3]: http://hugogiraudel.com/ "Hugo Giraudel - Sass Guru"
  [4]: http://www.sitepoint.com/css-sass-styleguide/#comment-1288013797 "My Current CSS and Sass Styleguide"
-
- <script src="http://static.sassmeister.com/js/embed.js" async></script>

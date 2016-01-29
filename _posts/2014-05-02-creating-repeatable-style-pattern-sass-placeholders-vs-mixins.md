@@ -46,8 +46,5 @@ Thanks to Hugo & Stuart &#8211; Hugo posted a [comment][1] with a cleaner versio
   <a href="http://sassmeister.com/gist/3e6b586921f9556856fd">Play with this gist on SassMeister.</a>
 </p>
 
-<script src="http://cdn.sassmeister.com/js/embed.js" async></script>
-
  [1]: http://jamessteinbach.com/css/sass/creating-repeatable-style-pattern-sass-placeholders-vs-mixins/#comment-63 "Read Hugo's comment"
  [2]: http://jamessteinbach.com/css/sass/creating-repeatable-style-pattern-sass-placeholders-vs-mixins/#comment-67 "Read Stuart's comment"
-
