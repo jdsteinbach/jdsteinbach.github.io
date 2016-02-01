@@ -9,6 +9,8 @@ categories:
 
 Well, I gave away the whole point of this post in the title. Before we dive in and look at the whole code, I'll explain the purpose of this function. A lot of posts will recommend you simply put `<?php echo date( 'Y' ); ?>` where the year is hardcoded into `footer.php`. That's fine, but it only gives you *this year* in your footer. It&#8217;s better to put the [range of years that your site's content spans](http://info.legalzoom.com/write-copyright-statement-website-21115.html), not merely the current year. The function we&#8217;ll look at here will display the entire range of years for all the posts and pages published on your site.
 
+*[Get the raw code from this Github gist](https://gist.github.com/jdsteinbach/e2646846ede81458f0c4).*
+
 
 ## Adding the `copyright_years()` function to your theme
 
@@ -100,3 +102,5 @@ The `return` statement uses ternary logic again. If `$earliest_date` and `$curre
 ## Conclusion
 
 Put these functions in your theme `functions.php` and call the right function from `footer.php`, and you&#8217;ve now got an always-correct copyright date range in the footer of your site. No more January updates for you! (Unless, of course, you change your theme: in that case, you&#8217;ll need to put these functions where they belong in that theme too.)
+
+*[Get the raw code from this Github gist](https://gist.github.com/jdsteinbach/e2646846ede81458f0c4).*
