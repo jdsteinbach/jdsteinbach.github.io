@@ -71,13 +71,14 @@ p>code {
 }
 
 code {
-	padding: .125em .25em;
 	@extend %sm;
+	@include scale-padding(sm, .25, .5, .25, .5);
 }
 
 pre {
-	padding: .5em;
-	@include scale-padding(p, .5, .5, .5, .5);
+	@extend %sm;
+	@include scale-margin(sm, false, false, 1, false);
+	@include scale-padding(sm, .5, .5, .5, .5);
 	overflow-x: scroll;
 
 	> code {

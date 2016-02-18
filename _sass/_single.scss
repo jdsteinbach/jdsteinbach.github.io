@@ -59,7 +59,7 @@
 		@include scale-margin(bq, 1, false, 0.5, false);
 	}
 
-	p, ul, ol, pre, blockquote,, .wp-caption {
+	p, ul, ol, blockquote, .wp-caption {
 		@extend %p;
 		margin-top: 0;
 		margin-bottom: 0;
