@@ -10,7 +10,7 @@ I often find myself needing to change an element from `display: none;` to `displ
 
 I’ve been able to work around that by using an animation instead of a transition:
 
-```
+~~~css
 @keyframes grow {
   0% {
     display: none;
@@ -27,7 +27,7 @@ I’ve been able to work around that by using an animation instead of a transiti
   }
 }
 /* Add your own prefixes */
-```
+~~~
 
 I use the first percent of the animation to change the `display` value, then the next 99% to change the transition-able properties.
 

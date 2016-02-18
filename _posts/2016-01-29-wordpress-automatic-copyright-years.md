@@ -16,9 +16,8 @@ Well, I gave away the whole point of this post in the title. Before we dive in a
 
 Let's take a look at the code you&#8217;ll need to copy into your theme&#8217;s `functions.php` file (without the open/close PHP tags):
 
-```php
+~~~php
 <?php
-
 if ( ! function_exists( 'get_copyright_years' ) ) {
   function get_copyright_years( $earliest_id = null ) {
     $earliest_args = array(
@@ -47,7 +46,7 @@ if ( ! function_exists( 'copyright_years' ) ) {
   }
 }
 ?>
-```
+~~~
 
 After you&#8217;ve added those two functions to `functions.php`, open `footer.php` and delete the year if it&#8217;s hardcoded in. Replace it with `<?php copyright_years(); ?>`. This function only shows the years, no &copy; or other text: you can keep whatever copyright / &#8220;all rights reserved&#8221; text you like.
 
@@ -55,25 +54,23 @@ After you&#8217;ve added those two functions to `functions.php`, open `footer.ph
 
 The first thing I should point out is that there are actually two functions here. The first function is `get_copyright_years()` and only *returns* the date range. The second function is `copyright_years()` and *echoes* the date range. If you&#8217;re going to use this function in plain HTML in your footer file, use `<?php copyright_years(); ?>`:
 
-```php
+~~~php
 <footer class="site-footer">
 	<p class="footer-credits">&copy; <?php copyright_years(); ?>. All Rights Reserved.</p>
 </footer>
-
 <?php wp_footer();?>
-```
+~~~
 
 If you&#8217;re going to use this function in a line of PHP in your footer file, use `get_copyright_years()` instead. The following code shows how you might use it inside a translatable string function:
 
-```php
+~~~php
 <footer class="site-footer">
 	<p class="footer-credits">
 		<?php printf( __( '&copy; %s. All Rights Reserved.', 'text-domain' ), get_copyright_years() ); ?>
 	</p>
 </footer>
-
 <?php wp_footer();?>
-```
+~~~
 
 Technically you&#8217;re done now, you can quit reading this post. But if you&#8217;re curious how this function works, stay with me.
 

@@ -15,7 +15,7 @@ I’m in the “use `@extend` wisely” team. [😀](https://twitter.com/Una/sta
 
 Selector bloat is a real concern, but it usually comes from one of two practices: extending a nested selector, or extending a class that’s used more frequently than expected. When there’s nesting on the extended block and the extender’s selector, Sass is forced to create unnecessary duplicates with the nesting:
 
-```scss
+~~~scss
 // Nested Input
 header .class1 {
   color: red;
@@ -33,13 +33,13 @@ header footer .class2,
 footer header .class2 {
   color: red;
 }
-```
+~~~
 
 ## Only extend placeholders.
 
 As I mentioned above, the 2nd main cause of `@extend` selector bloat is extending a class that’s used more frequently than originally planned or expected. We can solve this concern by limiting `@extend` to Sass `%placeholder` selectors, and not actual CSS selectors (classes, tags, IDs, attributes, etc). If you try to extend an actual selector, and you or another dev uses that elsewhere in the code, you’ll end up extending all those additional instances of the class.
 
-```scss
+~~~scss
 // Initial Selector to Extend
 .shadow-box {
   background-color: #fff;
@@ -57,9 +57,9 @@ As I mentioned above, the 2nd main cause of `@extend` selector bloat is extendin
   // Yikes! I hope .comment-card is
   // meant to be #eee on .home-page…
 }
-```
+~~~
 
-```scss
+~~~scss
 // Better
 %shadow-box {
   background-color: #fff;
@@ -77,7 +77,7 @@ As I mentioned above, the 2nd main cause of `@extend` selector bloat is extendin
 .comment-card {
   @extend %shadow-box;
 }
-```
+~~~
 
 ## Try to use an actual selector instead.
 
@@ -85,7 +85,7 @@ Another important question I ask myself when I’m considering using `@extend` i
 
 I’ve seen projects that use a number of extendable classes/placeholders to mimic single-responsibility utility classes, then extend each of those utility selectors wherever needed to attach the right styles to the actual selectors. This creates a hodge-podge of selector duplication. You see, `@extend` doesn’t repeat styles where the directive is written: it hoists the extender’s selector up to the location of the original extended object. If you’re not aware of this, you’ll likely be surprised at the way using `@extend` appears to “break” your cascade.
 
-```scss
+~~~scss
 %red-box {
   border: 2px solid red;
   color: darken(red, 30%);
@@ -107,7 +107,7 @@ I’ve seen projects that use a number of extendable classes/placeholders to mim
 but since the selector is hoisted
 to the %placeholder location,
 it ends up first and won't be red.*/
-```
+~~~
 
 This brings up the front-end game of [“Optimization Whack-A-Mole”](css/css-repetition-basically-whack-mole/) - whenever you remove duplication from one part of your styles, it shows up somewhere else. If you avoid repeating declarations (like with `@extend`), you’ll repeat selectors. If you avoid repeating selectors (like with `@mixin`s), you’ll repeat declarations. If you use utility classes, you’ll repeat classes throughout your HTML markup. All that to say, bending `@extend` to mimic utility classes doesn’t really shorten anything. It only adds cascade issues and selector repetition.
 

@@ -24,10 +24,12 @@ The two examples above never need prefixes ever, but you really shouldn&#8217;t 
 
 Everybody but IE8 likes `opacity`. IE8 can do opacity with `filter: alpha(opacity=(50));`, but that&#8217;s hardly ideal. You could use a mixin for this, or (as I&#8217;d recommend) just let IE8 be opaque. If readability of your site *depends* on opacity, you should already be using Modernizr to detect support & deliver a safe fallback. Give IE8 that fallback. IMO, a much bigger issue is IE8&#8217;s lack of support for `rgba()` and `hsla()` colors. If you&#8217;re using those, you should definitely be providing a good fallback. Most of the time, I see fallbacks like this:
 
-    .element {
-      color: rgb(243, 107, 33);
-      color: rgba(243, 107, 33 .5);
-    }
+~~~css
+.element {
+  color: rgb(243, 107, 33);
+  color: rgba(243, 107, 33 .5);
+}
+~~~
 
 If you need to keep color values closer than that, what I&#8217;d recommend for `rgba()` fallback is using Sass&#8217;s `mix()` function to blend the foreground (transparent) and background colors. I&#8217;ve got a <a title="RGBA Color Fallback Mixin on Sassmeister" href="http://sassmeister.com/gist/b687d319b542d0fadb17" target="_blank">working version of that mixin in this Sassmeister gist</a>. (I&#8217;d break it down for you, but I&#8217;m ready to wrap this post up. Look for a future post explaining its inner workings, maybe.)
 

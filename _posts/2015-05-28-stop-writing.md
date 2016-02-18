@@ -8,9 +8,9 @@ categories:
   - Misc
 ---
 
-It&#8217;s super-easy to write posts telling other devs to &#8220;stop using&#8221; some tool, library, or software. I mean, it must be: look at all the posts as we devs (collectively) have written. 
+It&#8217;s super-easy to write posts telling other devs to &#8220;stop using&#8221; some tool, library, or software. I mean, it must be: look at all the posts as we devs (collectively) have written.
 
-Problem is, those aren&#8217;t the best posts for us to be writing. Here&#8217;s why: who&#8217;s going to read those posts? Other devs, sure. But who? We don&#8217;t know. Which means, we don&#8217;t know their constraints, their background, their clients, their agency, their coworkers, their dev environment, their &hellip; well, you get the point. 
+Problem is, those aren&#8217;t the best posts for us to be writing. Here&#8217;s why: who&#8217;s going to read those posts? Other devs, sure. But who? We don&#8217;t know. Which means, we don&#8217;t know their constraints, their background, their clients, their agency, their coworkers, their dev environment, their &hellip; well, you get the point.
 
 That designer - you don&#8217;t know if he&#8217;s required by his agency to use Photoshop instead of Sketch, or if he&#8217;s required by his client to use &#8220;flat design.&#8221;
 
