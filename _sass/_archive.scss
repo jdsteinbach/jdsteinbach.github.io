@@ -43,8 +43,8 @@
 	background-position: right center, center center;
 	-webkit-background-clip: text;
 	background-position: center center;
-	-webkit-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
+	-webkit-transition: color 0.3s ease-in-out, background-position 0.3s ease-in-out;
+	transition: color 0.3s ease-in-out, background-position 0.3s ease-in-out;
 	-webkit-text-fill-color: transparent;
 
 	&:hover {
