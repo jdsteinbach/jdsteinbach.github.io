@@ -79,6 +79,8 @@ pre {
 	@extend %sm;
 	@include scale-margin(sm, false, false, 1, false);
 	@include scale-padding(sm, .5, .5, .5, .5);
+	border: 1px solid scale-color($background-color, $lightness: 20%);
+	border-radius: 3px;
 	overflow-x: scroll;
 
 	> code {
