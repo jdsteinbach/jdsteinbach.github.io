@@ -5,13 +5,13 @@
 }
 .sidebar {
 	display: none;
-	
+
 	@include breakpoint(medium) {
 		display: block;
 		@include span(1 at 1);
 		@include scale-padding(p, 1, false, false, false);
 	}
-	
+
 	.post-meta {
 		span {
 			@include breakpoint(medium) {
@@ -20,6 +20,7 @@
 		}
 	}
 }
+
 .post-header {
 	@include scale-margin(p, false, false, 1, false);
 
@@ -58,7 +59,7 @@
 		@include scale-margin(bq, 1, false, 0.5, false);
 	}
 
-	p, ul, ol, pre, blockquote, .highlight, .wp-caption {
+	p, ul, ol, pre, blockquote,, .wp-caption {
 		@extend %p;
 		margin-top: 0;
 		margin-bottom: 0;
