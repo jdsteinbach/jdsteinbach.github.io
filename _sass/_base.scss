@@ -88,7 +88,7 @@ pre {
 	}
 }
 
-pre:not(.highlight) {
+pre {
 		background-color: scale-color($background-color, $lightness: -10%);
 
 	> code {
