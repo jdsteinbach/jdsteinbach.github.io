@@ -3,6 +3,7 @@ title: 404
 author: James
 layout: page
 permalink: 404.html
+exclude: true
 ---
 
 ## Sorry! There&#8217;s no page here.
