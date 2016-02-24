@@ -13,40 +13,37 @@ You&#8217;re writing a blog post or other HTML document and you want to number y
 We&#8217;ll start by checkout the code that makes this happen. What you see below is a Sass mixin, but you can do this with just the CSS output if you like.
 
 ~~~scss
-$headings: (
-  h2: upper-alpha,
-  h3: decimal
-);
+@mixin generate-outline($reset-element: body, $list-style: decimal) {
+  $counter: unique-id();
 
-@mixin generate-outline( $headings ) {
-  @each $el, $style in $headings {
-    $counter: unique-id();
-    $int: index(map-keys($headings), $el);
-    $prev-el: if($int > 1, nth(map-keys($headings), $int - 1), body);
+  counter-increment: $counter;
 
-    #{$prev-el} {
+  &::before {
+    content: counter($counter, $list-style)'. ';
+  }
+
+  @at-root {
+    #{$reset-element} {
       counter-reset: $counter;
-    }
-
-    #{$el} {
-      counter-increment: $counter;
-
-      &::before {
-        $style: if($style, $style, decimal);
-        content: counter($counter, $style)'. ';
-      }
     }
   }
 }
 
-@include generate-outline($headings);
+// How to use it
+h2 {
+  @include generate-outline(h1, upper-alpha);
+}
+
+h3 {
+  @include generate-outline(h2);
+}
 ~~~
 
 ## Setting Up Defaults
 
-The first thing we&#8217;re doing is setting the `$headings` map to hold our config. Each line in the map has a **key** which is the selector you want to attach an outline number to, and a **value** which is the style you want the number to appear in. The number style should be chosen from the [CSS `list-style-type` options](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type#Values).
+You&#8217;ll use the `generate-outline()` mixin on each selector you want to number. The mixin takes two optional arguments: `$reset-element` and `$list-style`. `$reset-element` is the selector that you want to restart your numbering at. For example, if you want to number your `h3` elements, but restart that count everytime your markup includes an `h2`, you would call `@include generate-outline(h2);` in your `h3` declaration block. If you leave `$reset-element` empty, the mixin will default to `body`.
 
-The Sass mixin we&#8217;ll use next expects items in this map to be in the same order as your intended content hierarchy. In other words, in our example here, every `h2` will reset the count for the `h3` elements. If we added `h4: lower-roman` to the map, every `h3` would reset the count for `h4` elements.
+The second argument is `$list-style` and should be a [valid value for the CSS `list-style-type` property](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type#Values). If you leave it blank, `$list-style` will default to `decimal`.
 
 ## Using CSS Counters
 
@@ -56,7 +53,7 @@ Each level of counter needs a unique name. In the Sass above, we&#8217;re creati
 
 We can increment that counter by using `counter-increment: $name;` on the element that&#8217;ll show the counter&#8217;s number.
 
-We&#8217;ll use CSS `content` to display that counter on each heading: `content: counter($name)'. ';`. Notice that we&#8217;re putting the string `'. '` on the end of each number. This makes sure we get &#8220;A. Heading&#8221; instead of &#8220;AHeading.&#8221;
+We&#8217;ll use the `::before` pseudoelement and the CSS `content` property to display that counter on each heading: `content: counter($name)'. ';`. Notice that we&#8217;re putting the string `'. '` on the end of each number. This makes sure we get &#8220;A. Heading&#8221; instead of &#8220;AHeading.&#8221;
 
 For the 2nd level of numbered headings, we&#8217;ll need to reset that counter every time an element in the 1st level of headings goes by. The Sass mixin gets the position of the current level in the `$headings` map - if it&#8217;s a 2nd (or deeper) level counter, the mixin will get the next element above it, and use that element to reset the counter. If the current element is the first element in the loop, the mixin will just attach `counter-reset: $name;` to the `body` element.
 
