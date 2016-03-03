@@ -54,12 +54,15 @@
     margin-top: .15em;
     position: absolute;
     top: 0; left: 1em;
+    -webkit-transform-origin: left top;
     transform-origin: left top;
+    -webkit-transition: transform .25s ease-in-out, color .25s;
     transition: transform .25s ease-in-out, color .25s;
   }
 
   &.active-input label {
-    transform: translateY(-80%) scale(.8);
+    -webkit-transform: translateY(-80%) scale(.8);
+    -transform: translateY(-80%) scale(.8);
   }
 }
 
@@ -68,6 +71,7 @@ input {
   @include scale-padding(p, 0, .5, 0, .5);
   background-color: transparent;
   border: 1px solid $brand-color;
+  border-radius: 0;
   color: $text-color;
   display: block;
   font-family: inherit;
@@ -93,11 +97,14 @@ input {
 input[type="submit"] {
   @include scale-margin(p, false, 0, 1, 0);
   @include scale-padding(p, 0, 1.5, 0, 1.5);
+  -webkit-appearance: none;
   background-color: $brand-color;
   border: none;
+  border-radius: 0;
   box-shadow: none;
   color: $background-color;
   font-weight: bold;
+  -webkit-transition: background-color .25s, color .25s;
   transition: background-color .25s, color .25s;
   text-transform: uppercase;
   width: 100%;
