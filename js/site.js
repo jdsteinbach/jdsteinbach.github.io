@@ -85,6 +85,30 @@ function loadCSS( href, before, media, callback ){
 
 loadCSS( "/css/main.css" );
 
+// Control form fields
+(function($) {
+  var $form_inputs = $('.mc-field-group').find('textarea, input');
+
+  $form_inputs.each(function() {
+    $li = $(this).closest('.mc-field-group');
+    if ( $(this)[0].value === '' ) {
+      $li.removeClass('active-input');
+    }
+  });
+
+  $form_inputs.on('change focus', function() {
+    $li = $(this).closest('.mc-field-group');
+    $li.addClass('active-input');
+  });
+
+  $form_inputs.on('blur', function() {
+    $li = $(this).closest('.mc-field-group');
+    if ( $(this)[0].value === '' ) {
+      $li.removeClass('active-input');
+    }
+  });
+})(jQuery);
+
 // Load CB data
 
 /**
