@@ -1,42 +1,59 @@
-$base-font-family: Texta, Avenir Next, Avenir, Verdana, sans-serif;
+/*
+ * COLORS
+ * From: http://www.colourlovers.com/palette/38562/Hands_On
+ */
+$color-blue:        #2790B0;
+$color-blue-dark:   #2B4E72;
 
-$color-blue: #205D84;
-$color-red: #FF5254;
-$color-green: #8CD19D;
-$color-orange: #FCB653;
+$color-green:       #94BA65;
+$color-green-dark:  #69895c;
 
-$text-color: #464646;
-$background-color: #fdfdfd;
-$brand-color: $color-blue;
-$blog-color: $color-blue;
-$blog-accent: darken(adjust-hue($color-blue, 30deg), 15%);
+$color-red:         #a9240a;
+$color-red-dark:    #673712;
 
-$grey-color: #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark: darken($grey-color, 25%);
+$color-gray:        #4E4D4A;
+$color-gray-dark:   #353432;
 
-$dark: true;
+$color-text:        $color-gray;
+$color-text-alt:    $color-gray-dark;
+$color-text-accent: $color-blue-dark;
 
-@if $dark {
-  $color-blue: scale-color(#205D84, $lightness: 75%);
-  $color-red: #FF5254;
-  $color-green: #8CD19D;
-  $color-orange: #FCB653;
+$color-link:        $color-blue;
+$color-link-alt:    $color-blue-dark;
 
-  $text-color: #fdfdfd;// #464646;
-  $background-color: #4d4d4d;// #205D84;//#fdfdfd;
-  $brand-color: $color-blue;
-  $blog-color: $color-blue;
-  $blog-accent: $color-blue;
+$color-link-2:      $color-green;
+$color-link-2-alt:  $color-green-dark;
 
-  $grey-color: #a4a4a4;
-  $grey-color-light: darken($grey-color, 40%);
-  $grey-color-dark: lighten($grey-color, 25%);
-}
+$color-background:  scale-color($color-link, $lightness: 95%);
 
-$susy: (
-	container: 100%,
-	columns: 1 2.618,
-	gutters: 1 / 2.618,
-	output: isolate
-);
+/*
+ * BORDERS
+ */
+$border-color:           mix($color-text, $color-background);
+$border-default:         1px solid $border-color;
+$border-radius-default:  3px;
+
+/*
+ * FONTS
+ */
+$font-body:     freight-text-pro, Palatino, Palatino Linotype, serif;
+$font-headline: lust, Palatino, Palatino Linotype, serif;
+$font-code:     Input Mono, InputMono, monotype;
+
+$startsmall: true;
+@include remove-breakpoint(xlarge);
+
+@include add-breakpoint(default, 0em, 1.2rem, 1.5, major-scale);
+@include add-breakpoint(medium, 30em, 1.4rem, 1.618, pentatonic);
+@include add-breakpoint(large, 60em, 1.6rem, 1.618, major-triad);
+@include add-breakpoint(xlarge, 90em, 1.8rem, 1.618, major-triad);
+
+@include set-hierarchy(sm p blockquote subtitle null title skip hero);
+@include set-hierarchy(sm p blockquote subtitle title hero);
+
+@include type-tune( extend );
+
+/*
+ * LAYOUT
+ */
+$max-width: 45em;

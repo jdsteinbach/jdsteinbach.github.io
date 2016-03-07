@@ -1,0 +1,29 @@
+button,
+.button,
+[type="submit"] {
+  @extend %tt-sm;
+  @include scale-padding(sm, 1, 2, 1, 2);
+  -webkit-appearance: none;
+  background-color: $color-link;
+  border: none;
+  border-radius: $border-radius-default;
+  box-shadow: none;
+  color: $color-background;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &.button-alt {
+    background-color: $color-link-2;
+  }
+
+  @include haf {
+    background-color: $color-link-alt;
+
+    &.button-alt {
+      background-color: $color-link-2-alt;
+    }
+  }
+}

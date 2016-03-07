@@ -7,7 +7,6 @@ layout: compress
 	{% include head.html %}
 
 	<body>
-		<div id="particles"></div>
 
 		{% include header.html %}
 
@@ -33,31 +32,6 @@ layout: compress
 		<script async src="/js/site.js"></script>
 		<script async src="//cdn.sassmeister.com/js/embed.js" async></script>
 		<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-		<script>
-			(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()
-
-		// Track basic JavaScript errors
-		window.addEventListener('error', function(e) {
-		  _gaq.push([
-		    '_trackEvent',
-		    'JavaScript Error',
-		    e.message,
-		    e.filename + ':  ' + e.lineno,
-		    true
-		  ]);
-		});
-
-		// Track AJAX errors (jQuery API)
-		jQuery(document).ajaxError(function(e, request, settings) {
-		  _gaq.push([
-		    '_trackEvent',
-		    'Ajax error',
-		    settings.url,
-		    e.result,
-		    true
-		  ]);
-		});
-	</script>
 	</body>
 
 </html>

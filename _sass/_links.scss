@@ -1,0 +1,31 @@
+a {
+  color: $color-link;
+  text-decoration: none;
+  -webkit-transition: color .25s, opacity .25s, border .25s, -webkit-transform .25s ease-in-out;
+  transition: color .25s, opacity .25s, border .25s, transform .25s ease-in-out;
+
+  @include haf {
+    color: $color-link-alt;
+  }
+
+  .post-content p & {
+    border-bottom: 1px solid currentColor;
+  }
+}
+
+h2, h3 {
+  &[id] {
+    &::after {
+      content: ' #';
+      opacity: 0;
+      -webkit-transition: opacity .25s;
+      transition: opacity .25s;
+    }
+
+    @include haf {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
