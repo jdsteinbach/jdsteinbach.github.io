@@ -38,7 +38,7 @@ function loadCSS( href, before, media, callback ){
 	return ss;
 }
 
-loadCSS( "/css/main.css" );
+// loadCSS( "/css/main.css" );
 
 // Control form fields
 (function($) {
