@@ -1,18 +1,18 @@
 ---
-title: Setting Up Lets Encrypt with VestaCP on Digital Ocean
+title: Setting Up Let’s Encrypt with VestaCP on Digital Ocean
 author: James Steinbach
 layout: post
 permalink: /misc/letsencrypt-vesta/
 categories:
   - Misc
-excerpt: Instructions for adding new Lets Encrypt SSL certs to domains managed by VestaCP on a Digital Ocean (Ubuntu 14) server.
+excerpt: Instructions for adding new Let&apos;s Encrypt SSL certs to domains managed by VestaCP on a Digital Ocean (Ubuntu 14) server.
 ---
 
 Ok, I&#8217;ll be totally honest here. I&#8217;m writing this post mostly for myself: I need an easy place to keep these instructions for setting up new SSL certificates. If they help you, that&#8217;s awesome. If not, hopefully there&#8217;s [another post here](https://jdsteinbach.com) that you can learn from.
 
 ## Installing LetsEncrypt
 
-First step: install the Lets Encrypt tool on your server. SSH into your server, `cd` to the root dir (where you probably landed as soon as you SSHed in), and run the these commands:
+First step: install the Let&apos;s Encrypt tool on your server. SSH into your server, `cd` to the root dir (where you probably landed as soon as you SSHed in), and run the these commands:
 
 ~~~bash
 git clone https://github.com/letsencrypt/letsencrypt
@@ -22,7 +22,7 @@ cd letsencrypt
 
 This will take time to install a bunch of packages, then give you a success message. You should only does these steps once. Every time you want to secure another domain on your VestaCP account, follow the next section.
 
-## Adding Lets Encrypt Certificates
+## Adding Let&apos;s Encrypt Certificates
 
 In all of these commands, replace `DOMAIN_GOES_HERE` with the domain you want to secure and `YOUR_VESTA_USERNAME` with your VestaCP username.
 
@@ -66,7 +66,7 @@ The previous steps saved those details to a series of files in `/home/USERNAME/c
 rm /home/YOUR_VESTA_USERNAME/conf/web/ssl.DOMAIN_GOES_HERE.*
 ~~~
 
-In place of those files you just deleted, you&#8217;ll now create a series of symlinks to the originals created by Lets Encrypt:
+In place of those files you just deleted, you&#8217;ll now create a series of symlinks to the originals created by Let&apos;s Encrypt:
 
 ~~~shell
 ln -s /etc/letsencrypt/live/DOMAIN_GOES_HERE/fullchain.pem /home/YOUR_VESTA_USERNAME/conf/web/ssl.DOMAIN_GOES_HERE.pem
