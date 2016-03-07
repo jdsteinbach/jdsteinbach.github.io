@@ -10,7 +10,7 @@ excerpt: Instructions for adding new Let&apos;s Encrypt SSL certs to domains man
 
 Ok, I&#8217;ll be totally honest here. I&#8217;m writing this post mostly for myself: I need an easy place to keep these instructions for setting up new SSL certificates. If they help you, that&#8217;s awesome. If not, hopefully there&#8217;s [another post here](https://jdsteinbach.com) that you can learn from.
 
-## Installing LetsEncrypt
+## Installing Let&apos;s Encrypt
 
 First step: install the Let&apos;s Encrypt tool on your server. SSH into your server, `cd` to the root dir (where you probably landed as soon as you SSHed in), and run the these commands:
 
