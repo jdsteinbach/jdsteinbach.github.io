@@ -27,7 +27,8 @@ h2 {
 
   .post-content & {
     @include scale-margin(subtitle, 1, false, .5, false);
-  }
+   color: $color-text-alt;
+ }
 
   .wf-active & {
     font-weight: normal;
@@ -48,6 +49,7 @@ h3 {
 .post-title {
   @extend %tt-hero;
   @include scale-margin(hero, 1, false, false, false);
+  color: $color-text-alt;
   text-align: center;
   text-transform: uppercase;
 }

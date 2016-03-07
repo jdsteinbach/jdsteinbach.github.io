@@ -49,6 +49,7 @@ $startsmall: true;
 @include add-breakpoint(xlarge, 90em, 1.8rem, 1.618, major-triad);
 
 @include set-hierarchy(sm p blockquote subtitle null title skip hero);
+@include set-hierarchy(sm p blockquote subtitle title hero);
 
 @include type-tune( extend );
 

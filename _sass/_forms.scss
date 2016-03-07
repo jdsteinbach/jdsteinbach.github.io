@@ -52,6 +52,7 @@
   label {
     @extend %tt-sm;
     display: block;
+    font-style: italic;
     position: absolute;
     top: 0; left: 1em;
     -webkit-transform-origin: left top;
@@ -118,7 +119,7 @@ textarea {
   }
 
   .lname & {
-    @include breakpoint(large) {
+    @include breakpoint(medium) {
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
     }
