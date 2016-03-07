@@ -1,0 +1,17 @@
+.site-nav {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+
+  @include breakpoint(large) {
+    text-align: right;
+    width: 66%;
+  }
+}
+
+.page-link {
+  @extend %tt-sm;
+  @include scale-padding(sm, .25, .5, .25, .5);
+  display: inline-block;
+  text-transform: uppercase;
+}

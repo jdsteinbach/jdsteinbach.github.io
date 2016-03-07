@@ -1,13 +1,24 @@
 [id="mc_embed_signup_scroll"] {
-  @include container;
   @include scale-margin(p, 0, false, 1, false);
-  border-bottom: 1px solid $brand-color;
+  border-bottom: $border-default;
   padding: 0;
 
   h2 {
-    @extend %sh;
-    @include scale-margin(sh, 0, false, 0.5, false);
+    @extend %tt-subtitle;
+    @include scale-margin(subtitle, .5, false, 1, false);
+    text-align: center;
   }
+
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+  }
+}
+
+[id="contact-form"] {
+  @include scale-margin(p, 1, false, 1, false);
 }
 
 .mc-fields {
@@ -15,7 +26,7 @@
 }
 
 .mc-ref {
-  @extend %sm;
+  @extend %tt-sm;
   @include scale-margin(sm, 0, false, 1, false);
   font-style: italic;
 
@@ -29,29 +40,18 @@
   }
 }
 
+.field-group,
 .mc-field-group {
-  @extend %p;
+  @extend %tt-p;
   @include scale-margin(p, 0, 0, 1, 0);
   padding: 0;
   display: inline-block;
   position: relative;
   width: 100%;
 
-  @include breakpoint(medium) {
-    &[class*="name"] {
-      width: 50%;
-    }
-  }
-
-  @include breakpoint(large) {
-    max-width: 33.3%;
-    width: 33.3%;
-  }
-
   label {
-    @extend %sm;
+    @extend %tt-sm;
     display: block;
-    margin-top: .15em;
     position: absolute;
     top: 0; left: 1em;
     -webkit-transform-origin: left top;
@@ -66,30 +66,61 @@
   }
 }
 
-input {
-  @extend %p;
+.mc-field-group {
+  @include breakpoint(medium) {
+    &[class*="name"] {
+      width: 50%;
+    }
+  }
+
+  @include breakpoint(large) {
+    max-width: 33.3%;
+    width: 33.3%;
+  }
+}
+
+input,
+textarea {
+  @extend %tt-p;
   @include scale-padding(p, 0, .5, 0, .5);
   background-color: transparent;
-  border: 1px solid $brand-color;
-  border-radius: 0;
-  color: $text-color;
+  border: $border-default;
+  border-radius: $border-radius-default;
+  color: $color-text;
   display: block;
   font-family: inherit;
   width: 100%;
 
-  &:active,
-  &:focus {
+  @include haf {
     outline: none;
-    background-color: rgba($brand-color, .1);
+    background-color: mix($color-background, $color-link, 95%);
   }
 
   .fname & {
     @include breakpoint(medium) {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
       border-right: 0;
     }
 
     @include breakpoint(large) {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
       border-left: 0;
+    }
+  }
+
+  .email & {
+    @include breakpoint(large) {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  .lname & {
+    @include breakpoint(large) {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
     }
   }
 }
@@ -97,30 +128,44 @@ input {
 input[type="submit"] {
   @include scale-margin(p, false, 0, 1, 0);
   @include scale-padding(p, 0, 1.5, 0, 1.5);
-  -webkit-appearance: none;
-  background-color: $brand-color;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  color: $background-color;
-  font-weight: bold;
-  -webkit-transition: background-color .25s, color .25s;
-  transition: background-color .25s, color .25s;
-  text-transform: uppercase;
-  width: 100%;
 
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: scale-color($brand-color, $lightness: -25%);
+  [id="mc_embed_signup"] & {
+    width: 100%;
+
+    @include breakpoint(medium) {
+      float: right;
+      width: 50%;
+    }
+
+    @include breakpoint(large) {
+      width: 33.3%;
+    }
   }
 
-  @include breakpoint(medium) {
-    float: right;
+  &[id="contact-form-submit"] {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 0;
     width: 50%;
   }
+}
 
-  @include breakpoint(large) {
-    width: 33.3%;
+.form-message {
+  p {
+    @extend %tt-blockquote;
+    @include scale-margin(blockquote, 1, false, 2, false);
+    -webkit-animation: fade-down .35s ease-out;
+    animation: fade-down .35s ease-out;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &.success {
+    color: $color-green-dark;
+  }
+
+  &.error {
+    color: $color-red;
   }
 }

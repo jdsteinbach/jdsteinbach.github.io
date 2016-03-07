@@ -1,0 +1,31 @@
+.site-footer {
+  @include scale-padding(p, .5, false, .5, false);
+  border-top: $border-default;
+
+  .wrapper {
+    @include scale-padding(p, false, .5, false, .5);
+  }
+}
+
+.footer-col {
+  @include scale-margin(p, false, false, 1, false);
+
+  &,
+  p {
+    @extend %tt-sm;
+  }
+
+  p {
+    @include scale-margin(sm, false, false, 1, false);
+  }
+
+  @include breakpoint(medium) {
+    float: left;
+    margin-bottom: 0;
+    width: 33%;
+  }
+}
+
+.contact-list li:first-child {
+  font-weight: bold;
+}

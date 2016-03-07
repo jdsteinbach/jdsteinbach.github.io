@@ -4,18 +4,24 @@
 @charset "utf-8";
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import "reset";
-@import "susy/susy";
-@import "variables";
-@import "mixins";
-@import "type-tune";
-@import "base";
-@import "layout";
-@import "header";
-@import "footer";
-@import "archive";
-@import "single";
-@import "media";
-@import "syntax-highlighting";
-@import "fonts";
-@import "forms";
+
+@import 'reset';
+
+@import '../../typetuner/typetuner';
+@import 'variables';
+@import 'mixins';
+@import 'animations';
+
+@import 'typography';
+@import 'code';
+@import 'links';
+@import 'buttons';
+@import 'media';
+@import 'forms';
+
+@import 'layout';
+@import 'nav';
+@import 'pagination';
+@import 'site-header';
+@import 'page-content';
+@import 'site-footer';

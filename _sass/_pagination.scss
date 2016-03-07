@@ -1,0 +1,26 @@
+
+.pagination {
+  @extend %tt-sm;
+  @include scale-padding(sm, .5, false, false, false);
+  border-top: $border-default;
+  text-align: center;
+
+  a,
+  span {
+    display: inline-block;
+    vertical-align: top;
+    width: 33%;
+  }
+
+  .previous {
+    text-align: left;
+  }
+
+  .page_number {
+    text-align: center;
+  }
+
+  .next {
+    text-align: right;
+  }
+}

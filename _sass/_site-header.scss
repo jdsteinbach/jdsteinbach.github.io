@@ -1,0 +1,21 @@
+.site-header {
+  @include scale-padding(p, .5, false, .5, false);
+  -webkit-animation: fade .35s ease-out;
+  animation: fade .35s ease-out;
+  border-bottom: $border-default;
+  text-align: center;
+}
+
+.site-title {
+  @extend %tt-blockquote;
+  @include scale-padding(blockquote, .25, .5, .25, .5);
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+
+  @include breakpoint(large) {
+    text-align: left;
+    width: 33%;
+  }
+}

@@ -1,41 +1,37 @@
-.alignright {
-	float: right;
-	@include scale-margin(p, 0, 0, .5, 1);
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .alignleft {
-	float: left;
-	@include scale-margin(p, 0, 1, .5, 0);
+  @include scale-margin(p, false, .5, .5, 0);
+  clear: right;
+  float: left;
 }
 
-.post-content .img-caption > .img-caption-text {
-	font-style: italic;
-	text-align: center;
-	@extend %sm;
-	@include scale-margin(sm, 0, 0, .5, 0);
+.alignright {
+  @include scale-margin(p, false, 0, .5, .5);
+  clear: left;
+  float: right;
 }
 
-img {
-	max-width: 100%;
-	vertical-align: middle;
-
-	figure > & {
-		display: block;
-	}
-
-	.post-content a > & {
-		display: block;
-		transition: opacity .25s;
-		opacity: .9;
-		margin-right: auto;
-		margin-left: auto;
-	}
-
-	.post-content a:hover > & {
-		opacity: 1;
-	}
+.aligncenter {
+  @include scale-margin(p, false, false, 1, false);
+  margin-left: auto;
+  margin-right: auto;
 }
 
-figcaption {
-	@extend %sm;
+svg {
+  height: .75em;
+  width: .75em;
+
+  .outbound-link & {
+    height: .5em;
+    width: .5em;
+  }
+
+  path {
+    fill: currentColor;
+  }
 }
