@@ -38,7 +38,7 @@ $border-radius-default:  3px;
  */
 $font-body:     freight-text-pro, Palatino, Palatino Linotype, serif;
 $font-headline: lust, Palatino, Palatino Linotype, serif;
-$font-code:     Input Mono, InputMono, monotype;
+$font-code:     Input Mono, InputMono, monospace;
 
 $startsmall: true;
 @include remove-breakpoint(xlarge);
