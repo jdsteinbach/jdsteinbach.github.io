@@ -12,12 +12,14 @@ h1 {
   @extend %tt-title;
   color: $color-text-alt;
   font-family: $font-headline;
+  font-weight: bold;
 }
 
 h2 {
   @extend %tt-subtitle;
   color: $color-text-alt;
   font-family: $font-headline;
+  font-weight: bold;
 
   .post-content & {
     @include scale-margin(subtitle, 1, false, .5, false);
