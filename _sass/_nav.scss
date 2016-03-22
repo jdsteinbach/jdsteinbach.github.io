@@ -13,5 +13,6 @@
   @extend %tt-sm;
   @include scale-padding(sm, .25, .5, .25, .5);
   display: inline-block;
+  letter-spacing: (1em / 32);
   text-transform: uppercase;
 }

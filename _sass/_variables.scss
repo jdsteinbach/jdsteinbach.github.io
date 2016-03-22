@@ -36,9 +36,9 @@ $border-radius-default:  3px;
 /*
  * FONTS
  */
-$font-body:     freight-text-pro, Palatino, Palatino Linotype, serif;
-$font-headline: lust, Palatino, Palatino Linotype, serif;
-$font-code:     Input Mono, InputMono, monospace;
+$font-body:     Palatino Linotype, Palatino, serif;
+$font-headline: Salome, Palatino Linotype, Palatino, serif;
+$font-code:     monospace;
 
 $startsmall: true;
 @include remove-breakpoint(xlarge);

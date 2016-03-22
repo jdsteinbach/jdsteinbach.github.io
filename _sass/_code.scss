@@ -2,17 +2,12 @@ code {
   @include scale-padding(p, .125, .125, .125, .125);
   background-color: mix($color-text, $color-background, 5%);
   border-radius: $border-radius-default;
+  color: $color-text-alt;
   display: inline-block;
-  font-size: 82.5%;
   font-family: $font-code;
   font-weight: inherit;
   line-height: 1;
   vertical-align: baseline;
-
-  h2 & {
-    font-size: 95%;
-    font-weight: bold;
-  }
 }
 
 pre > code {

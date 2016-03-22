@@ -7,10 +7,11 @@
 }
 
 .site-title {
-  @extend %tt-blockquote;
-  @include scale-padding(blockquote, .25, .5, .25, .5);
+  @extend %tt-p;
+  @include scale-padding(p, .25, .5, .25, .5);
   display: inline-block;
-  font-weight: bold;
+  font-family: $font-headline;
+  font-weight: normal;
   text-align: center;
   vertical-align: middle;
 
