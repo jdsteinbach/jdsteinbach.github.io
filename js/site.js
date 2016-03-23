@@ -41,29 +41,34 @@ function loadCSS( href, before, media, callback ){
 // loadCSS( "/css/main.css" );
 
 // Control form fields
-(function($) {
-  var $form_boxes  = $('.mc-field-group, .field-group'),
-      $form_inputs = $form_boxes.find('textarea, input');
+var form_boxes =  document.querySelectorAll('.mc-field-group, .field-group');
+// var form_inputs = form_boxes.querySelector('textarea, input');
 
-  $form_inputs.each(function() {
-    $li = $(this).closest($form_boxes);
-    if ( $(this)[0].value === '' ) {
-      $li.removeClass('active-input');
-    }
-  });
+function activate_field(el) {
+  el.parentNode.classList.add('active-input');
+}
 
-  $form_inputs.on('change focus', function() {
-    $li = $(this).closest($form_boxes);
-    $li.addClass('active-input');
-  });
+function deactivate_field(el) {
+  if ( el.value === '' ) {
+    el.parentNode.classList.remove('active-input');
+  }
+}
 
-  $form_inputs.on('blur', function() {
-    $li = $(this).closest($form_boxes);
-    if ( $(this)[0].value === '' ) {
-      $li.removeClass('active-input');
-    }
+Array.prototype.forEach.call(form_boxes, function(el, i){
+  var form_input = el.querySelector('textarea, input');
+
+  deactivate_field(form_input);
+
+  form_input.addEventListener('focus', function(event) {
+    activate_field(event.target);
   });
-})(jQuery);
+  form_input.addEventListener('change', function(event) {
+    activate_field(event.target);
+  });
+  form_input.addEventListener('blur', function(event) {
+    deactivate_field(event.target);
+  });
+});
 
 (function($) {
   var $cf = $('#contact-form'),
