@@ -37,6 +37,14 @@ h3 {
   }
 }
 
+h4 {
+  .post-content & {
+    @include scale-margin(p, .5, false, false, false);
+    color: $color-text-alt;
+    font-weight: bold;
+  }
+}
+
 .page-heading,
 .post-title {
   @extend %tt-hero;
@@ -68,6 +76,49 @@ p {
 }
 
 b,
-em {
+strong {
   color: $color-text-alt;
+  font-weight: bold;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+.post-content {
+  > ul,
+  > ol {
+    @include scale-margin(p, false, false, 1, false);
+
+    li {
+      @include scale-margin(p, .5, false, false, .618);
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  li {
+    ul {
+      list-style-type: square;
+    }
+
+    li ul {
+      list-style-type: circle;
+    }
+
+    ol {
+      list-style-type: upper-alpha;
+    }
+
+    li ol {
+      list-style-type: lower-roman;
+    }
+  }
 }

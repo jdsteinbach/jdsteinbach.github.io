@@ -20,9 +20,17 @@
   }
 
   @include breakpoint(medium) {
+    &:nth-child(1),
+    &:nth-child(3) {
+      float: left;
+      width: 50%;
+    }
+  }
+
+  @include breakpoint(large) {
     float: left;
     margin-bottom: 0;
-    width: 33%;
+    width: 33% !important;
   }
 }
 
