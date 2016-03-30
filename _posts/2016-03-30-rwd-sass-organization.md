@@ -5,7 +5,7 @@ layout: post
 permalink: /sass/rwd-sass-organization/
 categories:
   - Sass
-excerpt: Programming organizational principle for keeping responsive sass code clean and maintainable.
+excerpt: Programming organizational principles for keeping responsive Sass code clean and maintainable.
 ---
 
 This is the first post in series based on my recent RWD Summit talk “Keeping RWD Simple & Sassy.” It covers some important programming principles for keeping any code organized and makes application to your responsive Sass code base.
