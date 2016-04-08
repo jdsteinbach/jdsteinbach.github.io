@@ -8,7 +8,7 @@ categories:
 excerpt: Organizing media queries with Sass to keep responsive Sass code clean and maintainable.
 ---
 
-This is the second post in series based on my recent RWD Summit talk “Keeping RWD Simple & Sassy.” It covers some useful techniques manage media queries with Sass to keep your responsive Sass code base clean and maintainable.
+This is the second post in series based on my recent RWD Summit talk “Keeping RWD Simple & Sassy.” It covers some useful techniques to manage media queries with Sass to keep your responsive Sass code base clean and maintainable.
 
 ## Media Query Variables
 
