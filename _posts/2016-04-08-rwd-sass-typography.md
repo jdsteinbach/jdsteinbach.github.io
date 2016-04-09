@@ -8,7 +8,7 @@ categories:
 excerpt: Using Sass for typography to keep responsive Sass code clean and maintainable.
 ---
 
-This is the third post in series based on my recent RWD Summit talk “Keeping RWD Simple & Sassy.” It covers some useful techniques for managing responsive typograpnhy with Sass.
+This is the third post in a series based on my recent RWD Summit talk “Keeping RWD Simple & Sassy.” It covers some useful techniques for managing responsive typography with Sass.
 
 ## Responsive Sass Typography
 

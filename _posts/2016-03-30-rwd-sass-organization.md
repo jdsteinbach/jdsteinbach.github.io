@@ -8,7 +8,7 @@ categories:
 excerpt: Programming organizational principles for keeping responsive Sass code clean and maintainable.
 ---
 
-This is the first post in series based on my recent RWD Summit talk “Keeping RWD Simple & Sassy.” It covers some important programming principles for keeping any code organized and makes application to your responsive Sass code base.
+This is the first post in a series based on my recent RWD Summit talk “Keeping RWD Simple & Sassy.” It covers some important programming principles for keeping any code organized and makes application to your responsive Sass code base.
 
 ## Single Source of Truth
 
