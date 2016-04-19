@@ -3,9 +3,12 @@ body {
   background-color: $color-background;
   color: $color-text;
   font-family: $font-body;
-  -moz-font-feature-settings: "kern", "liga";
-  -webkit-font-feature-settings: "kern", "liga";
-  font-feature-settings: "kern", "liga";
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures contextual;
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "alt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
 }
 
 h1 {
