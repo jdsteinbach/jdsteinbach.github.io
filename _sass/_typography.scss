@@ -26,8 +26,8 @@ h2 {
 
   .post-content & {
     @include scale-margin(subtitle, 1, false, .5, false);
-   color: $color-text-alt;
- }
+    color: $color-text-alt;
+  }
 }
 
 h3 {
@@ -53,6 +53,7 @@ h4 {
   @extend %tt-hero;
   @include scale-margin(hero, 1, false, false, false);
   color: $color-text-alt;
+  letter-spacing: (1em / 32);
   text-align: center;
   text-transform: uppercase;
 }
