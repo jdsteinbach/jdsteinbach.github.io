@@ -12,13 +12,13 @@ code {
 
 pre > code {
   @extend %tt-sm;
-  @include scale-margin(sm, 1, false, 1, false);
+  @include scale-margin(sm, 1, -.5, 1, -.5);
   @include scale-padding(sm, .5, .5, .5, .5);
   border: $border-default;
   color: inherit;
   display: block;
   overflow: scroll;
-  width: 100%;
+  width: auto;
 }
 
 $code-selectors: ".c", ".err", ".k", ".o", ".cm", ".cp", ".c1", ".cs", ".gd", ".gd", ".x", ".ge", ".gr", ".gh", ".gi", ".gi .x", ".go", ".gp", ".gs", ".gu", ".gt", ".kc", ".kd", ".kp", ".kr", ".kt", ".m", ".s", ".na", ".nb", ".nc", ".no", ".ni", ".ne", ".nf", ".nn", ".nt", ".nv", ".ow", ".w", ".mf", ".mh", ".mi", ".mo", ".sb", ".sc", ".sd", ".s1", ".s2", ".se", ".sh", ".si", ".sx", ".sr", ".s1", ".ss", ".bp", ".vc", ".vg", ".vi", ".il", ".p";
