@@ -1,9 +1,10 @@
 ---
-title: Contact
+title: Get in Touch with Me!
 author: James
 layout: page
 permalink: /contact/
 menu_order: 50
+menu_title: Contact
 ---
 
 <div class="typeform-widget" data-url="//jdsteinbach.typeform.com/to/avYa6X" data-text="Contact" style="width:100%;height:500px;"></div>

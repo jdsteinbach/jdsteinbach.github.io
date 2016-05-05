@@ -9,8 +9,8 @@
       {% for page in sorted_pages %}
         {% if page.exclude %}
         {% else %}
-          {% if page.title %}
-            <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          {% if page.menu_title %}
+            <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.menu_title }}</a>
           {% endif %}
         {% endif %}
       {% endfor %}

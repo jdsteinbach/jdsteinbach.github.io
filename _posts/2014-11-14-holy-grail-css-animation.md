@@ -67,6 +67,10 @@ CSS transitions and animations (when used properly!) hit 60fps really nicely. [H
 
 ## Conclusion
 
-If you&#8217;ve got a CSS animation / transition solution that meets all the criteria above, please share in the comments!
+If you&#8217;ve got a CSS animation / transition solution that meets all the criteria above, please tweet at [@jdsteinbach](https://twitter.com/jdsteinbach)!
+
+## UPDATE!
+
+This [snippet for animating display and transform together](/css/snippet-animate-display-transform/) isn't perfect, but the best solution I've found so far. Hope it helps!
 
  [1]: http://alistapart.com/article/holygrail

@@ -1,9 +1,10 @@
 ---
-title: About
+title: About James
 author: James
 layout: page
 permalink: /about/
 menu_order: 40
+menu_title: About
 ---
 <img class="alignleft" src="/images/headshot.png" alt="James Steinbach: Profile Photo" width="200" height="174" style="shape-outside:url(/images/headshot.png);shape-margin:1em;"/>
 
