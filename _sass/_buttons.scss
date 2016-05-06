@@ -2,7 +2,7 @@ button,
 .button,
 [type="submit"] {
   @extend %tt-sm;
-  @include scale-padding(sm, 1, 2, 1, 2);
+  @include scale-padding(sm, 0, .5, 0, .5);
   -webkit-appearance: none;
   background-color: $color-link;
   border: none;
@@ -13,6 +13,7 @@ button,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   font-weight: bold;
+  letter-spacing: (1em / 32);
   text-transform: uppercase;
 
   &.button-alt {
@@ -21,6 +22,7 @@ button,
 
   @include haf {
     background-color: $color-link-alt;
+    color: $color-background;
 
     &.button-alt {
       background-color: $color-link-2-alt;
