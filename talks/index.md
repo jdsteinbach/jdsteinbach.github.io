@@ -9,7 +9,7 @@ menu_title: Talks
 
 I enjoy writing here on the blog, but I really love speaking with real audiences about front-end development techniques I’m passionate about. Here is a list of talks I’ve given in the past. Please [contact me](/contact/) if you’d like me to speak at an event or meet-up you run. Thanks!
 
-* CascadiaCSS 2016: [Using Sass &amp; PostCSS Together](https://jdsteinbach.com/sass-postcss/#/) | [Video](https://www.youtube.com/watch?v=YpSdBDoPemg)
+* CascadiaCSS 2016: [Using Sass &amp; PostCSS Together](https://jdsteinbach.com/sass-postcss/#/) / [Video](https://www.youtube.com/watch?v=YpSdBDoPemg)
 * ScotlandCSS 2016: [Using Musical Scales to Build Harmonious Typography](https://jdsteinbach.com/sassconf/#/)
 * RWD Summit 2016: [Keeping RWD Simple & Sassy](/sass/rwd-sass/)
 * SassConf 2015: [Using Musical Scales to Build Harmonious Typography](https://jdsteinbach.com/sassconf/#/)
