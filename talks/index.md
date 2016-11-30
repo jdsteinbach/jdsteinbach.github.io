@@ -14,7 +14,7 @@ I enjoy writing here on the blog, but I really love speaking with real audiences
 * RWD Summit 2016: [Keeping RWD Simple & Sassy](/sass/rwd-sass/)
 * SassConf 2015: [Using Musical Scales to Build Harmonious Typography](https://jdsteinbach.com/sassconf/#/)
 * Sass Summit 2015: [Using Musical Scales to Build Harmonious Typography](https://jdsteinbach.com/sassconf/#/)
-* [From Zero to Sassy in 2 Sessions](https://jdsteinbach.com/gdi-sass/#/)
+* [From Zero to Sassy in 2 Sessions](https://jdsteinbach.com/zero2sassy/#/)
 * [Intermediate WordPress](https://jdsteinbach.com/int-wp/#/)
 * [Planning & Implementing Meaningful UI Animations](https://jdsteinbach.com/css-animation/#/)
 * [Responsive Typography with Sass](http://www.slideshare.net/JamesSteinbach/responsive-typography-47632381)
