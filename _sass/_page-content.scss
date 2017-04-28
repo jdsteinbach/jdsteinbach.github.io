@@ -31,6 +31,10 @@
   .wrapper {
     @include scale-padding(p, false, .5, false, .5);
   }
+
+  .button {
+    @include scale-margin(sm, false, false, .5, false);
+  }
 }
 
 .post-content {
