@@ -9,7 +9,7 @@ I'm available to work on projects in any of my areas of expertise: CSS, Sass, ac
 
 ## What I Do
 
-I can **build sites**: WordPress themes, flat-file sites, even static site generators (like Jekyll, Metalsmith, or Harp).
+I can **build new sites**: WordPress themes, flat-file sites, even static site generators (like Jekyll, Metalsmith, or Harp).
 
 I can **refactor your code**. With time, codebases get really bloated. Every dev adds code in their own style; everyone's afraid something will go wrong if they delete some existing code. If your team isn't able to clean up the code base (not a slam on them: there's no shame in recognizing technical limitations or time constraints!), I can refactor it (and provide rules for future code) so they can work more quickly and happily.
 

@@ -15,4 +15,10 @@
   display: inline-block;
   letter-spacing: (1em / 32);
   text-transform: uppercase;
+
+  &[href*="hire"] {
+    background-color: scale-color($color-link, $lightness: 90%);
+    border: 1px solid currentColor;
+    border-radius: 3px;
+  }
 }
