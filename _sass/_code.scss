@@ -8,6 +8,15 @@ code {
   font-weight: inherit;
   line-height: 1;
   vertical-align: baseline;
+
+  p > &,
+  p a > & {
+    font-size: 1.4em;
+  }
+
+  a & {
+    color: inherit;
+  }
 }
 
 pre > code {
