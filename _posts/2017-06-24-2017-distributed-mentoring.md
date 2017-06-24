@@ -5,7 +5,7 @@ layout: post
 permalink: /misc/distributed-mentoring/
 categories:
   - misc
-excerpt: Not all mentoring looks like a senior investing personally in a junior - it often happens remotely online.
+excerpt: Not all mentoring looks like a senior investing personally in a junior - it often happens online, remotely, or through peer-relationships.
 ---
 
 When most people think about mentoring, they picture someone more experienced investing time in a close relationship with someone less experienced. Maybe you thought about someone who'd done that for you - a co-worker, parent, or teacher. In my web development career, I've had a different kind of mentoring experience than that standard one. Instead of having an experienced developer invest lots of time in me and my career, I've benefited from little bits of help from lots of people over the years. **I like to call this "distributed" mentorship: remote learning from people around the world.**
