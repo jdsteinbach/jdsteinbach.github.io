@@ -3,7 +3,6 @@ title: How Would You Like to Work Together?
 author: James
 layout: page
 permalink: /hire/
-menu_order: 50
 menu_title: Hire Me!
 ---
 
