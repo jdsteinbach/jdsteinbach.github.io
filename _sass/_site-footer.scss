@@ -1,10 +1,6 @@
 .site-footer {
   @include scale-padding(p, .5, false, .5, false);
   border-top: $border-default;
-
-  .wrapper {
-    @include scale-padding(p, false, .5, false, .5);
-  }
 }
 
 .footer-col {
