@@ -18,7 +18,8 @@
 }
 
 [id="contact-form"] {
-  @include scale-margin(p, 1, false, 1, false);
+  @include scale-margin(p, 0, false, 1, false);
+  @include scale-padding(p, 1, false, false, false);
 }
 
 .mc-fields {
@@ -126,7 +127,7 @@ textarea {
   }
 }
 
-input[type="submit"] {
+[type="submit"] {
   @include scale-margin(p, false, 0, 1, 0);
   @include scale-padding(p, 0, 1.5, 0, 1.5);
 
@@ -169,4 +170,14 @@ input[type="submit"] {
   &.error {
     color: $color-red;
   }
+}
+
+// Pageclip.io specific styles
+.pageclip-form__success {
+  background-color: rgba($color-background, .8) !important;
+}
+
+.pageclip-form__success .pageclip-form__success__message {
+  @extend %tt-title;
+  font-weight: bold;
 }
