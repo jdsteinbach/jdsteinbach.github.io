@@ -70,35 +70,38 @@ Array.prototype.forEach.call(form_boxes, function(el, i){
   });
 });
 
-// (function($) {
-//   var $cf = $('#contact-form'),
-//       $fm = $('.form-message');
+(function($) {
+  var $cf = $('#contact-form'),
+      $fm = $('.form-message');
 
-//   if ( $cf.length > 0 ) {
-//     $cf.submit(function(e){
-//       e.preventDefault();
+  if ( $cf.length > 0 ) {
+    $cf.submit(function(e){
+      e.preventDefault();
 
-//       var form_data = $cf.serialize();
+      var form_data = $cf.serialize();
 
-//       $.ajax({
-//         type: 'POST',
-//         url: $cf.attr('action'),
-//         data: form_data
-//       })
-//       .done(function(response) {
-//         $fm.removeClass('error').addClass('success').html(response);
-//         $('#name').val('');
-//         $('#email').val('');
-//         $('#message').val('');
-//       })
-//       .fail(function(data) {
-//         $fm.removeClass('success').addClass('error');
-//         if (data.responseText !== '') {
-//           $fm.html(data.responseText);
-//         } else {
-//           $fm.html('<p>Sorry, an error occured and your message could not be sent.</p>');
-//         }
-//       });
-//     });
-//   }
-// })(jQuery);
+      $.ajax({
+        type: 'POST',
+        url: $cf.attr('action'),
+        data: form_data
+      })
+      .done(function(response) {
+        console.log(response);
+        $fm.removeClass('error').addClass('success');
+        $fm.html('Thanks, your message has been sent.');
+        $('#name').val('');
+        $('#email').val('');
+        $('#message').val('');
+      })
+      .fail(function(data) {
+        console.log(data.responseText);
+        $fm.removeClass('success').addClass('error');
+        if (data.responseText !== '') {
+          $fm.html(data.responseText);
+        } else {
+          $fm.html('Sorry, an error occured and your message could not be sent.');
+        }
+      });
+    });
+  }
+})(jQuery);
