@@ -86,7 +86,6 @@ Array.prototype.forEach.call(form_boxes, function(el, i){
         data: form_data
       })
       .done(function(response) {
-        console.log(response);
         $fm.removeClass('error').addClass('success');
         $fm.html('Thanks, your message has been sent.');
         $('#name').val('');
@@ -94,7 +93,6 @@ Array.prototype.forEach.call(form_boxes, function(el, i){
         $('#message').val('');
       })
       .fail(function(data) {
-        console.log(data.responseText);
         $fm.removeClass('success').addClass('error');
         if (data.responseText !== '') {
           $fm.html(data.responseText);
