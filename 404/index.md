@@ -10,6 +10,6 @@ exclude: true
 
 Yeah, I hate it when a link breaks too. I&#8217;m really bummed that it happened to you on my site.
 
-Please check out the [home page](https://jdsteinbach) &ndash; hopefully you can find the missing article there. If not, please [let me know](/contact/).
+Please check out [the posts archive on my home page](https://jdsteinbach.com) &ndash; hopefully you can find the missing article there. If not, please [let me know](/contact/).
 
 Thanks!
