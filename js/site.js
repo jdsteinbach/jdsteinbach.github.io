@@ -4,13 +4,13 @@ loadCSS: load a CSS file asynchronously.
 Licensed MIT
 */
 function loadCSS( href, before, media, callback ){
-	"use strict";
-	var ss = window.document.createElement( "link" );
-	var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
+	'use strict';
+	var ss = window.document.createElement( 'link' );
+	var ref = before || window.document.getElementsByTagName( 'script' )[ 0 ];
 	var sheets = window.document.styleSheets;
-	ss.rel = "stylesheet";
+	ss.rel = 'stylesheet';
 	ss.href = href;
-	ss.media = "only x";
+	ss.media = 'only x';
 	if( callback ) {
 		ss.onload = callback;
 	}
@@ -33,7 +33,7 @@ function loadCSS( href, before, media, callback ){
 		}
 	};
 	ss.onloadcssdefined(function() {
-		ss.media = media || "all";
+		ss.media = media || 'all';
 	});
 	return ss;
 }
@@ -42,7 +42,6 @@ function loadCSS( href, before, media, callback ){
 
 // Control form fields
 var form_boxes =  document.querySelectorAll('.mc-field-group, .field-group');
-// var form_inputs = form_boxes.querySelector('textarea, input');
 
 function activate_field(el) {
   el.parentNode.classList.add('active-input');
@@ -70,36 +69,82 @@ Array.prototype.forEach.call(form_boxes, function(el, i){
   });
 });
 
-(function($) {
-  var $cf = $('#contact-form'),
-      $fm = $('.form-message');
 
-  if ( $cf.length > 0 ) {
-    $cf.submit(function(e){
+// Ajax Form Submission
+(function() {
+  var contactForm = document.getElementById('contact-form');
+
+  if ( contactForm.length > 0 && window.fetch !== undefined ) {
+    var formMessage = document.getElementById('form-message');
+
+    contactForm.addEventListener('submit', function(e) {
+      var data = new FormData(contactForm);
+
       e.preventDefault();
 
-      var form_data = $cf.serialize();
-
-      $.ajax({
-        type: 'POST',
-        url: $cf.attr('action'),
-        data: form_data
-      })
-      .done(function(response) {
-        $fm.removeClass('error').addClass('success');
-        $fm.html('Thanks, your message has been sent.');
-        $('#name').val('');
-        $('#email').val('');
-        $('#message').val('');
-      })
-      .fail(function(data) {
-        $fm.removeClass('success').addClass('error');
-        if (data.responseText !== '') {
-          $fm.html(data.responseText);
-        } else {
-          $fm.html('Sorry, an error occured and your message could not be sent.');
+      fetch(
+        contactForm.getAttribute('action'),
+        {
+          method: contactForm.getAttribute('method'),
+          body: data
         }
-      });
-    });
+      )
+      .then(
+        function(response) {
+          if ( response.status < 400 ) {
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+
+            formMessage.textContent = 'Thanks, your message has been sent.';
+          } else {
+            formMessage.textContent = 'Sorry, an error occured and your message could not be sent.';
+          }
+        }
+      )
+      .catch(
+        function(err) {
+          formMessage.textContent = 'Sorry, an error occured and your message could not be sent.';
+        }
+      );
+    })
   }
-})(jQuery);
+})();
+
+(function() {
+  var contactForm = document.getElementById('mc-embedded-subscribe-form');
+
+  if ( contactForm.length > 0 && window.fetch !== undefined ) {
+    var formMessage = document.getElementById('mc_embed_signup');
+
+    contactForm.addEventListener('submit', function(e) {
+      var data = new FormData(contactForm);
+
+      e.preventDefault();
+
+      fetch(
+        contactForm.getAttribute('action'),
+        {
+          method: contactForm.getAttribute('method'),
+          mode: 'no-cors',
+          body: data
+        }
+      )
+      .then(
+        function(response) {
+          if ( response.status < 400 ) {
+            formMessage.innerHTML = '<p>Thanks, check your inbox to confirm your subscription!</p>';
+          } else {
+            formMessage.innerHTML = '<p>Sorry, an error occured and your message could not be sent.</p>';
+          }
+        }
+      )
+      .catch(
+        function(err) {
+          formMessage.innerHTML = '<p>Sorry, an error occured and your message could not be sent.</p>';
+        }
+      );
+    })
+  }
+})();
+

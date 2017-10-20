@@ -7,8 +7,8 @@ menu_order: 50
 menu_title: Contact
 ---
 
-<p class="form-message"></p>
-<form id="contact-form" method="POST" action="//api.jdsteinbach.com/mail/">
+<p id="form-message" class="form-message"></p>
+<form id="contact-form" method="POST" action="https://api.jdsteinbach.com/mail/">
   <div class="field-group">
     <label for="name">Your Name</label>
     <input type="text" id="name" class="name" name="name" required>
