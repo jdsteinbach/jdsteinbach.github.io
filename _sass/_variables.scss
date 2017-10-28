@@ -2,17 +2,35 @@
  * COLORS
  * From: http://www.colourlovers.com/palette/38562/Hands_On
  */
-$color-blue:        #2790B0;
-$color-blue-dark:   #2B4E72;
 
-$color-green:       #94BA65;
-$color-green-dark:  #69895c;
+@function custom-darken($color) {
+  $orig-blue:        #2790B0;
+  $orig-blue-dark:   #2B4E72;
 
-$color-red:         #a9240a;
-$color-red-dark:    #673712;
+  $hue-diff: hue($orig-blue-dark) - hue($orig-blue);
+  $sat-diff: saturation($orig-blue-dark) - saturation($orig-blue);
+  $light-diff: lightness($orig-blue-dark) - lightness($orig-blue);
+
+  @return adjust-color(
+    $color,
+    $hue: $hue-diff,
+    $saturation: $sat-diff,
+    $lightness: $light-diff
+  );
+}
+
+$color-blue:        #2B4E72;//#2790B0;
+$color-blue-dark:   custom-darken($color-blue);
+
+$color-green:       #384b22;//#94BA65;
+$color-green-dark:  custom-darken($color-green);
+
+$color-red:         #9d2109;//#a9240a;
+$color-red-dark:    custom-darken($color-red);
 
 $color-gray:        #4E4D4A;
-$color-gray-dark:   #353432;
+$color-gray-dark:   custom-darken($color-gray);
+$color-gray-pale:   scale-color($color-blue, $lightness: 90%); // #e7f5fa
 
 $color-text:        $color-gray;
 $color-text-alt:    $color-gray-dark;
@@ -24,7 +42,25 @@ $color-link-alt:    $color-blue-dark;
 $color-link-2:      $color-green;
 $color-link-2-alt:  $color-green-dark;
 
-$color-background:  scale-color($color-link, $lightness: 90%);
+$color-background:  $color-gray-pale;
+
+@function custom-prop($name, $value) {
+  @return var($name, $value);
+}
+
+:root {
+  --color-text:        $color-gray;
+  --color-text-alt:    $color-gray-dark;
+  --color-text-accent: $color-blue-dark;
+
+  --color-link:        $color-blue;
+  --color-link-alt:    $color-blue-dark;
+
+  --color-link-2:      $color-green;
+  --color-link-2-alt:  $color-green-dark;
+
+  --color-background:  $color-gray-pale;
+}
 
 /*
  * BORDERS
@@ -36,8 +72,6 @@ $border-radius-default:  3px;
 /*
  * FONTS
  */
-// $font-body:     Palatino Linotype, Palatino, serif;
-// $font-headline: Salome, Palatino Linotype, Palatino, serif;
 $font-body:     Latina, Helvetica Neue, Helvetica, sans-serif;
 $font-headline: $font-body;
 $font-code:     monospace;
@@ -53,7 +87,7 @@ $startsmall: true;
 @include set-hierarchy(sm p blockquote subtitle null title skip hero);
 @include set-hierarchy(sm p blockquote subtitle title hero);
 
-@include type-tune( extend );
+@include type-tune(extend);
 
 /*
  * LAYOUT
