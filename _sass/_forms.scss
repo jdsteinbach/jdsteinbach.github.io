@@ -88,7 +88,7 @@ textarea {
   background-color: transparent;
   border: $border-default;
   border-radius: $border-radius-default;
-  color: $color-text;
+  @include use-prop(color, color-text);
   display: block;
   font-family: inherit;
   width: 100%;
@@ -164,11 +164,11 @@ textarea {
   }
 
   &.success {
-    color: $color-green-dark;
+    @include use-prop(color, color-success);
   }
 
   &.error {
-    color: $color-red;
+    @include use-prop(color, color-error);
   }
 }
 

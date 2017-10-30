@@ -4,11 +4,11 @@ button,
   @extend %tt-sm;
   @include scale-padding(sm, 0, .5, 0, .5);
   -webkit-appearance: none;
-  background-color: $color-link;
+  @include use-prop(background-color, color-link);
   border: none;
   border-radius: $border-radius-default;
   box-shadow: none;
-  color: $color-background;
+  @include use-prop(color, color-background);
   display: inline-block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
@@ -18,15 +18,15 @@ button,
   text-transform: uppercase;
 
   &.button-alt {
-    background-color: $color-link-2;
+    @include use-prop(background-color, color-link-2);
   }
 
   @include haf {
-    background-color: $color-link-alt;
-    color: $color-background;
+    @include use-prop(background-color, color-link-alt);
+    @include use-prop(color, color-background);
 
     &.button-alt {
-      background-color: $color-link-2-alt;
+      @include use-prop(background-color, color-link-2-alt);
     }
   }
 }
