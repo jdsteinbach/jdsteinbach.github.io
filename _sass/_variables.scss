@@ -2,17 +2,42 @@
  * COLORS
  * From: http://www.colourlovers.com/palette/38562/Hands_On
  */
-$color-blue:        #2790B0;
-$color-blue-dark:   #2B4E72;
 
-$color-green:       #94BA65;
-$color-green-dark:  #69895c;
+@function custom-darken($color) {
+  $orig-blue:        #2790B0;
+  $orig-blue-dark:   #2B4E72;
 
-$color-red:         #a9240a;
-$color-red-dark:    #673712;
+  $hue-diff: hue($orig-blue-dark) - hue($orig-blue);
+  $sat-diff: saturation($orig-blue-dark) - saturation($orig-blue);
+  $light-diff: lightness($orig-blue-dark) - lightness($orig-blue);
+
+  @return adjust-color(
+    $color,
+    $hue: $hue-diff,
+    $saturation: $sat-diff,
+    $lightness: $light-diff
+  );
+}
+
+@function custom-invert($color) {
+  $hue: hue($color);
+  $saturation: saturation($color);
+  $lightness: 100 - lightness($color);
+  @return hsl($hue, $saturation, $lightness);
+}
+
+$color-blue:        #2B4E72;//#2790B0;
+$color-blue-dark:   custom-darken($color-blue);
+
+$color-green:       #384b22;//#94BA65;
+$color-green-dark:  custom-darken($color-green);
+
+$color-red:         #9d2109;//#a9240a;
+$color-red-dark:    custom-darken($color-red);
 
 $color-gray:        #4E4D4A;
-$color-gray-dark:   #353432;
+$color-gray-dark:   custom-darken($color-gray);
+$color-gray-pale:   scale-color($color-blue, $lightness: 90%); // #e7f5fa
 
 $color-text:        $color-gray;
 $color-text-alt:    $color-gray-dark;
@@ -24,7 +49,61 @@ $color-link-alt:    $color-blue-dark;
 $color-link-2:      $color-green;
 $color-link-2-alt:  $color-green-dark;
 
-$color-background:  scale-color($color-link, $lightness: 90%);
+$color-background:  $color-gray-pale;
+
+$root-vars: (
+  color-text:            $color-gray,
+  color-text-alt:        $color-gray-dark,
+  color-text-accent:     $color-blue-dark,
+
+  color-link:            $color-blue,
+  color-link-alt:        $color-blue-dark,
+
+  color-link-2:          $color-green,
+  color-link-2-alt:      $color-green-dark,
+
+  color-success:         $color-green,
+  color-success-alt:     $color-green-dark,
+
+  color-error:           $color-red,
+  color-error-alt:       $color-red-dark,
+
+  color-background:      $color-gray-pale,
+  color-background-alt:  rgba($color-gray, .15),
+  color-background-code: rgba($color-gray, .15),
+
+  icon-toggle:           url('/images/icon-toggle.svg')
+);
+
+
+$dark-vars: (
+  color-text:            custom-invert($color-gray),
+  color-text-alt:        custom-invert($color-gray-dark),
+  color-text-accent:     custom-invert($color-blue-dark),
+
+  color-link:            custom-invert($color-blue),
+  color-link-alt:        custom-invert($color-blue-dark),
+
+  color-link-2:          custom-invert($color-green),
+  color-link-2-alt:      custom-invert($color-green-dark),
+
+  color-background:      custom-invert($color-gray-pale),
+  color-background-alt:  rgba(custom-invert($color-gray-dark), .15),
+  color-background-code: custom-invert($color-gray),
+
+  icon-toggle:           url('/images/icon-toggle-dark.svg')
+
+);
+
+@each $name, $prop in $root-vars {
+  @include set-prop($name, $prop);
+}
+
+@each $name, $prop in $dark-vars {
+  @include set-prop($name, $prop, '.theme-dark');
+}
+
+@include output-props;
 
 /*
  * BORDERS
@@ -36,8 +115,6 @@ $border-radius-default:  3px;
 /*
  * FONTS
  */
-// $font-body:     Palatino Linotype, Palatino, serif;
-// $font-headline: Salome, Palatino Linotype, Palatino, serif;
 $font-body:     Latina, Helvetica Neue, Helvetica, sans-serif;
 $font-headline: $font-body;
 $font-code:     monospace;
@@ -53,7 +130,7 @@ $startsmall: true;
 @include set-hierarchy(sm p blockquote subtitle null title skip hero);
 @include set-hierarchy(sm p blockquote subtitle title hero);
 
-@include type-tune( extend );
+@include type-tune(extend);
 
 /*
  * LAYOUT

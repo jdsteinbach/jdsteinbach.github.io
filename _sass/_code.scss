@@ -1,8 +1,8 @@
 code {
   @include scale-padding(p, .125, .125, .125, .125);
-  background-color: mix($color-text, $color-background, 5%);
+  @include use-prop(background-color, color-background-alt);
+  @include use-prop(color, color-text-alt);
   border-radius: $border-radius-default;
-  color: $color-text-alt;
   display: inline-block;
   font-family: $font-code;
   font-weight: inherit;
@@ -11,7 +11,7 @@ code {
 
   p > &,
   p a > & {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 
   a & {
@@ -23,6 +23,7 @@ pre > code {
   @extend %tt-sm;
   @include scale-margin(sm, 1, -.5, 1, -.5);
   @include scale-padding(sm, .5, .5, .5, .5);
+  @include use-prop(background-color, color-background-code);
   border: $border-default;
   color: inherit;
   display: block;
@@ -30,7 +31,7 @@ pre > code {
   width: auto;
 }
 
-$code-selectors: ".c", ".err", ".k", ".o", ".cm", ".cp", ".c1", ".cs", ".gd", ".gd", ".x", ".ge", ".gr", ".gh", ".gi", ".gi .x", ".go", ".gp", ".gs", ".gu", ".gt", ".kc", ".kd", ".kp", ".kr", ".kt", ".m", ".s", ".na", ".nb", ".nc", ".no", ".ni", ".ne", ".nf", ".nn", ".nt", ".nv", ".ow", ".w", ".mf", ".mh", ".mi", ".mo", ".sb", ".sc", ".sd", ".s1", ".s2", ".se", ".sh", ".si", ".sx", ".sr", ".s1", ".ss", ".bp", ".vc", ".vg", ".vi", ".il", ".p";
+$code-selectors: ".c", ".err", ".k", ".o", ".cm", ".cp", ".c1", ".cs", ".gd", ".gd", ".x", ".ge", ".gr", ".gh", ".gi", ".gi .x", ".go", ".gp", ".gs", ".gu", ".gt", ".kc", ".kd", ".kp", ".kr", ".kt", ".m", ".s", ".n", ".na", ".nb", ".nc", ".nd", ".no", ".nl", ".ni", ".ne", ".nf", ".nn", ".nt", ".nv", ".ow", ".w", ".mf", ".mh", ".mi", ".mo", ".sb", ".sc", ".sd", ".s1", ".s2", ".se", ".sh", ".si", ".sx", ".sr", ".s1", ".ss", ".bp", ".vc", ".vg", ".vi", ".il", ".p";
 
 .highlighter-rouge {
   @each $s in $code-selectors {

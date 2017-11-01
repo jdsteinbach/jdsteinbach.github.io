@@ -1,11 +1,11 @@
 a {
-  color: $color-link;
+  @include use-prop(color, color-link);
   text-decoration: none;
   -webkit-transition: color .25s, opacity .25s, border .25s, -webkit-transform .25s ease-in-out;
   transition: color .25s, opacity .25s, border .25s, transform .25s ease-in-out;
 
   @include haf {
-    color: $color-link-alt;
+    @include use-prop(color, color-link-alt);
   }
 
   .post-content p & {
