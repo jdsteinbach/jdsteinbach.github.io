@@ -94,8 +94,8 @@ textarea {
   width: 100%;
 
   @include haf {
+    @include use-prop(background-color, color-background-alt);
     outline: none;
-    background-color: mix($color-background, $color-link, 95%);
   }
 
   .fname & {
