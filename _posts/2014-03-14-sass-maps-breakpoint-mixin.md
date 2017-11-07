@@ -6,6 +6,7 @@ permalink: /css/sass-maps-breakpoint-mixin/
 categories:
   - CSS
   - Sass
+sassmeister: true
 ---
 When I started using Sass, I was using the following breakpoint mixin. It&#8217;s pretty simple and common, gets the job done, but could probably be improved.
 

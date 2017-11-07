@@ -6,6 +6,7 @@ permalink: /sass/numbered-headings/
 categories:
   - CSS
   - Sass
+codepen: true
 ---
 
 You&#8217;re writing a blog post or other HTML document and you want to number your `h2` and `h3` elements to give users a sense of where they are in the page&#8217;s logical flow. Or perhaps you&#8217;re maintaining legal content or technical documentation that needs to have numbered `h2`, `h3`, etc elements. I suppose you could nest the content of your entire document in a bunch of nested lists, or you could write the outline-style numbering by hand. Or &hellip; perhaps there&#8217;s a better way that only requires CSS.

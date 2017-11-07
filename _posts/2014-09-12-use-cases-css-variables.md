@@ -5,6 +5,7 @@ layout: post
 permalink: /css/use-cases-css-variables/
 categories:
   - CSS
+codepen: true
 ---
 It&#8217;s time to start exploring use cases for CSS variables, now that <a title="CSS Variable data on Can I Use" href="http://caniuse.com/#feat=css-variables" target="_blank">Firefox supports them</a>. <a title="Chrome no longer supports CSS variables" href="http://stackoverflow.com/questions/18466569/enable-experimental-webkit-features-chrome-css-css3-variables" target="_blank">Chrome has toyed with CSS variables</a> before. That means that **this post & all the embedded pens will only work in Firefox**.
 
