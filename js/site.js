@@ -74,7 +74,7 @@ Array.prototype.forEach.call(form_boxes, function(el, i){
 (function() {
   var contactForm = document.getElementById('contact-form');
 
-  if ( contactForm.length > 0 && window.fetch !== undefined ) {
+  if ( contactForm !== null && window.fetch !== undefined ) {
     var formMessage = document.getElementById('form-message');
 
     contactForm.addEventListener('submit', function(e) {
@@ -148,3 +148,15 @@ Array.prototype.forEach.call(form_boxes, function(el, i){
   }
 })();
 
+(function() {
+  var main   = document.getElementById('main');
+  var toggle = document.createElement('button');
+  toggle.classList.add('button-theme');
+  toggle.innerHTML = document.body.classList.contains('theme-dark') ? 'Light Theme' : 'Dark Theme';
+  toggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.body.classList.toggle('theme-dark');
+    toggle.innerHTML = document.body.classList.contains('theme-dark') ? 'Light Theme' : 'Dark Theme';
+  });
+  main.parentNode.insertBefore(toggle, main);
+})();
