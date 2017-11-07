@@ -24,8 +24,8 @@ pre > code {
   @include scale-margin(sm, 1, -.5, 1, -.5);
   @include scale-padding(sm, .5, .5, .5, .5);
   @include use-prop(background-color, color-background-code);
+  @include use-prop(color, color-background);
   border: $border-default;
-  color: inherit;
   display: block;
   overflow: scroll;
   width: auto;
