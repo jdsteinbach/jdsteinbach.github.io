@@ -1,7 +1,7 @@
 body {
   @extend %tt-p;
-  background-color: $color-background;
-  color: $color-text;
+  @include use-prop(background-color, color-background);
+  @include use-prop(color, color-text);
   font-family: $font-body;
   font-kerning: normal;
   font-variant-ligatures: common-ligatures contextual;
@@ -13,27 +13,27 @@ body {
 
 h1 {
   @extend %tt-title;
-  color: $color-text-alt;
+  @include use-prop(color, color-text-alt);
   font-family: $font-headline;
   font-weight: bold;
 }
 
 h2 {
   @extend %tt-subtitle;
-  color: $color-text-alt;
+  @include use-prop(color, color-text-alt);
   font-family: $font-headline;
   font-weight: bold;
 
   .post-content & {
     @include scale-margin(subtitle, 1, false, .5, false);
-    color: $color-text-alt;
+    @include use-prop(color, color-text-alt);
   }
 }
 
 h3 {
   .post-content & {
     @include scale-margin(p, .5, false, false, false);
-    color: $color-text-alt;
+    @include use-prop(color, color-text-alt);
     font-weight: bold;
     letter-spacing: (1em / 32);
     text-transform: uppercase;
@@ -43,7 +43,7 @@ h3 {
 h4 {
   .post-content & {
     @include scale-margin(p, .5, false, false, false);
-    color: $color-text-alt;
+    @include use-prop(color, color-text-alt);
     font-weight: bold;
   }
 }
@@ -52,7 +52,7 @@ h4 {
 .post-title {
   @extend %tt-hero;
   @include scale-margin(hero, 1, false, false, false);
-  color: $color-text-alt;
+  @include use-prop(color, color-text-alt);
   letter-spacing: (1em / 32);
   text-align: center;
   text-transform: uppercase;
@@ -85,7 +85,7 @@ p {
 
 b,
 strong {
-  color: $color-text-alt;
+  @include use-prop(color, color-text-alt);
   font-weight: bold;
 }
 
@@ -132,7 +132,7 @@ em {
 
   h1, h2, h3, h4, h5, h6 {
     em {
-      color: $color-text-accent;
+      @include use-prop(color, color-text-accent);
       font-style: italic;
     }
   }
