@@ -1,0 +1,6 @@
+body {
+  @supports (padding: constant(safe-area-inset-left)) {
+    padding-right: constant(safe-area-inset-right);
+    padding-left: constant(safe-area-inset-left);
+  }
+}
