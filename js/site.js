@@ -149,14 +149,39 @@ Array.prototype.forEach.call(form_boxes, function(el, i){
 })();
 
 (function() {
-  var main   = document.getElementById('main');
-  var toggle = document.createElement('button');
-  toggle.classList.add('button-theme');
-  toggle.innerHTML = document.body.classList.contains('theme-dark') ? 'Light Theme' : 'Dark Theme';
-  toggle.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.body.classList.toggle('theme-dark');
-    toggle.innerHTML = document.body.classList.contains('theme-dark') ? 'Light Theme' : 'Dark Theme';
-  });
-  main.parentNode.insertBefore(toggle, main);
+  if ( window.localStorage ) {
+    var main   = document.getElementById('main');
+    var toggle = document.createElement('button');
+
+    function saveTheme(isDark) {
+      var theme = isDark ? 'dark' : '';
+      localStorage.setItem('theme', theme);
+    }
+
+    function setTheme(isDark) {
+      var isDark = isDark ? isDark : getTheme();
+      buttonText(isDark);
+      saveTheme(isDark);
+    }
+
+    function getTheme() {
+      return document.body.classList.contains('theme-dark');
+    }
+
+    function buttonText(isDark) {
+      toggle.innerHTML = isDark ? 'Light Theme' : 'Dark Theme';
+    }
+
+    buttonText(getTheme());
+
+    toggle.classList.add('button-theme');
+
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.body.classList.toggle('theme-dark');
+      setTheme();
+    });
+
+    main.parentNode.insertBefore(toggle, main);
+  }
 })();
