@@ -32,7 +32,7 @@
   $values: map-values($map);
   $sorted-values: quick-sort($values);
   @each $v in $sorted-values {
-    $return-list: append($return-list, nth($keys, index( $values, $v)));
+    $return-list: append($return-list, nth($keys, index($values, $v)));
   }
   @return $return-list;
 }

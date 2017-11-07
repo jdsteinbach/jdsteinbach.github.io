@@ -149,7 +149,7 @@ Array.prototype.forEach.call(form_boxes, function(el, i){
 })();
 
 (function() {
-  if ( window.localStorage ) {
+  if (window.localStorage) {
     var main   = document.getElementById('main');
     var toggle = document.createElement('button');
 

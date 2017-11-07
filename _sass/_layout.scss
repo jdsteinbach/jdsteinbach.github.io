@@ -1,6 +1,8 @@
 body {
-  padding-right: constant(safe-area-inset-right);
-  padding-left: constant(safe-area-inset-left);
+  @supports (padding: max(10px)) {
+    padding-right: constant(safe-area-inset-right);
+    padding-left: constant(safe-area-inset-left);
+  }
 }
 
 .wrapper {
