@@ -9,6 +9,6 @@
     $bp-scales: map-remove($bp-scales, $label) !global;
     $bp-sorted-list: map-sort($breakpoints) !global;
   } @else {
-    @warn "Breakpoint `#{$label}` cannot be removed because it doesn't exist.";
+    @warn 'Breakpoint `#{$label}` cannot be removed because it doesn’t exist.';
   }
 }

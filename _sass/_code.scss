@@ -31,7 +31,7 @@ pre > code {
   width: auto;
 }
 
-$code-selectors: ".c", ".err", ".k", ".o", ".cm", ".cp", ".c1", ".cs", ".gd", ".gd", ".x", ".ge", ".gr", ".gh", ".gi", ".gi .x", ".go", ".gp", ".gs", ".gu", ".gt", ".kc", ".kd", ".kp", ".kr", ".kt", ".m", ".s", ".n", ".na", ".nb", ".nc", ".nd", ".no", ".nl", ".ni", ".ne", ".nf", ".nn", ".nt", ".nv", ".ow", ".w", ".mf", ".mh", ".mi", ".mo", ".sb", ".sc", ".sd", ".s1", ".s2", ".se", ".sh", ".si", ".sx", ".sr", ".s1", ".ss", ".bp", ".vc", ".vg", ".vi", ".il", ".p";
+$code-selectors: '.c', '.err', '.k', '.o', '.cm', '.cp', '.c1', '.cs', '.gd', '.gd', '.x', '.ge', '.gr', '.gh', '.gi', '.gi .x', '.go', '.gp', '.gs', '.gu', '.gt', '.kc', '.kd', '.kp', '.kr', '.kt', '.m', '.s', '.n', '.na', '.nb', '.nc', '.nd', '.no', '.nl', '.ni', '.ne', '.nf', '.nn', '.nt', '.nv', '.nx', '.ow', '.w', '.mf', '.mh', '.mi', '.mo', '.sb', '.sc', '.sd', '.s1', '.s2', '.se', '.sh', '.si', '.sx', '.sr', '.s1', '.ss', '.bp', '.vc', '.vg', '.vi', '.il', '.p';
 
 .highlighter-rouge {
   @each $s in $code-selectors {

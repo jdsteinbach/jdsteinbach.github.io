@@ -19,7 +19,7 @@
     $curr-size: length($scale);
   }
 
-  $actual-font: rd( $main-font * power(2, $loop) * int( nth($scale, $curr-size) ) );
+  $actual-font: rd($main-font * power(2, $loop) * int(nth($scale, $curr-size)));
 
   @return $actual-font;
 }

@@ -25,7 +25,6 @@
 
 .page-content {
   @include scale-padding(p, .5, false, .5, false);
-  -webkit-animation: fade .35s ease-out;
   animation: fade .35s ease-out;
 
   .button {

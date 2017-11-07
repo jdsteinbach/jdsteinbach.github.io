@@ -5,9 +5,9 @@ body {
   font-family: $font-body;
   font-kerning: normal;
   font-variant-ligatures: common-ligatures contextual;
-  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-  -ms-font-feature-settings: "kern", "liga", "clig", "alt";
-  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  // -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  // -ms-font-feature-settings: "kern", "liga", "clig", "alt";
+  // -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
 
@@ -70,9 +70,6 @@ h4 {
 p {
   @extend %tt-p;
   @include scale-margin(p, false, false, 1, false);
-
-  .post-content & {
-  }
 }
 
 .outbound-link,
@@ -130,7 +127,12 @@ em {
     }
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     em {
       @include use-prop(color, color-text-accent);
       font-style: italic;

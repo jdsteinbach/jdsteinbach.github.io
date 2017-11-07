@@ -45,8 +45,8 @@
 .mc-field-group {
   @extend %tt-p;
   @include scale-margin(p, 0, 0, 1, 0);
-  padding: 0;
   display: inline-block;
+  padding: 0;
   position: relative;
   width: 100%;
 
@@ -55,16 +55,14 @@
     display: block;
     font-style: italic;
     position: absolute;
-    top: .1em; left: 1em;
-    -webkit-transform-origin: left top;
+    top: .1em;
+    left: 1em;
     transform-origin: left top;
-    -webkit-transition: transform .25s ease-in-out, color .25s;
     transition: transform .25s ease-in-out, color .25s;
   }
 
   &.active-input label {
-    -webkit-transform: translateY(-80%) scale(.8);
-    -transform: translateY(-80%) scale(.8);
+    transform: translateY(-80%) scale(.8);
   }
 }
 
@@ -85,10 +83,10 @@ input,
 textarea {
   @extend %tt-p;
   @include scale-padding(p, 0, .5, 0, .5);
+  @include use-prop(color, color-text);
   background-color: transparent;
   border: $border-default;
   border-radius: $border-radius-default;
-  @include use-prop(color, color-text);
   display: block;
   font-family: inherit;
   width: 100%;
@@ -157,7 +155,6 @@ textarea {
   p {
     @extend %tt-blockquote;
     @include scale-margin(blockquote, 1, false, 2, false);
-    -webkit-animation: fade-down .35s ease-out;
     animation: fade-down .35s ease-out;
     font-weight: bold;
     text-align: center;

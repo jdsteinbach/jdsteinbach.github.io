@@ -1,7 +1,6 @@
 a {
   @include use-prop(color, color-link);
   text-decoration: none;
-  -webkit-transition: color .25s, opacity .25s, border .25s, -webkit-transform .25s ease-in-out;
   transition: color .25s, opacity .25s, border .25s, transform .25s ease-in-out;
 
   @include haf {
@@ -13,12 +12,12 @@ a {
   }
 }
 
-h2, h3 {
+h2,
+h3 {
   &[id] {
     &::after {
       content: ' #';
       opacity: 0;
-      -webkit-transition: opacity .25s;
       transition: opacity .25s;
     }
 
