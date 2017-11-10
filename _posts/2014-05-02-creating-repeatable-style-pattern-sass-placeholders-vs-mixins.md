@@ -5,6 +5,7 @@ layout: post
 permalink: /css/sass/creating-repeatable-style-pattern-sass-placeholders-vs-mixins/
 categories:
   - Sass
+sassmeister: true
 ---
 One the biggest benefits of Sass its ability to create reusable blocks of code. I often use <a title="Sass Placeholder Selector Documentation" href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_" target="_blank">`%placeholders`</a> or <a title="Sass Mixin Documentation" href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">`@mixins`</a> to create reusable code modules. (Here&#8217;s a great article on the <a title="Sass: Mixin or Placeholder? by Hugo Giraurdel" href="http://www.sitepoint.com/sass-mixin-placeholder/" target="_blank">difference between placeholders and mixins</a>. My short version: use mixins when you need to pass variables and placeholders when you don&#8217;t.)
 
