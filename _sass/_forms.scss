@@ -178,3 +178,22 @@ textarea {
   @extend %tt-title;
   font-weight: bold;
 }
+
+// Mailchimp archive styles
+[id="mailchimp-archive"] {
+  @extend %tt-p;
+  @include scale-margin(p, 1, false, 1, false);
+  @include scale-padding(p, 1, false, false, false);
+  border-top: $border-default;
+
+  .campaign {
+    @include scale-margin(p, false, false, .25, false);
+    font-family: $font-code;
+    // font-size: 1.25em;
+
+    a {
+      font-family: $font-body;
+      // font-size: (1em/1.25);
+    }
+  }
+}
