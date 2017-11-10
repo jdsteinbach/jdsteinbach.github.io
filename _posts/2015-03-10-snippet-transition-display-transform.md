@@ -5,6 +5,7 @@ layout: post
 permalink: /css/snippet-animate-display-transform/
 categories:
   - CSS
+codepen: true
 ---
 I often find myself needing to change an element from `display: none;` to `display: block;` *and* transition some `transform` properties on it. (Especially menu drop-downs&hellip;) Unfortunately, if you attempt to change `display` and `transform` at the same time, `display` “wins”: the element appears, but nothing gets transitioned.
 

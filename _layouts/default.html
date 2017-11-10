@@ -37,8 +37,12 @@ layout: compress
       ga('send', 'pageview');
     </script>
     <script async src="/js/site.js"></script>
+    {% if page.sassmeister %}
     <script defer src="//cdn.sassmeister.com/js/embed.js"></script>
+    {% endif %}
+    {% if page.codepen %}
     <script defer src="//assets.codepen.io/assets/embed/ei.js"></script>
+    {% endif %}
   </body>
 
 </html>

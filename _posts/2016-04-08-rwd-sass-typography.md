@@ -88,8 +88,8 @@ body {
 
 ## Responsive Typography Sass Libraries
 
-* Modular Scale:[jds.li/mscale](http://jds.li/mscale)
-* TypeTuner:[jds.li/typetuner](http://jds.li/typetuner)
-* Sassline:[jds.li/sassline](http://jds.li/sassline)
-* Typi:[jds.li/typi](http://jds.li/typi)
-* Typographic:[jds.li/typographic](http://jds.li/typographic)
+* Modular Scale: [jds.li/mscale](http://jds.li/mscale)
+* TypeTuner: [jds.li/typetuner](http://jds.li/typetuner)
+* Sassline: [jds.li/sassline](http://jds.li/sassline)
+* Typi: [jds.li/typi](http://jds.li/typi)
+* Typographic: [jds.li/typographic](http://jds.li/typographic)
