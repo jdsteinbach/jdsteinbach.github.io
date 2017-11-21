@@ -58,7 +58,7 @@
     top: .1em;
     left: 1em;
     transform-origin: left top;
-    transition: transform .25s ease-in-out, color .25s;
+    transition: transform .25s $easing, color .25s;
   }
 
   &.active-input label {
@@ -90,6 +90,7 @@ textarea {
   display: block;
   font-family: inherit;
   width: 100%;
+  transition: color .25s, opacity .25s, background-color .25s, transform .25s $easing;
 
   @include haf {
     @include use-prop(background-color, color-background-alt);
@@ -189,11 +190,9 @@ textarea {
   .campaign {
     @include scale-margin(p, false, false, .25, false);
     font-family: $font-code;
-    // font-size: 1.25em;
 
     a {
       font-family: $font-body;
-      // font-size: (1em/1.25);
     }
   }
 }

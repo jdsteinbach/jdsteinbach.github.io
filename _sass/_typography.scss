@@ -5,9 +5,6 @@ body {
   font-family: $font-body;
   font-kerning: normal;
   font-variant-ligatures: common-ligatures contextual;
-  // -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-  // -ms-font-feature-settings: "kern", "liga", "clig", "alt";
-  // -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
 
