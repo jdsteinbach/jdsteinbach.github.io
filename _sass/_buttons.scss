@@ -1,8 +1,7 @@
 button,
 .button,
 [type="submit"] {
-  @extend %tt-sm;
-  @include scale-padding(sm, 0, .5, 0, .5);
+  @include font-scale(sm);
   @include use-prop(background-color, color-link);
   @include use-prop(color, color-background);
   -webkit-font-smoothing: antialiased;
@@ -14,6 +13,7 @@ button,
   font-family: $font-body;
   font-weight: bold;
   letter-spacing: (1em / 32);
+  padding: 0 $small-spacing;
   text-transform: uppercase;
   transition: color .25s, opacity .25s, border-color .25s, background-color .25s, transform .25s $easing;
 
@@ -43,8 +43,8 @@ button,
   min-width: 44px;
   opacity: .5;
   position: absolute;
-  right: 1vmin;
-  top: 1vmin;
+  right: 0;
+  top: 0;
 
   @include haf {
     background-color: transparent;

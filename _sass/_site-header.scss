@@ -1,18 +1,33 @@
 .site-header {
-  @include scale-padding(p, .5, false, .5, false);
-  animation: fade .35s ease-out;
-  border-bottom: $border-default;
-  text-align: center;
+  @include use-prop(background-color, color-highlight);
+  padding-top: $small-spacing;
+  padding-bottom: $small-spacing;
+
+  .wrapper {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  a {
+    @include use-prop(color, color-background);
+  }
 }
 
 .site-title {
-  @extend %tt-p;
-  @include scale-padding(p, .25, .5, .25, .5);
+  @include font-scale(p);
   display: inline-block;
   font-family: $font-headline;
   font-weight: bold;
+  padding: $tiny-spacing $small-spacing;
   text-align: center;
   vertical-align: middle;
+
+  @include breakpoint(large) {
+    margin-right: auto;
+  }
 
   @include breakpoint(xlarge) {
     text-align: left;

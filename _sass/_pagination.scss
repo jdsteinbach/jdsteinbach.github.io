@@ -1,8 +1,8 @@
 
 .pagination {
-  @extend %tt-sm;
-  @include scale-padding(sm, .5, false, false, false);
+  @include font-scale(sm);
   border-top: $border-default;
+  padding-top: $small-spacing;
   text-align: center;
 
   a,
