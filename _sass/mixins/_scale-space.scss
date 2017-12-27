@@ -1,3 +1,7 @@
+@function _generate-scale-property($property, $direction) {
+  @return if($property == 'border', #{$property}-#{$direction}-width, #{$property}-#{$direction});
+}
+
 // Generate margin / padding based on baseline rhythm
 @mixin scale-space($type, $fs, $t:false, $r:false, $b:false, $l:false) {
   @each $bp, $scale in $bp-scales {
@@ -8,20 +12,22 @@
       $calc-rhythm: $main-font * $actual-rhythm;
       $em-value: $calc-rhythm / $actual-font;
 
+      $top: 'top';
+
       @if $t != false {
-        #{$type}-top: ($t * $em-value) * 1em;
+        #{_generate-scale-property($type, top)}: ($t * $em-value) * 1em;
       }
 
       @if $r != false {
-        #{$type}-right: ($r * $em-value) * 1em;
+        #{_generate-scale-property($type, right)}: ($r * $em-value) * 1em;
       }
 
       @if $b != false {
-        #{$type}-bottom: ($b * $em-value) * 1em;
+        #{_generate-scale-property($type, bottom)}: ($b * $em-value) * 1em;
       }
 
       @if $l != false {
-        #{$type}-left: ($l * $em-value) * 1em;
+        #{_generate-scale-property($type, left)}: ($l * $em-value) * 1em;
       }
     }
   }
@@ -35,4 +41,9 @@
 // Alias for scale-space() with padding
 @mixin scale-padding($fs, $t, $r, $b, $l) {
   @include scale-space('padding', $fs, $t, $r, $b, $l);
+}
+
+// Alias for scale-space() with padding
+@mixin scale-border($fs, $t, $r, $b, $l) {
+  @include scale-space('border', $fs, $t, $r, $b, $l);
 }
