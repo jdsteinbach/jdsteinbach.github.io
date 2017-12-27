@@ -1,22 +1,9 @@
 /*
  * COLORS
- * From: http://www.colourlovers.com/palette/38562/Hands_On
  */
 
 @function custom-darken($color) {
-  $orig-blue:        #2790B0;
-  $orig-blue-dark:   #2B4E72;
-
-  $hue-diff: hue($orig-blue-dark) - hue($orig-blue);
-  $sat-diff: saturation($orig-blue-dark) - saturation($orig-blue);
-  $light-diff: lightness($orig-blue-dark) - lightness($orig-blue);
-
-  @return adjust-color(
-    $color,
-    $hue: $hue-diff,
-    $saturation: $sat-diff,
-    $lightness: $light-diff
-  );
+  @return mix($color, black, 80%);
 }
 
 @function custom-invert($color) {
@@ -26,18 +13,21 @@
   @return hsl($hue, $saturation, $lightness);
 }
 
-$color-blue:        #2B4E72;//#2790B0;
+$color-blue:        #2C3E50;
 $color-blue-dark:   custom-darken($color-blue);
 
-$color-green:       #384b22;//#94BA65;
+$color-green:       #3A4D13;
 $color-green-dark:  custom-darken($color-green);
 
-$color-red:         #9d2109;//#a9240a;
+$color-red:         #8B0000;
 $color-red-dark:    custom-darken($color-red);
 
-$color-gray:        #4E4D4A;
+$color-orange:      #E65100;
+$color-orange-dark: custom-darken($color-orange);
+
+$color-gray:        desaturate($color-blue, 60%);
 $color-gray-dark:   custom-darken($color-gray);
-$color-gray-pale:   scale-color($color-blue, $lightness: 90%); // #e7f5fa
+$color-gray-pale:   scale-color($color-gray, $lightness: 90%);
 
 $color-text:        $color-gray;
 $color-text-alt:    $color-gray-dark;
@@ -69,11 +59,14 @@ $root-vars: (
   color-error:           $color-red,
   color-error-alt:       $color-red-dark,
 
+  color-highlight:       $color-orange,
+  color-highlight-alt:   $color-orange-dark,
+
   color-background:      $color-gray-pale,
   color-background-alt:  rgba($color-gray, .15),
   color-background-code: rgba($color-gray, .15),
 
-  icon-toggle:           url('/images/icon-toggle.svg')
+  icon-theme:            url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 32 32"%3E%3Cpath fill="#{$color-blue}" stroke="none" d="M16 8c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zM16 21v-10c2.757 0 5 2.243 5 5s-2.243 5-5 5zM16 26c1.105 0 2 0.895 2 2v2c0 1.105-0.895 2-2 2s-2-0.895-2-2v-2c0-1.105 0.895-2 2-2zM16 6c-1.105 0-2-0.895-2-2v-2c0-1.105 0.895-2 2-2s2 0.895 2 2v2c0 1.105-0.895 2-2 2zM30 14c1.105 0 2 0.895 2 2s-0.895 2-2 2h-2c-1.105 0-2-0.895-2-2s0.895-2 2-2h2zM6 16c0 1.105-0.895 2-2 2h-2c-1.105 0-2-0.895-2-2s0.895-2 2-2h2c1.105 0 2 0.895 2 2zM25.899 23.071l1.414 1.414c0.781 0.781 0.781 2.047 0 2.828s-2.047 0.781-2.828 0l-1.414-1.414c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0zM6.101 8.929l-1.414-1.414c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0l1.414 1.414c0.781 0.781 0.781 2.047 0 2.828s-2.047 0.781-2.828 0zM25.899 8.929c-0.781 0.781-2.047 0.781-2.828 0s-0.781-2.047 0-2.828l1.414-1.414c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-1.414 1.414zM6.101 23.071c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-1.414 1.414c-0.781 0.781-2.047 0.781-2.828 0s-0.781-2.047 0-2.828l1.414-1.414z"%3E%3C/path%3E%3C/svg%3E')
 );
 
 
@@ -88,12 +81,14 @@ $dark-vars: (
   color-link-2:          custom-invert($color-green),
   color-link-2-alt:      custom-invert($color-green-dark),
 
+  color-highlight:       custom-invert($color-orange),
+  color-highlight-alt:   custom-invert($color-orange-dark),
+
   color-background:      custom-invert($color-gray-pale),
   color-background-alt:  rgba(custom-invert($color-gray-dark), .15),
   color-background-code: custom-invert($color-gray),
 
-  icon-toggle:           url('/images/icon-toggle-dark.svg')
-
+  icon-theme:            url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 32 32"%3E%3Cpath fill="#{custom-invert($color-blue)}" stroke="none" d="M16 8c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zM16 21v-10c2.757 0 5 2.243 5 5s-2.243 5-5 5zM16 26c1.105 0 2 0.895 2 2v2c0 1.105-0.895 2-2 2s-2-0.895-2-2v-2c0-1.105 0.895-2 2-2zM16 6c-1.105 0-2-0.895-2-2v-2c0-1.105 0.895-2 2-2s2 0.895 2 2v2c0 1.105-0.895 2-2 2zM30 14c1.105 0 2 0.895 2 2s-0.895 2-2 2h-2c-1.105 0-2-0.895-2-2s0.895-2 2-2h2zM6 16c0 1.105-0.895 2-2 2h-2c-1.105 0-2-0.895-2-2s0.895-2 2-2h2c1.105 0 2 0.895 2 2zM25.899 23.071l1.414 1.414c0.781 0.781 0.781 2.047 0 2.828s-2.047 0.781-2.828 0l-1.414-1.414c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0zM6.101 8.929l-1.414-1.414c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0l1.414 1.414c0.781 0.781 0.781 2.047 0 2.828s-2.047 0.781-2.828 0zM25.899 8.929c-0.781 0.781-2.047 0.781-2.828 0s-0.781-2.047 0-2.828l1.414-1.414c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-1.414 1.414zM6.101 23.071c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-1.414 1.414c-0.781 0.781-2.047 0.781-2.828 0s-0.781-2.047 0-2.828l1.414-1.414z"%3E%3C/path%3E%3C/svg%3E')
 );
 
 @each $name, $prop in $root-vars {
@@ -128,7 +123,6 @@ $startsmall: true;
 @include add-breakpoint(large, 60em, 1.6rem, 1.618, major-triad);
 @include add-breakpoint(xlarge, 90em, 1.8rem, 1.618, major-triad);
 
-@include set-hierarchy(sm p blockquote subtitle null title skip hero);
 @include set-hierarchy(sm p blockquote subtitle title hero);
 
 @include type-tune(extend);
@@ -137,3 +131,5 @@ $startsmall: true;
  * LAYOUT
  */
 $max-width: 45em;
+
+$easing: cubic-bezier(.5, .5, .5, 1.5);

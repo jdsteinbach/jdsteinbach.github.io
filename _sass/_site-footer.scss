@@ -1,5 +1,5 @@
 .site-footer {
-  @include scale-padding(p, .5, false, .5, false);
+  @include scale-padding(p, .5, false, 1, false);
   border-top: $border-default;
 }
 
@@ -12,7 +12,7 @@
   }
 
   p {
-    @include scale-margin(sm, false, false, 1, false);
+    margin: 0;
   }
 
   @include breakpoint(medium) {
