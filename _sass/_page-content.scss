@@ -1,6 +1,6 @@
 .post-meta {
-  @extend %tt-sm;
-  @include scale-margin(sm, false, false, 1, false);
+  @include font-scale(sm);
+  margin-bottom: $base-spacing;
 
   .categories {
     text-transform: lowercase;
@@ -24,16 +24,10 @@
 }
 
 .page-content {
-  @include scale-padding(p, .5, false, .5, false);
-  animation: fade .35s ease-out;
+  padding-top: $small-spacing;
+  padding-bottom: $small-spacing;
 
   .button {
-    @include scale-margin(sm, false, false, .5, false);
+    margin-bottom: $small-spacing;
   }
-}
-
-.post-content {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: ($max-width / 6 * 4);
 }

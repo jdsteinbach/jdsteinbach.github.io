@@ -2,17 +2,15 @@ a {
   @include use-prop(color, color-link);
   text-decoration: none;
   position: relative;
-  transition: color .25s, opacity .25s, border .25s, transform .25s $easing;
+  transition: color .25s, text-decoration-color .25s, background-color .25s, opacity .25s, border .25s, transform .25s $easing;
 
   @include haf {
     @include use-prop(color, color-link-alt);
   }
 
-  &.page-link,
-  .post-list &,
-  .post-content & {
+  &.site-nav__link,
+  .post-list & {
     &::before {
-      @include use-prop(color, color-highlight);
       content: '';
       position: absolute;
       top: 0;
@@ -27,26 +25,37 @@ a {
 
     @include haf {
       &::before {
-        transform: none;
+        transform: scaleX(1) rotate(-1deg) translateY(0);
         opacity: .2;
       }
     }
   }
 
-  &.page-link::before {
+  &.site-nav__link::before {
+    @include use-prop(color, color-background);
     background-image: linear-gradient(0deg, currentColor 0, currentColor 1em, transparent 1em);
+    z-index: 0;
   }
 
-  .post-content &::before {
-    background-image: linear-gradient(0deg, currentColor 0, currentColor .5em, transparent .5em);
+  .post-content & {
+    text-decoration: underline;
+
+    @supports (text-decoration-skip: ink) {
+      text-decoration-color: currentColor;
+      text-decoration-skip: ink;
+      text-decoration-style: underline;
+    }
+
+    @include haf {
+      @include use-prop(text-decoration-color, color-highlight);
+      @include use-prop(background-color, color-highlight-pale);
+    }
   }
 
   .post-list &::before {
-    background-color: currentColor;
-  }
-
-  .post-content p & {
-    border-bottom: 1px solid currentColor;
+    @include use-prop(border-color, color-highlight);
+    border-style: solid;
+    border-width: $tiny-spacing;
   }
 }
 
