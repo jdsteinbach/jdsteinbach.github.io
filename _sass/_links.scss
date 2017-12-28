@@ -40,12 +40,6 @@ a {
   .post-content & {
     text-decoration: underline;
 
-    @supports (text-decoration-skip: ink) {
-      text-decoration-color: currentColor;
-      text-decoration-skip: ink;
-      text-decoration-style: underline;
-    }
-
     @include haf {
       @include use-prop(text-decoration-color, color-highlight);
       @include use-prop(background-color, color-highlight-pale);

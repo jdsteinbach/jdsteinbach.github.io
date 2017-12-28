@@ -30,4 +30,6 @@
 @import 'site-header';
 @import 'page-content';
 @import 'site-footer';
+
+// Import last because GH/Jekyll/Sass quits after an `@supports` block
 @import 'supports';
