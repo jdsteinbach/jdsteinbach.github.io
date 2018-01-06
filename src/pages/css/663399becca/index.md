@@ -1,0 +1,18 @@
+---
+title: '#663399becca'
+date: '2014-06-12'
+path: /css/663399becca
+---
+I&#8217;ve never experienced [what Eric Meyer and his family have experienced in Rebecca&#8217;s death][1]. I can&#8217;t begin to imagine all the emotions and feelings and pressure and grief they&#8217;re in the middle of. [Colors][2] and hashtags seem like such a feeble way to show support, but I hope they find strength and encouragement in these small expressions.
+
+Eric&#8217;s transparency through the lengthy struggle with Rebecca&#8217;s cancer has been humbling, painful, encouraging, witty, and real. My respect for him as a father quickly eclipsed my respect for him as a developer. And to be completely honest, I wouldn&#8217;t be here today without his *CSS: The Definitive Guide*. His open expression of his family&#8217;s struggle drew me to tears, made me laugh, drove me to prayer, and caused me to care deeply about a sweet girl I&#8217;ve never met.
+
+The most heart-breaking tweets I read were ones that shared Rebecca&#8217;s simple, sweet, childlike responses to the horrible reality of her cancer. Cancer sucks all the time, but when it strikes a six-year-old it *really* sucks. No child should have to face the realities she faced, but she seemed so brave. Half the time I didn&#8217;t know whether to smile or cry (or both).
+
+Eric, you and your family are in my prayers now (as you&#8217;ve been for months) and I wish you all the support and strength in the world. I hope you find moments of joy in the midst of your grief.
+
+[#663399becca][3]
+
+ [1]: http://meyerweb.com/eric/thoughts/2014/06/09/in-memoriam-2/ "Eric Meyer - In Memoriam"
+ [2]: http://www.zeldman.com/2014/06/10/the-color-purple/ "The Color Purple"
+ [3]: https://twitter.com/hashtag/663399becca" "Twitter - #663399becca"
