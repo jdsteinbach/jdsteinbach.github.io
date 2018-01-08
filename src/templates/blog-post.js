@@ -1,21 +1,39 @@
-import React, { Fragment } from 'react'
-import Helmet from 'react-helmet'
+import React, { Fragment } from 'react';
+import Helmet from 'react-helmet';
 
-const BlogPost = ({ data }) => {
-  const { markdownRemark: post }
+import Link from 'gatsby-link';
 
+export default function Template({ data, pathContext }) {
+  const { markdownRemark: post } = data;
+  const { next, prev } = pathContext;
   return (
-    <div>
-      <Helmet title={`Your Blog Name - ${post.frontmatter.title}`} />
+    <Fragment>
+      <Helmet
+        title={`Gatsby Blog - ${post.frontmatter.title}`}
+        meta={[
+          { name: 'description', content: post.excerpt }
+        ]} />
       <header>
-        <h1>{post.frontmatter.title}</h1>
+        <h1 className="title">
+          {post.frontmatter.title}
+        </h1>
+        <time dateTime="post.frontmatter.date" className="date">
+          {post.frontmatter.date}
+        </time>
       </header>
-      <main className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-    </div>
-  )
+      <main
+        className="blog-post-content"
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      />
+      <nav className="navigation">
+        {prev &&
+          <Link className="link prev" to={prev.frontmatter.path}>{prev.frontmatter.title}</Link>}
+        {next &&
+          <Link className="link next" to={next.frontmatter.path}>{next.frontmatter.title}</Link>}
+      </nav>
+    </Fragment>
+  );
 }
-
-export default BlogPost
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
@@ -28,4 +46,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

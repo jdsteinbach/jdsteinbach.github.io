@@ -2,8 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import ReactDOM from 'react-dom'
-console.table(ReactDOM)
+
 import styled, { injectGlobal, haf, metrics, mq, type } from '../styles'
 
 injectGlobal`
