@@ -9,11 +9,11 @@
   }
 }
 
-.page-link {
-  @extend %tt-sm;
-  @include scale-padding(sm, .25, .5, .25, .5);
+.site-nav__link {
+  @include font-scale(sm);
   display: inline-block;
   letter-spacing: (1em / 32);
+  padding: $tiny-spacing $small-spacing;
   text-transform: uppercase;
 
   &[href*="hire"] {

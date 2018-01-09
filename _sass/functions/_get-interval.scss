@@ -1,4 +1,0 @@
-// Get the distance between notes in an interval
-@function int($name) {
-  @return map-get($intervals, $name);
-}

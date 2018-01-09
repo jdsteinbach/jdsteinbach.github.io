@@ -23,12 +23,16 @@ $custom-properties: (':root': ());
   #{$property}: get-prop($name);
 }
 
+@mixin print-props($values) {
+  @each $key, $value in $values {
+    #{unquote('--#{$key}')}: $value;
+  }
+}
+
 @mixin output-props {
   @each $context, $values in $custom-properties {
     #{$context} {
-      @each $key, $value in $values {
-        #{unquote('--#{$key}')}: $value;
-      }
+      @include print-props($values);
     }
   }
 }

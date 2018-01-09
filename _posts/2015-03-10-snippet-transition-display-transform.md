@@ -35,4 +35,3 @@ I use the first percent of the animation to change the `display` value, then the
 Check out the difference in this Pen:
 
 <p data-height="268" data-theme-id="0" data-slug-hash="MYPgPp" data-default-tab="result" data-user="jdsteinbach" class='codepen'>See the Pen <a href='http://codepen.io/jdsteinbach/pen/MYPgPp/'>MYPgPp</a> by James Steinbach (<a href='http://codepen.io/jdsteinbach'>@jdsteinbach</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
