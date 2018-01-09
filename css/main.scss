@@ -8,12 +8,15 @@
 @import 'reset';
 
 @import 'fonts';
-@import 'typetuner';
+@import 'functions/power';
+@import 'custom-type/custom-type';
 @import 'custom-properties/custom-properties';
 @import 'variables';
 @import 'mixins';
+@import 'mixins/bp';
 @import 'animations';
 
+@import 'root';
 @import 'typography';
 @import 'code';
 @import 'links';
@@ -27,4 +30,6 @@
 @import 'site-header';
 @import 'page-content';
 @import 'site-footer';
-@import 'iphone-x';
+
+// Import last because GH/Jekyll/Sass quits after an `@supports` block
+@import 'supports';

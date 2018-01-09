@@ -1,5 +1,5 @@
 body {
-  @extend %tt-p;
+  @include font-scale(p);
   @include use-prop(background-color, color-background);
   @include use-prop(color, color-text);
   font-family: $font-body;
@@ -9,72 +9,73 @@ body {
 }
 
 h1 {
-  @extend %tt-title;
+  @include font-scale(subtitle);
   @include use-prop(color, color-text-alt);
   font-family: $font-headline;
   font-weight: bold;
 }
 
 h2 {
-  @extend %tt-subtitle;
+  @include font-scale(blockquote);
   @include use-prop(color, color-text-alt);
   font-family: $font-headline;
   font-weight: bold;
 
   .post-content & {
-    @include scale-margin(subtitle, 1, false, .5, false);
     @include use-prop(color, color-text-alt);
+    margin-top: $base-spacing;
+    margin-bottom: $small-spacing;
   }
 }
 
 h3 {
   .post-content & {
-    @include scale-margin(p, .5, false, false, false);
     @include use-prop(color, color-text-alt);
     font-weight: bold;
     letter-spacing: (1em / 32);
+    margin-top: $small-spacing;
     text-transform: uppercase;
   }
 }
 
 h4 {
   .post-content & {
-    @include scale-margin(p, .5, false, false, false);
     @include use-prop(color, color-text-alt);
     font-weight: bold;
+    margin-top: $small-spacing;
   }
 }
 
 .page-heading,
 .post-title {
-  @extend %tt-hero;
-  @include scale-margin(hero, 1, false, false, false);
+  @include font-scale(title);
   @include use-prop(color, color-text-alt);
   letter-spacing: (1em / 32);
+  margin-top: $base-spacing;
   text-align: center;
   text-transform: uppercase;
 }
 
 .post-title {
-  @include scale-margin(hero, false, false, 1, false);
+  margin-bottom: $base-spacing;
 }
 
 .page-heading {
-  @extend %tt-title;
-  @include scale-margin(title, false, false, 1, false);
+  @include font-scale(subtitle);
+  margin-bottom: $base-spacing;
 }
 
 p {
-  @extend %tt-p;
-  @include scale-margin(p, false, false, 1, false);
+  @include font-scale(p);
+  margin-bottom: $base-spacing;
 }
 
 .outbound-link,
 .post-link {
-  @extend %tt-subtitle;
-  @include scale-margin(subtitle, 1, false, false, false);
+  @include font-scale(blockquote);
   display: block;
   font-family: $font-headline;
+  margin-top: $base-spacing;
 }
 
 b,
@@ -91,10 +92,11 @@ em {
 .post-content {
   > ul,
   > ol {
-    @include scale-margin(p, false, false, 1, false);
+    margin-bottom: $base-spacing;
 
     li {
-      @include scale-margin(p, .5, false, false, .618);
+      margin-top: $small-spacing;
+      margin-bottom: $small-spacing;
     }
   }
 

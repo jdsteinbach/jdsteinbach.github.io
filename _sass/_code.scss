@@ -1,18 +1,12 @@
 code {
-  @include scale-padding(p, .125, .125, .125, .125);
   @include use-prop(background-color, color-background-alt);
   @include use-prop(color, color-text-alt);
   border-radius: $border-radius-default;
   display: inline-block;
   font-family: $font-code;
   font-weight: inherit;
-  line-height: 1;
+  padding: 0 .5ch;
   vertical-align: baseline;
-
-  p > &,
-  p a > & {
-    font-size: 1.2em;
-  }
 
   a & {
     color: inherit;
@@ -20,14 +14,14 @@ code {
 }
 
 pre > code {
-  @extend %tt-sm;
-  @include scale-margin(sm, 1, -.5, 1, -.5);
-  @include scale-padding(sm, .5, .5, .5, .5);
+  @include font-scale(sm);
   @include use-prop(background-color, color-background-code);
   @include use-prop(color, color-background);
   border: $border-default;
   display: block;
+  margin: $base-spacing (0 - $small-spacing);
   overflow: scroll;
+  padding: $small-spacing;
   width: auto;
 }
 

@@ -5,20 +5,24 @@ img {
 }
 
 .alignleft {
-  @include scale-margin(p, false, .5, .5, 0);
   clear: right;
   float: left;
+  margin-right: $small-spacing;
+  margin-bottom: $small-spacing;
+  margin-left: 0;
 }
 
 .alignright {
-  @include scale-margin(p, false, 0, .5, .5);
   clear: left;
   float: right;
+  margin-right: 0;
+  margin-bottom: $small-spacing;
+  margin-left: $small-spacing;
 }
 
 .aligncenter {
-  @include scale-margin(p, false, false, 1, false);
   margin-left: auto;
+  margin-bottom: $base-spacing;
   margin-right: auto;
 }
 

@@ -1,14 +1,15 @@
 .site-footer {
-  @include scale-padding(p, .5, false, 1, false);
-  border-top: $border-default;
+  @include use-prop(background-color, color-background-alt);
+  padding-bottom: $base-spacing;
+  padding-top: $base-spacing;
 }
 
 .footer-col {
-  @include scale-margin(p, false, false, 1, false);
+  margin-bottom: $base-spacing;
 
   &,
   p {
-    @extend %tt-sm;
+    @include font-scale(sm);
   }
 
   p {
