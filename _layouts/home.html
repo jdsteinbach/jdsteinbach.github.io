@@ -1,0 +1,25 @@
+{% include _includes/global-header.html %}
+
+<div class="page inner-wrapper">
+  <ul class="post-list">
+    {% for post in pagination.pages[pagination.index] %}
+      {% include excerpt %}
+    {% endfor %}
+  </ul>
+
+  <div class="pagination">
+    {% if pagination.previous %}
+    <a href="{{ pagination.previous.path }}" class="previous">Previous</a>
+    {% else %}
+    <span class="previous"></span>
+    {% endif %}
+    <span class="page-number ">{ {{ pagination.num }} of {{ pagination.pages.length }} }</span>
+    {% if pagination.next %}
+    <a href="{{ pagination.next.path }}" class="next">Next</a>
+    {% else %}
+    <span class="next"></span>
+    {% endif %}
+  </div>
+</div>
+
+{% include _includes/global-footer.html %}

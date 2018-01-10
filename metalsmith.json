@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "site": {
+      "url": "https://jdsteinbach.com",
+      "email": "jdsteinbach@gmail.com",
+      "name": "James Steinbach",
+      "description": "Front-end Architect. Speaker & writer. Sass, CSS Animation, RWD & WP.",
+      "analytics": "UA-43397146-5",
+      "category_suffix": "Archive",
+      "profile_pic": "/assets/images/headshot.png",
+      "twitter_username": "jdsteinbach",
+      "github_username": "jdsteinbach"
+    }
+  },
+  "source": "content",
+  "destination": "public",
+  "clean": true,
+  "ignore": "assets",
+  "plugins": {
+    "metalsmith-markdown": {},
+    "metalsmith-collections": {
+      "posts": {
+        "pattern": "./posts/*.md"
+      },
+      "nav": {
+        "pattern": "./*.md"
+      }
+    },
+    "metalsmith-pagination": {
+      "collections.posts": {
+        "perPage": 8,
+        "layout": "_layouts/home.html",
+        "path": "page/:num/index.html"
+      }
+    },
+    "metalsmith-permalinks": {
+      "pattern": ":permalink"
+    },
+    "metalsmith-layouts": {
+      "engine": "liquid",
+      "directory": "_layouts"
+    }
+  }
+}

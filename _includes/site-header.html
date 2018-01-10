@@ -1,0 +1,18 @@
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="{{ site.url }}/">{{ site.name }}</a>
+
+    <nav class="site-nav">
+      {{ collections.nav }}
+      {% for page in collections.nav %}
+        {% if page.menu_title %}
+          <a class="site-nav__link" href="{{ page.url | prepend: site.url }}">{{ page.menu_title }}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+
+  </div>
+
+</header>

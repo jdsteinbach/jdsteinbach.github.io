@@ -1,0 +1,21 @@
+{% include _includes/global-header.html %}
+
+<div class="post inner-wrapper">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      <span class="date">{{ page.date | date: "%b %d, %Y" }}</span>
+      {% if page.author %} <span class="author">{{ page.author }}</span>{% endif %}
+      {% if page.meta %} <span class="meta">{{ page.meta }}</span>{% endif %}
+      {% if page.categories %} <span class="categories">{% include _includes/categories.html %}</span>{% endif %}
+    </p>
+  </header>
+
+  <article class="post-content">
+    {{ contents }}
+  </article>
+
+</div>
+
+{% include _includes/global-footer.html %}

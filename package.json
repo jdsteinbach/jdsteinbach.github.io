@@ -1,0 +1,55 @@
+{
+  "name": "ps-site",
+  "version": "1.0.0",
+  "description": "Plum Street site",
+  "main": "metalsmith.js",
+  "scripts": {
+    "postinstall": "bower i",
+    "start": "metalsmith"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/plumstreet/ps-site.git"
+  },
+  "author": "James Steinbach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plumstreet/ps-site/issues"
+  },
+  "homepage": "https://github.com/plumstreet/ps-site#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.7.4",
+    "bower": "^1.8.2",
+    "browser-sync": "^2.18.8",
+    "child_process": "^1.0.2",
+    "cssnano": "^3.10.0",
+    "del": "^2.2.2",
+    "glob": "^7.1.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.0.1",
+    "gulp-util": "^3.0.8",
+    "handlebars": "^4.0.10",
+    "metalsmith": "^2.3.0",
+    "metalsmith-assets": "^0.1.0",
+    "metalsmith-collections": "^0.9.0",
+    "metalsmith-data-loader": "^1.1.1",
+    "metalsmith-layouts": "^1.8.1",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-pagination": "^1.4.0",
+    "metalsmith-permalinks": "^0.5.0",
+    "metalsmith-serve": "0.0.7",
+    "metalsmith-sitemap": "^1.2.0",
+    "metalsmith-watch": "^1.0.3",
+    "liquid": "^1.2.1",
+    "tinyliquid": "^0.2.34"
+  }
+}

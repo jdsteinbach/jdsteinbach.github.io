@@ -1,0 +1,21 @@
+{% include header %}
+
+<div class="post inner-wrapper">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ post.title }}</h1>
+    <p class="post-meta">
+      <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+      {% if post.author %} <span class="author">{{ post.author }}</span>{% endif %}
+      {% if post.meta %} <span class="meta">{{ post.meta }}</span>{% endif %}
+      {% if post.categories %} <span class="categories">{% include categories %}</span>{% endif %}
+    </p>
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+</div>
+
+{% include footer %}

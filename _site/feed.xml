@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>James Steinbach
+</title>
+    <description>Front-end architect. Speaker &amp; writer.&lt;br/&gt;Sass, CSS animation, RWD &amp;amp; WP.
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 04 Dec 2017 09:52:39 -0700</pubDate>
+    <lastBuildDate>Mon, 04 Dec 2017 09:52:39 -0700</lastBuildDate>
+    <generator>Jekyll v3.5.2</generator>
+    
+      <item>
+        <title>Animating Background Gradients to Make Your PWA More Native</title>
+        <description>&lt;p&gt;Read my article “&lt;a href=&quot;https://dockyard.com/blog/2017/10/17/animating-background-gradients-pwa&quot; title=&quot;Animating Background Gradients to Make Your PWA More Native&quot; target=&quot;_blank&quot;&gt;Animating Background Gradients to Make Your PWA More Native&lt;/a&gt;” at DockYard.com.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 16 Oct 2017 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/css/animating-gradients/</link>
+        <guid isPermaLink="true">http://localhost:4000/css/animating-gradients/</guid>
+        
+        
+        <category>CSS</category>
+        
+      </item>
+    
+      <item>
+        <title>Distributed Mentoring</title>
+        <description>&lt;p&gt;When most people think about mentoring, they picture someone more experienced investing time in a close relationship with someone less experienced. Maybe you thought about someone who’d done that for you - a co-worker, parent, or teacher. In my web development career, I’ve had a different kind of mentoring experience than that standard one. Instead of having an experienced developer invest lots of time in me and my career, I’ve benefited from little bits of help from lots of people over the years. &lt;strong&gt;I like to call this “distributed” mentorship: remote learning from people around the world.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;About 10 years ago, I got started in web development as a hobby. I was in grad school (studying an entirely unrelated field) and managed to have “free time” one semester. My dad had built a few sites back in the 90s and I liked computers so I thought it would be fun to learn how to build a site. My roommate was studying computer science and I asked him how to build a site. He was working on software development, so he just laughed and showed me w3schools. (Yeah, I know NOW not to go there, but hey, I learned a few things from it back then!) I got more direction from a friend David (who was a sysadmin). He wasn’t an “expert” at front-end development, but he was more familiar with it. He gave me a piece of fantastic advice: “most websites are built with tables, but CSS is the new thing that cutting-edge sites are using, so start there and forget tables.”&lt;/p&gt;
+
+&lt;p&gt;I remember the new things back then: learning HTML, figuring out that PHP let me have variables and logic, installing IIS &amp;amp; then Apache on my XP laptop, exploring CSS, being mystified that Chrome and Firefox had different default margins on text elements. Most of those ups &amp;amp; downs were part of the standard learning curve for front-end devs back then. Through this time, I didn’t really have a “mentor” like we usually think of them. David and I had plenty more conversations - he ended up being my hosting service for years and I learned a lot from him. I remember sitting across the table from him at a bagel place while he drew DNS / hosting diagrams on a napkin. I still really enjoy digging into server admin stuff so I’m grateful for what I learned from him.&lt;/p&gt;
+
+&lt;p&gt;Within a year or so of getting experienced with front-end dev, I realized people would probably pay me money for this “hobby.” So I started telling friends what I could do and built a few small paid sites on the side.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-weird-lull&quot;&gt;The Weird Lull&lt;/h2&gt;
+
+&lt;p&gt;After I graduated I got a job maintaining a website for a small non-profit (and running activities for their events every month and a host of other things: it was very much an “everyone helps with everything” kind of organization). I was given a privately developed CMS with no documentation and little to no positive help from the guy who’d built it. I learned a lot that year, but it was more visual design from the organization’s graphic design team - I was pretty isolated as the only “web person.” A year later, I moved on having learned very little: a bit of JavaScript and “never try to edit an undocumented code base.”&lt;/p&gt;
+
+&lt;h2 id=&quot;a-real-job-almost&quot;&gt;A Real Job, Almost&lt;/h2&gt;
+
+&lt;p&gt;After that, I moved back to my college town for more grad school (nope, still not studying dev/tech &lt;code class=&quot;highlighter-rouge&quot;&gt;¯\_(ツ)_/¯&lt;/code&gt;) and got a job as a graduate assistant running a ZenCart site. I’d been getting more familiar with PHP by using WordPress so that much of the code wasn’t too difficult. What was more challenging was the dozen or so custom MySQL queries I used to handle reporting every quarter. The site was a small MP3 store, so we reported sales to the original artists and paid their licensing fees to the license holders on any tracks they covered from another artist. The worst queries took up more than a page in Word (yep, that’s where everything was stored when I arrived). Since then, I’ve forgotten most of that, but that was also a great year for me - I sold my first few Wordpress sites to some clients and settled solidly on WP as a starting point for client work. There were some fun customizations: mp3 storage &amp;amp; playback (before MediaElement.JS was part of WP) and PayPal integration (price &amp;amp; SKU custom fields, no plugins), but nothing that I’d consider “advanced” today.&lt;/p&gt;
+
+&lt;p&gt;During this time, I didn’t have a “mentor” &lt;em&gt;per se&lt;/em&gt;. I learned a lot from the developer who handed off that ZenCart installation to me - he was kind enough to stay close for support questions for a few months. By now, though, I was relying on a growing network of &lt;strong&gt;distributed mentors&lt;/strong&gt;: devs I followed on Twitter and trustworthy publisher. I’d become an avid follower of &lt;a href=&quot;https://css-tricks.com/&quot;&gt;CSS-Tricks&lt;/a&gt;, &lt;a href=&quot;https://alistapart.com/&quot;&gt;A List Apart&lt;/a&gt;, and &lt;a href=&quot;http://www.smashingmagazine.com/&quot;&gt;Smashing Mag&lt;/a&gt;. I didn’t personally meet people like Chris Coyier, Eric Meyer, Jeffrey Zeldman, Andrew Clarke, or Vitaly Freidman, but I read their posts &amp;amp; books and “got mentored” by them from a distance.&lt;/p&gt;
+
+&lt;p&gt;During this time I started to realize that not every mentorship is an in-person relationship over a long period of time. There are times I’ve looked back and wondered, “who was my mentor during this phase?” and come up blank - until I stop to remember how much I owe to the developers who write and publish and share their knowledge across the web.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-real-job-for-real&quot;&gt;A Real Job, For Real&lt;/h2&gt;
+
+&lt;p&gt;A few more years of freelance work went by while I finished up that degree. Then after graduating again, I got hired at my first &lt;em&gt;real&lt;/em&gt; developer job. Not “a small part of my workload” development or “part-time for a college,” but real-live, full-time, development-only work.&lt;/p&gt;
+
+&lt;p&gt;By this time, Ethan Marcotte and his magical media queries had changed my CSS world, and shortly into this job, I swallowed my pride (“but my CSS is good enough already!”) and learned Sass. I got pretty proficient at jQuery and was picking up bits of the plain JS that lived beneath it. I was cranking out custom WordPress themes every month or so and loving it. I was the only developer there (it was a &lt;em&gt;small&lt;/em&gt; agency), so there wasn’t much “in-person” mentoring. However that year I got to attend CSSDevConf (my first dev conference!) and came away amazed. I got to meet some of the devs who had been my “publishing mentors” to that point (hey, Chris &amp;amp; Estelle!) and I met several more devs whose work I started following &amp;amp; learning from immediately (lookin’ at you, Rachel, Micah, &amp;amp; Winston). I discovered CSS animation that weekend and immediately started adding pizzazz to the sites I was working on.&lt;/p&gt;
+
+&lt;p&gt;Conference mentors are another useful kind of distributed mentor too. I didn’t know them at all before then, but Micah Godbolt and Winston Hearn took time to answer my questions about their talks. I got to sit by Chris Coyier, Tab Atkins, and Estelle Weyl one meal, and chat with Jonathan Snook over appetizers one evening. These brief interactions may not seem like very much on their own, but for me, they were really powerful. To realize that these experts were normal people who provide helpful advice and have friendly conversations with a newbie developer was tremendously encouraging.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-big-job&quot;&gt;A Big Job&lt;/h2&gt;
+
+&lt;p&gt;I’ve talked to a lot of developers whose careers have started similarly: learn/freelance, take a real job, then learn so much in your first year that your next job is a massive jump up. That’s what happened. I got an offer to join a team of a dozen developers at a larger agency. This was my first experience working with a significant in-person team. It was exciting to see how our individual strengths and weaknesses quickly moved us into collaborative mentorships. I inherited several bloated CSS-framework-based sites and helped the team move forward into lighter, more customizable Sass workflows. I learned the basics of Angular and Ember from devs with more JS experience than I had.&lt;/p&gt;
+
+&lt;h2 id=&quot;staying-home&quot;&gt;Staying Home&lt;/h2&gt;
+
+&lt;p&gt;A year later, I took a job with a remote company. The challenges of learning remote work were balanced by a lot of positives: the team had an established workflow, people were already communicating well in Slack &amp;amp; the PM app, and the dev team was internal (so we worked with our own marketing and design departments, instead of reporting to external clients). The same collaborative pattern was at work there too: we had a dev who was our PHP expert, one who was the JS guru, one who knew the company history and business model well, and a CSS/Sass expert (me). We learned from each other well. Again, it didn’t feel like “traditional” mentorship. Depending on the topic and context, each of us played the role of mentor or mentee at one time or another. And again, since the whole team was remote, this was another form of distributed mentorship. It was a fantastic team to be part of for 2 years.&lt;/p&gt;
+
+&lt;h2 id=&quot;flying-solo-for-now&quot;&gt;Flying Solo (for now)&lt;/h2&gt;
+
+&lt;p&gt;This spring, I shifted positions again: it took a few months for things to settle, but I’m a contractor/consultant right now. I’ve been working as a team lead with a company that manages a flexible crew of contractors for web/software development and that’s been exciting. Having great onboarding/training conversations, constructive code reviews, and teaching moments with junior and intermediate developers has been enjoyable and fulfilling. I’m currently working with a friend to build a company that incorporates both top-notch web app development and training / apprenticeship opportunities for new devs.&lt;/p&gt;
+
+&lt;h2 id=&quot;take-aways&quot;&gt;Take-Aways&lt;/h2&gt;
+
+&lt;p&gt;I’ve benefited a lot from “distributed mentoring.” Twitter people, online publishers, conference speakers &amp;amp; friends, co-workers and peers - they’ve all played important roles in my career, even though it hasn’t looked like a stereotypical mentorship.&lt;/p&gt;
+
+&lt;p&gt;If you’re starting your journey as a developer, start building a good network of people whose tweets/posts/blogs/work you can follow online and learn from remotely. Also, it can be a tough investment to swing, but attending conferences is a huge help, especially in your first couple years of “full-time” development work.&lt;/p&gt;
+
+&lt;p&gt;If you’ve gotten enough experience to start specializing in a particular language, stack, or framework, use that expertise to grow collaboratively with others. Don’t get stuck behind fear that you’re “not expert enough yet” - if you know just a couple things that a friend or peer doesn’t, you can help them along. And of course, stay friends with people who know at least a little more than you about some topics so they can help you along.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 24 Jun 2017 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/misc/distributed-mentoring/</link>
+        <guid isPermaLink="true">http://localhost:4000/misc/distributed-mentoring/</guid>
+        
+        
+        <category>misc</category>
+        
+      </item>
+    
+      <item>
+        <title>Keeping RWD Simple &amp; Sassy – Animation</title>
+        <description>&lt;p&gt;This is the fifth &amp;amp; final post in a series based on my recent RWD Summit talk “Keeping RWD Simple &amp;amp; Sassy.” It covers some useful techniques for managing responsive animations with Sass.&lt;/p&gt;
+
+&lt;h2 id=&quot;responsive-animations&quot;&gt;Responsive Animations&lt;/h2&gt;
+
+&lt;p&gt;Complex animations may need to move differently at different breakpoints. The only way to use different animations at different breakpoints is to define multiple &lt;code class=&quot;highlighter-rouge&quot;&gt;@keyframes&lt;/code&gt; animations and use a media query on the animated selector to change the &lt;code class=&quot;highlighter-rouge&quot;&gt;animation-name&lt;/code&gt; at the appropriate breakpoints.&lt;/p&gt;
+
+&lt;p&gt;Before we get into some useful Sass techniques to help manage responsive animations, let’s talk about a few things you should &lt;strong&gt;not&lt;/strong&gt; be doing with Sass.&lt;/p&gt;
+
+&lt;p&gt;Do not use Sass mixins for browser prefixes. I know, you can still find dozens of articles claiming that browser prefixes are a “must-use” Sass technique. Use &lt;a href=&quot;http://jds.li/autoprefix&quot;&gt;Autoprefixer instead&lt;/a&gt;. If you’re using Sass, there’s a pretty high likelihood you’re using a task runner (Gulp, Grunt, Brocolli, npm scripts) to automate your workflow. Add Autoprefixer to it and just write spec CSS. It will add all the prefixes you need.&lt;/p&gt;
+
+&lt;p&gt;Also, try to avoid using Sass maps to store CSS property-value pairs. Sure, you &lt;em&gt;can&lt;/em&gt; do that, but Sass mixins provide a much better way to store reusable property-value pairs. As I see it, writing big nested Sass maps that hold all your keyframes data in them isn’t ideal. Unless you need to manipulate the values, putting repeated CSS in a mixin is better than in a map as key-value pairs.&lt;/p&gt;
+
+&lt;p&gt;So how can Sass help with responsive animations? There are two kinds of animations and two ways Sass can make them more maintainable.&lt;/p&gt;
+
+&lt;h3 id=&quot;unique-animations&quot;&gt;Unique Animations&lt;/h3&gt;
+
+&lt;p&gt;If your animations are detailed and unique (not reusable), you can use a Sass mixin to nest your animation code right inside the selector that uses that animation.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@mixin&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unique-id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;animation-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;@at-root&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;@keyframes&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;@content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.animated-thing&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;animate&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;translateX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;breakpoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;large&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;animate&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;translateX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For one-off animations, this mixin keeps everything you need in the selector’s normal partial and saves you the trouble of thinking up animation names!&lt;/p&gt;
+
+&lt;h3 id=&quot;reusable-animations&quot;&gt;Reusable Animations&lt;/h3&gt;
+
+&lt;p&gt;On the other hand, some animations are reusable. If you’ve used Dan Eden’s &lt;a href=&quot;http://jds.li/animcss&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;animate.css&lt;/code&gt;&lt;/a&gt;, you’ve experienced a supply of animations designed to be reusable. If you want to see how Sass can organize something like that, checkout the &lt;a href=&quot;http://jds.li/animsass&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;animate.scss&lt;/code&gt; project&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;animation-consistency&quot;&gt;Animation Consistency&lt;/h3&gt;
+
+&lt;p&gt;You can also use Sass to solve CSS animation’s speed problem. As you may know, you can only define 2 speed-related properties in CSS animations: duration (with the &lt;code class=&quot;highlighter-rouge&quot;&gt;animation-duration&lt;/code&gt; property) and distance (in the &lt;code class=&quot;highlighter-rouge&quot;&gt;@keyframes&lt;/code&gt; themselves). What you can’t do is define an actual speed: pixels per second. But you can use Sass to calculate duration or distance based on a desired speed.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$default-speed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;300px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;calc-distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$duration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$speed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$default-speed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$duration&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;nth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$speed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;nth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$speed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;calc-duration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$distance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$speed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$default-speed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$distance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;nth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$speed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;nth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$speed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This isn’t purely responsive, but if you are aiming for consistent speed for your animation at various breakpoints, this saves you a lot of math.&lt;/p&gt;
+
+&lt;p&gt;The last way I’ve found Sass helpful for animations is for creating a style guide of consistent motion possibilities. You can set up a map of transition / animation distances and a map of transition / animation durations. (Or just one of those maps &amp;amp; the functions from above!) Then, with a helper function, you can quickly get the right value for your current animation.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$transition-durations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;short&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;.16s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;.26s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;long&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;.42s&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$transition-distances&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;short&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;.6rem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.6rem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;long&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.8rem&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Here are the functions we can use to retrieve those values. I’ve written 1 function to house the validation and warning, and two alias functions to make it easier to use.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get-transition-value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@if&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map-has-key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;@return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map-get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;@else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;@warn&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Current $map does not contain key: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;duration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get-transition-value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$transition-durations&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get-transition-value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$transition-distances&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And here’s what it looks like in use:&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.slow-element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transform&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;duration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;long&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ease-in-out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.moved&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;translateY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;short&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 14 Apr 2016 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/sass/rwd-sass-animation/</link>
+        <guid isPermaLink="true">http://localhost:4000/sass/rwd-sass-animation/</guid>
+        
+        
+        <category>Sass</category>
+        
+      </item>
+    
+      <item>
+        <title>Keeping RWD Simple &amp; Sassy – Grids &amp; Columns</title>
+        <description>&lt;p&gt;This is the fourth post in a series based on my recent RWD Summit talk “Keeping RWD Simple &amp;amp; Sassy.” It covers some useful techniques for managing grid/column layouts with Sass.&lt;/p&gt;
+
+&lt;h2 id=&quot;grids-and-columns&quot;&gt;Grids and Columns&lt;/h2&gt;
+
+&lt;p&gt;Another big piece of responsive desig is grids. Well, columns. Always cracks me up at CSS/Sass “grid systems” that only create columns and become painfully complex when you try to use them for an actual “grid.” (Shout out to Susy for Sass with its &lt;code class=&quot;highlighter-rouge&quot;&gt;gallery()&lt;/code&gt; mixin!) But I digress. We almost always have some kind of column-based layout that changes proportions. What’s the best way to handle that?&lt;/p&gt;
+
+&lt;p&gt;Let’s quickly nix a bad way to handle that: writing some Sass to generate every possible grid proportion for your project to a set of utility classes. Basically a Sass partial that makes your own “Bootstrap” class system.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@for&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$child-columns&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;through&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@for&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$parent-columns&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;through&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;@if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$parent-columns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$child-columns&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nc&quot;&gt;.col-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$child-columns&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;-of-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$parent-columns&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$parent-columns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$child-columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;col-&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Those loops are really short and give us handy set of classes that are (almost) instantly ready to plug-in to our markup, but they also generate almost 80 selector blocks (300+ lines of unminified markup). And we haven’t even added breakpoints, gutters, or offsets yet!&lt;/p&gt;
+
+&lt;p&gt;A much better solution is to use a set of mixins that create the right column widths and margins for you. This set of mixins should generate CSS based on grid math &lt;em&gt;only when their mixins are used.&lt;/em&gt; This prevents the problem of making your users download the CSS needed for every possible grid position. It gives you all the benefits of highly configurable grids measurements, but only generates the CSS needed for the elements you actually want to style. All the possibilities, none of the bloat.&lt;/p&gt;
+
+&lt;h3 id=&quot;responsive-grids-sass-libraries&quot;&gt;Responsive Grids Sass Libraries&lt;/h3&gt;
+
+&lt;p&gt;There are 3 major Sass libraries that do nearly everything you need: Susy, Singularity, and Neat (with its Bourbon dependency).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Neat (and Bourbon)&lt;/strong&gt;: Neat is probably the most basic of the three. It does grid (with gutter) proportions and has a media query mixin. It’s dependent on Bourbon (a mixin library). If you already use Bourbon, that makes Neat a natural choice, but if not, the dependency doesn’t matter. &lt;a href=&quot;http://jds.li/neat&quot;&gt;Download Neat&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Susy&lt;/strong&gt;: Susy’s best bonus feature (in my opinion) is its &lt;code class=&quot;highlighter-rouge&quot;&gt;gallery()&lt;/code&gt; mixin. Most grid systems just do columns, but &lt;code class=&quot;highlighter-rouge&quot;&gt;gallery()&lt;/code&gt; lets you generate an actual grid (column &lt;strong&gt;and&lt;/strong&gt; rows!) of items. It also has solid support for asymmetric grids (not all column proportions have to fit on a 12-col / 16-col / etc layout). &lt;a href=&quot;http://jds.li/susy&quot;&gt;Download Susy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Singularity&lt;/strong&gt;: Singularity supports asymmetric grids like Susy, but not a simple “gallery” mixin. It also has an add-on mixin that uses &lt;code class=&quot;highlighter-rouge&quot;&gt;calc()&lt;/code&gt; to mix fluid and fixed width columns. &lt;a href=&quot;http://jds.li/singularity&quot;&gt;Download Singularity&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 12 Apr 2016 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/sass/rwd-sass-grids/</link>
+        <guid isPermaLink="true">http://localhost:4000/sass/rwd-sass-grids/</guid>
+        
+        
+        <category>Sass</category>
+        
+      </item>
+    
+      <item>
+        <title>Keeping RWD Simple &amp; Sassy – Responsive Typography</title>
+        <description>&lt;p&gt;This is the third post in a series based on my recent RWD Summit talk “Keeping RWD Simple &amp;amp; Sassy.” It covers some useful techniques for managing responsive typography with Sass.&lt;/p&gt;
+
+&lt;h2 id=&quot;responsive-sass-typography&quot;&gt;Responsive Sass Typography&lt;/h2&gt;
+
+&lt;p&gt;You might recall our &lt;code class=&quot;highlighter-rouge&quot;&gt;$breakpoints&lt;/code&gt; map from &lt;a href=&quot;/sass/rwd-sass-media-queries/&quot;&gt;the last post&lt;/a&gt;. Let’s combine that with 2 other maps to automate some responsive typography.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$breakpoints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;25em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;large&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50em&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$font-sizes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1rem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.2rem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;large&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.4rem&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$line-heights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;large&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.6&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Again, we’ll use the function &lt;code class=&quot;highlighter-rouge&quot;&gt;map-get()&lt;/code&gt; to retrieve values from these map.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$breakpoint-medium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map-get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$breakpoints&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$font-size-default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map-get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$font-sizes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$line-height-large&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map-get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$line-heights&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;large&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I mentioned earlier we’d be able to loop through a map (an advantage over a series of variables). Here’s a practical example. Let’s create some quick responsive typography with the three maps we just made a moment ago. For each breakpoint (&lt;code class=&quot;highlighter-rouge&quot;&gt;default&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;medium&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;large&lt;/code&gt;), we’re going to set the base &lt;code class=&quot;highlighter-rouge&quot;&gt;font-size&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;line-height&lt;/code&gt; on the &lt;code class=&quot;highlighter-rouge&quot;&gt;body&lt;/code&gt; element.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@each&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$label&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$min-width&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$breakpoints&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;media-query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map-get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$font-sizes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map-get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$line-heights&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And now we get responsive base typography:&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;25em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1.2rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1.4rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;responsive-typography-sass-libraries&quot;&gt;Responsive Typography Sass Libraries&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Modular Scale: &lt;a href=&quot;http://jds.li/mscale&quot;&gt;jds.li/mscale&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;TypeTuner: &lt;a href=&quot;http://jds.li/typetuner&quot;&gt;jds.li/typetuner&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Sassline: &lt;a href=&quot;http://jds.li/sassline&quot;&gt;jds.li/sassline&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Typi: &lt;a href=&quot;http://jds.li/typi&quot;&gt;jds.li/typi&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Typographic: &lt;a href=&quot;http://jds.li/typographic&quot;&gt;jds.li/typographic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/sass/rwd-sass-typography/</link>
+        <guid isPermaLink="true">http://localhost:4000/sass/rwd-sass-typography/</guid>
+        
+        
+        <category>Sass</category>
+        
+      </item>
+    
+      <item>
+        <title>Keeping RWD Simple &amp; Sassy – Media Queries</title>
+        <description>&lt;p&gt;This is the second post in a series based on my recent RWD Summit talk “Keeping RWD Simple &amp;amp; Sassy.” It covers some useful techniques to manage media queries with Sass to keep your responsive Sass code base clean and maintainable.&lt;/p&gt;
+
+&lt;h2 id=&quot;media-query-variables&quot;&gt;Media Query Variables&lt;/h2&gt;
+
+&lt;p&gt;I know, we’re working with some bedrock basics: managing repeated values with variables. Assign any repeated value to a variable. The biggest improvements are: 1) you don’t have to look up that value every time you want to use it again and 2) you can change that value across the entire codebase by editing the variable just once. This is a practical way to apply the programming principle of having a “single source of truth” for these values.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$breakpoint-medium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;25em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$breakpoint-large&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;50em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now if you want to write a media query in Sass, you can stick with your defined breakpoints like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$breakpoint-medium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Let’s improve that a bit, shall we? Sass variables aren’t limited to simple string storage: they can also be maps (or associative arrays):&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$breakpoints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;25em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;large&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50em&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Or if you’ve put your breakpoints in a map, you’ll use &lt;code class=&quot;highlighter-rouge&quot;&gt;map-get()&lt;/code&gt; to retreive the value for that breakpoint. This is the Sass equivalent of &lt;code class=&quot;highlighter-rouge&quot;&gt;array['key']&lt;/code&gt; / &lt;code class=&quot;highlighter-rouge&quot;&gt;array.key&lt;/code&gt; in JS or &lt;code class=&quot;highlighter-rouge&quot;&gt;$array['key']&lt;/code&gt;in PHP:&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map-get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$breakpoints&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;media-query-mixin&quot;&gt;Media Query Mixin&lt;/h3&gt;
+
+&lt;p&gt;Now, that’s still a lot to type, so let’s create a mixin to make the whole MQ syntax fast and reusable:&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@mixin&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;media-query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$min-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map-get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$breakpoints&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$min-width&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$min-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;@content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;@else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;@content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;media-query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Note: That mixin will fail silently. If you pass it a key that doesn’t exist in &lt;code class=&quot;highlighter-rouge&quot;&gt;$breakpoints&lt;/code&gt;, it’ll just output the &lt;code class=&quot;highlighter-rouge&quot;&gt;@content&lt;/code&gt; CSS with no media query. Read &lt;a href=&quot;http://jds.li/validsass&quot;&gt;my article on Sass validation&lt;/a&gt; for more information on validating input for Sass mixins &amp;amp; functions.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;breakpoints-vs-tweakpoints&quot;&gt;Breakpoints vs. Tweakpoints&lt;/h3&gt;
+
+&lt;p&gt;You may have seen &lt;a href=&quot;http://jds.li/tweakpoints&quot;&gt;Jeremy Keith’s article on “Tweakpoints” recently&lt;/a&gt;. Tweakpoints are like breakpoints for a design, but not as “major.” You’re probably already used to having 3 or 4 major layout-changing breakpoints for a site. You’ve probably also felt the pain of having a few odd components that don’t seem to “break” nicely at your primary breakpoints. Tweakpoints are “sub-breakpoints” for individual parts of the site that need a slightly-adjusted breakpoint.&lt;/p&gt;
+
+&lt;p&gt;You can handle tweakpoints a couple different ways. You could be strict and say, “They’re not as important as breakpoints, so they’ll be stored in their own map.” In that scenario, you’ll then need to either (a) write a &lt;code class=&quot;highlighter-rouge&quot;&gt;tweakpoint()&lt;/code&gt; version of the breakpoint mixin, or (b) modify your breakpoint mixin so that it can handle tweakpoints too. If you like option (b), read &lt;a href=&quot;http://jds.li/tpointsass&quot;&gt;this tweakpoint Sass tutorial&lt;/a&gt; for an example of how to scope tweakpoints to each Sass partial.&lt;/p&gt;
+
+&lt;p&gt;The other way to handle tweakpoints is to decide, “I don’t care that they’re not as important as breakpoints. I’ll put them in the same map anyway and that’s fine.” The downside of this approach is that all the tweakpoints are available to the entire codebase, instead of being scoped to the style patterns that actually need them.&lt;/p&gt;
+
+&lt;p&gt;Here’s my way to mess with the breakpoint mixin and get it to handle tweakpoints nicely.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@mixin&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;media-query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$min-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;@if&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;type-of&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$min-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map-get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$breakpoints&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;@if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$min-width&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$min-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;@content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;@else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;@content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$tweakpoint-element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;45em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;media-query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;media-query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$tweakpoint-element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;33&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.33%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;per-partial-variables-for-breakpoints&quot;&gt;Per-Partial Variables for Breakpoints&lt;/h3&gt;
+
+&lt;p&gt;I often find myself in a situation where I’ve got a Sass partial that re-uses a breakpoint in several element. Navigation is a pretty common place for this to happen. I don’t always know up front if I’ll need to change the nav at the medium breakpoint, the large breakpoint, or a tweakpoint somewhere in between. I do know that when I figure out where to break that point, I’ll need to update the argument in 4-5 instances of the media query mixin. I handle that with a variable in that partial pointing to the breakpoint I want to test.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$mq-nav&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.site-nav&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;media-query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$mq-nav&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.site-nav-item&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;media-query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$mq-nav&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inline-block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.site-nav-link&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1em&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;.5em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;media-query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$mq-nav&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In real life, the partial is never that simple: it’s got all kinds of other style information scattered around and it ends up 100 or more lines long. This alias variable allows me to link all the styles that should happen at a single breakpoint and edit that breakpoint easily.&lt;/p&gt;
+
+&lt;h3 id=&quot;nested-media-queries-vs-mq-partials&quot;&gt;Nested Media Queries vs. MQ Partials&lt;/h3&gt;
+
+&lt;p&gt;This may be an old topic that doesn’t need to be re-hashed here, but it’s RWD and Sass, so I think it deserves a slide or two.&lt;/p&gt;
+
+&lt;p&gt;Should you nest all your media queries inside the selectors they modify, or have a partial per media query with all the modifications in each partial?&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// in _nav partial
+&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.site-nav&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// styles
+&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;media-query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// medium styles
+&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;media-query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;large&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// large styles
+&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// in styles partial
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'site-nav'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;media-query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;medium&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'bp-medium'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;media-query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;large&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'bp-large'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Option 2 reminds us of the olden days when we wrote all our styles in a single CSS file, and put our media queries in order at the bottom of that file. If you remember those days, you probably remember the major frustration of that: to modify one component responsively, you had to keep scrolling between 3 positions in your 1000s of lines CSS file. There’s no reason to keep that frustration when you’re using a preprocessory.&lt;/p&gt;
+
+&lt;p&gt;Nesting all your media queries in the selectors they modify allows you to (ideally) open 1 partial to find and maintain all the styles for a single component. When it comes to dev-friendly organization like we talked about before, nesting media queries is the way to go.&lt;/p&gt;
+
+&lt;p&gt;The objection to that technique, however, is that it will bloat CSS output by repeating the media query syntax over and over again. However, that objection ignores an important factor: if you don’t repeat media queries, you’ll repeat your selectors.&lt;/p&gt;
+
+&lt;p&gt;I ran a brief test to see how bad the “bloat” is. For the test, I generated 40 selectors (of varying length) and nested 2 media queries in each one. Then I wrote default styles &amp;amp; 2 media queries with the 40 selectors repeated in each media query. The nested media query output was a bit larger: 11.3kb, while the separated media query output was 8.3kb - 25% smaller. (&lt;em&gt;Remember, this is not an entire stylesheet: it’s a simplified test to show how much weight the selectors &amp;amp; queries themselves generate. Also, this is not a huge issue: if your total style sheet is ~150kb, it’s only a 2% change.&lt;/em&gt;) Then I gzipped both output files. Surprisingly, the nested media query gzip was 87% smaller than the separated media query gzip.&lt;/p&gt;
+
+&lt;p&gt;So first of all, the repetitious bloat warning is exaggerated: you’re going to have repetition no matter what you do. Secondly, however, you really &lt;strong&gt;must&lt;/strong&gt; be gzipping your HTML/CSS/JS for users. Gzip compression finds all the repeated strings in a text file and uses an alias to shorten them. And for the record, you get better compression with 2 strings repeated 40x than with 40 strings repeated 2x. Nested media queries FTW!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note: &lt;a href=&quot;http://jds.li/gzip&quot;&gt;more information on gzip&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/sass/rwd-sass-media-queries/</link>
+        <guid isPermaLink="true">http://localhost:4000/sass/rwd-sass-media-queries/</guid>
+        
+        
+        <category>Sass</category>
+        
+      </item>
+    
+      <item>
+        <title>Keeping RWD Simple &amp; Sassy – Organization</title>
+        <description>&lt;p&gt;This is the first post in a series based on my recent RWD Summit talk “Keeping RWD Simple &amp;amp; Sassy.” It covers some important programming principles for keeping any code organized and makes application to your responsive Sass code base.&lt;/p&gt;
+
+&lt;h2 id=&quot;single-source-of-truth&quot;&gt;Single Source of Truth&lt;/h2&gt;
+
+&lt;p&gt;There’s a principle in data organization and programming called “Single Source of Truth.” It means that ideally, a system should only define a piece of data once, then all other references to that data should refer back to the original/canonical definition. While this principle originally described data structures and databases primarily, it does apply to style organization. For example, if you use a specific shade of blue throughout a site, it’s best to define that color once (as a variable) and use the variable throughout the rest of your style codebase. You may have heard this same principle explained with the acronym “DRY” - Don’t Repeat Yourself.&lt;/p&gt;
+
+&lt;p&gt;One clarification on SSoT: this principle does not mean that you never ever type the same value or string twice. This principle applies to data that’s repeated “because it’s meant to be the same.” However, sometimes data points are identical but not on purpose. The height of a site’s fixed header might be &lt;code class=&quot;highlighter-rouge&quot;&gt;80px&lt;/code&gt; (or &lt;code class=&quot;highlighter-rouge&quot;&gt;5rem&lt;/code&gt; if you like that better) and the page title font-size may be the same size. However, that’s not necessarily because they &lt;strong&gt;must&lt;/strong&gt; be the same size. SSOT/DRY doesn’t mean you have to force identical values into a single variable.&lt;/p&gt;
+
+&lt;h2 id=&quot;naming-things-well&quot;&gt;Naming Things Well&lt;/h2&gt;
+
+&lt;p&gt;The key to maintainability is consistency. If you need to find and change some code quickly, things have to be named consistently. Let me suggest a naming pattern that’ll help with consistency: the words in your variable and file names should go from broad to narrow.&lt;/p&gt;
+
+&lt;h3 id=&quot;name-things-consistently&quot;&gt;Name Things Consistently&lt;/h3&gt;
+
+&lt;h4 id=&quot;naming-variables&quot;&gt;Naming Variables&lt;/h4&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Avoid this:
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$blue-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;mh&quot;&gt;#0074D9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$dark-blue-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#001f3f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// eeny
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$blue-dark-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#001f3f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// meeny
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$blue-color-dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#001f3f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// miney mo
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$red-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;       &lt;span class=&quot;mh&quot;&gt;#ff4136&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Do this:
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$color-blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;mh&quot;&gt;#0074D9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$color-blue-dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#001f3f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$color-red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;       &lt;span class=&quot;mh&quot;&gt;#ff4136&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Avoid this:
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$normal-border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$color-gray-light&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$fancy-border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$color-blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Do this:
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$border-normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$color-gray-light&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$border-fancy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$color-blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;naming-files&quot;&gt;Naming Files&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Cluttered
+|–  modules/
+|   |–  _block-table.scss
+|   |–  _siteheader.scss
+|   |–  _4column-block.scss
+|   |–  _footer.scss
+|   |–  _menus.scss
+|   `–  _mobile-nav.scss
+|–  reset/
+|   `–  _reset.scss
+`–  style.scss
+
+// Better
+|–  blocks/
+|   |–  _block-table.scss
+|   `–  _block-columns-4.scss
+|–  shared/
+|   |–  _site-header.scss
+|   |–  _site-footer.scss
+|   |–  _nav.scss
+|   `–  _nav-mobile.scss
+|–  reset/
+|   `–  _reset.scss
+`–  style.scss
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;name-things-clearly&quot;&gt;Name Things Clearly&lt;/h3&gt;
+
+&lt;p&gt;Things have to be named clearly as well. You’ll often seen developers using all manner of abbreviations for their variables and files. Shorter names might be quicker to type as you create a new codebase, but they’re a lot less useful when you need to understand the existing code for a maintenance request later. We often spend a month or two building a site, then a year or more maintaining it. Don’t make the long-term maintenance hard for the sake of typing fewer characters while you build the site.&lt;/p&gt;
+
+&lt;h4 id=&quot;naming-variables-1&quot;&gt;Naming Variables&lt;/h4&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Harder to read / maintain
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$c-bl-dk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#001f3f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$c-rd-lt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;lighten&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;#ff4136&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;25%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$c-gr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;    &lt;span class=&quot;mh&quot;&gt;#3d9970&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Easier to read / maintain
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$color-blue-dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#001f3f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$color-red-light&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;lighten&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;#FF4136&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;25%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$color-green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;mh&quot;&gt;#3D9970&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;naming-files-1&quot;&gt;Naming Files&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Mysterious
+|–  modules/
+|   |–  _b-table.scss
+|   |–  _s-header.scss
+|   |–  _4c-b.scss
+|   |–  _ft.scss
+|   |–  _m.scss
+|   `–  _mob-nav.scss
+|–  reset/
+|   `– _reset.scss
+`–  style.scss
+
+// Clearer
+|–  blocks/
+|   |–  _block-table.scss
+|   |–  _block-columns-4.scss
+|–  shared/
+|   |–  _site-header.scss
+|   |–  _site-footer.scss
+|   |–  _nav.scss
+|   `–  _nav-mobile.scss
+|–  reset/
+|   `– _reset.scss
+`–  style.scss
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;making-big-things-small&quot;&gt;Making Big Things Small&lt;/h2&gt;
+
+&lt;p&gt;Using a preprocessor means you no longer need to deal with 1000s of lines of CSS in a single file. (You’ll still compile everything to a single CSS file, but you won’t have to maintain directly.)&lt;/p&gt;
+
+&lt;p&gt;Let’s talk about how to organize your preprocessor partials. Credit for this pattern goes to Hugo Giraudel’s &lt;a href=&quot;http://sass-guidelin.es/#the-7-1-pattern&quot;&gt;Sass Guidelines site&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 7-1 Sass Folder Pattern
+sass/
+|–  abstracts/
+|–  base/
+|–  components/
+|–  layout/
+|–  pages/
+|–  themes/
+|–  vendors/
+`–  main.scss
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sass/
+|–  abstracts/
+|   |–  _variables.scss    # Sass Variables
+|   |–  _functions.scss    # Sass Functions
+|   |–  _mixins.scss       # Sass Mixins
+|   `–  _placeholders.scss # Sass Placeholders
+|
+|–  base/
+|   |–  _reset.scss        # Reset/normalize
+|   |–  _typography.scss   # Typography rules
+|   …                      # Etc.
+|
+|–  components/
+|   |–  _buttons.scss      # Buttons
+|   |–  _carousel.scss     # Carousel
+|   |–  _cover.scss        # Cover
+|   |–  _dropdown.scss     # Dropdown
+|   …                      # Etc.
+|
+|–  layout/
+|   |–  _navigation.scss   # Navigation
+|   |–  _grid.scss         # Grid system
+|   |–  _header.scss       # Header
+|   |–  _footer.scss       # Footer
+|   |–  _sidebar.scss      # Sidebar
+|   |–  _forms.scss        # Forms
+|   …                      # Etc.
+|
+|–  pages/
+|   |–  _home.scss         # Home specific styles
+|   |–  _contact.scss      # Contact specific styles
+|   …                      # Etc.
+|
+|–  themes/
+|   |–  _theme.scss        # Default theme
+|   |–  _admin.scss        # Admin theme
+|   …                      # Etc.
+|
+|–  vendors/
+|   |–  _bootstrap.scss    # Bootstrap
+|   |–  _jquery-ui.scss    # jQuery UI
+|   …                      # Etc.
+|
+`–  main.scss              # Main Sass file
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Abstracts:&lt;/strong&gt; variables, mixins, functions, placeholders&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Vendors:&lt;/strong&gt; code libraries from other sources like grid helpers, mixin libraries, etc&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Base:&lt;/strong&gt; boilerplate stuff like reset, typography&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Layouts:&lt;/strong&gt; macro (wireframe) page parts like header, footer, grid&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Components:&lt;/strong&gt; smaller, reusable components like widgets, media, thumbnails&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pages:&lt;/strong&gt; page-specific styles&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Themes:&lt;/strong&gt; specific theme variations (not common on small/medium sites)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 30 Mar 2016 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/sass/rwd-sass-organization/</link>
+        <guid isPermaLink="true">http://localhost:4000/sass/rwd-sass-organization/</guid>
+        
+        
+        <category>Sass</category>
+        
+      </item>
+    
+      <item>
+        <title>Keeping RWD Simple &amp; Sassy</title>
+        <description>&lt;p&gt;There’s no going back now: responsive web design is the new normal. Content parity across devices is the best way to serve our users and all of us who build the web build with for multiple screen sizes.&lt;/p&gt;
+
+&lt;p&gt;Responsive design comes with a lot of complications, however: managing consistent breakpoints across a project, tracking all the styles that need to change across those breakpoints, and keeping all the responsive code clean and organized, to name a few.&lt;/p&gt;
+
+&lt;p&gt;Using Sass (or a similar preprocessor), we can standardize our breakpoints, automate much of the repetitive code, and organize individual styles well. Over the next several posts, we’ll look at several Sass techniques and tools for managing responsive CSS.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note: I’m a big fan of Sass, but I know some of you use Less or Stylus (or your own home-brewed or PostCSS-based preprocessor), so I’m going to emphasize techniques over specific tools.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;outline&quot;&gt;Outline:&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;/sass/rwd-sass-organization/&quot;&gt;Organization&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Single Source of Truth&lt;/li&gt;
+      &lt;li&gt;Name Things Well&lt;/li&gt;
+      &lt;li&gt;Make Big Things Small&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Responsive Sass Techniques
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;/sass/rwd-sass-media-queries&quot;&gt;Media Queries&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;/sass/rwd-sass-typography&quot;&gt;Typography&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;/sass/rwd-sass-grids&quot;&gt;Grids&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;/sass/rwd-sass-animation&quot;&gt;Animation&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Links to individual posts are in the outline above. Enjoy!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 29 Mar 2016 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/sass/rwd-sass/</link>
+        <guid isPermaLink="true">http://localhost:4000/sass/rwd-sass/</guid>
+        
+        
+        <category>Sass</category>
+        
+      </item>
+    
+      <item>
+        <title>Setting Up Let’s Encrypt with VestaCP on Digital Ocean</title>
+        <description>&lt;p&gt;Ok, I’ll be totally honest here. I’m writing this post mostly for myself: I need an easy place to keep these instructions for setting up new SSL certificates. If they help you, that’s awesome. If not, hopefully there’s &lt;a href=&quot;https://jdsteinbach.com&quot;&gt;another post here&lt;/a&gt; that you can learn from.&lt;/p&gt;
+
+&lt;h2 id=&quot;installing-lets-encrypt&quot;&gt;Installing Let’s Encrypt&lt;/h2&gt;
+
+&lt;p&gt;First step: install the Let’s Encrypt tool on your server. SSH into your server, &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; to the root dir (where you probably landed as soon as you SSHed in), and run the these commands:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/letsencrypt/letsencrypt
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;letsencrypt
+./letsencrypt-auto --help
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This will take time to install a bunch of packages, then give you a success message. You should only does these steps once. Every time you want to secure another domain on your VestaCP account, follow the next section.&lt;/p&gt;
+
+&lt;h2 id=&quot;adding-lets-encrypt-certificates&quot;&gt;Adding Let’s Encrypt Certificates&lt;/h2&gt;
+
+&lt;p&gt;In all of these commands, replace &lt;code class=&quot;highlighter-rouge&quot;&gt;DOMAIN_GOES_HERE&lt;/code&gt; with the domain you want to secure and &lt;code class=&quot;highlighter-rouge&quot;&gt;YOUR_VESTA_USERNAME&lt;/code&gt; with your VestaCP username.&lt;/p&gt;
+
+&lt;h3 id=&quot;installing-the-certificate&quot;&gt;Installing the Certificate&lt;/h3&gt;
+
+&lt;p&gt;The following command will create the necessary certificates. You should still be in the &lt;code class=&quot;highlighter-rouge&quot;&gt;/letsencrypt/&lt;/code&gt; directory where you ran the last command above. When you run this command, the UI will ask you for an email address to use for this certificate and to agree to the Terms of Service.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./letsencrypt-auto certonly -a webroot --renew-by-default --webroot-path /home/YOUR_VESTA_USERNAME/web/DOMAIN_GOES_HERE/public_html -d DOMAIN_GOES_HERE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;That command created several files in on your server. You’ll need to copy the contents of those files to your VestaCP admin page for that domain. In Vesta, edit the domain, check the button for “SSL Support” – you’ll then see three new fields.&lt;/p&gt;
+
+&lt;h3 id=&quot;copying-cert-files-to-vestacp&quot;&gt;Copying Cert Files to VestaCP&lt;/h3&gt;
+
+&lt;p&gt;To view those files’ contents, run the following commands, then copy the file contents to the appropriate field:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cat /etc/letsencrypt/live/DOMAIN_GOES_HERE/cert.pem
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;^ Copy contents into “SSL Certificate” field.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cat /etc/letsencrypt/live/DOMAIN_GOES_HERE/privkey.pem
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;^ Copy contents into “SSL Key” field.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cat /etc/letsencrypt/live/DOMAIN_GOES_HERE/chain.pem
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;^ Copy contents into “SSL Certificate Authority” field.&lt;/p&gt;
+
+&lt;h3 id=&quot;symlinks-to-the-original-files&quot;&gt;Symlinks to the Original Files&lt;/h3&gt;
+
+&lt;p&gt;The previous steps saved those details to a series of files in &lt;code class=&quot;highlighter-rouge&quot;&gt;/home/USERNAME/conf/web/&lt;/code&gt; you’ll actually remove all those files next:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rm /home/YOUR_VESTA_USERNAME/conf/web/ssl.DOMAIN_GOES_HERE.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In place of those files you just deleted, you’ll now create a series of symlinks to the originals created by Let’s Encrypt:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ln -s /etc/letsencrypt/live/DOMAIN_GOES_HERE/fullchain.pem /home/YOUR_VESTA_USERNAME/conf/web/ssl.DOMAIN_GOES_HERE.pem
+ln -s /etc/letsencrypt/live/DOMAIN_GOES_HERE/privkey.pem /home/YOUR_VESTA_USERNAME/conf/web/ssl.DOMAIN_GOES_HERE.key
+ln -s /etc/letsencrypt/live/DOMAIN_GOES_HERE/cert.pem /home/YOUR_VESTA_USERNAME/conf/web/ssl.DOMAIN_GOES_HERE.crt
+ln -s /etc/letsencrypt/live/DOMAIN_GOES_HERE/chain.pem /home/YOUR_VESTA_USERNAME/conf/web/ssl.DOMAIN_GOES_HERE.ca
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Once this is done, restart your nginx and Apache servers:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;service nginx restart
+service apache2 restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Check out your domain now, and it should be secure!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 07 Mar 2016 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/misc/letsencrypt-vesta/</link>
+        <guid isPermaLink="true">http://localhost:4000/misc/letsencrypt-vesta/</guid>
+        
+        
+        <category>Misc</category>
+        
+      </item>
+    
+      <item>
+        <title>CSS (Sass) for Content-Agnostic Numbered Headings</title>
+        <description>&lt;p&gt;You’re writing a blog post or other HTML document and you want to number your &lt;code class=&quot;highlighter-rouge&quot;&gt;h2&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;h3&lt;/code&gt; elements to give users a sense of where they are in the page’s logical flow. Or perhaps you’re maintaining legal content or technical documentation that needs to have numbered &lt;code class=&quot;highlighter-rouge&quot;&gt;h2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;h3&lt;/code&gt;, etc elements. I suppose you could nest the content of your entire document in a bunch of nested lists, or you could write the outline-style numbering by hand. Or … perhaps there’s a better way that only requires CSS.&lt;/p&gt;
+
+&lt;p&gt;We’ll start by checkout the code that makes this happen. What you see below is a Sass mixin, but you can do this with just the CSS output if you like.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@mixin&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;generate-outline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$reset-element&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list-style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;decimal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unique-id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+  &lt;span class=&quot;nl&quot;&gt;counter-increment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;before&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$counter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list-style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'. '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;@at-root&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$reset-element&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;counter-reset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// How to use it
+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;generate-outline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;upper-alpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;generate-outline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;setting-up-defaults&quot;&gt;Setting Up Defaults&lt;/h2&gt;
+
+&lt;p&gt;You’ll use the &lt;code class=&quot;highlighter-rouge&quot;&gt;generate-outline()&lt;/code&gt; mixin on each selector you want to number. The mixin takes two optional arguments: &lt;code class=&quot;highlighter-rouge&quot;&gt;$reset-element&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;$list-style&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;$reset-element&lt;/code&gt; is the selector that you want to restart your numbering at. For example, if you want to number your &lt;code class=&quot;highlighter-rouge&quot;&gt;h3&lt;/code&gt; elements, but restart that count everytime your markup includes an &lt;code class=&quot;highlighter-rouge&quot;&gt;h2&lt;/code&gt;, you would call &lt;code class=&quot;highlighter-rouge&quot;&gt;@include generate-outline(h2);&lt;/code&gt; in your &lt;code class=&quot;highlighter-rouge&quot;&gt;h3&lt;/code&gt; declaration block. If you leave &lt;code class=&quot;highlighter-rouge&quot;&gt;$reset-element&lt;/code&gt; empty, the mixin will default to &lt;code class=&quot;highlighter-rouge&quot;&gt;body&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The second argument is &lt;code class=&quot;highlighter-rouge&quot;&gt;$list-style&lt;/code&gt; and should be a &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type#Values&quot;&gt;valid value for the CSS &lt;code class=&quot;highlighter-rouge&quot;&gt;list-style-type&lt;/code&gt; property&lt;/a&gt;. If you leave it blank, &lt;code class=&quot;highlighter-rouge&quot;&gt;$list-style&lt;/code&gt; will default to &lt;code class=&quot;highlighter-rouge&quot;&gt;decimal&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-css-counters&quot;&gt;Using CSS Counters&lt;/h2&gt;
+
+&lt;p&gt;The Sass mixin &lt;code class=&quot;highlighter-rouge&quot;&gt;generate-outline()&lt;/code&gt; automates the use of CSS counters. There are 3 CSS properties we need to use to see counters in action.&lt;/p&gt;
+
+&lt;p&gt;Each level of counter needs a unique name. In the Sass above, we’re creating that name by using the Sass &lt;a href=&quot;http://sass-lang.com/documentation/Sass/Script/Functions.html#miscellaneous_functions&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;unique-id()&lt;/code&gt; function&lt;/a&gt;. If you’re just using CSS, you’ll need to choose a different name for each level of numbering.&lt;/p&gt;
+
+&lt;p&gt;We can increment that counter by using &lt;code class=&quot;highlighter-rouge&quot;&gt;counter-increment: $name;&lt;/code&gt; on the element that’ll show the counter’s number.&lt;/p&gt;
+
+&lt;p&gt;We’ll use the &lt;code class=&quot;highlighter-rouge&quot;&gt;::before&lt;/code&gt; pseudoelement and the CSS &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; property to display that counter on each heading: &lt;code class=&quot;highlighter-rouge&quot;&gt;content: counter($name)'. ';&lt;/code&gt;. Notice that we’re putting the string &lt;code class=&quot;highlighter-rouge&quot;&gt;'. '&lt;/code&gt; on the end of each number. This makes sure we get “A. Heading” instead of “AHeading.”&lt;/p&gt;
+
+&lt;p&gt;For the 2nd level of numbered headings, we’ll need to reset that counter every time an element in the 1st level of headings goes by. The Sass mixin gets the position of the current level in the &lt;code class=&quot;highlighter-rouge&quot;&gt;$headings&lt;/code&gt; map - if it’s a 2nd (or deeper) level counter, the mixin will get the next element above it, and use that element to reset the counter. If the current element is the first element in the loop, the mixin will just attach &lt;code class=&quot;highlighter-rouge&quot;&gt;counter-reset: $name;&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;body&lt;/code&gt; element.&lt;/p&gt;
+
+&lt;h2 id=&quot;output-numbered-headings&quot;&gt;Output: Numbered Headings&lt;/h2&gt;
+
+&lt;p&gt;With the CSS we’ve just generated, we’ve attached an A, B, C numbering system to all &lt;code class=&quot;highlighter-rouge&quot;&gt;h2&lt;/code&gt; elements in the page, and a 1, 2, 3 numbering system to all &lt;code class=&quot;highlighter-rouge&quot;&gt;h3&lt;/code&gt; elements in the page. This system doesn’t care what else you’ve got in your page: any paragraphs, blockquotes, other heading levels, images, etc – none of that affects this CSS’s ability to number &lt;code class=&quot;highlighter-rouge&quot;&gt;h2&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;h3&lt;/code&gt; elements sequentially.&lt;/p&gt;
+
+&lt;p&gt;You can see this code in action on &lt;a href=&quot;http://codepen.io/jdsteinbach/pen/vLqwjB&quot;&gt;this CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p data-height=&quot;268&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;vLqwjB&quot; data-default-tab=&quot;result&quot; data-user=&quot;jdsteinbach&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/jdsteinbach/pen/vLqwjB/&quot;&gt;Sass / CSS for Numbered Document Headings&lt;/a&gt; by James Steinbach (&lt;a href=&quot;http://codepen.io/jdsteinbach&quot;&gt;@jdsteinbach&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 22 Feb 2016 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/sass/numbered-headings/</link>
+        <guid isPermaLink="true">http://localhost:4000/sass/numbered-headings/</guid>
+        
+        
+        <category>CSS</category>
+        
+        <category>Sass</category>
+        
+      </item>
+    
+  </channel>
+</rss>

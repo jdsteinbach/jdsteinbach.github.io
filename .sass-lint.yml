@@ -1,0 +1,56 @@
+#########################
+## Sample Sass Lint File
+#########################
+# Linter Options
+options:
+  # Don't merge default rules
+  merge-default-rules: false
+  # Set the formatter to 'html'
+  formatter: stylish
+  # Raise an error if more than 50 warnings are generated
+  max-warnings: 500
+# File Options
+files:
+  include: 'sass/**/*.s+(a|c)ss'
+# Rule Configuration
+rules:
+  extends-before-mixins: 2
+  extends-before-declarations: 2
+  placeholder-in-extend: 2
+  mixins-before-declarations:
+    - 1
+    -
+      exclude:
+        - breakpoint
+        - bp
+        - container
+        - span
+        - mq
+        - trbl
+        - haf
+
+  no-debug: 0
+  no-duplicate-properties: 2
+  no-empty-rulesets: 2
+  no-extends: 1
+  no-ids: 1
+  no-important: 1
+  no-trailing-whitespace: 2
+  no-warn: 0
+
+  url-quotes: 1
+
+  hex-notation:
+    - 0
+    -
+      style: uppercase
+  indentation:
+    - 2
+    -
+      size: 2
+  nesting-depth:
+    - 1
+    -
+      max-depth: 4
+  property-sort-order: 0
+  variable-for-property: 0
