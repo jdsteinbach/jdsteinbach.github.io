@@ -1,0 +1,14 @@
+{% include header %}
+
+<div class="category-archive inner-wrapper">
+
+<h1 class="page-heading category">{{ page.title }} {{site.category_suffix}}</h1>
+  <ul class="post-list">
+  {% for post in site.categories[page.cat_name] %}
+      {% include excerpt %}
+    {% endfor %}
+  </ul>
+
+</div>
+
+{% include footer %}

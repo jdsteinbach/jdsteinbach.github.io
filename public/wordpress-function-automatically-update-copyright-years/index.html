@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+
+<head itemscope itemtype="http://schema.org/WebSite">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#5CACC4">
+  <title itemprop="name">WordPress Function for Automatically Updating Copyright Years | James Steinbach</title>
+  <meta name="description" content="">
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="WordPress Function for Automatically Updating Copyright Years | James Steinbach" />
+  <meta property="og:description" content="Front-end Architect. Speaker & writer. Sass, CSS Animation, RWD & WP." />
+  <meta property="og:url" content="https://jdsteinbach.com" />
+  <meta property="og:site_name" content="" />
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:description" content="Front-end Architect. Speaker & writer. Sass, CSS Animation, RWD & WP."/>
+  <meta name="twitter:title" content="WordPress Function for Automatically Updating Copyright Years | James Steinbach"/>
+  <meta name="twitter:domain" content="https://jdsteinbach.com"/>
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://jdsteinbach.com/wordpress/function-automatically-update-copyright-years/" itemprop="url">
+  <link rel="alternate" type="application/rss+xml" title="" href="https://jdsteinbach.com/feed.xml" />
+</head>
+
+  <body>
+
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="https://jdsteinbach.com/">James Steinbach</a>
+
+    <nav class="site-nav">
+      
+    </nav>
+
+  </div>
+
+</header>
+
+    <div class="page-content" id="main" role="main">
+
+      <div class="wrapper">
+<div class="post inner-wrapper">
+
+  <header class="post-header">
+    <h1 class="post-title">WordPress Function for Automatically Updating Copyright Years</h1>
+    <p class="post-meta">
+      <span class="date">Dec 31, 1969</span>
+ <span class="author">James Steinbach</span>             <span class="categories">  
+</span>    </p>
+  </header>
+
+  <article class="post-content">
+    <p>Well, I gave away the whole point of this post in the title. Before we dive in and look at the whole code, I&#39;ll explain the purpose of this function. A lot of posts will recommend you simply put <code>&lt;?php echo date( &#39;Y&#39; ); ?&gt;</code> where the year is hardcoded into <code>footer.php</code>. That&#39;s fine, but it only gives you <em>this year</em> in your footer. It&#8217;s better to put the <a href="http://info.legalzoom.com/write-copyright-statement-website-21115.html">range of years that your site&#39;s content spans</a>, not merely the current year. The function we&#8217;ll look at here will display the entire range of years for all the posts and pages published on your site.</p>
+<p><em><a href="https://gist.github.com/jdsteinbach/e2646846ede81458f0c4">Get the raw code from this Github gist</a>.</em></p>
+<h2 id="adding-the-copyright_years-function-to-your-theme">Adding the <code>copyright_years()</code> function to your theme</h2>
+<p>Let&#39;s take a look at the code you&#8217;ll need to copy into your theme&#8217;s <code>functions.php</code> file (without the open/close PHP tags):</p>
+<pre><code class="lang-php">&lt;?php
+if ( ! function_exists( &#39;get_copyright_years&#39; ) ) {
+  function get_copyright_years( $earliest_id = null ) {
+    $earliest_args = array(
+      &#39;post_type&#39;   =&gt; array( &#39;any&#39; ),
+      &#39;numberposts&#39; =&gt; 1,
+      &#39;orderby&#39;     =&gt; &#39;date&#39;,
+      &#39;order&#39;       =&gt; &#39;ASC&#39;
+    );
+    $get_post      = $earliest_id
+                   ? get_post( $earliest_id )
+                   : null;
+    if ( ! $get_post ) {
+      $get_post = array_shift( get_posts( $earliest_args ) );
+    }
+    $earliest_date = date( &#39;Y&#39;, strtotime( $get_post-&gt;post_date ) );
+    $current_date  = date( &#39;Y&#39; );
+    return $earliest_date == $current_date
+           ? $current_date
+           : $earliest_date . &#39;&amp;ndash;&#39; . $current_date;
+  }
+}
+
+if ( ! function_exists( &#39;copyright_years&#39; ) ) {
+  function copyright_years( $earliest_id = null ) {
+    echo get_copyright_years( $earliest_id );
+  }
+}
+?&gt;
+</code></pre>
+<p>After you&#8217;ve added those two functions to <code>functions.php</code>, open <code>footer.php</code> and delete the year if it&#8217;s hardcoded in. Replace it with <code>&lt;?php copyright_years(); ?&gt;</code>. This function only shows the years, no &copy; or other text: you can keep whatever copyright / &#8220;all rights reserved&#8221; text you like.</p>
+<h2 id="using-the-copyright_years-function-in-your-footer">Using the <code>copyright_years()</code> function in your footer</h2>
+<p>The first thing I should point out is that there are actually two functions here. The first function is <code>get_copyright_years()</code> and only <em>returns</em> the date range. The second function is <code>copyright_years()</code> and <em>echoes</em> the date range. If you&#8217;re going to use this function in plain HTML in your footer file, use <code>&lt;?php copyright_years(); ?&gt;</code>:</p>
+<pre><code class="lang-php">&lt;footer class=&quot;site-footer&quot;&gt;
+    &lt;p class=&quot;footer-credits&quot;&gt;&amp;copy; &lt;?php copyright_years(); ?&gt;. All Rights Reserved.&lt;/p&gt;
+&lt;/footer&gt;
+&lt;?php wp_footer();?&gt;
+</code></pre>
+<p>If you&#8217;re going to use this function in a line of PHP in your footer file, use <code>get_copyright_years()</code> instead. The following code shows how you might use it inside a translatable string function:</p>
+<pre><code class="lang-php">&lt;footer class=&quot;site-footer&quot;&gt;
+    &lt;p class=&quot;footer-credits&quot;&gt;
+        &lt;?php printf( __( &#39;&amp;copy; %s. All Rights Reserved.&#39;, &#39;text-domain&#39; ), get_copyright_years() ); ?&gt;
+    &lt;/p&gt;
+&lt;/footer&gt;
+&lt;?php wp_footer();?&gt;
+</code></pre>
+<p>Technically you&#8217;re done now, you can quit reading this post. But if you&#8217;re curious how this function works, stay with me.</p>
+<h2 id="what-the-copyright_years-function-actually-does">What the <code>copyright_years()</code> function actually does</h2>
+<p>So now that you know the basics of using this function, let&#8217;s look under the hood and learn how it works.</p>
+<h3 id="getting-the-earliest-post">Getting the earliest post</h3>
+<p>You may have noticed this function takes a single argument: <code>$earliest_id</code>. Normally the function returns the publication date for the earliest post or page published, but if you want to override that by specifying a specific post or page as the &#8220;earliest published,&#8221; pass its ID in the function in <code>footer.php</code>.</p>
+<p>The first thing in the function is <code>$earliest_args</code>: an array of <a href="https://codex.wordpress.org/Template_Tags/get_posts"><code>get_posts()</code></a> args. If you haven&#8217;t specified an override <code>$earliest_id</code>, the function will use these arguments to query the oldest post or page from the database.</p>
+<p>The <code>$get_post</code> declaration uses <a href="http://php.net/manual/en/language.operators.comparison.php#language.operators.comparison.ternary">PHP ternary logic</a>. If <code>$earliest_id</code> is set, <code>$get_post</code> will contain the output of the function <code>get_post( $earliest_id )</code>, otherwise, it will be <code>null</code>.</p>
+<p>At this point, <code>$get_post</code> will either be a single post object (if you specified a valid <code>$earliest_id</code>) or <code>null</code> (if you specified an invalid ID or none at all). If it&#8217;s <code>null</code>, we&#39;ll run our fallback <code>get_posts( $earliest_args )</code> function. This will return an array containing a single post objects. We only want the post object, so we&#8217;ll wrap <code>get_posts()</code> in <a href="http://php.net/manual/en/function.array-shift.php"><code>array_shift()</code></a>. The PHP function <code>array_shift()</code> will return only the first object in the array. <em>Note: <a href="http://php.net/manual/en/function.array-pop.php"><code>array_pop()</code></a> would&#8217;ve done the same thing, since there&#39;s only one object in the array.</em></p>
+<h3 id="comparing-the-years">Comparing the years</h3>
+<p>Now no matter what argument you did or didn&#8217;t pass into the function, <code>$get_post</code> is a WordPress post object containing the post or page we want to use for the earliest piece of published content.</p>
+<p>The next two variables (<code>$earliest_date</code> and <code>$current_date</code>) use the PHP date function to get the year from <code>$get_post</code> and the current year.</p>
+<p>The <code>return</code> statement uses ternary logic again. If <code>$earliest_date</code> and <code>$current_date</code> are the same, the function will return only the current year. If they&#8217;re different, it will return the earliest year, a dash (&ndash;), then the current year.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Put these functions in your theme <code>functions.php</code> and call the right function from <code>footer.php</code>, and you&#8217;ve now got an always-correct copyright date range in the footer of your site. No more January updates for you! (Unless, of course, you change your theme: in that case, you&#8217;ll need to put these functions where they belong in that theme too.)</p>
+<p><em><a href="https://gist.github.com/jdsteinbach/e2646846ede81458f0c4">Get the raw code from this Github gist</a>.</em></p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="wrapper">
+
+    <!-- Begin MailChimp Signup Form -->
+    <div id="mc_embed_signup">
+      <!-- Submit via Ajax: http://stackoverflow.com/a/16172798 -->
+      <form action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+          <h2>Get New Posts &amp; Other Content in Your Inbox!</h2>
+          <div class="mc-fields">
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group email">
+              <label for="mce-EMAIL">Email Address<span class="asterisk">*</span></label>
+              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+            </div>
+            <div class="mc-field-group fname">
+              <label for="mce-FNAME">First Name</label>
+              <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+            </div>
+            <div class="mc-field-group lname">
+              <label for="mce-LNAME">Last Name </label>
+              <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+            </div>
+          </div>
+          <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div>
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_e06400c5106eb26339f4a0aea_35bef0e04e" tabindex="-1" value=""></div>
+          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button button-alt">
+          <p class="mc-ref">Powered by <a href="http://eepurl.com/AtwTT" title="MailChimp - email marketing made easy and fun">MailChimp</a></p>
+        </div>
+      </form>
+    </div>
+
+    <!--End mc_embed_signup-->
+  </div>
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>James Steinbach</li>
+          <li><a href="mailto:jdsteinbach@gmail.com">jdsteinbach@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          <li>
+            <a href="https://github.com/jdsteinbach">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">jdsteinbach</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://twitter.com/jdsteinbach">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">jdsteinbach</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p class="text">Front-end Architect. Speaker & writer. Sass, CSS Animation, RWD & WP.</p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+    <script>
+    if (window.localStorage) {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('theme-dark');
+      } else {
+        document.body.classList.remove('theme-dark');
+      }
+    }
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-43397146-5', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src="/assets/site.js"></script>
+      </body>
+
+</html>

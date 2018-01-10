@@ -1,0 +1,32 @@
+<p>With all my WordPress sites, it&#8217;s taken a <em>lot</em> of work to get a Google Page Speed score above 90. When I moved this site to Jekyll &amp; Github pages hosting, I instantly got a 93/100. I wasn&#8217;t satisfied (since I hadn&#8217;t put any effort into it!), so I started looking for ways to optimize things even more. Garth Braithwaite&#8217;s Medium post &#8220;<a href="https://medium.com/design-open/becoming-a-jekyll-god-ef722e93f771" title="I am a Jekyll God">Becoming a Jekyll God</a>&#8221; had all the tools I needed to get to 99/100.</p>
+<h2 id="inline-css">Inline CSS</h2>
+<p>Garth points out that you can tell Jekyll to minify your CSS output by putting the following in your <code>_config.yml</code> file:</p>
+<pre><code class="lang-ruby">sass:
+  style: compressed
+</code></pre>
+<p>Then the article recommended going one step farther and inlining the entire style sheet into your document.</p>
+<ol>
+<li>Move your <code>main.css</code> (or <code>style.scss</code> - whichever is being used in your theme) into your <code>/_includes/</code> directory.</li>
+<li>Remove the “front matter” from that <code>.scss</code> file (everything between <code>---</code> and <code>---</code>.</li>
+<li>In your <code>&lt;head&gt;</code> (probably in <code>/_includes/head.html</code>), replace the <code>&lt;link rel=“stylesheet” … &gt;</code> line with the following:</li>
+</ol>
+<pre><code class="lang-html">&lt;style type=&quot;text/css&quot;&gt;
+  {% raw %}{% capture include_to_scssify %}
+    {% include main.scss %}
+  {% endcapture %}
+  {{ include_to_scssify | scssify }}{% endraw %}
+&lt;/style&gt;
+</code></pre>
+<h2 id="compressed-html">Compressed HTML</h2>
+<p>Compressing HTML was the next huge win for me. This requires an extra <code>.html</code> file in <code>/_layouts/</code>. You can <a href="https://github.com/penibelst/jekyll-compress-html/releases/tag/v1.1.1" title="Download compress.html">download <code>compress.html</code> here</a>.</p>
+<p>Most likely, your layout files are all calling a single &#8220;root&#8221; layout file. In the default theme, <code>page.html</code> and <code>post.html</code> both called <code>default.html</code> in their front matter. If that&#8217;s the case for you, copy <code>compress.html</code> to your <code>/_layouts/</code> directory and add the following to the top of <code>default.html</code>:</p>
+<pre><code class="lang-ruby">---
+layout: compress
+---
+</code></pre>
+<h2 id="caching">Caching</h2>
+<p>I&#8217;m using <a href="https://www.cloudflare.com" title="Visit cloudflare.com">CloudFlare</a> to manage DNS for this site. For this domain, I went to “CloudFlare Settings” and clicked the “Performance Settings” tab. On that screen, I told CloudFlare to cache resources for 24 days (very aggressive), and minify JS, CSS, &amp; HTML. I realize, doing this after the HTML compression trick above is probably overkill. I may review that, do some testing and remove the compression from Jekyll. We&#8217;ll see.</p>
+<p><img src="/images/99-100-google-page-speed.jpg" alt="Screenshot showing 99/100 Google Page Speed Score" title="Google Page Speed"></p>
+<blockquote>
+<p>Note: I&#8217;m constantly playing with things on this site, so the 99/100 may come and go.</p>
+</blockquote>

@@ -9,7 +9,7 @@ redirect_from:
 
   <ul class="post-list">
     {% for post in paginator.posts %}
-      {% include excerpt.html %}
+      {{> excerpt.html }}
     {% endfor %}
   </ul>
 

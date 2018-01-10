@@ -1,0 +1,22 @@
+{
+  "name": "ps-site",
+  "description": "Plum Street site",
+  "main": "index.js",
+  "authors": [
+    "James Steinbach"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/plumstreet/ps-site",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "susy": "^2.2.12",
+    "breakpoint-sass": "^2.7.1"
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+
+  <head itemscope itemtype="http://schema.org/WebSite">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#5CACC4">
+    <title itemprop="name">{% if page.title %}{{ page.title }} | {% endif %}{{ site.author_name }}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ content | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.author_name }}" />
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+    <meta property="og:url" content="{{site.url}}" />
+    <meta property="og:site_name" content="{{site.title}}" />
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"/>
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.author_name }}"/>
+    <meta name="twitter:domain" content="{{site.url}}"/>
+
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  </head>
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+      <div class="wrapper">
+
+        <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+        <nav class="site-nav">
+          {% assign sorted_pages = site.pages | sort:"menu_order" %}
+          {% for page in sorted_pages %}
+            {% if page.exclude %}
+            {% else %}
+              {% if page.menu_title %}
+                <a class="site-nav__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.menu_title }}</a>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </nav>
+
+      </div>
+
+    </header>
+
+    <div class="page-content" id="main" role="main">
+
+      <div class="wrapper">
