@@ -5,8 +5,10 @@
     <a class="site-title" href="{{ site.url }}/">{{ site.name }}</a>
 
     <nav class="site-nav">
-      {{ collections.nav }}
-      {% for page in collections.nav %}
+      {% if collections %}
+        There are collections!
+      {% endif %}
+      {% for page in collections.pages %}
         {% if page.menu_title %}
           <a class="site-nav__link" href="{{ page.url | prepend: site.url }}">{{ page.menu_title }}</a>
         {% endif %}

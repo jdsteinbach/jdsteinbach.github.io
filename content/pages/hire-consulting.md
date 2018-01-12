@@ -2,7 +2,7 @@
 title: Hire Me for Consulting Work
 author: James
 layout: page.html
-permalink: /hire/consulting/
+permalink: hire\/consulting
 ---
 
 I'm available to consult with you and/or your team in any of my areas of expertise: CSS, Sass, accessibility, user experience (UX), workflow automation, performance, and WordPress development. (More info about [my areas of expertise](/hire/).)

@@ -17,6 +17,6 @@
   <meta name="twitter:domain" content="{{site.url}}"/>
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="{{ permalink | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
+  <link rel="canonical" href="{% if permalink %}{{ permalink | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endif %}{% if url %}{{ url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endif %}" itemprop="url">
   <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 </head>

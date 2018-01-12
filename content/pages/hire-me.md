@@ -2,7 +2,7 @@
 title: How Would You Like to Work Together?
 author: James
 layout: page.html
-permalink: /hire/
+permalink: hire
 ---
 
 I hope you're enjoying your time on my blog, but if you've ended up on this page, it's probably because you want my expertise in real life, not just written down.

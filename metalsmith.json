@@ -20,10 +20,10 @@
     "metalsmith-markdown": {},
     "metalsmith-collections": {
       "posts": {
-        "pattern": "./posts/*.md"
+        "pattern": "posts/**/*.md"
       },
-      "nav": {
-        "pattern": "./*.md"
+      "pages": {
+        "pattern": "pages/**/*.md"
       }
     },
     "metalsmith-pagination": {
@@ -34,6 +34,7 @@
       }
     },
     "metalsmith-permalinks": {
+      "relative": false,
       "pattern": ":permalink"
     },
     "metalsmith-layouts": {

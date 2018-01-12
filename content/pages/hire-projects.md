@@ -2,7 +2,7 @@
 title: Hire Me for Project Work
 author: James
 layout: page.html
-permalink: /hire/projects/
+permalink: hire\/projects
 ---
 
 I'm available to work on projects in any of my areas of expertise: CSS, Sass, accessibility, user experience (UX), workflow automation, performance, and WordPress development. (More info about [my areas of expertise](/hire/).)
