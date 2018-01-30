@@ -6,9 +6,14 @@ body {
 }
 
 .post-content a {
-  @supports (text-decoration-skip: ink) {
+  @supports (text-decoration-skip: edges) {
     text-decoration-color: currentColor;
-    text-decoration-skip: ink;
+    text-decoration-skip: edges;
+    text-decoration-style: underline;
+  }
+  @supports (text-decoration-skip-ink: auto) {
+    text-decoration-color: currentColor;
+    text-decoration-skip-ink: auto;
     text-decoration-style: underline;
   }
 }
