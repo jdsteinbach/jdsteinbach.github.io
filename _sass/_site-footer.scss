@@ -1,7 +1,19 @@
 .site-footer {
-  @include use-prop(background-color, color-background-alt);
-  padding-bottom: $base-spacing;
-  padding-top: $base-spacing;
+  padding: $base-spacing $small-spacing;
+  color: $color-gray-pale;
+  background-color: $color-gray-dark;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+  }
+
+  a {
+    color: $color-link-dark;
+
+    @include haf {
+      color: $color-link-dark-alt;
+    }
+  }
 }
 
 .footer-col {

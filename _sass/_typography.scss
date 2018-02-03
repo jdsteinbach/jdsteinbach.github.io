@@ -1,7 +1,7 @@
 body {
   @include font-scale(p);
-  @include use-prop(background-color, color-background);
-  @include use-prop(color, color-text);
+  @include use-prop(background-color, color-background-page);
+  @include use-prop(color, color-background);
   font-family: $font-body;
   font-kerning: normal;
   font-variant-ligatures: common-ligatures contextual;
@@ -48,21 +48,24 @@ h4 {
 
 .page-heading,
 .post-title {
-  @include font-scale(title);
-  @include use-prop(color, color-text-alt);
+  @include font-scale(hero);
+  color: $color-gray-pale;
   letter-spacing: (1em / 32);
   margin-top: $base-spacing;
+  margin-bottom: $base-spacing;
   text-align: center;
   text-transform: uppercase;
+  text-shadow: 1px 1px 0 $color-blue-dark,
+               2px 2px 0 $color-blue-dark,
+               3px 3px 0 $color-blue-dark,
+               4px 4px 0 $color-blue-dark;
 }
 
-.post-title {
-  margin-bottom: $base-spacing;
-}
-
-.page-heading {
-  @include font-scale(subtitle);
-  margin-bottom: $base-spacing;
+.footer-title {
+  text-shadow: 1px 1px 0 $color-blue-dark,
+               2px 2px 0 $color-blue-dark,
+               3px 3px 0 $color-blue-dark,
+               4px 4px 0 $color-blue-dark;
 }
 
 p {
@@ -76,6 +79,10 @@ p {
   display: block;
   font-family: $font-headline;
   margin-top: $base-spacing;
+
+  li:first-child & {
+    margin-top: 0;
+  }
 }
 
 b,

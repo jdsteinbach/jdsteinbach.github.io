@@ -1,6 +1,11 @@
 .post-meta {
   @include font-scale(sm);
   margin-bottom: $base-spacing;
+  @include use-prop(color, color-text);
+
+  .post-header & {
+    color: $color-gray-pale;
+  }
 
   .categories {
     text-transform: lowercase;
@@ -23,11 +28,7 @@
   }
 }
 
-.page-content {
-  padding-top: $small-spacing;
-  padding-bottom: $small-spacing;
-
-  .button {
-    margin-bottom: $small-spacing;
+.post-header {
+  a {
   }
 }
