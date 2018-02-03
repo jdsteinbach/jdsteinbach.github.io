@@ -6,25 +6,30 @@ redirect_from:
 ---
 
 <div class="home inner-wrapper">
+  <header class="post-header">
+    <h1 class="post-title">Recent Posts</h1>
+  </header>
 
-  <ul class="post-list">
-    {% for post in paginator.posts %}
-      {% include excerpt.html %}
-    {% endfor %}
-  </ul>
 
-	<div class="pagination">
-		{% if paginator.previous_page %}
-		<a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
-    {% else %}
-    <span class="previous"></span>
-		{% endif %}
-		<span class="page-number ">{ {{ paginator.page }} of {{ paginator.total_pages }} }</span>
-		{% if paginator.next_page %}
-		<a href="{{ paginator.next_page_path }}" class="next">Next</a>
-    {% else %}
-    <span class="next"></span>
-		{% endif %}
-	</div>
+  <div class="white-sheet">
+    <ul class="post-list">
+      {% for post in paginator.posts %}
+        {% include excerpt.html %}
+      {% endfor %}
+    </ul>
 
+    <div class="pagination">
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+      {% else %}
+      <span class="previous"></span>
+      {% endif %}
+      <span class="page-number ">{ {{ paginator.page }} of {{ paginator.total_pages }} }</span>
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+      {% else %}
+      <span class="next"></span>
+      {% endif %}
+    </div>
+  </div>
 </div>

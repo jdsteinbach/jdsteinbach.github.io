@@ -17,12 +17,18 @@ pre > code {
   @include font-scale(sm);
   @include use-prop(background-color, color-background-code);
   @include use-prop(color, color-background);
-  border: $border-default;
   display: block;
-  margin: $base-spacing (0 - $small-spacing);
+  margin: $base-spacing 0;
   overflow: scroll;
   padding: $small-spacing;
   width: auto;
+  border-radius: 0;
+  box-shadow: 1px 1px 0 1px $color-gray,
+              2px 2px 0 1px $color-gray;
+
+  @include bp(medium) {
+    margin: $base-spacing (0 - $small-spacing);
+  }
 }
 
 $code-selectors: '.c', '.err', '.k', '.o', '.cm', '.cp', '.c1', '.cs', '.gd', '.gd', '.x', '.ge', '.gr', '.gh', '.gi', '.gi .x', '.go', '.gp', '.gs', '.gu', '.gt', '.kc', '.kd', '.kp', '.kr', '.kt', '.m', '.s', '.n', '.na', '.nb', '.nc', '.nd', '.no', '.nl', '.ni', '.ne', '.nf', '.nn', '.nt', '.nv', '.nx', '.ow', '.w', '.mf', '.mh', '.mi', '.mo', '.sb', '.sc', '.sd', '.s1', '.s2', '.se', '.sh', '.si', '.sx', '.sr', '.s1', '.ss', '.bp', '.vc', '.vg', '.vi', '.il', '.p';

@@ -51,6 +51,14 @@ a {
     border-style: solid;
     border-width: $tiny-spacing;
   }
+
+  .post-header & {
+    color: $color-link-dark;
+
+    @include haf {
+      color: $color-link-dark-alt;
+    }
+  }
 }
 
 h2,

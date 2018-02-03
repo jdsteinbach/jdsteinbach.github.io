@@ -29,6 +29,10 @@ button,
       @include use-prop(background-color, color-highlight-alt);
     }
   }
+
+  .page-content & {
+    margin-bottom: $small-spacing;
+  }
 }
 
 .button-theme {

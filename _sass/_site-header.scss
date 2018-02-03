@@ -1,7 +1,6 @@
 .site-header {
-  @include use-prop(background-color, color-highlight);
-  padding-top: $small-spacing;
-  padding-bottom: $small-spacing;
+  background-color: $color-blue-dark;
+  padding: $small-spacing;
 
   .wrapper {
     align-items: center;
@@ -12,7 +11,11 @@
   }
 
   a {
-    @include use-prop(color, color-background);
+    color: $color-link-dark;
+
+    @include haf {
+      color: $color-link-dark-alt;
+    }
   }
 }
 
