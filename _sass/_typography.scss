@@ -70,7 +70,10 @@ h4 {
 
 p {
   @include font-scale(p);
-  margin-bottom: $base-spacing;
+
+  &:not(:empty) {
+    margin-bottom: $base-spacing;
+  }
 }
 
 .outbound-link,
