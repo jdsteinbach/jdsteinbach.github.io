@@ -8,18 +8,17 @@ a {
     @include use-prop(color, color-link-alt);
   }
 
-  &.site-nav__link,
-  .post-list & {
+  &.site-nav__link {
     &::before {
       content: '';
       position: absolute;
       top: 0;
-      right: -1px;
+      right: -$tiny-spacing;
       bottom: 0;
-      left: -1px;
+      left: -$tiny-spacing;
       transform: scaleX(0) rotate(4deg) translateY(.25em);
       opacity: 0;
-      z-index: -1;
+      z-index: 0;
       transition: color .25s, opacity .25s, transform .25s $easing;
     }
 
@@ -48,6 +47,7 @@ a {
 
   .post-list &::before {
     @include use-prop(border-color, color-highlight);
+    @include use-prop(background-color, color-highlight);
     border-style: solid;
     border-width: $tiny-spacing;
   }
@@ -57,6 +57,38 @@ a {
 
     @include haf {
       color: $color-link-dark-alt;
+    }
+  }
+}
+
+.post-list h2 {
+  position: relative;
+
+  a {
+    z-index: 2;
+  }
+
+  &::before {
+    @include use-prop(border-color, color-highlight);
+    @include use-prop(background-color, color-highlight);
+    border-style: solid;
+    border-width: $tiny-spacing;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -$tiny-spacing;
+    bottom: 0;
+    left: -$tiny-spacing;
+    transform: scaleX(0) rotate(4deg) translateY(.25em);
+    opacity: 0;
+    z-index: 1;
+    transition: color .25s, opacity .25s, transform .25s $easing;
+  }
+
+  @include haf {
+    &::before {
+      transform: scaleX(1) rotate(-1deg) translateY(0);
+      opacity: .2;
     }
   }
 }
