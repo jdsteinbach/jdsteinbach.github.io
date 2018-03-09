@@ -34,7 +34,6 @@
   width: 100vw;
 
   > svg {
-    @include use-prop(background-color, color-background-svg);
     position: absolute;
     top: 0;
     bottom: 0;
