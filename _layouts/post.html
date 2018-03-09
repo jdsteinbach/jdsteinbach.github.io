@@ -4,6 +4,9 @@ layout: default
 <div class="post inner-wrapper">
 
   <header class="post-header">
+    {% assign rand = page.title | size | modulo: 5 | plus: 1 %}
+    {% include bg-{{rand}}.html %}
+
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-meta">
       <span class="date">{{ page.date | date: "%b %-d, %Y" }}</span>
