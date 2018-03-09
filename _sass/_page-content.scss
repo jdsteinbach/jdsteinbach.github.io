@@ -1,7 +1,7 @@
 .post-meta {
   @include font-scale(sm);
-  margin-bottom: $base-spacing;
   @include use-prop(color, color-text);
+  margin-bottom: $base-spacing;
 
   .post-header & {
     color: $color-gray-pale;
@@ -14,10 +14,7 @@
   .author {
     font-style: italic;
 
-    &::before {
-      content: " ~ ";
-    }
-
+    &::before,
     &::after {
       content: " ~ ";
     }
@@ -29,6 +26,35 @@
 }
 
 .post-header {
-  a {
+  @include use-prop(background-color, color-background-svg);
+  padding: $base-spacing;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  width: 100vw;
+
+  > svg {
+    @include use-prop(background-color, color-background-svg);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  > svg:first-child + *,
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
   }
 }

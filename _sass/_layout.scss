@@ -1,8 +1,3 @@
-html {
-  @include use-prop(border-color, color-highlight);
-  border-style: solid;
-}
-
 .wrapper {
   margin-left: auto;
   margin-right: auto;
@@ -24,14 +19,8 @@ html {
 }
 
 .white-sheet {
-  @include use-prop(background-color, color-background);
   @include use-prop(color, color-text);
   padding: $base-spacing $small-spacing;
-  margin-bottom: $large-spacing;
-  box-shadow: 1px 1px 0 1px $color-blue-dark,
-              2px 2px 0 1px $color-blue-dark,
-              3px 3px 0 1px $color-blue-dark,
-              4px 4px 0 1px $color-blue-dark;
 
   @include bp(medium) {
     padding: $base-spacing;
