@@ -36,6 +36,9 @@ svg {
   }
 
   path {
-    fill: currentColor;
+    button &,
+    a & {
+      fill: currentColor;
+    }
   }
 }
