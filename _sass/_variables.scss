@@ -48,6 +48,7 @@ $root-vars: (
   color-text:            $color-gray,
   color-text-alt:        $color-gray-dark,
   color-text-accent:     $color-blue-dark,
+  color-page-title:      $color-gray-pale,
 
   color-link:            $color-blue,
   color-link-alt:        $color-blue-dark,
@@ -131,9 +132,9 @@ $xlarge-vars: (
 /*
  * BORDERS
  */
-$border-color:           mix($color-text, $color-background);
+$border-color:           $color-blue;
 $border-default:         1px solid $border-color;
-$border-radius-default:  3px;
+$border-radius-default:  0;
 
 /*
  * FONTS
