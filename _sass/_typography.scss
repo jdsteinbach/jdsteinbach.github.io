@@ -48,6 +48,7 @@ h4 {
 
 .page-heading,
 .post-title {
+  @include use-prop(color, color-page-title);
   @include font-scale(hero);
   color: $color-gray-pale;
   letter-spacing: (1em / 32);

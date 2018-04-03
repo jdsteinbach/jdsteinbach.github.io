@@ -26,7 +26,16 @@
 }
 
 .mc-fields {
+  display: flex;
+  margin-bottom: $base-spacing;
   font-size: 0;
+  box-shadow: 1px 1px 0 0 $border-color,
+              2px 2px 0 0 $border-color,
+              3px 3px 0 0 $border-color;
+
+  input {
+    flex: 1 1 auto;
+  }
 }
 
 .mc-ref {
@@ -49,7 +58,7 @@
 .mc-field-group {
   @include font-scale(p);
   display: inline-block;
-  margin: 0 0 $base-spacing;
+  margin: 0;
   padding: 0;
   position: relative;
   width: 100%;
@@ -59,14 +68,15 @@
     display: block;
     font-style: italic;
     position: absolute;
-    top: .1em;
+    top: 0;
     left: 1em;
     transform-origin: left top;
-    transition: transform .25s $easing, color .25s;
+    transition: transform .25s $easing, opacity .25s;
   }
 
   &.active-input label {
     transform: translateY(-80%) scale(.8);
+    opacity: .6;
   }
 }
 
@@ -78,8 +88,8 @@
   }
 
   @include breakpoint(large) {
-    max-width: 33.3%;
-    width: 33.3%;
+    max-width: 33.33%;
+    width: 33.33%;
   }
 }
 
@@ -87,12 +97,14 @@ input,
 textarea {
   @include font-scale(p);
   @include use-prop(color, color-text);
+  appearance: none;
   background-color: transparent;
   border: $border-default;
   border-radius: $border-radius-default;
   display: block;
   font-family: inherit;
   padding: 0 $small-spacing;
+  margin-bottom: $base-spacing;
   width: 100%;
   transition: color .25s, opacity .25s, background-color .25s, transform .25s $easing;
 
@@ -101,32 +113,8 @@ textarea {
     outline: none;
   }
 
-  .fname & {
-    @include breakpoint(medium) {
-      border-bottom-right-radius: 0;
-      border-top-right-radius: 0;
-      border-right: 0;
-    }
-
-    @include breakpoint(large) {
-      border-bottom-left-radius: 0;
-      border-top-left-radius: 0;
-      border-left: 0;
-    }
-  }
-
-  .email & {
-    @include breakpoint(large) {
-      border-bottom-right-radius: 0;
-      border-top-right-radius: 0;
-    }
-  }
-
-  .lname & {
-    @include breakpoint(medium) {
-      border-bottom-left-radius: 0;
-      border-top-left-radius: 0;
-    }
+  .mc-fields & {
+    margin-bottom: 0;
   }
 }
 
@@ -136,6 +124,9 @@ textarea {
 
   [id="mc_embed_signup"] & {
     width: 100%;
+    box-shadow: 1px 1px 0 0 $border-color,
+                2px 2px 0 0 $border-color,
+                3px 3px 0 0 $border-color;
 
     @include breakpoint(medium) {
       float: right;

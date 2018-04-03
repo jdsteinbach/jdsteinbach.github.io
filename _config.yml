@@ -12,7 +12,7 @@ github_username:  jdsteinbach
 author_name: James Steinbach
 category_suffix: "Archive"
 profile_pic: "/images/headshot.png"
-header_shadow: "#233240"
+header_shadow: "#131313"
 
 paginate: 8
 paginate_path: "/page:num/"

@@ -4,7 +4,8 @@
   margin-bottom: $base-spacing;
 
   .post-header & {
-    color: $color-gray-pale;
+    @include use-prop(color, color-page-title);
+    text-align: center;
   }
 
   .categories {
@@ -18,10 +19,6 @@
     &::after {
       content: " ~ ";
     }
-  }
-
-  .post-header & {
-    text-align: center;
   }
 }
 

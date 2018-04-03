@@ -8,7 +8,9 @@ button,
   appearance: none;
   border: 0;
   border-radius: $border-radius-default;
-  box-shadow: none;
+  box-shadow: 1px 1px 0 0 $color-orange,
+              2px 2px 0 0 $color-orange,
+              3px 3px 0 0 $color-orange;
   display: inline-block;
   font-family: $font-body;
   font-weight: bold;
@@ -42,6 +44,7 @@ button,
   background-repeat: no-repeat;
   background-size: 24px;
   border-radius: 0;
+  box-shadow: none;
   font-size: 0;
   min-height: 44px;
   min-width: 44px;
