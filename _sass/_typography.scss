@@ -105,6 +105,11 @@ em {
   > ul,
   > ol {
     margin-bottom: $base-spacing;
+    padding-left: 1em;
+
+    @include breakpoint(medium) {
+      padding-left: 0;
+    }
 
     li {
       margin-top: $small-spacing;
