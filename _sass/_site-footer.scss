@@ -2,6 +2,7 @@
   padding: $base-spacing $small-spacing;
   color: $color-gray-pale;
   background-color: $color-gray-dark;
+  -webkit-font-smoothing: antialiased;
 
   h1, h2, h3, h4, h5, h6 {
     color: inherit;
@@ -29,17 +30,13 @@
   }
 
   @include breakpoint(medium) {
-    &:nth-child(1),
-    &:nth-child(3) {
-      float: left;
-      width: 50%;
-    }
+    float: left;
+    width: 50%;
   }
 
   @include breakpoint(large) {
-    float: left;
     margin-bottom: 0;
-    width: 33% !important;
+    width: 33%;
   }
 }
 
