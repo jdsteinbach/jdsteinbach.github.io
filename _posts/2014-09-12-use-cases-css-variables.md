@@ -1,5 +1,5 @@
 ---
-title: Use Cases for CSS Variables
+title: Use Cases for CSS Custom Properties (Variables)
 author: James Steinbach
 layout: post
 permalink: /css/use-cases-css-variables/
@@ -7,37 +7,40 @@ categories:
   - CSS
 codepen: true
 ---
-It&#8217;s time to start exploring use cases for CSS variables, now that <a title="CSS Variable data on Can I Use" href="http://caniuse.com/#feat=css-variables" target="_blank">Firefox supports them</a>. <a title="Chrome no longer supports CSS variables" href="http://stackoverflow.com/questions/18466569/enable-experimental-webkit-features-chrome-css-css3-variables" target="_blank">Chrome has toyed with CSS variables</a> before. That means that **this post & all the embedded pens will only work in Firefox**.
 
-If you&#8217;re a fan of pre-processors, you might share my first reaction to CSS variables: &ldquo;I&#8217;m already using variables in [Sass/Less/Stylus]; why introduce something new?&rdquo; First, the ability to change these values live in a browser is pretty powerful. Second, native CSS variables will allow us to write lighter, more efficient stylesheets. In a series of follow-up posts to this one, I&#8217;ll go more in-depth comparing pre-processor variables with native CSS variables for each of the use cases introduced below.
+_Published September 12, 2014; updated April 16, 2018: updated browser support &amp; changed most instances of "CSS variables" to "custom properties"_
+
+It&#8217;s time to start exploring use cases for CSS <span style="text-decoration:line-through">variables</span> custom properties, now that <span style="text-decoration:line-through">Firefox</span> <a title="CSS Variable data on Can I Use" href="http://caniuse.com/#feat=css-variables" target="_blank">Firefox, Chrome, Safari, and Edge support them</a>. That means that <span style="text-decoration:line-through">this post & all the embedded pens will only work in Firefox</span> **this post & all the embedded pens will work almost everywhere but IE**.
+
+If you&#8217;re a fan of pre-processors, you might share my first reaction to CSS custom properties / variables: &ldquo;I&#8217;m already using variables in [Sass/Less/Stylus]; why introduce something new?&rdquo; First, the ability to change these values live in a browser is pretty powerful. Second, native CSS variables will allow us to write lighter, more efficient stylesheets. Third, CSS custom properties do _far more_ than preprocessor variables. You can use a CSS property once, use `var(--custom-property)` for its value, then change the custom property in any selector block elsewhere: the value of the custom property will obey the cascade _without needing to rewrite the entire CSS property/value pair_ ([example](#buttons)).
 
 ## Basic Syntax
 
-To define a native CSS variable globally, use the following syntax:
+To define a native CSS custom property globally, use the following syntax:
 
-~~~css
+```css
 :root{
   --color-primary: #001f3f;
 }
-~~~
+```
 
-To use that variable in a property, call it with the `var()` wrapper:
+To use that value in a property declaration, call it with the `var()` function:
 
-~~~css
+```css
 p {
   color: var(--color-primary);
 }
-~~~
+```
 
-Because that variable is scoped to `:root`, it&#8217;s global. Any place in the stylesheet it appears, it will return that same value. CSS variables can be scoped to any element, however, making it possible to create &ldquo;exceptions.&rdquo; The following use cases show the power of locally-scoped CSS variables.
+Because that custom property is scoped to `:root`, it&#8217;s global. Any place in the stylesheet it appears, it will return that same value. CSS custom properties can be scoped to any element, however, making it possible to create &ldquo;exceptions.&rdquo; The following use cases show the power of locally-scoped CSS values.
 
-## Use Cases
+## Use Cases for CSS Custom Properties
 
 ### Colors
 
-Let&#8217;s look at an example of scoping variables for color changes. In this use case, the &ldquo;normal&rdquo; color for `<h1>` elements will be the site accent red. However, the site also uses `<h1>` elements for the titles of widgets in the `<aside>` sidebar. We can redeclare the `--color-accent` variable in an `<aside>`: now any `<h1>` in a widget will be orange instead of red.
+Let&#8217;s look at an example of scoping custom property values for color changes. In this use case, the &ldquo;normal&rdquo; color for `<h1>` elements will be the site accent red. However, the site also uses `<h1>` elements for the titles of widgets in the `<aside>` sidebar. We can redeclare the `--color-accent` value in an `<aside>`: now any `<h1>` in a widget will be orange instead of red.
 
-~~~css
+```css
 :root{
   --color-accent: #ff4136;
 }
@@ -47,13 +50,13 @@ h1 {
 aside {
   --color-accent: #ff851b;
 }
-~~~
+```
 
 ### Font Sizes
 
-Font sizes can be changed with CSS variable scoping as well. This example works well in the same scenario as the sidebar colors above:
+Font sizes can be changed with CSS scoping as well. This example works well in the same scenario as the sidebar colors above:
 
-~~~css
+```css
 :root{
   --heading-size: 32px;
 }
@@ -63,21 +66,21 @@ h1 {
 aside {
   --heading-size: 24px;
 }
-~~~
+```
 
 ### SVGs
 
-Inline SVG images can be styled with CSS: variables can change SVG colors based on context. Amelia Bellamy-Royds has already written a <a title="CSS Variables and SVGs" href="http://codepen.io/AmeliaBR/thoughts/customizable-svg-icons-css-variables" target="_blank">great CodePen blog post on SVGs and CSS variables</a>, so I&#8217;ll just link you to it and let her explain how it works.
+Inline SVG images can be styled with CSS: custom properties can change SVG colors based on context. Amelia Bellamy-Royds has already written a <a title="CSS Variables and SVGs" href="http://codepen.io/AmeliaBR/thoughts/customizable-svg-icons-css-variables" target="_blank">great CodePen blog post on SVGs and CSS variables</a>, so I&#8217;ll just link you to it and let her explain how it works.
 
 ### Grid Layouts
 
-Grid layouts are one of the trendiest parts of modern web development to automate. There are probably dozens of grid frameworks written in JS, CSS, Sass, etc. We can use native CSS variables to set up custom grid layouts simply.
+Grid layouts are one of the trendiest parts of modern web development to automate. There are probably dozens of grid frameworks written in JS, CSS, Sass, etc. We can use CSS custom properties to set up custom grid layouts simply.
 
 In this example, we&#8217;ll only need one set of styles for all our grid elements, regardless of the number of columns they&#8217;ll be presented with. (Note, this is a really simplistic grid layout.)
 
 Each container element will display its `.grid-item` children according to the `--grid-width` percentage scoped to that particular container.
 
-~~~css
+```css
 :root {
   --grid-width: 20%;
 }
@@ -91,13 +94,13 @@ Each container element will display its `.grid-item` children according to the `
 .portfolio-grid {
   --grid-width: 33%;
 }
-~~~
+```
 
 ### Column Proportions
 
-Body vs. sidebar proportions can be managed with CSS variables as well:
+Body vs. sidebar proportions can be managed with CSS custo properties as well:
 
-~~~css
+```css
 :root{
   --content-width: 75%;
   --sidebar-width: 25%;
@@ -112,13 +115,13 @@ Body vs. sidebar proportions can be managed with CSS variables as well:
   --content-width: 62.5%;
   --sidebar-width: 37.5%;
 }
-~~~
+```
 
 ### Buttons
 
-Next to grid layouts, buttons are everyone&#8217;s favorite place to automate styling. CSS variables are useful here.
+Next to grid layouts, buttons are everyone&#8217;s favorite place to automate styling. CSS properties are useful here, too.
 
-~~~css
+```css
 :root{
   --button-color: #ff4136;
   --button-color-dark: #cc0e03;
@@ -141,13 +144,13 @@ Next to grid layouts, buttons are everyone&#8217;s favorite place to automate st
   --button-color-dark: #cc5200;
   --button-color-light: #ffb84e;
 }
-~~~
+```
 
 ### JS Changes
 
-One benefit of native CSS variables is that they can be changed in real time with JavaScript. This is nice for user-enabled theme changing or for easily demoing multiple layouts / color scheme options for a client. The following JS function changes the value of the `--color-primary` variable.
+One benefit of CSS custom properties is that they can be changed in real time with JavaScript. This is nice for user-enabled theme changing or for easily demoing multiple layouts / color scheme options for a client. The following JS function changes the value of the `--color-primary` variable.
 
-~~~js
+```js
 var body = document.getElementsByTagName("body")[0];
 function change_vars(){
   if ( !body.classList.contains('changed') ) {
@@ -158,10 +161,10 @@ function change_vars(){
     body.classList.remove('changed');
   }
 }
-~~~
+```
 
 ## Conclusion
 
-So many good uses, and we&#8217;re barely getting started… Use the comments to ask follow-up questions or share your ideas for using CSS variables. And of course, stay tuned for more detailed posts comparing native CSS variables to pre-processor variables in these use cases.
+So many good uses, and we&#8217;re barely getting started… Use the comments to ask follow-up questions or share your ideas for using CSS custom properties (variables).
 
 You can see all these <a title="CSS Variables: CodePen Demo" href="http://codepen.io/jdsteinbach/pen/AeEwk" target="_blank">CSS Variable use cases in a single CodePen</a> here.
