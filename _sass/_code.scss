@@ -5,6 +5,7 @@ code {
   display: inline-block;
   font-family: $font-code;
   font-weight: inherit;
+  font-feature-settings: initial;
   padding: 0 .5ch;
   vertical-align: baseline;
 
