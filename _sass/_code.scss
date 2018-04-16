@@ -16,7 +16,7 @@ code {
 pre > code {
   @include font-scale(sm);
   @include use-prop(background-color, color-background-code);
-  @include use-prop(color, color-background);
+  @include use-prop(color, color-text-code);
   display: block;
   margin: $base-spacing 0;
   overflow: scroll;
