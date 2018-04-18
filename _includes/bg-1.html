@@ -1,60 +1,46 @@
-<svg viewBox="0 0 64 64" preserveAspectRatio="xMidYMid slice">
-  <defs>
-    <mask id="mask-hz">
-      <rect height="4" width="64" fill="url(#gradient-hz)" />
-    </mask>
-
-    <linearGradient x="0" y="0" x2="0" y2="4" spreadMethod="pad" id="gradient-hz">
-      <stop offset="0" stop-color="rgba(255,255,255,0)"/>
-      <stop offset="2" stop-color="rgba(255,255,255,.35)"/>
-      <stop offset="4" stop-color="rgba(255,255,255,.9)"/>
+<svg viewBox="0 0 64 64" preserveAspectRatio="xMidYMid slice" alt="" role="presentation">
+    <defs>
+    <linearGradient x="0" y="0" x2="0" y2="4" spreadMethod="pad" id="lg-hz">
+      <stop offset="0" stop-color="{{ site.header_shadow }}" stop-opacity="0" />
+      <stop offset="2" stop-color="{{ site.header_shadow }}" stop-opacity=".35" />
+      <stop offset="4" stop-color="{{ site.header_shadow }}" stop-opacity=".9" />
     </linearGradient>
-
-    <rect id="hz" x="0" width="64" height="4" fill="{{ site.header_shadow }}" mask="url(#mask-hz)"/>
-
-
-    <mask id="mask-vt">
-      <rect height="64" width="4" fill="url(#gradient-vt)" />
-    </mask>
-
-    <linearGradient x="0" y="0" x2="4" y2="0" id="gradient-vt">
-      <stop offset="0" stop-color="rgba(255,255,255,0)"/>
-      <stop offset="2" stop-color="rgba(255,255,255,.35)"/>
-      <stop offset="4" stop-color="rgba(255,255,255,.9)"/>
+    <linearGradient x="0" y="0" x2="4" y2="0" spreadMethod="pad" id="lg-vt">
+      <stop offset="0" stop-color="{{ site.header_shadow }}" stop-opacity="0" />
+      <stop offset="2" stop-color="{{ site.header_shadow }}" stop-opacity=".35" />
+      <stop offset="4" stop-color="{{ site.header_shadow }}" stop-opacity=".8" />
     </linearGradient>
-
-    <rect id="vt" y="0" width="4" height="64" fill="{{ site.header_shadow }}" mask="url(#mask-vt)"/>
   </defs>
-  <use href="#hz" y="0" />
-  <use href="#hz" y="4" />
-  <use href="#hz" y="8" />
-  <use href="#hz" y="12" />
-  <use href="#hz" y="16" />
-  <use href="#hz" y="20" />
-  <use href="#hz" y="24" />
-  <use href="#hz" y="28" />
-  <use href="#hz" y="32" />
-  <use href="#hz" y="36" />
-  <use href="#hz" y="40" />
-  <use href="#hz" y="44" />
-  <use href="#hz" y="48" />
-  <use href="#hz" y="52" />
-  <use href="#hz" y="56" />
-  <use href="#hz" y="60" />
-  <use href="#vt" x="0" />
-  <use href="#vt" x="4" />
-  <use href="#vt" x="8" />
-  <use href="#vt" x="12" />
-  <use href="#vt" x="16" />
-  <use href="#vt" x="20" />
-  <use href="#vt" x="24" />
-  <use href="#vt" x="28" />
-  <use href="#vt" x="32" />
-  <use href="#vt" x="36" />
-  <use href="#vt" x="40" />
-  <use href="#vt" x="44" />
-  <use href="#vt" x="48" />
-  <use href="#vt" x="52" />
-  <use href="#vt" x="56" />
-  <use href="#vt" x="60" />
+  <rect x="0" y="0" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="4" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="8" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="12" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="16" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="20" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="24" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="28" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="32" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="36" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="40" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="44" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="48" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="52" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="56" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="60" width="64" height="4" fill="url(#lg-hz)" />
+  <rect x="0" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="4" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="8" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="12" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="16" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="20" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="24" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="28" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="32" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="36" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="40" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="44" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="48" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="52" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="56" y="0" width="4" height="64" fill="url(#lg-vt)" />
+  <rect x="60" y="0" width="4" height="64" fill="url(#lg-vt)" />
 </svg>
