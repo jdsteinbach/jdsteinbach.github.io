@@ -43,13 +43,18 @@
   }
 }
 
+.indicates-required {
+  width: 0;
+}
+
 .mc-ref {
   @include font-scale(sm);
   font-style: italic;
   margin-top: 0;
   margin-bottom: $base-spacing;
+  opacity: .5;
 
-  @include breakpoint(medium) {
+  @include breakpoint(400px) {
     float: left;
     width: 50%;
   }
@@ -149,13 +154,9 @@ textarea {
                 2px 2px 0 0 $border-color,
                 3px 3px 0 0 $border-color;
 
-    @include breakpoint(medium) {
+    @include breakpoint(400px) {
       float: right;
       width: 50%;
-    }
-
-    @include breakpoint(large) {
-      // width: 33.3%;
     }
   }
 

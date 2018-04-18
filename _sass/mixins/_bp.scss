@@ -2,11 +2,15 @@
 @mixin bp($name) {
   @if $name == 'default' {
     @content;
-  } @else if not index(map-keys($breakpoints), $name) {
-    @warn 'Invalid breakpoint `#{$name}`.';
-  } @else {
+  } @else if index(map-keys($breakpoints), $name) {
     @media (min-width: map-get($breakpoints, $name)) {
       @content;
     }
+  } @else if type-of($name) == number {
+    @media (min-width: #{$name}) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint `#{$name}`.';
   }
 }
