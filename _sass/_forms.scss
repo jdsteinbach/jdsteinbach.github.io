@@ -27,11 +27,16 @@
 
 .mc-fields {
   display: flex;
+  justify-content: stretch;
+  flex-wrap: wrap;
   margin-bottom: $base-spacing;
   font-size: 0;
-  box-shadow: 1px 1px 0 0 $border-color,
-              2px 2px 0 0 $border-color,
-              3px 3px 0 0 $border-color;
+
+  @include breakpoint(medium) {
+    box-shadow: 1px 1px 0 0 $border-color,
+                2px 2px 0 0 $border-color,
+                3px 3px 0 0 $border-color;
+  }
 
   input {
     flex: 1 1 auto;
@@ -50,7 +55,7 @@
   }
 
   @include breakpoint(large) {
-    width: 66.7%;
+    width: 50%;
   }
 }
 
@@ -81,15 +86,30 @@
 }
 
 .mc-field-group {
-  @include breakpoint(medium) {
-    &[class*="name"] {
-      width: 50%;
+  width: 50%;
+  flex: 1 1 auto;
+
+  &[class*="email"] {
+    margin-bottom: $base-spacing;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+      width: 33%;
     }
   }
 
+  @include breakpoint(medium) {
+    width: 33%;
+  }
+
+
   @include breakpoint(large) {
-    max-width: 33.33%;
-    width: 33.33%;
+    width: 25%;
+
+    &[class*="email"] {
+      width: 50%;
+    }
   }
 }
 
@@ -97,6 +117,7 @@ input,
 textarea {
   @include font-scale(p);
   @include use-prop(color, color-text);
+  -webkit-appearance: none;
   appearance: none;
   background-color: transparent;
   border: $border-default;
@@ -134,7 +155,7 @@ textarea {
     }
 
     @include breakpoint(large) {
-      width: 33.3%;
+      // width: 33.3%;
     }
   }
 

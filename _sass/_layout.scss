@@ -22,7 +22,7 @@
   @include use-prop(color, color-text);
   padding: $base-spacing $small-spacing;
 
-  @include bp(medium) {
+  @include bp(large) {
     padding: $base-spacing;
   }
 }
