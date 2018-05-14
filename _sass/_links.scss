@@ -61,12 +61,19 @@ a {
   }
 }
 
-.post-list h2 {
-  position: relative;
-
-  a {
-    z-index: 2;
+.post-list {
+  li + li {
+    margin-top: $base-spacing;
   }
+
+  h2 {
+    position: relative;
+  }
+}
+
+.post-link,
+.outbound-link {
+  z-index: 2;
 
   &::before {
     @include use-prop(border-color, color-highlight);

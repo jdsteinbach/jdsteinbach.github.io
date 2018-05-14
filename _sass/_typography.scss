@@ -82,11 +82,6 @@ p {
   @include font-scale(blockquote);
   display: block;
   font-family: $font-headline;
-  margin-top: $base-spacing;
-
-  li:first-child & {
-    margin-top: 0;
-  }
 }
 
 b,
