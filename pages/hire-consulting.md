@@ -3,6 +3,7 @@ title: Hire Me for Consulting Work
 author: James
 layout: page
 permalink: /hire/consulting/
+excerpt: James can consult with your team in these areas - CSS, Sass, accessibility, user experience, workflow automation, performance, and WordPress.
 ---
 
 I'm available to consult with you and/or your team in any of my areas of expertise: CSS, Sass, accessibility, user experience (UX), workflow automation, performance, and WordPress development. (More info about [my areas of expertise](/hire/).)

@@ -9,7 +9,7 @@
     </nav>
     {% else %}
       <nav class="site-nav">
-        <a class="site-nav__link" href="/">Where is <code>collections.nav</code>? 🤔</a>
+        <a class="site-nav__link" href="/">{{collections.nav | debug }}</code> 🤔</a>
       </nav>
     {% endif %}
   </div>

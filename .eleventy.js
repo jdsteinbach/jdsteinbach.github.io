@@ -19,6 +19,8 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("fix_links", url => url.replace('/index.html', '/'));
 
+  eleventyConfig.addFilter("debug", something => typeof something);
+
   // Create Posts Collection
   eleventyConfig.addCollection("posts", function(collection) {
     return collection

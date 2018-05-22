@@ -5,6 +5,7 @@ layout: page
 permalink: /talks/
 menu_order: 35
 menu_title: Talks
+excerpt: James is an experienced teacher and speaker. He has spoken at conferences across the US and internationally.
 ---
 
 I enjoy writing here on the blog, but I really love speaking with real audiences about front-end development techniques I’m passionate about. Here is a list of talks I’ve given in the past. Please [contact me](/contact/) if you’d like me to speak at an event or meet-up you run. Thanks!

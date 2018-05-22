@@ -5,6 +5,7 @@ layout: page
 permalink: /about/
 menu_order: 40
 menu_title: About
+excerpt: James is a real person, not just a developer. He has a lovely family, a sense of humor, and an opinionated palate.
 ---
 <img class="alignleft" src="/images/headshot.png" alt="James Steinbach: Profile Photo" width="200" height="174" style="shape-outside:url(/images/headshot.png);shape-margin:1em;"/>I&#8217;m a Chicago native currently enjoying the mountains of Denver after a long sojourn in the Carolinas. When I&#8217;m not building websites, I love to read Clancy, Crichton, Baldacci, etc. I&#8217;m usually up for a good laugh: Brooklyn 99, Mindy Project, Tonight Show, Late Show. Time with [my wife Audrey][1] & [newborn daughter][2] is always a delight. And I rarely say no to fantastic food &amp; drink.
 

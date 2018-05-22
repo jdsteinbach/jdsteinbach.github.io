@@ -3,11 +3,12 @@ title: Colophon
 author: James
 layout: page
 permalink: /colophon/
+excerpt: This blog exists because of several free tools. Here’s a list of the open-source projects that let this blog live for (almost) free.
 ---
 
 I'm really grateful for the many tools that allow me to publish this blog! Most of these are open-source and/or free, so I can maintain this site without a paywall or ads. If you really appreciate the content here, thank one of these organizations too! (And if you're able, consider making a donation to or purchase from them!)
 
-Built by: [Jekyll](https://jekyllrb.com/)
+Built by: [11ty](https://www.11ty.io/) and [Gulp](https://gulpjs.com/)
 
 Styled with: [Sass](http://sass-lang.com/)
 

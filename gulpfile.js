@@ -71,7 +71,10 @@ gulp.task('clean', () => del([_build_css + '/**/*', _build_js + '/**/*']))
 /**
  * Build the markup
  */
-gulp.task('11ty', () => $.exec('eleventy'))
+gulp.task('11ty', () => {
+  $.exec('eleventy')
+  $.notify('11ty is compiled')
+})
 
 
 /**
@@ -187,7 +190,7 @@ gulp.task('build', ['clean', 'styles', 'scripts', '11ty'])
 /**
  * Builds assets and reloads the page when any php, html, img or dev files change
  */
-gulp.task('watch', ['clean', 'styles', 'scripts'], () => {
+gulp.task('watch', ['clean', 'styles', 'scripts', '11ty'], () => {
   browserSync.init({
     server: {
       baseDir: _build_dir
