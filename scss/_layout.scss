@@ -1,0 +1,28 @@
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  width: $max-width;
+
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+    width: 100%;
+  }
+}
+
+.inner-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ($max-width / 6 * 4);
+}
+
+.white-sheet {
+  @include use-prop(color, color-text);
+  padding: $base-spacing $small-spacing;
+
+  @include bp(large) {
+    padding: $base-spacing;
+  }
+}

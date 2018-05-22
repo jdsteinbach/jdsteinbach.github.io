@@ -1,0 +1,18 @@
+{% include before %}
+
+<div class="category-archive inner-wrapper">
+
+  <div class="post-header">
+    {% include header-image %}
+
+    <h1 class="post-title">{{ title }} Archive</h1>
+  </div>
+  <ul class="post-list white-sheet">
+    {% for post in collections[cat_name] %}
+      {% include excerpt %}
+    {% endfor %}
+  </ul>
+
+</div>
+
+{% include after %}

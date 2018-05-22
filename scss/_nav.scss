@@ -1,0 +1,25 @@
+.site-nav {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+
+  @include breakpoint(xlarge) {
+    text-align: right;
+    width: 66%;
+  }
+}
+
+.site-nav__link {
+  @include font-scale(sm);
+  display: inline-block;
+  letter-spacing: (1em / 32);
+  padding: $tiny-spacing $small-spacing;
+  text-transform: uppercase;
+
+  &[href*="hire"] {
+    background-color: scale-color($color-link, $lightness: 90%);
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+}

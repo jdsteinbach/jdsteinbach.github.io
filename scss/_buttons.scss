@@ -1,0 +1,60 @@
+button,
+.button,
+[type="submit"] {
+  @include font-scale(sm);
+  @include use-prop(background-color, color-link);
+  @include use-prop(color, color-background);
+  -webkit-font-smoothing: antialiased;
+  appearance: none;
+  border: 0;
+  border-radius: $border-radius-default;
+  box-shadow: 1px 1px 0 0 $color-orange,
+              2px 2px 0 0 $color-orange,
+              3px 3px 0 0 $color-orange;
+  display: inline-block;
+  font-family: $font-body;
+  font-weight: bold;
+  letter-spacing: (1em / 32);
+  padding: 0 $small-spacing;
+  text-transform: uppercase;
+  transition: color .25s, opacity .25s, border-color .25s, background-color .25s, transform .25s $easing;
+
+  &.button-alt {
+    @include use-prop(background-color, color-highlight);
+  }
+
+  @include haf {
+    @include use-prop(background-color, color-link-alt);
+    @include use-prop(color, color-background);
+
+    &.button-alt {
+      @include use-prop(background-color, color-highlight-alt);
+    }
+  }
+
+  .page-content & {
+    margin-bottom: $small-spacing;
+  }
+}
+
+.button-theme {
+  @include use-prop(background-image, icon-theme);
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0;
+  min-height: 44px;
+  min-width: 44px;
+  opacity: .5;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  @include haf {
+    background-color: transparent;
+    opacity: .65;
+  }
+}

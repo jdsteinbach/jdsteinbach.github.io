@@ -1,0 +1,41 @@
+.site-header {
+  padding: $small-spacing;
+  background-color: $color-blue-dark;
+  color: $color-gray-pale;
+  -webkit-font-smoothing: antialiased;
+
+  .wrapper {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  a {
+    color: $color-link-dark;
+
+    @include haf {
+      color: $color-link-dark-alt;
+    }
+  }
+}
+
+.site-title {
+  @include font-scale(p);
+  display: inline-block;
+  font-family: $font-headline;
+  font-weight: bold;
+  padding: $tiny-spacing $small-spacing;
+  text-align: center;
+  vertical-align: middle;
+
+  @include breakpoint(large) {
+    margin-right: auto;
+  }
+
+  @include breakpoint(xlarge) {
+    text-align: left;
+    width: 33%;
+  }
+}

@@ -1,0 +1,26 @@
+
+.pagination {
+  @include font-scale(sm);
+  border-top: $border-default;
+  padding-top: $small-spacing;
+  text-align: center;
+
+  a,
+  span {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+  }
+
+  .previous {
+    text-align: left;
+  }
+
+  .page-number {
+    text-align: center;
+  }
+
+  .next {
+    text-align: right;
+  }
+}

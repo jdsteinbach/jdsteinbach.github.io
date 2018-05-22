@@ -1,0 +1,38 @@
+/*
+ * Generate a map of custom-properties per context (only selector-based context rn)
+ * Output custom property syntax with proper fallback and unsupported browser fallback
+ */
+$support-old-browsers: true;
+
+$custom-properties: (':root': ());
+
+@function get-prop($name) {
+  @return var(--#{$name}, map-get(map-get($custom-properties, ':root'), $name));
+}
+
+@mixin set-prop($name, $value, $context: ':root') {
+  $context-map: if(map-has-key($custom-properties, $context), map-get($custom-properties, $context), ());
+  $context-map: map-merge($context-map, ($name: $value));
+  $custom-properties: map-merge($custom-properties, ($context: $context-map)) !global;
+}
+
+@mixin use-prop($property, $name) {
+  @if $support-old-browsers {
+    #{$property}: map-get(map-get($custom-properties, ':root'), $name);
+  }
+  #{$property}: get-prop($name);
+}
+
+@mixin print-props($values) {
+  @each $key, $value in $values {
+    #{unquote('--#{$key}')}: $value;
+  }
+}
+
+@mixin output-props {
+  @each $context, $values in $custom-properties {
+    #{$context} {
+      @include print-props($values);
+    }
+  }
+}
