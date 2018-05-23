@@ -1,18 +1,15 @@
 {% include before %}
-
 <div class="home inner-wrapper">
-
   <div class="post-header">
     {% include header-image %}
-
     <h1 class="post-title">{{ title }}</h1>
   </div>
   <div class="white-sheet">
-    {% if collections.postsIndex %}
+    {%- if collections.postsIndex %}
       <ul class="post-list">
-        {% for post in collections.postsIndex %}
+        {%- for post in collections.postsIndex %}
           {% include excerpt %}
-        {% endfor %}
+        {%- endfor %}
       </ul>
 
       <div class="pagination">
@@ -20,10 +17,9 @@
         <span class="page-number">1</span>
         <a href="/page2/" class="next">Next</a>
       </div>
-    {% else %}
+    {%- else %}
       {{ content }}
-    {% endif %}
+    {%- endif %}
   </div>
 </div>
-
 {% include after %}

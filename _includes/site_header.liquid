@@ -1,16 +1,16 @@
 <header class="site-header" role="banner">
   <div class="wrapper">
     <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-    {% if collections.nav %}
-    <nav class="site-nav">
-      {% for link in collections.nav %}
-        <a class="site-nav__link" href="{{ link.url | prepend: site.baseurl }}" data-order="{{ link.data.menu_order }}">{{ link.data.menu_title }}</a>
-      {% endfor %}
-    </nav>
-    {% else %}
+    {%- if collections.nav %}
+      <nav class="site-nav">
+        {%- for link in collections.nav %}
+          <a class="site-nav__link" href="{{ link.url | prepend: site.baseurl }}" data-order="{{ link.data.menu_order }}">{{ link.data.menu_title }}</a>
+        {%- endfor %}
+      </nav>
+    {%- else %}
       <nav class="site-nav">
         <code>{{collections.nav | debug }} 🤔</code>
       </nav>
-    {% endif %}
+    {%- endif %}
   </div>
 </header>

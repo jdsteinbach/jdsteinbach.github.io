@@ -1,15 +1,15 @@
-{% if title %}
-  {% assign meta_title = title | concat: "•" | concat: site.author_name | join: " " %}
-{% else %}
-  {% assign meta_title = site.author_name %}
-{% endif %}
-{% if excerpt %}
-  {% assign meta_desc = excerpt | strip_html | strip_newlines | truncate: 160 %}
-{% else if content %}
-  {% assign meta_desc = content | strip_html | strip_newlines | truncate: 160 %}
-{% else %}
-  {% assign meta_desc = site.description | strip_html | strip_newlines | truncate: 160 %}
-{% endif %}
+{%- if title %}
+  {%- assign meta_title = title | concat: "•" | concat: site.author_name | join: " " %}
+{%- else %}
+  {%- assign meta_title = site.author_name %}
+{%- endif %}
+{%- if excerpt %}
+  {%- assign meta_desc = excerpt | strip_html | strip_newlines | truncate: 160 %}
+{%- else if content %}
+  {%- assign meta_desc = content | strip_html | strip_newlines | truncate: 160 %}
+{%- else %}
+  {%- assign meta_desc = site.description | strip_html | strip_newlines | truncate: 160 %}
+{%- endif %}
 <head itemscope itemtype="http://schema.org/WebSite">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />

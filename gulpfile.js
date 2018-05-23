@@ -200,7 +200,8 @@ gulp.task('watch', ['clean', 'styles', 'scripts', '11ty'], () => {
 
   gulp.watch( `${_src_css}**/*`, ['styles'] )
   gulp.watch( `${_src_js}**/*`, ['scripts'] )
-  gulp.watch( `${_src_11ty}**/*`, ['11ty'] ).on('change', reload )
+  gulp.watch( `${_src_11ty}**/*`, ['11ty'] )
+  gulp.watch( `${_build_dir}**/*.html` ).on('change', reload )
 })
 
 /**

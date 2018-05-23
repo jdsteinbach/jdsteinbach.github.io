@@ -1,17 +1,11 @@
 {% include before %}
-
 <div class="page inner-wrapper">
-
-    <header class="post-header">
-      {% include header-image %}
-
-      <h1 class="post-title">{{ title }}</h1>
-    </header>
-
+  <header class="post-header">
+    {% include header-image %}
+    <h1 class="post-title">{{ title }}</h1>
+  </header>
   <article class="post-content white-sheet">
     {{ content }}
   </article>
-
 </div>
-
 {% include after %}

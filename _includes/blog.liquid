@@ -1,10 +1,7 @@
 {% include before %}
-
 <div class="home inner-wrapper">
-
   <div class="post-header">
     {% include header-image %}
-
     <h1 class="post-title">{{ title }}</h1>
   </div>
   <div class="white-sheet">
@@ -14,7 +11,6 @@
           {% include excerpt %}
         {% endfor %}
       </ul>
-
       <div class="pagination">
         {% if pagination.previousPageLink %}
           <a href="{{ pagination.previousPageLink | fix_links }}" class="previous">Previous</a>
@@ -33,5 +29,4 @@
     {% endif %}
   </div>
 </div>
-
 {% include after %}

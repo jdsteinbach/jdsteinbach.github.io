@@ -1,9 +1,8 @@
-{% if post.data.categories %}
-  {% assign cats = post.data.categories %}
-{% else %}
-  {% assign cats = categories %}
-{% endif %}
-
-{% for cat in cats %}
+{%- if post.data.categories %}
+  {%- assign cats = post.data.categories %}
+{%- else %}
+  {%- assign cats = categories %}
+{%- endif %}
+{%- for cat in cats %}
   <a href="/{{cat | downcase}}/" class="category-link">[{{cat}}]</a>
-{% endfor %}
+{%- endfor %}
