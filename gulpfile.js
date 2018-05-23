@@ -13,7 +13,6 @@ const postcss     = require('gulp-postcss')
 const prefix      = require('autoprefixer')
 const cssnano     = require('cssnano')
 
-
 /**
  * Set up prod/dev tasks
  */
@@ -23,27 +22,33 @@ const pkg     = require('./package.json')
 /**
  * Set up file paths
  */
-const _src_11ty   = './{_data,_includes,pages,posts}/'
-const _src_css    = './scss/'
-const _src_js     = './js/'
-const _build_dir  = './_site/'
-const _build_css  = `${_build_dir}css/`
-const _build_js   = `${_build_dir}js/`
+const paths = {
+  src: {
+    html: './{_data,_includes,pages,posts}/',
+    css: './scss/',
+    js: './js/',
+  },
+  build: {
+    root: './_site/',
+    css: './_site/css/',
+    js: './_site/js/',
+  }
+}
 
 /**
  * Style vars
  */
 
-const _sass_opts = {
-  outputStyle:  is_prod ? 'compressed' : 'expanded',
-  sourceComments: !is_prod
+const opts = {
+  sass: {
+    outputStyle:  is_prod ? 'compressed' : 'expanded',
+    sourceComments: !is_prod
+  },
+  postcss: [
+    prefix({browsers: pkg.browserslist})
+  ]
 }
-
-const _postcss_opts = [
-  prefix({browsers: pkg.browserslist})
-]
-
-if ( is_prod ) _postcss_opts.push(cssnano())
+if ( is_prod ) opts.postcss.push(cssnano())
 
 /**
  * Error notification settings
@@ -55,27 +60,17 @@ function errorAlert(err) {
   })(err)
 }
 
-
 /**
  * Clean the dist/dev directories
  */
-gulp.task('clean', () => del([_build_css + '/**/*', _build_js + '/**/*']))
-
-
-/**
- * Build the markup
- */
-// gulp.task('11ty:serve', () => $.exec('eleventy --watch'))
-
+gulp.task('clean', () => del([paths.build.css + '/**/*', paths.build.js + '/**/*']))
 
 /**
  * Build the markup
  */
 gulp.task('11ty', () => {
   $.exec('eleventy')
-  $.notify('11ty is compiled')
 })
-
 
 /**
  * Lints the gulpfile for errors
@@ -87,12 +82,11 @@ gulp.task('lint:gulpfile', () =>
     .on( 'error', errorAlert )
 )
 
-
 /**
  * Lints the source js files for errors
  */
 gulp.task('lint:src', () =>
-  gulp.src(_src_js + '**/*.js')
+  gulp.src(paths.src.js + '**/*.js')
     .pipe( $.jshint() )
     .pipe( $.jshint.reporter('default') )
     .on( 'error', errorAlert )
@@ -103,19 +97,18 @@ gulp.task('lint:src', () =>
  */
 gulp.task('lint', ['lint:gulpfile', 'lint:src', 'lint:sass'])
 
-
 /**
  * Concatenates, minifies and renames the source JS files for dist/dev
  */
 gulp.task('scripts', () => {
-  var matches = glob.sync(_src_js + '*')
+  var matches = glob.sync(paths.src.js + '*')
 
   if (matches.length) {
     matches.forEach( match => {
       var dir     = match.split('/js/')[1]
       var scripts = [
-        _src_js + dir + '/libs/**/*.js',
-        _src_js + dir + '/**/*.js'
+        paths.src.js + dir + '/libs/**/*.js',
+        paths.src.js + dir + '/**/*.js'
       ]
 
       gulp.src(scripts)
@@ -126,7 +119,7 @@ gulp.task('scripts', () => {
         }) )
         // .pipe( is_prod ? $.uglify() : $.util.noop() )
         .pipe( is_prod ? $.rename(dir + '.min.js') : $.util.noop() )
-        .pipe( gulp.dest(_build_js) )
+        .pipe( gulp.dest(paths.build.js) )
         .pipe( reload({stream:true}) )
         .on( 'error', errorAlert )
         .pipe(
@@ -139,14 +132,13 @@ gulp.task('scripts', () => {
   }
 })
 
-
 /**
  * Compiles and compresses the source Sass files for dist/dev
  */
 gulp.task('styles', () =>
-  gulp.src(_src_css + 'main.scss')
+  gulp.src(paths.src.css + 'main.scss')
     .pipe( $.plumber({ errorHandler: errorAlert }) )
-    .pipe( $.sass(_sass_opts) )
+    .pipe( $.sass(opts.sass) )
     .on( 'error', err => {
       new $.util.PluginError(
         'CSS',
@@ -157,8 +149,8 @@ gulp.task('styles', () =>
       )
     })
     .pipe( is_prod ? $.rename({ suffix: '.min' }) : $.util.noop() )
-    .pipe( postcss(_postcss_opts) )
-    .pipe( gulp.dest(_build_css) )
+    .pipe( postcss(opts.postcss) )
+    .pipe( gulp.dest(paths.build.css) )
     .pipe( reload({stream:true}) )
     .on( 'error', errorAlert )
     .pipe(
@@ -173,7 +165,7 @@ gulp.task('styles', () =>
  * Lint the Sass
  */
 gulp.task('lint:sass', () =>
-  gulp.src(_src_css + '**/*.scss')
+  gulp.src(paths.src.css + '**/*.scss')
     .pipe( $.sassLint({
       'merge-default-rules': true
     }) )
@@ -186,22 +178,21 @@ gulp.task('lint:sass', () =>
  */
 gulp.task('build', ['clean', 'styles', 'scripts', '11ty'])
 
-
 /**
  * Builds assets and reloads the page when any php, html, img or dev files change
  */
 gulp.task('watch', ['clean', 'styles', 'scripts', '11ty'], () => {
   browserSync.init({
     server: {
-      baseDir: _build_dir
+      baseDir: paths.build.root
     },
     notify: true
   })
 
-  gulp.watch( `${_src_css}**/*`, ['styles'] )
-  gulp.watch( `${_src_js}**/*`, ['scripts'] )
-  gulp.watch( `${_src_11ty}**/*`, ['11ty'] )
-  gulp.watch( `${_build_dir}**/*.html` ).on('change', reload )
+  gulp.watch( `${paths.src.css}**/*`, ['styles'] )
+  gulp.watch( `${paths.src.js}**/*`, ['scripts'] )
+  gulp.watch( `${paths.src.html}**/*.{md,html,liquid,json}`, ['11ty'] )
+  gulp.watch( `${paths.build}**/*.html` ).on('change', reload )
 })
 
 /**

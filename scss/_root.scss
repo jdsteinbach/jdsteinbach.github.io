@@ -12,8 +12,6 @@
   @include breakpoint(xlarge) {
     @include print-props($xlarge-vars);
   }
-}
 
-:root {
   @include use-prop(font-size, fs-body);
 }
