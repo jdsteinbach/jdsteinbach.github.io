@@ -10,7 +10,7 @@
     <name>{{ site.author_name }}</name>
     <email>{{ site.email }}</email>
   </author>
-  {%- for post in collections.posts %}
+  {%- for post in collections.postsFeed %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ post.url | abs_url: site.url }}"/>
