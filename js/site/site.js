@@ -1,72 +1,29 @@
-/*!
-loadCSS: load a CSS file asynchronously.
-[c]2014 @scottjehl, Filament Group, Inc.
-Licensed MIT
-*/
-const loadCSS = ( href, before, media, callback ) => {
-  'use strict'
-  var ss = window.document.createElement( 'link' )
-  var ref = before || window.document.getElementsByTagName( 'script' )[ 0 ]
-  var sheets = window.document.styleSheets
-  ss.rel = 'stylesheet'
-  ss.href = href
-  ss.media = 'only x'
-  if( callback ) {
-    ss.onload = callback
-  }
-
-  ref.parentNode.insertBefore( ss, ref )
-  ss.onloadcssdefined = cb => {
-    var defined
-    for( var i = 0; i < sheets.length; i++ ) {
-      if( sheets[ i ].href && sheets[ i ].href.indexOf( href ) > -1 ){
-        defined = true
-      }
-    }
-    if( defined ){
-      cb()
-    }
-    else {
-      setTimeout(() => {
-        ss.onloadcssdefined( cb )
-      })
-    }
-  }
-  ss.onloadcssdefined(() => {
-    ss.media = media || 'all'
-  })
-  return ss
-}
-
-// loadCSS( "/css/main.css" )
-
 // Control form fields
-const form_boxes =  document.querySelectorAll('.mc-field-group, .field-group')
+const formBoxes = document.querySelectorAll('.mc-field-group, .field-group')
 
-const activate_field = el => el.parentNode.classList.add('active-input')
+const activateField = el => el.parentNode.classList.add('active-input')
 
-const deactivate_field = el => {
-  if ( el.value === '' ) {
+const deactivateField = el => {
+  if (el.value === '') {
     el.parentNode.classList.remove('active-input')
   }
 }
 
-for ( let box of form_boxes ) {
-  let form_input = box.querySelector('textarea, input')
+for (let box of formBoxes) {
+  let formInput = box.querySelector('textarea, input')
 
-  deactivate_field(form_input)
+  deactivateField(formInput)
 
-  form_input.addEventListener('focus', e => activate_field(e.target))
-  form_input.addEventListener('change', e => activate_field(e.target))
-  form_input.addEventListener('blur', e => deactivate_field(e.target))
+  formInput.addEventListener('focus', e => activateField(e.target))
+  formInput.addEventListener('change', e => activateField(e.target))
+  formInput.addEventListener('blur', e => deactivateField(e.target))
 }
-
 
 // Ajax Form Submission
 const ajaxForm = ({id, responseID, fieldIDs, successMsg, failMsg}) => {
   const contactForm = document.getElementById(id)
 
-  if ( contactForm !== null && window.fetch !== undefined ) {
+  if (contactForm !== null && window.fetch !== undefined) {
     let formMessage = document.getElementById(responseID)
 
     contactForm.addEventListener('submit', e => {
@@ -82,9 +39,9 @@ const ajaxForm = ({id, responseID, fieldIDs, successMsg, failMsg}) => {
         }
       )
       .then(
-        function(response) {
-          if ( response.status < 400 ) {
-            for ( let id of fieldIDs) {
+        function (response) {
+          if (response.status < 400) {
+            for (let id of fieldIDs) {
               document.getElementById(id).value = ''
             }
 
@@ -95,7 +52,7 @@ const ajaxForm = ({id, responseID, fieldIDs, successMsg, failMsg}) => {
         }
       )
       .catch(
-        function(err) {
+        function (err) {
           formMessage.textContent = failMsg
         }
       )
@@ -120,7 +77,7 @@ ajaxForm({
 })
 
 if (window.localStorage) {
-  const main   = document.getElementById('main')
+  const main = document.getElementById('main')
   const toggle = document.createElement('button')
 
   const saveTheme = (isDark) => {

@@ -1,13 +1,13 @@
 const cacheName = 'files'
 
-addEventListener('fetch', function(fetchEvent) {
+addEventListener('fetch', function (fetchEvent) {
   const request = fetchEvent.request
   if (request.method !== 'GET') {
     return
   }
-  fetchEvent.respondWith(async function() {
+  fetchEvent.respondWith(async function () {
     const fetchPromise = fetch(request)
-    fetchEvent.waitUntil(async function() {
+    fetchEvent.waitUntil(async function () {
       const responseFromFetch = await fetchPromise
       const responseCopy = responseFromFetch.clone()
       const myCache = await caches.open(cacheName)
@@ -16,8 +16,7 @@ addEventListener('fetch', function(fetchEvent) {
     if (request.headers.get('Accept').includes('text/html')) {
       try {
         return fetchPromise
-      }
-      catch(error) {
+      } catch (error) {
         return caches.match(request)
       }
     } else {
