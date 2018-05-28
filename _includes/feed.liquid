@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title }}</title>
+  <subtitle>{{ site.description | strip_html | strip_newlines }}</subtitle>
+  <link href="{{ site.url | append: '/feed.xml' }}" rel="self"/>
+  <link href="{{ site.url }}"/>
+  <updated>{{ collections.postsFeed | rss_last_updated_date }}</updated>
+  <id>{{ site.url }}</id>
+  <author>
+    <name>{{ site.author_name }}</name>
+    <email>{{ site.email }}</email>
+  </author>
+  {%- for post in collections.posts %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ post.url | abs_url: site.url }}"/>
+    <updated>{{ post.date | rssDate }}</updated>
+    <id>{{ post.url | abs_url: site.url }}</id>
+    <content type="html">{{ post.content }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

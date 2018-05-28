@@ -1,8 +1,7 @@
-const pluginRss = require('@11ty/eleventy-plugin-rss')
+const {URL} = require('url')
 // const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(pluginRss)
   // eleventyConfig.addPlugin(pluginSyntaxHighlight)
 
   eleventyConfig.addLayoutAlias('post', 'post.liquid')
@@ -10,6 +9,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('category', 'category.liquid')
   eleventyConfig.addLayoutAlias('home', 'home.liquid')
   eleventyConfig.addLayoutAlias('blog', 'blog.liquid')
+  eleventyConfig.addLayoutAlias('atom', 'feed.liquid')
 
   eleventyConfig.addFilter('imageID', titleString => {
     return titleString.length % 5 + 1
@@ -21,12 +21,20 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter('debug', something => typeof something)
 
+  eleventyConfig.addFilter('rss_last_updated_date', posts => {
+    return posts.sort((a, b) => {
+      return new Date(a.date) < new Date(b.date)
+    })[0].date
+  })
+
+  eleventyConfig.addFilter('abs_url', (href, base) => new URL(href, base).toString())
+
   // Create Posts Collection
-  eleventyConfig.addCollection('posts',  collection => {
+  eleventyConfig.addCollection('posts', collection => {
     return collection
       .getAllSorted()
       .reverse()
-      .filter( item => {
+      .filter(item => {
         return item.inputPath.match(/^\.\/posts\//) !== null
       })
   })
@@ -39,6 +47,16 @@ module.exports = function (eleventyConfig) {
         return item.inputPath.match(/^\.\/posts\//) !== null
       })
       .slice(0, 8)
+  })
+
+  // Create Posts Collection
+  eleventyConfig.addCollection('postsFeed', collection => {
+    return collection
+      .getAllSorted()
+      .filter(item => {
+        return item.inputPath.match(/^\.\/posts\//) !== null
+      })
+      .slice(0, 10)
   })
 
   // Create Category Collections
