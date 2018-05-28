@@ -1,5 +1,8 @@
 const {URL} = require('url')
+const {DateTime} = require('luxon')
 // const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+
+const formatDate = date => DateTime.fromJSDate(new Date(date)).toISO({includeOffset: true, suppressMilliseconds: true})
 
 module.exports = function (eleventyConfig) {
   // eleventyConfig.addPlugin(pluginSyntaxHighlight)
@@ -22,12 +25,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('debug', something => typeof something)
 
   eleventyConfig.addFilter('rss_last_updated_date', posts => {
-    return posts.sort((a, b) => {
+    const latest = posts.sort((a, b) => {
       return new Date(a.date) < new Date(b.date)
     })[0].date
+    return formatDate(latest)
   })
 
   eleventyConfig.addFilter('abs_url', (href, base) => new URL(href, base).toString())
+
+  eleventyConfig.addFilter('rss_date', date => formatDate(date))
 
   // Create Posts Collection
   eleventyConfig.addCollection('posts', collection => {
