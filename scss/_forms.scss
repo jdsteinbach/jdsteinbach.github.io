@@ -4,13 +4,6 @@
   margin-bottom: $base-spacing;
   padding: 0;
 
-  h2 {
-    @include font-scale(blockquote);
-    margin-top: $small-spacing;
-    margin-bottom: $base-spacing;
-    text-align: center;
-  }
-
   &::after {
     clear: both;
     content: '';
@@ -23,6 +16,11 @@
   margin-top: 0;
   margin-bottom: $base-spacing;
   padding-top: $base-spacing;
+}
+
+.mc-response {
+  margin-bottom: $base-spacing;
+  text-align: center;
 }
 
 .mc-fields {

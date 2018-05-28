@@ -17,14 +17,5 @@
   {%- if codepen %}
     <script defer src="https://assets.codepen.io/assets/embed/ei.js"></script>
   {%- endif %}
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/js/sw.js').then(function(reg) {
-        console.log('yay', reg);
-      }).catch(function(error) {
-        console.log('error', reg)
-      })
-    }
-  </script>
 </body>
 </html>

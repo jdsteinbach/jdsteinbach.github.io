@@ -45,15 +45,15 @@ const ajaxForm = ({id, responseID, fieldIDs, successMsg, failMsg}) => {
               document.getElementById(id).value = ''
             }
 
-            formMessage.textContent = successMsg
+            formMessage.innerHTML = successMsg
           } else {
-            formMessage.textContent = failMsg
+            formMessage.innerHTML = failMsg
           }
         }
       )
       .catch(
         function (err) {
-          formMessage.textContent = failMsg
+          formMessage.innerHTML = failMsg
         }
       )
     })
@@ -70,10 +70,10 @@ ajaxForm({
 
 ajaxForm({
   id: 'mc-embedded-subscribe-form',
-  responseID: 'mc_embedded_signup',
+  responseID: 'mc_embed_signup_scroll',
   fieldIDs: [],
-  successMsg: 'Thanks, check your inbox to confirm your subscription!',
-  failMsg: 'Sorry, an error occured and you weren’t subscribed. Please try again later.'
+  successMsg: '<p class="mc-response">Thanks, check your inbox to confirm your subscription!</p>',
+  failMsg: '<p class="mc-response">Sorry, an error occured and you weren’t subscribed. <a class="button" href="https://jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&id=35bef0e04e" target="_blank" rel="noopener noreferrer nofollow">Try subscribing here</a></p>'
 })
 
 if (window.localStorage) {

@@ -6,7 +6,7 @@
           url('/webfonts/#{$file}.woff') format('woff');
     font-style: $style;
     font-weight: $weight;
-    font-display: optional;
+    font-display: swap;
   }
 }
 
