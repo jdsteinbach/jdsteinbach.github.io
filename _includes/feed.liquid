@@ -16,7 +16,7 @@
     <link href="{{ post.url | abs_url: site.url }}"/>
     <updated>{{ post.date | rss_date }}</updated>
     <id>{{ post.url | abs_url: site.url }}</id>
-    <content type="html">{{ post.data.content }}</content>
+    <content type="html">{{ post.templateContent }}</content>
   </entry>
   {%- endfor %}
 </feed>
