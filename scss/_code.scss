@@ -24,8 +24,7 @@ pre > code {
   padding: $small-spacing;
   width: auto;
   border-radius: 0;
-  box-shadow: 1px 1px 0 1px $color-gray,
-              2px 2px 0 1px $color-gray;
+  box-shadow: 1px 1px 0 1px $color-gray, 2px 2px 0 1px $color-gray;
 
   @include bp(medium) {
     margin: $base-spacing (0 - $small-spacing);
@@ -38,7 +37,7 @@ $code-selectors: '.c', '.err', '.k', '.o', '.cm', '.cp', '.c1', '.cs', '.gd', '.
   @each $s in $code-selectors {
     #{$s} {
       $pct: 100% / length($code-selectors) * index($code-selectors, $s);
-      color: mix($color-blue-dark, $color-green-dark, $pct);
+      color: mix($color-blue-dark, $color-green-dark, $pct); // sass-lint:disable-line variable-for-property
     }
   }
 }

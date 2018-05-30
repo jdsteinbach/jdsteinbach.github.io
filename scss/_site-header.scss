@@ -2,7 +2,7 @@
   padding: $small-spacing;
   background-color: $color-blue-dark;
   color: $color-gray-pale;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
 
   .wrapper {
     align-items: center;

@@ -5,7 +5,7 @@ body {
   font-family: $font-body;
   font-kerning: normal;
   font-variant-ligatures: common-ligatures contextual;
-  font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 }
 
 h1 {
@@ -55,11 +55,8 @@ h4 {
   margin-bottom: $base-spacing;
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 1px 1px 0 $color-blue-dark,
-               2px 2px 0 $color-blue-dark,
-               3px 3px 0 $color-blue-dark,
-               4px 4px 0 $color-blue-dark;
-  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 0 $color-blue-dark, 2px 2px 0 $color-blue-dark, 3px 3px 0 $color-blue-dark, 4px 4px 0 $color-blue-dark;
+  -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
 }
 
 .footer-title {
@@ -67,10 +64,7 @@ h4 {
   margin-top: $small-spacing;
   margin-bottom: $base-spacing;
   text-align: center;
-  text-shadow: 1px 1px 0 $color-blue-dark,
-               2px 2px 0 $color-blue-dark,
-               3px 3px 0 $color-blue-dark,
-               4px 4px 0 $color-blue-dark;
+  text-shadow: 1px 1px 0 $color-blue-dark, 2px 2px 0 $color-blue-dark, 3px 3px 0 $color-blue-dark, 4px 4px 0 $color-blue-dark;
 }
 
 p {

@@ -171,9 +171,7 @@ gulp.task('styles', () =>
  */
 gulp.task('lint:sass', () =>
   gulp.src(paths.src.css + '**/*.scss')
-    .pipe($.sassLint({
-      'merge-default-rules': true
-    }))
+    .pipe($.sassLint({}))
     .pipe($.sassLint.format())
     .pipe($.sassLint.failOnError())
 )

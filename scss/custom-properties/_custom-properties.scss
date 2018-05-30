@@ -1,7 +1,6 @@
-/*
- * Generate a map of custom-properties per context (only selector-based context rn)
- * Output custom property syntax with proper fallback and unsupported browser fallback
- */
+// Generate a map of custom-properties per context (only selector-based context rn)
+// Output custom property syntax with proper fallback and unsupported browser fallback
+
 $support-old-browsers: true;
 
 $custom-properties: (':root': ());

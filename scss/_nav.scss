@@ -16,7 +16,7 @@
   padding: $tiny-spacing $small-spacing;
   text-transform: uppercase;
 
-  &[href*="hire"] {
+  &[href*='hire'] {
     background-color: scale-color($color-link, $lightness: 90%);
     border: 1px solid currentColor;
     border-radius: 3px;

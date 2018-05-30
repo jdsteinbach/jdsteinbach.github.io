@@ -1,9 +1,6 @@
-/*
- * COLORS
- */
-
-@function custom-darken($color) {
-  @return mix($color, #000, 80%);
+// COLORS
+@function custom-darken($color, $dark: $color-black) {
+  @return mix($color, $dark, 80%);
 }
 
 @function custom-invert($color) {
@@ -13,67 +10,70 @@
   @return hsl($hue, $saturation, $lightness);
 }
 
-$color-blue:        #2C3E50;
-$color-blue-dark:   custom-darken($color-blue);
+$color-white: #FFF;
+$color-black: #000;
 
-$color-green:       #3A4D13;
-$color-green-dark:  custom-darken($color-green);
+$color-blue: #2C3E50;
+$color-blue-dark: custom-darken($color-blue);
 
-$color-red:         #8B0000;
-$color-red-dark:    custom-darken($color-red);
+$color-green: #3A4D13;
+$color-green-dark: custom-darken($color-green);
 
-$color-orange:      #E65100;
+$color-red: #8B0000;
+$color-red-dark: custom-darken($color-red);
+
+$color-orange: #E65100;
 $color-orange-dark: custom-darken($color-orange);
 
-$color-gray:        desaturate($color-blue, 60%);
-$color-gray-dark:   custom-darken($color-gray);
-$color-gray-pale:   scale-color($color-gray, $lightness: 90%);
+$color-gray: desaturate($color-blue, 60%);
+$color-gray-dark: custom-darken($color-gray);
+$color-gray-pale: scale-color($color-gray, $lightness: 90%);
 
-$color-text:        $color-gray;
-$color-text-alt:    $color-gray-dark;
+$color-text: $color-gray;
+$color-text-alt: $color-gray-dark;
 $color-text-accent: $color-blue-dark;
 
-$color-link:        $color-blue;
-$color-link-alt:    $color-blue-dark;
+$color-link: $color-blue;
+$color-link-alt: $color-blue-dark;
 
-$color-link-2:      $color-green;
-$color-link-2-alt:  $color-green-dark;
+$color-link-2: $color-green;
+$color-link-2-alt: $color-green-dark;
 
-$color-link-dark:       mix($color-blue, white, 25%);
-$color-link-dark-alt:   mix($color-blue, white, 15%);
+$color-link-dark: mix($color-blue, $color-white, 25%);
+$color-link-dark-alt: mix($color-blue, $color-white, 15%);
 
-$color-background:  $color-gray-pale;
+$color-background: $color-gray-pale;
 
 $root-vars: (
-  color-text:            $color-gray,
-  color-text-alt:        $color-gray-dark,
-  color-text-accent:     $color-blue-dark,
-  color-text-code:       $color-blue-dark,
-  color-page-title:      $color-gray-pale,
+  color-text: $color-gray,
+  color-text-alt: $color-gray-dark,
+  color-text-accent: $color-blue-dark,
+  color-text-code: $color-blue-dark,
+  color-page-title: $color-gray-pale,
 
-  color-link:            $color-blue,
-  color-link-alt:        $color-blue-dark,
+  color-link: $color-blue,
+  color-link-alt: $color-blue-dark,
 
-  color-link-2:          $color-green,
-  color-link-2-alt:      $color-green-dark,
+  color-link-2: $color-green,
+  color-link-2-alt: $color-green-dark,
 
-  color-link-dark:       $color-link-dark,
-  color-link-dark-alt:   $color-link-dark-alt,
+  color-link-dark: $color-link-dark,
+  color-link-dark-alt: $color-link-dark-alt,
 
-  color-success:         $color-green,
-  color-success-alt:     $color-green-dark,
+  color-success: $color-green,
+  color-success-alt: $color-green-dark,
 
-  color-error:           $color-red,
-  color-error-alt:       $color-red-dark,
+  color-error: $color-red,
+  color-error-alt: $color-red-dark,
 
-  color-highlight:       $color-orange,
-  color-highlight-alt:   $color-orange-dark,
-  color-highlight-pale:  rgba($color-orange-dark, .15),
+  color-highlight: $color-orange,
+  color-highlight-alt: $color-orange-dark,
+  color-highlight-pale: rgba($color-orange-dark, .15),
 
-  color-background:      $color-gray-pale,
+  color-background: $color-gray-pale,
   color-background-page: $color-gray-pale,
-  color-background-svg:  $color-orange,
-  color-background-alt:  rgba($color-gray, .15),
+  color-background-svg: $color-orange,
+  color-background-alt: rgba($color-gray, .15),
   color-background-code: rgba($color-gray, .15),
 
   fs-body: (18rem / 16)
@@ -81,27 +81,27 @@ $root-vars: (
 
 
 $dark-vars: (
-  color-text:            custom-invert($color-gray),
-  color-text-alt:        custom-invert($color-gray-dark),
-  color-text-accent:     custom-invert($color-blue-dark),
+  color-text: custom-invert($color-gray),
+  color-text-alt: custom-invert($color-gray-dark),
+  color-text-accent: custom-invert($color-blue-dark),
 
-  color-link:            custom-invert($color-blue),
-  color-link-alt:        custom-invert($color-blue-dark),
+  color-link: custom-invert($color-blue),
+  color-link-alt: custom-invert($color-blue-dark),
 
-  color-link-2:          custom-invert($color-green),
-  color-link-2-alt:      custom-invert($color-green-dark),
+  color-link-2: custom-invert($color-green),
+  color-link-2-alt: custom-invert($color-green-dark),
 
-  color-link-dark:       custom-invert($color-link-dark),
-  color-link-dark-alt:   custom-invert($color-link-dark-alt),
+  color-link-dark: custom-invert($color-link-dark),
+  color-link-dark-alt: custom-invert($color-link-dark-alt),
 
-  color-highlight:       custom-invert($color-orange),
-  color-highlight-alt:   custom-invert($color-orange-dark),
-  color-highlight-pale:  rgba(custom-invert($color-orange-dark), .15),
+  color-highlight: custom-invert($color-orange),
+  color-highlight-alt: custom-invert($color-orange-dark),
+  color-highlight-pale: rgba(custom-invert($color-orange-dark), .15),
 
-  color-background:      $color-gray-dark,
+  color-background: $color-gray-dark,
   color-background-page: custom-invert($color-gray-pale),
-  color-background-svg:  $color-gray-dark,
-  color-background-alt:  rgba(custom-invert($color-gray-dark), .15),
+  color-background-svg: $color-gray-dark,
+  color-background-alt: rgba(custom-invert($color-gray-dark), .15),
   color-background-code: custom-invert($color-gray),
 );
 
@@ -128,19 +128,16 @@ $xlarge-vars: (
 }
 
 
-/*
- * BORDERS
- */
-$border-color:           $color-blue;
-$border-default:         1px solid $border-color;
-$border-radius-default:  0;
+// BORDERS
+$border-color: $color-blue;
+$border-default: 1px solid $border-color;
+$border-radius-default: 0;
 
-/*
- * FONTS
- */
-$font-body:     Latina, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
+
+// FONTS
+$font-body: Latina, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
 $font-headline: $font-body;
-$font-code:     monospace;
+$font-code: monospace;
 
 $font-sizes: sm p blockquote subtitle title hero;
 $start-small: true;
@@ -160,9 +157,8 @@ $small-spacing: $base-spacing / 2;
 $tiny-spacing: $base-spacing / 4;
 
 
-/*
- * LAYOUT
- */
+// LAYOUT
 $max-width: 50em;
 
+// ANIMATION
 $easing: cubic-bezier(.5, .5, .5, 1.5);

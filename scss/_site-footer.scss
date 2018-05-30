@@ -2,9 +2,14 @@
   padding: $base-spacing $small-spacing;
   color: $color-gray-pale;
   background-color: $color-gray-dark;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: inherit;
   }
 
