@@ -1,18 +1,18 @@
 const {URL} = require('url')
 const {DateTime} = require('luxon')
-// const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 
 const formatDate = date => DateTime.fromJSDate(new Date(date)).toISO({includeOffset: true, suppressMilliseconds: true})
 
 module.exports = function (eleventyConfig) {
-  // eleventyConfig.addPlugin(pluginSyntaxHighlight)
+  eleventyConfig.addPlugin(pluginSyntaxHighlight)
 
-  eleventyConfig.addLayoutAlias('post', 'post.liquid')
-  eleventyConfig.addLayoutAlias('page', 'page.liquid')
-  eleventyConfig.addLayoutAlias('category', 'category.liquid')
-  eleventyConfig.addLayoutAlias('home', 'home.liquid')
-  eleventyConfig.addLayoutAlias('blog', 'blog.liquid')
-  eleventyConfig.addLayoutAlias('atom', 'feed.liquid')
+  eleventyConfig.addLayoutAlias('post', 'layouts/post.liquid')
+  eleventyConfig.addLayoutAlias('page', 'layouts/page.liquid')
+  eleventyConfig.addLayoutAlias('category', 'layouts/category.liquid')
+  eleventyConfig.addLayoutAlias('home', 'layouts/home.liquid')
+  eleventyConfig.addLayoutAlias('blog', 'layouts/blog.liquid')
+  eleventyConfig.addLayoutAlias('atom', 'layouts/feed.liquid')
 
   eleventyConfig.addFilter('imageID', titleString => {
     return titleString.length % 5 + 1
