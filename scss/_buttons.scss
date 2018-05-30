@@ -38,8 +38,8 @@ button,
 }
 
 .button-theme {
-  @include use-prop(background-image, icon-theme);
   background-color: transparent;
+  background-image: svg-load('icons/theme.svg', fill=#{rgba($color-gray-pale, .75)});
   background-position: center;
   background-repeat: no-repeat;
   background-size: 24px;
@@ -56,5 +56,9 @@ button,
   @include haf {
     background-color: transparent;
     opacity: .65;
+  }
+
+  @include bp(large) {
+    right: 22px;
   }
 }

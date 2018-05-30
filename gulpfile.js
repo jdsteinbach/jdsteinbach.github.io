@@ -8,10 +8,12 @@ const glob = require('glob')
 const del = require('del')
 const browserSync = require('browser-sync').create()
 const reload = browserSync.reload
+const exec = require('child_process').exec
 const $ = require('gulp-load-plugins')()
 const postcss = require('gulp-postcss')
 const prefix = require('autoprefixer')
 const cssnano = require('cssnano')
+const inlineSVG = require('postcss-inline-svg')
 
 /**
  * Set up prod/dev tasks
@@ -45,8 +47,13 @@ const opts = {
     sourceComments: !isProd
   },
   postcss: [
+    inlineSVG({path: './images'}),
     prefix({browsers: pkg.browserslist})
-  ]
+  ],
+  standard: {
+    breakOnError: true,
+    quiet: false
+  }
 }
 if (isProd) opts.postcss.push(cssnano())
 
@@ -69,7 +76,7 @@ gulp.task('clean', () => del([paths.build.css + '/**/*', paths.build.js + '/**/*
  * Build the markup
  */
 gulp.task('11ty', () => {
-  $.exec('eleventy')
+  exec('npm run 11ty')
 })
 
 /**
@@ -77,9 +84,8 @@ gulp.task('11ty', () => {
  */
 gulp.task('lint:gulpfile', () =>
   gulp.src('gulpfile.js')
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('default'))
-    .on('error', errorAlert)
+    .pipe($.standard())
+    .pipe($.standard.reporter('default', opts.standard))
 )
 
 /**
@@ -87,9 +93,8 @@ gulp.task('lint:gulpfile', () =>
  */
 gulp.task('lint:src', () =>
   gulp.src(paths.src.js + '**/*.js')
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('default'))
-    .on('error', errorAlert)
+    .pipe($.standard())
+    .pipe($.standard.reporter('default', opts.standard))
 )
 
 /**

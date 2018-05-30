@@ -38,24 +38,25 @@ const ajaxForm = ({id, responseID, fieldIDs, successMsg, failMsg}) => {
           body: data
         }
       )
-      .then(
-        function (response) {
-          if (response.status < 400) {
-            for (let id of fieldIDs) {
-              document.getElementById(id).value = ''
-            }
+        .then(
+          function (response) {
+            if (response.status < 400) {
+              for (let id of fieldIDs) {
+                document.getElementById(id).value = ''
+              }
 
-            formMessage.innerHTML = successMsg
-          } else {
+              formMessage.innerHTML = successMsg
+            } else {
+              formMessage.innerHTML = failMsg
+            }
+          }
+        )
+        .catch(
+          function (err) {
+            console.log(err)
             formMessage.innerHTML = failMsg
           }
-        }
-      )
-      .catch(
-        function (err) {
-          formMessage.innerHTML = failMsg
-        }
-      )
+        )
     })
   }
 }
@@ -76,13 +77,13 @@ ajaxForm({
   failMsg: '<p class="mc-response">Sorry, an error occured and you weren’t subscribed. <a class="button" href="https://jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&id=35bef0e04e" target="_blank" rel="noopener noreferrer nofollow">Try subscribing here</a></p>'
 })
 
-if (window.localStorage) {
+if ('localStorage' in window) {
   const main = document.getElementById('main')
   const toggle = document.createElement('button')
 
   const saveTheme = (isDark) => {
     let theme = isDark ? 'dark' : ''
-    localStorage.setItem('theme', theme)
+    window.localStorage.setItem('theme', theme)
   }
 
   const setTheme = (isDark) => {

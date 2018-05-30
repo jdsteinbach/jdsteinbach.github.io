@@ -1,3 +1,5 @@
+/* eslint-env serviceworker */
+
 const cacheName = 'files'
 
 addEventListener('fetch', function (fetchEvent) {

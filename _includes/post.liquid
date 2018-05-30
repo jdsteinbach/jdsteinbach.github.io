@@ -5,7 +5,7 @@
       <h1 class="post-title">{{ title }}</h1>
       <p class="post-meta">
         {%- if page.date %}
-          <time class="date" datetime={{ page.date }}>{{ page.date | date: "%B%e, %Y" }}</time>
+          <time class="date" datetime={{ page.date }}>{{ page.date | date: "%B %e, %Y" }}</time>
         {%- endif %}
         {%- if author %}
           <span class="author">{{ author }}</span>
