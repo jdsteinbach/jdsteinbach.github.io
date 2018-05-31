@@ -1,13 +1,13 @@
 {%- assign image = title | imageID %}
 {%- case image %}
   {%- when 1 %}
-    {% include bg-1 %}
+    {% include images/bg-1 %}
   {%- when 2 %}
-    {% include bg-2 %}
+    {% include images/bg-2 %}
   {%- when 3 %}
-    {% include bg-3 %}
+    {% include images/bg-3 %}
   {%- when 4 %}
-    {% include bg-4 %}
+    {% include images/bg-4 %}
   {%- else %}
-    {% include bg-5 %}
+    {% include images/bg-5 %}
 {%- endcase %}
