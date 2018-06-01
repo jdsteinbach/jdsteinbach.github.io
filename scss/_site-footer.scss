@@ -1,0 +1,58 @@
+.site-footer {
+  padding: $base-spacing $small-spacing;
+  color: $color-gray-pale;
+  background-color: $color-gray-dark;
+  -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+  }
+
+  a {
+    color: $color-link-dark;
+
+    @include haf {
+      color: $color-link-dark-alt;
+    }
+  }
+
+  p:not(:last-child) {
+    margin-bottom: $small-spacing;
+  }
+
+  br {
+    margin-bottom: $small-spacing;
+  }
+}
+
+.footer-col {
+  margin-bottom: $base-spacing;
+
+  &,
+  p {
+    @include font-scale(sm);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  @include breakpoint(medium) {
+    float: left;
+    width: 50%;
+  }
+
+  @include breakpoint(large) {
+    margin-bottom: 0;
+    width: 33%;
+  }
+}
+
+.contact-list li:first-child {
+  font-weight: bold;
+}

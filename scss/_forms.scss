@@ -1,0 +1,210 @@
+[id='mc_embed_signup_scroll'] {
+  border-bottom: $border-default;
+  margin-top: 0;
+  margin-bottom: $base-spacing;
+  padding: 0;
+
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+  }
+}
+
+[id='contact-form'] {
+  margin-top: 0;
+  margin-bottom: $base-spacing;
+  padding-top: $base-spacing;
+}
+
+.mc-response {
+  margin-bottom: $base-spacing;
+  text-align: center;
+}
+
+.mc-fields {
+  display: flex;
+  justify-content: stretch;
+  flex-wrap: wrap;
+  margin-bottom: $base-spacing;
+  font-size: 0;
+
+  @include breakpoint(medium) {
+    box-shadow: 1px 1px 0 0 $border-color, 2px 2px 0 0 $border-color, 3px 3px 0 0 $border-color;
+  }
+
+  input {
+    flex: 1 1 auto;
+  }
+}
+
+.indicates-required {
+  width: 0;
+}
+
+.mc-ref {
+  @include font-scale(sm);
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: $base-spacing;
+  opacity: .5;
+
+  @include breakpoint(400px) {
+    float: left;
+    width: 50%;
+  }
+
+  @include breakpoint(large) {
+    width: 50%;
+  }
+}
+
+.field-group,
+.mc-field-group {
+  @include font-scale(p);
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  label {
+    @include font-scale(sm);
+    display: block;
+    font-style: italic;
+    position: absolute;
+    top: $tiny-spacing;
+    left: 1em;
+    transform-origin: left top;
+    transition: transform .25s $easing, opacity .25s;
+  }
+
+  &.active-input label {
+    transform: translateY(-140%) scale(.8);
+    opacity: .6;
+  }
+}
+
+.mc-field-group {
+  width: 50%;
+  flex: 1 1 auto;
+
+  &[class*='email'] {
+    margin-bottom: $base-spacing;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+      width: 33%;
+    }
+  }
+
+  @include breakpoint(medium) {
+    width: 33%;
+  }
+
+
+  @include breakpoint(large) {
+    width: 25%;
+
+    &[class*='email'] {
+      width: 50%;
+    }
+  }
+}
+
+input,
+textarea {
+  @include font-scale(p);
+  @include use-prop(color, color-text);
+  appearance: none;
+  background-color: transparent;
+  border: $border-default;
+  border-radius: $border-radius-default;
+  display: block;
+  font-family: inherit;
+  padding: 0 $small-spacing;
+  margin-bottom: $base-spacing;
+  width: 100%;
+  transition: color .25s, opacity .25s, background-color .25s, transform .25s $easing;
+
+  @include haf {
+    @include use-prop(background-color, color-background-alt);
+    outline: none;
+  }
+
+  .mc-fields & {
+    @include use-prop(color, color-page-title);
+    margin-bottom: 0;
+  }
+}
+
+[type='submit'] {
+  margin: auto 0 $base-spacing;
+
+  [id='mc_embed_signup'] & {
+    width: 100%;
+    box-shadow: 1px 1px 0 0 $border-color, 2px 2px 0 0 $border-color, 3px 3px 0 0 $border-color;
+
+    @include breakpoint(400px) {
+      float: right;
+      width: 50%;
+    }
+  }
+
+  &[id='contact-form-submit'] {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 0;
+    width: 50%;
+  }
+}
+
+.form-message {
+  p {
+    @include font-scale(blockquote);
+    animation: fade-down .35s ease-out;
+    font-weight: bold;
+    margin-top: $base-spacing;
+    margin-bottom: $large-spacing;
+    text-align: center;
+  }
+
+  &.success {
+    @include use-prop(color, color-success);
+  }
+
+  &.error {
+    @include use-prop(color, color-error);
+  }
+}
+
+// Pageclip.io specific styles
+.pageclip-form__success {
+  background-color: rgba($color-background, .8) !important; // sass-lint:disable-line no-important no-color-literals
+
+  .pageclip-form__success__message { //sass-lint:disable-line class-name-format
+    @include font-scale(subtitle);
+    font-weight: bold;
+  }
+}
+
+// Mailchimp archive styles
+[id='mailchimp-archive'] {
+  @include font-scale(p);
+  border-top: $border-default;
+  margin-top: $base-spacing;
+  margin-bottom: $base-spacing;
+  padding-top: $base-spacing;
+
+  .campaign {
+    font-family: $font-code;
+    margin-bottom: $tiny-spacing;
+
+    a {
+      font-family: $font-body;
+    }
+  }
+}

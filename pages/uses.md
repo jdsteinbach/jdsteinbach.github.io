@@ -3,6 +3,7 @@ title: What I Use to Do My Work
 author: James
 layout: page
 permalink: /uses/
+excerpt: James uses lots of cool tools to get his work done - Sublime Text, iTerm, Alfred, and a sweet custom desk.
 ---
 
 I've seen a few other devs (like [Wes](https://wesbos.com/uses/) &amp; [Elijah](http://elijahmanor.com/uses/)) post about the tools they use and thought I'd share some details about my setup. Hopefully it's helpful to you!

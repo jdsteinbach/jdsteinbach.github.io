@@ -5,6 +5,7 @@ layout: page
 permalink: /contact/
 menu_order: 50
 menu_title: Contact
+excerpt: Do you need to get in touch with James? Email him here.
 ---
 
 <p id="form-message" class="form-message"></p>

@@ -3,6 +3,7 @@ title: How Would You Like to Work Together?
 author: James
 layout: page
 permalink: /hire/
+excerpt: James is available to answer questions, provide training, hold a strategy workshop, or audit an existing site.
 ---
 
 I hope you're enjoying your time on my blog, but if you've ended up on this page, it's probably because you want my expertise in real life, not just written down.

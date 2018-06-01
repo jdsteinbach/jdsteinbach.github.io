@@ -1,0 +1,42 @@
+{%- if title %}
+  {%- assign meta_title = title | concat: "•" | concat: site.author_name | join: " " %}
+{%- else %}
+  {%- assign meta_title = site.author_name %}
+{%- endif %}
+{%- if excerpt %}
+  {%- assign meta_desc = excerpt | strip_html | strip_newlines | truncate: 160 %}
+{%- else if content %}
+  {%- assign meta_desc = content | strip_html | strip_newlines | truncate: 160 %}
+{%- else %}
+  {%- assign meta_desc = site.description | strip_html | strip_newlines | truncate: 160 %}
+{%- endif %}
+<head itemscope itemtype="http://schema.org/WebSite">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title itemprop="name">{{ meta_title }}</title>
+  <meta name="description" content="{{ meta_desc }}" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ meta_title }}" />
+  <meta property="og:description" content="{{ meta_desc }}" />
+  <meta property="og:url" content="{{ site.url }}" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:description" content="{{ meta_desc }}" />
+  <meta name="twitter:title" content="{{ meta_title }}" />
+  <meta name="twitter:domain" content="{{ site.url }}" />
+
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="canonical" href="{{ permalink | abs_url: site.url }}" itemprop="url" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | abs_url: site.url }}" />
+  <link rel="alternate" type="application/json" title="{{ site.title }}" href="{{ "/jsonfeed" | abs_url: site.url }}" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e65100" />
+  <meta name="msapplication-TileColor" content="#e65100" />
+  <meta name="theme-color" content="#e65100" />
+</head>

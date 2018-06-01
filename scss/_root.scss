@@ -1,0 +1,17 @@
+@include output-props;
+
+:root {
+  @include breakpoint(medium) {
+    @include print-props($medium-vars);
+  }
+
+  @include breakpoint(large) {
+    @include print-props($large-vars);
+  }
+
+  @include breakpoint(xlarge) {
+    @include print-props($xlarge-vars);
+  }
+
+  @include use-prop(font-size, fs-body);
+}

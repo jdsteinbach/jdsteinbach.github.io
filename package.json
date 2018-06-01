@@ -1,0 +1,62 @@
+{
+  "name": "jdsteinbach-11ty",
+  "version": "1.0.0",
+  "description": "11ty SSG for my blog",
+  "main": ".eleventy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "gulp watch --dev",
+    "11ty": "eleventy",
+    "11ty-debug": "DEBUG=Eleventy* eleventy",
+    "build": "gulp build"
+  },
+  "author": "James Steinbach",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.3.5",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^1.0.4",
+    "autoprefixer": "^6.7.4",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.18.13",
+    "browserslist": "^3.2.8",
+    "cssnano": "^3.10.0",
+    "del": "^2.2.2",
+    "eslint": "^4.19.1",
+    "glob": "^7.1.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-standard": "^11.0.0",
+    "gulp-uglify": "^2.0.1",
+    "gulp-util": "^3.0.8",
+    "liquidjs": "^4.0.0",
+    "luxon": "^1.2.0",
+    "postcss-inline-svg": "^3.1.1"
+  },
+  "browserslist": [
+    ">1%",
+    "ie > 10",
+    "not op_mini all"
+  ],
+  "standard": {
+    "globals": [
+      "FormData",
+      "addEventListener",
+      "fetch",
+      "localStorage"
+    ],
+    "parser": "babel-eslint"
+  },
+  "dependencies": {}
+}

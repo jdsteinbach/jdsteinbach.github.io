@@ -3,6 +3,7 @@ title: Newsletter
 author: James
 layout: page
 permalink: /newsletter/
+excerpt: James sends a weekly newsletter with his favorite 5 front-end development links. This is the archive of the last few issues. You should definitely subscribe!
 ---
 Every week, I send an email with 5 front-end developments links I've found useful. I don't have a fancy name for this newsletter. That's mostly because I don't want to restrict the content too much by giving it a narrow label.
 
