@@ -22,9 +22,17 @@
   }
 }
 
+.post-excerpt {
+  @include font-scale(sm);
+  @include use-prop(color, color-text-accent);
+  margin-top: $small-spacing;
+  margin-bottom: $small-spacing;
+  font-style: italic;
+}
+
 .post-header {
   @include use-prop(background-color, color-background-svg);
-  padding: $base-spacing;
+  padding: $large-spacing $base-spacing;
   position: relative;
   left: 50%;
   margin-left: -50vw;

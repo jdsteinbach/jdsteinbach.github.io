@@ -65,10 +65,11 @@ a {
   li + li {
     margin-top: $base-spacing;
   }
+}
 
-  h2 {
-    position: relative;
-  }
+.archive-title {
+  position: relative;
+  margin-bottom: $tiny-spacing;
 }
 
 .post-link,

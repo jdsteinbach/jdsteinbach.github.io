@@ -51,8 +51,8 @@ h4 {
   @include use-prop(color, color-page-title);
   @include font-scale(hero);
   letter-spacing: (1em / 32);
-  margin-top: $base-spacing;
-  margin-bottom: $base-spacing;
+  margin: $base-spacing auto;
+  max-width: $max-width / power($base-font-scale, 4);
   text-align: center;
   text-transform: uppercase;
   text-shadow: 1px 1px 0 $color-blue-dark, 2px 2px 0 $color-blue-dark, 3px 3px 0 $color-blue-dark, 4px 4px 0 $color-blue-dark;
@@ -69,9 +69,10 @@ h4 {
 
 p {
   @include font-scale(p);
+  margin-bottom: $base-spacing;
 
-  &:not(:empty) {
-    margin-bottom: $base-spacing;
+  &:empty {
+    margin-bottom: 0;
   }
 }
 

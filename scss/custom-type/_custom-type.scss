@@ -12,7 +12,7 @@
 @function _height($label) {
   $base-height: $base-line-height;
   $size: _scale($label);
-  @return ceil($size / $base-line-height) * $base-line-height / $size;
+  @return ceil($size * 2 / $base-line-height) * $base-line-height / $size / 2;
 }
 
 @mixin font-scale($label) {

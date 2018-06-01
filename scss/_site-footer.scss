@@ -20,6 +20,14 @@
       color: $color-link-dark-alt;
     }
   }
+
+  p:not(:last-child) {
+    margin-bottom: $small-spacing;
+  }
+
+  br {
+    margin-bottom: $small-spacing;
+  }
 }
 
 .footer-col {

@@ -1,6 +1,6 @@
 <li>
   {%- if post.data.outbound_url %}
-    <h2>
+    <h2 class="archive-title">
       <a class="outbound-link" href="{{ post.data.outbound_url }}" target="_blank" rel="noopener noreferrer">
         {{ post.data.title }}
         <svg viewBox="0 0 1024 1024" height="16" width="16">
@@ -9,10 +9,15 @@
       </a>
     </h2>
   {%- else %}
-    <h2>
+    <h2 class="archive-title">
       <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.data.title }}</a>
     </h2>
   {%- endif %}
+  <!--
+  {%- if post.data.excerpt -%}
+    <p class="post-excerpt">{{ post.data.excerpt }}</p>
+  {%- endif -%}
+   -->
   <p class="post-meta">
     <span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
     {%- if cat %}
