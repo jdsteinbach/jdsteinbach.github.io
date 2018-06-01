@@ -1,0 +1,21 @@
+  </div><!-- .page-content -->
+  {% include site_footer %}
+  <script>
+  if (window.localStorage) {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('theme-dark');
+    } else {
+      document.body.classList.remove('theme-dark');
+    }
+  }
+  </script>
+  {% include analytics %}
+  <script async src="/js/site.js"></script>
+  {%- if sassmeister %}
+    <script defer src="https://cdn.sassmeister.com/js/embed.js"></script>
+  {%- endif %}
+  {%- if codepen %}
+    <script defer src="https://assets.codepen.io/assets/embed/ei.js"></script>
+  {%- endif %}
+</body>
+</html>

@@ -3,6 +3,7 @@ title: Hire Me for Project Work
 author: James
 layout: page
 permalink: /hire/projects/
+excerpt: James can take on projects in these areas - CSS, Sass, accessibility, user experience (UX), workflow automation, performance, and WordPress.
 ---
 
 I'm available to work on projects in any of my areas of expertise: CSS, Sass, accessibility, user experience (UX), workflow automation, performance, and WordPress development. (More info about [my areas of expertise](/hire/).)

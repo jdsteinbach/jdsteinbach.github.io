@@ -1,0 +1,15 @@
+.site-header,
+.site-footer {
+  @supports (padding: env(safe-area-inset-left)) {
+    padding-right: calc(#{$small-spacing} + env(safe-area-inset-right));
+    padding-left: calc(#{$small-spacing} + env(safe-area-inset-left));
+  }
+}
+
+.post-content a {
+  @supports (text-decoration-skip: edges) {
+    text-decoration-color: currentColor;
+    text-decoration-skip: edges;
+    text-decoration-style: underline;
+  }
+}

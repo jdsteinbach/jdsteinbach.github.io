@@ -1,0 +1,22 @@
+{% include before %}
+  <div class="post inner-wrapper">
+    <header class="post-header">
+      {% include header-image %}
+      <h1 class="post-title">{{ title }}</h1>
+      <p class="post-meta">
+        {%- if page.date %}
+          <time class="date" datetime={{ page.date }}>{{ page.date | date: "%B %e, %Y" }}</time>
+        {%- endif %}
+        {%- if author %}
+          <span class="author">{{ author }}</span>
+        {%- endif %}
+        {%- if categories %}
+          <span class="categories">{% include categories %}</span>
+        {%- endif %}
+      </p>
+    </header>
+    <article class="post-content white-sheet">
+      {{ content }}
+    </article>
+  </div>
+  {% include after %}
