@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "gulp watch --dev",
     "11ty": "eleventy",
+    "11ty-debug": "DEBUG=Eleventy* eleventy",
     "build": "gulp build"
   },
   "author": "James Steinbach",

@@ -137,6 +137,13 @@ module.exports = function (eleventyConfig) {
   // Pass through directories
   eleventyConfig.addPassthroughCopy('images')
   eleventyConfig.addPassthroughCopy('webfonts')
+  eleventyConfig.addPassthroughCopy('site.webmanifest')
+  eleventyConfig.addPassthroughCopy('android-chrome-192x192.png')
+  eleventyConfig.addPassthroughCopy('android-chrome-512x512.png')
+  eleventyConfig.addPassthroughCopy('apple-touch-icon.png')
+  eleventyConfig.addPassthroughCopy('safari-pinned-tab.svg')
+  eleventyConfig.addPassthroughCopy('favicon.ico')
+  eleventyConfig.addPassthroughCopy('favicon-16x16.png')
 
   return {
     templateFormats: [
