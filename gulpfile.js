@@ -32,7 +32,7 @@ const paths = {
   },
   build: {
     root: './_site/',
-    css: './_site/css/',
+    css: './_site/styles/',
     js: './_site/js/'
   }
 }
@@ -199,7 +199,7 @@ gulp.task('watch', ['clean', 'styles', 'scripts', '11ty'], () => {
 /**
  * Deploy to gh-pages branch
  */
-gulp.task('deploy', ['del', 'build'], () =>
+gulp.task('deploy', ['clean', 'build'], () =>
   gulp.src(`${paths.build.root}/**/*`)
     .pipe($.ghPages())
 )
