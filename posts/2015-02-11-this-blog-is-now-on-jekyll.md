@@ -6,7 +6,7 @@ permalink: /on-jekyll/
 ---
 WordPress is great, don't get me wrong! In fact, I make a living building WordPress sites (mostly). So this post isn't anti-WordPress at all.
 
-I have, however, moved this blog to [Jekyll](http://jekyllrb.com/) (hosted on Github) for a couple reasons.
+I have, however, moved this blog to [Jekyll](http://jekyllrb.com/) (hosted on Github) for a couple reasons. 
 
 ## Speed
 

@@ -70,7 +70,7 @@ function errorAlert (err) {
 /**
  * Clean the dist/dev directories
  */
-gulp.task('clean', () => del([paths.build.css + '/**/*', paths.build.js + '/**/*']))
+gulp.task('clean', () => del(`${paths.build.root}/**/*`))
 
 /**
  * Build the markup
@@ -123,7 +123,6 @@ gulp.task('scripts', () => {
           presets: ['env']
         }))
         // .pipe( isProd ? $.uglify() : $.util.noop() )
-        .pipe(isProd ? $.rename(dir + '.min.js') : $.util.noop())
         .pipe(gulp.dest(paths.build.js))
         .pipe(reload({stream: true}))
         .on('error', errorAlert)
@@ -153,7 +152,6 @@ gulp.task('styles', () =>
         }
       )
     })
-    .pipe(isProd ? $.rename({ suffix: '.min' }) : $.util.noop())
     .pipe(postcss(opts.postcss))
     .pipe(gulp.dest(paths.build.css))
     .pipe(reload({stream: true}))
@@ -197,6 +195,14 @@ gulp.task('watch', ['clean', 'styles', 'scripts', '11ty'], () => {
   gulp.watch(`${paths.src.html}**/*.{md,html,liquid,json}`, ['11ty'])
   gulp.watch(`${paths.build}**/*.html`).on('change', reload)
 })
+
+/**
+ * Deploy to gh-pages branch
+ */
+gulp.task('deploy', ['del', 'build'], () =>
+  gulp.src(`${paths.build.root}/**/*`)
+    .pipe($.ghPages())
+)
 
 /**
  * Backup default task just triggers a build
