@@ -201,7 +201,9 @@ gulp.task('watch', ['clean', 'styles', 'scripts', '11ty'], () => {
  */
 gulp.task('deploy', ['clean', 'build'], () =>
   gulp.src(`${paths.build.root}/**/*`)
-    .pipe($.ghPages())
+    .pipe($.ghPages({
+      branch: 'master'
+    }))
 )
 
 /**
