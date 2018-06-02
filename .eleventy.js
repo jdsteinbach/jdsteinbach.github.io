@@ -144,6 +144,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('safari-pinned-tab.svg')
   eleventyConfig.addPassthroughCopy('favicon.ico')
   eleventyConfig.addPassthroughCopy('favicon-16x16.png')
+  eleventyConfig.addPassthroughCopy('A')
+  eleventyConfig.addPassthroughCopy('CNAME')
 
   return {
     templateFormats: [
