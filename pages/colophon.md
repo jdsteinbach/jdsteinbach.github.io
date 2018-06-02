@@ -14,6 +14,6 @@ Styled with: [Sass](http://sass-lang.com/)
 
 Hosted on: [Github Pages](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/)
 
-Typeset in: ["Latina Essential" by Latinotype](http://www.latinotype.com/display-weights?font=160)
+Typeset in: [“Latina Essential” by Latinotype](http://www.latinotype.com/display-weights?font=160)
 
 Written in: [Sublime Text 3](https://www.sublimetext.com/3) and [IA Writer](https://ia.net/writer/)

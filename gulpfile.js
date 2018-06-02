@@ -70,7 +70,10 @@ function errorAlert (err) {
 /**
  * Clean the dist/dev directories
  */
-gulp.task('clean', () => del(`${paths.build.root}/**/*`))
+gulp.task('clean', () => del([
+  `${paths.build.root}/**/*`,
+  `!${paths.build.root}/.git`
+  ]))
 
 /**
  * Build the markup
@@ -200,10 +203,7 @@ gulp.task('watch', ['clean', 'styles', 'scripts', '11ty'], () => {
  * Deploy to gh-pages branch
  */
 gulp.task('deploy', ['clean', 'build'], () =>
-  gulp.src(`${paths.build.root}/**/*`)
-    .pipe($.ghPages({
-      branch: 'master'
-    }))
+  exec('(cd _site && gac "deploy blog" && gpo $(current_branch))')
 )
 
 /**
