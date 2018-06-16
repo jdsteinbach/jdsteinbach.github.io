@@ -147,17 +147,27 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('A')
   eleventyConfig.addPassthroughCopy('CNAME')
 
+  /* Markdown */
+  let markdownIt = require('markdown-it')
+  let markdownItAnchor = require('markdown-it-anchor')
+  let options = {
+    html: true,
+    breaks: true,
+    linkify: true
+  }
+  let opts = {
+    permalink: true,
+    permalinkClass: 'heading-link',
+    permalinkSymbol: '#',
+    level: [1, 2, 3, 4]
+  }
+
+  eleventyConfig.setLibrary('md', markdownIt(options).use(markdownItAnchor, opts))
+
   return {
     templateFormats: [
       'md'
     ],
-    // pathPrefix: '/',
-
-    // markdownTemplateEngine: 'liquid',
-    // htmlTemplateEngine: 'liquid',
-    // dataTemplateEngine: 'liquid',
-
-    // passthroughFileCopy: true,
     dir: {
       input: '.',
       includes: '_includes',
