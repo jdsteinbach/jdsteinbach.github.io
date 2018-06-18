@@ -8,7 +8,9 @@
     "serve": "gulp watch --dev",
     "11ty": "eleventy",
     "11ty-debug": "DEBUG=Eleventy* eleventy",
-    "build": "gulp build"
+    "build": "gulp build",
+    "push": "(cd _site && gac 'blog deploy' && gpo $(current_branch) -f)",
+    "deploy": "gulp build && npm run 11ty && npm run push"
   },
   "author": "James Steinbach",
   "license": "ISC",
