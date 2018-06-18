@@ -101,19 +101,13 @@ a {
   }
 }
 
-h2,
-h3 {
-  &[id] {
-    &::after {
-      content: ' #';
-      opacity: 0;
-      transition: opacity .25s;
-    }
+.heading-link {
+  padding: 0 $tiny-spacing;
+  opacity: .25;
+  transition: opacity .25s;
+  text-decoration: none !important;
 
-    @include haf {
-      &::after {
-        opacity: 1;
-      }
-    }
+  @include haf {
+    opacity: 1;
   }
 }
