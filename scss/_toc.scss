@@ -1,0 +1,7 @@
+.toc {
+  margin-bottom: $base-spacing;
+
+  li li {
+    margin-left: $small-spacing + $tiny-spacing;
+  }
+}
