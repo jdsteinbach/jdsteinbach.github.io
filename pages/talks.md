@@ -10,6 +10,8 @@ excerpt: James is an experienced teacher and speaker. He has spoken at conferenc
 
 I enjoy writing here on the blog, but I really love speaking with real audiences about front-end development techniques I’m passionate about. Here is a list of talks I’ve given in the past. Please [contact me](/contact/) if you’d like me to speak at an event or meet-up you run. Thanks!
 
+* [Little Known CSS Basics: Colors](https://jdsteinbach.com/css-basics-colors/#/)
+* [Little Known CSS Basics: Queries](https://jdsteinbach.com/css-basics-queries/#/)
 * [Little Known CSS Basics: Selectors](https://jdsteinbach.com/css-basics-selectors/#/)
 * [Little Known CSS Basics: The Box Model](https://jdsteinbach.com/css-basics-box-model/#/)
 * CascadiaCSS 2016: [Using Sass &amp; PostCSS Together](https://jdsteinbach.com/sass-postcss/#/) / [Video](https://www.youtube.com/watch?v=YpSdBDoPemg)
