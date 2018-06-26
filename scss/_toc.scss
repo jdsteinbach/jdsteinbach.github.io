@@ -1,0 +1,69 @@
+.post-toc__title {
+  margin: $small-spacing 0;
+  padding-top: $small-spacing;
+
+  &::after {
+    padding: 0 1ch;
+    content: '▾';
+    display: inline-block;
+    transform: rotate(0deg) translateY(-.125em);
+    transform-origin: center;
+
+    [aria-hidden="false"] & {
+      transform: rotate(180deg) translateY(-.125em);
+    }
+  }
+}
+
+.toc {
+  @include use-prop(background-color, color-background-page);
+  padding: 0 $small-spacing $base-spacing + $small-spacing;
+  opacity: 0;
+  mask-image: linear-gradient(
+    0deg,
+    rgba(white, 0) 0,
+    rgba(white, 1) $base-spacing,
+  );
+  transform-origin: top center;
+  transform: scaleY(0);
+  transition: opacity .25s, transform .25s ease-in-out;
+
+  [aria-hidden="false"] & {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  a {
+    @include font-scale(sm);
+
+    display: inline-block;
+    margin-bottom: $tiny-spacing;
+  }
+
+  ol {
+    @include use-prop(color, color-text);
+    @include font-scale(sm);
+
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: decimal;
+
+    ol {
+      list-style: upper-alpha;
+
+      ol {
+        list-style: lower-roman;
+      }
+    }
+  }
+
+  li {
+    margin-left: $tiny-spacing;
+  }
+
+  @supports (backdrop-filter: blur(3px)) {
+    @include use-prop(background-color, color-background-fade);
+    backdrop-filter: blur(3px);
+  }
+}

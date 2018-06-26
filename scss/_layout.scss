@@ -19,7 +19,6 @@
 }
 
 .white-sheet {
-  @include use-prop(color, color-text);
   padding: $base-spacing $small-spacing;
 
   @include bp(large) {
