@@ -4,5 +4,5 @@
   {%- assign cats = categories %}
 {%- endif %}
 {%- for cat in cats %}
-  <a href="/{{cat | downcase}}/" class="category-link">[{{cat}}]</a>
+  <a href="/{{ cat | downcase }}/" class="category-link">[{{ cat }}]</a>
 {%- endfor %}

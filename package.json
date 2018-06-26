@@ -8,7 +8,9 @@
     "serve": "gulp watch --dev",
     "11ty": "eleventy",
     "11ty-debug": "DEBUG=Eleventy* eleventy",
-    "build": "gulp build"
+    "build": "gulp build",
+    "push": "(cd _site && gac 'blog deploy' && gpo $(current_branch) -f)",
+    "deploy": "gulp build && npm run 11ty && npm run push"
   },
   "author": "James Steinbach",
   "license": "ISC",
@@ -23,6 +25,7 @@
     "browserslist": "^3.2.8",
     "cssnano": "^3.10.0",
     "del": "^2.2.2",
+    "eleventy-plugin-toc": "^1.0.1",
     "eslint": "^4.19.1",
     "glob": "^7.1.1",
     "gulp": "^3.9.1",
