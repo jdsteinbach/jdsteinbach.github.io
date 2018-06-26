@@ -1,7 +1,7 @@
 body {
   @include font-scale(p);
   @include use-prop(background-color, color-background-page);
-  @include use-prop(color, color-background);
+  @include use-prop(color, color-text);
   font-family: $font-body;
   font-kerning: normal;
   font-variant-ligatures: common-ligatures contextual;
@@ -43,6 +43,17 @@ h4 {
     @include use-prop(color, color-text-alt);
     font-weight: bold;
     margin-top: $small-spacing;
+  }
+}
+
+h5 {
+  .post-content & {
+    @include font-scale(sm)
+    @include use-prop(color, color-text-alt);
+    font-weight: bold;
+    letter-spacing: (1em / 32);
+    margin-top: $small-spacing;
+    text-transform: uppercase;
   }
 }
 

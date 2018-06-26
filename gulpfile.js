@@ -200,10 +200,10 @@ gulp.task('watch', ['clean', 'styles', 'scripts', '11ty'], () => {
 })
 
 /**
- * Deploy to gh-pages branch
+ * Deploy to Github Pages
  */
-gulp.task('deploy', ['clean', 'build'], () =>
-  exec('(cd _site && gac "deploy blog" && gpo $(current_branch))')
+gulp.task('deploy', ['build'], () =>
+  exec('(cd _site && gac "deploy blog" && gpo $(current_branch) -f)')
 )
 
 /**
