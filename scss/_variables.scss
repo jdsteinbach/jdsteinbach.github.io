@@ -72,6 +72,7 @@ $root-vars: (
 
   color-background: $color-gray-pale,
   color-background-page: $color-gray-pale,
+  color-background-fade: rgba($color-gray-pale, .9),
   color-background-svg: $color-orange,
   color-background-alt: rgba($color-gray, .15),
   color-background-code: rgba($color-gray, .15),
@@ -100,6 +101,7 @@ $dark-vars: (
 
   color-background: $color-gray-dark,
   color-background-page: custom-invert($color-gray-pale),
+  color-background-fade: rgba(custom-invert($color-gray-pale), .9),
   color-background-svg: $color-gray-dark,
   color-background-alt: rgba(custom-invert($color-gray-dark), .15),
   color-background-code: custom-invert($color-gray),

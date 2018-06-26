@@ -111,6 +111,20 @@ if ('localStorage' in window) {
   main.parentNode.insertBefore(toggle, main)
 }
 
+const toc = document.querySelector('.post-toc')
+
+if (toc) {
+  toc.setAttribute('aria-hidden', true)
+  const title = toc.querySelector('.post-toc__title')
+  title.addEventListener('click', e => {
+    if (toc.getAttribute('aria-hidden') === 'true') {
+      toc.setAttribute('aria-hidden', false)
+    } else {
+      toc.setAttribute('aria-hidden', true)
+    }
+  })
+}
+
 console.log([
   '',
   '               ///  /////////     /////////',
