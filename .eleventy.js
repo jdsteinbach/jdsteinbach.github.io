@@ -1,11 +1,13 @@
 const {URL} = require('url')
 const {DateTime} = require('luxon')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const pluginTOC = require('eleventy-plugin-toc')
 
 const formatDate = date => DateTime.fromJSDate(new Date(date)).toISO({includeOffset: true, suppressMilliseconds: true})
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginSyntaxHighlight)
+  eleventyConfig.addPlugin(pluginTOC)
 
   eleventyConfig.addLayoutAlias('post', 'layouts/post.liquid')
   eleventyConfig.addLayoutAlias('page', 'layouts/page.liquid')
@@ -153,7 +155,8 @@ module.exports = function (eleventyConfig) {
   let options = {
     html: true,
     breaks: true,
-    linkify: true
+    linkify: true,
+    typographer: true
   }
   let opts = {
     permalink: true,

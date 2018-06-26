@@ -15,8 +15,12 @@
         {%- endif %}
       </p>
     </header>
-    <article class="post-content white-sheet">
+    <article class="post-content white-sheet has-toc">
       {{ content }}
+      <aside class="post-toc">
+        <h5 class="post-toc__title">Table of Contents</h5>
+        {{ content | toc }}
+      </aside>
     </article>
   </div>
   {% include after %}
