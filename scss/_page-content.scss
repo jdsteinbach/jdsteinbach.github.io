@@ -67,49 +67,20 @@ $max-width-modified: ($max-width / 6 * 4);
 }
 
 .post-content {
-  max-width: $max-width-modified;
-  display: inline-block;
-  vertical-align: top;
+  &.has-toc {
+    position: relative;
+    padding-top: $large-spacing + $small-spacing;
+  }
 }
 
-.post-table-of-contents {
-  display: inline-block;
+.post-toc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 $small-spacing;
 
   @include bp(large) {
-    max-width: $max-width-modified / 1.618;
-    display: inline-block;
-    vertical-align: top;
-    padding: $base-spacing 0;
-    position: sticky;
-    top: 0;
-    bottom: 0;
-  }
-
-  a {
-    @include font-scale(sm);
-
-    display: inline-block;
-    margin-bottom: $tiny-spacing;
-  }
-
-  ol {
-    @include use-prop(color, color-text);
-    @include font-scale(sm);
-
-    display: initial;
-    margin: initial;
-    padding: initial;
-    list-style: decimal;
-
-    ol {
-      list-style: upper-alpha;
-
-      ol {
-        list-style: lower-roman;
-      }
-    }
-  }
-
-  li {
+    padding: 0 $base-spacing;
   }
 }
