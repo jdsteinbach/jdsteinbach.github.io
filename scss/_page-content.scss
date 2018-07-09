@@ -1,5 +1,3 @@
-$max-width-modified: ($max-width / 6 * 4);
-
 .post-meta {
   @include font-scale(sm);
   @include use-prop(color, color-text);
