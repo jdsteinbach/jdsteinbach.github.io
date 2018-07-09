@@ -15,17 +15,17 @@ add_action( 'pre_get_posts', 'custom_query_vars' );
 function custom_query_vars( $query ) {
   if ( !is_admin() && $query->is_main_query() {
     if ( get_post_type() == 'portfolio' ) {
-      $query->set( 'posts_per_page' => 12 );
+      $query->set( 'posts_per_page', 12 );
     }
     if ( get_post_type() == 'staff' ) {
-      $query->set( 'posts_per_page' => -1 );
-      $query->set( 'orderby' => 'menu_order' );
-      $query->set( 'order' => 'ASC' );
+      $query->set( 'posts_per_page', -1 );
+      $query->set( 'orderby', 'menu_order' );
+      $query->set( 'order', 'ASC' );
     }
     if ( get_post_type() == 'resource' ) {
-      $query->set( 'posts_per_page' => -1 );
-      $query->set( 'orderby' => 'title' );
-      $query->set( 'order' => 'ASC' );
+      $query->set( 'posts_per_page', -1 );
+      $query->set( 'orderby', 'title' );
+      $query->set( 'order', 'ASC' );
     }
   }
   return $query;
@@ -36,7 +36,7 @@ The first line of code in that block adds the function `custom_query_vars()` to
 
 In our custom function, the first thing we do is use an `if` statement to limit where our modifications happen. The `!is_admin()` condition prevents custom query modifications from affecting the Dashboard. The `$query->is_main_query()` condition makes sure our changes only happen to the main query on a given archive page (for example, sidebar widgets won&#8217;t be affected by our tweaks).
 
-Inside that condition, we&#8217;ve got the three `if` statements we&#8217;ll need to modify each of our custom post type archives. Inside of each `if`, we use `$query->set()`; to change the appropriate query vars. For portfolio items, we change the `posts_per_page` var to 12. For the staff archive, we remove the post limit (`'posts_per_page' => -1`) and order items by `menu_order` in ascending order. For resource archive pages, we remove the post limit and order posts by their title in ascending order (alphabetical).
+Inside that condition, we&#8217;ve got the three `if` statements we&#8217;ll need to modify each of our custom post type archives. Inside of each `if`, we use `$query->set()`; to change the appropriate query vars. For portfolio items, we change the `posts_per_page` var to 12. For the staff archive, we remove the post limit (`'posts_per_page', -1`) and order items by `menu_order` in ascending order. For resource archive pages, we remove the post limit and order posts by their title in ascending order (alphabetical).
 
 > Note: `$query->set( $var, $value );` is simply a WordPress alias function for `query_vars[$var] = $value;`. The function `set_query_var( $var, $value );` does the same thing, but can run outside of the `pre_get_posts` action.
 
