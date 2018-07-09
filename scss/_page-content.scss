@@ -1,11 +1,4 @@
 $max-width-modified: ($max-width / 6 * 4);
-.post {
-  text-align: center;
-
-  > * {
-    text-align: initial;
-  }
-}
 
 .post-meta {
   @include font-scale(sm);
@@ -55,6 +48,7 @@ $max-width-modified: ($max-width / 6 * 4);
     height: 100%;
     width: 100%;
     z-index: 0;
+    overflow: hidden;
   }
 
   > * {
