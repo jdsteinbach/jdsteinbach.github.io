@@ -1,11 +1,14 @@
 {% include before %}
-<div class="page inner-wrapper">
+<article class="page inner-wrapper" itemscope itemtype="http://schema.org/WebPage">
   <header class="post-header">
     {% include header-image %}
-    <h1 class="post-title">{{ title }}</h1>
+    <h1 class="post-title" itemprop="name title headline">{{ title }}</h1>
+    {%- if author %}
+      <span class="author hidden" itemprop="author creator">{{ author }}</span>
+    {%- endif %}
   </header>
-  <article class="post-content white-sheet">
+  <div class="post-content white-sheet" itemprop="articleBody">
     {{ content }}
-  </article>
-</div>
+  </div>
+</article>
 {% include after %}

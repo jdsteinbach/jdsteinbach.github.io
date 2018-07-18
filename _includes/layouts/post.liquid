@@ -1,26 +1,26 @@
 {% include before %}
-  <div class="post inner-wrapper">
+  <article class="post inner-wrapper" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
       {% include header-image %}
-      <h1 class="post-title">{{ title }}</h1>
+      <h1 class="post-title" itemprop="name title headline">{{ title }}</h1>
       <p class="post-meta">
         {%- if page.date %}
-          <time class="date" datetime={{ page.date }}>{{ page.date | date: "%B %e, %Y" }}</time>
+          <time class="date" datetime={{ page.date }} itemprop="dateCreated pubdate datePublished">{{ page.date | date: "%B %e, %Y" }}</time>
         {%- endif %}
         {%- if author %}
-          <span class="author">{{ author }}</span>
+          <span class="author" itemprop="author creator">{{ author }}</span>
         {%- endif %}
         {%- if categories %}
           <span class="categories">{% include categories %}</span>
         {%- endif %}
       </p>
     </header>
-    <article class="post-content white-sheet has-toc">
+    <div class="post-content white-sheet has-toc" itemprop="articleBody">
       {{ content }}
       <aside class="post-toc">
         <h5 class="post-toc__title">Table of Contents</h5>
         {{ content | toc }}
       </aside>
-    </article>
-  </div>
+    </div>
+  </article>
   {% include after %}
