@@ -161,7 +161,7 @@ em {
 }
 
 .hidden {
-  position: absolute;
+  position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
 }

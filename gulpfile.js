@@ -185,7 +185,7 @@ gulp.task('build', ['clean'], () => gulp.start(['11ty', 'styles', 'scripts']))
 /**
  * Builds assets and reloads the page when any php, html, img or dev files change
  */
-gulp.task('watch', ['clean', 'styles', 'scripts', '11ty'], () => {
+gulp.task('watch', ['build'], () => {
   browserSync.init({
     server: {
       baseDir: paths.build.root
