@@ -41,7 +41,7 @@
     "gulp-standard": "^11.0.0",
     "gulp-uglify": "^2.0.1",
     "gulp-util": "^3.0.8",
-    "liquidjs": "^4.0.0",
+    "liquidjs": "^5.0.0",
     "luxon": "^1.2.0",
     "markdown-it-anchor": "^5.0.1",
     "postcss-inline-svg": "^3.1.1",
