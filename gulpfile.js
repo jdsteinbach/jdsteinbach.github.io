@@ -202,7 +202,7 @@ gulp.task('watch', ['build'], () => {
 /**
  * Deploy to Github Pages
  */
-gulp.task('deploy', ['build'], () => exec('npm run deploy'))
+gulp.task('deploy', () => exec('npm run deploy'))
 
 /**
  * Backup default task just triggers a build
