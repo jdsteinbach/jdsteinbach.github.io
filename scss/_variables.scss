@@ -77,7 +77,9 @@ $root-vars: (
   color-background-alt: rgba($color-gray, .15),
   color-background-code: rgba($color-gray, .15),
 
-  fs-body: (18rem / 16)
+  fs-body: (18rem / 16),
+
+  toggle-icon: svg-load('icons/theme.svg', fill=#{rgba($color-link, .65)})
 );
 
 
@@ -105,6 +107,8 @@ $dark-vars: (
   color-background-svg: $color-gray-dark,
   color-background-alt: rgba(custom-invert($color-gray-dark), .15),
   color-background-code: custom-invert($color-gray),
+
+  toggle-icon: svg-load('icons/theme.svg', fill=#{rgba($color-gray-pale, .75)})
 );
 
 
