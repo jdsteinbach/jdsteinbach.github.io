@@ -37,7 +37,7 @@ $toggle-border: 2px;
     border-radius: $toggle-height;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 24px;
+    background-size: $toggle-height / 1.5;
     z-index: 1;
     transition: transform .15s ease-out, background-color .15s;
 
