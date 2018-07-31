@@ -83,7 +83,7 @@ ajaxForm({
 })
 
 if ('localStorage' in window) {
-  const main = document.getElementById('main')
+  const container = document.getElementById('site-nav')
   const toggle = document.createElement('button')
 
   const saveTheme = (isDark) => {
@@ -105,15 +105,15 @@ if ('localStorage' in window) {
 
   buttonText(getTheme())
 
-  toggle.classList.add('button-theme')
-
   toggle.addEventListener('click', e => {
     e.preventDefault()
     document.body.classList.toggle('theme-dark')
     setTheme()
   })
 
-  main.parentNode.insertBefore(toggle, main)
+  toggle.classList.add('toggle')
+
+  container.appendChild(toggle)
 }
 
 const toc = document.querySelector('.post-toc')

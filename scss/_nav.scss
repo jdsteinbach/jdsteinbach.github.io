@@ -13,7 +13,7 @@
   @include font-scale(sm);
   display: inline-block;
   letter-spacing: (1em / 32);
-  padding: $tiny-spacing $small-spacing;
+  padding: $tiny-spacing 0;
   text-transform: uppercase;
 
   &[href*='hire'] {
@@ -21,5 +21,9 @@
     border: 1px solid currentColor;
     border-radius: 3px;
     font-weight: bold;
+  }
+
+  &:not(:last-child) {
+    margin-right: $base-spacing;
   }
 }
