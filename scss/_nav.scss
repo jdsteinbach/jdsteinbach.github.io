@@ -13,6 +13,7 @@
   @include font-scale(sm);
   display: inline-block;
   letter-spacing: (1em / 32);
+  margin: 0 $small-spacing;
   padding: $tiny-spacing 0;
   text-transform: uppercase;
 
@@ -23,7 +24,7 @@
     font-weight: bold;
   }
 
-  &:not(:last-child) {
-    margin-right: $base-spacing;
+  &:last-child {
+    margin-right: 0;
   }
 }
