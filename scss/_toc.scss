@@ -1,6 +1,7 @@
 .post-toc__title {
   margin: $small-spacing 0;
   padding-top: $small-spacing;
+  position: relative;
 
   &::after {
     padding: 0 1ch;
@@ -18,6 +19,10 @@
 .toc {
   @include use-prop(background-color, color-background-page);
   padding: 0 $small-spacing $base-spacing + $small-spacing;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
   opacity: 0;
   mask-image: linear-gradient(
     0deg,
