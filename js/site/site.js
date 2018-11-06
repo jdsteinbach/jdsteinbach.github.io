@@ -85,6 +85,7 @@ ajaxForm({
 if ('localStorage' in window) {
   const container = document.getElementById('site-nav')
   const toggle = document.createElement('button')
+  toggle.setAttribute('type', 'button')
 
   const saveTheme = (isDark) => {
     let theme = isDark ? 'dark' : ''
