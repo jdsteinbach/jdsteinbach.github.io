@@ -9,7 +9,7 @@
   }
 }
 
-@include fonts(Latina, latina-light, normal, normal);
-@include fonts(Latina, latina-light-i, italic, normal);
-@include fonts(Latina, latina-bold, normal, bold);
-@include fonts(Latina, latina-bold-i, italic, bold);
+@include fonts(Quattro, quattro-regular, normal, normal);
+@include fonts(Quattro, quattro-italic, italic, normal);
+@include fonts(Quattro, quattro-bold, normal, bold);
+@include fonts(Quattro, quattro-bolditalic, italic, bold);
