@@ -1,11 +1,12 @@
 code {
   @include use-prop(background-color, color-background-alt);
   @include use-prop(color, color-text-alt);
+  @include use-prop(font-family, font-code);
   border-radius: $border-radius-default;
   display: inline-block;
-  font-family: $font-code;
   font-weight: inherit;
   font-feature-settings: initial;
+  font-variation-settings: "wght" 500;
   padding: 0 .5ch;
   vertical-align: baseline;
 

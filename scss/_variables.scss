@@ -79,6 +79,10 @@ $root-vars: (
 
   fs-body: (18rem / 16),
 
+  font-body: (Quattro, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif),
+  font-headline: var(--font-body),
+  font-code: var(--font-body),
+
   toggle-icon: svg-load('icons/theme.svg', fill=#{rgba($color-link, .65)})
 );
 
@@ -140,11 +144,7 @@ $border-default: 1px solid $border-color;
 $border-radius-default: 0;
 
 
-// FONTS
-$font-body: Latina, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
-$font-headline: $font-body;
-$font-code: monospace;
-
+// TYPE
 $font-sizes: sm p blockquote subtitle title hero;
 $start-small: true;
 $base-line-height: 1.8;
