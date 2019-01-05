@@ -30,7 +30,6 @@
   padding: $tiny-spacing $small-spacing;
   text-align: center;
   vertical-align: middle;
-  transition: font-variation-settings .25s;
 
   @include haf {
     font-variation-settings: "wght" 700, "SPCG" 20;

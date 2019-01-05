@@ -10,7 +10,6 @@ a {
   }
 
   &.site-nav__link {
-    transition: font-variation-settings .25s;
     &::before {
       content: '';
       position: absolute;
@@ -79,7 +78,6 @@ a {
 .post-link,
 .outbound-link {
   font-variation-settings: "wght" 600;
-  transition: font-variation-settings .25s;
   z-index: 2;
 
   &::before {
@@ -112,7 +110,6 @@ a {
 .heading-link {
   padding: 0 $tiny-spacing;
   opacity: .25;
-  transition: opacity .25s;
   text-decoration: none !important;
 
   @include haf {
