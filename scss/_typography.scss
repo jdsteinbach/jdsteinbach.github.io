@@ -2,7 +2,7 @@ body {
   @include font-scale(p);
   @include use-prop(background-color, color-background-page);
   @include use-prop(color, color-text);
-  font-family: $font-body;
+  @include use-prop(font-family, font-body);
   font-kerning: normal;
   font-variant-ligatures: common-ligatures contextual;
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
@@ -11,15 +11,17 @@ body {
 h1 {
   @include font-scale(subtitle);
   @include use-prop(color, color-text-alt);
-  font-family: $font-headline;
+  @include use-prop(font-family, font-headline);
   font-weight: bold;
+  font-variation-settings: "wght" 700;
 }
 
 h2 {
   @include font-scale(blockquote);
   @include use-prop(color, color-text-alt);
-  font-family: $font-headline;
+  @include use-prop(font-family, font-headline);
   font-weight: bold;
+  font-variation-settings: "wght" 700;
 
   .post-content & {
     @include use-prop(color, color-text-alt);
@@ -32,6 +34,7 @@ h3 {
   .post-content & {
     @include use-prop(color, color-text-alt);
     font-weight: bold;
+    font-variation-settings: "wght" 700;
     letter-spacing: (1em / 32);
     margin-top: $small-spacing;
     text-transform: uppercase;
@@ -42,6 +45,7 @@ h4 {
   .post-content & {
     @include use-prop(color, color-text-alt);
     font-weight: bold;
+    font-variation-settings: "wght" 700;
     margin-top: $small-spacing;
   }
 }
@@ -51,6 +55,7 @@ h5 {
     @include font-scale(sm)
     @include use-prop(color, color-text-alt);
     font-weight: bold;
+    font-variation-settings: "wght" 700;
     letter-spacing: (1em / 32);
     margin-top: $small-spacing;
     text-transform: uppercase;
@@ -66,6 +71,7 @@ h5 {
   max-width: $max-width / power($base-font-scale, 4);
   text-align: center;
   text-transform: uppercase;
+  font-variation-settings: "wght" 650, "SPCG" 20;
   text-shadow: 1px 1px 0 $color-blue-dark, 2px 2px 0 $color-blue-dark, 3px 3px 0 $color-blue-dark, 4px 4px 0 $color-blue-dark;
   -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
 }
@@ -90,14 +96,15 @@ p {
 .outbound-link,
 .post-link {
   @include font-scale(blockquote);
+  @include use-prop(font-family, font-headline);
   display: block;
-  font-family: $font-headline;
 }
 
 b,
 strong {
   @include use-prop(color, color-text-alt);
   font-weight: bold;
+  font-variation-settings: "wght" 700;
 }
 
 i,

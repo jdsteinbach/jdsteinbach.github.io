@@ -23,12 +23,18 @@
 
 .site-title {
   @include font-scale(p);
+  @include use-prop(font-family, font-headline);
   display: inline-block;
-  font-family: $font-headline;
   font-weight: bold;
+  font-variation-settings: "wght" 600, "SPCG" 20;
   padding: $tiny-spacing $small-spacing;
   text-align: center;
   vertical-align: middle;
+  transition: font-variation-settings .25s;
+
+  @include haf {
+    font-variation-settings: "wght" 700, "SPCG" 20;
+  }
 
   @include breakpoint(large) {
     margin-right: auto;

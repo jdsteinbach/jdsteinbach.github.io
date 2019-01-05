@@ -2,13 +2,15 @@ a {
   @include use-prop(color, color-link);
   text-decoration: none;
   position: relative;
-  transition: color .25s, text-decoration-color .25s, background-color .25s, opacity .25s, border .25s, transform .25s $easing;
+  transition: color .25s, text-decoration-color .25s, background-color .25s, opacity .25s, border .25s, transform .25s $easing, font-variation-settings .25s;
 
   @include haf {
     @include use-prop(color, color-link-alt);
+    font-variation-settings: "wght" 500;
   }
 
   &.site-nav__link {
+    transition: font-variation-settings .25s;
     &::before {
       content: '';
       position: absolute;
@@ -23,6 +25,8 @@ a {
     }
 
     @include haf {
+      font-variation-settings: "wght" 600;
+
       &::before {
         transform: scaleX(1) rotate(-1deg) translateY(0);
         opacity: .2;
@@ -74,6 +78,8 @@ a {
 
 .post-link,
 .outbound-link {
+  font-variation-settings: "wght" 600;
+  transition: font-variation-settings .25s;
   z-index: 2;
 
   &::before {
@@ -94,6 +100,8 @@ a {
   }
 
   @include haf {
+    font-variation-settings: "wght" 700;
+
     &::before {
       transform: scaleX(1) rotate(-1deg) translateY(0);
       opacity: .2;

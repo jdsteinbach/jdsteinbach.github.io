@@ -77,7 +77,11 @@ $root-vars: (
   color-background-alt: rgba($color-gray, .15),
   color-background-code: rgba($color-gray, .15),
 
-  fs-body: (18rem / 16)
+  fs-body: (18rem / 16),
+
+  font-body: (Quattro, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif),
+  font-headline: var(--font-body),
+  font-code: var(--font-body)
 );
 
 
@@ -136,11 +140,7 @@ $border-default: 1px solid $border-color;
 $border-radius-default: 0;
 
 
-// FONTS
-$font-body: Quattro, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
-$font-headline: $font-body;
-$font-code: monospace;
-
+// TYPE
 $font-sizes: sm p blockquote subtitle title hero;
 $start-small: true;
 $base-line-height: 1.8;

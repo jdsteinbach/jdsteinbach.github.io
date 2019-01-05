@@ -167,6 +167,7 @@ textarea {
     @include font-scale(blockquote);
     animation: fade-down .35s ease-out;
     font-weight: bold;
+    font-variation-settings: "wght" 700;
     margin-top: $base-spacing;
     margin-bottom: $large-spacing;
     text-align: center;
@@ -188,6 +189,7 @@ textarea {
   .pageclip-form__success__message { //sass-lint:disable-line class-name-format
     @include font-scale(subtitle);
     font-weight: bold;
+    font-variation-settings: "wght" 700;
   }
 }
 
@@ -200,11 +202,11 @@ textarea {
   padding-top: $base-spacing;
 
   .campaign {
-    font-family: $font-code;
+    @include use-prop(font-family, font-code);
     margin-bottom: $tiny-spacing;
 
     a {
-      font-family: $font-body;
+      @include use-prop(font-family, font-body);
     }
   }
 }
