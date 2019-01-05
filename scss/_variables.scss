@@ -108,7 +108,7 @@ $dark-vars: (
   color-background-fade: rgba(custom-invert($color-gray-pale), .9),
   color-background-svg: $color-gray-dark,
   color-background-alt: rgba(custom-invert($color-gray-dark), .15),
-  color-background-code: custom-invert($color-gray),
+  color-background-code: custom-invert($color-gray)
 );
 
 

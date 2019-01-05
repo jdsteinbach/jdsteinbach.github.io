@@ -6,6 +6,7 @@ body {
   font-kerning: normal;
   font-variant-ligatures: common-ligatures contextual;
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -168,7 +169,7 @@ em {
 }
 
 .hidden {
-  position: absolute;
+  position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
 }

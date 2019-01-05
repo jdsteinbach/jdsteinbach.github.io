@@ -140,6 +140,14 @@ textarea {
   }
 }
 
+.catch-flies {
+  display: none;
+
+  * {
+    pointer-events: none;
+  }
+}
+
 [type='submit'] {
   margin: auto 0 $base-spacing;
 

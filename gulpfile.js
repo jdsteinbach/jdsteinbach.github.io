@@ -78,9 +78,7 @@ gulp.task('clean', () => del([
 /**
  * Build the markup
  */
-gulp.task('11ty', () => {
-  exec('npm run 11ty')
-})
+gulp.task('11ty', () => exec('npm run 11ty'))
 
 /**
  * Lints the gulpfile for errors
@@ -137,6 +135,8 @@ gulp.task('scripts', () => {
         )
     })
   }
+
+  return
 })
 
 /**
@@ -180,12 +180,12 @@ gulp.task('lint:sass', () =>
 /**
  * Builds for distribution (staging or production)
  */
-gulp.task('build', ['clean', 'styles', 'scripts', '11ty'])
+gulp.task('build', ['clean'], () => gulp.start(['11ty', 'styles', 'scripts']))
 
 /**
  * Builds assets and reloads the page when any php, html, img or dev files change
  */
-gulp.task('watch', ['clean', 'styles', 'scripts', '11ty'], () => {
+gulp.task('watch', ['build'], () => {
   browserSync.init({
     server: {
       baseDir: paths.build.root
@@ -202,9 +202,7 @@ gulp.task('watch', ['clean', 'styles', 'scripts', '11ty'], () => {
 /**
  * Deploy to Github Pages
  */
-gulp.task('deploy', ['build'], () =>
-  exec('(cd _site && gac "deploy blog" && gpo $(current_branch) -f)')
-)
+gulp.task('deploy', () => exec('npm run deploy'))
 
 /**
  * Backup default task just triggers a build

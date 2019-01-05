@@ -13,7 +13,8 @@
   @include font-scale(sm);
   display: inline-block;
   letter-spacing: (1em / 32);
-  padding: $tiny-spacing $small-spacing;
+  margin: 0 $small-spacing;
+  padding: $tiny-spacing 0;
   text-transform: uppercase;
 
   &[href*='hire'] {
@@ -22,5 +23,9 @@
     border-radius: 3px;
     font-weight: bold;
     font-variation-settings: "wght" 700;
+  }
+
+  &:last-child {
+    margin-right: 0;
   }
 }
