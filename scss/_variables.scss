@@ -81,7 +81,9 @@ $root-vars: (
 
   font-body: (Quattro, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif),
   font-headline: var(--font-body),
-  font-code: var(--font-body)
+  font-code: var(--font-body),
+
+  toggle-icon: svg-load('icons/theme.svg', fill=#{rgba($color-link, .65)})
 );
 
 
@@ -108,7 +110,9 @@ $dark-vars: (
   color-background-fade: rgba(custom-invert($color-gray-pale), .9),
   color-background-svg: $color-gray-dark,
   color-background-alt: rgba(custom-invert($color-gray-dark), .15),
-  color-background-code: custom-invert($color-gray)
+  color-background-code: custom-invert($color-gray),
+
+  toggle-icon: svg-load('icons/theme.svg', fill=#{rgba($color-gray-pale, .75)})
 );
 
 
