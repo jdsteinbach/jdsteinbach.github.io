@@ -5,6 +5,16 @@
   padding-top: $small-spacing;
   text-align: center;
 
+  a {
+    @include use-prop(color, color-link);
+    font-variation-settings: "wght" 500;
+
+    @include haf {
+      @include use-prop(color, color-link-alt);
+      font-variation-settings: "wght" 700;
+    }
+  }
+
   a,
   span {
     display: inline-block;

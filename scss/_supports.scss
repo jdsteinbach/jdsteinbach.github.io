@@ -13,3 +13,9 @@
     text-decoration-style: underline;
   }
 }
+
+@supports (font-variation-settings: normal) {
+  :root {
+    --font-body: QuattroV, Times, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
+  }
+}
