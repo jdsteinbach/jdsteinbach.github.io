@@ -1,4 +1,4 @@
 ---
 permalink: feed.xml
-layout: atom
+layout: feed
 ---

@@ -17,7 +17,7 @@ Now that you’ve seen the short list, let’s look at those points in more deta
 
 ## .woff covers nearly everything
 
-According to caniuse, we’ve got [83% global browser support for .woff files (86% in the US)][1]. That’s pretty good. If you’re viewing webfonts as a progressive enhancement, you’d probably have good reason to quit stop with just .woff files:
+According to caniuse, we’ve got [83% global browser support for .woff files (86% in the US)][1]. That’s pretty good. If you’re viewing webfonts as a progressive enhancement, you’d probably have good reason to stop with just .woff files:
 
 ~~~css
 @font-face {
