@@ -14,7 +14,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('category', 'layouts/category.liquid')
   eleventyConfig.addLayoutAlias('home', 'layouts/home.liquid')
   eleventyConfig.addLayoutAlias('blog', 'layouts/blog.liquid')
-  eleventyConfig.addLayoutAlias('atom', 'layouts/feed.liquid')
+  eleventyConfig.addLayoutAlias('feed', 'layouts/feed.liquid')
 
   eleventyConfig.addFilter('imageID', titleString => {
     return titleString.length % 5 + 1
@@ -51,6 +51,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('postsIndex', collection => {
     return collection
       .getAllSorted()
+      .reverse()
       .filter(item => {
         return item.inputPath.match(/^\.\/posts\//) !== null
       })
@@ -61,6 +62,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('postsFeed', collection => {
     return collection
       .getAllSorted()
+      .reverse()
       .filter(item => {
         return item.inputPath.match(/^\.\/posts\//) !== null
       })
