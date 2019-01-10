@@ -79,9 +79,9 @@ $root-vars: (
 
   fs-body: (18rem / 16),
 
-  font-body: "-apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif",
+  font-body: unquote("-apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif"),
   font-headline: var(--font-body),
-  font-code: "Mono, monospace",
+  font-code: unquote("Mono, monospace"),
 
   toggle-icon: svg-load('icons/theme.svg', fill=#{rgba($color-link, .65)})
 );
