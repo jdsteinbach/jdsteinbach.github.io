@@ -26,14 +26,10 @@
   @include use-prop(font-family, font-headline);
   display: inline-block;
   font-weight: bold;
-  font-variation-settings: "wght" 600, "SPCG" 20;
+  font-variation-settings: vf(bold);
   padding: $tiny-spacing $small-spacing;
   text-align: center;
   vertical-align: middle;
-
-  @include haf {
-    font-variation-settings: "wght" 700, "SPCG" 20;
-  }
 
   @include breakpoint(large) {
     margin-right: auto;

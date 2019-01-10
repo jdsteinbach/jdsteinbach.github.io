@@ -9,18 +9,19 @@
   }
 }
 
-@mixin v-fonts($family, $file, $style) {
+@mixin v-fonts($family, $file-name, $style, $format) {
   @font-face {
     font-family: $family;
-    src: url('/webfonts/#{$file}.ttf') format('truetype');
+    src: url('/webfonts/#{$file-name}') format('#{$format}');
     font-style: $style;
   }
 }
 
-@include fonts(Quattro, quattro-regular, normal, normal);
-@include fonts(Quattro, quattro-italic, italic, normal);
-@include fonts(Quattro, quattro-bold, normal, bold);
-@include fonts(Quattro, quattro-bold-italic, italic, bold);
+@include fonts(Mono, mono-regular, normal, normal);
+@include fonts(Mono, mono-italic, italic, normal);
+@include fonts(Mono, mono-bold, normal, bold);
+@include fonts(Mono, mono-bolditalic, italic, bold);
 
-@include v-fonts(QuattroV, quattrov, normal);
-@include v-fonts(QuattroV, quattrov-italic, italic);
+@include v-fonts(Mono VF, "mono-v.ttf", normal, truetype);
+@include v-fonts(Mono VF, "mono-v-italic.ttf", italic, truetype);
+@include v-fonts(Venn VF, "venn-v.woff2", normal, woff2);

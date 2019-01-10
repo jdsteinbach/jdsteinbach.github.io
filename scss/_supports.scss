@@ -16,6 +16,7 @@
 
 @supports (font-variation-settings: normal) {
   :root {
-    --font-body: QuattroV, Times, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
+    --font-body: Venn VF, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
+    --font-code: Mono VF, monospace;
   }
 }
