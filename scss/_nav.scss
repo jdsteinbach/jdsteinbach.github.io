@@ -12,8 +12,8 @@
 .site-nav__link {
   @include font-scale(sm);
   display: inline-block;
-  letter-spacing: (1em / 32);
-  font-variation-settings: vf(semibold);
+  letter-spacing: (1em / 16);
+  font-variation-settings: vf(bold), "wdth" 88;
   margin: 0 $small-spacing;
   padding: $tiny-spacing 0;
   text-transform: uppercase;
@@ -23,7 +23,7 @@
     border: 1px solid currentColor;
     border-radius: 3px;
     font-weight: bold;
-    font-variation-settings: vf(bold);
+    font-variation-settings: vf(heavy);
   }
 
   &:last-child {

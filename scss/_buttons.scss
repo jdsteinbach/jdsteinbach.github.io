@@ -12,8 +12,8 @@ button,
   box-shadow: 1px 1px 0 0 $color-orange, 2px 2px 0 0 $color-orange, 3px 3px 0 0 $color-orange;
   display: inline-block;;
   font-weight: bold;
-  font-variation-settings: vf(semibold);
-  letter-spacing: (1em / 32);
+  font-variation-settings: vf(heavy), "wdth" 88;
+  letter-spacing: (1em / 16);
   padding: ($tiny-spacing - 1/16) $small-spacing ($tiny-spacing + 1/16);
   text-transform: uppercase;
   transition: color .25s, opacity .25s, border-color .25s, background-color .25s, transform .25s $easing;

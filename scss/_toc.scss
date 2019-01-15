@@ -2,7 +2,7 @@ h5.post-toc__title { // bad selector is better specificity fix than important i 
   margin: $small-spacing 0;
   padding-top: $small-spacing;
   position: relative;
-  font-variation-settings: vf(semibold);
+  font-variation-settings: vf(bold);
 
   &::after {
     padding: 0 1ch;

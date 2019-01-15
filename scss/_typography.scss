@@ -16,7 +16,7 @@ h1 {
   @include use-prop(color, color-text-alt);
   @include use-prop(font-family, font-headline);
   font-weight: bold;
-  font-variation-settings: vf(bold);
+  font-variation-settings: vf(heavy);
 }
 
 h2 {
@@ -24,7 +24,7 @@ h2 {
   @include use-prop(color, color-text-alt);
   @include use-prop(font-family, font-headline);
   font-weight: bold;
-  font-variation-settings: vf(bold);
+  font-variation-settings: vf(heavy);
 
   .post-content & {
     @include use-prop(color, color-text-alt);
@@ -37,7 +37,7 @@ h3 {
   .post-content & {
     @include use-prop(color, color-text-alt);
     font-weight: bold;
-    font-variation-settings: vf(bold);
+    font-variation-settings: vf(heavy);
     letter-spacing: (1em / 32);
     margin-top: $small-spacing;
     text-transform: uppercase;
@@ -48,7 +48,7 @@ h4 {
   .post-content & {
     @include use-prop(color, color-text-alt);
     font-weight: bold;
-    font-variation-settings: vf(bold);
+    font-variation-settings: vf(heavy);
     margin-top: $small-spacing;
   }
 }
@@ -58,7 +58,7 @@ h5 {
     @include font-scale(sm)
     @include use-prop(color, color-text-alt);
     font-weight: bold;
-    font-variation-settings: vf(bold);
+    font-variation-settings: vf(heavy);
     letter-spacing: (1em / 32);
     margin-top: $small-spacing;
     text-transform: uppercase;
@@ -69,14 +69,22 @@ h5 {
 .post-title {
   @include use-prop(color, color-page-title);
   @include font-scale(hero);
-  letter-spacing: (1em / 32);
+  letter-spacing: (1em / 16);
   margin: $base-spacing auto;
-  max-width: $max-width / power($base-font-scale, 4);
+  max-width: $max-width / power($base-font-scale, 5);
   text-align: center;
   text-transform: uppercase;
-  font-variation-settings: vf(bold);
+  font-variation-settings: vf(bold), "wdth" 88;
   text-shadow: 1px 1px 0 $color-blue-dark, 2px 2px 0 $color-blue-dark, 3px 3px 0 $color-blue-dark, 4px 4px 0 $color-blue-dark;
   -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
+
+  @include bp(medium) {
+    font-variation-settings: vf(bold), "wdth" 100;
+  }
+
+  @include bp(large) {
+    font-variation-settings: vf(bold), "wdth" 112;
+  }
 }
 
 .footer-title {
