@@ -27,7 +27,7 @@ JS is fine and good, but I&#8217;m looking for a way to do with with just CSS.
 
 This is a tricky one. Basically I&#8217;m asking CSS to transition between `height: 0;` and `height: auto;`. But it currently can&#8217;t.
 
-If all my elements were a fixed height, I could easily transition betweeen `` and that height, but I want a technique that works without fixing the element&#8217;s height in advance.
+If all my elements were a fixed height, I could easily transition betweeen `height: 0;` and that height, but I want a technique that works without fixing the element&#8217;s height in advance.
 
 ## Maintains proper easing and timing
 
