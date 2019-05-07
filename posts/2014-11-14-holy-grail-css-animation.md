@@ -43,7 +43,7 @@ One method I&#8217;ve seen suggested is transitioning the `max-height` of the el
 }
 ```
 
-If an `.expandable` element is only 500px, its visible transition will finish in 250ms (not 500ms) because the transition calculates 1000px of motion over 500ms. The easing function will also be broken: the easing curve is also spread out over 1000px / 500ms: since the actual element has no motion left at 500px / 250ms, it won&#8217;t ease-out at all. Animating `max-height` would work if duration was completely irrelevant and if the easing easing function was `linear`. But if you&#8217;ve deliberately chosen your durations & easing, this technique is out.
+If an `.expandable` element is only 500px, its visible transition will finish in 250ms (not 500ms) because the transition calculates 1000px of motion over 500ms. The easing function will also be broken: the easing curve is also spread out over 1000px / 500ms: since the actual element has no motion left at 500px / 250ms, it won&#8217;t ease-out at all. Animating `max-height` would work if duration was completely irrelevant and if the easing function was `linear`. But if you&#8217;ve deliberately chosen your durations & easing, this technique is out.
 
 ## Following content fills collapsed space
 
