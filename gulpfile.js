@@ -120,9 +120,7 @@ gulp.task('scripts', () => {
       gulp.src(scripts)
         .pipe($.plumber({ errorHandler: errorAlert }))
         .pipe($.concat(dir + '.js'))
-        .pipe($.babel({
-          presets: ['env']
-        }))
+        .pipe($.babel({}))
         // .pipe( isProd ? $.uglify() : $.util.noop() )
         .pipe(gulp.dest(paths.build.js))
         .pipe(reload({stream: true}))
