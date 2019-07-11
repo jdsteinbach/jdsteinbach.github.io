@@ -20,15 +20,19 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{{ meta_title }}" />
   <meta property="og:description" content="{{ meta_desc }}" />
-  <meta property="og:url" content="{{ site.url }}" />
+  <meta property="og:url" content="{{ page.url | abs_url: site.url }}" />
   <meta property="og:site_name" content="{{ site.title }}" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:description" content="{{ meta_desc }}" />
   <meta name="twitter:title" content="{{ meta_title }}" />
-  <meta name="twitter:domain" content="{{ site.url }}" />
+  <meta name="twitter:url" content="{{ page.url | abs_url: site.url }}" />
+  <meta name="twitter:site" content="@{{ site.twitter_username }}" />
+  <meta name="twitter:creator" content="@{{ site.twitter_username }}" />
+
+  <meta name="test-pagination" content="{{ pagination.pageNumber }}">
 
   <link rel="stylesheet" href="/styles/main.css" />
-  <link rel="canonical" href="{{ permalink | abs_url: site.url }}" itemprop="url" />
+  <link rel="canonical" href="{{ page.url | abs_url: site.url }}" itemprop="url" />
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | abs_url: site.url }}" />
   <link rel="alternate" type="application/json" title="{{ site.title }}" href="{{ "/jsonfeed" | abs_url: site.url }}" />
 
