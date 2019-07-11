@@ -33,7 +33,7 @@
     "gulp-load-plugins": "^2.0.0",
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.3.0",
+    "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.0",
     "gulp-sass-lint": "^1.4.0",
@@ -46,11 +46,6 @@
     "postcss-inline-svg": "^3.1.1",
     "push-dir": "^0.4.1"
   },
-  "browserslist": [
-    ">1%",
-    "ie > 10",
-    "not op_mini all"
-  ],
   "standard": {
     "globals": [
       "FormData",
