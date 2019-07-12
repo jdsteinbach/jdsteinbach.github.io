@@ -145,8 +145,6 @@ task('scripts', async () => {
         )
     })
   }
-
-  return
 })
 
 /**
