@@ -48,6 +48,12 @@
         "size": 2
       }
     ],
+    "quotes": [
+      1,
+      {
+        "style": "double"
+      }
+    ],
     "property-sort-order": [
       0,
       {}

@@ -9,7 +9,7 @@ $toggle-border: 2px;
   margin: 0 0 0 $tiny-spacing;
   padding: 0;
   position: relative;
-  background: rgba($color-link-dark, .5);
+  background: rgba($color-link-dark, .5); // sass-lint:disable-line no-color-literals
   border: $toggle-border solid transparent;
   border-radius: calc(#{$toggle-height / 2} + #{$toggle-border});
   transition: transform .15s ease-out, color .15s;
@@ -19,14 +19,14 @@ $toggle-border: 2px;
   appearance: none;
 
   @include haf {
-    background: rgba($color-link-dark, .5);
+    background: rgba($color-link-dark, .5); // sass-lint:disable-line no-color-literals
     opacity: .65;
   }
 
   &::before {
     @include use-prop(background-color, color-background);
     @include use-prop(background-image, toggle-icon);
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 0;

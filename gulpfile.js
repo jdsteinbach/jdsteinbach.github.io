@@ -14,11 +14,14 @@ const postcss = require('gulp-postcss')
 const prefix = require('autoprefixer')
 const cssnano = require('cssnano')
 const inlineSVG = require('postcss-inline-svg')
+const yargs = require('yargs')
+
+const { dest, series, src, task, watch } = gulp
 
 /**
  * Set up prod/dev tasks
  */
-const isProd = !($.util.env.dev)
+const isProd = !(yargs.env.dev)
 const pkg = require('./package.json')
 
 /**
@@ -70,21 +73,21 @@ function errorAlert (err) {
 /**
  * Clean the dist/dev directories
  */
-gulp.task('clean', () => del([
+task('clean', () => del([
   `${paths.build.root}/**/*`,
   `!${paths.build.root}/.git`
-  ]))
+]))
 
 /**
  * Build the markup
  */
-gulp.task('11ty', () => exec('npm run 11ty'))
+task('11ty', () => exec('npm run 11ty'))
 
 /**
  * Lints the gulpfile for errors
  */
-gulp.task('lint:gulpfile', () =>
-  gulp.src('gulpfile.js')
+task('lint:gulpfile', () =>
+  src('gulpfile.js')
     .pipe($.standard())
     .pipe($.standard.reporter('default', opts.standard))
 )
@@ -92,21 +95,31 @@ gulp.task('lint:gulpfile', () =>
 /**
  * Lints the source js files for errors
  */
-gulp.task('lint:src', () =>
-  gulp.src(paths.src.js + '**/*.js')
+task('lint:src', () =>
+  src(paths.src.js + '**/*.js')
     .pipe($.standard())
     .pipe($.standard.reporter('default', opts.standard))
 )
 
 /**
- * Lints all the js files for errors
+ * Lint the Sass
  */
-gulp.task('lint', ['lint:gulpfile', 'lint:src', 'lint:sass'])
+task('lint:sass', () =>
+  src(paths.src.css + '**/*.scss')
+    .pipe($.sassLint({}))
+    .pipe($.sassLint.format())
+    .pipe($.sassLint.failOnError())
+)
 
 /**
- * Concatenates, minifies and renames the source JS files for dist/dev
+ * Lints all the js files for errors
  */
-gulp.task('scripts', () => {
+task('lint', series('lint:gulpfile', 'lint:src', 'lint:sass', cb => cb()))
+
+/**
+ * Concatenates and minifies the source JS files for dist/dev
+ */
+task('scripts', async () => {
   var matches = glob.sync(paths.src.js + '*')
 
   if (matches.length) {
@@ -117,14 +130,11 @@ gulp.task('scripts', () => {
         paths.src.js + dir + '/**/*.js'
       ]
 
-      gulp.src(scripts)
+      src(scripts)
         .pipe($.plumber({ errorHandler: errorAlert }))
         .pipe($.concat(dir + '.js'))
-        .pipe($.babel({
-          presets: ['env']
-        }))
-        // .pipe( isProd ? $.uglify() : $.util.noop() )
-        .pipe(gulp.dest(paths.build.js))
+        .pipe($.babel({}))
+        .pipe(dest(paths.build.js))
         .pipe(reload({stream: true}))
         .on('error', errorAlert)
         .pipe(
@@ -135,28 +145,17 @@ gulp.task('scripts', () => {
         )
     })
   }
-
-  return
 })
 
 /**
  * Compiles and compresses the source Sass files for dist/dev
  */
-gulp.task('styles', () =>
-  gulp.src(paths.src.css + 'main.scss')
+task('styles', () =>
+  src(paths.src.css + 'main.scss')
     .pipe($.plumber({ errorHandler: errorAlert }))
     .pipe($.sass(opts.sass))
-    .on('error', err => {
-      $.util.PluginError(
-        'CSS',
-        err,
-        {
-          showStack: true
-        }
-      )
-    })
     .pipe(postcss(opts.postcss))
-    .pipe(gulp.dest(paths.build.css))
+    .pipe(dest(paths.build.css))
     .pipe(reload({stream: true}))
     .on('error', errorAlert)
     .pipe(
@@ -168,24 +167,14 @@ gulp.task('styles', () =>
 )
 
 /**
- * Lint the Sass
- */
-gulp.task('lint:sass', () =>
-  gulp.src(paths.src.css + '**/*.scss')
-    .pipe($.sassLint({}))
-    .pipe($.sassLint.format())
-    .pipe($.sassLint.failOnError())
-)
-
-/**
  * Builds for distribution (staging or production)
  */
-gulp.task('build', ['clean'], () => gulp.start(['11ty', 'styles', 'scripts']))
+task('build', series('clean', '11ty', 'styles', 'scripts', cb => cb()))
 
 /**
  * Builds assets and reloads the page when any php, html, img or dev files change
  */
-gulp.task('watch', ['build'], () => {
+task('watch', series('build', () => {
   browserSync.init({
     server: {
       baseDir: paths.build.root
@@ -193,18 +182,18 @@ gulp.task('watch', ['build'], () => {
     notify: true
   })
 
-  gulp.watch(`${paths.src.css}**/*`, ['styles'])
-  gulp.watch(`${paths.src.js}**/*`, ['scripts'])
-  gulp.watch(`${paths.src.html}**/*.{md,html,liquid,json}`, ['11ty'])
-  gulp.watch(`${paths.build}**/*.html`).on('change', reload)
-})
+  watch(`${paths.src.css}**/*`, series('styles'))
+  watch(`${paths.src.js}**/*`, series('scripts'))
+  watch(`${paths.src.html}**/*.{md,html,liquid,json}`, series('11ty'))
+  watch(`${paths.build}**/*.html`).on('change', reload)
+}))
 
 /**
  * Deploy to Github Pages
  */
-gulp.task('deploy', () => exec('npm run deploy'))
+task('deploy', () => exec('npm run deploy'))
 
 /**
  * Backup default task just triggers a build
  */
-gulp.task('default', ['build'])
+task('default', series('build', cb => cb()))

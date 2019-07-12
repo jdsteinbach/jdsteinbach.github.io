@@ -4,7 +4,7 @@
     $pos: if($start-small, $pos - 1, $pos);
     @return power($base-font-scale, $pos - 1);
   } @else {
-    @warn '`$label` must be in `$font-sizes` - `#{$label}` is not.';
+    @warn "`$label` must be in `$font-sizes` - `#{$label}` is not.";
     @return null;
   }
 }

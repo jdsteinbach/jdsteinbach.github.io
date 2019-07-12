@@ -5,14 +5,13 @@ const pluginTOC = require('eleventy-plugin-toc')
 
 const formatDate = date => DateTime.fromJSDate(new Date(date)).toISO({includeOffset: true, suppressMilliseconds: true})
 
-module.exports = function (eleventyConfig) {
+module.exports = eleventyConfig => {
   eleventyConfig.addPlugin(pluginSyntaxHighlight)
   eleventyConfig.addPlugin(pluginTOC)
 
   eleventyConfig.addLayoutAlias('post', 'layouts/post.liquid')
   eleventyConfig.addLayoutAlias('page', 'layouts/page.liquid')
   eleventyConfig.addLayoutAlias('category', 'layouts/category.liquid')
-  eleventyConfig.addLayoutAlias('home', 'layouts/home.liquid')
   eleventyConfig.addLayoutAlias('blog', 'layouts/blog.liquid')
   eleventyConfig.addLayoutAlias('feed', 'layouts/feed.liquid')
 
@@ -20,9 +19,9 @@ module.exports = function (eleventyConfig) {
     return titleString.length % 5 + 1
   })
 
-  eleventyConfig.addFilter('paginate_better', id => id + 1)
+  eleventyConfig.addFilter('paginate_better', id => (id > 0) ? `page${id + 1}` : '')
 
-  eleventyConfig.addFilter('fix_links', url => url.replace('/index.html', '/'))
+  eleventyConfig.addFilter('fix_links', url => url.replace('/index.html', ''))
 
   eleventyConfig.addFilter('debug', something => typeof something)
 
