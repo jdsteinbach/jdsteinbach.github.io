@@ -27,7 +27,7 @@ JS is fine and good, but I&#8217;m looking for a way to do with with just CSS.
 
 This is a tricky one. Basically I&#8217;m asking CSS to transition between `height: 0;` and `height: auto;`. But it currently can&#8217;t.
 
-If all my elements were a fixed height, I could easily transition betweeen `` and that height, but I want a technique that works without fixing the element&#8217;s height in advance.
+If all my elements were a fixed height, I could easily transition betweeen `height: 0` and that height, but I want a technique that works without fixing the element&#8217;s height in advance.
 
 ## Maintains proper easing and timing
 
@@ -43,7 +43,7 @@ One method I&#8217;ve seen suggested is transitioning the `max-height` of the el
 }
 ```
 
-If an `.expandable` element is only 500px, its visible transition will finish in 250ms (not 500ms) because the transition calculates 1000px of motion over 500ms. The easing function will also be broken: the easing curve is also spread out over 1000px / 500ms: since the actual element has no motion left at 500px / 250ms, it won&#8217;t ease-out at all. Animating `max-height` would work if duration was completely irrelevant and if the easing easing function was `linear`. But if you&#8217;ve deliberately chosen your durations & easing, this technique is out.
+If an `.expandable` element is only 500px, its visible transition will finish in 250ms (not 500ms) because the transition calculates 1000px of motion over 500ms. The easing function will also be broken: the easing curve is also spread out over 1000px / 500ms: since the actual element has no motion left at 500px / 250ms, it won&#8217;t ease-out at all. Animating `max-height` would work if duration was completely irrelevant and if the easing function was `linear`. But if you&#8217;ve deliberately chosen your durations & easing, this technique is out.
 
 ## Following content fills collapsed space
 

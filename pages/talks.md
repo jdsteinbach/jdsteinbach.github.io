@@ -10,6 +10,8 @@ excerpt: James is an experienced teacher and speaker. He has spoken at conferenc
 
 I enjoy writing here on the blog, but I really love speaking with real audiences about front-end development techniques I’m passionate about. Here is a list of talks I’ve given in the past. Please [contact me](/contact/) if you’d like me to speak at an event or meet-up you run. Thanks!
 
+* [A Practical Introduction to CSS Grid](https://jdsteinbach.com/intro-css-grid/#/)
+* [Little Known CSS Basics: Grid](https://jdsteinbach.com/css-basics-grid/#/)
 * [Little Known CSS Basics: Flexbox](https://jdsteinbach.com/css-basics-flexbox/#/)
 * [Little Known CSS Basics: Animation](https://jdsteinbach.com/css-basics-animation/#/)
 * [Little Known CSS Basics: Typography](https://jdsteinbach.com/css-basics-typography/#/)
