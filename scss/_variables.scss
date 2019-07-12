@@ -83,7 +83,7 @@ $root-vars: (
   font-headline: var(--font-body),
   font-code: unquote("Mono, monospace"),
 
-  toggle-icon: svg-load('icons/theme.svg', fill=#{rgba($color-link, .65)})
+  toggle-icon: svg-load("icons/theme.svg", fill=#{rgba($color-link, .65)})
 );
 
 
@@ -112,7 +112,7 @@ $dark-vars: (
   color-background-alt: rgba(custom-invert($color-gray-dark), .15),
   color-background-code: custom-invert($color-gray),
 
-  toggle-icon: svg-load('icons/theme.svg', fill=#{rgba($color-gray-pale, .75)})
+  toggle-icon: svg-load("icons/theme.svg", fill=#{rgba($color-gray-pale, .75)})
 );
 
 
@@ -134,7 +134,7 @@ $xlarge-vars: (
 }
 
 @each $name, $prop in $dark-vars {
-  @include set-prop($name, $prop, '.theme-dark');
+  @include set-prop($name, $prop, ".theme-dark");
 }
 
 

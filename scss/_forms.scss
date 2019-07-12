@@ -1,4 +1,4 @@
-[id='mc_embed_signup_scroll'] {
+[id="mc_embed_signup_scroll"] {
   border-bottom: $border-default;
   margin-top: 0;
   margin-bottom: $base-spacing;
@@ -6,13 +6,13 @@
 
   &::after {
     clear: both;
-    content: '';
+    content: "";
     display: block;
     height: 0;
   }
 }
 
-[id='contact-form'] {
+[id="contact-form"] {
   margin-top: 0;
   margin-bottom: $base-spacing;
   padding-top: $base-spacing;
@@ -90,7 +90,7 @@
   width: 50%;
   flex: 1 1 auto;
 
-  &[class*='email'] {
+  &[class*="email"] {
     margin-bottom: $base-spacing;
     width: 100%;
 
@@ -108,7 +108,7 @@
   @include breakpoint(large) {
     width: 25%;
 
-    &[class*='email'] {
+    &[class*="email"] {
       width: 50%;
     }
   }
@@ -149,10 +149,10 @@ textarea {
   }
 }
 
-[type='submit'] {
+[type="submit"] {
   margin: auto 0 $base-spacing;
 
-  [id='mc_embed_signup'] & {
+  [id="mc_embed_signup"] & {
     width: 100%;
     box-shadow: 1px 1px 0 0 $border-color, 2px 2px 0 0 $border-color, 3px 3px 0 0 $border-color;
 
@@ -162,7 +162,7 @@ textarea {
     }
   }
 
-  &[id='contact-form-submit'] {
+  &[id="contact-form-submit"] {
     display: block;
     margin-left: auto;
     margin-right: 0;
@@ -203,7 +203,7 @@ textarea {
 }
 
 // Mailchimp archive styles
-[id='mailchimp-archive'] {
+[id="mailchimp-archive"] {
   @include font-scale(p);
   border-top: $border-default;
   margin-top: $base-spacing;

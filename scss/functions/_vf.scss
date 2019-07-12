@@ -18,7 +18,7 @@ $vf-options: (
 
 @function vf($weight: normal) {
   @if not map-has-key($vf-options, $weight) {
-    @warn 'The `vf()` mixin requires a valid `$weight`.';
+    @warn "The `vf()` mixin requires a valid `$weight`.";
   } @else {
     $vf-settings: map-get($vf-options, $weight);
     $output: ();

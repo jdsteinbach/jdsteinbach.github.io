@@ -6,7 +6,7 @@ body {
 
   font-kerning: normal;
   font-variant-ligatures: common-ligatures contextual;
-  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  font-feature-settings: "kern", "liga", "clig", "calt";
   font-variation-settings: vf(normal);
   scroll-behavior: smooth;
 }
@@ -179,7 +179,7 @@ em {
 }
 
 .hidden {
-  position: absolute !important;
+  position: absolute !important; // sass-lint:disable-line no-important
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
 }
