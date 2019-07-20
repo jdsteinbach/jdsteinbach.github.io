@@ -1,3 +1,6 @@
+// Let the DOM know the browser has JS
+document.body.classList.add('js')
+
 // Control form fields
 const formBoxes = document.querySelectorAll('.mc-field-group, .field-group')
 
@@ -19,8 +22,8 @@ for (let box of formBoxes) {
   formInput.addEventListener('blur', e => deactivateField(e.target))
 }
 
-// Ajax Form Submission
-const ajaxForm = ({id, responseID, fieldIDs, successMsg, failMsg}) => {
+// Fetch-based Form Submission
+const fetchForm = ({id, responseID, fieldIDs, successMsg, failMsg}) => {
   const contactForm = document.getElementById(id)
 
   if (contactForm !== null && window.fetch !== undefined) {
@@ -66,7 +69,7 @@ const ajaxForm = ({id, responseID, fieldIDs, successMsg, failMsg}) => {
   }
 }
 
-ajaxForm({
+fetchForm({
   id: 'contact-form',
   responseID: 'form-message',
   fieldIDs: ['name', 'email', 'message'],
@@ -74,7 +77,7 @@ ajaxForm({
   failMsg: 'Sorry, an error occurred and your message could not be sent.'
 })
 
-ajaxForm({
+fetchForm({
   id: 'mc-embedded-subscribe-form',
   responseID: 'mc_embed_signup_scroll',
   fieldIDs: [],

@@ -4,7 +4,7 @@ h5.post-toc__title { // sass-lint:disable-line no-qualifying-elements
   position: relative;
   font-variation-settings: vf(bold);
 
-  &::after {
+  .js &::after {
     padding: 0 1ch;
     content: "▾";
     display: inline-block;
@@ -20,25 +20,6 @@ h5.post-toc__title { // sass-lint:disable-line no-qualifying-elements
 .toc {
   // sass-lint:disable-block no-color-literals
   @include use-prop(background-color, color-background-page);
-  padding: 0 $small-spacing $base-spacing + $small-spacing;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  left: 0;
-  opacity: 0;
-  mask-image: linear-gradient(
-    0deg,
-    rgba($color-white, 0) 0,
-    rgba($color-white, 1) $base-spacing
-  );
-  transform-origin: top center;
-  transform: scaleY(0);
-  transition: opacity .25s, transform .25s ease-in-out;
-
-  [aria-hidden="false"] & {
-    opacity: 1;
-    transform: scaleY(1);
-  }
 
   a {
     @include font-scale(sm);
@@ -68,6 +49,29 @@ h5.post-toc__title { // sass-lint:disable-line no-qualifying-elements
   li {
     margin-left: $tiny-spacing;
   }
+
+  .js & {
+    padding: 0 $small-spacing $base-spacing + $small-spacing;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    mask-image: linear-gradient(
+      0deg,
+      rgba($color-white, 0) 0,
+      rgba($color-white, 1) $base-spacing
+    );
+    transform-origin: top center;
+    transform: scaleY(0);
+    transition: opacity .25s, transform .25s ease-in-out;
+  }
+
+  .js [aria-hidden="false"] & {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
 
   @supports (backdrop-filter: blur(3px)) {
     @include use-prop(background-color, color-background-fade);
