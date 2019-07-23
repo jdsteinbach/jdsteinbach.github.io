@@ -77,7 +77,7 @@ categories:
 }
 </style>
 
-<p>You may be familiar with the trick of using <code>padding-top: X%</code> + background-image to create a box whose size (and contained media) is controlled by an aspect ratio. If not, <a href="http://alistapart.com/d/creating-intrinsic-ratios-for-video/example2.html" target="_blank">read this</a>.</p>
+<p>You may be familiar with the trick of using <code>padding-top: X%</code> + background-image to create a box whose size (and contained media) is controlled by an aspect ratio. If not, <a href="https://alistapart.com/article/creating-intrinsic-ratios-for-video/" target="_blank">read this</a>.</p>
 <p>The two rows below show this trick in action. In the first row, the 2-col layout is controlled by %-width and float. It behaves as expected in modern browsers. The downside, of course, is that the column heights don't line up.</p>
 <div class="parent">
   <div class="child">

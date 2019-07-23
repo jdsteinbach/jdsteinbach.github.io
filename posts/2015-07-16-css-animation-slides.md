@@ -6,6 +6,6 @@ permalink: /css/ui-animations/
 categories:
   - CSS
 format: link
-outbound_url: /css-animation/
+outbound_url: https://jdsteinbach.com/css-animation/
 ---
 Check out my slide deck &#8220;<a href="/css-animation/" title="Planning & Implementing Meaningful UI Animations" target="_blank">Planning &amp; Implementing Meaningful UI Animations</a>&#8221; for a helpful introduction to CSS animation.

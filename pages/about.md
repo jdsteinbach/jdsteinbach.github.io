@@ -15,6 +15,6 @@ I don&#8217;t just like building sites, I love sharing the things I&#8217;m lear
 
  [1]: http://audreysteinbach.com/ "Audrey Steinbach"
  [2]: http://babysteinbach.com/ "Baby Steinbach"
- [3]: http://codepen.io/jdsteinbach/ "James Steinbach: CodePen Profile"
- [4]: /blog/ "Read web design / development articles I've written!"
+ [3]: https://codepen.io/jdsteinbach/# "James Steinbach: CodePen Profile"
+ [4]: / "Read web design / development articles I've written!"
  [5]: /contact/ "Send me an email if I can help you with training, a talk, or guest-blogging."

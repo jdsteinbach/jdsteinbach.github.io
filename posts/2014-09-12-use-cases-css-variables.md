@@ -8,7 +8,7 @@ categories:
 codepen: true
 ---
 
-_Published September 12, 2014; updated April 16, 2018: updated browser support &amp; changed most instances of "CSS variables" to "custom properties"_
+_Published September 12, 2014; updated April 16, 2018: updated browser support & changed most instances of "CSS variables" to "custom properties"_
 
 It&#8217;s time to start exploring use cases for CSS <span style="text-decoration:line-through">variables</span> custom properties, now that <span style="text-decoration:line-through">Firefox</span> <a title="CSS Variable data on Can I Use" href="http://caniuse.com/#feat=css-variables" target="_blank">Firefox, Chrome, Safari, and Edge support them</a>. That means that <span style="text-decoration:line-through">this post & all the embedded pens will only work in Firefox</span> **this post & all the embedded pens will work almost everywhere but IE**.
 
@@ -70,7 +70,7 @@ aside {
 
 ### SVGs
 
-Inline SVG images can be styled with CSS: custom properties can change SVG colors based on context. Amelia Bellamy-Royds has already written a <a title="CSS Variables and SVGs" href="http://codepen.io/AmeliaBR/thoughts/customizable-svg-icons-css-variables" target="_blank">great CodePen blog post on SVGs and CSS variables</a>, so I&#8217;ll just link you to it and let her explain how it works.
+Inline SVG images can be styled with CSS: custom properties can change SVG colors based on context. Amelia Bellamy-Royds has already written a [great CodePen blog post on SVGs and CSS variables](https://codepen.io/AmeliaBR/post/customizable-svg-icons-css-variables), so I&#8217;ll just link you to it and let her explain how it works.
 
 ### Grid Layouts
 
@@ -167,4 +167,4 @@ function change_vars(){
 
 So many good uses, and we&#8217;re barely getting started… Use the comments to ask follow-up questions or share your ideas for using CSS custom properties (variables).
 
-You can see all these <a title="CSS Variables: CodePen Demo" href="http://codepen.io/jdsteinbach/pen/AeEwk" target="_blank">CSS Variable use cases in a single CodePen</a> here.
+You can see all these [CSS Variable use cases in a single CodePen](https://codepen.io/jdsteinbach/pen/AeEwk) here.

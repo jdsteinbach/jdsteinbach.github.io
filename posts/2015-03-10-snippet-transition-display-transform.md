@@ -34,4 +34,4 @@ I use the first percent of the animation to change the `display` value, then the
 
 Check out the difference in this Pen:
 
-<p data-height="268" data-theme-id="0" data-slug-hash="MYPgPp" data-default-tab="result" data-user="jdsteinbach" class='codepen'>See the Pen <a href='http://codepen.io/jdsteinbach/pen/MYPgPp/'>MYPgPp</a> by James Steinbach (<a href='http://codepen.io/jdsteinbach'>@jdsteinbach</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="268" data-theme-id="0" data-slug-hash="MYPgPp" data-default-tab="result" data-user="jdsteinbach" class='codepen'>See the Pen <a href='https://codepen.io/jdsteinbach/pen/MYPgPp/'>MYPgPp</a> by James Steinbach (<a href='https://codepen.io/jdsteinbach'>@jdsteinbach</a>) on <a href='https://codepen.io'>CodePen</a>.</p>

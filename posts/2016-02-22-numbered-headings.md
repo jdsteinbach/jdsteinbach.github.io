@@ -62,6 +62,6 @@ For the 2nd level of numbered headings, we&#8217;ll need to reset that counter e
 
 With the CSS we&#8217;ve just generated, we&#8217;ve attached an A, B, C numbering system to all `h2` elements in the page, and a 1, 2, 3 numbering system to all `h3` elements in the page. This system doesn&#8217;t care what else you&#8217;ve got in your page: any paragraphs, blockquotes, other heading levels, images, etc &ndash; none of that affects this CSS&#8217;s ability to number `h2` and `h3` elements sequentially.
 
-You can see this code in action on [this CodePen](http://codepen.io/jdsteinbach/pen/vLqwjB).
+You can see this code in action on [this CodePen](https://codepen.io/jdsteinbach/pen/vLqwjB).
 
-<p data-height="268" data-theme-id="0" data-slug-hash="vLqwjB" data-default-tab="result" data-user="jdsteinbach" class='codepen'>See the Pen <a href='http://codepen.io/jdsteinbach/pen/vLqwjB/'>Sass / CSS for Numbered Document Headings</a> by James Steinbach (<a href='http://codepen.io/jdsteinbach'>@jdsteinbach</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="268" data-theme-id="0" data-slug-hash="vLqwjB" data-default-tab="result" data-user="jdsteinbach" class='codepen'>See the Pen <a href='https://codepen.io/jdsteinbach/pen/vLqwjB/'>Sass / CSS for Numbered Document Headings</a> by James Steinbach (<a href='https://codepen.io/jdsteinbach'>@jdsteinbach</a>) on <a href='https://codepen.io'>CodePen</a>.</p>

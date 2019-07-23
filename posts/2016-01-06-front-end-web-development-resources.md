@@ -165,9 +165,9 @@ $29/mo; $149/yr. Screencast videos, PDFs and courses. Topics include: HTML+CSS, 
 
 Priced per course. At the time of writing, their [Sass course](https://www.drawar.com/web/course/sass) was free. They also have an iOS design course.
 
-### [Lynda](http://www.lynda.com/default.aspx)
+### [Lynda](https://www.lynda.com/)
 
-$25/mo; $250/yr. Video courses on just about any part of web development imaginable.
+$30/mo; $300/yr. Video courses on just about any part of web development imaginable.
 
 ### [The Lodge](https://css-tricks.com/lodge/) (CSS Tricks)
 
@@ -175,9 +175,9 @@ $13/mo to stream, $20/mo to download. Four very practical courses: Mobile-First 
 
 ## Podcasts
 
-Sorry, I don't listen to many podcasts. Here are the ones I do subscribe to:
+Sorry, I don't listen to many dev podcasts. Here are the ones I do occasionally listen to:
 
-### [ShopTalk](http://shoptalkshow.com/)*
+### [ShopTalk](http://shoptalkshow.com/)
 
 [Chris Coyier](http://chriscoyier.net/) & [Dave Rupert](http://daverupert.com/) talk about web development with guests. There are also jokes.
 
@@ -185,9 +185,17 @@ Sorry, I don't listen to many podcasts. Here are the ones I do subscribe to:
 
 [Karen McGrane](http://responsivewebdesign.com/about/#bio-mcgrane) & [Ethan Marcotte](http://responsivewebdesign.com/about/#bio-marcotte) interview guests on RWD-related front-end topics.
 
+### [Toolsday](https://spec.fm/podcasts/toolsday)
+
+[Una Kravets](http://twitter.com/una) and [Chris Dhanaraj](https://twitter.com/chrisdhanaraj) host a podcast highlighting "the latest in tech tools, tips, and tricks."
+
+### [Syntax](https://syntax.fm)
+
+[Wes Bos](http://twitter.com/wesbos) and [Scott Tolinkski](https://twitter.com/stolinski) hosts a podcast with tasty treats for web developers.
+
 ### [The Web Ahead](http://5by5.tv/webahead)
 
-[Jen Simmons](http://twitter.com/jensimmons) hosts a podcast to help you keep up with the future of web development.
+[Jen Simmons](http://twitter.com/jensimmons) hosts a podcast to help you keep up with the future of web development. There haven't been new episodes for 3 years, but lots of the content is still quite relevant.
 
 ## Books
 
