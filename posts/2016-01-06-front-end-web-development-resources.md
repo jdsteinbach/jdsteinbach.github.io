@@ -187,7 +187,7 @@ Sorry, I don't listen to many podcasts. Here are the ones I do subscribe to:
 
 ### [The Web Ahead](http://5by5.tv/webahead)
 
-[Jen Simmons])(http://twitter.com/jensimmons) hosts a podcast to help you keep up with the future of web development.
+[Jen Simmons](http://twitter.com/jensimmons) hosts a podcast to help you keep up with the future of web development.
 
 ## Books
 
