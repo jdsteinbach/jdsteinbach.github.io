@@ -1,0 +1,19 @@
+a {
+  @include use-prop(color, color-link);
+  text-decoration: none;
+  position: relative;
+  transition: color .25s, text-decoration-color .25s, background-color .25s, opacity .25s, border .25s, transform .25s $easing;
+
+  @include haf {
+    @include use-prop(color, color-link-alt);
+  }
+
+  .post-content & {
+    text-decoration: underline;
+
+    @include haf {
+      @include use-prop(text-decoration-color, color-highlight);
+      @include use-prop(background-color, color-highlight-pale);
+    }
+  }
+}

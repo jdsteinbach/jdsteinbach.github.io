@@ -30,7 +30,7 @@
   }
 }
 
-.footer-col {
+.site-footer__col {
   margin-bottom: $base-spacing;
 
   &,
@@ -51,4 +51,12 @@
     margin-bottom: 0;
     width: 33%;
   }
+}
+
+.site-footer__title {
+  @include font-scale(blockquote);
+  margin-top: $small-spacing;
+  margin-bottom: $base-spacing;
+  text-align: center;
+  text-shadow: 1px 1px 0 $color-blue-dark, 2px 2px 0 $color-blue-dark, 3px 3px 0 $color-blue-dark, 4px 4px 0 $color-blue-dark;
 }

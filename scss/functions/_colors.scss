@@ -1,0 +1,10 @@
+@function custom-darken($color, $dark: $color-black) {
+  @return mix($color, $dark, 80%);
+}
+
+@function custom-invert($color) {
+  $hue: hue($color);
+  $saturation: saturation($color);
+  $lightness: 100 - lightness($color);
+  @return hsl($hue, $saturation, $lightness);
+}

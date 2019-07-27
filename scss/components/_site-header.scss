@@ -21,7 +21,7 @@
   }
 }
 
-.site-title {
+.site-header__title {
   @include font-scale(p);
   @include use-prop(font-family, font-headline);
   display: inline-block;

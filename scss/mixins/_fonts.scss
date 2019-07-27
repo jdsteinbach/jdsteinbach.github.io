@@ -16,9 +16,3 @@
     font-style: $style;
   }
 }
-
-@include fonts(Plex Mono, plex-mono, normal, normal);
-@include fonts(Plex Mono, plex-mono-italic, italic, normal);
-
-@include v-fonts(Plex VF, "plex-sans-v.woff2", normal, woff2);
-@include v-fonts(Plex VF, "plex-sans-v-italic.woff2", italic, woff2);

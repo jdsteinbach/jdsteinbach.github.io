@@ -1,16 +1,18 @@
 {% include before %}
 <div class="home inner-wrapper">
-  <div class="post-header">
+  <header class="hero">
     {% include header-image %}
-    <h1 class="post-title">{{ title }}</h1>
-  </div>
+    <h1 class="hero__title">{{ title }}</h1>
+  </header>
+
   <div class="white-sheet">
     {% if pagination.items %}
-      <ul class="post-list">
+      <ul class="posts-archive">
         {% for post in pagination.items %}
-          {% include excerpt %}
+          {% include archive-item %}
         {% endfor %}
       </ul>
+
       <div class="pagination">
         {% if pagination.previousPageLink %}
           <a href="{{ pagination.previousPageLink | fix_links }}" class="previous">Previous</a>

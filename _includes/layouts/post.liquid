@@ -1,9 +1,9 @@
 {% include before %}
   <article class="post inner-wrapper" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="post-header">
+    <header class="hero">
       {% include header-image %}
-      <h1 class="post-title" itemprop="name title headline">{{ title }}</h1>
-      <p class="post-meta">
+      <h1 class="hero__title" itemprop="name title headline">{{ title }}</h1>
+      <p class="hero__meta">
         {%- if page.date %}
           <time class="date" datetime={{ page.date }} itemprop="dateCreated pubdate datePublished">{{ page.date | date: "%B %e, %Y" }}</time>
         {%- endif %}

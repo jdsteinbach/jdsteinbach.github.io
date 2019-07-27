@@ -1,15 +1,4 @@
 // COLORS
-@function custom-darken($color, $dark: $color-black) {
-  @return mix($color, $dark, 80%);
-}
-
-@function custom-invert($color) {
-  $hue: hue($color);
-  $saturation: saturation($color);
-  $lightness: 100 - lightness($color);
-  @return hsl($hue, $saturation, $lightness);
-}
-
 $color-white: #FFF;
 $color-black: #000;
 
@@ -86,7 +75,6 @@ $root-vars: (
   toggle-icon: svg-load("icons/theme.svg", fill=#{rgba($color-link, .65)})
 );
 
-
 $dark-vars: (
   color-text: custom-invert($color-gray),
   color-text-alt: custom-invert($color-gray-dark),
@@ -115,7 +103,6 @@ $dark-vars: (
   toggle-icon: svg-load("icons/theme.svg", fill=#{rgba($color-gray-pale, .75)})
 );
 
-
 $medium-vars: (
   fs-body: (21rem / 16)
 );
@@ -128,7 +115,6 @@ $xlarge-vars: (
   fs-body: (27rem / 16)
 );
 
-
 @each $name, $prop in $root-vars {
   @include set-prop($name, $prop);
 }
@@ -137,12 +123,10 @@ $xlarge-vars: (
   @include set-prop($name, $prop, ".theme-dark");
 }
 
-
 // BORDERS
 $border-color: $color-blue;
 $border-default: 1px solid $border-color;
 $border-radius-default: 0;
-
 
 // TYPE
 $font-sizes: sm p blockquote subtitle title hero;
@@ -161,7 +145,6 @@ $large-spacing: $base-spacing * 2;
 $giant-spacing: $base-spacing * 4;
 $small-spacing: $base-spacing / 2;
 $tiny-spacing: $base-spacing / 4;
-
 
 // LAYOUT
 $max-width: 50em;

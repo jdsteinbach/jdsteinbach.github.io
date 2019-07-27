@@ -65,32 +65,6 @@ h5 {
   }
 }
 
-.page-heading,
-.post-title {
-  @include use-prop(color, color-page-title);
-  @include font-scale(hero);
-  letter-spacing: (1em / 16);
-  margin: $base-spacing auto;
-  max-width: $max-width / power($base-font-scale, 5);
-  text-align: center;
-  text-transform: uppercase;
-  font-variation-settings: vf(bold), "wdth" 85;
-  text-shadow: 1px 1px 0 $color-blue-dark, 2px 2px 0 $color-blue-dark, 3px 3px 0 $color-blue-dark, 4px 4px 0 $color-blue-dark;
-  -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
-
-  @include bp(medium) {
-    font-variation-settings: vf(bold), "wdth" 100;
-  }
-}
-
-.footer-title {
-  @include font-scale(blockquote);
-  margin-top: $small-spacing;
-  margin-bottom: $base-spacing;
-  text-align: center;
-  text-shadow: 1px 1px 0 $color-blue-dark, 2px 2px 0 $color-blue-dark, 3px 3px 0 $color-blue-dark, 4px 4px 0 $color-blue-dark;
-}
-
 p {
   @include font-scale(p);
   margin-bottom: $base-spacing;
@@ -98,13 +72,6 @@ p {
   &:empty {
     margin-bottom: 0;
   }
-}
-
-.outbound-link,
-.post-link {
-  @include font-scale(blockquote);
-  @include use-prop(font-family, font-headline);
-  display: block;
 }
 
 b,

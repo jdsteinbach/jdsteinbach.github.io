@@ -1,0 +1,84 @@
+.hero {
+  @include use-prop(background-color, color-background-svg);
+  padding: $large-spacing $base-spacing;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  width: 100vw;
+
+  > svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  > svg:first-child + *,
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.hero__title {
+  @include use-prop(color, color-page-title);
+  @include font-scale(hero);
+  letter-spacing: (1em / 16);
+  margin: $base-spacing auto;
+  max-width: $max-width / power($base-font-scale, 5);
+  text-align: center;
+  text-transform: uppercase;
+  font-variation-settings: vf(bold), "wdth" 85;
+  text-shadow: 1px 1px 0 $color-blue-dark, 2px 2px 0 $color-blue-dark, 3px 3px 0 $color-blue-dark, 4px 4px 0 $color-blue-dark;
+  -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
+
+  @include bp(medium) {
+    font-variation-settings: vf(bold), "wdth" 100;
+  }
+}
+
+
+.hero__meta {
+  @include font-scale(sm);
+  @include use-prop(color, color-text);
+  margin-bottom: $base-spacing;
+
+  .hero & {
+    @include use-prop(color, color-page-title);
+    text-align: center;
+  }
+
+  .categories {
+    text-transform: lowercase;
+  }
+
+  .author {
+    font-style: italic;
+
+    &::before,
+    &::after {
+      content: " ~ ";
+      alt: "";
+    }
+  }
+
+  a {
+    color: $color-link-dark;
+
+    @include haf {
+      color: $color-link-dark-alt;
+    }
+  }
+}

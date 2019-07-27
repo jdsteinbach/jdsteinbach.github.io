@@ -3,12 +3,12 @@
     {% include subscribe %}
   </div>
   <div class="wrapper">
-    <div class="footer-col-wrapper">
-    <div class="footer-col footer-col-1">
+    <div class="site-footer__col-wrapper">
+    <div class="site-footer__col site-footer__col-1">
         <p>{{ site.author_name }}</p>
         <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
       </div>
-      <div class="footer-col footer-col-2">
+      <div class="site-footer__col site-footer__col-2">
         {%- if site.github_username %}
           <p>
             <a href="https://github.com/{{ site.github_username }}">
@@ -30,7 +30,7 @@
           </p>
         {%- endif %}
       </div>
-      <div class="footer-col footer-col-3">
+      <div class="site-footer__col site-footer__col-3">
         <p class="text">{{ site.description }}</p>
       </div>
     </div>

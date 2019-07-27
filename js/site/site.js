@@ -86,7 +86,7 @@ fetchForm({
 })
 
 if ('localStorage' in window) {
-  const container = document.getElementById('site-nav')
+  const container = document.getElementById('header-nav')
   const toggle = document.createElement('button')
   toggle.setAttribute('type', 'button')
 
