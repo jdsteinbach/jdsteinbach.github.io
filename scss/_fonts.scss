@@ -17,11 +17,8 @@
   }
 }
 
-@include fonts(Mono, mono-regular, normal, normal);
-@include fonts(Mono, mono-italic, italic, normal);
-@include fonts(Mono, mono-bold, normal, bold);
-@include fonts(Mono, mono-bolditalic, italic, bold);
+@include fonts(Plex Mono, plex-mono, normal, normal);
+@include fonts(Plex Mono, plex-mono-italic, italic, normal);
 
-@include v-fonts(Mono VF, "mono-v.ttf", normal, truetype);
-@include v-fonts(Mono VF, "mono-v-italic.ttf", italic, truetype);
-@include v-fonts(Venn VF, "venn-v.woff2", normal, woff2);
+@include v-fonts(Plex VF, "plex-sans-v.woff2", normal, woff2);
+@include v-fonts(Plex VF, "plex-sans-v-italic.woff2", italic, woff2);

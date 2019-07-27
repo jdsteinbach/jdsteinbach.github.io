@@ -4,7 +4,7 @@ author: James Steinbach
 layout: post
 permalink: /misc/work-life-balance-dockyard/
 categories:
-  - CSS
+  - Misc
 format: link
 outbound_url: https://dockyard.com/blog/2018/06/21/work-life-balance-at-dockyard
 ---

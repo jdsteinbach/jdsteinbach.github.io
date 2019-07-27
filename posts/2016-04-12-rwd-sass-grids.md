@@ -12,7 +12,7 @@ This is the fourth post in a series based on my recent RWD Summit talk “Keepin
 
 ## Grids and Columns
 
-Another big piece of responsive desig is grids. Well, columns. Always cracks me up at CSS/Sass "grid systems" that only create columns and become painfully complex when you try to use them for an actual "grid." (Shout out to Susy for Sass with its `gallery()` mixin!) But I digress. We almost always have some kind of column-based layout that changes proportions. What's the best way to handle that?
+Another big piece of responsive design is grids. Well, columns. I'm amused at CSS/Sass "grid systems" that only create _columns_ and become painfully complex when you try to use them for an actual _grid_. (Shout out to Susy for Sass with its `gallery()` mixin!) But I digress. We almost always have some kind of column-based layout that changes proportions. What's the best way to handle that?
 
 Let's quickly nix a bad way to handle that: writing some Sass to generate every possible grid proportion for your project to a set of utility classes. Basically a Sass partial that makes your own "Bootstrap" class system.
 
