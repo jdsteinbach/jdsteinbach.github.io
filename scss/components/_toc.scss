@@ -1,4 +1,18 @@
-h5.post-toc__title { // sass-lint:disable-line no-qualifying-elements
+.post-toc {
+  .js & {
+    padding: 0 $small-spacing;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    @include bp(large) {
+      padding: 0 $base-spacing;
+    }
+  }
+}
+
+.post-toc .post-toc__title { // Increase specificity for title
   margin: $small-spacing 0;
   padding-top: $small-spacing;
   position: relative;
@@ -17,8 +31,10 @@ h5.post-toc__title { // sass-lint:disable-line no-qualifying-elements
   }
 }
 
+// BEM Exception: generated TOC component does not have classes
 .toc {
-  // sass-lint:disable-block no-color-literals
+  $transparent-white: rgba($color-white, 0);
+
   @include use-prop(background-color, color-background-page);
 
   a {
@@ -59,8 +75,8 @@ h5.post-toc__title { // sass-lint:disable-line no-qualifying-elements
     opacity: 0;
     mask-image: linear-gradient(
       0deg,
-      rgba($color-white, 0) 0,
-      rgba($color-white, 1) $base-spacing
+      $transparent-white 0,
+      $color-white $base-spacing
     );
     transform-origin: top center;
     transform: scaleY(0);

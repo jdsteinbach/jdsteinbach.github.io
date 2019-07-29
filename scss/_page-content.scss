@@ -6,17 +6,3 @@ $max-width-modified: ($max-width / 6 * 4);
     padding-top: $large-spacing + $small-spacing;
   }
 }
-
-.post-toc {
-  .js & {
-    padding: 0 $small-spacing;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    @include bp(large) {
-      padding: 0 $base-spacing;
-    }
-  }
-}
