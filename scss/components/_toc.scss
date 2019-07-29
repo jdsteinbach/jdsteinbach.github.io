@@ -1,13 +1,13 @@
 .post-toc {
   .js & {
-    padding: 0 $small-spacing;
+    padding: 0;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
 
     @include bp(large) {
-      padding: 0 $base-spacing;
+      // padding: 0 $base-spacing;
     }
   }
 }

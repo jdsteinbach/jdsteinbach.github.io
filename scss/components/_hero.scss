@@ -2,9 +2,6 @@
   @include use-prop(background-color, color-background-svg);
   padding: $large-spacing $base-spacing;
   position: relative;
-  left: 50%;
-  margin-left: -50vw;
-  width: 100vw;
 
   > svg {
     position: absolute;

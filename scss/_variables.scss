@@ -148,6 +148,7 @@ $tiny-spacing: $base-spacing / 4;
 
 // LAYOUT
 $max-width: 50em;
+$max-width-modified: $max-width / 6 * 4;
 
 // ANIMATION
 $easing: cubic-bezier(.5, .5, .5, 1.5);

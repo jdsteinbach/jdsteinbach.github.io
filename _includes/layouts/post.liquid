@@ -3,6 +3,7 @@
     <header class="hero">
       {% include header-image %}
       <h1 class="hero__title" itemprop="name title headline">{{ title }}</h1>
+
       <p class="hero__meta">
         {%- if page.date %}
           <time class="date" datetime={{ page.date }} itemprop="dateCreated pubdate datePublished">{{ page.date | date: "%B %e, %Y" }}</time>
@@ -15,8 +16,10 @@
         {%- endif %}
       </p>
     </header>
-    <div class="post-content white-sheet has-toc" itemprop="articleBody">
+
+    <div class="main-content has-toc" itemprop="articleBody">
       {{ content }}
+
       <aside class="post-toc">
         <h5 class="post-toc__title">Table of Contents</h5>
         {{ content | toc }}

@@ -1,7 +1,7 @@
-$max-width-modified: ($max-width / 6 * 4);
+.main-content {
+  padding: $base-spacing 0;
 
-.post-content {
-  &.has-toc {
+  .js &.has-toc {
     position: relative;
     padding-top: $large-spacing + $small-spacing;
   }

@@ -1,27 +1,20 @@
 .wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-  width: $max-width;
-
-  &::after {
-    clear: both;
-    content: "";
-    display: block;
-    width: 100%;
-  }
+  margin: 0 auto;
+  max-width: $max-width;
 }
 
 .inner-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: ($max-width / 6 * 4);
-}
+  padding: 0;
+  display: grid;
+  column-gap: $small-spacing;
+  grid-template-columns: 1fr minmax(min-content, $max-width-modified) 1fr;
 
-.white-sheet {
-  padding: $base-spacing $small-spacing;
+  .hero {
+    grid-column: 1 / -1;
+  }
 
-  @include bp(large) {
-    padding: $base-spacing;
+  .main-content {
+    grid-column: 2 / -2;
+    max-width: calc(100vw - #{$small-spacing * 2});
   }
 }

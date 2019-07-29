@@ -1,12 +1,12 @@
 .site-header {
-  padding: $small-spacing;
+  padding: $small-spacing var(--vertical-padding);
   background-color: $color-blue-dark;
   color: $color-gray-pale;
   -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
 
   .wrapper {
-    align-items: center;
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;

@@ -1,8 +1,15 @@
 .site-footer {
-  padding: $base-spacing $small-spacing;
+  padding: $base-spacing var(--vertical-padding);
   color: $color-gray-pale;
   background-color: $color-gray-dark;
   -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
+
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 
   h1,
   h2,
@@ -21,35 +28,30 @@
     }
   }
 
-  p:not(:last-child) {
-    margin-bottom: $small-spacing;
-  }
-
   br {
     margin-bottom: $small-spacing;
   }
 }
 
-.site-footer__col {
-  margin-bottom: $base-spacing;
-
-  &,
-  p {
-    @include font-scale(sm);
-  }
+.site-footer__column {
+  @include font-scale(sm);
+  flex-basis: 100%;
 
   p {
-    margin: 0;
+    margin: 0 0 $base-spacing;
+    font-size: inherit;
   }
 
   @include breakpoint(medium) {
-    float: left;
-    width: 50%;
+    flex-basis: 50%;
   }
 
   @include breakpoint(large) {
-    margin-bottom: 0;
-    width: 33%;
+    flex-basis: 33%;
+
+    p {
+      margin-bottom: $small-spacing;
+    }
   }
 }
 
