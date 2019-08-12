@@ -1,20 +1,27 @@
-.wrapper {
-  margin: 0 auto;
-  max-width: $max-width;
+.l-wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: var(--max-width, #{$max-width});
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.inner-wrapper {
-  padding: 0;
+.l-page {
   display: grid;
-  column-gap: $small-spacing;
-  grid-template-columns: 1fr minmax(min-content, $max-width-modified) 1fr;
+  grid-template-columns: 1fr minmax(min-content, $max-width) 1fr;
+}
 
-  .hero {
-    grid-column: 1 / -1;
-  }
+.l-hero {
+  padding-right: var(--horizontal-spacing);
+  padding-left: var(--horizontal-spacing);
+  grid-column: 1 / -1;
+}
 
-  .main-content {
-    grid-column: 2 / -2;
-    max-width: calc(100vw - #{$small-spacing * 2});
-  }
+.l-content {
+  padding-right: var(--horizontal-spacing);
+  padding-left: var(--horizontal-spacing);
+  grid-column: 2 / -2;
+  max-width: 100vw;
 }

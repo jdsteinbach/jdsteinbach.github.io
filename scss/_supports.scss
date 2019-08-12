@@ -1,22 +1,8 @@
-.site-header,
-.site-footer {
-  @supports (padding: env(safe-area-inset-left)) {
-    --vertical-padding: calc(#{$small-spacing} + env(safe-area-inset-right));
-  }
-}
-
 .post-content a {
   @supports (text-decoration-skip: edges) {
     text-decoration-color: currentColor;
     text-decoration-skip: edges;
     text-decoration-style: underline;
-  }
-}
-
-@supports (font-variation-settings: normal) {
-  :root {
-    --font-body: Plex VF, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
-    --font-code: Plex Mono, monospace;
   }
 }
 

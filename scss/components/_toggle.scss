@@ -2,21 +2,21 @@ $toggle-height: $base-spacing;
 $toggle-border: 2px;
 
 .toggle {
-  display: inline-block;
-  vertical-align: middle;
-  width: calc(#{$toggle-height * 1.5} + #{$toggle-border * 2});
-  height: calc(#{$toggle-height} + #{$toggle-border * 2});
   margin: 0 0 0 $tiny-spacing;
   padding: 0;
+  width: calc(#{$toggle-height * 1.5} + #{$toggle-border * 2});
+  height: calc(#{$toggle-height} + #{$toggle-border * 2});
+  display: inline-block;
+  vertical-align: middle;
   position: relative;
+  appearance: none;
   background: rgba($color-link-dark, .5); // sass-lint:disable-line no-color-literals
   border: $toggle-border solid transparent;
   border-radius: calc(#{$toggle-height / 2} + #{$toggle-border});
-  transition: transform .15s ease-out, color .15s;
-  box-shadow: none;
   font-size: 0;
+  box-shadow: none;
   opacity: .5;
-  appearance: none;
+  transition: transform .15s ease-out, color .15s;
 
   @include haf {
     background: rgba($color-link-dark, .5); // sass-lint:disable-line no-color-literals
@@ -24,17 +24,17 @@ $toggle-border: 2px;
   }
 
   &::before {
-    @include use-prop(background-color, color-background);
-    @include use-prop(background-image, toggle-icon);
     content: "";
+    width: $toggle-height;
+    height: $toggle-height;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: $toggle-height;
-    height: $toggle-height;
     border: 0;
     border-radius: $toggle-height;
+    background-color: var(--color-background);
+    background-image: var(--toggle-icon);
     background-position: center;
     background-repeat: no-repeat;
     background-size: $toggle-height / 1.5;

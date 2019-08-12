@@ -1,11 +1,11 @@
 {% include before %}
-<div class="category-archive inner-wrapper">
-  <header class="hero">
+<div class="category-archive l-page">
+  <header class="hero l-hero">
     {% include header-image %}
     <h1 class="hero__title">{{ title }} Archive</h1>
   </header>
 
-  <div class="main-content">
+  <div class="main-content l-content">
     <ul class="posts-archive">
       {%- for post in collections[cat_name] %}
         {% include archive-item %}

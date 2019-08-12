@@ -3,16 +3,16 @@
 }
 
 [id="mc_embed_signup_scroll"] {
-  border-bottom: $border-default;
   margin-top: 0;
   margin-bottom: $base-spacing;
   padding: 0;
+  border-bottom: $border-default;
 
   &::after {
-    clear: both;
     content: "";
-    display: block;
     height: 0;
+    display: block;
+    clear: both;
   }
 }
 
@@ -28,10 +28,10 @@
 }
 
 .mc-fields {
+  margin-bottom: $base-spacing;
   display: flex;
   justify-content: stretch;
   flex-wrap: wrap;
-  margin-bottom: $base-spacing;
   font-size: 0;
 
   @include breakpoint(medium) {
@@ -49,9 +49,10 @@
 
 .mc-ref {
   @include font-scale(sm);
-  font-style: italic;
+
   margin-top: 0;
   margin-bottom: $base-spacing;
+  font-style: italic;
   opacity: .5;
 
   @include breakpoint(400px) {
@@ -67,19 +68,21 @@
 .field-group,
 .mc-field-group {
   @include font-scale(p);
-  display: inline-block;
+
   margin: 0;
   padding: 0;
-  position: relative;
   width: 100%;
+  display: inline-block;
+  position: relative;
 
   label {
     @include font-scale(sm);
+
     display: block;
-    font-style: italic;
     position: absolute;
     top: $tiny-spacing;
     left: 1em;
+    font-style: italic;
     transform-origin: left top;
     transition: transform .25s $easing, opacity .25s;
   }
@@ -108,7 +111,6 @@
     width: 33%;
   }
 
-
   @include breakpoint(large) {
     width: 25%;
 
@@ -121,27 +123,32 @@
 input,
 textarea {
   @include font-scale(p);
-  @include use-prop(color, color-text);
+
+  margin-bottom: $base-spacing;
+  padding: 0 $small-spacing;
+  width: 100%;
+  display: block;
   appearance: none;
-  background-color: transparent;
   border: $border-default;
   border-radius: $border-radius-default;
-  box-shadow: none;
-  display: block;
   font-family: inherit;
-  padding: 0 $small-spacing;
-  margin-bottom: $base-spacing;
-  width: 100%;
-  transition: color .25s, opacity .25s, background-color .25s, transform .25s $easing;
+  color: var(--color-text);
+  background-color: transparent;
+  box-shadow: none;
+  transition:
+    color .25s,
+    opacity .25s,
+    background-color .25s,
+    transform .25s $easing;
 
   @include haf {
-    @include use-prop(background-color, color-background-alt);
+    background-color: var(--color-background-alt);
     outline: none;
   }
 
   .mc-fields & {
-    @include use-prop(color, color-page-title);
     margin-bottom: 0;
+    color: var(--color-page-title);
   }
 }
 
@@ -158,40 +165,44 @@ textarea {
 
   [id="mc_embed_signup"] & {
     width: 100%;
-    box-shadow: 1px 1px 0 0 $border-color, 2px 2px 0 0 $border-color, 3px 3px 0 0 $border-color;
+    box-shadow:
+      1px 1px 0 0 $border-color,
+      2px 2px 0 0 $border-color,
+      3px 3px 0 0 $border-color;
 
     @include breakpoint(400px) {
-      float: right;
       width: 50%;
+      float: right;
     }
   }
 
   &[id="contact-form-submit"] {
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
     margin-top: 0;
+    margin-right: 0;
+    margin-left: auto;
     width: 50%;
+    display: block;
   }
 }
 
 .form-message {
   p {
     @include font-scale(blockquote);
-    animation: fade-down .35s ease-out;
-    font-weight: bold;
-    font-variation-settings: vf(semibold);
+
     margin-top: $base-spacing;
     margin-bottom: $large-spacing;
+    font-weight: bold;
+    font-variation-settings: vf(semibold);
     text-align: center;
+    animation: fade-down .35s ease-out;
   }
 
   &.success {
-    @include use-prop(color, color-success);
+    color: var(--color-success);
   }
 
   &.error {
-    @include use-prop(color, color-error);
+    color: var(--color-error);
   }
 }
 
@@ -201,6 +212,7 @@ textarea {
 
   .pageclip-form__success__message { //sass-lint:disable-line class-name-format
     @include font-scale(subtitle);
+
     font-weight: bold;
     font-variation-settings: vf(semibold);
   }
@@ -209,17 +221,18 @@ textarea {
 // Mailchimp archive styles
 [id="mailchimp-archive"] {
   @include font-scale(p);
-  border-top: $border-default;
+
   margin-top: $base-spacing;
   margin-bottom: $base-spacing;
   padding-top: $base-spacing;
+  border-top: $border-default;
 
   .campaign {
-    @include use-prop(font-family, font-code);
     margin-bottom: $tiny-spacing;
+    font-family: var(--font-code);
 
     a {
-      @include use-prop(font-family, font-body);
+      font-family: var(--font-body);
     }
   }
 }

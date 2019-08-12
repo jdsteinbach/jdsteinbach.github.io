@@ -1,7 +1,7 @@
 .hero {
-  @include use-prop(background-color, color-background-svg);
-  padding: $large-spacing $base-spacing;
+  padding: $large-spacing var(--horizontal-spacing);
   position: relative;
+  background-color: var(--color-background-svg);
 
   > svg {
     position: absolute;
@@ -30,15 +30,20 @@
 }
 
 .hero__title {
-  @include use-prop(color, color-page-title);
   @include font-scale(hero);
-  letter-spacing: (1em / 16);
+
   margin: $base-spacing auto;
-  max-width: $max-width / power($base-font-scale, 5);
+  max-width: $max-width;
+  letter-spacing: (1em / 16);
   text-align: center;
   text-transform: uppercase;
   font-variation-settings: vf(bold), "wdth" 85;
-  text-shadow: 1px 1px 0 $color-blue-dark, 2px 2px 0 $color-blue-dark, 3px 3px 0 $color-blue-dark, 4px 4px 0 $color-blue-dark;
+  color: var(--color-page-title);
+  text-shadow:
+    1px 1px 0 $color-blue-dark,
+    2px 2px 0 $color-blue-dark,
+    3px 3px 0 $color-blue-dark,
+    4px 4px 0 $color-blue-dark;
   -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
 
   @include bp(medium) {
@@ -46,14 +51,14 @@
   }
 }
 
-
 .hero__meta {
   @include font-scale(sm);
-  @include use-prop(color, color-text);
+
   margin-bottom: $base-spacing;
+  color: var(--color-text);
 
   .hero & {
-    @include use-prop(color, color-page-title);
+    color: var(--color-page-title);
     text-align: center;
   }
 
@@ -72,6 +77,7 @@
   }
 
   a {
+    // @TODO - CSS vars here?
     color: $color-link-dark;
 
     @include haf {

@@ -1,11 +1,11 @@
 {% include before %}
-<div class="home inner-wrapper">
-  <header class="hero">
+<div class="home l-page">
+  <header class="hero l-hero">
     {% include header-image %}
     <h1 class="hero__title">{{ title }}</h1>
   </header>
 
-  <div class="main-content">
+  <div class="main-content l-content">
     {% if pagination.items %}
       <ul class="posts-archive">
         {% for post in pagination.items %}

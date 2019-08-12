@@ -1,13 +1,13 @@
 code {
-  @include use-prop(background-color, color-background-alt);
-  @include use-prop(color, color-text-alt);
-  @include use-prop(font-family, font-code);
-  border-radius: $border-radius-default;
+  padding: 0 .5ch;
   display: inline-block;
+  vertical-align: baseline;
+  border-radius: $border-radius-default;
+  font-family: var(--font-code);
   font-weight: inherit;
   font-feature-settings: initial;
-  padding: 0 .5ch;
-  vertical-align: baseline;
+  color: var(--color-text-alt);
+  background-color: var(--color-background-alt);
 
   a & {
     color: inherit;
@@ -16,16 +16,19 @@ code {
 
 pre > code {
   @include font-scale(sm);
-  @include use-prop(background-color, color-background-code);
-  @include use-prop(color, color-text-code);
-  display: block;
+
   margin: $base-spacing 0;
-  overflow: scroll;
   padding: $small-spacing;
-  line-height: 2;
   width: auto;
+  display: block;
+  overflow: scroll;
   border-radius: 0;
-  box-shadow: 1px 1px 0 1px $color-gray, 2px 2px 0 1px $color-gray;
+  line-height: 2;
+  color: var(--color-text-code);
+  background-color: var(--color-background-code);
+  box-shadow:
+    1px 1px 0 1px $color-gray,
+    2px 2px 0 1px $color-gray;
 
   @include bp(medium) {
     margin: $base-spacing (0 - $small-spacing);

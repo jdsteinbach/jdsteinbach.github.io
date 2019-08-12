@@ -1,32 +1,32 @@
 .post-toc {
   .js & {
-    padding: 0;
+    padding-right: var(--horizontal-spacing);
+    padding-left: var(--horizontal-spacing);
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-
-    @include bp(large) {
-      // padding: 0 $base-spacing;
-    }
   }
 }
 
-.post-toc .post-toc__title { // Increase specificity for title
+.post-toc__title.post-toc__title { // Increase specificity for title
   margin: $small-spacing 0;
   padding-top: $small-spacing;
   position: relative;
   font-variation-settings: vf(bold);
 
-  .js &::after {
-    padding: 0 1ch;
-    content: "▾";
-    display: inline-block;
-    transform: rotate(0deg) translateY(-.125em);
-    transform-origin: center;
+  &::after {
+    .js & {
+      content: "▾";
+      padding: 0 1ch;
+      display: inline-block;
+      transform: rotate(0deg) translateY(-.125em);
+      transform-origin: center;
+      alt: "";
+    }
 
-    [aria-hidden="false"] & {
-      transform: rotate(180deg) translateY(-.125em);
+    .js [aria-hidden="false"] & {
+      transform: rotate(180deg) translateY(.125em);
     }
   }
 }
@@ -35,23 +35,25 @@
 .toc {
   $transparent-white: rgba($color-white, 0);
 
-  @include use-prop(background-color, color-background-page);
+  padding-right: var(--horizontal-spacing);
+  padding-left: var(--horizontal-spacing);
+  background-color: var(--color-background-page);
 
   a {
     @include font-scale(sm);
 
-    display: inline-block;
     margin-bottom: $tiny-spacing;
+    display: inline-block;
   }
 
   ol {
-    @include use-prop(color, color-text);
     @include font-scale(sm);
 
-    display: block;
     margin: 0;
     padding: 0;
+    display: block;
     list-style: decimal;
+    color: var(--color-text);
 
     ol {
       list-style: upper-alpha;
@@ -63,11 +65,11 @@
   }
 
   li {
-    margin-left: $tiny-spacing;
+    margin-left: $small-spacing;
   }
 
   .js & {
-    padding: 0 $small-spacing $base-spacing + $small-spacing;
+    padding: 0 1em ($base-spacing + $small-spacing);
     position: absolute;
     top: 100%;
     right: 0;
@@ -88,9 +90,8 @@
     transform: scaleY(1);
   }
 
-
   @supports (backdrop-filter: blur(3px)) {
-    @include use-prop(background-color, color-background-fade);
+    background-color: var(--color-background-fade);
     backdrop-filter: blur(3px);
   }
 }

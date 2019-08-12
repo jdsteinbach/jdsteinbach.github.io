@@ -7,7 +7,6 @@
 
 @import "mixins/bp";
 @import "mixins/breakpoint";
-@import "mixins/custom-properties/custom-properties";
 @import "mixins/custom-type/custom-type";
 @import "mixins/fonts";
 @import "mixins/haf";
@@ -15,10 +14,10 @@
 @import "reset";
 
 @import "variables";
+@import "custom-props";
 
 @import "globals/fonts";
 @import "globals/animations";
-@import "globals/root";
 @import "globals/typography";
 @import "globals/code";
 @import "globals/links";

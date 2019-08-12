@@ -33,95 +33,6 @@ $color-link-dark-alt: mix($color-blue, $color-white, 15%);
 
 $color-background: $color-gray-pale;
 
-$root-vars: (
-  color-text: $color-gray,
-  color-text-alt: $color-gray-dark,
-  color-text-accent: $color-blue-dark,
-  color-text-code: $color-blue-dark,
-  color-page-title: $color-gray-pale,
-
-  color-link: $color-blue,
-  color-link-alt: $color-blue-dark,
-
-  color-link-2: $color-green,
-  color-link-2-alt: $color-green-dark,
-
-  color-link-dark: $color-link-dark,
-  color-link-dark-alt: $color-link-dark-alt,
-
-  color-success: $color-green,
-  color-success-alt: $color-green-dark,
-
-  color-error: $color-red,
-  color-error-alt: $color-red-dark,
-
-  color-highlight: $color-orange,
-  color-highlight-alt: $color-orange-dark,
-  color-highlight-pale: rgba($color-orange-dark, .15),
-
-  color-background: $color-gray-pale,
-  color-background-page: $color-gray-pale,
-  color-background-fade: rgba($color-gray-pale, .9),
-  color-background-svg: $color-orange,
-  color-background-alt: rgba($color-gray, .15),
-  color-background-code: rgba($color-gray, .15),
-
-  fs-body: (18rem / 16),
-
-  font-body: unquote("-apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif"),
-  font-headline: var(--font-body),
-  font-code: unquote("Mono, monospace"),
-
-  toggle-icon: svg-load("icons/theme.svg", fill=#{rgba($color-link, .65)})
-);
-
-$dark-vars: (
-  color-text: custom-invert($color-gray),
-  color-text-alt: custom-invert($color-gray-dark),
-  color-text-accent: custom-invert($color-blue-dark),
-
-  color-link: custom-invert($color-blue),
-  color-link-alt: custom-invert($color-blue-dark),
-
-  color-link-2: custom-invert($color-green),
-  color-link-2-alt: custom-invert($color-green-dark),
-
-  color-link-dark: custom-invert($color-link-dark),
-  color-link-dark-alt: custom-invert($color-link-dark-alt),
-
-  color-highlight: custom-invert($color-orange),
-  color-highlight-alt: custom-invert($color-orange-dark),
-  color-highlight-pale: rgba(custom-invert($color-orange-dark), .15),
-
-  color-background: $color-gray-dark,
-  color-background-page: custom-invert($color-gray-pale),
-  color-background-fade: rgba(custom-invert($color-gray-pale), .9),
-  color-background-svg: $color-gray-dark,
-  color-background-alt: rgba(custom-invert($color-gray-dark), .15),
-  color-background-code: custom-invert($color-gray),
-
-  toggle-icon: svg-load("icons/theme.svg", fill=#{rgba($color-gray-pale, .75)})
-);
-
-$medium-vars: (
-  fs-body: (21rem / 16)
-);
-
-$large-vars: (
-  fs-body: (24rem / 16)
-);
-
-$xlarge-vars: (
-  fs-body: (27rem / 16)
-);
-
-@each $name, $prop in $root-vars {
-  @include set-prop($name, $prop);
-}
-
-@each $name, $prop in $dark-vars {
-  @include set-prop($name, $prop, ".theme-dark");
-}
 
 // BORDERS
 $border-color: $color-blue;
@@ -147,8 +58,8 @@ $small-spacing: $base-spacing / 2;
 $tiny-spacing: $base-spacing / 4;
 
 // LAYOUT
-$max-width: 50em;
-$max-width-modified: $max-width / 6 * 4;
+$max-width: 33rem;
+$max-width--wide: 50rem;
 
 // ANIMATION
 $easing: cubic-bezier(.5, .5, .5, 1.5);

@@ -1,38 +1,38 @@
 img {
-  display: block;
-  height: auto;
   max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .alignleft {
-  clear: right;
-  float: left;
   margin-right: $small-spacing;
   margin-bottom: $small-spacing;
   margin-left: 0;
+  float: left;
+  clear: right;
 }
 
 .alignright {
-  clear: left;
-  float: right;
   margin-right: 0;
   margin-bottom: $small-spacing;
   margin-left: $small-spacing;
+  float: right;
+  clear: left;
 }
 
 .aligncenter {
-  margin-left: auto;
-  margin-bottom: $base-spacing;
   margin-right: auto;
+  margin-bottom: $base-spacing;
+  margin-left: auto;
 }
 
 svg {
-  height: .75em;
   width: .75em;
+  height: .75em;
 
   .outbound-link & {
-    height: .5em;
     width: .5em;
+    height: .5em;
   }
 
   path {

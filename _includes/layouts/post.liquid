@@ -1,6 +1,6 @@
 {% include before %}
-  <article class="post inner-wrapper" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="hero">
+  <article class="post l-page" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="hero l-hero">
       {% include header-image %}
       <h1 class="hero__title" itemprop="name title headline">{{ title }}</h1>
 
@@ -17,7 +17,7 @@
       </p>
     </header>
 
-    <div class="main-content has-toc" itemprop="articleBody">
+    <div class="main-content l-content has-toc" itemprop="articleBody">
       {{ content }}
 
       <aside class="post-toc">

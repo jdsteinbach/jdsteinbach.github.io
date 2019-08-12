@@ -1,15 +1,10 @@
 .site-footer {
-  padding: $base-spacing var(--vertical-padding);
+  --max-width: #{$max-width--wide};
+
+  padding: $base-spacing var(--horizontal-spacing);
   color: $color-gray-pale;
   background-color: $color-gray-dark;
   -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
-
-  .wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
 
   h1,
   h2,
@@ -21,6 +16,7 @@
   }
 
   a {
+    // @TODO - CSS vars here?
     color: $color-link-dark;
 
     @include haf {
@@ -29,16 +25,17 @@
   }
 
   br {
-    margin-bottom: $small-spacing;
+    margin-bottom: $tiny-spacing;
   }
 }
 
 .site-footer__column {
   @include font-scale(sm);
+
   flex-basis: 100%;
 
   p {
-    margin: 0 0 $base-spacing;
+    margin: 0 0 $tiny-spacing;
     font-size: inherit;
   }
 
@@ -48,17 +45,18 @@
 
   @include breakpoint(large) {
     flex-basis: 33%;
-
-    p {
-      margin-bottom: $small-spacing;
-    }
   }
 }
 
 .site-footer__title {
   @include font-scale(blockquote);
+
   margin-top: $small-spacing;
   margin-bottom: $base-spacing;
   text-align: center;
-  text-shadow: 1px 1px 0 $color-blue-dark, 2px 2px 0 $color-blue-dark, 3px 3px 0 $color-blue-dark, 4px 4px 0 $color-blue-dark;
+  text-shadow:
+    1px 1px 0 $color-blue-dark,
+    2px 2px 0 $color-blue-dark,
+    3px 3px 0 $color-blue-dark,
+    4px 4px 0 $color-blue-dark;
 }

@@ -1,5 +1,6 @@
 .main-content {
-  padding: $base-spacing 0;
+  padding-top: $base-spacing;
+  padding-bottom: $base-spacing;
 
   .js &.has-toc {
     position: relative;

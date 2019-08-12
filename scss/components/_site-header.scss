@@ -1,18 +1,18 @@
 .site-header {
-  padding: $small-spacing var(--vertical-padding);
+  --max-width: #{$max-width--wide};
+
+  padding: $small-spacing var(--horizontal-spacing);
   background-color: $color-blue-dark;
   color: $color-gray-pale;
   -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
 
-  .wrapper {
-    display: flex;
+  .l-wrapper {
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
     text-align: center;
   }
 
   a {
+    // @TODO - CSS vars here?
     color: $color-link-dark;
 
     @include haf {
@@ -23,13 +23,18 @@
 
 .site-header__title {
   @include font-scale(p);
-  @include use-prop(font-family, font-headline);
-  display: inline-block;
+
+  width: 100%;
+  font-family: var(--font-headline);
   font-weight: bold;
   font-variation-settings: vf(heavy);
-  padding: $tiny-spacing $small-spacing;
+  padding: $tiny-spacing 0;
   text-align: center;
   vertical-align: middle;
+
+  @include breakpoint(medium) {
+    width: auto;
+  }
 
   @include breakpoint(large) {
     margin-right: auto;

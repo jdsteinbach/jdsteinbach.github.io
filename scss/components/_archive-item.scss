@@ -8,10 +8,10 @@
 }
 
 .archive-item__excerpt {
-  @include use-prop(color, color-text);
   margin-top: $tiny-spacing;
   margin-bottom: $tiny-spacing;
-  font-style: italic;
+  color: var(--color-text);
+  opacity: 0.85;
 }
 
 .archive-item__meta {
@@ -24,22 +24,20 @@
 
 .archive-item__link {
   @include font-scale(blockquote);
-  @include use-prop(font-family, font-headline);
   display: block;
+  font-family: var(--font-headline);
   font-variation-settings: vf(semibold);
   z-index: 2;
 
   &::before {
-    @include use-prop(border-color, color-highlight);
-    @include use-prop(background-color, color-highlight);
-    border-style: solid;
-    border-width: $tiny-spacing;
     content: "";
     position: absolute;
     top: 0;
     right: -$tiny-spacing;
     bottom: 0;
     left: -$tiny-spacing;
+    border: $tiny-spacing solid var(--color-highlight);
+    background-color: var(--color-highlight);
     transform: scaleX(0) rotate(4deg) translateY(.25em);
     opacity: 0;
     z-index: 1;

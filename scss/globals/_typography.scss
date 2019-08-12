@@ -1,30 +1,35 @@
+html {
+  font-size: var(--fs-body);
+}
+
 body {
   @include font-scale(p);
-  @include use-prop(background-color, color-background-page);
-  @include use-prop(color, color-text);
-  @include use-prop(font-family, font-body);
 
+  font-family: var(--font-body);
   font-kerning: normal;
   font-feature-settings: "kern", "liga", "clig", "calt";
   font-variant-ligatures: common-ligatures contextual;
   font-variation-settings: vf(normal);
+  color: var(--color-text);
+  background-color: var(--color-background-page);
   scroll-behavior: smooth;
 }
 
 h1 {
   @include font-scale(subtitle);
-  @include use-prop(color, color-text-alt);
-  @include use-prop(font-family, font-headline);
+
+  font-family: var(--font-headline);
   font-weight: bold;
   font-variation-settings: vf(heavy);
+  color: var(--color-text-alt);
 }
 
 h2 {
   @include font-scale(blockquote);
-  @include use-prop(color, color-text-alt);
-  @include use-prop(font-family, font-headline);
+  font-family: var(--font-headline);
   font-weight: bold;
   font-variation-settings: vf(heavy);
+  color: var(--color-text-alt);
 
   .post & {
     margin-top: $base-spacing;
@@ -34,38 +39,40 @@ h2 {
 
 h3 {
   .post & {
-    @include use-prop(color, color-text-alt);
+    margin-top: $small-spacing;
     font-weight: bold;
     font-variation-settings: vf(heavy);
     letter-spacing: (1em / 32);
-    margin-top: $small-spacing;
     text-transform: uppercase;
+    color: var(--color-text-alt);
   }
 }
 
 h4 {
   .post & {
-    @include use-prop(color, color-text-alt);
+    margin-top: $small-spacing;
     font-weight: bold;
     font-variation-settings: vf(heavy);
-    margin-top: $small-spacing;
+    color: var(--color-text-alt);
   }
 }
 
 h5 {
   .post & {
     @include font-scale(sm);
-    @include use-prop(color, color-text-alt);
+
+    margin-top: $small-spacing;
     font-weight: bold;
     font-variation-settings: vf(heavy);
     letter-spacing: (1em / 32);
-    margin-top: $small-spacing;
     text-transform: uppercase;
+    color: var(--color-text-alt);
   }
 }
 
 p {
   @include font-scale(p);
+
   margin-bottom: $base-spacing;
 
   &:empty {
@@ -75,9 +82,9 @@ p {
 
 b,
 strong {
-  @include use-prop(color, color-text-alt);
   font-weight: bold;
   font-variation-settings: vf(semibold);
+  color: var(--color-text-alt);
 }
 
 i,
@@ -134,8 +141,8 @@ em {
   h5,
   h6 {
     em {
-      @include use-prop(color, color-text-accent);
       font-style: italic;
+      color: var(-- color-text-accent);
     }
   }
 }
@@ -144,4 +151,5 @@ em {
   position: absolute !important; // sass-lint:disable-line no-important
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
+  white-space: nowrap;
 }
