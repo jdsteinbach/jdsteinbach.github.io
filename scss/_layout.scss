@@ -20,8 +20,7 @@
 }
 
 .l-content {
-  padding-right: var(--horizontal-spacing);
-  padding-left: var(--horizontal-spacing);
+  padding: $base-spacing var(--horizontal-spacing);
   grid-column: 2 / -2;
   max-width: 100vw;
 }

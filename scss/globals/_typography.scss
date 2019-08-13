@@ -31,14 +31,14 @@ h2 {
   font-variation-settings: vf(heavy);
   color: var(--color-text-alt);
 
-  .post & {
+  .main-content & {
     margin-top: $base-spacing;
     margin-bottom: $small-spacing;
   }
 }
 
 h3 {
-  .post & {
+  .main-content & {
     margin-top: $small-spacing;
     font-weight: bold;
     font-variation-settings: vf(heavy);
@@ -49,7 +49,7 @@ h3 {
 }
 
 h4 {
-  .post & {
+  .main-content & {
     margin-top: $small-spacing;
     font-weight: bold;
     font-variation-settings: vf(heavy);
@@ -58,7 +58,7 @@ h4 {
 }
 
 h5 {
-  .post & {
+  .main-content & {
     @include font-scale(sm);
 
     margin-top: $small-spacing;
@@ -92,7 +92,7 @@ em {
   font-style: italic;
 }
 
-.post {
+.main-content {
   > ul,
   > ol {
     margin-bottom: $base-spacing;

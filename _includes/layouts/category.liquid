@@ -5,7 +5,7 @@
     <h1 class="hero__title">{{ title }} Archive</h1>
   </header>
 
-  <div class="main-content l-content">
+  <div class="l-content">
     <ul class="posts-archive">
       {%- for post in collections[cat_name] %}
         {% include archive-item %}
