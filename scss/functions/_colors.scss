@@ -1,5 +1,5 @@
 @function custom-darken($color, $dark: $color-black) {
-  @return mix($color, $dark, 80%);
+  @return mix($color, $dark, 85%);
 }
 
 @function custom-invert($color) {

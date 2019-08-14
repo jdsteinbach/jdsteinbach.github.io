@@ -2,13 +2,13 @@
 document.body.classList.add('js')
 
 // Control form fields
-const formBoxes = document.querySelectorAll('.mc-field-group, .field-group')
+const formBoxes = document.querySelectorAll('.form__field')
 
-const activateField = el => el.parentNode.classList.add('active-input')
+const activateField = el => el.parentNode.classList.add('is-active')
 
 const deactivateField = el => {
   if (el.value === '') {
-    el.parentNode.classList.remove('active-input')
+    el.parentNode.classList.remove('is-active')
   }
 }
 
@@ -53,16 +53,16 @@ const fetchForm = ({id, responseID, fieldIDs, successMsg, failMsg}) => {
                 document.getElementById(id).value = ''
               }
 
-              formMessage.innerHTML = successMsg
+              formMessage.innerHTML = `<p class="form__response-message is-success">${successMsg}</p>`
             } else {
-              formMessage.innerHTML = failMsg
+              formMessage.innerHTML = `<p class="form__response-message is-error">${failMsg}</p>`
             }
           }
         )
         .catch(
           function (err) {
             console.log(err)
-            formMessage.innerHTML = failMsg
+            formMessage.innerHTML = `<p class="form__response-message is-error">${failMsg}</p>`
           }
         )
     })
@@ -81,8 +81,8 @@ fetchForm({
   id: 'mc-embedded-subscribe-form',
   responseID: 'mc_embed_signup_scroll',
   fieldIDs: [],
-  successMsg: '<p class="mc-response">Thanks, check your inbox to confirm your subscription!</p>',
-  failMsg: '<p class="mc-response">Sorry, an error occurred and you weren’t subscribed. <a class="button" href="https://jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&id=35bef0e04e" target="_blank" rel="noopener noreferrer nofollow">Try subscribing here</a></p>'
+  successMsg: 'Thanks, check your inbox to confirm your subscription!',
+  failMsg: 'Sorry, an error occurred and you weren’t subscribed. <a class="button" href="https://jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&id=35bef0e04e" target="_blank" rel="noopener noreferrer nofollow">Try subscribing here</a>'
 })
 
 if ('localStorage' in window) {

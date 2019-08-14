@@ -3,7 +3,7 @@ button,
 [type="submit"] {
   @include font-scale(sm);
 
-  padding: ($tiny-spacing - 1 / 16) $small-spacing ($tiny-spacing + 1 / 16);
+  padding: $tiny-spacing $small-spacing;
   display: inline-block;
   appearance: none;
   border: 0;
