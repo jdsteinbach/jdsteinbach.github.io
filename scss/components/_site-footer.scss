@@ -1,5 +1,8 @@
 .site-footer {
   --max-width: #{$max-width--wide};
+  --color-link: #{$color-link-dark};
+  --color-link-alt: #{$color-link-dark-alt};
+  --button-box-shadow: var(--border-color);
 
   padding: $base-spacing var(--horizontal-spacing);
   color: $color-gray-pale;
@@ -13,15 +16,6 @@
   h5,
   h6 {
     color: inherit;
-  }
-
-  a {
-    // @TODO - CSS vars here?
-    color: $color-link-dark;
-
-    @include haf {
-      color: $color-link-dark-alt;
-    }
   }
 
   br {
@@ -55,8 +49,8 @@
   margin-bottom: $base-spacing;
   text-align: center;
   text-shadow:
-    1px 1px 0 $color-blue-dark,
-    2px 2px 0 $color-blue-dark,
-    3px 3px 0 $color-blue-dark,
-    4px 4px 0 $color-blue-dark;
+    1px 1px 0 var(--text-shadow),
+    2px 2px 0 var(--text-shadow),
+    3px 3px 0 var(--text-shadow),
+    4px 4px 0 var(--text-shadow);
 }

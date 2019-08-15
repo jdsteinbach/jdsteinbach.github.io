@@ -31,6 +31,11 @@
   --color-background-alt: #{rgba($color-gray, .15)};
   --color-background-code: #{rgba($color-gray, .15)};
 
+  --color-border: #{$border-color};
+
+  --box-shadow: var(--color-border);
+  --text-shadow: var(--color-text-accent);
+
   --fs-body: #{(18rem / 16)};
 
   --font-body: #{unquote("-apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif")};
@@ -87,6 +92,8 @@
   --color-background-svg: #{#{$color-gray-dark}};
   --color-background-alt: #{rgba(custom-invert($color-gray-dark), .15)};
   --color-background-code: #{custom-invert($color-gray)};
+
+  --color-border: #{custom-invert($border-color)};
 
   --toggle-icon: svg-load("icons/theme.svg", fill=#{rgba($color-gray-pale, .75)});
 }

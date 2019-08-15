@@ -1,8 +1,11 @@
 button,
 .button,
 [type="submit"] {
+  --button-box-shadow: #{$color-orange};
+
   @include font-scale(sm);
 
+  margin-bottom: var(--button-bottom-margin);
   padding: $tiny-spacing $small-spacing;
   display: inline-block;
   appearance: none;
@@ -17,9 +20,9 @@ button,
   background-color: var(--color-link);
   color: var(--color-background);
   box-shadow:
-    1px 1px 0 0 $color-orange,
-    2px 2px 0 0 $color-orange,
-    3px 3px 0 0 $color-orange;
+    1px 1px 0 0 var(--button-box-shadow),
+    2px 2px 0 0 var(--button-box-shadow),
+    3px 3px 0 0 var(--button-box-shadow);
   transition:
     color .25s,
     opacity .25s,
@@ -38,9 +41,5 @@ button,
     &.button-alt {
       background-color: var(--color-highlight-alt);
     }
-  }
-
-  .page-content & {
-    margin-bottom: $small-spacing;
   }
 }

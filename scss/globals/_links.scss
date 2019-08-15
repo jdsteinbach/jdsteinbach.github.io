@@ -14,6 +14,7 @@ a {
     color: var(--color-link-alt);
   }
 
+  // @TOD BEM leak
   .post-content & {
     text-decoration: underline;
 

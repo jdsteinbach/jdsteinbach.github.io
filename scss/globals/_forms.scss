@@ -36,9 +36,9 @@
       "email fname lname" min-content /
       1fr    1fr   1fr;
     box-shadow:
-      1px 1px 0 0 $border-color,
-      2px 2px 0 0 $border-color,
-      3px 3px 0 0 $border-color;
+      1px 1px 0 0 var(--box-shadow),
+      2px 2px 0 0 var(--box-shadow),
+      3px 3px 0 0 var(--box-shadow);
   }
 
   @include breakpoint(large) {
@@ -121,9 +121,9 @@
   .form--mailchimp & {
     width: 100%;
     box-shadow:
-      1px 1px 0 0 $border-color,
-      2px 2px 0 0 $border-color,
-      3px 3px 0 0 $border-color;
+      1px 1px 0 0 var(--box-shadow),
+      2px 2px 0 0 var(--box-shadow),
+      3px 3px 0 0 var(--box-shadow);
   }
 
   .form--contact & {
@@ -153,6 +153,10 @@
 
   &.is-error {
     outline-color: var(--color-error);
+  }
+
+  &:empty {
+    display: none;
   }
 }
 

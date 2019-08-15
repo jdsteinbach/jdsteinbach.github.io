@@ -1,5 +1,7 @@
 .site-header {
   --max-width: #{$max-width--wide};
+  --color-link: #{$color-link-dark};
+  --color-link-alt: #{$color-link-dark-alt};
 
   padding: $small-spacing var(--horizontal-spacing);
   background-color: $color-blue-dark;
@@ -9,15 +11,6 @@
   .l-wrapper {
     align-items: center;
     text-align: center;
-  }
-
-  a {
-    // @TODO - CSS vars here?
-    color: $color-link-dark;
-
-    @include haf {
-      color: $color-link-dark-alt;
-    }
   }
 }
 
