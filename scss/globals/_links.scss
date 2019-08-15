@@ -1,0 +1,26 @@
+a {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-link);
+  transition:
+    color .25s,
+    text-decoration-color .25s,
+    background-color .25s,
+    opacity .25s,
+    border .25s,
+    transform .25s $easing;
+
+  @include haf {
+    color: var(--color-link-alt);
+  }
+
+  // @TOD BEM leak
+  .post-content & {
+    text-decoration: underline;
+
+    @include haf {
+      text-decoration-color: var(--color-highlight);
+      background-color: var(--color-highlight-pale);
+    }
+  }
+}

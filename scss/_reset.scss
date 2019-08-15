@@ -117,13 +117,11 @@ ul {
 blockquote,
 q {
   quotes: none;
-}
 
-blockquote::before,
-blockquote::after,
-q::before,
-q::after {
-  content: "";
+  &::before,
+  &::after {
+    content: "";
+  }
 }
 
 table {
@@ -131,6 +129,8 @@ table {
   border-spacing: 0;
 }
 
-* {
+*,
+::before,
+::after {
   box-sizing: border-box;
 }

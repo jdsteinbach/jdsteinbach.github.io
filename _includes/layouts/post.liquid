@@ -1,9 +1,10 @@
 {% include before %}
-  <article class="post inner-wrapper" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="post-header">
+  <article class="post l-page" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="hero l-hero">
       {% include header-image %}
-      <h1 class="post-title" itemprop="name title headline">{{ title }}</h1>
-      <p class="post-meta">
+      <h1 class="hero__title" itemprop="name title headline">{{ title }}</h1>
+
+      <p class="hero__meta">
         {%- if page.date %}
           <time class="date" datetime={{ page.date }} itemprop="dateCreated pubdate datePublished">{{ page.date | date: "%B %e, %Y" }}</time>
         {%- endif %}
@@ -15,8 +16,10 @@
         {%- endif %}
       </p>
     </header>
-    <div class="post-content white-sheet has-toc" itemprop="articleBody">
+
+    <div class="main-content l-content has-toc" itemprop="articleBody">
       {{ content }}
+
       <aside class="post-toc">
         <h5 class="post-toc__title">Table of Contents</h5>
         {{ content | toc }}

@@ -1,0 +1,170 @@
+.form {
+  margin-bottom: $base-spacing;
+}
+
+.form--contact {
+  padding-top: $base-spacing;
+}
+
+.form--mailchimp {
+  width: 100%;
+}
+
+.form__fields {
+  margin-bottom: $base-spacing;
+  display: grid;
+  grid-template:
+    "fields  fields" min-content
+    "rewards submit" min-content /
+    1fr      1fr;
+  border-bottom: $border-default;
+}
+
+.form__fields-wrapper {
+  margin-bottom: $base-spacing;
+  display: grid;
+  grid-template:
+    "email email" min-content
+    "fname lname" min-content /
+    1fr    1fr;
+  justify-content: stretch;
+  row-gap: $base-spacing;
+  grid-area: fields;
+
+  @include breakpoint(medium) {
+    grid-template:
+      "email fname lname" min-content /
+      1fr    1fr   1fr;
+    box-shadow:
+      1px 1px 0 0 var(--box-shadow),
+      2px 2px 0 0 var(--box-shadow),
+      3px 3px 0 0 var(--box-shadow);
+  }
+
+  @include breakpoint(large) {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .form__field--email {
+    grid-area: email;
+  }
+
+  .form__field--fname {
+    grid-area: fname;
+  }
+
+  .form__field--lname {
+    grid-area: lname;
+  }
+}
+
+.form__field {
+  @include font-scale(p);
+
+  position: relative;
+}
+
+.form__label {
+  @include font-scale(sm);
+
+  display: block;
+  position: absolute;
+  top: $tiny-spacing;
+  left: 1em;
+  font-style: italic;
+  transform-origin: left top;
+  transition: transform .25s $easing, opacity .25s;
+
+  .is-active & {
+    transform: translateY(-140%) scale(.8);
+    opacity: .6;
+  }
+}
+
+.form__input {
+  @include font-scale(p);
+
+  margin-bottom: $base-spacing;
+  padding: 0 $small-spacing;
+  width: 100%;
+  display: block;
+  appearance: none;
+  border: $border-default;
+  border-radius: $border-radius-default;
+  font-family: inherit;
+  color: var(--color-text);
+  background-color: transparent;
+  box-shadow: none;
+  transition:
+    color .25s,
+    opacity .25s,
+    background-color .25s,
+    transform .25s $easing;
+
+  @include haf {
+    background-color: var(--color-background-alt);
+    outline: none;
+  }
+
+  .form--mailchimp & {
+    margin-bottom: 0;
+    color: var(--color-page-title);
+  }
+}
+
+.form__submit {
+  margin: 0 0 $base-spacing;
+  grid-area: submit;
+  justify-self: flex-end;
+  align-self: flex-start;
+
+  .form--mailchimp & {
+    width: 100%;
+    box-shadow:
+      1px 1px 0 0 var(--box-shadow),
+      2px 2px 0 0 var(--box-shadow),
+      3px 3px 0 0 var(--box-shadow);
+  }
+
+  .form--contact & {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: auto;
+    width: 50%;
+    display: block;
+  }
+}
+
+.form__response-message {
+  @include font-scale(blockquote);
+
+  margin-top: $small-spacing;
+  margin-bottom: $small-spacing;
+  padding-top: $small-spacing;
+  padding-bottom: $small-spacing;
+  grid-area: fields;
+  text-align: center;
+  outline: 1px solid currentColor;
+  animation: fade-down .35s ease-out;
+
+  &.is-success {
+    outline-color: var(--color-success);
+  }
+
+  &.is-error {
+    outline-color: var(--color-error);
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+.form__monkey-rewards {
+  @include font-scale(sm);
+
+  margin: 0;
+  grid-area: rewards;
+  font-style: italic;
+  opacity: .5;
+}

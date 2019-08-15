@@ -1,35 +1,33 @@
 .site-header {
-  padding: $small-spacing;
+  --max-width: #{$max-width--wide};
+  --color-link: #{$color-link-dark};
+  --color-link-alt: #{$color-link-dark-alt};
+
+  padding: $small-spacing var(--horizontal-spacing);
   background-color: $color-blue-dark;
   color: $color-gray-pale;
   -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
 
-  .wrapper {
+  .l-wrapper {
     align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     text-align: center;
-  }
-
-  a {
-    color: $color-link-dark;
-
-    @include haf {
-      color: $color-link-dark-alt;
-    }
   }
 }
 
-.site-title {
+.site-header__title {
   @include font-scale(p);
-  @include use-prop(font-family, font-headline);
-  display: inline-block;
+
+  width: 100%;
+  font-family: var(--font-headline);
   font-weight: bold;
   font-variation-settings: vf(heavy);
-  padding: $tiny-spacing $small-spacing;
+  padding: $tiny-spacing 0;
   text-align: center;
   vertical-align: middle;
+
+  @include breakpoint(medium) {
+    width: auto;
+  }
 
   @include breakpoint(large) {
     margin-right: auto;

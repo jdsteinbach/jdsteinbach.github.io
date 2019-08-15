@@ -1,16 +1,17 @@
 
 .pagination {
   @include font-scale(sm);
+
   border-top: $border-default;
   padding-top: $small-spacing;
   text-align: center;
 
   a {
-    @include use-prop(color, color-link);
     font-variation-settings: vf(semibold);
+    color: var(--color-link);
 
     @include haf {
-      @include use-prop(color, color-link-alt);
+      color: var(--color-link-alt);
       text-decoration: underline;
     }
   }
