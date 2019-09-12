@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ site.title }}</title>
-  <subtitle>{{ site.description | strip_html | strip_newlines }}</subtitle>
+  <subtitle>{{ site.description | strip_html | strip_newlines | xml_friendly }}</subtitle>
   <link href="{{ permalink | abs_url: site.url }}" rel="self"/>
   <link href="{{ site.url }}"/>
   <updated>{{ collections.postsFeed | rss_last_updated_date }}</updated>
@@ -12,11 +12,11 @@
   </author>
   {%- for post in collections.postsFeed %}
   <entry>
-    <title>{{ post.data.title }}</title>
+    <title>{{ post.data.title | xml_friendly }}</title>
     <link href="{{ post.url | abs_url: site.url }}"/>
     <updated>{{ post.date | rss_date }}</updated>
     <id>{{ post.url | abs_url: site.url }}</id>
-    <content type="html">{{ post.templateContent }}</content>
+    <content type="html">{{ post.templateContent | xml_friendly }}</content>
   </entry>
   {%- endfor %}
 </feed>

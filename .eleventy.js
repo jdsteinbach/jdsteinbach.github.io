@@ -19,6 +19,12 @@ module.exports = eleventyConfig => {
     return titleString.length % 5 + 1
   })
 
+  eleventyConfig.addFilter('xml_friendly', string => {
+    return string
+      .replace(/&\s/g, '&amp; ')
+      .replace(/<br>/g, '<br />')
+  })
+
   eleventyConfig.addFilter('paginate_better', id => (id > 0) ? `page${id + 1}` : '')
 
   eleventyConfig.addFilter('fix_links', url => url.replace('/index.html', ''))
