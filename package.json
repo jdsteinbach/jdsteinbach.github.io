@@ -12,14 +12,15 @@
     "serve": "gulp watch --dev",
     "11ty": "eleventy",
     "11ty-debug": "DEBUG=Eleventy* eleventy",
+    "11ty:serve": "eleventy --serve",
     "build": "gulp build",
     "deploy": "push-dir --dir=./_site --branch=master --force"
   },
   "author": "James Steinbach",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.8.3",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.0",
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "autoprefixer": "^9.6.1",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.3",
@@ -46,6 +47,7 @@
     "markdown-it-anchor": "^5.0.1",
     "postcss-inline-svg": "^3.1.1",
     "push-dir": "^0.4.1",
+    "sass": "^1.26.3",
     "yargs": "^13.2.4"
   },
   "standard": {
@@ -57,5 +59,7 @@
     ],
     "parser": "babel-eslint"
   },
-  "dependencies": {}
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
 }

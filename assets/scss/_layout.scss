@@ -1,0 +1,25 @@
+.l-grid {
+  // TMP
+  --max-width: 36rem;
+
+  display: grid;
+  grid-template-columns: 1fr minmax(0, var(--max-width)) 1fr;
+}
+
+.l-hero {
+  grid-column: 1 / -1;
+}
+
+.l-content {
+  grid-column: 2 / -2;
+}
+
+.l-wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: var(--max-width, #{$max-width});
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

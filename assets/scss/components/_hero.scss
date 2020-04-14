@@ -3,6 +3,10 @@
   --color-link-alt: #{$color-link-dark-alt};
 
   padding: $base-spacing var(--horizontal-spacing);
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   background-color: var(--color-background-svg);
 
@@ -26,7 +30,7 @@
 }
 
 .hero__title {
-  @include font-scale(hero);
+  // @include font-scale(hero);
 
   margin: $base-spacing auto;
   max-width: $max-width;
@@ -48,7 +52,7 @@
 }
 
 .hero__meta {
-  @include font-scale(sm);
+  // @include font-scale(sm);
 
   margin-bottom: $base-spacing;
   color: var(--color-text);

@@ -1,12 +1,14 @@
-<footer class="site-footer" role="contentinfo">
-  <div class="l-wrapper">
+<footer class="site-footer l-grid" role="contentinfo">
+  <div class="l-content">
     {% include subscribe %}
   </div>
-  <div class="l-wrapper">
+
+  <div class="l-content">
     <div class="site-footer__column">
       <p>{{ site.author_name }}</p>
       <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
     </div>
+
     <div class="site-footer__column">
       {%- if site.github_username %}
         <p>
@@ -29,6 +31,7 @@
         </p>
       {%- endif %}
     </div>
+
     <div class="site-footer__column">
       <p class="text">{{ site.description }}</p>
     </div>

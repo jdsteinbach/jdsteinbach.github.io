@@ -1,9 +1,7 @@
 {% include before %}
-<div class="home l-page">
-  <header class="hero l-hero">
-    {% include header-image %}
-    <h1 class="hero__title">{{ title }}</h1>
-  </header>
+
+<div class="l-grid">
+  {% include hero %}
 
   <div class="l-content">
     {% if pagination.items %}
@@ -31,4 +29,5 @@
     {% endif %}
   </div>
 </div>
+
 {% include after %}

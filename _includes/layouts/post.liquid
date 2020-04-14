@@ -1,29 +1,34 @@
+{% assign toc = content | toc %}
+
 {% include before %}
-  <article class="post l-page" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="hero l-hero">
-      {% include header-image %}
-      <h1 class="hero__title" itemprop="name title headline">{{ title }}</h1>
+<article class="post l-grid" itemscope itemtype="http://schema.org/BlogPosting">
+  {% comment %} <header class="hero l-hero">
+    <h1 class="hero__title" itemprop="name title headline">{{ title }}</h1>
 
-      <p class="hero__meta">
-        {%- if page.date %}
-          <time class="date" datetime={{ page.date }} itemprop="dateCreated pubdate datePublished">{{ page.date | date: "%B %e, %Y" }}</time>
-        {%- endif %}
-        {%- if author %}
-          <span class="author" itemprop="author creator">{{ author }}</span>
-        {%- endif %}
-        {%- if categories %}
-          <span class="categories">{% include categories %}</span>
-        {%- endif %}
-      </p>
-    </header>
+    <p class="hero__meta">
+      {%- if page.date %}
+        <time class="date" datetime={{ page.date }} itemprop="dateCreated pubdate datePublished">{{ page.date | date: "%B %e, %Y" }}</time>
+      {%- endif %}
+      {%- if author %}
+        <span class="author" itemprop="author creator">{{ author }}</span>
+      {%- endif %}
+      {%- if categories %}
+        <span class="categories">{% include categories %}</span>
+      {%- endif %}
+    </p>
+  </header> {% endcomment %}
 
-    <div class="main-content l-content has-toc" itemprop="articleBody">
-      {{ content }}
+  {% include hero %}
 
+  <div class="main-content has-toc l-content" itemprop="articleBody">
+    {{ content }}
+
+    {% if toc %}
       <aside class="post-toc">
         <h5 class="post-toc__title">Table of Contents</h5>
         {{ content | toc }}
       </aside>
-    </div>
-  </article>
-  {% include after %}
+    {% endif %}
+  </div>
+</article>
+{% include after %}

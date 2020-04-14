@@ -1,0 +1,22 @@
+<header class="hero l-hero">
+  <h1 class="hero__title">{{ title }}</h1>
+  <svg class="hero__bg starfield" role="presentation" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation=".5" />
+    </filter>
+    {% for i in (1..5) %}
+      <g class="starfield__layer">
+        {% for i in (1..30) %}
+          {% assign x = 1000 | random %}
+          {% assign y = 1000 | random %}
+          {% assign scale = 1 | random | plus: .5 %}
+          <path
+            class="starfield__star"
+            d="m{{x}},{{y}}l2,2l-2,2l-2,-2z"
+            transform="scale({{scale}})"
+          />
+        {% endfor %}
+      </g>
+    {% endfor %}
+  </svg>
+</header>

@@ -10,10 +10,6 @@ const browserSync = require('browser-sync').create()
 const reload = browserSync.reload
 const exec = require('child_process').exec
 const $ = require('gulp-load-plugins')()
-const postcss = require('gulp-postcss')
-const prefix = require('autoprefixer')
-const cssnano = require('cssnano')
-const inlineSVG = require('postcss-inline-svg')
 const yargs = require('yargs')
 
 const { dest, series, src, task, watch } = gulp
@@ -30,12 +26,10 @@ const pkg = require('./package.json')
 const paths = {
   src: {
     html: './{_data,_includes,pages,posts}/',
-    css: './scss/',
-    js: './js/'
+    js: './assets/js/'
   },
   build: {
     root: './_site/',
-    css: './_site/styles/',
     js: './_site/js/'
   }
 }
@@ -45,20 +39,11 @@ const paths = {
  */
 
 const opts = {
-  sass: {
-    outputStyle: isProd ? 'compressed' : 'expanded',
-    sourceComments: !isProd
-  },
-  postcss: [
-    inlineSVG({path: './images'}),
-    prefix({browsers: pkg.browserslist})
-  ],
   standard: {
     breakOnError: true,
     quiet: false
   }
 }
-if (isProd) opts.postcss.push(cssnano())
 
 /**
  * Error notification settings
@@ -105,7 +90,7 @@ task('lint:src', () =>
  * Lint the Sass
  */
 task('lint:sass', () =>
-  src(paths.src.css + '**/*.scss')
+  src('./assets/scss/**/*.scss')
     .pipe($.sassLint({}))
     .pipe($.sassLint.format())
     .pipe($.sassLint.failOnError())
@@ -148,28 +133,9 @@ task('scripts', async () => {
 })
 
 /**
- * Compiles and compresses the source Sass files for dist/dev
- */
-task('styles', () =>
-  src(paths.src.css + 'main.scss')
-    .pipe($.plumber({ errorHandler: errorAlert }))
-    .pipe($.sass(opts.sass))
-    .pipe(postcss(opts.postcss))
-    .pipe(dest(paths.build.css))
-    .pipe(reload({stream: true}))
-    .on('error', errorAlert)
-    .pipe(
-      $.notify({
-        message: (isProd) ? 'Styles have been compiled and minified' : 'Dev styles have been compiled',
-        onLast: true
-      })
-    )
-)
-
-/**
  * Builds for distribution (staging or production)
  */
-task('build', series('clean', '11ty', 'styles', 'scripts', cb => cb()))
+task('build', series('clean', '11ty', 'scripts', cb => cb()))
 
 /**
  * Builds assets and reloads the page when any php, html, img or dev files change
@@ -182,9 +148,8 @@ task('watch', series('build', () => {
     notify: true
   })
 
-  watch(`${paths.src.css}**/*`, series('styles'))
   watch(`${paths.src.js}**/*`, series('scripts'))
-  watch(`${paths.src.html}**/*.{md,html,liquid,json}`, series('11ty'))
+  watch(`${paths.src.html}**/*`, series('11ty'))
   watch(`${paths.build}**/*.html`).on('change', reload)
 }))
 

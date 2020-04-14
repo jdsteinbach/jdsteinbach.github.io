@@ -1,0 +1,40 @@
+.starfield {
+  // background-color: $color-purple-dark;
+  background-color: #492e63;
+}
+
+.starfield__layer {
+  transform-box: view-box;
+  transform-origin: center;
+  animation: field 10s infinite normal paused linear;
+
+  svg:hover & {
+    animation-play-state: running;
+  }
+
+  @for $i from 1 through 6 {
+    &:nth-of-type(#{$i}) {
+      animation-delay: (1 - $i) * 2s;
+    }
+  }
+}
+
+.starfield__star {
+  // fill: $color-off-white;
+  fill: #fee8ca;
+}
+
+@keyframes field {
+  0% {
+    opacity: 0;
+    transform: scale(.5);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80%, 100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}

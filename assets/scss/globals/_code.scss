@@ -17,7 +17,7 @@ code {
 pre > code {
   --box-shadow: #{$color-gray};
 
-  @include font-scale(sm);
+  // @include font-scale(sm);
 
   margin: $base-spacing 0;
   padding: $small-spacing;

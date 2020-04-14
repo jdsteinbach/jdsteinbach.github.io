@@ -1,8 +1,9 @@
 @mixin fonts($family, $file, $style, $weight) {
   @font-face {
     font-family: $family;
-    src:  url("/webfonts/#{$file}.eot");
-    src:  url("/webfonts/#{$file}.woff2") format("woff2"), url("/webfonts/#{$file}.woff") format("woff"); //sass-lint:disable-line no-duplicate-properties
+    src:
+      url("/assets/fonts/#{$file}.woff2") format("woff2"),
+      url("/assets/fonts/#{$file}.woff") format("woff");
     font-style: $style;
     font-weight: $weight;
     font-display: swap;
@@ -12,7 +13,7 @@
 @mixin v-fonts($family, $file-name, $style, $format) {
   @font-face {
     font-family: $family;
-    src: url("/webfonts/#{$file-name}") format("#{$format}");
+    src: url("/assets/fonts/#{$file-name}") format("#{$format}");
     font-style: $style;
   }
 }

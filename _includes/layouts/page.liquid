@@ -1,12 +1,13 @@
 {% include before %}
-<article class="page l-page" itemscope itemtype="http://schema.org/WebPage">
-  <header class="hero l-hero">
-    {% include header-image %}
+<article class="page l-grid" itemscope itemtype="http://schema.org/WebPage">
+  {% comment %} <header class="hero l-hero">
     <h1 class="hero__title" itemprop="name title headline">{{ title }}</h1>
     {%- if author %}
       <span class="author hidden" itemprop="author creator">{{ author }}</span>
     {%- endif %}
-  </header>
+  </header> {% endcomment %}
+  {% include hero %}
+
   <div class="main-content l-content" itemprop="articleBody">
     {{ content }}
   </div>

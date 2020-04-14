@@ -9,14 +9,16 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPlugin(pluginSyntaxHighlight)
   eleventyConfig.addPlugin(pluginTOC)
 
+  // Layouts
   eleventyConfig.addLayoutAlias('post', 'layouts/post.liquid')
   eleventyConfig.addLayoutAlias('page', 'layouts/page.liquid')
   eleventyConfig.addLayoutAlias('category', 'layouts/category.liquid')
   eleventyConfig.addLayoutAlias('blog', 'layouts/blog.liquid')
   eleventyConfig.addLayoutAlias('feed', 'layouts/feed.liquid')
 
-  eleventyConfig.addFilter('imageID', titleString => {
-    return titleString.length % 5 + 1
+  // Filters
+  eleventyConfig.addFilter('random', max => {
+    return Math.round(Math.random() * max)
   })
 
   eleventyConfig.addFilter('xml_friendly', string => {
@@ -145,7 +147,7 @@ module.exports = eleventyConfig => {
 
   // Pass through directories
   eleventyConfig.addPassthroughCopy('images')
-  eleventyConfig.addPassthroughCopy('webfonts')
+  eleventyConfig.addPassthroughCopy('assets/fonts')
   eleventyConfig.addPassthroughCopy('site.webmanifest')
   eleventyConfig.addPassthroughCopy('android-chrome-192x192.png')
   eleventyConfig.addPassthroughCopy('android-chrome-512x512.png')
@@ -156,27 +158,32 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('A')
   eleventyConfig.addPassthroughCopy('CNAME')
 
-  /* Markdown */
-  let markdownIt = require('markdown-it')
-  let markdownItAnchor = require('markdown-it-anchor')
-  let options = {
+  // More watched files
+  eleventyConfig.addWatchTarget('./assets/js/**/*.js')
+  eleventyConfig.addWatchTarget('./assets/scss/**/*.scss')
+
+  // Markdown
+  const markdownIt = require('markdown-it')
+  const markdownItAnchor = require('markdown-it-anchor')
+  const mdOptions = {
     html: true,
     breaks: true,
     linkify: true,
     typographer: true
   }
-  let opts = {
+  const mdAnchorOpts = {
     permalink: true,
     permalinkClass: 'anchor-link',
     permalinkSymbol: '#',
     level: [1, 2, 3, 4]
   }
 
-  eleventyConfig.setLibrary('md', markdownIt(options).use(markdownItAnchor, opts))
+  eleventyConfig.setLibrary('md', markdownIt(mdOptions).use(markdownItAnchor, mdAnchorOpts))
 
   return {
     templateFormats: [
-      'md'
+      'md',
+      '11ty.js'
     ],
     dir: {
       input: '.',
