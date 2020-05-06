@@ -4,7 +4,7 @@
   <subtitle>Front-end architect. Speaker &amp; writer. Sass, CSS animation, RWD &amp; WP.</subtitle>
   <link href="https://jdsteinbach.com/feed.xml" rel="self"/>
   <link href="https://jdsteinbach.com"/>
-  <updated>2020-03-02T00:00:00-07:00</updated>
+  <updated>2020-03-02T00:00:00+00:00</updated>
   <id>https://jdsteinbach.com</id>
   <author>
     <name>James Steinbach</name>
@@ -13,7 +13,7 @@
   <entry>
     <title>Accessible Loading Indicators – with No Extra Elements!</title>
     <link href="https://jdsteinbach.com/css/accessible-loading-indicato/"/>
-    <updated>2020-03-02T00:00:00-07:00</updated>
+    <updated>2020-03-02T00:00:00+00:00</updated>
     <id>https://jdsteinbach.com/css/accessible-loading-indicato/</id>
     <content type="html"><p>Read my article “<a href="https://dockyard.com/blog/2020/03/02/accessible-loading-indicatorswith-no-extra-elements" title="Accessible Loading Indicators – with No Extra Elements!" target="_blank">Accessible Loading Indicators – with No Extra Elements!</a>” at <a href="http://DockYard.com">DockYard.com</a>.</p>
 </content>
@@ -21,7 +21,7 @@
   <entry>
     <title>Safe Fallback for CSS Lazy Loading</title>
     <link href="https://jdsteinbach.com/css/async-css-noscript/"/>
-    <updated>2019-09-12T00:00:00-06:00</updated>
+    <updated>2019-09-12T00:00:00+00:00</updated>
     <id>https://jdsteinbach.com/css/async-css-noscript/</id>
     <content type="html"><p>Recently, Scott Jehl published a short post about <a href="https://www.filamentgroup.com/lab/load-css-simpler/">“The Simplest Way to Load CSS Asynchronously.”</a> In it, he recommends adding <code>media=&quot;print&quot;</code> to your <code>link</code> tag, then adding an inline JS attribute as well: <code>onload=&quot;this.media='all'&quot;</code>. Put together, here’s the recommended code:</p>
 <pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>styles.css<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>print<span class="token punctuation">"</span></span> <span class="token attr-name">onload</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>this.media=<span class="token punctuation">'</span>all<span class="token punctuation">'</span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></span></code></pre>
@@ -36,7 +36,7 @@
   <entry>
     <title>Just Details; No Devil</title>
     <link href="https://jdsteinbach.com/css/just-details-no-devil/"/>
-    <updated>2019-05-03T00:00:00-06:00</updated>
+    <updated>2019-05-03T00:00:00+00:00</updated>
     <id>https://jdsteinbach.com/css/just-details-no-devil/</id>
     <content type="html"><p>Read my article “<a href="https://dockyard.com/blog/2019/05/03/just-details-no-devil" title=" Just Details; No Devil" target="_blank"> Just Details; No Devil </a>” at <a href="http://DockYard.com">DockYard.com</a>.</p>
 </content>
@@ -44,7 +44,7 @@
   <entry>
     <title>CSS Selectors for the Entire Last Row of a Dynamic Grid</title>
     <link href="https://jdsteinbach.com/css/select-last-row-dynamic-grid/"/>
-    <updated>2019-04-19T00:00:00-06:00</updated>
+    <updated>2019-04-19T00:00:00+00:00</updated>
     <id>https://jdsteinbach.com/css/select-last-row-dynamic-grid/</id>
     <content type="html"><p>Read my article “<a href="https://dockyard.com/blog/2019/04/16/css-selectors-for-the-entire-last-row-of-a-dynamic-grid" title=" CSS Selectors for the Entire Last Row of a Dynamic Grid" target="_blank"> CSS Selectors for the Entire Last Row of a Dynamic Grid </a>” at <a href="http://DockYard.com">DockYard.com</a>.</p>
 </content>
@@ -52,7 +52,7 @@
   <entry>
     <title>Preventing Content Reflow From Lazy-Loaded Images</title>
     <link href="https://jdsteinbach.com/css/preventing-content-reflow-lazy-loaded-images/"/>
-    <updated>2018-11-29T00:00:00-07:00</updated>
+    <updated>2018-11-29T00:00:00+00:00</updated>
     <id>https://jdsteinbach.com/css/preventing-content-reflow-lazy-loaded-images/</id>
     <content type="html"><p>Read my article “<a href="https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-images/" title=" Preventing Content Reflow From Lazy-Loaded Images" target="_blank"> Preventing Content Reflow From Lazy-Loaded Images </a>” at <a href="http://CSS-Tricks.com">CSS-Tricks.com</a>.</p>
 </content>
@@ -60,7 +60,7 @@
   <entry>
     <title>“Work-Life Balance” at DockYard</title>
     <link href="https://jdsteinbach.com/misc/work-life-balance-dockyard/"/>
-    <updated>2018-06-21T00:00:00-06:00</updated>
+    <updated>2018-06-21T00:00:00+00:00</updated>
     <id>https://jdsteinbach.com/misc/work-life-balance-dockyard/</id>
     <content type="html"><p>Read my article “<a href="https://dockyard.com/blog/2018/06/21/work-life-balance-at-dockyard" title="Work-Life Balance at DockYard" target="_blank">‘Work-Life Balance’ at DockYard</a>” at <a href="http://DockYard.com">DockYard.com</a>.</p>
 </content>
@@ -68,7 +68,7 @@
   <entry>
     <title>Writing Your First PostCSS Plugin</title>
     <link href="https://jdsteinbach.com/css/postcss-plugin/"/>
-    <updated>2018-02-01T00:00:00-07:00</updated>
+    <updated>2018-02-01T00:00:00+00:00</updated>
     <id>https://jdsteinbach.com/css/postcss-plugin/</id>
     <content type="html"><p>Read my article “<a href="https://dockyard.com/blog/2018/02/01/writing-your-first-postcss-plugin" title="Writing Your First PostCSS Plugin" target="_blank">Writing Your First PostCSS Plugin</a>” at <a href="http://DockYard.com">DockYard.com</a>.</p>
 </content>
@@ -76,7 +76,7 @@
   <entry>
     <title>Animating Background Gradients to Make Your PWA More Native</title>
     <link href="https://jdsteinbach.com/css/animating-gradients/"/>
-    <updated>2017-10-16T00:00:00-06:00</updated>
+    <updated>2017-10-16T00:00:00+00:00</updated>
     <id>https://jdsteinbach.com/css/animating-gradients/</id>
     <content type="html"><p>Read my article “<a href="https://dockyard.com/blog/2017/10/17/animating-background-gradients-pwa" title="Animating Background Gradients to Make Your PWA More Native" target="_blank">Animating Background Gradients to Make Your PWA More Native</a>” at <a href="http://DockYard.com">DockYard.com</a>.</p>
 </content>
@@ -84,7 +84,7 @@
   <entry>
     <title>Distributed Mentoring</title>
     <link href="https://jdsteinbach.com/misc/distributed-mentoring/"/>
-    <updated>2017-06-24T00:00:00-06:00</updated>
+    <updated>2017-06-24T00:00:00+00:00</updated>
     <id>https://jdsteinbach.com/misc/distributed-mentoring/</id>
     <content type="html"><p>When most people think about mentoring, they picture someone more experienced investing time in a close relationship with someone less experienced. Maybe you thought about someone who’d done that for you - a co-worker, parent, or teacher. In my web development career, I’ve had a different kind of mentoring experience than that standard one. Instead of having an experienced developer invest lots of time in me and my career, I’ve benefited from little bits of help from lots of people over the years. <strong>I like to call this “distributed” mentorship: remote learning from people around the world.</strong></p>
 <h2 id="getting-started">Getting Started <a class="anchor-link" href="#getting-started" aria-hidden="true">#</a></h2>
@@ -116,7 +116,7 @@
   <entry>
     <title>Keeping RWD Simple &amp; Sassy – Animation</title>
     <link href="https://jdsteinbach.com/sass/rwd-sass-animation/"/>
-    <updated>2016-04-14T00:00:00-06:00</updated>
+    <updated>2016-04-14T00:00:00+00:00</updated>
     <id>https://jdsteinbach.com/sass/rwd-sass-animation/</id>
     <content type="html"><p>This is the fifth &amp; final post in a series based on my recent RWD Summit talk “Keeping RWD Simple &amp; Sassy.” It covers some useful techniques for managing responsive animations with Sass.</p>
 <h2 id="responsive-animations">Responsive Animations <a class="anchor-link" href="#responsive-animations" aria-hidden="true">#</a></h2>
