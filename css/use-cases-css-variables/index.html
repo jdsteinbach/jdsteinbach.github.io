@@ -11,20 +11,22 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Use Cases for CSS Custom Properties (Variables) • James Steinbach" />
   <meta property="og:description" content="Front-end architect. Speaker & writer. Sass, CSS animation, RWD & WP." />
-  <meta property="og:url" content="https://jdsteinbach.com" />
+  <meta property="og:url" content="https://jdsteinbach.com/css/use-cases-css-variables/" />
   <meta property="og:site_name" content="James Steinbach" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:description" content="Front-end architect. Speaker & writer. Sass, CSS animation, RWD & WP." />
   <meta name="twitter:title" content="Use Cases for CSS Custom Properties (Variables) • James Steinbach" />
-  <meta name="twitter:domain" content="https://jdsteinbach.com" />
+  <meta name="twitter:url" content="https://jdsteinbach.com/css/use-cases-css-variables/" />
+  <meta name="twitter:site" content="@jdsteinbach" />
+  <meta name="twitter:creator" content="@jdsteinbach" />
+
+  <meta name="test-pagination" content="">
 
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="canonical" href="https://jdsteinbach.com/css/use-cases-css-variables/" itemprop="url" />
   <link rel="alternate" type="application/rss+xml" title="James Steinbach" href="https://jdsteinbach.com/feed.xml" />
-  <link rel="alternate" type="application/json" title="James Steinbach" href="https://jdsteinbach.com/jsonfeed" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e65100" />
@@ -32,25 +34,18 @@
   <meta name="theme-color" content="#e65100" />
 </head>
 
-<body>
+<body class="site">
   <header class="site-header" role="banner">
-  <div class="wrapper">
-    <a class="site-title" href="/">James Steinbach</a>
-      <nav class="site-nav">
-          <a class="site-nav__link" href="/css/" data-order="10">CSS</a>
-          <a class="site-nav__link" href="/sass/" data-order="20">Sass</a>
-          <a class="site-nav__link" href="/wordpress/" data-order="30">WP</a>
-          <a class="site-nav__link" href="/talks/" data-order="35">Talks</a>
-          <a class="site-nav__link" href="/about/" data-order="40">About</a>
-          <a class="site-nav__link" href="/contact/" data-order="50">Contact</a>
-      </nav>
+  <div class="l-wrapper l-wrapper--wide">
+    <a class="site-header__title" href="/">James Steinbach</a>
+    <nav class="header-nav" id="header-nav"><a class="header-nav__link" href="/css/" data-order="10">CSS</a><a class="header-nav__link" href="/sass/" data-order="20">Sass</a><a class="header-nav__link" href="/wordpress/" data-order="30">WP</a><a class="header-nav__link" href="/talks/" data-order="35">Talks</a><a class="header-nav__link" href="/about/" data-order="40">About</a><a class="header-nav__link" href="/contact/" data-order="50">Contact</a></nav>
   </div>
 </header>
 
-  <div class="page-content" id="main" role="main">
+  <main class="site-main" id="main" role="main">
 
-  <div class="post inner-wrapper">
-    <header class="post-header">
+  <article class="post l-page" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="hero l-hero">
       
     <svg viewBox="0 0 64 64" preserveAspectRatio="xMidYMid slice" alt="" role="presentation">
   <g fill="#131313" fill-opacity=".1">
@@ -87,119 +82,132 @@
 </svg>
 
 
-      <h1 class="post-title">Use Cases for CSS Custom Properties (Variables)</h1>
-      <p class="post-meta">
-          <time class="date" datetime="2014-09-12T06:00:00.000Z">September 12, 2014</time>
-          <span class="author">James Steinbach</span>
+      <h1 class="hero__title" itemprop="name title headline">Use Cases for CSS Custom Properties (Variables)</h1>
+
+      <p class="hero__meta">
+          <time class="date" datetime=Fri Sep 12 2014 00:00:00 GMT+0000 (Coordinated Universal Time) itemprop="dateCreated pubdate datePublished">September 12, 2014</time>
+          <span class="author" itemprop="author creator">James Steinbach</span>
           <span class="categories">
   <a href="/css/" class="category-link">[CSS]</a>
 </span>
       </p>
     </header>
-    <article class="post-content white-sheet">
-      <p><em>Published September 12, 2014; updated April 16, 2018: updated browser support &amp; changed most instances of &quot;CSS variables&quot; to &quot;custom properties&quot;</em></p>
+
+    <div class="main-content l-content has-toc" itemprop="articleBody">
+      <p><em>Published September 12, 2014; updated April 16, 2018: updated browser support &amp; changed most instances of “CSS variables” to “custom properties”</em></p>
 <p>It’s time to start exploring use cases for CSS <span style="text-decoration:line-through">variables</span> custom properties, now that <span style="text-decoration:line-through">Firefox</span> <a title="CSS Variable data on Can I Use" href="http://caniuse.com/#feat=css-variables" target="_blank">Firefox, Chrome, Safari, and Edge support them</a>. That means that <span style="text-decoration:line-through">this post &amp; all the embedded pens will only work in Firefox</span> <strong>this post &amp; all the embedded pens will work almost everywhere but IE</strong>.</p>
 <p>If you’re a fan of pre-processors, you might share my first reaction to CSS custom properties / variables: “I’m already using variables in [Sass/Less/Stylus]; why introduce something new?” First, the ability to change these values live in a browser is pretty powerful. Second, native CSS variables will allow us to write lighter, more efficient stylesheets. Third, CSS custom properties do <em>far more</em> than preprocessor variables. You can use a CSS property once, use <code>var(--custom-property)</code> for its value, then change the custom property in any selector block elsewhere: the value of the custom property will obey the cascade <em>without needing to rewrite the entire CSS property/value pair</em> (<a href="#buttons">example</a>).</p>
-<h2>Basic Syntax</h2>
+<h2 id="basic-syntax">Basic Syntax <a class="anchor-link" href="#basic-syntax" aria-hidden="true">#</a></h2>
 <p>To define a native CSS custom property globally, use the following syntax:</p>
-<pre class="language-css"><code class="language-css"><div class="highlight-line"><span class="token selector">:root</span><span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">--color-primary</span><span class="token punctuation">:</span> #001f3f<span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div></code></pre>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">:root</span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--color-primary</span><span class="token punctuation">:</span> #001f3f<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
 <p>To use that value in a property declaration, call it with the <code>var()</code> function:</p>
-<pre class="language-css"><code class="language-css"><div class="highlight-line"><span class="token selector">p</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-primary<span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div></code></pre>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">p</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-primary<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
 <p>Because that custom property is scoped to <code>:root</code>, it’s global. Any place in the stylesheet it appears, it will return that same value. CSS custom properties can be scoped to any element, however, making it possible to create “exceptions.” The following use cases show the power of locally-scoped CSS values.</p>
-<h2>Use Cases for CSS Custom Properties</h2>
-<h3>Colors</h3>
+<h2 id="use-cases-for-css-custom-properties">Use Cases for CSS Custom Properties <a class="anchor-link" href="#use-cases-for-css-custom-properties" aria-hidden="true">#</a></h2>
+<h3 id="colors">Colors <a class="anchor-link" href="#colors" aria-hidden="true">#</a></h3>
 <p>Let’s look at an example of scoping custom property values for color changes. In this use case, the “normal” color for <code>&lt;h1&gt;</code> elements will be the site accent red. However, the site also uses <code>&lt;h1&gt;</code> elements for the titles of widgets in the <code>&lt;aside&gt;</code> sidebar. We can redeclare the <code>--color-accent</code> value in an <code>&lt;aside&gt;</code>: now any <code>&lt;h1&gt;</code> in a widget will be orange instead of red.</p>
-<pre class="language-css"><code class="language-css"><div class="highlight-line"><span class="token selector">:root</span><span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">--color-accent</span><span class="token punctuation">:</span> #ff4136<span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div><div class="highlight-line"><span class="token selector">h1</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-accent<span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div><div class="highlight-line"><span class="token selector">aside</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">--color-accent</span><span class="token punctuation">:</span> #ff851b<span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div></code></pre>
-<h3>Font Sizes</h3>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">:root</span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--color-accent</span><span class="token punctuation">:</span> #ff4136<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">h1</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-accent<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">aside</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--color-accent</span><span class="token punctuation">:</span> #ff851b<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h3 id="font-sizes">Font Sizes <a class="anchor-link" href="#font-sizes" aria-hidden="true">#</a></h3>
 <p>Font sizes can be changed with CSS scoping as well. This example works well in the same scenario as the sidebar colors above:</p>
-<pre class="language-css"><code class="language-css"><div class="highlight-line"><span class="token selector">:root</span><span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">--heading-size</span><span class="token punctuation">:</span> 32px<span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div><div class="highlight-line"><span class="token selector">h1</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--heading-size<span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div><div class="highlight-line"><span class="token selector">aside</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">--heading-size</span><span class="token punctuation">:</span> 24px<span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div></code></pre>
-<h3>SVGs</h3>
-<p>Inline SVG images can be styled with CSS: custom properties can change SVG colors based on context. Amelia Bellamy-Royds has already written a <a title="CSS Variables and SVGs" href="http://codepen.io/AmeliaBR/thoughts/customizable-svg-icons-css-variables" target="_blank">great CodePen blog post on SVGs and CSS variables</a>, so I’ll just link you to it and let her explain how it works.</p>
-<h3>Grid Layouts</h3>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">:root</span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--heading-size</span><span class="token punctuation">:</span> 32px<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">h1</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--heading-size<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">aside</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--heading-size</span><span class="token punctuation">:</span> 24px<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h3 id="svgs">SVGs <a class="anchor-link" href="#svgs" aria-hidden="true">#</a></h3>
+<p>Inline SVG images can be styled with CSS: custom properties can change SVG colors based on context. Amelia Bellamy-Royds has already written a <a href="https://codepen.io/AmeliaBR/post/customizable-svg-icons-css-variables">great CodePen blog post on SVGs and CSS variables</a>, so I’ll just link you to it and let her explain how it works.</p>
+<h3 id="grid-layouts">Grid Layouts <a class="anchor-link" href="#grid-layouts" aria-hidden="true">#</a></h3>
 <p>Grid layouts are one of the trendiest parts of modern web development to automate. There are probably dozens of grid frameworks written in JS, CSS, Sass, etc. We can use CSS custom properties to set up custom grid layouts simply.</p>
 <p>In this example, we’ll only need one set of styles for all our grid elements, regardless of the number of columns they’ll be presented with. (Note, this is a really simplistic grid layout.)</p>
 <p>Each container element will display its <code>.grid-item</code> children according to the <code>--grid-width</code> percentage scoped to that particular container.</p>
-<pre class="language-css"><code class="language-css"><div class="highlight-line"><span class="token selector">:root</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">--grid-width</span><span class="token punctuation">:</span> 20%<span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div><div class="highlight-line"><span class="token selector">.grid-item</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span></div><div class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--grid-width<span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div><div class="highlight-line"><span class="token selector">.products-grid</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">--grid-width</span><span class="token punctuation">:</span> 25%<span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div><div class="highlight-line"><span class="token selector">.portfolio-grid</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">--grid-width</span><span class="token punctuation">:</span> 33%<span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div></code></pre>
-<h3>Column Proportions</h3>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">:root</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--grid-width</span><span class="token punctuation">:</span> 20%<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.grid-item</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--grid-width<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.products-grid</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--grid-width</span><span class="token punctuation">:</span> 25%<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.portfolio-grid</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--grid-width</span><span class="token punctuation">:</span> 33%<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h3 id="column-proportions">Column Proportions <a class="anchor-link" href="#column-proportions" aria-hidden="true">#</a></h3>
 <p>Body vs. sidebar proportions can be managed with CSS custo properties as well:</p>
-<pre class="language-css"><code class="language-css"><div class="highlight-line"><span class="token selector">:root</span><span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">--content-width</span><span class="token punctuation">:</span> 75%<span class="token punctuation">;</span></div><div class="highlight-line">  <span class="token property">--sidebar-width</span><span class="token punctuation">:</span> 25%<span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div><div class="highlight-line"><span class="token selector">.page-content</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--content-width<span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div><div class="highlight-line"><span class="token selector">.page-sidebar</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sidebar-width<span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div><div class="highlight-line"><span class="token selector">.has-wide-sidebar</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">--content-width</span><span class="token punctuation">:</span> 62.5%<span class="token punctuation">;</span></div><div class="highlight-line">  <span class="token property">--sidebar-width</span><span class="token punctuation">:</span> 37.5%<span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div></code></pre>
-<h3>Buttons</h3>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">:root</span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--content-width</span><span class="token punctuation">:</span> 75%<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--sidebar-width</span><span class="token punctuation">:</span> 25%<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.page-content</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--content-width<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.page-sidebar</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sidebar-width<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.has-wide-sidebar</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--content-width</span><span class="token punctuation">:</span> 62.5%<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--sidebar-width</span><span class="token punctuation">:</span> 37.5%<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h3 id="buttons">Buttons <a class="anchor-link" href="#buttons" aria-hidden="true">#</a></h3>
 <p>Next to grid layouts, buttons are everyone’s favorite place to automate styling. CSS properties are useful here, too.</p>
-<pre class="language-css"><code class="language-css"><div class="highlight-line"><span class="token selector">:root</span><span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">--button-color</span><span class="token punctuation">:</span> #ff4136<span class="token punctuation">;</span></div><div class="highlight-line">  <span class="token property">--button-color-dark</span><span class="token punctuation">:</span> #cc0e03<span class="token punctuation">;</span></div><div class="highlight-line">  <span class="token property">--button-color-light</span><span class="token punctuation">:</span> #ff7469<span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div><div class="highlight-line"><span class="token selector">.button</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--button-color<span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line">  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 1px 2px 0 <span class="token function">var</span><span class="token punctuation">(</span>--button-color-dark<span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div><div class="highlight-line"><span class="token selector">.button:hover</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--button-color-dark<span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line">  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0 0 0 <span class="token function">var</span><span class="token punctuation">(</span>--button-color-dark<span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div><div class="highlight-line"><span class="token selector">.button:active</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--button-color-light<span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line">  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0 0 0 <span class="token function">var</span><span class="token punctuation">(</span>--button-color-dark<span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div><div class="highlight-line"><span class="token selector">.contact-form</span> <span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token property">--button-color</span><span class="token punctuation">:</span> #ff851b<span class="token punctuation">;</span></div><div class="highlight-line">  <span class="token property">--button-color-dark</span><span class="token punctuation">:</span> #cc5200<span class="token punctuation">;</span></div><div class="highlight-line">  <span class="token property">--button-color-light</span><span class="token punctuation">:</span> #ffb84e<span class="token punctuation">;</span></div><div class="highlight-line"><span class="token punctuation">}</span></div></code></pre>
-<h3>JS Changes</h3>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">:root</span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--button-color</span><span class="token punctuation">:</span> #ff4136<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--button-color-dark</span><span class="token punctuation">:</span> #cc0e03<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--button-color-light</span><span class="token punctuation">:</span> #ff7469<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.button</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--button-color<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 1px 2px 0 <span class="token function">var</span><span class="token punctuation">(</span>--button-color-dark<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.button:hover</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--button-color-dark<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0 0 0 <span class="token function">var</span><span class="token punctuation">(</span>--button-color-dark<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.button:active</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--button-color-light<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0 0 0 <span class="token function">var</span><span class="token punctuation">(</span>--button-color-dark<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.contact-form</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--button-color</span><span class="token punctuation">:</span> #ff851b<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--button-color-dark</span><span class="token punctuation">:</span> #cc5200<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--button-color-light</span><span class="token punctuation">:</span> #ffb84e<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h3 id="js-changes">JS Changes <a class="anchor-link" href="#js-changes" aria-hidden="true">#</a></h3>
 <p>One benefit of CSS custom properties is that they can be changed in real time with JavaScript. This is nice for user-enabled theme changing or for easily demoing multiple layouts / color scheme options for a client. The following JS function changes the value of the <code>--color-primary</code> variable.</p>
-<pre class="language-js"><code class="language-js"><div class="highlight-line"><span class="token keyword">var</span> body <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"body"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span></div><div class="highlight-line"><span class="token keyword">function</span> <span class="token function">change_vars</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span></div><div class="highlight-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span>body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">'changed'</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span></div><div class="highlight-line">    body<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">'--color-primary'</span><span class="token punctuation">,</span> <span class="token string">'#8e44ad'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line">    body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'changed'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line">  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></div><div class="highlight-line">    body<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">'--color-primary'</span><span class="token punctuation">,</span> <span class="token string">'#2980b9'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line">    body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">'changed'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></div><div class="highlight-line">  <span class="token punctuation">}</span></div><div class="highlight-line"><span class="token punctuation">}</span></div></code></pre>
-<h2>Conclusion</h2>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">var</span> body <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"body"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">function</span> <span class="token function">change_vars</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span>body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">'changed'</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    body<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">'--color-primary'</span><span class="token punctuation">,</span> <span class="token string">'#8e44ad'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'changed'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    body<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">'--color-primary'</span><span class="token punctuation">,</span> <span class="token string">'#2980b9'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">'changed'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h2 id="conclusion">Conclusion <a class="anchor-link" href="#conclusion" aria-hidden="true">#</a></h2>
 <p>So many good uses, and we’re barely getting started… Use the comments to ask follow-up questions or share your ideas for using CSS custom properties (variables).</p>
-<p>You can see all these <a title="CSS Variables: CodePen Demo" href="http://codepen.io/jdsteinbach/pen/AeEwk" target="_blank">CSS Variable use cases in a single CodePen</a> here.</p>
+<p>You can see all these <a href="https://codepen.io/jdsteinbach/pen/AeEwk">CSS Variable use cases in a single CodePen</a> here.</p>
 
-    </article>
-  </div>
-    </div><!-- .page-content -->
-  <footer class="site-footer" role="contentinfo">
-  <div class="wrapper">
-    <div id="mc_embed_signup">
-  <form action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <h2 class="footer-title">Get New Posts &amp; Other Content in Your Inbox!</h2>
-    <div id="mc_embed_signup_scroll">
-      <div class="mc-fields">
-        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-        <div class="mc-field-group email">
-          <label for="mce-EMAIL">Email Address<span class="asterisk">*</span></label>
-          <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-        </div>
-        <div class="mc-field-group fname">
-          <label for="mce-FNAME">First Name</label>
-          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-        </div>
-        <div class="mc-field-group lname">
-          <label for="mce-LNAME">Last Name </label>
-          <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
-        </div>
-      </div>
-      <p id="mce-response"></p>
-      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_e06400c5106eb26339f4a0aea_35bef0e04e" tabindex="-1" value=""></div>
-      <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button button-alt">
-      <p class="mc-ref">Powered by <a href="http://eepurl.com/AtwTT" title="MailChimp - email marketing made easy and fun">MailChimp</a></p>
+
+      <aside class="post-toc">
+        <h5 class="post-toc__title">Table of Contents</h5>
+        <nav class="toc"><ol><li><a href="#basic-syntax">Basic Syntax</a></li><li><a href="#use-cases-for-css-custom-properties">Use Cases for CSS Custom Properties</a><ol><li><a href="#colors">Colors</a></li><li><a href="#font-sizes">Font Sizes</a></li><li><a href="#svgs">SVGs</a></li><li><a href="#grid-layouts">Grid Layouts</a></li><li><a href="#column-proportions">Column Proportions</a></li><li><a href="#buttons">Buttons</a></li><li><a href="#js-changes">JS Changes</a></li></ol></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+      </aside>
     </div>
-  </form>
-</div>
+  </article>
+    </main><!-- main.site-main -->
+  <footer class="site-footer" role="contentinfo">
+  <div class="l-wrapper">
+    <form class="form form--mailchimp" action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <h2 class="site-footer__title">Get New Posts &amp; Other Content in Your Inbox!</h2>
+
+  <div class="form__fields" id="mc_embed_signup_scroll">
+    <div class="form__fields-wrapper">
+      <p class="form__required-message hidden"><span class="form__required-asterisk">*</span> indicates required</p>
+
+      <div class="form__field form__field--email">
+        <label class="form__label" for="mce-EMAIL">Email Address<span class="form__required-asterisk">*</span></label>
+        <input class="form__input form__input--required form__input--email" type="email" name="EMAIL" id="mce-EMAIL">
+      </div>
+
+      <div class="form__field form__field--fname">
+        <label class="form__label" for="mce-FNAME">First Name</label>
+        <input class="form__input" type="text" name="FNAME" id="mce-FNAME">
+      </div>
+
+      <div class="form__field form__field--lname">
+        <label class="form__label" for="mce-LNAME">Last Name </label>
+        <input class="form__input" type="text" name="LNAME" id="mce-LNAME">
+      </div>
+    </div>
+
+    <p class="form__response-message" id="mce-response"></p>
+
+    <label style="position: absolute; left: -5000px;" aria-hidden="true">
+      <input type="text" name="b_e06400c5106eb26339f4a0aea_35bef0e04e" tabindex="-1" value="">
+    </label>
+
+    <button class="form__submit button button-alt" type="submit">Subscribe</button>
+
+    <p class="form__monkey-rewards mc-ref">Powered by <a href="https://www.mailchimp.com/monkey-rewards/?utm_source=freemium_newsletter&utm_medium=email&utm_campaign=monkey_rewards&aid=e06400c5106eb26339f4a0aea&afl=1" target="_blank" rel="noopener nofollow noreferrer" title="MailChimp - email marketing made easy and fun">MailChimp</a></p>
+  </div>
+</form>
 
   </div>
-  <div class="wrapper">
-    <div class="footer-col-wrapper">
-    <div class="footer-col footer-col-1">
-        <p>James Steinbach</p>
-        <p><a href="mailto:jdsteinbach@gmail.com">jdsteinbach@gmail.com</a></p>
-      </div>
-      <div class="footer-col footer-col-2">
-          <p>
-            <a href="https://github.com/jdsteinbach">
-              <span class="icon icon--github">
-                <svg viewBox="0 0 16 16" height="16" width="16">
+  <div class="l-wrapper">
+    <div class="site-footer__column">
+      <p>James Steinbach</p>
+      <p><a href="mailto:jdsteinbach@gmail.com">jdsteinbach@gmail.com</a></p>
+    </div>
+    <div class="site-footer__column">
+        <p>
+          <a href="https://github.com/jdsteinbach">
+            <span class="icon icon--github">
+              <svg viewBox="0 0 16 16" height="16" width="16">
   <path fill="currentColor" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
 </svg>
 
-              </span>
-              <span class="username">jdsteinbach</span>
-            </a>
-          </p>
-          <p>
-            <a href="https://twitter.com/jdsteinbach">
-              <span class="icon icon--twitter">
-                <svg viewBox="0 0 16 16" height="16" width="16">
+            </span>
+            <span class="username">jdsteinbach</span>
+          </a>
+        </p>
+        <p>
+          <a href="https://twitter.com/jdsteinbach">
+            <span class="icon icon--twitter">
+              <svg viewBox="0 0 16 16" height="16" width="16">
   <path fill="currentColor" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
   c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
 </svg>
 
-              </span>
-              <span class="username">jdsteinbach</span>
-            </a>
-          </p>
-      </div>
-      <div class="footer-col footer-col-3">
-        <p class="text">Front-end architect. <br />Speaker & writer. <br />Sass, CSS animation, RWD & WP.</p>
-      </div>
+            </span>
+            <span class="username">jdsteinbach</span>
+          </a>
+        </p>
+    </div>
+    <div class="site-footer__column">
+      <p class="text">Front-end architect. <br />Speaker & writer. <br />Sass, CSS animation, RWD & WP.</p>
     </div>
   </div>
 </footer>
@@ -213,14 +221,7 @@
     }
   }
   </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43397146-5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-43397146-5');
-</script>
+  <script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
   <script async src="/js/site.js"></script>
     <script defer src="https://assets.codepen.io/assets/embed/ei.js"></script>

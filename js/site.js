@@ -1,15 +1,18 @@
 'use strict';
 
+// Let the DOM know the browser has JS
+document.body.classList.add('js');
+
 // Control form fields
-var formBoxes = document.querySelectorAll('.mc-field-group, .field-group');
+var formBoxes = document.querySelectorAll('.form__field');
 
 var activateField = function activateField(el) {
-  return el.parentNode.classList.add('active-input');
+  return el.parentNode.classList.add('is-active');
 };
 
 var deactivateField = function deactivateField(el) {
   if (el.value === '') {
-    el.parentNode.classList.remove('active-input');
+    el.parentNode.classList.remove('is-active');
   }
 };
 
@@ -36,7 +39,7 @@ try {
     });
   }
 
-  // Ajax Form Submission
+  // Fetch-based Form Submission
 } catch (err) {
   _didIteratorError = true;
   _iteratorError = err;
@@ -52,7 +55,7 @@ try {
   }
 }
 
-var ajaxForm = function ajaxForm(_ref) {
+var fetchForm = function fetchForm(_ref) {
   var id = _ref.id,
       responseID = _ref.responseID,
       fieldIDs = _ref.fieldIDs,
@@ -68,6 +71,11 @@ var ajaxForm = function ajaxForm(_ref) {
       var data = new FormData(contactForm);
 
       e.preventDefault();
+
+      if (data.has('web') > -1 && data.get('web') !== '') {
+        formMessage.innerHTML = failMsg;
+        return false;
+      }
 
       fetch(contactForm.getAttribute('action'), {
         method: contactForm.getAttribute('method'),
@@ -99,37 +107,38 @@ var ajaxForm = function ajaxForm(_ref) {
             }
           }
 
-          formMessage.innerHTML = successMsg;
+          formMessage.innerHTML = '<p class="form__response-message is-success">' + successMsg + '</p>';
         } else {
-          formMessage.innerHTML = failMsg;
+          formMessage.innerHTML = '<p class="form__response-message is-error">' + failMsg + '</p>';
         }
       }).catch(function (err) {
         console.log(err);
-        formMessage.innerHTML = failMsg;
+        formMessage.innerHTML = '<p class="form__response-message is-error">' + failMsg + '</p>';
       });
     });
   }
 };
 
-ajaxForm({
+fetchForm({
   id: 'contact-form',
   responseID: 'form-message',
   fieldIDs: ['name', 'email', 'message'],
   successMsg: 'Thanks, your message has been sent.',
-  failMsg: 'Sorry, an error occured and your message could not be sent.'
+  failMsg: 'Sorry, an error occurred and your message could not be sent.'
 });
 
-ajaxForm({
+fetchForm({
   id: 'mc-embedded-subscribe-form',
   responseID: 'mc_embed_signup_scroll',
   fieldIDs: [],
-  successMsg: '<p class="mc-response">Thanks, check your inbox to confirm your subscription!</p>',
-  failMsg: '<p class="mc-response">Sorry, an error occured and you weren’t subscribed. <a class="button" href="https://jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&id=35bef0e04e" target="_blank" rel="noopener noreferrer nofollow">Try subscribing here</a></p>'
+  successMsg: 'Thanks, check your inbox to confirm your subscription!',
+  failMsg: 'Sorry, an error occurred and you weren’t subscribed. <a class="button" href="https://jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&id=35bef0e04e" target="_blank" rel="noopener noreferrer nofollow">Try subscribing here</a>'
 });
 
 if ('localStorage' in window) {
-  var main = document.getElementById('main');
+  var container = document.getElementById('header-nav');
   var toggle = document.createElement('button');
+  toggle.setAttribute('type', 'button');
 
   var saveTheme = function saveTheme(isDark) {
     var theme = isDark ? 'dark' : '';
@@ -152,15 +161,32 @@ if ('localStorage' in window) {
 
   buttonText(getTheme());
 
-  toggle.classList.add('button-theme');
-
   toggle.addEventListener('click', function (e) {
     e.preventDefault();
     document.body.classList.toggle('theme-dark');
     setTheme();
   });
 
-  main.parentNode.insertBefore(toggle, main);
+  toggle.classList.add('toggle');
+
+  container.appendChild(toggle);
+}
+
+var toc = document.querySelector('.post-toc');
+
+if (toc) {
+  toc.setAttribute('aria-hidden', true);
+  var title = toc.querySelector('.post-toc__title');
+
+  if (title) {
+    title.addEventListener('click', function (e) {
+      if (toc.getAttribute('aria-hidden') === 'true') {
+        toc.setAttribute('aria-hidden', false);
+      } else {
+        toc.setAttribute('aria-hidden', true);
+      }
+    });
+  }
 }
 
 console.log(['', '               ///  /////////     /////////', '              ///  ///    ///   ///     ///', '             ///  ///     ///  ///     ///', '            ///  ///     ///  ///', '           ///  ///     ///   ///', '          ///  ///     ///      ///', '         ///  ///     ///         ///', '        ///  ///     ///          ///', '///    ///  ///     ///  ///     ///', '///  ///   ///    ///   ///     ///', ' /////    /////////      ////////', ''].join('\n'));
