@@ -15,7 +15,7 @@ a {
   }
 
   // @TOD BEM leak
-  .post-content & {
+  .main-content & {
     text-decoration: underline;
 
     @include haf {
