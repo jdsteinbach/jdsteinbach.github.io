@@ -1,13 +1,15 @@
-{% include before %}
+---
+layout: _base
+---
 
 <div class="l-grid">
-  {% include hero %}
+  {% include partials/_hero %}
 
   <div class="l-content">
     {% if pagination.items %}
       <ul class="posts-archive">
         {% for post in pagination.items %}
-          {% include archive-item %}
+          {% include partials/_archive-item %}
         {% endfor %}
       </ul>
 
@@ -29,5 +31,3 @@
     {% endif %}
   </div>
 </div>
-
-{% include after %}

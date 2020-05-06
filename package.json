@@ -9,47 +9,31 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "gulp watch --dev",
-    "clean": "gulp clean",
-    "11ty": "eleventy",
-    "11ty-debug": "DEBUG=Eleventy* eleventy",
-    "11ty:serve": "eleventy --serve",
-    "build": "gulp build",
-    "deploy": "push-dir --dir=./_site --branch=master --force"
+    "serve": "cross-env ELEVENTY_ENV=dev eleventy --serve",
+    "serve:debug": "cross-env ELEVENTY_ENV=dev DEBUG=Eleventy* eleventy",
+    "build": "cross-env ELEVENTY_ENV=prod eleventy",
+    "build:debug": "cross-env ELEVENTY_ENV=dev DEBUG=Eleventy* eleventy"
   },
   "author": "James Steinbach",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "autoprefixer": "^9.6.1",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.7",
     "browserslist": "^3.2.8",
+    "cross-env": "^7.0.2",
     "cssnano": "^4.1.0",
     "del": "^2.2.2",
     "eleventy-plugin-toc": "^1.0.1",
     "eslint": "^6.0.0",
     "glob": "^7.1.1",
-    "gulp": "^4.0.0",
-    "gulp-babel": "^7.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-load-plugins": "^2.0.0",
-    "gulp-notify": "^3.0.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^7.0.0",
-    "gulp-sass": "^4.0.0",
-    "gulp-sass-lint": "^1.4.0",
-    "gulp-sourcemaps": "^2.4.1",
-    "gulp-standard": "^11.0.0",
     "luxon": "^1.2.0",
     "markdown-it-anchor": "^5.0.1",
-    "postcss-inline-svg": "^3.1.1",
-    "push-dir": "^0.4.1",
-    "sass": "^1.26.3",
-    "yargs": "^13.2.4"
+    "markdown-it-highlightjs": "^3.1.0",
+    "sass": "^1.26.3"
   },
   "standard": {
     "globals": [
@@ -59,8 +43,5 @@
       "localStorage"
     ],
     "parser": "babel-eslint"
-  },
-  "dependencies": {
-    "node-sass": "^4.13.1"
   }
 }

@@ -1,4 +1,7 @@
-{% include before %}
+---
+layout: _base
+---
+
 <article class="page l-grid" itemscope itemtype="http://schema.org/WebPage">
   {% comment %} <header class="hero l-hero">
     <h1 class="hero__title" itemprop="name title headline">{{ title }}</h1>
@@ -6,10 +9,10 @@
       <span class="author hidden" itemprop="author creator">{{ author }}</span>
     {%- endif %}
   </header> {% endcomment %}
-  {% include hero %}
+
+  {% include partials/_hero %}
 
   <div class="main-content l-content" itemprop="articleBody">
     {{ content }}
   </div>
 </article>
-{% include after %}

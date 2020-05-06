@@ -20,10 +20,15 @@ module.exports = class {
       file: rawFilepath
     })
 
-    return await postcss([
-      require('autoprefixer'),
-      require('cssnano')
-    ])
+    let postcssOpts = [
+      require('autoprefixer')
+    ]
+
+    if (process.env.ELEVENTY_ENV === 'prod') {
+      postcssOpts.push(require('cssnano'))
+    }
+
+    return await postcss(postcssOpts)
       .process(compiledSass.css, { from: rawFilepath })
       .then(result => result.css)
   }

@@ -1,6 +1,9 @@
+---
+layout: _base
+---
+
 {% assign toc = content | toc %}
 
-{% include before %}
 <article class="post l-grid" itemscope itemtype="http://schema.org/BlogPosting">
   {% comment %} <header class="hero l-hero">
     <h1 class="hero__title" itemprop="name title headline">{{ title }}</h1>
@@ -13,12 +16,12 @@
         <span class="author" itemprop="author creator">{{ author }}</span>
       {%- endif %}
       {%- if categories %}
-        <span class="categories">{% include categories %}</span>
+        <span class="categories">{% include partials/_categories %}</span>
       {%- endif %}
     </p>
   </header> {% endcomment %}
 
-  {% include hero %}
+  {% include partials/_hero %}
 
   <div class="main-content has-toc l-content" itemprop="articleBody">
     {{ content }}
@@ -31,4 +34,3 @@
     {% endif %}
   </div>
 </article>
-{% include after %}

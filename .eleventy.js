@@ -1,20 +1,27 @@
-const {URL} = require('url')
-const {DateTime} = require('luxon')
-const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const { URL } = require('url')
+const { DateTime } = require('luxon')
 const pluginTOC = require('eleventy-plugin-toc')
+const markdownIt = require('markdown-it')
+const markdownItAnchor = require('markdown-it-anchor')
+const markdownItHighlightJS = require('markdown-it-highlightjs')
+
+const mdOptions = {
+  html: true,
+  breaks: true,
+  linkify: true,
+  typographer: true
+}
+const mdAnchorOpts = {
+  permalink: true,
+  permalinkClass: 'anchor-link',
+  permalinkSymbol: '#',
+  level: [1, 2, 3, 4]
+}
 
 const formatDate = date => DateTime.fromJSDate(new Date(date)).toISO({includeOffset: true, suppressMilliseconds: true})
 
 module.exports = eleventyConfig => {
-  eleventyConfig.addPlugin(pluginSyntaxHighlight)
   eleventyConfig.addPlugin(pluginTOC)
-
-  // Layouts
-  eleventyConfig.addLayoutAlias('post', 'layouts/post.liquid')
-  eleventyConfig.addLayoutAlias('page', 'layouts/page.liquid')
-  eleventyConfig.addLayoutAlias('category', 'layouts/category.liquid')
-  eleventyConfig.addLayoutAlias('blog', 'layouts/blog.liquid')
-  eleventyConfig.addLayoutAlias('feed', 'layouts/feed.liquid')
 
   // Filters
   eleventyConfig.addFilter('random', max => {
@@ -30,8 +37,6 @@ module.exports = eleventyConfig => {
   eleventyConfig.addFilter('paginate_better', id => (id > 0) ? `page${id + 1}` : '')
 
   eleventyConfig.addFilter('fix_links', url => url.replace('/index.html', ''))
-
-  eleventyConfig.addFilter('debug', something => typeof something)
 
   eleventyConfig.addFilter('rss_last_updated_date', posts => {
     const latest = posts.sort((a, b) => {
@@ -54,7 +59,7 @@ module.exports = eleventyConfig => {
       })
   })
 
-  // Create Posts Collection
+  // Create Posts Index Collection
   eleventyConfig.addCollection('postsIndex', collection => {
     return collection
       .getAllSorted()
@@ -65,7 +70,7 @@ module.exports = eleventyConfig => {
       .slice(0, 8)
   })
 
-  // Create Posts Collection
+  // Create Posts Feed Collection
   eleventyConfig.addCollection('postsFeed', collection => {
     return collection
       .getAllSorted()
@@ -77,61 +82,63 @@ module.exports = eleventyConfig => {
   })
 
   // Create Category Collections
-  eleventyConfig.addCollection('CSS', collection => {
-    return collection
-      .getAllSorted()
-      .reverse()
-      .filter(item => {
-        if ('categories' in item.data) {
-          return item.data.categories.filter(category => {
-            return category.toLowerCase() === 'CSS'.toLowerCase()
-          }).length > 0
-        }
-        return false
-      })
+  Array.from(['CSS', 'Sass', 'Misc', 'WordPress']).map(cat => {
+    eleventyConfig.addCollection(cat, collection => {
+      return collection
+        .getAllSorted()
+        .filter(item => {
+          if ('categories' in item.data) {
+            return item.data.categories.filter(category => {
+              return category.toLowerCase() === cat.toLowerCase()
+            }).length > 0
+          }
+          return false
+        })
+        .reverse()
+    })
   })
 
-  eleventyConfig.addCollection('Sass', collection => {
-    return collection
-      .getAllSorted()
-      .reverse()
-      .filter(item => {
-        if ('categories' in item.data) {
-          return item.data.categories.filter(category => {
-            return category.toLowerCase() === 'Sass'.toLowerCase()
-          }).length > 0
-        }
-        return false
-      })
-  })
+  // eleventyConfig.addCollection('Sass', collection => {
+  //   return collection
+  //     .getAllSorted()
+  //     .reverse()
+  //     .filter(item => {
+  //       if ('categories' in item.data) {
+  //         return item.data.categories.filter(category => {
+  //           return category.toLowerCase() === 'Sass'.toLowerCase()
+  //         }).length > 0
+  //       }
+  //       return false
+  //     })
+  // })
 
-  eleventyConfig.addCollection('Misc', collection => {
-    return collection
-      .getAllSorted()
-      .reverse()
-      .filter(item => {
-        if ('categories' in item.data) {
-          return item.data.categories.filter(category => {
-            return category.toLowerCase() === 'Misc'.toLowerCase()
-          }).length > 0
-        }
-        return false
-      })
-  })
+  // eleventyConfig.addCollection('Misc', collection => {
+  //   return collection
+  //     .getAllSorted()
+  //     .reverse()
+  //     .filter(item => {
+  //       if ('categories' in item.data) {
+  //         return item.data.categories.filter(category => {
+  //           return category.toLowerCase() === 'Misc'.toLowerCase()
+  //         }).length > 0
+  //       }
+  //       return false
+  //     })
+  // })
 
-  eleventyConfig.addCollection('WordPress', collection => {
-    return collection
-      .getAllSorted()
-      .reverse()
-      .filter(item => {
-        if ('categories' in item.data) {
-          return item.data.categories.filter(category => {
-            return category.toLowerCase() === 'WordPress'.toLowerCase()
-          }).length > 0
-        }
-        return false
-      })
-  })
+  // eleventyConfig.addCollection('WordPress', collection => {
+  //   return collection
+  //     .getAllSorted()
+  //     .reverse()
+  //     .filter(item => {
+  //       if ('categories' in item.data) {
+  //         return item.data.categories.filter(category => {
+  //           return category.toLowerCase() === 'WordPress'.toLowerCase()
+  //         }).length > 0
+  //       }
+  //       return false
+  //     })
+  // })
 
   // Create Nav Collection
   eleventyConfig.addCollection('nav', collection => {
@@ -163,25 +170,15 @@ module.exports = eleventyConfig => {
   eleventyConfig.addWatchTarget('./assets/scss/**/*.scss')
 
   // Markdown
-  const markdownIt = require('markdown-it')
-  const markdownItAnchor = require('markdown-it-anchor')
-  const mdOptions = {
-    html: true,
-    breaks: true,
-    linkify: true,
-    typographer: true
-  }
-  const mdAnchorOpts = {
-    permalink: true,
-    permalinkClass: 'anchor-link',
-    permalinkSymbol: '#',
-    level: [1, 2, 3, 4]
-  }
-
-  eleventyConfig.setLibrary('md', markdownIt(mdOptions).use(markdownItAnchor, mdAnchorOpts))
-
+  eleventyConfig.setLibrary(
+    'md',
+    markdownIt(mdOptions)
+      .use(markdownItAnchor, mdAnchorOpts)
+      .use(markdownItHighlightJS)
+  )
   return {
     templateFormats: [
+      'liquid',
       'md',
       '11ty.js'
     ],
