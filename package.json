@@ -12,7 +12,7 @@
     "serve": "cross-env ELEVENTY_ENV=dev eleventy --serve",
     "serve:debug": "cross-env ELEVENTY_ENV=dev DEBUG=Eleventy* eleventy",
     "build": "cross-env ELEVENTY_ENV=prod eleventy",
-    "build:debug": "cross-env ELEVENTY_ENV=dev DEBUG=Eleventy* eleventy"
+    "build:debug": "cross-env ELEVENTY_ENV=prod DEBUG=Eleventy* eleventy"
   },
   "author": "James Steinbach",
   "license": "ISC",

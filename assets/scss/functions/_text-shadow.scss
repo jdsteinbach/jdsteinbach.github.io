@@ -1,0 +1,18 @@
+@function -is-even($n: 1) {
+  @return $n % 2 == 0;
+}
+
+@function text-shadow($depth: .05em, $steps: 100, $highlight-color: white, $shadow-color: black) {
+  $shadow: ();
+
+  @for $i from 1 through $steps {
+    $x: ($depth / $steps * -$i);
+    $y-a: ($depth / $steps * if(-is-even($i), $i, ($i - 1)));
+    $y-b: ($depth / $steps * $i);
+    $shadow-layer-a: $x $y-a $highlight-color;
+    $shadow-layer-b: $x $y-b $shadow-color;
+    $shadow: append($shadow, ($shadow-layer-a, $shadow-layer-b), comma);
+  }
+
+  @return $shadow;
+}
