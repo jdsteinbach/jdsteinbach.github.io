@@ -1,28 +1,28 @@
 button,
 .button,
 [type="submit"] {
-  --button-box-shadow: #{$color-orange};
-
-  @include font-scale(sm);
+  --button-box-shadow: var(--color-accent-2);
 
   margin-bottom: var(--button-bottom-margin);
-  padding: $tiny-spacing $small-spacing;
+  padding: $small-spacing;
   display: inline-block;
   appearance: none;
   border: 0;
   border-radius: $border-radius-default;
+  font-size: var(--fs-small);
   font-family: var(--font-body);
   font-weight: bold;
-  font-variation-settings: vf(heavy), "wdth" 85;
   letter-spacing: (1em / 16);
   text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
   -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
-  background-color: var(--color-link);
-  color: var(--color-background);
+  background-color: var(--button-bg, var(--color-text-accent));
+  color: var(--button-fg, var(--color-text-light));
   box-shadow:
-    1px 1px 0 0 var(--button-box-shadow),
-    2px 2px 0 0 var(--button-box-shadow),
-    3px 3px 0 0 var(--button-box-shadow);
+    -1px 1px 0 0 var(--button-box-shadow),
+    -2px 2px 0 0 var(--button-box-shadow),
+    -3px 3px 0 0 var(--button-box-shadow);
   transition:
     color .25s,
     opacity .25s,
@@ -31,15 +31,17 @@ button,
     transform .25s $easing;
 
   &.button-alt {
-    background-color: var(--color-highlight);
+    --button-box-shadow: var(--color-accent-1);
+
+    background-color: var(--button-bg-alt, var(--color-accent-1));
   }
 
   @include haf {
-    color: var(--color-background);
-    background-color: var(--color-link-alt);
+    color: var(--color-text-light);
+    background-color: var(--button-bg-hover, var(--color-purple-dark));
 
     &.button-alt {
-      background-color: var(--color-highlight-alt);
+      background-color: var(--button-bg-hover-alt, var(--color-highlight-alt));
     }
   }
 }

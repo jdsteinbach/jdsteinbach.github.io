@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run serve",
     "serve": "cross-env ELEVENTY_ENV=dev eleventy --serve",
     "serve:debug": "cross-env ELEVENTY_ENV=dev DEBUG=Eleventy* eleventy",
     "build": "cross-env ELEVENTY_ENV=prod eleventy",
@@ -33,7 +34,8 @@
     "luxon": "^1.2.0",
     "markdown-it-anchor": "^5.0.1",
     "markdown-it-highlightjs": "^3.1.0",
-    "sass": "^1.26.3"
+    "sass": "^1.26.3",
+    "typogr": "^0.6.8"
   },
   "standard": {
     "globals": [

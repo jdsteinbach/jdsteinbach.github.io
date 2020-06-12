@@ -1,6 +1,17 @@
 // Let the DOM know the browser has JS
 document.body.classList.add('js')
 
+// IO for header
+let io = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    document.body.style.setProperty('--header-opacity', (1 - entry.intersectionRatio).toFixed(2))
+  })
+}, {
+  threshold: Array.apply(null, { length: 101 }).map((x, idx) => idx / 100)
+})
+
+io.observe(document.querySelector('.hero'))
+
 // Control form fields
 const formBoxes = document.querySelectorAll('.form__field')
 
@@ -35,6 +46,7 @@ const fetchForm = ({id, responseID, fieldIDs, successMsg, failMsg}) => {
       e.preventDefault()
 
       if (data.has('web') > -1 && data.get('web') !== '') {
+        console.log('data has no web', data)
         formMessage.innerHTML = failMsg
         return false
       }
@@ -82,10 +94,12 @@ fetchForm({
   responseID: 'mc_embed_signup_scroll',
   fieldIDs: [],
   successMsg: 'Thanks, check your inbox to confirm your subscription!',
-  failMsg: 'Sorry, an error occurred and you weren’t subscribed. <a class="button" href="https://jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&id=35bef0e04e" target="_blank" rel="noopener noreferrer nofollow">Try subscribing here</a>'
+  failMsg: '<p class="error error--mailchimp">Sorry, an error occurred and you weren’t subscribed.</p><a class="button error-button" href="https://jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&id=35bef0e04e" target="_blank" rel="noopener noreferrer nofollow">Subscribe Here</a>'
 })
 
-if ('localStorage' in window) {
+// `false === true` - temp deactivated until
+// I can redesign the toggle with light/dark/auto
+if ('localStorage' in window && false === true) {
   const container = document.getElementById('header-nav')
   const toggle = document.createElement('button')
   toggle.setAttribute('type', 'button')

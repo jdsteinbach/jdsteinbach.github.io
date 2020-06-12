@@ -1,30 +1,30 @@
 .header-nav {
+  margin-left: auto;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-
-  @include breakpoint(xlarge) {
-    text-align: right;
-    width: 66%;
-  }
 }
 
 .header-nav__link {
-  @include font-scale(sm);
+  --color-link: var(--color-link-light);
+  --color-link-alt: var(--color-link-light-alt);
 
-  margin: 0 $small-spacing;
+  margin: 0 $tiny-spacing;
   padding: $tiny-spacing 0;
   display: inline-block;
-  font-variation-settings: vf(semibold), "wdth" 85;
-  letter-spacing: (1em / 16);
-  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  font-size: var(--fs-small);
+  font-weight: 300;
+  letter-spacing: (1em / 8);
+  text-transform: lowercase;
+  font-feature-settings: "smcp" 1;
+  text-decoration: none;
 
   &[href*="hire"] {
     border: 1px solid currentColor;
     border-radius: 3px;
-    font-weight: bold;
-    font-variation-settings: vf(heavy);
-    background-color: scale-color($color-link, $lightness: 90%);
+    font-weight: 800;
   }
 
   &:last-child {
@@ -35,21 +35,21 @@
     content: "";
     position: absolute;
     top: 0;
-    right: -$tiny-spacing;
+    right: 0;
     bottom: 0;
-    left: -$tiny-spacing;
-    color: var(--color-background);
-    background-image: linear-gradient(0deg, currentColor 0, currentColor 1em, transparent 1em);
-    transform: scaleX(0) rotate(4deg) translateY(.25em);
+    left: 0;
+    border-bottom: $tiny-spacing solid currentColor;
+    color: var(--color-accent-3);
+    transform: scaleX(0) translateY(.25em);
     opacity: 0;
     z-index: 0;
-    transition: color .25s, opacity .25s, transform .25s $easing;
+    transition: opacity .25s, transform .25s $easing;
   }
 
   @include haf {
     &::before {
-      transform: scaleX(1) rotate(-1deg) translateY(0);
-      opacity: .2;
+      transform: scaleX(1) translateY(0);
+      opacity: .5;
     }
   }
 }

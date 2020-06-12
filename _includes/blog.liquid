@@ -2,10 +2,10 @@
 layout: _base
 ---
 
-<div class="l-grid">
+<div class="">
   {% include partials/_hero %}
 
-  <div class="l-content">
+  <div class="l-grid">
     {% if pagination.items %}
       <ul class="posts-archive">
         {% for post in pagination.items %}
@@ -19,7 +19,7 @@ layout: _base
         {% else %}
           <span class="previous"></span>
         {% endif %}
-        <span class="page-number">{ {{pagination.pageNumber | plus: 1 }} of {{ pagination.pageLinks | size }} }</span>
+        <span class="page-number">{{pagination.pageNumber | plus: 1 }} of {{ pagination.pageLinks | size }}</span>
         {% if pagination.nextPageLink %}
           <a href="{{ pagination.nextPageLink | fix_links }}" class="next">Next</a>
         {% else %}

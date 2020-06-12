@@ -1,9 +1,10 @@
 <header class="hero l-hero">
-  <h1 class="hero__title">{{ title }}</h1>
+  <h1 class="hero__title{{ title | title_class }}">{{ title | no_orphan }}</h1>
   <svg class="hero__bg starfield" role="presentation" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
     <filter id="blur">
       <feGaussianBlur in="SourceGraphic" stdDeviation=".5" />
     </filter>
+    <rect class="starfield__bg" x="0" y="0" width="1000" height="1000" />
     {% for i in (1..5) %}
       <g class="starfield__layer">
         {% for i in (1..30) %}

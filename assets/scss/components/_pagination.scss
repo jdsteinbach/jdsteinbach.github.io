@@ -1,37 +1,33 @@
-
 .pagination {
-  @include font-scale(sm);
-
+  margin-top: $base-spacing;
+  padding: $base-spacing 0;
+  display: grid;
+  grid-template:
+    "left center right" auto /
+    1fr 1fr 1fr;
   border-top: $border-default;
-  padding-top: $small-spacing;
-  text-align: center;
-
-  a {
-    font-variation-settings: vf(semibold);
-    color: var(--color-link);
-
-    @include haf {
-      color: var(--color-link-alt);
-      text-decoration: underline;
-    }
-  }
-
-  a,
-  span {
-    display: inline-block;
-    vertical-align: top;
-    width: 30%;
-  }
+  font-size: var(--fs-small);
 
   .previous {
-    text-align: left;
+    grid-area: left;
+    justify-self: start;
   }
 
   .page-number {
-    text-align: center;
+    grid-area: center;
+    justify-self: center;
+
+    &::before {
+      content: "< ";
+    }
+
+    &::after {
+      content: " >";
+    }
   }
 
   .next {
-    text-align: right;
+    grid-area: right;
+    justify-self: end;
   }
 }

@@ -4,7 +4,7 @@ layout: _base
 
 {% assign toc = content | toc %}
 
-<article class="post l-grid" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   {% comment %} <header class="hero l-hero">
     <h1 class="hero__title" itemprop="name title headline">{{ title }}</h1>
 
@@ -23,7 +23,7 @@ layout: _base
 
   {% include partials/_hero %}
 
-  <div class="main-content has-toc l-content" itemprop="articleBody">
+  <div class="main-content has-toc l-grid l-grid--content" itemprop="articleBody">
     {{ content }}
 
     {% if toc %}

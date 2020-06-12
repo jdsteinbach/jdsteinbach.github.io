@@ -1,5 +1,4 @@
-@include fonts(Plex Mono, plex-mono, normal, normal);
-@include fonts(Plex Mono, plex-mono-italic, italic, normal);
+@include fonts(Teko, Teko-500-subset, normal, 500);
 
-@include v-fonts(Plex VF, "plex-sans-v.woff2", normal, woff2);
-@include v-fonts(Plex VF, "plex-sans-v-italic.woff2", italic, woff2);
+@include v-fonts(Work Sans, "WorkSans-subset.woff2", normal, woff2);
+@include v-fonts(Work Sans, "WorkSans-Italic-subset.woff2", italic, woff2);

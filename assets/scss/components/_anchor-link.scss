@@ -1,9 +1,9 @@
 .anchor-link {
-  padding: 0 $tiny-spacing;
-  opacity: .25;
-  text-decoration: none !important; // sass-lint:disable-line no-important
+  --color-link: var(--color-text-accent);
+  --color-link-alt: var(--color-accent-1);
 
-  @include haf {
-    opacity: 1;
-  }
+  padding: 0 $tiny-spacing;
+  position: relative;
+  background-color: transparent !important; // sass-lint:disable-line no-important
+  text-decoration: none !important; // sass-lint:disable-line no-important
 }

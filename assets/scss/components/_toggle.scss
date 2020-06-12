@@ -10,7 +10,7 @@ $toggle-border: 2px;
   vertical-align: middle;
   position: relative;
   appearance: none;
-  background: rgba($color-link-dark, .5); // sass-lint:disable-line no-color-literals
+  background: rgba($color-purple, .5); // sass-lint:disable-line no-color-literals
   border: $toggle-border solid transparent;
   border-radius: calc(#{$toggle-height / 2} + #{$toggle-border});
   font-size: 0;
@@ -19,7 +19,7 @@ $toggle-border: 2px;
   transition: transform .15s ease-out, color .15s;
 
   @include haf {
-    background: rgba($color-link-dark, .5); // sass-lint:disable-line no-color-literals
+    background: rgba($color-purple, .5); // sass-lint:disable-line no-color-literals
     opacity: .65;
   }
 

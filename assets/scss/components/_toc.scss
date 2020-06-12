@@ -1,3 +1,10 @@
+.main-content {
+  .js &.has-toc {
+    position: relative;
+    padding-top: $large-spacing + $small-spacing;
+  }
+}
+
 .post-toc {
   .js & {
     padding-right: var(--horizontal-spacing);

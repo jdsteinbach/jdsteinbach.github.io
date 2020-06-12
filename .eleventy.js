@@ -4,6 +4,7 @@ const pluginTOC = require('eleventy-plugin-toc')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const markdownItHighlightJS = require('markdown-it-highlightjs')
+const typogr = require('typogr')
 
 const mdOptions = {
   html: true,
@@ -21,6 +22,15 @@ const mdAnchorOpts = {
 const formatDate = date => DateTime.fromJSDate(new Date(date)).toISO({includeOffset: true, suppressMilliseconds: true})
 
 module.exports = eleventyConfig => {
+  // Markdown
+  eleventyConfig.setLibrary(
+    'md',
+    markdownIt(mdOptions)
+      .use(markdownItAnchor, mdAnchorOpts)
+      .use(markdownItHighlightJS)
+  )
+
+  // Plugins
   eleventyConfig.addPlugin(pluginTOC)
 
   // Filters
@@ -48,6 +58,15 @@ module.exports = eleventyConfig => {
   eleventyConfig.addFilter('abs_url', (href, base) => new URL(href, base).toString())
 
   eleventyConfig.addFilter('rss_date', date => formatDate(date))
+
+  eleventyConfig.addFilter('title_class', string => string.length > 30 ? ' is-long' : '')
+
+  // eleventyConfig.addTransform('no_orphan', (content, outputPath) => {
+  //   if( outputPath.endsWith(".html") ) {
+  //     return typogr(content).chain().widont().value()
+  //   }
+  //   return content
+  // })
 
   // Create Posts Collection
   eleventyConfig.addCollection('posts', collection => {
@@ -98,48 +117,6 @@ module.exports = eleventyConfig => {
     })
   })
 
-  // eleventyConfig.addCollection('Sass', collection => {
-  //   return collection
-  //     .getAllSorted()
-  //     .reverse()
-  //     .filter(item => {
-  //       if ('categories' in item.data) {
-  //         return item.data.categories.filter(category => {
-  //           return category.toLowerCase() === 'Sass'.toLowerCase()
-  //         }).length > 0
-  //       }
-  //       return false
-  //     })
-  // })
-
-  // eleventyConfig.addCollection('Misc', collection => {
-  //   return collection
-  //     .getAllSorted()
-  //     .reverse()
-  //     .filter(item => {
-  //       if ('categories' in item.data) {
-  //         return item.data.categories.filter(category => {
-  //           return category.toLowerCase() === 'Misc'.toLowerCase()
-  //         }).length > 0
-  //       }
-  //       return false
-  //     })
-  // })
-
-  // eleventyConfig.addCollection('WordPress', collection => {
-  //   return collection
-  //     .getAllSorted()
-  //     .reverse()
-  //     .filter(item => {
-  //       if ('categories' in item.data) {
-  //         return item.data.categories.filter(category => {
-  //           return category.toLowerCase() === 'WordPress'.toLowerCase()
-  //         }).length > 0
-  //       }
-  //       return false
-  //     })
-  // })
-
   // Create Nav Collection
   eleventyConfig.addCollection('nav', collection => {
     return collection
@@ -155,6 +132,7 @@ module.exports = eleventyConfig => {
   // Pass through directories
   eleventyConfig.addPassthroughCopy('images')
   eleventyConfig.addPassthroughCopy('assets/fonts')
+  eleventyConfig.addPassthroughCopy({'assets/js/site/site.js': 'js/site.js'})
   eleventyConfig.addPassthroughCopy('site.webmanifest')
   eleventyConfig.addPassthroughCopy('android-chrome-192x192.png')
   eleventyConfig.addPassthroughCopy('android-chrome-512x512.png')
@@ -169,13 +147,6 @@ module.exports = eleventyConfig => {
   eleventyConfig.addWatchTarget('./assets/js/**/*.js')
   eleventyConfig.addWatchTarget('./assets/scss/**/*.scss')
 
-  // Markdown
-  eleventyConfig.setLibrary(
-    'md',
-    markdownIt(mdOptions)
-      .use(markdownItAnchor, mdAnchorOpts)
-      .use(markdownItHighlightJS)
-  )
   return {
     templateFormats: [
       'liquid',

@@ -48,7 +48,7 @@ If your animations are detailed and unique (not reusable), you can use a Sass mi
     }
   }
 
-  @include breakpoint(large) {
+  @include bp(large) {
     @include animate {
       0%, 100% {
         transform: none;

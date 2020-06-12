@@ -7,7 +7,7 @@ code {
   font-weight: inherit;
   font-feature-settings: initial;
   color: var(--color-text-alt);
-  background-color: var(--color-background-alt);
+  background-color: var(--color-background-code);
 
   a & {
     color: inherit;
@@ -15,22 +15,26 @@ code {
 }
 
 pre > code {
-  --box-shadow: #{$color-gray};
-
-  // @include font-scale(sm);
-
   margin: $base-spacing 0;
   padding: $small-spacing;
   width: auto;
   display: block;
-  overflow: scroll;
+  overflow-x: scroll;
+  font-size: var(--fs-small);
   border-radius: 0;
-  line-height: 2;
-  color: var(--color-text-code);
-  background-color: var(--color-background-code);
+  line-height: 1.5;
+  color: var(--color-text-light);
+  background-color: var(--color-text-accent);
   box-shadow:
-    1px 1px 0 1px var(--box-shadow),
-    2px 2px 0 1px var(--box-shadow);
+    -1px 1px 0 1px var(--color-accent-1),
+    -2px 2px 0 1px var(--color-accent-1),
+    -3px 3px 0 1px var(--color-accent-1),
+    -4px 4px 0 1px var(--color-accent-2),
+    -5px 5px 0 1px var(--color-accent-2),
+    -6px 6px 0 1px var(--color-accent-2),
+    -7px 7px 0 1px var(--color-accent-3),
+    -8px 8px 0 1px var(--color-accent-3),
+    -9px 9px 0 1px var(--color-accent-3);
 
   @include bp(medium) {
     margin: $base-spacing (0 - $small-spacing);
@@ -38,25 +42,25 @@ pre > code {
 }
 
 $code-selectors: (
-  (comment, prolog, doctype, cdata),
-  (property, tag, boolean, number, constant, symbol),
-  (selector, attr-name, string, char, builtin, inserted),
-  (operator, entity, url, variable),
-  (atrule, attr-value, keyword),
-  (placeholder, function, punctuation)
+  (comment, doctag, meta, meta-keyword, meta-string),
+  (attribute, tag, number, symbol, bullet, code),
+  (selector-tag, selector-class, selector-attr, selector-pseudo, type, title, string, built_in, emphasis, strong),
+  (operator, variable, template-tag),
+  (keyword, regexp, class, formula, link),
+  (function, literal, subst, params, template-variable, quote)
 );
 
-.highlight-line {
+// .highlight-line {
   @each $batch in $code-selectors {
     @each $s in $batch {
-      .#{$s} {
+      .hljs-#{$s} {
         $pct: 100% / length($code-selectors) * index($code-selectors, $batch);
-        color: mix($color-blue-dark, $color-green-dark, $pct); // sass-lint:disable-line variable-for-property
+        color: mix($color-white, $color-goldenrod, $pct); // sass-lint:disable-line variable-for-property
       }
     }
   }
 
-  .punctuation {
+  .hljs-punctuation {
     opacity: .7;
   }
-}
+// }

@@ -24,7 +24,7 @@ excerpt: Do you need to get in touch with James? Email him here.
   </div>
   <div class="form__field">
     <label class="form__label" for="message">Your Message</label>
-    <textarea name="message" id="message" cols="30" rows="5" class="form__input form__input--message" required></textarea>
+    <textarea name="message" id="message" rows="10" class="form__input form__input--message" required></textarea>
   </div>
   <button class="form__submit" type="submit">Send</button>
 </form>

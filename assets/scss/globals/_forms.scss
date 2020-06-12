@@ -12,89 +12,83 @@
 
 .form__fields {
   margin-bottom: $base-spacing;
+  padding-bottom: $base-spacing;
   display: grid;
   grid-template:
-    "fields  fields" min-content
-    "rewards submit" min-content /
+    "email email" auto
+    "fname lname" auto
+    "rewards submit" auto /
     1fr      1fr;
-  border-bottom: $border-default;
-}
-
-.form__fields-wrapper {
-  margin-bottom: $base-spacing;
-  display: grid;
-  grid-template:
-    "email email" min-content
-    "fname lname" min-content /
-    1fr    1fr;
-  justify-content: stretch;
+  column-gap: $small-spacing;
   row-gap: $base-spacing;
-  grid-area: fields;
+  border-bottom: $border-default;
 
-  @include breakpoint(medium) {
+  @include bp(medium) {
     grid-template:
-      "email fname lname" min-content /
+      "email fname lname" auto
+      "rewards . submit" auto /
       1fr    1fr   1fr;
-    box-shadow:
-      1px 1px 0 0 var(--box-shadow),
-      2px 2px 0 0 var(--box-shadow),
-      3px 3px 0 0 var(--box-shadow);
   }
 
-  @include breakpoint(large) {
+  @include bp(large) {
     grid-template-columns: 2fr 1fr 1fr;
   }
+}
 
-  .form__field--email {
-    grid-area: email;
-  }
+.form__field--email {
+  grid-area: email;
+}
 
-  .form__field--fname {
-    grid-area: fname;
-  }
+.form__field--fname {
+  grid-area: fname;
+}
 
-  .form__field--lname {
-    grid-area: lname;
-  }
+.form__field--lname {
+  grid-area: lname;
 }
 
 .form__field {
-  @include font-scale(p);
-
   position: relative;
+  font-size: var(--fs-body);
 }
 
 .form__label {
-  @include font-scale(sm);
-
   display: block;
   position: absolute;
-  top: $tiny-spacing;
-  left: 1em;
-  font-style: italic;
+  top: $tiny-spacing * 1.5;
+  left: $tiny-spacing;
+  font-size: var(--fs-body);
+  text-transform: lowercase;
+  font-feature-settings: "smcp" 1;
   transform-origin: left top;
-  transition: transform .25s $easing, opacity .25s;
+  transition: transform .25s $easing;
 
   .is-active & {
-    transform: translateY(-140%) scale(.8);
-    opacity: .6;
+    transform: translateY(-150%) scale(.8);
   }
 }
 
 .form__input {
-  @include font-scale(p);
-
-  margin-bottom: $base-spacing;
-  padding: 0 $small-spacing;
+  margin-bottom: $large-spacing;
+  padding: $tiny-spacing;
   width: 100%;
   display: block;
   appearance: none;
   border: $border-default;
   border-radius: $border-radius-default;
+  font-size: var(--fs-body);
   font-family: inherit;
   color: var(--color-text);
-  background-color: transparent;
-  box-shadow: none;
+  background-color: var(--field-bg, transparent);
+  box-shadow:
+    -1px 1px 0 1px var(--color-accent-1),
+    -2px 2px 0 1px var(--color-accent-1),
+    -3px 3px 0 1px var(--color-accent-2),
+    -4px 4px 0 1px var(--color-accent-2),
+    -5px 5px 0 1px var(--color-accent-2),
+    -6px 6px 0 1px var(--color-accent-3),
+    -7px 7px 0 1px var(--color-accent-3),
+    -8px 8px 0 1px var(--color-accent-3);
   transition:
     color .25s,
     opacity .25s,
@@ -102,7 +96,7 @@
     transform .25s $easing;
 
   @include haf {
-    background-color: var(--color-background-alt);
+    background-color: var(--field-bg-alt, var(--color-background-code));
     outline: none;
   }
 
@@ -113,17 +107,13 @@
 }
 
 .form__submit {
-  margin: 0 0 $base-spacing;
+  margin: 0;
   grid-area: submit;
   justify-self: flex-end;
   align-self: flex-start;
 
   .form--mailchimp & {
     width: 100%;
-    box-shadow:
-      1px 1px 0 0 var(--box-shadow),
-      2px 2px 0 0 var(--box-shadow),
-      3px 3px 0 0 var(--box-shadow);
   }
 
   .form--contact & {
@@ -136,24 +126,14 @@
 }
 
 .form__response-message {
-  @include font-scale(blockquote);
-
   margin-top: $small-spacing;
   margin-bottom: $small-spacing;
   padding-top: $small-spacing;
   padding-bottom: $small-spacing;
-  grid-area: fields;
+  grid-column: 1 / -1;
+  font-size: var(--fs-blockquote);
   text-align: center;
-  outline: 1px solid currentColor;
   animation: fade-down .35s ease-out;
-
-  &.is-success {
-    outline-color: var(--color-success);
-  }
-
-  &.is-error {
-    outline-color: var(--color-error);
-  }
 
   &:empty {
     display: none;
@@ -161,10 +141,19 @@
 }
 
 .form__monkey-rewards {
-  @include font-scale(sm);
-
   margin: 0;
   grid-area: rewards;
+  align-self: end;
+  font-size: var(--fs-small);
   font-style: italic;
   opacity: .5;
+}
+
+.error {
+  margin: 0;
+  grid-column: 1 / -1;
+}
+
+.error-button {
+  grid-column: -2 / -1;
 }

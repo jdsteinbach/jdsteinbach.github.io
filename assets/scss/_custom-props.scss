@@ -1,48 +1,51 @@
 :root {
   --color-text: #{$color-gray};
-  --color-text-alt: #{$color-gray-dark};
-  --color-text-accent: #{$color-blue-dark};
-  --color-text-code: #{$color-blue-dark};
-  --color-page-title: #{$color-gray-pale};
+  --color-text-alt: #{$color-black};
+  --color-text-accent: #{$color-purple};
+  --color-text-light: #{$color-background};
+  --color-page-title: #{$color-background};
 
-  --color-link: #{$color-blue};
-  --color-link-alt: #{$color-blue-dark};
-
-  --color-link-2: #{$color-green};
-  --color-link-2-alt: #{$color-green-dark};
-
-  --color-link-dark: #{$color-link-dark};
-  --color-link-dark-alt: #{$color-link-dark-alt};
-
-  --color-success: #{$color-green};
-  --color-success-alt: #{$color-green-dark};
-
-  --color-error: #{$color-red};
-  --color-error-alt: #{$color-red-dark};
-
-  --color-highlight: #{$color-orange};
-  --color-highlight-alt: #{$color-orange-dark};
-  --color-highlight-pale: #{rgba($color-orange-dark, .15)};
-
-  --color-background: #{$color-gray-pale};
-  --color-background-page: #{$color-gray-pale};
-  --color-background-fade: #{rgba($color-gray-pale, .9)};
-  --color-background-svg: #{$color-orange};
-  --color-background-alt: #{rgba($color-gray, .15)};
+  --color-background: #{$color-background};
+  --color-background-page: #{$color-background-pale};
+  --color-background-fade: #{rgba($color-background, .9)};
+  --color-background-hero: var(--color-purple-dark);
+  --color-background-dark: #{$color-gray};
   --color-background-code: #{rgba($color-gray, .15)};
 
-  --color-border: #{$border-color};
+  --color-accent-1: #{$color-orange};
+  --color-accent-2: #{$color-goldenrod};
+  --color-accent-3: #{$color-yellow};
 
-  --box-shadow: var(--color-border);
-  --text-shadow: var(--color-text-accent);
+  --color-link: #{$color-purple};
+  --color-link-alt: #{$color-pink};
 
-  --fs-body: #{(18rem / 16)};
+  --color-link-2: #{$color-orange};
+  --color-link-2-alt: #{$color-goldenrod};
 
-  --font-body: #{unquote("-apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif")};
-  --font-headline: var(--font-body);
+  --color-link-light: #{$color-background};
+  --color-link-light-alt: #{$color-yellow};
+
+  --color-purple-dark: #{mix($color-purple, $color-gray)};
+
+  --color-highlight: #{$color-goldenrod};
+  --color-highlight-alt: #{$color-orange};
+  --color-highlight-pale: #{rgba($color-orange, .15)};
+
+  --tilt: -10deg;
+  --tilt-tan: .176;
+
+  --fs-ratio: 1.25;
+  --fs-body: 1rem;
+  --fs-blockquote: calc(var(--fs-body) * (((var(--fs-ratio) - 1) / 2) + 1));
+  --fs-subheading: calc(var(--fs-body) * var(--fs-ratio));
+  --fs-heading: calc(var(--fs-subheading) * var(--fs-ratio));
+  --fs-title: calc(var(--fs-heading) * var(--fs-ratio) * var(--fs-ratio));
+  --fs-hero: calc(var(--fs-title) * var(--fs-ratio));
+  --fs-small: calc(var(--fs-body) / var(--fs-ratio));
+
+  --font-body: #{unquote("Work Sans, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif")};
+  --font-headline: Teko, var(--font-body);
   --font-code: #{unquote("monospace")};
-
-  --toggle-icon: svg-load("icons/theme.svg", fill=#{rgba($color-link, .65)});
 
   --horizontal-spacing: #{$small-spacing};
 
@@ -50,50 +53,49 @@
     --horizontal-spacing: calc(#{$small-spacing} + env(safe-area-inset-right));
   }
 
-  @supports (font-variation-settings: normal) {
-    --font-body: Plex VF, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
-    --font-code: Plex Mono, monospace;
-  }
+  // @supports (font-variation-settings: normal) {
+  //   --font-body: Work Sans, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
+  // }
 
-  @include breakpoint(medium) {
+  @include bp(medium) {
     --fs-body: calc(21rem / 16);
+    --fs-ratio: 1.3;
   }
 
-  @include breakpoint(large) {
+  @include bp(large) {
     --fs-body: calc(24rem / 16);
+    --fs-ratio: 1.414;
   }
 
-  @include breakpoint(xlarge) {
+  @include bp(xlarge) {
     --fs-body: calc(27rem / 16);
   }
-}
 
-.theme-dark {
-  --color-text: #{custom-invert($color-gray)};
-  --color-text-alt: #{custom-invert($color-gray-dark)};
-  --color-text-accent: #{custom-invert($color-blue-dark)};
+  // .theme-dark {
+  @media (prefers-color-scheme: dark) {
+    --color-text: #{$color-background};
+    --color-text-alt: #{$color-background-pale};
+    --color-text-accent: #{$color-pink};
 
-  --color-link: #{custom-invert($color-blue)};
-  --color-link-alt: #{custom-invert($color-blue-dark)};
+    --color-background: #{$color-gray};
+    --color-background-page: #{$color-black};
+    --color-background-fade: #{rgba($color-gray, .9)};
+    --color-background-hero: var(--color-purple-dark);
+    --color-background-dark: #{$color-gray};
+    --color-background-code: #{rgba($color-goldenrod, .15)};
 
-  --color-link-2: #{custom-invert($color-green)};
-  --color-link-2-alt: #{custom-invert($color-green-dark)};
+    --color-accent-1: #{mix($color-orange, $color-gray, 75%)};
+    --color-accent-2: #{mix($color-goldenrod, $color-gray, 75%)};
+    --color-accent-3: #{mix($color-yellow, $color-gray, 75%)};
 
-  --color-link-dark: #{custom-invert($color-link-dark)};
-  --color-link-dark-alt: #{custom-invert($color-link-dark-alt)};
+    --color-purple-dark: #{mix($color-purple, $color-black, 35%)};
 
-  --color-highlight: #{custom-invert($color-orange)};
-  --color-highlight-alt: #{custom-invert($color-orange-dark)};
-  --color-highlight-pale: #{rgba(custom-invert($color-orange-dark), .15)};
+    --color-link: #{rgba($color-yellow, .75)};
+    --color-link-alt: #{$color-background-pale};
 
-  --color-background: #{$color-gray-dark};
-  --color-background-page: #{custom-invert($color-gray-pale)};
-  --color-background-fade: #{rgba(custom-invert($color-gray-pale), .9)};
-  --color-background-svg: #{#{$color-gray-dark}};
-  --color-background-alt: #{rgba(custom-invert($color-gray-dark), .15)};
-  --color-background-code: #{custom-invert($color-gray)};
+    --color-link-2: #{$color-pink};
+    --color-link-2-alt: #{mix($color-purple, $color-white)};
 
-  --color-border: #{custom-invert($border-color)};
-
-  --toggle-icon: svg-load("icons/theme.svg", fill=#{rgba($color-gray-pale, .75)});
+    --blend-mode: lighten;
+  }
 }

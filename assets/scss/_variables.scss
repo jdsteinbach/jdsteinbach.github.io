@@ -1,56 +1,29 @@
 // COLORS
+$color-gray: #312D2B;
+$color-purple: #602F9A;
+$color-pink: #B22AA8;
+$color-orange: #F75123;
+$color-goldenrod: #FA6D26;
+$color-yellow: #FCA22B;
+
 $color-white: #FFF;
-$color-black: #000;
+$color-black: mix($color-gray, #000);
 
-$color-blue: #2C3E50;
-$color-blue-dark: custom-darken($color-blue);
-
-$color-green: #3A4D13;
-$color-green-dark: custom-darken($color-green);
-
-$color-red: #8B0000;
-$color-red-dark: custom-darken($color-red);
-
-$color-orange: #E65100;
-$color-orange-dark: custom-darken($color-orange);
-
-$color-gray: desaturate($color-blue, 60%);
-$color-gray-dark: custom-darken($color-gray);
-$color-gray-pale: scale-color($color-gray, $lightness: 90%);
-
-$color-text: $color-gray;
-$color-text-alt: $color-gray-dark;
-$color-text-accent: $color-blue-dark;
-
-$color-link: $color-blue;
-$color-link-alt: $color-blue-dark;
-
-$color-link-2: $color-green;
-$color-link-2-alt: $color-green-dark;
-
-$color-link-dark: mix($color-blue, $color-white, 25%);
-$color-link-dark-alt: mix($color-blue, $color-white, 15%);
-
-$color-background: $color-gray-pale;
-
+$color-background: mix($color-yellow, $color-white);
+$color-background-pale: mix($color-yellow, $color-white, 33%);
 
 // BORDERS
-$border-color: $color-blue;
-$border-default: 1px solid $border-color;
+$border-default: 1px solid $color-orange;
 $border-radius-default: 0;
 
-// TYPE
-$font-sizes: sm p blockquote subtitle title hero;
-$start-small: true;
-$base-line-height: 1.6;
-$base-font-scale: 1.25;
-
+// RWD
 $breakpoints: (
   medium: 40em,
   large: 60em,
   xlarge: 90em
 );
 
+// SPACING
 $base-spacing: 1.6rem;
 $large-spacing: $base-spacing * 2;
 $giant-spacing: $base-spacing * 4;
@@ -58,8 +31,8 @@ $small-spacing: $base-spacing / 2;
 $tiny-spacing: $base-spacing / 4;
 
 // LAYOUT
-$max-width: 30rem;
-$max-width--wide: 50rem;
+$max-width: 40rem;
+$max-width--wide: 60rem;
 
 // ANIMATION
-$easing: cubic-bezier(.5, .5, .5, 1.5);
+$easing: ease-in-out;

@@ -1,79 +1,58 @@
-html {
-  font-size: var(--fs-body);
-}
-
 body {
-  @include font-scale(p);
-
+  font-size: var(--fs-body);
   font-family: var(--font-body);
-  font-kerning: normal;
   font-feature-settings: "kern", "liga", "clig", "calt";
-  font-variant-ligatures: common-ligatures contextual;
-  font-variation-settings: vf(normal);
   color: var(--color-text);
   background-color: var(--color-background-page);
   scroll-behavior: smooth;
+  position: relative;
+  z-index: 2;
 }
 
 h1 {
-  @include font-scale(subtitle);
-
-  font-family: var(--font-headline);
+  font-size: var(--fs-title);
   font-weight: bold;
-  font-variation-settings: vf(heavy);
   color: var(--color-text-alt);
 }
 
 h2 {
-  @include font-scale(blockquote);
-  font-family: var(--font-headline);
+  margin-top: $large-spacing;
+  margin-bottom: $base-spacing;
+  font-size: var(--fs-heading);
   font-weight: bold;
-  font-variation-settings: vf(heavy);
   color: var(--color-text-alt);
-
-  .main-content & {
-    margin-top: $base-spacing;
-    margin-bottom: $small-spacing;
-  }
 }
 
 h3 {
-  .main-content & {
-    margin-top: $small-spacing;
-    font-weight: bold;
-    font-variation-settings: vf(heavy);
-    letter-spacing: (1em / 32);
-    text-transform: uppercase;
-    color: var(--color-text-alt);
-  }
+  margin-top: $small-spacing;
+  margin-bottom: $small-spacing;
+  font-size: var(--fs-subheading);
+  font-weight: 500;
+  color: var(--color-text-alt);
 }
 
 h4 {
-  .main-content & {
-    margin-top: $small-spacing;
-    font-weight: bold;
-    font-variation-settings: vf(heavy);
-    color: var(--color-text-alt);
-  }
+  margin-top: $small-spacing;
+  margin-bottom: $tiny-spacing;
+  font-size: var(--fs-subheading);
+  font-weight: bold;
+  color: var(--color-text-alt);
 }
 
 h5 {
-  .main-content & {
-    @include font-scale(sm);
-
-    margin-top: $small-spacing;
-    font-weight: bold;
-    font-variation-settings: vf(heavy);
-    letter-spacing: (1em / 32);
-    text-transform: uppercase;
-    color: var(--color-text-alt);
-  }
+  margin-top: $tiny-spacing;
+  margin-bottom: $tiny-spacing;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  letter-spacing: (1em / 32);
+  text-transform: uppercase;
+  color: var(--color-text-alt);
 }
 
 p {
-  @include font-scale(p);
-
-  margin-bottom: $base-spacing;
+  margin-top: $small-spacing;
+  margin-bottom: $small-spacing;
+  line-height: 1.5;
 
   &:empty {
     margin-bottom: 0;
@@ -83,7 +62,7 @@ p {
 b,
 strong {
   font-weight: bold;
-  font-variation-settings: vf(semibold);
+  font-weight: 550;
   color: var(--color-text-alt);
 }
 
@@ -93,18 +72,24 @@ em {
 }
 
 .main-content {
+  > p:first-child {
+    font-size: var(--fs-blockquote);
+    color: var(--color-text-alt);
+    font-weight: 250;
+  }
+
   > ul,
   > ol {
     margin-bottom: $base-spacing;
     padding-left: 1em;
 
-    @include breakpoint(medium) {
+    @include bp(medium) {
       padding-left: 0;
     }
 
     li {
       margin-top: $small-spacing;
-      margin-bottom: $small-spacing;
+      margin-bottom: $base-spacing;
     }
   }
 

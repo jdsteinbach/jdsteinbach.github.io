@@ -2,7 +2,7 @@
 layout: _base
 ---
 
-<article class="page l-grid" itemscope itemtype="http://schema.org/WebPage">
+<article class="page" itemscope itemtype="http://schema.org/WebPage">
   {% comment %} <header class="hero l-hero">
     <h1 class="hero__title" itemprop="name title headline">{{ title }}</h1>
     {%- if author %}
@@ -12,7 +12,7 @@ layout: _base
 
   {% include partials/_hero %}
 
-  <div class="main-content l-content" itemprop="articleBody">
+  <div class="main-content l-grid l-grid--content" itemprop="articleBody">
     {{ content }}
   </div>
 </article>
