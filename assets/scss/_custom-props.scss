@@ -38,13 +38,13 @@
   --fs-body: 1rem;
   --fs-blockquote: calc(var(--fs-body) * (((var(--fs-ratio) - 1) / 2) + 1));
   --fs-subheading: calc(var(--fs-body) * var(--fs-ratio));
-  --fs-heading: calc(var(--fs-subheading) * var(--fs-ratio));
+  --fs-heading: calc(var(--fs-subheading) * var(--fs-ratio) * var(--fs-ratio));
   --fs-title: calc(var(--fs-heading) * var(--fs-ratio) * var(--fs-ratio));
   --fs-hero: calc(var(--fs-title) * var(--fs-ratio));
   --fs-small: calc(var(--fs-body) / var(--fs-ratio));
 
   --font-body: #{unquote("Work Sans, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif")};
-  --font-headline: Teko, var(--font-body);
+  --font-title: Teko, var(--font-body);
   --font-code: #{unquote("monospace")};
 
   --horizontal-spacing: #{$small-spacing};

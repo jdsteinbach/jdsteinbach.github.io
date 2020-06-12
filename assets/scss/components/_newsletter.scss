@@ -1,7 +1,5 @@
 // Mailchimp archive styles
-[id="mailchimp-archive"] {
-  @include font-scale(p);
-
+[id="newsletter-archive"] {
   margin-top: $base-spacing;
   margin-bottom: $base-spacing;
   padding-top: $base-spacing;
@@ -9,7 +7,8 @@
 
   .campaign {
     margin-bottom: $tiny-spacing;
-    font-family: var(--font-code);
+    // font-family: var(--font-code);
+    font-feature-settings: "tnum" 1;
 
     a {
       font-family: var(--font-body);

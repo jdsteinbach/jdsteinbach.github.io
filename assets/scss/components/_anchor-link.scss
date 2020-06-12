@@ -2,8 +2,13 @@
   --color-link: var(--color-text-accent);
   --color-link-alt: var(--color-accent-1);
 
-  padding: 0 $tiny-spacing;
+  padding: 0 var(--horizontal-spacing) 0 $tiny-spacing;
+  display: inline-block;
   position: relative;
   background-color: transparent !important; // sass-lint:disable-line no-important
   text-decoration: none !important; // sass-lint:disable-line no-important
+
+  @include bp(medium) {
+    padding-right: $tiny-spacing;
+  }
 }

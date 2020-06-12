@@ -97,6 +97,33 @@ fetchForm({
   failMsg: '<p class="error error--mailchimp">Sorry, an error occurred and you weren’t subscribed.</p><a class="button error-button" href="https://jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&id=35bef0e04e" target="_blank" rel="noopener noreferrer nofollow">Subscribe Here</a>'
 })
 
+const newsletter_archive = document.getElementById('newsletter-archive')
+
+if (newsletter_archive) {
+  fetch(
+    'https://api.jdsteinbach.com/newsletter/',
+    {
+      method: 'GET'
+    }
+  )
+    .then(
+      function (response) {
+        return response.json()
+      }
+    )
+    .then(
+      function (data) {
+        newsletter_archive.innerHTML = `<ul>${data}</ul>`
+      }
+    )
+    .catch(
+      function (err) {
+        console.log(err)
+        newsletter_archive.innerHTML = 'Error: unable to load archive.'
+      }
+    )
+}
+
 // `false === true` - temp deactivated until
 // I can redesign the toggle with light/dark/auto
 if ('localStorage' in window && false === true) {

@@ -32,11 +32,11 @@ Let's quickly nix a bad way to handle that: writing some Sass to generate every 
 }
 ```
 
-Those loops are really short and give us handy set of classes that are (almost) instantly ready to plug-in to our markup, but they also generate almost 80 selector blocks (300+ lines of unminified markup). And we haven't even added breakpoints, gutters, or offsets yet!
+Those loops are really short and give us handy set of classes that are (almost) instantly ready to plug-in to our markup, but they also generate almost 80 selector blocks (300+ lines of code). And we haven't even added breakpoints, gutters, or offsets yet!
 
 A much better solution is to use a set of mixins that create the right column widths and margins for you. This set of mixins should generate CSS based on grid math *only when their mixins are used.* This prevents the problem of making your users download the CSS needed for every possible grid position. It gives you all the benefits of highly configurable grids measurements, but only generates the CSS needed for the elements you actually want to style. All the possibilities, none of the bloat.
 
-### Responsive Grids Sass Libraries
+## Responsive Grid Sass Libraries
 
 There are 3 major Sass libraries that do nearly everything you need: Susy, Singularity, and Neat (with its Bourbon dependency).
 

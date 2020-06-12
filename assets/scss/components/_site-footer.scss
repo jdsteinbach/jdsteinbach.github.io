@@ -5,7 +5,7 @@
   --field-bg-alt: var(--color-background-code);
 
   margin: calc(-50vw * var(--tilt-tan)) 0 0;
-  padding: calc(100vw * var(--tilt-tan) + #{3 * $base-spacing}) 0 calc(100vw * var(--tilt-tan));
+  padding: calc(50vw * var(--tilt-tan) + #{3 * $base-spacing}) 0 calc(100vw * var(--tilt-tan));
   position: relative;
   z-index: 1;
   height: 100%;
@@ -69,6 +69,7 @@
 
 .site-footer__columns {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .site-footer__column {
@@ -91,7 +92,23 @@
 
 .site-footer__title {
   margin-top: $small-spacing;
-  margin-bottom: $base-spacing;
-  font-size: var(--fs-subheading);
-  text-align: center;
+  margin-bottom: calc(25vw * var(--tilt-tan));
+  position: relative;
+  font-size: var(--fs-heading);
+  font-family: var(--font-title);
+  transform: skewY(var(--tilt));
+  transform-origin: left bottom;
+}
+
+.site-footer__title-icon {
+  margin-top: $small-spacing;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  color: var(--color-accent-1);
+
+  svg {
+    width: auto;
+    height: calc(33vw * var(--tilt-tan));
+  }
 }

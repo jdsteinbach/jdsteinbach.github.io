@@ -19,15 +19,16 @@ h2 {
   margin-top: $large-spacing;
   margin-bottom: $base-spacing;
   font-size: var(--fs-heading);
-  font-weight: bold;
+  font-weight: 350;
+  font-feature-settings: "smcp" 1;
   color: var(--color-text-alt);
 }
 
 h3 {
-  margin-top: $small-spacing;
+  margin-top: $base-spacing;
   margin-bottom: $small-spacing;
   font-size: var(--fs-subheading);
-  font-weight: 500;
+  font-weight: 550;
   color: var(--color-text-alt);
 }
 
@@ -43,7 +44,7 @@ h5 {
   margin-top: $tiny-spacing;
   margin-bottom: $tiny-spacing;
   font-size: var(--fs-body);
-  font-weight: 500;
+  font-weight: 550;
   letter-spacing: (1em / 32);
   text-transform: uppercase;
   color: var(--color-text-alt);

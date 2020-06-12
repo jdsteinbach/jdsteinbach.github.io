@@ -22,7 +22,7 @@ body {
 .l-grid--content {
   > h2 {
     display: grid;
-    grid-template-columns: inherit;
+    grid-template-columns: var(--horizontal-spacing) 1fr auto;
     align-items: center;
     column-gap: inherit;
     grid-column: 1 / -1;
@@ -40,6 +40,10 @@ body {
       );
       transform: skew(0, var(--tilt));
       transform-origin: right center;
+    }
+
+    @include bp(medium) {
+      grid-template-columns: inherit;
     }
   }
 }
