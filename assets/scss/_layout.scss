@@ -1,11 +1,8 @@
-body {
+// @TODO - maybe better place for this?
+.l-main {
+  padding-bottom: calc(200vw * var(--tilt-tan));
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-// @TODO
-.site-main {
-  padding-bottom: calc(200vw * var(--tilt-tan));
   background-color: var(--color-background-page);
 }
 

@@ -27,7 +27,7 @@
 .archive-item__link {
   display: block;
   font-size: var(--fs-heading);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   font-feature-settings: "smcp" 1, "onum" 0;
   text-decoration: none;
 

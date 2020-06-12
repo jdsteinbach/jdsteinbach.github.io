@@ -11,7 +11,7 @@ body {
 
 h1 {
   font-size: var(--fs-title);
-  font-weight: bold;
+  font-weight: var(--fw-bold);
   color: var(--color-text-alt);
 }
 
@@ -19,32 +19,32 @@ h2 {
   margin-top: $large-spacing;
   margin-bottom: $base-spacing;
   font-size: var(--fs-heading);
-  font-weight: 350;
+  font-weight: var(--fw-light);
   font-feature-settings: "smcp" 1;
   color: var(--color-text-alt);
 }
 
 h3 {
-  margin-top: $base-spacing;
+  margin-top: $large-spacing;
   margin-bottom: $small-spacing;
   font-size: var(--fs-subheading);
-  font-weight: 550;
+  font-weight: var(--fw-medium);
   color: var(--color-text-alt);
 }
 
 h4 {
-  margin-top: $small-spacing;
-  margin-bottom: $tiny-spacing;
+  margin-top: $base-spacing;
+  margin-bottom: $small-spacing;
   font-size: var(--fs-subheading);
-  font-weight: bold;
+  font-weight: var(--fw-bold);
   color: var(--color-text-alt);
 }
 
 h5 {
-  margin-top: $tiny-spacing;
+  margin-top: $small-spacing;
   margin-bottom: $tiny-spacing;
   font-size: var(--fs-body);
-  font-weight: 550;
+  font-weight: var(--fw-medium);
   letter-spacing: (1em / 32);
   text-transform: uppercase;
   color: var(--color-text-alt);
@@ -62,8 +62,8 @@ p {
 
 b,
 strong {
-  font-weight: bold;
-  font-weight: 550;
+  font-weight: var(--fw-bold);
+  font-weight: var(--fw-medium);
   color: var(--color-text-alt);
 }
 
@@ -76,7 +76,7 @@ em {
   > p:first-child {
     font-size: var(--fs-blockquote);
     color: var(--color-text-alt);
-    font-weight: 250;
+    font-weight: var(--fw-lightest);
   }
 
   > ul,
@@ -126,6 +126,8 @@ em {
   h4,
   h5,
   h6 {
+    scroll-margin-top: $large-spacing * 2;
+
     em {
       font-style: italic;
       color: var(-- color-text-accent);

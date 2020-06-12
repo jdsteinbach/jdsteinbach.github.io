@@ -9,6 +9,6 @@ Every week, I send an email with 5 front-end developments links I've found usefu
 
 The posts I'll share will have a lot of variety, but they'll be loosely connected under the "front-end development" umbrella. Topics include CSS, JS, HTML, performance, accessibility, UI/UX, design, fonts, and more!
 
-Here are the most recent ten newsletters. If you find them useful, please [subscribe](#mc_embed_signup) at the bottom of this page!
+Here are the most recent ten newsletters. If you find them useful, please [subscribe](#mc_embed_signup_scroll) at the bottom of this page!
 
 <div id="newsletter-archive"></div>

@@ -15,7 +15,7 @@
   position: relative;
   z-index: 1;
   font-size: var(--fs-small);
-  font-weight: 300;
+  font-weight: var(--fw-light);
   letter-spacing: (1em / 8);
   text-transform: lowercase;
   font-feature-settings: "smcp" 1;
@@ -24,7 +24,7 @@
   &[href*="hire"] {
     border: 1px solid currentColor;
     border-radius: 3px;
-    font-weight: 800;
+    font-weight: var(--fw-heavy);
   }
 
   &:last-child {

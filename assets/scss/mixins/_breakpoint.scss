@@ -1,6 +1,0 @@
-// Alias for `bp()` mixin from TypeTuner
-@mixin breakpoint($name) {
-  @include bp($name) {
-    @content;
-  }
-}

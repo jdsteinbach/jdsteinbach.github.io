@@ -43,6 +43,13 @@
   --fs-hero: calc(var(--fs-title) * var(--fs-ratio));
   --fs-small: calc(var(--fs-body) / var(--fs-ratio));
 
+  --fw-lightest: 250;
+  --fw-light: 350;
+  --fw-body: 400;
+  --fw-medium: 550;
+  --fw-bold: 700;
+  --fw-heavy: 800;
+
   --font-body: #{unquote("Work Sans, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif")};
   --font-title: Teko, var(--font-body);
   --font-code: #{unquote("monospace")};

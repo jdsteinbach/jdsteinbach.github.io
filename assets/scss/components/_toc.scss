@@ -1,8 +1,5 @@
-.main-content {
-  .js &.has-toc {
-    position: relative;
-    padding-top: $large-spacing + $small-spacing;
-  }
+.has-toc {
+  position: relative;
 }
 
 .post-toc {
@@ -10,17 +7,16 @@
     padding-right: var(--horizontal-spacing);
     padding-left: var(--horizontal-spacing);
     position: absolute;
-    top: 0;
-    left: 0;
+    top: calc(-50vw * var(--tilt-tan));
     right: 0;
   }
 }
 
-.post-toc__title.post-toc__title { // Increase specificity for title
+.post-toc__title {
   margin: $small-spacing 0;
   padding-top: $small-spacing;
   position: relative;
-  font-variation-settings: vf(bold);
+  font-weight: var(--fw-light);
 
   &::after {
     .js & {
@@ -33,32 +29,18 @@
     }
 
     .js [aria-hidden="false"] & {
-      transform: rotate(180deg) translateY(.125em);
+      transform: rotate(180deg) translateY(-.0625em);
     }
   }
 }
 
 // BEM Exception: generated TOC component does not have classes
 .toc {
-  $transparent-white: rgba($color-white, 0);
-
-  padding-right: var(--horizontal-spacing);
-  padding-left: var(--horizontal-spacing);
-  background-color: var(--color-background-page);
-
-  a {
-    @include font-scale(sm);
-
-    margin-bottom: $tiny-spacing;
-    display: inline-block;
-  }
-
   ol {
-    @include font-scale(sm);
-
     margin: 0;
     padding: 0;
     display: block;
+    font-size: var(--fs-small);
     list-style: decimal;
     color: var(--color-text);
 
@@ -72,21 +54,18 @@
   }
 
   li {
+    margin-top: $tiny-spacing;
     margin-left: $small-spacing;
   }
 
   .js & {
-    padding: 0 1em ($base-spacing + $small-spacing);
+    padding: $tiny-spacing $base-spacing $small-spacing;
     position: absolute;
     top: 100%;
     right: 0;
     left: 0;
     opacity: 0;
-    mask-image: linear-gradient(
-      0deg,
-      $transparent-white 0,
-      $color-white $base-spacing
-    );
+    background-color: var(--color-background-dark);
     transform-origin: top center;
     transform: scaleY(0);
     transition: opacity .25s, transform .25s ease-in-out;
@@ -95,10 +74,5 @@
   .js [aria-hidden="false"] & {
     opacity: 1;
     transform: scaleY(1);
-  }
-
-  @supports (backdrop-filter: blur(3px)) {
-    background-color: var(--color-background-fade);
-    backdrop-filter: blur(3px);
   }
 }

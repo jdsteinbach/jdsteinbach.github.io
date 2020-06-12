@@ -33,7 +33,7 @@
 
 .site-header__title {
   display: inline-block;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   text-decoration: none;
   letter-spacing: (1em / 32);
 }
