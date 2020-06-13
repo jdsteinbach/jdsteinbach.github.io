@@ -4,6 +4,8 @@
   --color-text-accent: #{$color-purple};
   --color-text-light: #{$color-background};
   --color-page-title: #{$color-background};
+  --color-dark: #{$color-black};
+  --color-light: #{$color-background};
 
   --color-background: #{$color-background};
   --color-background-page: #{$color-background-pale};
@@ -78,8 +80,36 @@
     --fs-body: calc(27rem / 16);
   }
 
-  // .theme-dark {
-  @media (prefers-color-scheme: dark) {
+  [data-theme="auto"] {
+    @media (prefers-color-scheme: dark) {
+      --color-text: #{$color-background};
+      --color-text-alt: #{$color-background-pale};
+      --color-text-accent: #{$color-pink};
+
+      --color-background: #{$color-gray};
+      --color-background-page: #{$color-black};
+      --color-background-fade: #{rgba($color-gray, .9)};
+      --color-background-hero: var(--color-purple-dark);
+      --color-background-dark: #{$color-gray};
+      --color-background-code: #{rgba($color-goldenrod, .15)};
+
+      --color-accent-1: #{mix($color-orange, $color-gray, 75%)};
+      --color-accent-2: #{mix($color-goldenrod, $color-gray, 75%)};
+      --color-accent-3: #{mix($color-yellow, $color-gray, 75%)};
+
+      --color-purple-dark: #{mix($color-purple, $color-black, 35%)};
+
+      --color-link: #{rgba($color-yellow, .75)};
+      --color-link-alt: #{$color-background-pale};
+
+      --color-link-2: #{$color-pink};
+      --color-link-2-alt: #{mix($color-purple, $color-white)};
+
+      --blend-mode: lighten;
+    }
+  }
+
+  [data-theme="dark"] {
     --color-text: #{$color-background};
     --color-text-alt: #{$color-background-pale};
     --color-text-accent: #{$color-pink};

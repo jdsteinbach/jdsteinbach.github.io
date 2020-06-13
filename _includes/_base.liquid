@@ -15,10 +15,9 @@
 
   <script>
   if (window.localStorage) {
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('theme-dark');
-    } else {
-      document.body.classList.remove('theme-dark');
+    const theme = localStorage.getItem('theme')
+    if (theme) {
+      document.body.dataset.theme = theme
     }
   }
   </script>

@@ -1,10 +1,29 @@
 <header class="site-header l-grid" role="banner">
   <div class="site-header__content">
     <a class="site-header__title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-    <nav class="header-nav" id="header-nav">
-      {%- for link in collections.nav -%}
-        <a class="header-nav__link" href="{{ link.url | prepend: site.baseurl }}" data-order="{{ link.data.menu_order }}">{{ link.data.menu_title }}</a>
-      {%- endfor -%}
-    </nav>
+    <div class="header-menu">
+      <nav class="header-nav" id="header-nav" name="Primary">
+        {%- for link in collections.nav -%}
+          <a class="header-nav__link" href="{{ link.url | prepend: site.baseurl }}" data-order="{{ link.data.menu_order }}">{{ link.data.menu_title }}</a>
+        {%- endfor -%}
+      </nav>
+      <form class="header-nav__toggle theme-toggle" name="Theme Picker">
+        <input class="theme-toggle__input hidden" type="radio" name="theme" id="light" value="light" />
+        <label class="theme-toggle__label" for="light">
+          {% include images/toggle-light %}
+          <span class="theme-toggle__label-text hidden">Light Theme</span>
+        </label>
+        <input class="theme-toggle__input hidden" type="radio" name="theme" id="auto" value="auto" />
+        <label class="theme-toggle__label" for="auto">
+          {% include images/toggle-auto %}
+          <span class="theme-toggle__label-text hidden">Auto Theme</span>
+        </label>
+        <input class="theme-toggle__input hidden" type="radio" name="theme" id="dark" value="dark" />
+        <label class="theme-toggle__label" for="dark">
+          {% include images/toggle-dark %}
+          <span class="theme-toggle__label-text hidden">Dark Theme</span>
+        </label>
+      </form>
+    </div>
   </div>
 </header>

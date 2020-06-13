@@ -46,7 +46,6 @@ const fetchForm = ({id, responseID, fieldIDs, successMsg, failMsg}) => {
       e.preventDefault()
 
       if (data.has('web') > -1 && data.get('web') !== '') {
-        console.log('data has no web', data)
         formMessage.innerHTML = failMsg
         return false
       }
@@ -58,25 +57,21 @@ const fetchForm = ({id, responseID, fieldIDs, successMsg, failMsg}) => {
           body: data
         }
       )
-        .then(
-          function (response) {
-            if (response.status < 400) {
-              for (let id of fieldIDs) {
-                document.getElementById(id).value = ''
-              }
-
-              formMessage.innerHTML = `<p class="form__response-message is-success">${successMsg}</p>`
-            } else {
-              formMessage.innerHTML = `<p class="form__response-message is-error">${failMsg}</p>`
+        .then(response => {
+          if (response.status < 400) {
+            for (let id of fieldIDs) {
+              document.getElementById(id).value = ''
             }
-          }
-        )
-        .catch(
-          function (err) {
-            console.log(err)
+
+            formMessage.innerHTML = `<p class="form__response-message is-success">${successMsg}</p>`
+          } else {
             formMessage.innerHTML = `<p class="form__response-message is-error">${failMsg}</p>`
           }
-        )
+        })
+        .catch(err => {
+          console.log(err)
+          formMessage.innerHTML = `<p class="form__response-message is-error">${failMsg}</p>`
+        })
     })
   }
 }
@@ -102,63 +97,46 @@ const newsletter_archive = document.getElementById('newsletter-archive')
 if (newsletter_archive) {
   fetch(
     'https://api.jdsteinbach.com/newsletter/',
-    {
-      method: 'GET'
-    }
+    { method: 'GET' }
   )
-    .then(
-      function (response) {
-        return response.json()
-      }
-    )
-    .then(
-      function (data) {
-        newsletter_archive.innerHTML = `<ul>${data}</ul>`
-      }
-    )
-    .catch(
-      function (err) {
-        console.log(err)
-        newsletter_archive.innerHTML = 'Error: unable to load archive.'
-      }
-    )
+    .then(response => response.json())
+    .then(data => {
+      newsletter_archive.innerHTML = `<ul>${data}</ul>`
+    })
+    .catch(err => {
+      console.log(err)
+      newsletter_archive.innerHTML = 'Error: unable to load archive.'
+    })
 }
 
 // `false === true` - temp deactivated until
 // I can redesign the toggle with light/dark/auto
-if ('localStorage' in window && false === true) {
-  const container = document.getElementById('header-nav')
-  const toggle = document.createElement('button')
-  toggle.setAttribute('type', 'button')
+if ('localStorage' in window) {
+  const toggles = document.querySelectorAll('input[name="theme"]')
 
-  const saveTheme = (isDark) => {
-    let theme = isDark ? 'dark' : ''
+  const initTheme = () => {
+    const savedTheme = window.localStorage.getItem('theme')
+    if (savedTheme) {
+      setTheme(savedTheme)
+      Array.from(toggles).find(t => t.value === savedTheme).checked = true
+    }
+  }
+
+  const getActiveTheme = () => {
+    return Array.from(toggles).find(t => t.checked).value
+  }
+
+  const setTheme = theme => {
     window.localStorage.setItem('theme', theme)
+    document.body.dataset.theme = theme
   }
 
-  const setTheme = (isDark) => {
-    isDark = isDark || getTheme()
-    buttonText(isDark)
-    saveTheme(isDark)
-  }
-
-  const getTheme = () => document.body.classList.contains('theme-dark')
-
-  const buttonText = (isDark) => {
-    toggle.innerHTML = isDark ? 'Light Theme' : 'Dark Theme'
-  }
-
-  buttonText(getTheme())
-
-  toggle.addEventListener('click', e => {
+  toggles.forEach(t => t.addEventListener('change', e => {
     e.preventDefault()
-    document.body.classList.toggle('theme-dark')
-    setTheme()
-  })
+    setTheme(getActiveTheme())
+  }))
 
-  toggle.classList.add('toggle')
-
-  container.appendChild(toggle)
+  window.onload = initTheme
 }
 
 const toc = document.querySelector('.post-toc')
