@@ -16,7 +16,9 @@
   margin: $small-spacing 0;
   padding-top: $small-spacing;
   position: relative;
-  font-weight: var(--fw-light);
+  font-weight: var(--fw-body);
+  font-feature-settings: "smcp" 1;
+  text-transform: lowercase;
 
   &::after {
     .js & {
@@ -64,15 +66,24 @@
     top: 100%;
     right: 0;
     left: 0;
-    opacity: 0;
-    background-color: var(--color-background-dark);
+    opacity: 1;
+    background-color: var(--color-background);
     transform-origin: top center;
-    transform: scaleY(0);
+    transform: scaleY(1);
     transition: opacity .25s, transform .25s ease-in-out;
+    // box-shadow:
+    //   -1px 1px 0 1px var(--color-accent-1),
+    //   -2px 2px 0 1px var(--color-accent-1),
+    //   -3px 3px 0 1px var(--color-accent-2),
+    //   -4px 4px 0 1px var(--color-accent-2),
+    //   -5px 5px 0 1px var(--color-accent-2),
+    //   -6px 6px 0 1px var(--color-accent-3),
+    //   -7px 7px 0 1px var(--color-accent-3),
+    //   -8px 8px 0 1px var(--color-accent-3);
   }
 
-  .js [aria-hidden="false"] & {
-    opacity: 1;
-    transform: scaleY(1);
+  .js [aria-hidden="true"] & {
+    opacity: 0;
+    transform: scaleY(0);
   }
 }

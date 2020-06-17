@@ -29,6 +29,7 @@ img {
 svg {
   width: .75em;
   height: .75em;
+  pointer-events: none;
 
   .outbound-link & {
     width: .5em;

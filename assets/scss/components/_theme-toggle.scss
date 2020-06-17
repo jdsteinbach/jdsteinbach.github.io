@@ -6,15 +6,19 @@
     grid-template-columns: repeat(3, 1fr);
     position: relative;
     z-index: 1;
-    transform: skew(var(--tilt));
+    transform: skewX(var(--tilt));
+  }
+
+  &:focus-within {
+    outline: 2px solid var(--color-light);
+    outline-offset: 2px;
   }
 }
 
 .theme-toggle__input {
   position: absolute;
-  height: 0;
-  width: 0;
-  clip: rect(0, 0, 0, 0);
+  opacity: 0;
+  z-index: -1;
 }
 
 .theme-toggle__label {
@@ -46,7 +50,8 @@
     outline-offset: -2px;
   }
 
-  :focus + & {
+  &:focus,
+  .theme-toggle__input:focus + & {
     outline: 2px solid var(--color-light);
     z-index: 2;
   }
@@ -61,10 +66,6 @@
     width: $small-spacing;
     height: $small-spacing;
     fill: currentColor;
-    transform: skew(calc(-1 * var(--tilt)));
+    transform: skewX(calc(-1 * var(--tilt)));
   }
-}
-
-.theme-toggle__label-text {
-
 }

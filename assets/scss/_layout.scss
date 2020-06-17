@@ -44,13 +44,3 @@
     }
   }
 }
-
-.l-wrapper {
-  margin-right: auto;
-  margin-left: auto;
-  width: 100%;
-  max-width: var(--max-width, #{$max-width});
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}

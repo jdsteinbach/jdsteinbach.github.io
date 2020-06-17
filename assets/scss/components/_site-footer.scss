@@ -95,7 +95,7 @@
   margin-bottom: calc(25vw * var(--tilt-tan));
   position: relative;
   font-size: var(--fs-heading);
-  font-family: var(--font-title);
+  font-family: var(--ff-title);
   transform: skewY(var(--tilt));
   transform-origin: left bottom;
 }

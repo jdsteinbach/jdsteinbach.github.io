@@ -7,11 +7,11 @@
 
   .campaign {
     margin-bottom: $tiny-spacing;
-    // font-family: var(--font-code);
+    // font-family: var(--ff-code);
     font-feature-settings: "tnum" 1;
 
     a {
-      font-family: var(--font-body);
+      font-family: var(--ff-body);
     }
   }
 }

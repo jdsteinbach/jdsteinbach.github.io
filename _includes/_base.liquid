@@ -16,9 +16,7 @@
   <script>
   if (window.localStorage) {
     const theme = localStorage.getItem('theme')
-    if (theme) {
-      document.body.dataset.theme = theme
-    }
+    document.body.dataset.theme = theme ? theme : 'auto'
   }
   </script>
 

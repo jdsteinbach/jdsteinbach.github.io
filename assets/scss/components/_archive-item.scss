@@ -22,13 +22,12 @@
   position: relative;
   z-index: 2;
   font-size: var(--fs-small);
+  text-transform: uppercase;
 }
 
 .archive-item__link {
   display: block;
   font-size: var(--fs-heading);
-  font-weight: var(--fw-medium);
-  font-feature-settings: "smcp" 1, "onum" 0;
   text-decoration: none;
 
   &::before {

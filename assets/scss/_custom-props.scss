@@ -46,15 +46,18 @@
   --fs-small: calc(var(--fs-body) / var(--fs-ratio));
 
   --fw-lightest: 250;
-  --fw-light: 350;
-  --fw-body: 400;
+  --fw-light: 320;
+  --fw-body: 375;
   --fw-medium: 550;
   --fw-bold: 700;
   --fw-heavy: 800;
 
-  --font-body: #{unquote("Work Sans, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif")};
-  --font-title: Teko, var(--font-body);
-  --font-code: #{unquote("monospace")};
+  --ff-body: Work Sans, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
+  --ff-title: Teko, var(--ff-body);
+  --ff-code: monospace;
+
+  --lh-body: 1.5;
+  --lh-heading: 1.2;
 
   --horizontal-spacing: #{$small-spacing};
 
@@ -62,18 +65,20 @@
     --horizontal-spacing: calc(#{$small-spacing} + env(safe-area-inset-right));
   }
 
-  // @supports (font-variation-settings: normal) {
-  //   --font-body: Work Sans, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
-  // }
+  @supports (font-variation-settings: normal) {
+    --ff-body: Work Sans VF, Work Sans, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
+  }
 
   @include bp(medium) {
     --fs-body: calc(21rem / 16);
     --fs-ratio: 1.3;
+    --lh-body: 1.6;
   }
 
   @include bp(large) {
     --fs-body: calc(24rem / 16);
-    --fs-ratio: 1.414;
+    --fs-ratio: 1.4;
+    --lh-body: 1.7;
   }
 
   @include bp(xlarge) {

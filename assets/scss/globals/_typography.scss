@@ -1,6 +1,8 @@
 body {
   font-size: var(--fs-body);
-  font-family: var(--font-body);
+  font-family: var(--ff-body);
+  font-weight: var(--fw-body);
+  line-height: var(--lh-body);
   font-feature-settings: "kern", "liga", "clig", "calt";
   color: var(--color-text);
   background-color: var(--color-background-page);
@@ -19,8 +21,7 @@ h2 {
   margin-top: $large-spacing;
   margin-bottom: $base-spacing;
   font-size: var(--fs-heading);
-  font-weight: var(--fw-light);
-  font-feature-settings: "smcp" 1;
+  font-weight: var(--fw-medium);
   color: var(--color-text-alt);
 }
 
@@ -53,7 +54,6 @@ h5 {
 p {
   margin-top: $small-spacing;
   margin-bottom: $small-spacing;
-  line-height: 1.5;
 
   &:empty {
     margin-bottom: 0;
@@ -127,6 +127,7 @@ em {
   h5,
   h6 {
     scroll-margin-top: $large-spacing * 2;
+    line-height: var(--lh-heading);
 
     em {
       font-style: italic;
