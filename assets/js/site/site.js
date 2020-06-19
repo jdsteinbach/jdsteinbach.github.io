@@ -13,7 +13,7 @@ let io = new IntersectionObserver((entries, observer) => {
 
 io.observe(document.querySelector('.hero'))
 
-// Control form fields
+// Control Form Fields
 const formBoxes = document.querySelectorAll('.form__field')
 
 const activateField = el => el.parentNode.classList.add('is-active')
@@ -93,25 +93,7 @@ fetchForm({
   failMsg: '<p class="error error--mailchimp">Sorry, an error occurred and you weren’t subscribed.</p><a class="button error-button" href="https://jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&id=35bef0e04e" target="_blank" rel="noopener noreferrer nofollow">Subscribe Here</a>'
 })
 
-const newsletter_archive = document.getElementById('newsletter-archive')
-
-if (newsletter_archive) {
-  fetch(
-    'https://api.jdsteinbach.com/newsletter/',
-    { method: 'GET' }
-  )
-    .then(response => response.json())
-    .then(data => {
-      newsletter_archive.innerHTML = `<ul>${data}</ul>`
-    })
-    .catch(err => {
-      console.log(err)
-      newsletter_archive.innerHTML = 'Error: unable to load archive.'
-    })
-}
-
-// `false === true` - temp deactivated until
-// I can redesign the toggle with light/dark/auto
+// Color Theme Toggle
 if ('localStorage' in window) {
   const toggles = document.querySelectorAll('input[name="theme"]')
 
@@ -140,6 +122,7 @@ if ('localStorage' in window) {
   window.onload = initTheme
 }
 
+// Table of Contents Visibility
 const toc = document.querySelector('.post-toc')
 
 if (toc) {

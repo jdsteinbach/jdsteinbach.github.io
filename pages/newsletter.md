@@ -11,4 +11,6 @@ The posts I'll share will have a lot of variety, but they'll be loosely connecte
 
 Here are the most recent ten newsletters. If you find them useful, please [subscribe](#mc_embed_signup_scroll) at the bottom of this page!
 
-<div id="newsletter-archive"></div>
+<ul id="newsletter-archive">
+  {{ newsletter }}
+</ul>
