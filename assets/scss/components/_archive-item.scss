@@ -1,5 +1,5 @@
 .archive-item {
-  margin-bottom: $base-spacing;
+  margin-bottom: $large-spacing;
 }
 
 .archive-item__title {
@@ -22,7 +22,14 @@
   position: relative;
   z-index: 2;
   font-size: var(--fs-small);
+}
+
+.archive-item__date {
   text-transform: uppercase;
+}
+
+.archive-item__categories {
+  font-feature-settings: "smcp" 1;
 }
 
 .archive-item__link {

@@ -6,7 +6,7 @@
     grid-template-columns: repeat(3, 1fr);
     position: relative;
     z-index: 1;
-    transform: skewX(var(--tilt));
+    transform: skewY(var(--tilt));
   }
 
   &:focus-within {
@@ -66,6 +66,6 @@
     width: $small-spacing;
     height: $small-spacing;
     fill: currentColor;
-    transform: skewX(calc(-1 * var(--tilt)));
+    transform: skewY(calc(-1 * var(--tilt)));
   }
 }

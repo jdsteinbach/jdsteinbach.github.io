@@ -139,7 +139,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('apple-touch-icon.png')
   eleventyConfig.addPassthroughCopy('safari-pinned-tab.svg')
   eleventyConfig.addPassthroughCopy('favicon.ico')
-  eleventyConfig.addPassthroughCopy('favicon-16x16.png')
+  eleventyConfig.addPassthroughCopy('favicon.svg')
   eleventyConfig.addPassthroughCopy('A')
   eleventyConfig.addPassthroughCopy('CNAME')
 

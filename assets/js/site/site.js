@@ -4,7 +4,8 @@ document.body.classList.add('js')
 // IO for header
 let io = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
-    document.body.style.setProperty('--header-opacity', (1 - entry.intersectionRatio).toFixed(2))
+    const opacity = 1 - (entry.intersectionRatio / 2).toFixed(2)
+    document.body.style.setProperty('--header-opacity', opacity)
   })
 }, {
   threshold: Array.apply(null, { length: 101 }).map((x, idx) => idx / 100)
@@ -161,7 +162,6 @@ const headerMenu = document.getElementById('header-menu')
 
 if (headerMenuToggle && headerMenu) {
   headerMenuToggle.addEventListener('click', () => {
-    console.log('headerMenuToggle click')
     headerMenu.classList.toggle('is-visible')
   })
 }

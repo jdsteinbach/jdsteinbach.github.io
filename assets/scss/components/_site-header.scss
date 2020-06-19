@@ -22,18 +22,25 @@
     background-color: var(--header-bg);
     opacity: var(--header-opacity, 1);
   }
+
+  .js & span {
+    @include bp(nav) {
+      display: block;
+    }
+  }
 }
 
 .site-header__content {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
 }
 
 .site-header__title {
   display: inline-block;
   font-weight: var(--fw-bold);
+  line-height: var(--lh-title);
   text-decoration: none;
   letter-spacing: (1em / 32);
 }
@@ -63,7 +70,7 @@
     display: inline-flex;
     position: relative;
 
-    @include bp(medium) {
+    @include bp(nav) {
       display: none;
     }
   }

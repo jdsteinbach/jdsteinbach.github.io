@@ -17,11 +17,11 @@
     <p class="archive-item__excerpt">{{ post.data.excerpt }}</p>
   {%- endif -%}
   <p class="archive-item__meta">
-    <span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
+    <span class="archive-item__date">{{ post.date | date: "%B %e, %Y" }}</span>
     {%- if cat %}
     {%- else %}
       {%- if post.data.categories %}
-        <span class="categories">
+        <span class="archive-item__categories">
           {% include partials/_categories %}
         </span>
       {%- endif %}
