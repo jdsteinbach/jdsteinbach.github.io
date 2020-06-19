@@ -1,8 +1,12 @@
 <header class="site-header l-grid" role="banner">
   <div class="site-header__content">
     <a class="site-header__title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-    <div class="header-menu">
-      <nav class="header-nav" id="header-nav" name="Primary">
+    <button class="site-header__menu-toggle button--icon" id="header-menu-toggle">
+      <span class="hidden">Toggle Menu</span>
+      {% include images/icon-menu %}
+    </button>
+    <div class="header-menu" id="header-menu">
+      <nav class="header-nav" name="Primary">
         {%- for link in collections.nav -%}
           <a class="header-nav__link" href="{{ link.url | prepend: site.baseurl }}" data-order="{{ link.data.menu_order }}">{{ link.data.menu_title }}</a>
         {%- endfor -%}

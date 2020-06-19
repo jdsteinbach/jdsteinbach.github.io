@@ -37,3 +37,34 @@
   text-decoration: none;
   letter-spacing: (1em / 32);
 }
+
+.site-header__menu-toggle {
+  display: none;
+
+  svg {
+    width: $small-spacing;
+    height: $small-spacing;
+    overflow: visible;
+  }
+
+  rect {
+    transform-origin: center;
+    transform-box: fill-box;
+    transform: skewY(var(--tilt));
+
+    @for $i from 1 through 3 {
+      &:nth-of-type(#{$i}) {
+        fill: var(--color-accent-#{$i});
+      }
+    }
+  }
+
+  .js & {
+    display: inline-flex;
+    position: relative;
+
+    @include bp(medium) {
+      display: none;
+    }
+  }
+}

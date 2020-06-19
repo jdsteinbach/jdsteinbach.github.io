@@ -156,6 +156,16 @@ if (toc) {
   }
 }
 
+const headerMenuToggle = document.getElementById('header-menu-toggle')
+const headerMenu = document.getElementById('header-menu')
+
+if (headerMenuToggle && headerMenu) {
+  headerMenuToggle.addEventListener('click', () => {
+    console.log('headerMenuToggle click')
+    headerMenu.classList.toggle('is-visible')
+  })
+}
+
 console.log([
   '',
   '               ///  /////////     /////////',
