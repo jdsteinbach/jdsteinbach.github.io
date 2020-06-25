@@ -2,7 +2,7 @@ const https = require('https')
 
 const url = 'https://api.jdsteinbach.com/newsletter/'
 
-const get = () => {
+const getNewsletter = () => {
   return new Promise((resolve, reject) => {
     https.get(
       url,
@@ -24,4 +24,4 @@ const get = () => {
   })
 }
 
-module.exports = get()
+module.exports = getNewsletter()
