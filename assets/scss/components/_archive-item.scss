@@ -11,7 +11,6 @@
   margin-top: $tiny-spacing;
   margin-bottom: $tiny-spacing;
   color: var(--color-text);
-  opacity: 0.85;
 }
 
 .archive-item__meta {
@@ -22,6 +21,7 @@
   position: relative;
   z-index: 2;
   font-size: var(--fs-small);
+  color: var(--color-text-alt);
 }
 
 .archive-item__date {

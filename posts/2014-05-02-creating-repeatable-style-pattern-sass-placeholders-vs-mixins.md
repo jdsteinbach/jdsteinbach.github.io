@@ -41,11 +41,11 @@ Of course, this isn&#8217;t just for grid patterns: it applies to any nested sty
 
 **Update:**
 
-Thanks to Hugo & Stuart &#8211; Hugo posted a [comment][1] with a cleaner version that handles the parent class list in a stringier way and makes the final `@if` loop unnecessary. Stuart [recommended][2] including the `comma` to keep the list of classes comma-separated in the output.
+Thanks to Hugo & Stuart &#8211; [Hugo][1] posted a comment with a cleaner version that handles the parent class list in a stringier way and makes the final `@if` loop unnecessary. [Stuart][2] recommended including the `comma` to keep the list of classes comma-separated in the output.
 
 <p class="sassmeister" data-gist-id="3e6b586921f9556856fd" data-height="480">
   <a href="http://sassmeister.com/gist/3e6b586921f9556856fd">Play with this gist on SassMeister.</a>
 </p>
 
- [1]: http://jamessteinbach.com/css/sass/creating-repeatable-style-pattern-sass-placeholders-vs-mixins/#comment-63 "Read Hugo's comment"
- [2]: http://jamessteinbach.com/css/sass/creating-repeatable-style-pattern-sass-placeholders-vs-mixins/#comment-67 "Read Stuart's comment"
+ [1]: https://hugogiraudel.com/ "Read Hugo's blog"
+ [2]: https://alwaystwisted.com/ "Read Stuart's blog"

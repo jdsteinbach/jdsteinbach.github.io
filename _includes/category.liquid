@@ -2,15 +2,13 @@
 layout: _base
 ---
 
-<div class="">
-  {% assign title = title | append: " Archive" %}
-  {% include partials/_hero %}
+{%- assign title = title | append: " Archive" -%}
+{% include partials/_hero %}
 
-  <div class="l-grid">
-    <ul class="posts-archive">
-      {%- for post in collections[cat_name] %}
-        {% include partials/_archive-item %}
-      {%- endfor %}
-    </ul>
-  </div>
+<div class="l-grid">
+  <ul class="posts-archive">
+    {%- for post in collections[cat_name] %}
+      {% include partials/_archive-item %}
+    {%- endfor %}
+  </ul>
 </div>

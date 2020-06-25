@@ -2,32 +2,30 @@
 layout: _base
 ---
 
-<div class="">
-  {% include partials/_hero %}
+{% include partials/_hero %}
 
-  <div class="l-grid">
-    {% if pagination.items %}
-      <ul class="posts-archive">
-        {% for post in pagination.items %}
-          {% include partials/_archive-item %}
-        {% endfor %}
-      </ul>
+<div class="l-grid">
+  {% if pagination.items %}
+    <ul class="posts-archive">
+      {% for post in pagination.items %}
+        {% include partials/_archive-item %}
+      {% endfor %}
+    </ul>
 
-      <div class="pagination">
-        {% if pagination.previousPageLink %}
-          <a href="{{ pagination.previousPageLink | fix_links }}" class="previous">Previous</a>
-        {% else %}
-          <span class="previous"></span>
-        {% endif %}
-        <span class="page-number">{{pagination.pageNumber | plus: 1 }} of {{ pagination.pageLinks | size }}</span>
-        {% if pagination.nextPageLink %}
-          <a href="{{ pagination.nextPageLink | fix_links }}" class="next">Next</a>
-        {% else %}
-          <span class="next"></span>
-        {% endif %}
-      </div>
-    {% else %}
-      {{ content }}
-    {% endif %}
-  </div>
+    <div class="pagination">
+      {% if pagination.previousPageLink %}
+        <a href="{{ pagination.previousPageLink | fix_links }}" class="previous">Previous</a>
+      {% else %}
+        <span class="previous"></span>
+      {% endif %}
+      <span class="page-number">{{pagination.pageNumber | plus: 1 }} of {{ pagination.pageLinks | size }}</span>
+      {% if pagination.nextPageLink %}
+        <a href="{{ pagination.nextPageLink | fix_links }}" class="next">Next</a>
+      {% else %}
+        <span class="next"></span>
+      {% endif %}
+    </div>
+  {% else %}
+    {{ content }}
+  {% endif %}
 </div>

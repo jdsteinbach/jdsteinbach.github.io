@@ -1,9 +1,10 @@
 code {
-  padding: 0 .5ch;
-  display: inline-block;
+  padding: 0 $tiny-spacing;
+  display: inline;
   vertical-align: baseline;
   border-radius: $border-radius-default;
   font-family: var(--ff-code);
+  line-height: inherit;
   font-weight: inherit;
   font-feature-settings: initial;
   color: var(--color-text-alt);
@@ -11,6 +12,11 @@ code {
 
   a & {
     color: inherit;
+  }
+
+  a:hover &,
+  a:active & {
+    background-color: transparent;
   }
 }
 
