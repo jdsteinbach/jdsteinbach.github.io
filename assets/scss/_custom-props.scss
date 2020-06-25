@@ -84,10 +84,6 @@
     --lh-body: 1.7;
   }
 
-  @include bp(xlarge) {
-    --fs-body: calc(27rem / 16);
-  }
-
   [data-theme="auto"] {
     @media (prefers-color-scheme: dark) {
       --color-text: #{$color-background};
