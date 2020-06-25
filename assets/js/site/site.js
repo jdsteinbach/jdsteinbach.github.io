@@ -1,7 +1,12 @@
-// Let the DOM know the browser has JS
+/*
+ * Let the DOM know the browser has JS
+ */
 document.body.classList.add('js')
 
-// IO for header
+
+/*
+ * IntersectionObserver for Header Opacity
+ */
 let io = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     const opacity = 1 - (entry.intersectionRatio / 2).toFixed(2)
@@ -13,28 +18,10 @@ let io = new IntersectionObserver((entries, observer) => {
 
 io.observe(document.querySelector('.hero'))
 
-// Control Form Fields
-const formBoxes = document.querySelectorAll('.form__field')
 
-const activateField = el => el.parentNode.classList.add('is-active')
-
-const deactivateField = el => {
-  if (el.value === '') {
-    el.parentNode.classList.remove('is-active')
-  }
-}
-
-for (let box of formBoxes) {
-  let formInput = box.querySelector('textarea, input')
-
-  deactivateField(formInput)
-
-  formInput.addEventListener('focus', e => activateField(e.target))
-  formInput.addEventListener('change', e => activateField(e.target))
-  formInput.addEventListener('blur', e => deactivateField(e.target))
-}
-
-// Fetch-based Form Submission
+/*
+ * Fetch-based Form Submission
+ */
 const fetchForm = ({id, responseID, fieldIDs, successMsg, failMsg}) => {
   const contactForm = document.getElementById(id)
 
@@ -93,7 +80,10 @@ fetchForm({
   failMsg: '<p class="error error--mailchimp">Sorry, an error occurred and you weren’t subscribed.</p><a class="button error-button" href="https://jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&id=35bef0e04e" target="_blank" rel="noopener noreferrer nofollow">Subscribe Here</a>'
 })
 
-// Color Theme Toggle
+
+/*
+ * Color Theme Toggle
+ */
 if ('localStorage' in window) {
   const toggles = document.querySelectorAll('input[name="theme"]')
 
@@ -122,7 +112,10 @@ if ('localStorage' in window) {
   window.onload = initTheme
 }
 
-// Table of Contents Visibility
+
+/*
+ * Table of Contents Visibility
+ */
 const toc = document.querySelector('.post-toc')
 
 if (toc) {
@@ -140,6 +133,10 @@ if (toc) {
   }
 }
 
+
+/*
+ * Header Menu Toggle
+ */
 const headerMenuToggle = document.getElementById('header-menu-toggle')
 const headerMenu = document.getElementById('header-menu')
 
@@ -149,6 +146,10 @@ if (headerMenuToggle && headerMenu) {
   })
 }
 
+
+/*
+ * Just for Fun
+ */
 console.log([
   '',
   '               ///  /////////     /////////',

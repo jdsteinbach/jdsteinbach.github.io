@@ -48,24 +48,14 @@
 }
 
 .form__field {
-  position: relative;
   font-size: var(--fs-body);
 }
 
 .form__label {
   display: block;
-  position: absolute;
-  top: $tiny-spacing * 1.5;
-  left: $tiny-spacing;
   font-size: var(--fs-body);
   text-transform: lowercase;
   font-feature-settings: "smcp" 1;
-  transform-origin: left top;
-  transition: transform .25s $easing;
-
-  .is-active & {
-    transform: translateY(-150%) scale(.8);
-  }
 }
 
 .form__input {
