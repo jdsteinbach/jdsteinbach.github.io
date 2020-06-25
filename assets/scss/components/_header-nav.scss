@@ -69,8 +69,8 @@
   --color-link: var(--color-link-light);
   --color-link-alt: var(--color-link-light-alt);
 
-  margin: 0 $small-spacing;
-  padding: $tiny-spacing 0;
+  margin: 0 $tiny-spacing;
+  padding: $tiny-spacing;
   display: inline-block;
   position: relative;
   z-index: 1;
@@ -102,7 +102,7 @@
     transition: opacity .25s, transform .25s $easing;
   }
 
-  @include haf {
+  @include ha {
     &::before {
       transform: scaleX(1) translateY(0);
       opacity: .5;

@@ -6,13 +6,16 @@ a {
     background-color .25s,
     opacity .25s;
 
-  @include haf {
+  @include ha {
     color: var(--color-link-alt);
   }
 
-  // @TOD BEM leak
-  .page .main-content &:not([class]),
-  .post .main-content &:not([class]) {
+  &:focus {
+    outline: solid 2px var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  .main-content &:not([class]) {
     margin-right: ($tiny-spacing / -2);
     margin-left: ($tiny-spacing / -2);
     padding-right: ($tiny-spacing / 2);
@@ -26,7 +29,7 @@ a {
     );
     box-decoration-break: clone;
 
-    @include haf {
+    @include ha {
       --link-bg-1: #{rgba($color-orange, .5)};
       --link-bg-2: #{rgba($color-goldenrod, .5)};
       --link-bg-3: #{rgba($color-yellow, .5)};

@@ -1,5 +1,10 @@
 .form {
   margin-bottom: $base-spacing;
+
+  &:focus {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
 }
 
 .form--contact {
@@ -48,7 +53,14 @@
 }
 
 .form__field {
+  position: relative;
   font-size: var(--fs-body);
+
+  &:focus-within {
+    z-index: 1;
+    outline: 2px solid var(--color-focus);
+    outline-offset: 8px;
+  }
 }
 
 .form__label {
@@ -59,35 +71,51 @@
 }
 
 .form__input {
+  --color-shadow-1: var(--color-accent-1);
+  --color-shadow-2: var(--color-accent-2);
+  --color-shadow-3: var(--color-accent-3);
+
   margin-bottom: $large-spacing;
   padding: $tiny-spacing;
   width: 100%;
   display: block;
   appearance: none;
-  border: $border-default;
+  border: 1px solid var(--color-shadow-1);
   border-radius: $border-radius-default;
   font-size: var(--fs-body);
   font-family: inherit;
   color: var(--color-text);
   background-color: var(--field-bg, transparent);
   box-shadow:
-    -1px 1px 0 1px var(--color-accent-1),
-    -2px 2px 0 1px var(--color-accent-1),
-    -3px 3px 0 1px var(--color-accent-2),
-    -4px 4px 0 1px var(--color-accent-2),
-    -5px 5px 0 1px var(--color-accent-2),
-    -6px 6px 0 1px var(--color-accent-3),
-    -7px 7px 0 1px var(--color-accent-3),
-    -8px 8px 0 1px var(--color-accent-3);
+    -1px 1px 0 1px var(--color-shadow-1),
+    -2px 2px 0 1px var(--color-shadow-1),
+    -3px 3px 0 1px var(--color-shadow-2),
+    -4px 4px 0 1px var(--color-shadow-2),
+    -5px 5px 0 1px var(--color-shadow-2),
+    -6px 6px 0 1px var(--color-shadow-3),
+    -7px 7px 0 1px var(--color-shadow-3),
+    -8px 8px 0 1px var(--color-shadow-3);
   transition:
     color .25s,
     opacity .25s,
     background-color .25s,
     transform .25s $easing;
 
-  @include haf {
+  @include ha {
     background-color: var(--field-bg-alt, var(--color-background-code));
     outline: none;
+  }
+
+  &:focus {
+    --color-shadow-1: var(--color-focus);
+    --color-shadow-2: var(--color-focus);
+    --color-shadow-3: var(--color-focus);
+  }
+
+  :focus-within &:focus {
+    --color-shadow-1: var(--color-accent-1);
+    --color-shadow-2: var(--color-accent-2);
+    --color-shadow-3: var(--color-accent-3);
   }
 
   .form--mailchimp & {

@@ -60,6 +60,11 @@
     margin-left: $small-spacing;
   }
 
+  a {
+    display: inline-block;
+    vertical-align: top;
+  }
+
   .js & {
     padding: $tiny-spacing $base-spacing $small-spacing;
     position: absolute;
@@ -71,15 +76,6 @@
     transform-origin: top center;
     transform: scaleY(1);
     transition: opacity .25s, transform .25s ease-in-out;
-    // box-shadow:
-    //   -1px 1px 0 1px var(--color-accent-1),
-    //   -2px 2px 0 1px var(--color-accent-1),
-    //   -3px 3px 0 1px var(--color-accent-2),
-    //   -4px 4px 0 1px var(--color-accent-2),
-    //   -5px 5px 0 1px var(--color-accent-2),
-    //   -6px 6px 0 1px var(--color-accent-3),
-    //   -7px 7px 0 1px var(--color-accent-3),
-    //   -8px 8px 0 1px var(--color-accent-3);
   }
 
   .js [aria-hidden="true"] & {

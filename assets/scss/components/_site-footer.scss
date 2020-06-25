@@ -2,6 +2,7 @@
   --max-width: #{$max-width--wide};
   --color-link: var(--color-link-light);
   --color-link-alt: var(--color-link-light-alt);
+  --color-focus: var(--color-link-light-alt);
   --field-bg-alt: var(--color-background-code);
 
   margin: calc(-50vw * var(--tilt-tan)) 0 0;

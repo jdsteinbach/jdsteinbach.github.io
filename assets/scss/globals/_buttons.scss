@@ -37,13 +37,22 @@ button,
     background-color: var(--button-bg-alt, var(--color-accent-1));
   }
 
-  @include haf {
+  @include ha {
     color: var(--color-text-light);
     background-color: var(--button-bg-hover, var(--color-purple-dark));
 
     &.button-alt {
       background-color: var(--button-bg-hover-alt, var(--color-highlight-alt));
     }
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3 px;
+  }
+
+  &::-moz-focus-inner { // Firefox
+    border: 0;
   }
 }
 

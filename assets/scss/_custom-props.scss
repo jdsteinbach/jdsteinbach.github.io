@@ -27,6 +27,8 @@
   --color-link-light: #{$color-background};
   --color-link-light-alt: #{$color-yellow};
 
+  --color-focus: #{$color-purple};
+
   --color-purple-dark: #{mix($color-purple, $color-gray)};
 
   --color-highlight: #{$color-goldenrod};
@@ -111,6 +113,8 @@
       --color-link-2: #{$color-pink};
       --color-link-2-alt: #{mix($color-purple, $color-white)};
 
+      --color-focus: var(--color-link-alt);
+
       --blend-mode: lighten;
     }
   }
@@ -138,6 +142,8 @@
 
     --color-link-2: #{$color-pink};
     --color-link-2-alt: #{mix($color-purple, $color-white)};
+
+    --color-focus: var(--color-link-alt);
 
     --blend-mode: lighten;
   }

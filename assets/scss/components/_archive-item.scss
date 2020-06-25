@@ -61,7 +61,7 @@
     mix-blend-mode: var(--blend-mode, darken);
   }
 
-  @include haf {
+  @include ha {
     color: var(--color-text-alt);
 
     &::before {

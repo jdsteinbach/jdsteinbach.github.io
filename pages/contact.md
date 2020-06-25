@@ -12,7 +12,7 @@ excerpt: Do you need to get in touch with James? Email him here.
 <form class="form form--contact" id="contact-form" method="POST" action="https://api.jdsteinbach.com/mail/">
   <div class="catch-flies hidden" aria-hidden="true">
     <label for="web">Leave this field blank.</label>
-    <input type="text" id="web" class="sweetinput" name="web" />
+    <input type="text" id="web" class="sweetinput" name="web" tabindex="-1" />
   </div>
   <div class="form__field">
     <label class="form__label" for="name">Your Name</label>

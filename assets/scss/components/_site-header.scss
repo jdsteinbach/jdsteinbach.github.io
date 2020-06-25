@@ -2,6 +2,7 @@
   --max-width: #{$max-width--wide};
   --color-link: var(--color-accent-3);
   --color-link-alt: var(--color-link-light);
+  --color-focus: var(--color-link-light);
   --header-bg: var(--color-background-hero);
 
   padding: $small-spacing 0;

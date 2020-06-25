@@ -1,7 +1,0 @@
-@mixin haf {
-  &:hover,
-  &:active,
-  &:focus {
-    @content;
-  }
-}
