@@ -76,7 +76,7 @@ module.exports = eleventyConfig => {
       .getAllSorted()
       .reverse()
       .filter(item => {
-        return item.inputPath.match(/^\.\/posts\//) !== null
+        return item.inputPath.match(/^\.\/src\/posts\//) !== null
       })
   })
 
@@ -86,7 +86,7 @@ module.exports = eleventyConfig => {
       .getAllSorted()
       .reverse()
       .filter(item => {
-        return item.inputPath.match(/^\.\/posts\//) !== null
+        return item.inputPath.match(/^\.\/src\/posts\//) !== null
       })
       .slice(0, 8)
   })
