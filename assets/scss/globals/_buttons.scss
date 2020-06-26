@@ -11,6 +11,7 @@ button,
   border-radius: $border-radius-default;
   font-size: var(--fs-small);
   font-family: var(--ff-body);
+  font-variation-settings: "wght" var(--fw-bold);
   font-weight: var(--fw-bold);
   letter-spacing: (1em / 16);
   text-transform: uppercase;

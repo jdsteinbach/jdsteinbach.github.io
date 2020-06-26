@@ -1,6 +1,7 @@
 body {
   font-size: var(--fs-body);
   font-family: var(--ff-body);
+  font-variation-settings: "wght" var(--fw-body);
   font-weight: var(--fw-body);
   line-height: var(--lh-body);
   font-feature-settings: "kern", "liga", "clig", "calt";
@@ -13,6 +14,7 @@ body {
 
 h1 {
   font-size: var(--fs-title);
+  font-variation-settings: "wght" var(--fw-bold);
   font-weight: var(--fw-bold);
   line-height: var(--lh-title);
   color: var(--color-text-alt);
@@ -22,6 +24,7 @@ h2 {
   margin-top: $large-spacing;
   margin-bottom: $base-spacing;
   font-size: var(--fs-heading);
+  font-variation-settings: "wght" var(--fw-medium);
   font-weight: var(--fw-medium);
   color: var(--color-text-alt);
 }
@@ -30,6 +33,7 @@ h3 {
   margin-top: $large-spacing;
   margin-bottom: $small-spacing;
   font-size: var(--fs-subheading);
+  font-variation-settings: "wght" var(--fw-medium);
   font-weight: var(--fw-medium);
   color: var(--color-text-alt);
 }
@@ -38,6 +42,7 @@ h4 {
   margin-top: $base-spacing;
   margin-bottom: $small-spacing;
   font-size: var(--fs-subheading);
+  font-variation-settings: "wght" var(--fw-bold);
   font-weight: var(--fw-bold);
   color: var(--color-text-alt);
 }
@@ -46,6 +51,7 @@ h5 {
   margin-top: $small-spacing;
   margin-bottom: $tiny-spacing;
   font-size: var(--fs-body);
+  font-variation-settings: "wght" var(--fw-medium);
   font-weight: var(--fw-medium);
   letter-spacing: (1em / 32);
   text-transform: uppercase;
@@ -76,7 +82,7 @@ p {
 
 b,
 strong {
-  font-weight: var(--fw-bold);
+  font-variation-settings: "wght" var(--fw-medium);
   font-weight: var(--fw-medium);
   color: var(--color-text-alt);
 }
@@ -90,6 +96,7 @@ em {
   > p:first-child {
     font-size: var(--fs-blockquote);
     color: var(--color-text-alt);
+    font-variation-settings: "wght" var(--fw-lightest);
     font-weight: var(--fw-lightest);
   }
 

@@ -75,6 +75,7 @@
   position: relative;
   z-index: 1;
   font-size: var(--fs-small);
+  font-variation-settings: "wght" var(--fw-light);
   font-weight: var(--fw-light);
   letter-spacing: (1em / 8);
   text-transform: lowercase;
@@ -84,6 +85,7 @@
   &[href*="hire"] {
     border: 1px solid currentColor;
     border-radius: 3px;
+    font-variation-settings: "wght" var(--fw-heavy);
     font-weight: var(--fw-heavy);
   }
 
