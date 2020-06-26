@@ -2,7 +2,7 @@
 title: Accessible Loading Indicators – with No Extra Elements!
 author: James Steinbach
 layout: post
-permalink: /css/accessible-loading-indicato/
+permalink: /css/accessible-loading-indicators/
 categories:
   - CSS
 format: link
