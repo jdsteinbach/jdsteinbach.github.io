@@ -1,5 +1,9 @@
 .archive-item {
   margin-bottom: $large-spacing;
+
+  @include bp(large) {
+    margin-bottom: $giant-spacing;
+  }
 }
 
 .archive-item__title {
@@ -72,6 +76,7 @@
 
   svg {
     display: inline;
+    color: var(--color-link-alt);
   }
 }
 

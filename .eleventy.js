@@ -46,7 +46,7 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addFilter('paginate_legacy', id => (id > 0) ? `page${id + 1}` : '')
 
-  eleventyConfig.addFilter('paginate_better', id => (id > 0) ? id + 1 : '')
+  eleventyConfig.addFilter('paginate_better', id => (id > 0) ? `${id + 1}/` : '')
 
   eleventyConfig.addFilter('fix_links', url => url.replace('/index.html', ''))
 

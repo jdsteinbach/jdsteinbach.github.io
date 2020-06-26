@@ -27,6 +27,6 @@ This is the biggest reason I&#8217;m not breaking up with Sass is that it&#8217;
 
 ## Disclaimer
 
-Once upon a time, Sass was the crazy new thing to try and CSS &#8220;purists&#8221; have been resisting it for years now. I started using Sass after it became widely used, so I can&#8217;t personally appreciate what Hampton, Natalie, and Chris went through as pioneers in the early days. I&#8217;m certainly not trying to put down PostCSS or any similarly new front-end tool. There&#8217;s definitely good reason to push boundaries and try experimental workflows and write new tools. I&#8217;m impressed by the people who have the skills to imagine and code those tools.
+Once upon a time, Sass was the cool new thing to try and CSS &#8220;purists&#8221; have been resisting it for years now. I started using Sass after it became widely used, so I can&#8217;t personally appreciate what Hampton, Natalie, and Chris went through as pioneers in the early days. I&#8217;m certainly not trying to put down PostCSS or any similarly new front-end tool. There&#8217;s definitely good reason to push boundaries and try experimental workflows and write new tools. I&#8217;m impressed by the people who have the skills to imagine and code those tools.
 
 I&#8217;m not breaking up with Sass, and you don&#8217;t need to either.

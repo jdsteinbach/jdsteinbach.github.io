@@ -26,7 +26,7 @@ When I started using Sass, I was using the following breakpoint mixin. It&#8217;
 }
 ~~~
 
-I wasn&#8217;t really crazy about having the pixel values for the widths in the mixin itself. That data ought to be saved as variables in my `_variables.scss`, not tucked in `_mixins.scss`. So I pulled those out and made them variables. This is a little better:
+I wasn&#8217;t really happy about having the pixel values for the widths in the mixin itself. That data ought to be saved as variables in my `_variables.scss`, not tucked in `_mixins.scss`. So I pulled those out and made them variables. This is a little better:
 
 ~~~scss
 $smallBP: 480px;

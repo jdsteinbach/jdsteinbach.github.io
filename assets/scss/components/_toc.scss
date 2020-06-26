@@ -1,13 +1,15 @@
 .post-toc {
   .js & {
+    --top: calc(-50vw * var(--tilt-tan));
+
     position: absolute;
-    top: calc(-50vw * var(--tilt-tan));
+    top: var(--top);
+    top: m#{i}n(-$large-spacing, var(--top));
     right: 0;
   }
 }
 
 .post-toc__toggle {
-  margin: $small-spacing 0;
   padding: $small-spacing 0;
   position: relative;
   border: 0;
@@ -78,6 +80,7 @@
     top: 100%;
     right: 0;
     left: 0;
+    z-index: 1;
     opacity: 1;
     background-color: var(--color-background);
     transform-origin: top center;

@@ -42,8 +42,8 @@
   --fs-body: 1rem;
   --fs-blockquote: calc(var(--fs-body) * (((var(--fs-ratio) - 1) / 2) + 1));
   --fs-subheading: calc(var(--fs-body) * var(--fs-ratio));
-  --fs-heading: calc(var(--fs-subheading) * var(--fs-ratio) * var(--fs-ratio));
-  --fs-title: calc(var(--fs-heading) * var(--fs-ratio) * var(--fs-ratio));
+  --fs-heading: calc(var(--fs-subheading) * var(--fs-ratio));
+  --fs-title: calc(var(--fs-heading) * var(--fs-ratio) * var(--fs-ratio) * var(--fs-ratio));
   --fs-hero: calc(var(--fs-title) * var(--fs-ratio));
   --fs-small: calc(var(--fs-body) / var(--fs-ratio));
 
@@ -55,7 +55,7 @@
   --fw-heavy: 800;
 
   --ff-body: Work Sans, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
-  --ff-title: Teko, var(--ff-body);
+  --ff-title: Teko, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
   --ff-code: monospace;
 
   --lh-body: 1.5;
