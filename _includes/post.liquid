@@ -23,14 +23,9 @@ layout: _base
 
   {% include partials/_hero %}
 
-  <div class="main-content has-toc l-grid l-grid--content" itemprop="articleBody">
-    {{ content }}
+  <div class="main-content l-grid l-grid--content" itemprop="articleBody">
+    {% include partials/_toc %}
 
-    {% if toc %}
-      <aside class="post-toc">
-        <h5 class="post-toc__title">Table of Contents</h5>
-        {{ content | toc }}
-      </aside>
-    {% endif %}
+    {{ content }}
   </div>
 </article>

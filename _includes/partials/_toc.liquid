@@ -1,0 +1,10 @@
+{%- assign toclist = content | toc -%}
+{% if toclist.length > 23 %}
+  <aside class="post-toc">
+    <button id="toc-toggle" class="post-toc__toggle" aria-controls="toc-list"
+    aria-expanded="false" type="button">Table of Contents</button>
+    <div id="toc-list" class="post-toc__list" aria-hidden="true">
+      {{ toclist }}
+    </div>
+  </aside>
+{% endif %}

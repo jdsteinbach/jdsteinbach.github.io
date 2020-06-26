@@ -25,11 +25,11 @@ button,
     -2px 2px 0 0 var(--button-box-shadow),
     -3px 3px 0 0 var(--button-box-shadow);
   transition:
-    color .25s,
-    opacity .25s,
-    border-color .25s,
-    background-color .25s,
-    transform .25s $easing;
+    color $duration,
+    opacity $duration,
+    border-color $duration,
+    background-color $duration,
+    transform $duration $easing;
 
   &.button-alt {
     --button-box-shadow: var(--color-accent-1);

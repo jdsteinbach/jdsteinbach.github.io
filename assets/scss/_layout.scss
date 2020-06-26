@@ -10,6 +10,7 @@
   display: grid;
   grid-template-columns: 1fr minmax(0, var(--max-width, #{$max-width})) 1fr;
   column-gap: var(--horizontal-spacing);
+  position: relative;
 
   > * {
     grid-column: 2 / -2;

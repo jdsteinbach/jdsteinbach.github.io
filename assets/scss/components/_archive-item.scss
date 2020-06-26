@@ -57,7 +57,7 @@
     transform: skew(0, var(--tilt)) scaleY(0);
     transform-origin: center;
     opacity: 0;
-    transition: opacity .25s, transform .25s $easing;
+    transition: opacity $duration, transform $duration $easing;
     mix-blend-mode: var(--blend-mode, darken);
   }
 

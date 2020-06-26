@@ -114,36 +114,101 @@ if ('localStorage' in window) {
 
 
 /*
- * Table of Contents Visibility
+ * Visibility Toggle
  */
-const toc = document.querySelector('.post-toc')
+const visibilityToggle = toggle => {
+  const widget = document.getElementById(toggle.getAttribute('aria-controls'))
 
-if (toc) {
-  toc.setAttribute('aria-hidden', true)
-  const title = toc.querySelector('.post-toc__title')
+  if (widget && toggle) {
+    const open = () => {
+      toggle.setAttribute('aria-expanded', 'true')
+      widget.removeAttribute('aria-hidden')
+    }
+    const close = () => {
+      toggle.setAttribute('aria-expanded', 'false')
+      widget.setAttribute('aria-hidden', 'true')
+    }
 
-  if (title) {
-    title.addEventListener('click', e => {
-      if (toc.getAttribute('aria-hidden') === 'true') {
-        toc.setAttribute('aria-hidden', false)
+    toggle.addEventListener('click', e => {
+      if (widget.getAttribute('aria-hidden') === 'true') {
+        open()
       } else {
-        toc.setAttribute('aria-hidden', true)
+        close()
+      }
+    })
+
+    // Close when focus leaves widget
+    const focusableEls = widget.querySelectorAll('a, button, input, textarea, select')
+
+    const lastFocusableEl = focusableEls[focusableEls.length - 1]
+
+    const widgetHasFocusedLink = nextLink => {
+      return Array.from(focusableEls).filter(link => {
+        return link === nextLink
+      }).length
+    }
+
+    if (lastFocusableEl) {
+      lastFocusableEl.addEventListener('blur', e => {
+        if (!widgetHasFocusedLink(e.relatedTarget)) {
+          close()
+        }
+      })
+    }
+
+    // Close on Escape key
+    document.addEventListener('keyup', e => {
+      if (
+        "keyCode" in e &&
+        e.keyCode === 27 &&
+        widget.getAttribute('aria-hidden') !== 'true'
+      ) {
+        close()
+      }
+    })
+
+    // Close on click outside of widget
+    document.addEventListener('click', e => {
+      if (
+        e.target !== toggle &&
+        !widget.contains(e.target) &&
+        widget.getAttribute('aria-hidden') !== 'true'
+      ) {
+        e.preventDefault()
+        close()
       }
     })
   }
 }
 
+visibilityToggle(
+  document.getElementById('toc-toggle')
+)
+
+visibilityToggle(
+  document.getElementById('header-menu-toggle')
+)
+
 
 /*
- * Header Menu Toggle
+ * Header Menu Responsive Override
  */
-const headerMenuToggle = document.getElementById('header-menu-toggle')
-const headerMenu = document.getElementById('header-menu')
+const menu = document.getElementById('header-menu')
 
-if (headerMenuToggle && headerMenu) {
-  headerMenuToggle.addEventListener('click', () => {
-    headerMenu.classList.toggle('is-visible')
-  })
+if (menu) {
+  const headerMQ = window.matchMedia('(min-width: 50em)')
+
+  const headerToggle = mq => {
+    if (mq.matches) {
+      menu.removeAttribute('aria-hidden')
+    } else {
+      menu.setAttribute('aria-hidden', 'true')
+    }
+  }
+
+  headerToggle(headerMQ)
+
+  headerMQ.addListener(headerToggle)
 }
 
 

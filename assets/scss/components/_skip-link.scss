@@ -14,7 +14,7 @@
   background-color: var(--color-page-title);
   outline: 2px solid var(--color-accent-1);
   outline-offset: -2px;
-  transition: outline-offset .25s;
+  transition: outline-offset $duration;
 
   &:focus {
     top: 0;

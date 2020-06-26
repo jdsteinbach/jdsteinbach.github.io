@@ -1,29 +1,27 @@
-.has-toc {
-  position: relative;
-}
-
 .post-toc {
   .js & {
-    padding-right: var(--horizontal-spacing);
-    padding-left: var(--horizontal-spacing);
     position: absolute;
     top: calc(-50vw * var(--tilt-tan));
     right: 0;
   }
 }
 
-.post-toc__title {
+.post-toc__toggle {
   margin: $small-spacing 0;
-  padding-top: $small-spacing;
+  padding: $small-spacing 0;
   position: relative;
+  border: 0;
   font-weight: var(--fw-body);
   font-feature-settings: "smcp" 1;
   text-transform: lowercase;
+  color: var(--color-link);
+  background-color: transparent;
+  box-shadow: none;
 
   &::after {
     .js & {
       content: "▾";
-      padding: 0 1ch;
+      padding: 0 0 0 $tiny-spacing;
       display: inline-block;
       transform: rotate(0deg) translateY(-.125em);
       transform-origin: center;
@@ -33,6 +31,11 @@
     .js [aria-hidden="false"] & {
       transform: rotate(180deg) translateY(-.0625em);
     }
+  }
+
+  @include ha {
+    color: var(--color-link-alt);
+    background-color: transparent;
   }
 }
 
@@ -63,6 +66,10 @@
   a {
     display: inline-block;
     vertical-align: top;
+
+    .post-toc__list[aria-hidden="true"] & {
+      display: none;
+    }
   }
 
   .js & {
@@ -75,7 +82,7 @@
     background-color: var(--color-background);
     transform-origin: top center;
     transform: scaleY(1);
-    transition: opacity .25s, transform .25s ease-in-out;
+    transition: opacity $duration, transform $duration ease-in-out;
   }
 
   .js [aria-hidden="true"] & {

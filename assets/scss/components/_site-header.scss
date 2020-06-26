@@ -23,12 +23,6 @@
     background-color: var(--header-bg);
     opacity: var(--header-opacity, 1);
   }
-
-  .js & span {
-    @include bp(nav) {
-      display: block;
-    }
-  }
 }
 
 .site-header__content {

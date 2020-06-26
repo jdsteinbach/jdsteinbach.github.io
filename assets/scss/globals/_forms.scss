@@ -96,10 +96,10 @@
     -7px 7px 0 1px var(--color-shadow-3),
     -8px 8px 0 1px var(--color-shadow-3);
   transition:
-    color .25s,
-    opacity .25s,
-    background-color .25s,
-    transform .25s $easing;
+    color $duration,
+    opacity $duration,
+    background-color $duration,
+    transform $duration $easing;
 
   @include ha {
     background-color: var(--field-bg-alt, var(--color-background-code));

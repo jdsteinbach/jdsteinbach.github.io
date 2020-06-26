@@ -12,7 +12,7 @@
   left: 0;
   border-bottom: 2px solid var(--color-accent-1);
   transform-origin: center top;
-  transition: opacity .15s, transform .15s;
+  transition: opacity $duration, transform $duration $easing;
 
   &::before {
     content: "";
@@ -31,8 +31,8 @@
   }
 
   .js & {
-    transform: scaleY(0);
-    opacity: 0;
+    transform: none;
+    opacity: 1;
 
     @include bp(nav) {
       padding-bottom: 0;
@@ -44,9 +44,9 @@
     }
   }
 
-  .js &.is-visible {
-    transform: none;
-    opacity: 1;
+  .js &[aria-hidden="true"] {
+    transform: scaleY(0);
+    opacity: 0;
   }
 
   @include bp(nav) {
@@ -99,7 +99,7 @@
     transform: scaleX(0) translateY(.25em);
     opacity: 0;
     z-index: 0;
-    transition: opacity .25s, transform .25s $easing;
+    transition: opacity $duration, transform $duration $easing;
   }
 
   @include ha {

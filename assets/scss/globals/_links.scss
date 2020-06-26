@@ -2,9 +2,9 @@ a {
   position: relative;
   color: var(--color-link);
   transition:
-    color .25s,
-    background-color .25s,
-    opacity .25s;
+    color $duration,
+    background-color $duration,
+    opacity $duration;
 
   @include ha {
     color: var(--color-link-alt);

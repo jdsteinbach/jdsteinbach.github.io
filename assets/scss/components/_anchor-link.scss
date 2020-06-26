@@ -4,6 +4,7 @@
 
   padding: 0 var(--horizontal-spacing) 0 $tiny-spacing;
   display: inline-block;
+  justify-self: start;
   position: relative;
   background-color: transparent !important; // sass-lint:disable-line no-important
   text-decoration: none !important; // sass-lint:disable-line no-important
