@@ -18,7 +18,7 @@
   "author": "James Steinbach",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy": "^0.11.0",
     "autoprefixer": "^9.6.1",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.3",

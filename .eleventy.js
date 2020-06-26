@@ -97,7 +97,7 @@ module.exports = eleventyConfig => {
       .getAllSorted()
       .reverse()
       .filter(item => {
-        return item.inputPath.match(/^\.\/posts\//) !== null
+        return item.inputPath.match(/^\.\/src\/posts\//) !== null
       })
       .slice(0, 10)
   })
@@ -132,22 +132,23 @@ module.exports = eleventyConfig => {
   })
 
   // Pass through directories
-  eleventyConfig.addPassthroughCopy('images')
-  eleventyConfig.addPassthroughCopy('assets/fonts')
-  eleventyConfig.addPassthroughCopy({'assets/js/site/site.js': 'js/site.js'})
-  eleventyConfig.addPassthroughCopy('site.webmanifest')
-  eleventyConfig.addPassthroughCopy('android-chrome-192x192.png')
-  eleventyConfig.addPassthroughCopy('android-chrome-512x512.png')
-  eleventyConfig.addPassthroughCopy('apple-touch-icon.png')
-  eleventyConfig.addPassthroughCopy('safari-pinned-tab.svg')
-  eleventyConfig.addPassthroughCopy('favicon.ico')
-  eleventyConfig.addPassthroughCopy('favicon.svg')
-  eleventyConfig.addPassthroughCopy('A')
-  eleventyConfig.addPassthroughCopy('CNAME')
+  eleventyConfig.addPassthroughCopy('src/images')
+  eleventyConfig.addPassthroughCopy('src/assets/fonts')
+  eleventyConfig.addPassthroughCopy({'src/assets/js/site/site.js': 'js/site.js'})
+  eleventyConfig.addPassthroughCopy('src/site.webmanifest')
+  eleventyConfig.addPassthroughCopy('src/android-chrome-192x192.png')
+  eleventyConfig.addPassthroughCopy('src/android-chrome-512x512.png')
+  eleventyConfig.addPassthroughCopy('src/apple-touch-icon.png')
+  eleventyConfig.addPassthroughCopy('src/safari-pinned-tab.svg')
+  eleventyConfig.addPassthroughCopy('src/favicon.ico')
+  eleventyConfig.addPassthroughCopy('src/favicon.svg')
+  eleventyConfig.addPassthroughCopy('src/A')
+  eleventyConfig.addPassthroughCopy('src/CNAME')
+  eleventyConfig.addPassthroughCopy('src/.nojekyll')
 
   // More watched files
-  eleventyConfig.addWatchTarget('./assets/js/**/*.js')
-  eleventyConfig.addWatchTarget('./assets/scss/**/*.scss')
+  eleventyConfig.addWatchTarget('./src/assets/js/**/*.js')
+  eleventyConfig.addWatchTarget('./src/assets/scss/**/*.scss')
 
   return {
     templateFormats: [
@@ -156,7 +157,7 @@ module.exports = eleventyConfig => {
       '11ty.js'
     ],
     dir: {
-      input: '.',
+      input: './src',
       includes: '_includes',
       data: '_data',
       output: '_site'
