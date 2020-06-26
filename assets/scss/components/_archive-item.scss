@@ -9,6 +9,9 @@
 .archive-item__title {
   margin-bottom: $small-spacing;
   position: relative;
+  font-size: var(--fs-heading);
+  font-variation-settings: "wght" var(--fw-medium);
+  font-weight: var(--fw-medium);
 }
 
 .archive-item__excerpt {
@@ -38,7 +41,6 @@
 
 .archive-item__link {
   display: block;
-  font-size: var(--fs-heading);
   text-decoration: none;
 
   &::before {

@@ -7,5 +7,5 @@
 @include fonts(Work Sans, WorkSans-Light-subset, normal, 300);
 @include fonts(Work Sans, WorkSans-LightItalic-subset, italic, 300);
 
-@include v-fonts(Work Sans VF, "WorkSans-subset.woff2", normal, woff2);
-@include v-fonts(Work Sans VF, "WorkSans-Italic-subset.woff2", italic, woff2);
+@include v-fonts(Work Sans VF, "WorkSansV-subset.woff2", normal, woff2);
+@include v-fonts(Work Sans VF, "WorkSansV-Italic-subset.woff2", italic, woff2);
