@@ -117,9 +117,11 @@ if ('localStorage' in window) {
  * Visibility Toggle
  */
 const visibilityToggle = toggle => {
-  const widget = document.getElementById(toggle.getAttribute('aria-controls'))
+  const widget = toggle
+    ? document.getElementById(toggle.getAttribute('aria-controls'))
+    : false;
 
-  if (widget && toggle) {
+  if (widget) {
     const open = () => {
       toggle.setAttribute('aria-expanded', 'true')
       widget.removeAttribute('aria-hidden')

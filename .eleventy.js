@@ -44,7 +44,9 @@ module.exports = eleventyConfig => {
       .replace(/<br>/g, '<br />')
   })
 
-  eleventyConfig.addFilter('paginate_better', id => (id > 0) ? `page${id + 1}` : '')
+  eleventyConfig.addFilter('paginate_legacy', id => (id > 0) ? `page${id + 1}` : '')
+
+  eleventyConfig.addFilter('paginate_better', id => (id > 0) ? id + 1 : '')
 
   eleventyConfig.addFilter('fix_links', url => url.replace('/index.html', ''))
 
@@ -101,7 +103,7 @@ module.exports = eleventyConfig => {
   })
 
   // Create Category Collections
-  Array.from(['CSS', 'Sass', 'Misc', 'WordPress']).map(cat => {
+  Array.from(['CSS', 'Sass', 'Misc', 'WordPress', 'Performance']).map(cat => {
     eleventyConfig.addCollection(cat, collection => {
       return collection
         .getAllSorted()

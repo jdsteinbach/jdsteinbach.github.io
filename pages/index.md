@@ -2,7 +2,7 @@
 title: Recent Posts
 author: James
 layout: blog
-permalink: "{{ pagination.pageNumber | paginate_better }}/index.html"
+permalink: "{{ pagination.pageNumber | paginate_legacy }}/index.html"
 pagination:
   data: collections.posts
   size: 10
