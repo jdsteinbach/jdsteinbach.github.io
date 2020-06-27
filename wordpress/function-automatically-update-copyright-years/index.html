@@ -23,143 +23,1555 @@
 
   <meta name="test-pagination" content="">
 
-  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/css/main.css" />
   <link rel="canonical" href="https://jdsteinbach.com/wordpress/function-automatically-update-copyright-years/" itemprop="url" />
   <link rel="alternate" type="application/rss+xml" title="James Steinbach" href="https://jdsteinbach.com/feed.xml" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e65100" />
-  <meta name="msapplication-TileColor" content="#e65100" />
-  <meta name="theme-color" content="#e65100" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F75123" />
+  <meta name="msapplication-TileColor" content="#602F9A" />
+  <meta name="theme-color" content="#602F9A" />
 </head>
 
-<body class="site">
-  <header class="site-header" role="banner">
-  <div class="l-wrapper l-wrapper--wide">
+<body class="site l-site">
+  <a href="#main" class="skip-link">Skip to Content</a>
+  <header class="site-header l-grid" role="banner">
+  <div class="site-header__content">
     <a class="site-header__title" href="/">James Steinbach</a>
-    <nav class="header-nav" id="header-nav"><a class="header-nav__link" href="/css/" data-order="10">CSS</a><a class="header-nav__link" href="/sass/" data-order="20">Sass</a><a class="header-nav__link" href="/wordpress/" data-order="30">WP</a><a class="header-nav__link" href="/talks/" data-order="35">Talks</a><a class="header-nav__link" href="/about/" data-order="40">About</a><a class="header-nav__link" href="/contact/" data-order="50">Contact</a></nav>
+    <button id="header-menu-toggle" class="site-header__menu-toggle button--icon" aria-expanded="false" aria-controls="header-menu">
+      <span class="hidden">Toggle Menu</span>
+      <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect x="0" y="0" width="512" height="128"/><rect x="0" y="192" width="512" height="128"/><rect x="0" y="384" width="512" height="128"/></svg>
+
+    </button>
+    <div id="header-menu" class="header-menu" aria-hidden="true">
+      <nav class="header-nav" name="Primary"><a class="header-nav__link" href="/css/" data-order="10">CSS</a><a class="header-nav__link" href="/sass/" data-order="20">Sass</a><a class="header-nav__link" href="/wordpress/" data-order="30">WP</a><a class="header-nav__link" href="/talks/" data-order="35">Talks</a><a class="header-nav__link" href="/about/" data-order="40">About</a><a class="header-nav__link" href="/contact/" data-order="50">Contact</a></nav>
+
+      <div class="header-nav__toggle">
+        <form class="theme-toggle" name="Theme Picker">
+  <input class="theme-toggle__input" type="radio" name="theme" id="light" value="light" />
+  <label class="theme-toggle__label" for="light" title="Light Theme">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Light Theme</span>
+  </label>
+  <input class="theme-toggle__input" type="radio" name="theme" id="auto" value="auto" />
+  <label class="theme-toggle__label" for="auto" title="Auto: System Settings">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" class=""></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Auto: System Settings</span>
+  </label>
+  <input class="theme-toggle__input" type="radio" name="theme" id="dark" value="dark" />
+  <label class="theme-toggle__label" for="dark" title="Dark Theme">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Dark Theme</span>
+  </label>
+</form>
+
+      </div>
+    </div>
   </div>
 </header>
 
-  <main class="site-main" id="main" role="main">
 
-  <article class="post l-page" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="hero l-hero">
-      
-    <svg viewBox="0 0 64 64" preserveAspectRatio="xMidYMid slice" alt="" role="presentation">
-  <defs>
-    <linearGradient x="0" y="0" x2="1" y2="1" spreadMethod="pad" id="lg">
-      <stop offset="0" stop-color="#131313" stop-opacity="0" />
-      <stop offset=".5" stop-color="#131313" stop-opacity=".05" />
-      <stop offset="1" stop-color="#131313" stop-opacity=".15" />
-    </linearGradient>
-  </defs>
-  <g transform="translate(-14 -14)">
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="0" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="0" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="0" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="0" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="0" />
+  <main class="site-main l-main" id="main" role="main">
 
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="16" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="16" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="16" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="16" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="16" />
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
 
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="32" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="32" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="32" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="32" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="32" />
+  <header class="hero l-hero">
+  <h1 class="hero__title is-long">WordPress Function for Automatically Updating Copyright Years</h1>
+  <svg class="hero__bg starfield" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation=".5" />
+    </filter>
+    <rect class="starfield__bg" x="0" y="0" width="1000" height="1000" />
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m636,132l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m554,155l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m266,982l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m684,746l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m18,480l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m345,695l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m977,608l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m586,361l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m550,785l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m967,947l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m543,116l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m649,544l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m7,70l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m945,600l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m939,288l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m592,509l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m655,629l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m554,672l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m578,667l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m903,222l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m189,549l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m374,207l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m172,156l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m700,946l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m748,487l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m430,469l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m139,163l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m200,778l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m39,78l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m761,290l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m596,285l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m9,703l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m809,347l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m723,54l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m430,555l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m605,2l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m277,190l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m668,951l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m842,739l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m180,910l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m802,338l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m84,861l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m412,1000l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m577,894l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m878,640l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m300,367l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m542,549l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m885,169l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m146,582l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m847,476l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m413,427l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m297,500l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m499,707l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m867,916l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m409,39l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m121,565l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m777,195l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m600,319l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m185,186l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m870,585l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m592,704l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m837,614l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m648,757l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m11,618l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m283,652l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m544,368l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m538,779l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m351,617l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m146,609l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m328,933l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m813,177l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m461,546l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m734,745l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m285,185l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m880,975l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m488,328l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m617,920l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m7,37l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m259,737l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m462,490l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m849,304l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m433,439l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m820,327l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m384,798l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m741,173l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m180,150l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m643,672l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m666,89l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m726,680l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m104,721l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m367,767l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m574,898l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m625,748l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m262,161l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m362,15l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m607,769l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m318,338l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m787,848l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m56,11l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m564,780l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m842,567l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m687,563l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m798,357l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m126,945l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m437,393l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m94,411l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m466,352l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m366,948l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m750,28l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m589,90l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m154,476l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m43,431l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m606,323l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m306,204l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m342,129l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m974,178l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m711,900l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m869,56l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m416,862l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m497,80l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m142,495l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m30,529l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m342,984l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m452,857l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m810,813l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m82,765l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m611,632l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m206,410l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m707,608l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m695,529l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m638,720l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m610,248l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m125,274l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m58,245l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m324,465l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m980,424l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m268,496l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m574,612l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m925,586l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m209,219l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m509,492l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m546,456l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m959,6l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m228,555l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m2,104l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m769,498l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m381,985l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m64,532l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m409,802l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m72,799l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+  </svg>
+</header>
 
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="48" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="48" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="48" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="48" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="48" />
 
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="64" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="64" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="64" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="64" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="64" />
-  </g>
-</svg>
+  <div class="main-content l-grid l-grid--content" itemprop="articleBody">
+    
+  <aside class="post-toc">
+    <button id="toc-toggle" class="post-toc__toggle" aria-controls="toc-list"
+    aria-expanded="false" type="button">Table of Contents</button>
+    <div id="toc-list" class="post-toc__list" aria-hidden="true">
+      <nav class="toc"><ol><li><a href="#adding-the-copyright_years()-function-to-your-theme">Adding the copyright_years() function to your theme</a></li><li><a href="#using-the-copyright_years()-function-in-your-footer">Using the copyright_years() function in your footer</a></li><li><a href="#what-the-copyright_years()-function-actually-does">What the copyright_years() function actually does</a><ol><li><a href="#getting-the-earliest-post">Getting the earliest post</a></li><li><a href="#comparing-the-years">Comparing the years</a></li></ol></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+    </div>
+  </aside>
 
 
-      <h1 class="hero__title" itemprop="name title headline">WordPress Function for Automatically Updating Copyright Years</h1>
 
-      <p class="hero__meta">
-          <time class="date" datetime=Fri Jan 29 2016 00:00:00 GMT+0000 (Coordinated Universal Time) itemprop="dateCreated pubdate datePublished">January 29, 2016</time>
-          <span class="author" itemprop="author creator">James Steinbach</span>
-          <span class="categories">
-  <a href="/wordpress/" class="category-link">[WordPress]</a>
-</span>
-      </p>
-    </header>
-
-    <div class="main-content l-content has-toc" itemprop="articleBody">
-      <p>Well, I gave away the whole point of this post in the title. Before we dive in and look at the whole code, I’ll explain the purpose of this function. A lot of posts will recommend you simply put <code>&lt;?php echo date( 'Y' ); ?&gt;</code> where the year is hardcoded into <code>footer.php</code>. That’s fine, but it only gives you <em>this year</em> in your footer. It’s better to put the <a href="http://info.legalzoom.com/write-copyright-statement-website-21115.html">range of years that your site’s content spans</a>, not merely the current year. The function we’ll look at here will display the entire range of years for all the posts and pages published on your site.</p>
+    <p>Well, I gave away the whole point of this post in the title. Before we dive in and look at the whole code, I’ll explain the purpose of this function. A lot of posts will recommend you simply put <code>&lt;?php echo date( 'Y' ); ?&gt;</code> where the year is hardcoded into <code>footer.php</code>. That’s fine, but it only gives you <em>this year</em> in your footer. It’s better to put the <a href="http://info.legalzoom.com/write-copyright-statement-website-21115.html">range of years that your site’s content spans</a>, not merely the current year. The function we’ll look at here will display the entire range of years for all the posts and pages published on your site.</p>
 <p><em><a href="https://gist.github.com/jdsteinbach/e2646846ede81458f0c4">Get the raw code from this Github gist</a>.</em></p>
-<h2 id="adding-the-copyright_years()-function-to-your-theme">Adding the <code>copyright_years()</code> function to your theme <a class="anchor-link" href="#adding-the-copyright_years()-function-to-your-theme" aria-hidden="true">#</a></h2>
+<h2 id="adding-the-copyright_years()-function-to-your-theme">Adding the <code>copyright_years()</code> function to your theme <a class="anchor-link" href="#adding-the-copyright_years()-function-to-your-theme">#</a></h2>
 <p>Let’s take a look at the code you’ll need to copy into your theme’s <code>functions.php</code> file (without the open/close PHP tags):</p>
-<pre class="language-php"><code class="language-php"><span class="highlight-line"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span></span><br><span class="highlight-line"><span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span> <span class="token function">function_exists</span><span class="token punctuation">(</span> <span class="token single-quoted-string string">'get_copyright_years'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">function</span> <span class="token function">get_copyright_years</span><span class="token punctuation">(</span> <span class="token variable">$earliest_id</span> <span class="token operator">=</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token variable">$earliest_args</span> <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">(</span></span><br><span class="highlight-line">      <span class="token single-quoted-string string">'post_type'</span>   <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">array</span><span class="token punctuation">(</span> <span class="token single-quoted-string string">'any'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token single-quoted-string string">'numberposts'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token single-quoted-string string">'orderby'</span>     <span class="token operator">=</span><span class="token operator">></span> <span class="token single-quoted-string string">'date'</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token single-quoted-string string">'order'</span>       <span class="token operator">=</span><span class="token operator">></span> <span class="token single-quoted-string string">'ASC'</span></span><br><span class="highlight-line">    <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token variable">$get_post</span>      <span class="token operator">=</span> <span class="token variable">$earliest_id</span></span><br><span class="highlight-line">                   <span class="token operator">?</span> <span class="token function">get_post</span><span class="token punctuation">(</span> <span class="token variable">$earliest_id</span> <span class="token punctuation">)</span></span><br><span class="highlight-line">                   <span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span> <span class="token variable">$get_post</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      <span class="token variable">$get_post</span> <span class="token operator">=</span> <span class="token function">array_shift</span><span class="token punctuation">(</span> <span class="token function">get_posts</span><span class="token punctuation">(</span> <span class="token variable">$earliest_args</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span></span><br><span class="highlight-line">    <span class="token variable">$earliest_date</span> <span class="token operator">=</span> <span class="token function">date</span><span class="token punctuation">(</span> <span class="token single-quoted-string string">'Y'</span><span class="token punctuation">,</span> <span class="token function">strtotime</span><span class="token punctuation">(</span> <span class="token variable">$get_post</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">post_date</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token variable">$current_date</span>  <span class="token operator">=</span> <span class="token function">date</span><span class="token punctuation">(</span> <span class="token single-quoted-string string">'Y'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token keyword">return</span> <span class="token variable">$earliest_date</span> <span class="token operator">==</span> <span class="token variable">$current_date</span></span><br><span class="highlight-line">           <span class="token operator">?</span> <span class="token variable">$current_date</span></span><br><span class="highlight-line">           <span class="token punctuation">:</span> <span class="token variable">$earliest_date</span> <span class="token punctuation">.</span> <span class="token single-quoted-string string">'&amp;ndash;'</span> <span class="token punctuation">.</span> <span class="token variable">$current_date</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span> <span class="token function">function_exists</span><span class="token punctuation">(</span> <span class="token single-quoted-string string">'copyright_years'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">function</span> <span class="token function">copyright_years</span><span class="token punctuation">(</span> <span class="token variable">$earliest_id</span> <span class="token operator">=</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">echo</span> <span class="token function">get_copyright_years</span><span class="token punctuation">(</span> <span class="token variable">$earliest_id</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token delimiter important">?></span></span></span></code></pre>
+<pre><code class="hljs language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">if</span> ( ! function_exists( <span class="hljs-string">'get_copyright_years'</span> ) ) {
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get_copyright_years</span><span class="hljs-params">( $earliest_id = null )</span> </span>{
+    $earliest_args = <span class="hljs-keyword">array</span>(
+      <span class="hljs-string">'post_type'</span>   =&gt; <span class="hljs-keyword">array</span>( <span class="hljs-string">'any'</span> ),
+      <span class="hljs-string">'numberposts'</span> =&gt; <span class="hljs-number">1</span>,
+      <span class="hljs-string">'orderby'</span>     =&gt; <span class="hljs-string">'date'</span>,
+      <span class="hljs-string">'order'</span>       =&gt; <span class="hljs-string">'ASC'</span>
+    );
+    $get_post      = $earliest_id
+                   ? get_post( $earliest_id )
+                   : <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">if</span> ( ! $get_post ) {
+      $get_post = array_shift( get_posts( $earliest_args ) );
+    }
+    $earliest_date = date( <span class="hljs-string">'Y'</span>, strtotime( $get_post-&gt;post_date ) );
+    $current_date  = date( <span class="hljs-string">'Y'</span> );
+    <span class="hljs-keyword">return</span> $earliest_date == $current_date
+           ? $current_date
+           : $earliest_date . <span class="hljs-string">'&amp;ndash;'</span> . $current_date;
+  }
+}
+
+<span class="hljs-keyword">if</span> ( ! function_exists( <span class="hljs-string">'copyright_years'</span> ) ) {
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">copyright_years</span><span class="hljs-params">( $earliest_id = null )</span> </span>{
+    <span class="hljs-keyword">echo</span> get_copyright_years( $earliest_id );
+  }
+}
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
 <p>After you’ve added those two functions to <code>functions.php</code>, open <code>footer.php</code> and delete the year if it’s hardcoded in. Replace it with <code>&lt;?php copyright_years(); ?&gt;</code>. This function only shows the years, no © or other text: you can keep whatever copyright / “all rights reserved” text you like.</p>
-<h2 id="using-the-copyright_years()-function-in-your-footer">Using the <code>copyright_years()</code> function in your footer <a class="anchor-link" href="#using-the-copyright_years()-function-in-your-footer" aria-hidden="true">#</a></h2>
+<h2 id="using-the-copyright_years()-function-in-your-footer">Using the <code>copyright_years()</code> function in your footer <a class="anchor-link" href="#using-the-copyright_years()-function-in-your-footer">#</a></h2>
 <p>The first thing I should point out is that there are actually two functions here. The first function is <code>get_copyright_years()</code> and only <em>returns</em> the date range. The second function is <code>copyright_years()</code> and <em>echoes</em> the date range. If you’re going to use this function in plain HTML in your footer file, use <code>&lt;?php copyright_years(); ?&gt;</code>:</p>
-<pre class="language-php"><code class="language-php"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>site-footer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>footer-credits<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token entity" title="&copy;">&amp;copy;</span> <span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token function">copyright_years</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span>. All Rights Reserved.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token function">wp_footer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token delimiter important">?></span></span></span></code></pre>
+<pre><code class="hljs language-php">&lt;footer <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">site</span>-<span class="hljs-title">footer</span>"&gt;
+	&lt;<span class="hljs-title">p</span> <span class="hljs-title">class</span>="<span class="hljs-title">footer</span>-<span class="hljs-title">credits</span>"&gt;&amp;<span class="hljs-title">copy</span>; &lt;?<span class="hljs-title">php</span> <span class="hljs-title">copyright_years</span>(); ?&gt;. <span class="hljs-title">All</span> <span class="hljs-title">Rights</span> <span class="hljs-title">Reserved</span>.&lt;/<span class="hljs-title">p</span>&gt;
+&lt;/<span class="hljs-title">footer</span>&gt;
+&lt;?<span class="hljs-title">php</span> <span class="hljs-title">wp_footer</span>();?&gt;
+</span></code></pre>
 <p>If you’re going to use this function in a line of PHP in your footer file, use <code>get_copyright_years()</code> instead. The following code shows how you might use it inside a translatable string function:</p>
-<pre class="language-php"><code class="language-php"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>site-footer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>footer-credits<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">		<span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token function">__</span><span class="token punctuation">(</span> <span class="token single-quoted-string string">'&amp;copy; %s. All Rights Reserved.'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'text-domain'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">get_copyright_years</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span></span><br><span class="highlight-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token function">wp_footer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token delimiter important">?></span></span></span></code></pre>
+<pre><code class="hljs language-php">&lt;footer <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">site</span>-<span class="hljs-title">footer</span>"&gt;
+	&lt;<span class="hljs-title">p</span> <span class="hljs-title">class</span>="<span class="hljs-title">footer</span>-<span class="hljs-title">credits</span>"&gt;
+		&lt;?<span class="hljs-title">php</span> <span class="hljs-title">printf</span>( <span class="hljs-title">__</span>( '&amp;<span class="hljs-title">copy</span>; %<span class="hljs-title">s</span>. <span class="hljs-title">All</span> <span class="hljs-title">Rights</span> <span class="hljs-title">Reserved</span>.', '<span class="hljs-title">text</span>-<span class="hljs-title">domain</span>' ), <span class="hljs-title">get_copyright_years</span>() ); ?&gt;
+	&lt;/<span class="hljs-title">p</span>&gt;
+&lt;/<span class="hljs-title">footer</span>&gt;
+&lt;?<span class="hljs-title">php</span> <span class="hljs-title">wp_footer</span>();?&gt;
+</span></code></pre>
 <p>Technically you’re done now, you can quit reading this post. But if you’re curious how this function works, stay with me.</p>
-<h2 id="what-the-copyright_years()-function-actually-does">What the <code>copyright_years()</code> function actually does <a class="anchor-link" href="#what-the-copyright_years()-function-actually-does" aria-hidden="true">#</a></h2>
+<h2 id="what-the-copyright_years()-function-actually-does">What the <code>copyright_years()</code> function actually does <a class="anchor-link" href="#what-the-copyright_years()-function-actually-does">#</a></h2>
 <p>So now that you know the basics of using this function, let’s look under the hood and learn how it works.</p>
-<h3 id="getting-the-earliest-post">Getting the earliest post <a class="anchor-link" href="#getting-the-earliest-post" aria-hidden="true">#</a></h3>
+<h3 id="getting-the-earliest-post">Getting the earliest post <a class="anchor-link" href="#getting-the-earliest-post">#</a></h3>
 <p>You may have noticed this function takes a single argument: <code>$earliest_id</code>. Normally the function returns the publication date for the earliest post or page published, but if you want to override that by specifying a specific post or page as the “earliest published,” pass its ID in the function in <code>footer.php</code>.</p>
 <p>The first thing in the function is <code>$earliest_args</code>: an array of <a href="https://codex.wordpress.org/Template_Tags/get_posts"><code>get_posts()</code></a> args. If you haven’t specified an override <code>$earliest_id</code>, the function will use these arguments to query the oldest post or page from the database.</p>
 <p>The <code>$get_post</code> declaration uses <a href="http://php.net/manual/en/language.operators.comparison.php#language.operators.comparison.ternary">PHP ternary logic</a>. If <code>$earliest_id</code> is set, <code>$get_post</code> will contain the output of the function <code>get_post( $earliest_id )</code>, otherwise, it will be <code>null</code>.</p>
 <p>At this point, <code>$get_post</code> will either be a single post object (if you specified a valid <code>$earliest_id</code>) or <code>null</code> (if you specified an invalid ID or none at all). If it’s <code>null</code>, we’ll run our fallback <code>get_posts( $earliest_args )</code> function. This will return an array containing a single post objects. We only want the post object, so we’ll wrap <code>get_posts()</code> in <a href="http://php.net/manual/en/function.array-shift.php"><code>array_shift()</code></a>. The PHP function <code>array_shift()</code> will return only the first object in the array. <em>Note: <a href="http://php.net/manual/en/function.array-pop.php"><code>array_pop()</code></a> would’ve done the same thing, since there’s only one object in the array.</em></p>
-<h3 id="comparing-the-years">Comparing the years <a class="anchor-link" href="#comparing-the-years" aria-hidden="true">#</a></h3>
+<h3 id="comparing-the-years">Comparing the years <a class="anchor-link" href="#comparing-the-years">#</a></h3>
 <p>Now no matter what argument you did or didn’t pass into the function, <code>$get_post</code> is a WordPress post object containing the post or page we want to use for the earliest piece of published content.</p>
 <p>The next two variables (<code>$earliest_date</code> and <code>$current_date</code>) use the PHP date function to get the year from <code>$get_post</code> and the current year.</p>
 <p>The <code>return</code> statement uses ternary logic again. If <code>$earliest_date</code> and <code>$current_date</code> are the same, the function will return only the current year. If they’re different, it will return the earliest year, a dash (–), then the current year.</p>
-<h2 id="conclusion">Conclusion <a class="anchor-link" href="#conclusion" aria-hidden="true">#</a></h2>
+<h2 id="conclusion">Conclusion <a class="anchor-link" href="#conclusion">#</a></h2>
 <p>Put these functions in your theme <code>functions.php</code> and call the right function from <code>footer.php</code>, and you’ve now got an always-correct copyright date range in the footer of your site. No more January updates for you! (Unless, of course, you change your theme: in that case, you’ll need to put these functions where they belong in that theme too.)</p>
 <p><em><a href="https://gist.github.com/jdsteinbach/e2646846ede81458f0c4">Get the raw code from this Github gist</a>.</em></p>
 
+  </div>
+</article>
 
-      <aside class="post-toc">
-        <h5 class="post-toc__title">Table of Contents</h5>
-        <nav class="toc"><ol><li><a href="#adding-the-copyright_years()-function-to-your-theme">Adding the copyright_years() function to your theme</a></li><li><a href="#using-the-copyright_years()-function-in-your-footer">Using the copyright_years() function in your footer</a></li><li><a href="#what-the-copyright_years()-function-actually-does">What the copyright_years() function actually does</a><ol><li><a href="#getting-the-earliest-post">Getting the earliest post</a></li><li><a href="#comparing-the-years">Comparing the years</a></li></ol></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
-      </aside>
-    </div>
-  </article>
-    </main><!-- main.site-main -->
-  <footer class="site-footer" role="contentinfo">
-  <div class="l-wrapper">
-    <form class="form form--mailchimp" action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-  <h2 class="site-footer__title">Get New Posts &amp; Other Content in Your Inbox!</h2>
+
+  </main><!-- main.site-main -->
+
+  <footer class="site-footer l-grid" role="contentinfo">
+  <form class="form form--mailchimp" action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <h2 class="site-footer__title">
+    Get New Posts &amp; Other Content in Your Inbox!
+    <span class="site-footer__title-icon"><svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 18"><g stroke-width="1" stroke="currentColor" fill="none"><path d="M0,0 32,0 32,18 0,18z" stroke-width="2"/><path d="M0,0 16,11 32,0"/><path d="M0,18 13,9"/><path d="M19,9 32,18"/></g></svg>
+</span>
+  </h2>
 
   <div class="form__fields" id="mc_embed_signup_scroll">
-    <div class="form__fields-wrapper">
-      <p class="form__required-message hidden"><span class="form__required-asterisk">*</span> indicates required</p>
+    <p class="form__required-message hidden"><span class="form__required-asterisk">*</span> indicates required</p>
 
-      <div class="form__field form__field--email">
-        <label class="form__label" for="mce-EMAIL">Email Address<span class="form__required-asterisk">*</span></label>
-        <input class="form__input form__input--required form__input--email" type="email" name="EMAIL" id="mce-EMAIL">
-      </div>
+    <div class="form__field form__field--email">
+      <label class="form__label" for="mce-EMAIL">Email Address<span class="form__required-asterisk">*</span></label>
+      <input class="form__input form__input--required form__input--email" type="email" name="EMAIL" id="mce-EMAIL">
+    </div>
 
-      <div class="form__field form__field--fname">
-        <label class="form__label" for="mce-FNAME">First Name</label>
-        <input class="form__input" type="text" name="FNAME" id="mce-FNAME">
-      </div>
+    <div class="form__field form__field--fname">
+      <label class="form__label" for="mce-FNAME">First Name</label>
+      <input class="form__input" type="text" name="FNAME" id="mce-FNAME">
+    </div>
 
-      <div class="form__field form__field--lname">
-        <label class="form__label" for="mce-LNAME">Last Name </label>
-        <input class="form__input" type="text" name="LNAME" id="mce-LNAME">
-      </div>
+    <div class="form__field form__field--lname">
+      <label class="form__label" for="mce-LNAME">Last Name </label>
+      <input class="form__input" type="text" name="LNAME" id="mce-LNAME">
     </div>
 
     <p class="form__response-message" id="mce-response"></p>
@@ -168,23 +1580,24 @@
       <input type="text" name="b_e06400c5106eb26339f4a0aea_35bef0e04e" tabindex="-1" value="">
     </label>
 
-    <button class="form__submit button button-alt" type="submit">Subscribe</button>
+    <button class="form__submit button" type="submit">Subscribe</button>
 
     <p class="form__monkey-rewards mc-ref">Powered by <a href="https://www.mailchimp.com/monkey-rewards/?utm_source=freemium_newsletter&utm_medium=email&utm_campaign=monkey_rewards&aid=e06400c5106eb26339f4a0aea&afl=1" target="_blank" rel="noopener nofollow noreferrer" title="MailChimp - email marketing made easy and fun">MailChimp</a></p>
   </div>
 </form>
 
-  </div>
-  <div class="l-wrapper">
+
+  <div class="site-footer__columns">
     <div class="site-footer__column">
       <p>James Steinbach</p>
       <p><a href="mailto:jdsteinbach@gmail.com">jdsteinbach@gmail.com</a></p>
     </div>
+
     <div class="site-footer__column">
         <p>
           <a href="https://github.com/jdsteinbach">
             <span class="icon icon--github">
-              <svg viewBox="0 0 16 16" height="16" width="16">
+              <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16">
   <path fill="currentColor" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
 </svg>
 
@@ -195,7 +1608,7 @@
         <p>
           <a href="https://twitter.com/jdsteinbach">
             <span class="icon icon--twitter">
-              <svg viewBox="0 0 16 16" height="16" width="16">
+              <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16">
   <path fill="currentColor" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
   c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
 </svg>
@@ -205,24 +1618,24 @@
           </a>
         </p>
     </div>
+
     <div class="site-footer__column">
       <p class="text">Front-end architect. <br />Speaker & writer. <br />Sass, CSS animation, RWD & WP.</p>
     </div>
   </div>
 </footer>
 
+
   <script>
   if (window.localStorage) {
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('theme-dark');
-    } else {
-      document.body.classList.remove('theme-dark');
-    }
+    const theme = localStorage.getItem('theme')
+    document.body.dataset.theme = theme ? theme : 'auto'
   }
   </script>
-  <script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
   <script async src="/js/site.js"></script>
+
+  <script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
 </body>
 </html>
-

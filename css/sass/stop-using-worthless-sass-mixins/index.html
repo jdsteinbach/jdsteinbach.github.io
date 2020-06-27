@@ -23,131 +23,1508 @@
 
   <meta name="test-pagination" content="">
 
-  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/css/main.css" />
   <link rel="canonical" href="https://jdsteinbach.com/css/sass/stop-using-worthless-sass-mixins/" itemprop="url" />
   <link rel="alternate" type="application/rss+xml" title="James Steinbach" href="https://jdsteinbach.com/feed.xml" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e65100" />
-  <meta name="msapplication-TileColor" content="#e65100" />
-  <meta name="theme-color" content="#e65100" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F75123" />
+  <meta name="msapplication-TileColor" content="#602F9A" />
+  <meta name="theme-color" content="#602F9A" />
 </head>
 
-<body class="site">
-  <header class="site-header" role="banner">
-  <div class="l-wrapper l-wrapper--wide">
+<body class="site l-site">
+  <a href="#main" class="skip-link">Skip to Content</a>
+  <header class="site-header l-grid" role="banner">
+  <div class="site-header__content">
     <a class="site-header__title" href="/">James Steinbach</a>
-    <nav class="header-nav" id="header-nav"><a class="header-nav__link" href="/css/" data-order="10">CSS</a><a class="header-nav__link" href="/sass/" data-order="20">Sass</a><a class="header-nav__link" href="/wordpress/" data-order="30">WP</a><a class="header-nav__link" href="/talks/" data-order="35">Talks</a><a class="header-nav__link" href="/about/" data-order="40">About</a><a class="header-nav__link" href="/contact/" data-order="50">Contact</a></nav>
+    <button id="header-menu-toggle" class="site-header__menu-toggle button--icon" aria-expanded="false" aria-controls="header-menu">
+      <span class="hidden">Toggle Menu</span>
+      <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect x="0" y="0" width="512" height="128"/><rect x="0" y="192" width="512" height="128"/><rect x="0" y="384" width="512" height="128"/></svg>
+
+    </button>
+    <div id="header-menu" class="header-menu" aria-hidden="true">
+      <nav class="header-nav" name="Primary"><a class="header-nav__link" href="/css/" data-order="10">CSS</a><a class="header-nav__link" href="/sass/" data-order="20">Sass</a><a class="header-nav__link" href="/wordpress/" data-order="30">WP</a><a class="header-nav__link" href="/talks/" data-order="35">Talks</a><a class="header-nav__link" href="/about/" data-order="40">About</a><a class="header-nav__link" href="/contact/" data-order="50">Contact</a></nav>
+
+      <div class="header-nav__toggle">
+        <form class="theme-toggle" name="Theme Picker">
+  <input class="theme-toggle__input" type="radio" name="theme" id="light" value="light" />
+  <label class="theme-toggle__label" for="light" title="Light Theme">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Light Theme</span>
+  </label>
+  <input class="theme-toggle__input" type="radio" name="theme" id="auto" value="auto" />
+  <label class="theme-toggle__label" for="auto" title="Auto: System Settings">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" class=""></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Auto: System Settings</span>
+  </label>
+  <input class="theme-toggle__input" type="radio" name="theme" id="dark" value="dark" />
+  <label class="theme-toggle__label" for="dark" title="Dark Theme">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Dark Theme</span>
+  </label>
+</form>
+
+      </div>
+    </div>
   </div>
 </header>
 
-  <main class="site-main" id="main" role="main">
 
-  <article class="post l-page" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="hero l-hero">
-      
-    <svg viewBox="0 0 64 64" preserveAspectRatio="xMidYMid slice" alt="" role="presentation">
-  <defs>
-    <linearGradient x="0" y="0" x2="1" y2="1" spreadMethod="pad" id="lg">
-      <stop offset="0" stop-color="#131313" stop-opacity="0" />
-      <stop offset=".5" stop-color="#131313" stop-opacity=".05" />
-      <stop offset="1" stop-color="#131313" stop-opacity=".15" />
-    </linearGradient>
-  </defs>
-  <g transform="translate(-14 -14)">
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="0" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="0" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="0" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="0" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="0" />
+  <main class="site-main l-main" id="main" role="main">
 
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="16" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="16" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="16" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="16" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="16" />
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
 
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="32" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="32" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="32" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="32" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="32" />
+  <header class="hero l-hero">
+  <h1 class="hero__title is-long">Stop Using Needless Sass Mixins</h1>
+  <svg class="hero__bg starfield" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation=".5" />
+    </filter>
+    <rect class="starfield__bg" x="0" y="0" width="1000" height="1000" />
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m790,828l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m258,966l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m947,793l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m358,343l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m293,340l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m963,715l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m298,318l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m677,891l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m748,620l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m579,68l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m140,921l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m465,443l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m156,630l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m564,824l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m847,883l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m363,6l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m289,711l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m976,232l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m266,209l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m210,855l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m21,561l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m307,94l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m816,399l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m511,184l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m513,165l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m938,294l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m460,76l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m948,738l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m69,466l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m34,122l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m826,696l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m193,717l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m625,299l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m666,754l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m63,758l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m413,151l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m489,163l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m796,872l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m11,636l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m705,846l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m777,36l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m262,222l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m105,190l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m203,25l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m984,500l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m91,950l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m330,498l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m407,298l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m32,845l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m626,856l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m537,31l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m853,217l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m756,567l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m87,404l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m802,565l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m813,820l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m407,50l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m497,983l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m14,896l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m864,979l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m990,799l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m233,937l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m569,897l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m816,361l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m234,506l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m685,5l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m780,86l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m633,827l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m481,736l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m44,374l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m626,707l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m460,921l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m999,820l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m192,903l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m714,501l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m544,883l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m17,49l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m615,470l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m640,660l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m347,252l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m784,218l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m412,937l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m781,807l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m585,973l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m180,656l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m818,901l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m360,179l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m82,217l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m352,613l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m247,805l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m167,574l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m59,375l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m341,7l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m989,587l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m57,606l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m26,423l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m639,144l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m230,849l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m486,120l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m464,367l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m715,510l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m801,57l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m741,67l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m492,771l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m510,77l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m316,680l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m950,766l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m861,816l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m540,286l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m446,119l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m399,408l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m551,393l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m665,501l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m683,348l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m20,813l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m31,495l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m4,298l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m273,427l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m446,227l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m394,331l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m95,539l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m736,756l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m587,899l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m642,280l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m686,268l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m840,670l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m128,97l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m963,54l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m364,120l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m885,317l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m874,418l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m952,742l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m871,514l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m753,720l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m208,433l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m948,458l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m569,366l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m980,323l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m329,374l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m258,776l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m44,101l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m772,287l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m554,400l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m341,509l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m685,485l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m204,997l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m648,122l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m38,565l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m91,667l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m176,814l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+      </g>
+    
+  </svg>
+</header>
 
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="48" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="48" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="48" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="48" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="48" />
 
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="64" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="64" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="64" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="64" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="64" />
-  </g>
-</svg>
+  <div class="main-content l-grid l-grid--content" itemprop="articleBody">
+    
+  <aside class="post-toc">
+    <button id="toc-toggle" class="post-toc__toggle" aria-controls="toc-list"
+    aria-expanded="false" type="button">Table of Contents</button>
+    <div id="toc-list" class="post-toc__list" aria-hidden="true">
+      <nav class="toc"><ol><li><a href="#border-radius-prefixes">Border-Radius Prefixes</a></li><li><a href="#box-shadow-prefixes">Box-Shadow Prefixes</a></li><li><a href="#anything-with-prefixes">Anything with Prefixes</a></li><li><a href="#opacity">Opacity</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+    </div>
+  </aside>
 
 
-      <h1 class="hero__title" itemprop="name title headline">Stop Using Needless Sass Mixins</h1>
 
-      <p class="hero__meta">
-          <time class="date" datetime=Wed Nov 12 2014 00:00:00 GMT+0000 (Coordinated Universal Time) itemprop="dateCreated pubdate datePublished">November 12, 2014</time>
-          <span class="author" itemprop="author creator">James Steinbach</span>
-          <span class="categories">
-  <a href="/sass/" class="category-link">[Sass]</a>
-</span>
-      </p>
-    </header>
-
-    <div class="main-content l-content has-toc" itemprop="articleBody">
-      <p>Sass is a powerful tool – this power makes it easy to misuse. One of the most common ways people misuse Sass is creating mixins that they never needed in the first place. I’m not talking about the cool proof-of-concept “let’s create an icosidodecahedron with CSS” mixins – those have their place. I’m talking about worthless mixins that bloat CSS and serve no one. Let’s look at the mixins you should stop using right now:</p>
-<h2 id="border-radius-prefixes">Border-Radius Prefixes <a class="anchor-link" href="#border-radius-prefixes" aria-hidden="true">#</a></h2>
+    <p>Sass is a powerful tool – this power makes it easy to misuse. One of the most common ways people misuse Sass is creating mixins that they never needed in the first place. I’m not talking about the cool proof-of-concept “let’s create an icosidodecahedron with CSS” mixins – those have their place. I’m talking about worthless mixins that bloat CSS and serve no one. Let’s look at the mixins you should stop using right now:</p>
+<h2 id="border-radius-prefixes">Border-Radius Prefixes <a class="anchor-link" href="#border-radius-prefixes">#</a></h2>
 <p>.26%: that’s the total global browser usage that needs a prefix on <code>border-radius</code>. Not 26% – .26%. <a title="Can I Use data: Border-radius" href="http://caniuse.com/#feat=border-radius" target="_blank">Firefox 3.6 &amp; down, Chrome 3 &amp; down, Safari 4 &amp; down, iOS 3.2 &amp; down need <code>border-radius</code> prefixes.</a> Before replying with lofty ideals about “no user left behind,” think about what you do for IE6-8. Chances are, you’ve written at least one of those browser off as “unsupported.” You’ve got more than 10x as many IE8 users as you have <code>border-radius</code> prefix users. By now, the best thing to do is consider border-radius to be a progressive enhancement. I’ve never seen a website become unreadable or inaccessible when border-radius was removed.</p>
-<h2 id="box-shadow-prefixes">Box-Shadow Prefixes <a class="anchor-link" href="#box-shadow-prefixes" aria-hidden="true">#</a></h2>
+<h2 id="box-shadow-prefixes">Box-Shadow Prefixes <a class="anchor-link" href="#box-shadow-prefixes">#</a></h2>
 <p>This is the exact same issue as above: there are more older browsers that need prefixes for <code>box-shadow</code> than for <code>border-radius</code>, but it’s still only <a title="Can I Use data: box-shadow" href="http://caniuse.com/#feat=css-boxshadow" target="_blank">half a percent</a>. And same as before: this is a progressive enhancement. The box might look prettier with a shadow, but lack of <code>box-shadow</code> isn’t going to obscure its content. As Mitch Hedberg says, “There would never be an escalator temporarily out of order sign, only an escalator temporarily stairs. Sorry for the convenience.”</p>
-<h2 id="anything-with-prefixes">Anything with Prefixes <a class="anchor-link" href="#anything-with-prefixes" aria-hidden="true">#</a></h2>
+<h2 id="anything-with-prefixes">Anything with Prefixes <a class="anchor-link" href="#anything-with-prefixes">#</a></h2>
 <p>The two examples above never need prefixes ever, but you really shouldn’t be using Sass mixins for any prefixes at all. I know, Compass &amp; Bourbon have libraries to do this for you, but there’s a better way: <a title="Autoprefixer on Github" href="https://github.com/postcss/autoprefixer" target="_blank">Autoprefixer</a>. You can add Autoprefixer to any Sass workflow: Grunt, Gulp, Ruby gem CLI, Codekit, etc. It runs immediately after your Sass is compiled and <em>automatically adds &amp; removes browser prefixes based on your requirements</em>. You realize how awesome that is, right? You never have to type <code>@include</code> for prefixes again. This lets you write CSS3 with normal, spec syntax. AutoPrefixer uses current data from <a title="Can I Use" href="http://caniuse.com" target="_blank">caniuse.com</a> to choose prefixes that match your specified browser &amp; usage specifications. Just supporting most recent 3 browser version numbers or browsers with at least 3% usage? Autoprefixer does that automatically: you just type the spec version of the CSS. Transitions, transforms, keyframe animations, flexbox, gradients, etc – all those prefixes are handled automatically. Again, you don’t even need to worry about where to use a mixin: just learn the correct spec syntax &amp; you’re covered.</p>
-<h2 id="opacity">Opacity <a class="anchor-link" href="#opacity" aria-hidden="true">#</a></h2>
+<h2 id="opacity">Opacity <a class="anchor-link" href="#opacity">#</a></h2>
 <p>Everybody but IE8 likes <code>opacity</code>. IE8 can do opacity with <code>filter: alpha(opacity=(50));</code>, but that’s hardly ideal. You could use a mixin for this, or (as I’d recommend) just let IE8 be opaque. If readability of your site <em>depends</em> on opacity, you should already be using Modernizr to detect support &amp; deliver a safe fallback. Give IE8 that fallback. IMO, a much bigger issue is IE8’s lack of support for <code>rgba()</code> and <code>hsla()</code> colors. If you’re using those, you should definitely be providing a good fallback. Most of the time, I see fallbacks like this:</p>
-<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">.element</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>243, 107, 33<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>243, 107, 33 .5<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">243</span>, <span class="hljs-number">107</span>, <span class="hljs-number">33</span>);
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">243</span>, <span class="hljs-number">107</span>, <span class="hljs-number">33</span> .<span class="hljs-number">5</span>);
+}
+</code></pre>
 <p>If you need to keep color values closer than that, what I’d recommend for <code>rgba()</code> fallback is using Sass’s <code>mix()</code> function to blend the foreground (transparent) and background colors. I’ve got a <a title="RGBA Color Fallback Mixin on Sassmeister" href="http://sassmeister.com/gist/b687d319b542d0fadb17" target="_blank">working version of that mixin in this Sassmeister gist</a>. (I’d break it down for you, but I’m ready to wrap this post up. Look for a future post explaining its inner workings, maybe.)</p>
-<h2 id="conclusion">Conclusion <a class="anchor-link" href="#conclusion" aria-hidden="true">#</a></h2>
+<h2 id="conclusion">Conclusion <a class="anchor-link" href="#conclusion">#</a></h2>
 <p>Sass is great, but not if it’s used to create needless CSS. The next time you read a post about “essential Sass mixins” or want to start using a detailed mixin library, ask yourself, “Does this even need a mixin?” and if it does, “Is this mixin creating good CSS or bloated CSS?”</p>
 <p>If you’ve got questions about bloated Sass mixins or unnecessary styles, ask away in the comments. Thanks!</p>
 
+  </div>
+</article>
 
-      <aside class="post-toc">
-        <h5 class="post-toc__title">Table of Contents</h5>
-        <nav class="toc"><ol><li><a href="#border-radius-prefixes">Border-Radius Prefixes</a></li><li><a href="#box-shadow-prefixes">Box-Shadow Prefixes</a></li><li><a href="#anything-with-prefixes">Anything with Prefixes</a></li><li><a href="#opacity">Opacity</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
-      </aside>
-    </div>
-  </article>
-    </main><!-- main.site-main -->
-  <footer class="site-footer" role="contentinfo">
-  <div class="l-wrapper">
-    <form class="form form--mailchimp" action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-  <h2 class="site-footer__title">Get New Posts &amp; Other Content in Your Inbox!</h2>
+
+  </main><!-- main.site-main -->
+
+  <footer class="site-footer l-grid" role="contentinfo">
+  <form class="form form--mailchimp" action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <h2 class="site-footer__title">
+    Get New Posts &amp; Other Content in Your Inbox!
+    <span class="site-footer__title-icon"><svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 18"><g stroke-width="1" stroke="currentColor" fill="none"><path d="M0,0 32,0 32,18 0,18z" stroke-width="2"/><path d="M0,0 16,11 32,0"/><path d="M0,18 13,9"/><path d="M19,9 32,18"/></g></svg>
+</span>
+  </h2>
 
   <div class="form__fields" id="mc_embed_signup_scroll">
-    <div class="form__fields-wrapper">
-      <p class="form__required-message hidden"><span class="form__required-asterisk">*</span> indicates required</p>
+    <p class="form__required-message hidden"><span class="form__required-asterisk">*</span> indicates required</p>
 
-      <div class="form__field form__field--email">
-        <label class="form__label" for="mce-EMAIL">Email Address<span class="form__required-asterisk">*</span></label>
-        <input class="form__input form__input--required form__input--email" type="email" name="EMAIL" id="mce-EMAIL">
-      </div>
+    <div class="form__field form__field--email">
+      <label class="form__label" for="mce-EMAIL">Email Address<span class="form__required-asterisk">*</span></label>
+      <input class="form__input form__input--required form__input--email" type="email" name="EMAIL" id="mce-EMAIL">
+    </div>
 
-      <div class="form__field form__field--fname">
-        <label class="form__label" for="mce-FNAME">First Name</label>
-        <input class="form__input" type="text" name="FNAME" id="mce-FNAME">
-      </div>
+    <div class="form__field form__field--fname">
+      <label class="form__label" for="mce-FNAME">First Name</label>
+      <input class="form__input" type="text" name="FNAME" id="mce-FNAME">
+    </div>
 
-      <div class="form__field form__field--lname">
-        <label class="form__label" for="mce-LNAME">Last Name </label>
-        <input class="form__input" type="text" name="LNAME" id="mce-LNAME">
-      </div>
+    <div class="form__field form__field--lname">
+      <label class="form__label" for="mce-LNAME">Last Name </label>
+      <input class="form__input" type="text" name="LNAME" id="mce-LNAME">
     </div>
 
     <p class="form__response-message" id="mce-response"></p>
@@ -156,23 +1533,24 @@
       <input type="text" name="b_e06400c5106eb26339f4a0aea_35bef0e04e" tabindex="-1" value="">
     </label>
 
-    <button class="form__submit button button-alt" type="submit">Subscribe</button>
+    <button class="form__submit button" type="submit">Subscribe</button>
 
     <p class="form__monkey-rewards mc-ref">Powered by <a href="https://www.mailchimp.com/monkey-rewards/?utm_source=freemium_newsletter&utm_medium=email&utm_campaign=monkey_rewards&aid=e06400c5106eb26339f4a0aea&afl=1" target="_blank" rel="noopener nofollow noreferrer" title="MailChimp - email marketing made easy and fun">MailChimp</a></p>
   </div>
 </form>
 
-  </div>
-  <div class="l-wrapper">
+
+  <div class="site-footer__columns">
     <div class="site-footer__column">
       <p>James Steinbach</p>
       <p><a href="mailto:jdsteinbach@gmail.com">jdsteinbach@gmail.com</a></p>
     </div>
+
     <div class="site-footer__column">
         <p>
           <a href="https://github.com/jdsteinbach">
             <span class="icon icon--github">
-              <svg viewBox="0 0 16 16" height="16" width="16">
+              <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16">
   <path fill="currentColor" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
 </svg>
 
@@ -183,7 +1561,7 @@
         <p>
           <a href="https://twitter.com/jdsteinbach">
             <span class="icon icon--twitter">
-              <svg viewBox="0 0 16 16" height="16" width="16">
+              <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16">
   <path fill="currentColor" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
   c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
 </svg>
@@ -193,24 +1571,24 @@
           </a>
         </p>
     </div>
+
     <div class="site-footer__column">
       <p class="text">Front-end architect. <br />Speaker & writer. <br />Sass, CSS animation, RWD & WP.</p>
     </div>
   </div>
 </footer>
 
+
   <script>
   if (window.localStorage) {
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('theme-dark');
-    } else {
-      document.body.classList.remove('theme-dark');
-    }
+    const theme = localStorage.getItem('theme')
+    document.body.dataset.theme = theme ? theme : 'auto'
   }
   </script>
-  <script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
   <script async src="/js/site.js"></script>
+
+  <script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
 </body>
 </html>
-

@@ -23,132 +23,1499 @@
 
   <meta name="test-pagination" content="">
 
-  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/css/main.css" />
   <link rel="canonical" href="https://jdsteinbach.com/css/doesnt-move/" itemprop="url" />
   <link rel="alternate" type="application/rss+xml" title="James Steinbach" href="https://jdsteinbach.com/feed.xml" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e65100" />
-  <meta name="msapplication-TileColor" content="#e65100" />
-  <meta name="theme-color" content="#e65100" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F75123" />
+  <meta name="msapplication-TileColor" content="#602F9A" />
+  <meta name="theme-color" content="#602F9A" />
 </head>
 
-<body class="site">
-  <header class="site-header" role="banner">
-  <div class="l-wrapper l-wrapper--wide">
+<body class="site l-site">
+  <a href="#main" class="skip-link">Skip to Content</a>
+  <header class="site-header l-grid" role="banner">
+  <div class="site-header__content">
     <a class="site-header__title" href="/">James Steinbach</a>
-    <nav class="header-nav" id="header-nav"><a class="header-nav__link" href="/css/" data-order="10">CSS</a><a class="header-nav__link" href="/sass/" data-order="20">Sass</a><a class="header-nav__link" href="/wordpress/" data-order="30">WP</a><a class="header-nav__link" href="/talks/" data-order="35">Talks</a><a class="header-nav__link" href="/about/" data-order="40">About</a><a class="header-nav__link" href="/contact/" data-order="50">Contact</a></nav>
+    <button id="header-menu-toggle" class="site-header__menu-toggle button--icon" aria-expanded="false" aria-controls="header-menu">
+      <span class="hidden">Toggle Menu</span>
+      <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect x="0" y="0" width="512" height="128"/><rect x="0" y="192" width="512" height="128"/><rect x="0" y="384" width="512" height="128"/></svg>
+
+    </button>
+    <div id="header-menu" class="header-menu" aria-hidden="true">
+      <nav class="header-nav" name="Primary"><a class="header-nav__link" href="/css/" data-order="10">CSS</a><a class="header-nav__link" href="/sass/" data-order="20">Sass</a><a class="header-nav__link" href="/wordpress/" data-order="30">WP</a><a class="header-nav__link" href="/talks/" data-order="35">Talks</a><a class="header-nav__link" href="/about/" data-order="40">About</a><a class="header-nav__link" href="/contact/" data-order="50">Contact</a></nav>
+
+      <div class="header-nav__toggle">
+        <form class="theme-toggle" name="Theme Picker">
+  <input class="theme-toggle__input" type="radio" name="theme" id="light" value="light" />
+  <label class="theme-toggle__label" for="light" title="Light Theme">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Light Theme</span>
+  </label>
+  <input class="theme-toggle__input" type="radio" name="theme" id="auto" value="auto" />
+  <label class="theme-toggle__label" for="auto" title="Auto: System Settings">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" class=""></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Auto: System Settings</span>
+  </label>
+  <input class="theme-toggle__input" type="radio" name="theme" id="dark" value="dark" />
+  <label class="theme-toggle__label" for="dark" title="Dark Theme">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Dark Theme</span>
+  </label>
+</form>
+
+      </div>
+    </div>
   </div>
 </header>
 
-  <main class="site-main" id="main" role="main">
 
-  <article class="post l-page" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="hero l-hero">
-      
-    <svg viewBox="0 0 64 64" preserveAspectRatio="xMidYMid slice" alt="" role="presentation">
-    <defs>
-    <linearGradient x="0" y="0" x2="0" y2="4" spreadMethod="pad" id="lg-hz">
-      <stop offset="0" stop-color="#131313" stop-opacity="0" />
-      <stop offset="2" stop-color="#131313" stop-opacity=".35" />
-      <stop offset="4" stop-color="#131313" stop-opacity=".9" />
-    </linearGradient>
-    <linearGradient x="0" y="0" x2="4" y2="0" spreadMethod="pad" id="lg-vt">
-      <stop offset="0" stop-color="#131313" stop-opacity="0" />
-      <stop offset="2" stop-color="#131313" stop-opacity=".35" />
-      <stop offset="4" stop-color="#131313" stop-opacity=".8" />
-    </linearGradient>
-  </defs>
-  <rect x="0" y="0" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="4" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="8" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="12" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="16" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="20" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="24" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="28" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="32" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="36" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="40" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="44" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="48" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="52" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="56" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="60" width="64" height="4" fill="url(#lg-hz)" />
-  <rect x="0" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="4" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="8" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="12" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="16" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="20" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="24" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="28" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="32" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="36" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="40" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="44" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="48" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="52" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="56" y="0" width="4" height="64" fill="url(#lg-vt)" />
-  <rect x="60" y="0" width="4" height="64" fill="url(#lg-vt)" />
-</svg>
+  <main class="site-main l-main" id="main" role="main">
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
+
+  <header class="hero l-hero">
+  <h1 class="hero__title is-long">Maybe It Doesn&#8217;t Need to Move</h1>
+  <svg class="hero__bg starfield" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation=".5" />
+    </filter>
+    <rect class="starfield__bg" x="0" y="0" width="1000" height="1000" />
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m169,790l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m277,206l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m809,658l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m580,947l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m921,256l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m429,915l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m898,979l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m953,561l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m1,121l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m200,29l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m547,271l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m87,580l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m806,242l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m500,62l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m155,136l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m687,88l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m943,266l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m785,708l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m686,446l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m586,209l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m672,930l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m749,4l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m252,87l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m433,294l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m494,740l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m862,931l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m131,544l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m246,620l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m336,397l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m818,618l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m812,967l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m710,64l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m358,265l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m25,842l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m422,404l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m167,836l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m614,746l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m541,86l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m250,338l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m364,113l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m874,375l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m636,119l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m604,759l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m91,136l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m704,489l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m63,420l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m626,714l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m960,469l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m39,977l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m70,670l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m286,118l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m747,330l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m237,243l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m135,963l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m613,526l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m549,15l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m995,138l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m545,107l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m19,639l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m939,727l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m403,611l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m135,687l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m50,737l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m354,838l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m106,694l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m326,692l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m474,161l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m407,729l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m286,973l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m172,277l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m854,564l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m857,918l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m635,436l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m83,180l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m877,705l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m684,263l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m423,775l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m268,827l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m795,174l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m400,273l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m481,607l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m193,544l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m894,855l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m681,611l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m710,896l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m859,461l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m498,424l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m742,849l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m599,278l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m974,36l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m23,779l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m108,629l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m36,28l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m556,864l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m225,141l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m58,894l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m481,62l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m465,239l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m565,591l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m126,415l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m353,631l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m428,2l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m685,43l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m305,805l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m709,591l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m878,263l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m179,605l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m951,145l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m896,757l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m945,858l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m462,629l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m219,958l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m420,783l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m52,244l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m261,497l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m920,962l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m712,218l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m459,702l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m687,554l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m247,860l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m664,86l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m721,367l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m851,20l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m390,443l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m99,913l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m931,844l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m945,345l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m294,567l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m505,23l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m88,75l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m206,406l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m623,370l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m569,561l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m718,247l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m687,685l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m783,516l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m931,641l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m620,18l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m709,700l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m129,377l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m289,519l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m428,99l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m638,871l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m171,753l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m0,126l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m9,873l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m41,194l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m431,904l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m612,216l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m45,598l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+  </svg>
+</header>
 
 
-      <h1 class="hero__title" itemprop="name title headline">Maybe It Doesn&#8217;t Need to Move</h1>
+  <div class="main-content l-grid l-grid--content" itemprop="articleBody">
+    
+  <aside class="post-toc">
+    <button id="toc-toggle" class="post-toc__toggle" aria-controls="toc-list"
+    aria-expanded="false" type="button">Table of Contents</button>
+    <div id="toc-list" class="post-toc__list" aria-hidden="true">
+      <nav class="toc"><ol><li><a href="#don%E2%80%99t-slow-users-down.">Don’t slow users down.</a></li><li><a href="#don%E2%80%99t-distract-users.">Don’t distract users.</a></li><li><a href="#don%E2%80%99t-feel-bad.">Don’t feel bad.</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+    </div>
+  </aside>
 
-      <p class="hero__meta">
-          <time class="date" datetime=Fri Feb 27 2015 00:00:00 GMT+0000 (Coordinated Universal Time) itemprop="dateCreated pubdate datePublished">February 27, 2015</time>
-          <span class="author" itemprop="author creator">James Steinbach</span>
-          <span class="categories">
-  <a href="/css/" class="category-link">[CSS]</a>
-</span>
-      </p>
-    </header>
 
-    <div class="main-content l-content has-toc" itemprop="articleBody">
-      <p>You’re probably familiar with sites that capitalize on awesome, shiny, motion-y, snappy, clever “UI Design.” <a href="http://tympanus.net/codrops/category/playground/">Codrops</a> and <a href="http://codyhouse.co/library/">CodyHouse</a> are two of my favorites. These sites (and others like them) specialize in creative animations and UI effects that are designed to impress, get clicks, and end up in newsletters. None of those goals are bad goals, but when we’re building sites in real life, we need to evaluate another goal: to make things easy for users.</p>
-<h2 id="don%E2%80%99t-slow-users-down.">Don’t slow users down. <a class="anchor-link" href="#don%E2%80%99t-slow-users-down." aria-hidden="true">#</a></h2>
+
+    <p>You’re probably familiar with sites that capitalize on awesome, shiny, motion-y, snappy, clever “UI Design.” <a href="http://tympanus.net/codrops/category/playground/">Codrops</a> and <a href="http://codyhouse.co/library/">CodyHouse</a> are two of my favorites. These sites (and others like them) specialize in creative animations and UI effects that are designed to impress, get clicks, and end up in newsletters. None of those goals are bad goals, but when we’re building sites in real life, we need to evaluate another goal: to make things easy for users.</p>
+<h2 id="don%E2%80%99t-slow-users-down.">Don’t slow users down. <a class="anchor-link" href="#don%E2%80%99t-slow-users-down.">#</a></h2>
 <p>Sure, most sites have a little load time delay on each page. But there’s a world of difference between a second of load time and a second of load time followed by a half-second animation. Menus (especially on mobile) need to be quick too: don’t make users wait for a 5 pieces of a layout to shuffle like playing cards before menu links are available. I’m not against animation here, not at all! I’m recommending that we keep them subtle and fast. As <a href="http://24ways.org/2014/five-ways-to-animate-responsibly/">Rachel Nabors cautions us</a>, an animation can be “cute the first time but by the 70th time… It’s annoying!”</p>
-<h2 id="don%E2%80%99t-distract-users.">Don’t distract users. <a class="anchor-link" href="#don%E2%80%99t-distract-users." aria-hidden="true">#</a></h2>
-<p>Button animations, amirite? You may have seen the recent demo page full of quirky, colorful button animations. In the demo, all the action happened on <code>:hover</code>. Please don’t do that. The point of a button is to encourage users to click and complete a task. If you put a 500ms animation on a button’s hover state, what have you done? At best, you’ve given people a reason to stop and watch the button … <em>instead of completing their task</em>. At worst, you distract and confuse them, causing some to fail to complete the task. Make your button <code>:hover</code> transitions subtle. If you absolutely must do something crazy, do it on <em>click</em>. Your users are just waiting for feedback at that point. If you’ve got a meaningful animation, let them watch it then!</p>
-<h2 id="don%E2%80%99t-feel-bad.">Don’t feel bad. <a class="anchor-link" href="#don%E2%80%99t-feel-bad." aria-hidden="true">#</a></h2>
-<p>We’ve probably felt some false guilt about flashy animations at some point. You launch a project and the next day, you see a tweet about a crazy UI animation that your project doesn’t have. Other times, that pressure is external: a stakeholder or boss gets their hands on an animation library’s demo page and tells you that you need that kind of “pop” to take your work to the next level. Please fight off this guilt. I know, it’s hard defending your work and educating people who want flash without understanding UI design.</p>
-<h2 id="conclusion">Conclusion <a class="anchor-link" href="#conclusion" aria-hidden="true">#</a></h2>
+<h2 id="don%E2%80%99t-distract-users.">Don’t distract users. <a class="anchor-link" href="#don%E2%80%99t-distract-users.">#</a></h2>
+<p>Button animations, amirite? You may have seen the recent demo page full of quirky, colorful button animations. In the demo, all the action happened on <code>:hover</code>. Please don’t do that. The point of a button is to encourage users to click and complete a task. If you put a 500ms animation on a button’s hover state, what have you done? At best, you’ve given people a reason to stop and watch the button … <em>instead of completing their task</em>. At worst, you distract and confuse them, causing some to fail to complete the task. Make your button <code>:hover</code> transitions subtle. If you absolutely must do something wild, do it on <em>click</em>. Your users are just waiting for feedback at that point. If you’ve got a meaningful animation, let them watch it then!</p>
+<h2 id="don%E2%80%99t-feel-bad.">Don’t feel bad. <a class="anchor-link" href="#don%E2%80%99t-feel-bad.">#</a></h2>
+<p>We’ve probably felt some false guilt about flashy animations at some point. You launch a project and the next day, you see a tweet about a complicated UI animation that your project doesn’t have. Other times, that pressure is external: a stakeholder or boss gets their hands on an animation library’s demo page and tells you that you need that kind of “pop” to take your work to the next level. Please fight off this guilt. I know, it’s hard defending your work and educating people who want flash without understanding UI design.</p>
+<h2 id="conclusion">Conclusion <a class="anchor-link" href="#conclusion">#</a></h2>
 <p>I’m not an animation expert (I’m doing what I can to learn!) and I’m not mad at any creative web animation demo sites (they’re a lot of fun and spark some great ideas!). I do want us to take time to design <em>user</em> interface animations that provide a good <em>user</em> experience. There’s no shame in avoiding the glitz and glamour if you’re giving your users instructive, helpful transitions.</p>
 
+  </div>
+</article>
 
-      <aside class="post-toc">
-        <h5 class="post-toc__title">Table of Contents</h5>
-        <nav class="toc"><ol><li><a href="#don%E2%80%99t-slow-users-down.">Don’t slow users down.</a></li><li><a href="#don%E2%80%99t-distract-users.">Don’t distract users.</a></li><li><a href="#don%E2%80%99t-feel-bad.">Don’t feel bad.</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
-      </aside>
-    </div>
-  </article>
-    </main><!-- main.site-main -->
-  <footer class="site-footer" role="contentinfo">
-  <div class="l-wrapper">
-    <form class="form form--mailchimp" action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-  <h2 class="site-footer__title">Get New Posts &amp; Other Content in Your Inbox!</h2>
+
+  </main><!-- main.site-main -->
+
+  <footer class="site-footer l-grid" role="contentinfo">
+  <form class="form form--mailchimp" action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <h2 class="site-footer__title">
+    Get New Posts &amp; Other Content in Your Inbox!
+    <span class="site-footer__title-icon"><svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 18"><g stroke-width="1" stroke="currentColor" fill="none"><path d="M0,0 32,0 32,18 0,18z" stroke-width="2"/><path d="M0,0 16,11 32,0"/><path d="M0,18 13,9"/><path d="M19,9 32,18"/></g></svg>
+</span>
+  </h2>
 
   <div class="form__fields" id="mc_embed_signup_scroll">
-    <div class="form__fields-wrapper">
-      <p class="form__required-message hidden"><span class="form__required-asterisk">*</span> indicates required</p>
+    <p class="form__required-message hidden"><span class="form__required-asterisk">*</span> indicates required</p>
 
-      <div class="form__field form__field--email">
-        <label class="form__label" for="mce-EMAIL">Email Address<span class="form__required-asterisk">*</span></label>
-        <input class="form__input form__input--required form__input--email" type="email" name="EMAIL" id="mce-EMAIL">
-      </div>
+    <div class="form__field form__field--email">
+      <label class="form__label" for="mce-EMAIL">Email Address<span class="form__required-asterisk">*</span></label>
+      <input class="form__input form__input--required form__input--email" type="email" name="EMAIL" id="mce-EMAIL">
+    </div>
 
-      <div class="form__field form__field--fname">
-        <label class="form__label" for="mce-FNAME">First Name</label>
-        <input class="form__input" type="text" name="FNAME" id="mce-FNAME">
-      </div>
+    <div class="form__field form__field--fname">
+      <label class="form__label" for="mce-FNAME">First Name</label>
+      <input class="form__input" type="text" name="FNAME" id="mce-FNAME">
+    </div>
 
-      <div class="form__field form__field--lname">
-        <label class="form__label" for="mce-LNAME">Last Name </label>
-        <input class="form__input" type="text" name="LNAME" id="mce-LNAME">
-      </div>
+    <div class="form__field form__field--lname">
+      <label class="form__label" for="mce-LNAME">Last Name </label>
+      <input class="form__input" type="text" name="LNAME" id="mce-LNAME">
     </div>
 
     <p class="form__response-message" id="mce-response"></p>
@@ -157,23 +1524,24 @@
       <input type="text" name="b_e06400c5106eb26339f4a0aea_35bef0e04e" tabindex="-1" value="">
     </label>
 
-    <button class="form__submit button button-alt" type="submit">Subscribe</button>
+    <button class="form__submit button" type="submit">Subscribe</button>
 
     <p class="form__monkey-rewards mc-ref">Powered by <a href="https://www.mailchimp.com/monkey-rewards/?utm_source=freemium_newsletter&utm_medium=email&utm_campaign=monkey_rewards&aid=e06400c5106eb26339f4a0aea&afl=1" target="_blank" rel="noopener nofollow noreferrer" title="MailChimp - email marketing made easy and fun">MailChimp</a></p>
   </div>
 </form>
 
-  </div>
-  <div class="l-wrapper">
+
+  <div class="site-footer__columns">
     <div class="site-footer__column">
       <p>James Steinbach</p>
       <p><a href="mailto:jdsteinbach@gmail.com">jdsteinbach@gmail.com</a></p>
     </div>
+
     <div class="site-footer__column">
         <p>
           <a href="https://github.com/jdsteinbach">
             <span class="icon icon--github">
-              <svg viewBox="0 0 16 16" height="16" width="16">
+              <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16">
   <path fill="currentColor" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
 </svg>
 
@@ -184,7 +1552,7 @@
         <p>
           <a href="https://twitter.com/jdsteinbach">
             <span class="icon icon--twitter">
-              <svg viewBox="0 0 16 16" height="16" width="16">
+              <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16">
   <path fill="currentColor" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
   c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
 </svg>
@@ -194,24 +1562,24 @@
           </a>
         </p>
     </div>
+
     <div class="site-footer__column">
       <p class="text">Front-end architect. <br />Speaker & writer. <br />Sass, CSS animation, RWD & WP.</p>
     </div>
   </div>
 </footer>
 
+
   <script>
   if (window.localStorage) {
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('theme-dark');
-    } else {
-      document.body.classList.remove('theme-dark');
-    }
+    const theme = localStorage.getItem('theme')
+    document.body.dataset.theme = theme ? theme : 'auto'
   }
   </script>
-  <script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
   <script async src="/js/site.js"></script>
+
+  <script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
 </body>
 </html>
-

@@ -23,111 +23,1577 @@
 
   <meta name="test-pagination" content="">
 
-  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/css/main.css" />
   <link rel="canonical" href="https://jdsteinbach.com/sass/use-extend/" itemprop="url" />
   <link rel="alternate" type="application/rss+xml" title="James Steinbach" href="https://jdsteinbach.com/feed.xml" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e65100" />
-  <meta name="msapplication-TileColor" content="#e65100" />
-  <meta name="theme-color" content="#e65100" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F75123" />
+  <meta name="msapplication-TileColor" content="#602F9A" />
+  <meta name="theme-color" content="#602F9A" />
 </head>
 
-<body class="site">
-  <header class="site-header" role="banner">
-  <div class="l-wrapper l-wrapper--wide">
+<body class="site l-site">
+  <a href="#main" class="skip-link">Skip to Content</a>
+  <header class="site-header l-grid" role="banner">
+  <div class="site-header__content">
     <a class="site-header__title" href="/">James Steinbach</a>
-    <nav class="header-nav" id="header-nav"><a class="header-nav__link" href="/css/" data-order="10">CSS</a><a class="header-nav__link" href="/sass/" data-order="20">Sass</a><a class="header-nav__link" href="/wordpress/" data-order="30">WP</a><a class="header-nav__link" href="/talks/" data-order="35">Talks</a><a class="header-nav__link" href="/about/" data-order="40">About</a><a class="header-nav__link" href="/contact/" data-order="50">Contact</a></nav>
+    <button id="header-menu-toggle" class="site-header__menu-toggle button--icon" aria-expanded="false" aria-controls="header-menu">
+      <span class="hidden">Toggle Menu</span>
+      <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect x="0" y="0" width="512" height="128"/><rect x="0" y="192" width="512" height="128"/><rect x="0" y="384" width="512" height="128"/></svg>
+
+    </button>
+    <div id="header-menu" class="header-menu" aria-hidden="true">
+      <nav class="header-nav" name="Primary"><a class="header-nav__link" href="/css/" data-order="10">CSS</a><a class="header-nav__link" href="/sass/" data-order="20">Sass</a><a class="header-nav__link" href="/wordpress/" data-order="30">WP</a><a class="header-nav__link" href="/talks/" data-order="35">Talks</a><a class="header-nav__link" href="/about/" data-order="40">About</a><a class="header-nav__link" href="/contact/" data-order="50">Contact</a></nav>
+
+      <div class="header-nav__toggle">
+        <form class="theme-toggle" name="Theme Picker">
+  <input class="theme-toggle__input" type="radio" name="theme" id="light" value="light" />
+  <label class="theme-toggle__label" for="light" title="Light Theme">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Light Theme</span>
+  </label>
+  <input class="theme-toggle__input" type="radio" name="theme" id="auto" value="auto" />
+  <label class="theme-toggle__label" for="auto" title="Auto: System Settings">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" class=""></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Auto: System Settings</span>
+  </label>
+  <input class="theme-toggle__input" type="radio" name="theme" id="dark" value="dark" />
+  <label class="theme-toggle__label" for="dark" title="Dark Theme">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Dark Theme</span>
+  </label>
+</form>
+
+      </div>
+    </div>
   </div>
 </header>
 
-  <main class="site-main" id="main" role="main">
 
-  <article class="post l-page" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="hero l-hero">
-      
-    <svg viewBox="0 0 64 64" preserveAspectRatio="xMidYMid slice" alt="" role="presentation">
-  <g stroke="#131313" stroke-width="8" fill="none">
-    <ellipse cx="-64" cy="-6" rx="116" ry="60" stroke-opacity=".04" />
-    <ellipse cx="-64" cy="-6" rx="124" ry="68" stroke-opacity=".08" />
-    <ellipse cx="-64" cy="-6" rx="132" ry="76" stroke-opacity=".12" />
-    <ellipse cx="-64" cy="-6" rx="140" ry="84" stroke-opacity=".16" />
-    <ellipse cx="-64" cy="-6" rx="148" ry="92" stroke-opacity=".20" />
-    <ellipse cx="-64" cy="-6" rx="156" ry="100" stroke-opacity=".24" />
-    <ellipse cx="-64" cy="-6" rx="164" ry="108" stroke-opacity=".28" />
+  <main class="site-main l-main" id="main" role="main">
 
-    <ellipse cx="128" cy="-6" rx="116" ry="60" stroke-opacity=".04" />
-    <ellipse cx="128" cy="-6" rx="124" ry="68" stroke-opacity=".08" />
-    <ellipse cx="128" cy="-6" rx="132" ry="76" stroke-opacity=".12" />
-    <ellipse cx="128" cy="-6" rx="140" ry="84" stroke-opacity=".16" />
-    <ellipse cx="128" cy="-6" rx="148" ry="92" stroke-opacity=".20" />
-    <ellipse cx="128" cy="-6" rx="156" ry="100" stroke-opacity=".24" />
-    <ellipse cx="128" cy="-6" rx="164" ry="108" stroke-opacity=".28" />
-  </g>
-</svg>
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
+
+  <header class="hero l-hero">
+  <h1 class="hero__title is-long">When I Use (and Don’t Use) Sass Extend</h1>
+  <svg class="hero__bg starfield" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation=".5" />
+    </filter>
+    <rect class="starfield__bg" x="0" y="0" width="1000" height="1000" />
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m266,223l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m209,27l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m355,486l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m425,168l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m429,871l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m254,198l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m107,953l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m662,24l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m946,966l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m351,510l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m912,717l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m179,203l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m119,766l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m584,567l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m739,74l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m38,978l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m423,761l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m697,594l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m954,4l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m500,845l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m445,828l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m653,571l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m250,759l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m993,857l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m828,841l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m889,875l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m658,876l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m253,658l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m77,135l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m834,542l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m556,583l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m381,484l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m823,952l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m76,947l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m360,163l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m859,676l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m461,785l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m161,68l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m500,85l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m376,11l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m441,266l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m743,988l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m217,544l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m354,830l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m639,789l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m875,870l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m854,521l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m36,391l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m97,593l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m361,240l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m440,464l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m665,297l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m281,500l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m324,734l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m763,427l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m271,538l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m9,322l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m248,155l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m857,708l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m301,170l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m662,47l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m331,348l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m471,371l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m556,996l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m978,901l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m681,368l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m953,26l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m290,369l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m449,839l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m257,661l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m379,987l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m8,182l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m732,988l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m350,586l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m261,317l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m326,62l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m689,611l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m388,142l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m46,296l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m923,333l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m645,52l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m930,363l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m366,532l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m519,767l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m489,748l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m507,53l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m877,956l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m240,38l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m241,784l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m619,802l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m785,970l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m453,825l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m516,81l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m608,12l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m559,444l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m938,389l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m299,175l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m43,626l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m253,122l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m421,981l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m73,262l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m591,856l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m480,101l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m528,891l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m843,624l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m186,390l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m811,286l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m361,809l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m385,702l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m843,457l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m267,217l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m609,353l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m518,394l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m517,648l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m507,689l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m841,551l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m688,475l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m312,263l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m427,803l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m133,383l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m458,692l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m535,765l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m244,659l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m296,1l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m325,109l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m609,416l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m908,690l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m818,183l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m195,657l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m154,968l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m454,872l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m415,686l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m938,367l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m35,28l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m930,962l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m871,59l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m579,824l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m855,418l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m552,774l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m896,284l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m360,198l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m3,784l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m94,875l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m935,161l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m246,574l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m445,453l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m431,728l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m833,478l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m678,116l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m631,760l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+      </g>
+    
+  </svg>
+</header>
 
 
-      <h1 class="hero__title" itemprop="name title headline">When I Use (and Don’t Use) Sass Extend</h1>
+  <div class="main-content l-grid l-grid--content" itemprop="articleBody">
+    
+  <aside class="post-toc">
+    <button id="toc-toggle" class="post-toc__toggle" aria-controls="toc-list"
+    aria-expanded="false" type="button">Table of Contents</button>
+    <div id="toc-list" class="post-toc__list" aria-hidden="true">
+      <nav class="toc"><ol><li><a href="#don%E2%80%99t-mix-nesting-and-extends.">Don’t mix nesting and extends.</a></li><li><a href="#only-extend-placeholders.">Only extend placeholders.</a></li><li><a href="#try-to-use-an-actual-selector-instead.">Try to use an actual selector instead.</a></li></ol></nav>
+    </div>
+  </aside>
 
-      <p class="hero__meta">
-          <time class="date" datetime=Wed Nov 11 2015 00:00:00 GMT+0000 (Coordinated Universal Time) itemprop="dateCreated pubdate datePublished">November 11, 2015</time>
-          <span class="author" itemprop="author creator">James Steinbach</span>
-          <span class="categories">
-  <a href="/sass/" class="category-link">[Sass]</a>
-</span>
-      </p>
-    </header>
 
-    <div class="main-content l-content has-toc" itemprop="articleBody">
-      <p>Using Sass’s <code>@extend</code> directive is one of the more controversial discussions within the Sass community. On one hand, there are developers whose primary concern is the potential for selector bloat that comes with unrestrained use of <code>@extend</code>. On the other hand, there are developers who understand what <code>@extend</code> really does and limit their use to avoid the dangers.</p>
+
+    <p>Using Sass’s <code>@extend</code> directive is one of the more controversial discussions within the Sass community. On one hand, there are developers whose primary concern is the potential for selector bloat that comes with unrestrained use of <code>@extend</code>. On the other hand, there are developers who understand what <code>@extend</code> really does and limit their use to avoid the dangers.</p>
 <p>I’m in the “use <code>@extend</code> wisely” team. <a href="https://twitter.com/Una/status/664890977505570818">😀</a> Here are the three limitations I put on my use of <code>@extend</code>.</p>
-<h2 id="don%E2%80%99t-mix-nesting-and-extends.">Don’t mix nesting and extends. <a class="anchor-link" href="#don%E2%80%99t-mix-nesting-and-extends." aria-hidden="true">#</a></h2>
+<h2 id="don%E2%80%99t-mix-nesting-and-extends.">Don’t mix nesting and extends. <a class="anchor-link" href="#don%E2%80%99t-mix-nesting-and-extends.">#</a></h2>
 <p>Selector bloat is a real concern, but it usually comes from one of two practices: extending a nested selector, or extending a class that’s used more frequently than expected. When there’s nesting on the extended block and the extender’s selector, Sass is forced to create unnecessary duplicates with the nesting:</p>
-<pre class="language-scss"><code class="language-scss"><span class="highlight-line"><span class="token comment">// Nested Input</span></span><br><span class="highlight-line"><span class="token selector">header .class1 </span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token selector">.class2 </span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token selector">footer <span class="token parent important">&amp;</span> </span><span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">@extend</span> .class1<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// Bloated Output</span></span><br><span class="highlight-line"><span class="token selector">header .class1,</span><br><span class="highlight-line">header footer .class2,</span><br><span class="highlight-line">footer header .class2 </span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
-<h2 id="only-extend-placeholders.">Only extend placeholders. <a class="anchor-link" href="#only-extend-placeholders." aria-hidden="true">#</a></h2>
+<pre><code class="hljs language-scss"><span class="hljs-comment">// Nested Input</span>
+<span class="hljs-selector-tag">header</span> <span class="hljs-selector-class">.class1</span> {
+  <span class="hljs-attribute">color</span>: red;
+}
+
+<span class="hljs-selector-class">.class2</span> {
+  <span class="hljs-selector-tag">footer</span> &amp; {
+    <span class="hljs-keyword">@extend</span> .class1;
+  }
+}
+
+<span class="hljs-comment">// Bloated Output</span>
+<span class="hljs-selector-tag">header</span> <span class="hljs-selector-class">.class1</span>,
+<span class="hljs-selector-tag">header</span> <span class="hljs-selector-tag">footer</span> <span class="hljs-selector-class">.class2</span>,
+<span class="hljs-selector-tag">footer</span> <span class="hljs-selector-tag">header</span> <span class="hljs-selector-class">.class2</span> {
+  <span class="hljs-attribute">color</span>: red;
+}
+</code></pre>
+<h2 id="only-extend-placeholders.">Only extend placeholders. <a class="anchor-link" href="#only-extend-placeholders.">#</a></h2>
 <p>As I mentioned above, the 2nd main cause of <code>@extend</code> selector bloat is extending a class that’s used more frequently than originally planned or expected. We can solve this concern by limiting <code>@extend</code> to Sass <code>%placeholder</code> selectors, and not actual CSS selectors (classes, tags, IDs, attributes, etc). If you try to extend an actual selector, and you or another dev uses that elsewhere in the code, you’ll end up extending all those additional instances of the class.</p>
-<pre class="language-scss"><code class="language-scss"><span class="highlight-line"><span class="token comment">// Initial Selector to Extend</span></span><br><span class="highlight-line"><span class="token selector">.shadow-box </span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 2px 2px 4px <span class="token function">rgba</span><span class="token punctuation">(</span>black, .5<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// Added Later</span></span><br><span class="highlight-line"><span class="token selector">.home-page .shadow-box </span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> #eee<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// Extender</span></span><br><span class="highlight-line"><span class="token selector">.comment-card </span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">@extend</span> .shadow-box<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token comment">// Yikes! I hope .comment-card is</span></span><br><span class="highlight-line">  <span class="token comment">// meant to be #eee on .home-page…</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
-<pre class="language-scss"><code class="language-scss"><span class="highlight-line"><span class="token comment">// Better</span></span><br><span class="highlight-line"><span class="token selector"><span class="token placeholder">%shadow-box</span> </span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 2px 2px 4px <span class="token function">rgba</span><span class="token punctuation">(</span>black, .5<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token selector">.shadow-box </span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">@extend</span> <span class="token placeholder selector">%shadow-box</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">  <span class="token selector">.home-page <span class="token parent important">&amp;</span> </span><span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token property">background-color</span><span class="token punctuation">:</span> #eee<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token selector">.comment-card </span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">@extend</span> <span class="token placeholder selector">%shadow-box</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
-<h2 id="try-to-use-an-actual-selector-instead.">Try to use an actual selector instead. <a class="anchor-link" href="#try-to-use-an-actual-selector-instead." aria-hidden="true">#</a></h2>
+<pre><code class="hljs language-scss"><span class="hljs-comment">// Initial Selector to Extend</span>
+<span class="hljs-selector-class">.shadow-box</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-number">4px</span> rgba(black, .<span class="hljs-number">5</span>);
+}
+
+<span class="hljs-comment">// Added Later</span>
+<span class="hljs-selector-class">.home-page</span> <span class="hljs-selector-class">.shadow-box</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#eee</span>;
+}
+
+<span class="hljs-comment">// Extender</span>
+<span class="hljs-selector-class">.comment-card</span> {
+  <span class="hljs-keyword">@extend</span> .shadow-box;
+  <span class="hljs-comment">// Yikes! I hope .comment-card is</span>
+  <span class="hljs-comment">// meant to be #eee on .home-page…</span>
+}
+</code></pre>
+<pre><code class="hljs language-scss"><span class="hljs-comment">// Better</span>
+%shadow-box {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-number">4px</span> rgba(black, .<span class="hljs-number">5</span>);
+}
+
+<span class="hljs-selector-class">.shadow-box</span> {
+  <span class="hljs-keyword">@extend</span> %shadow-box;
+
+  <span class="hljs-selector-class">.home-page</span> &amp; {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#eee</span>;
+  }
+}
+
+<span class="hljs-selector-class">.comment-card</span> {
+  <span class="hljs-keyword">@extend</span> %shadow-box;
+}
+</code></pre>
+<h2 id="try-to-use-an-actual-selector-instead.">Try to use an actual selector instead. <a class="anchor-link" href="#try-to-use-an-actual-selector-instead.">#</a></h2>
 <p>Another important question I ask myself when I’m considering using <code>@extend</code> is “Is there a sufficiently broad CSS selector I can use for this style pattern?” If I’ve got two elements that I want to style identically, why don’t they share a class or attribute? This helps me name things better. If I’m naming visually-identical elements differently in different contexts, I need to rework my classes a bit. After all, classes are not primarily intended to describe the contents of their elements, they’re meant to provide hooks for styles to catch.</p>
 <p>I’ve seen projects that use a number of extendable classes/placeholders to mimic single-responsibility utility classes, then extend each of those utility selectors wherever needed to attach the right styles to the actual selectors. This creates a hodge-podge of selector duplication. You see, <code>@extend</code> doesn’t repeat styles where the directive is written: it hoists the extender’s selector up to the location of the original extended object. If you’re not aware of this, you’ll likely be surprised at the way using <code>@extend</code> appears to “break” your cascade.</p>
-<pre class="language-scss"><code class="language-scss"><span class="highlight-line"><span class="token selector"><span class="token placeholder">%red-box</span> </span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">border</span><span class="token punctuation">:</span> 2px solid red<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">darken</span><span class="token punctuation">(</span>red, 30%<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token selector"><span class="token placeholder">%green-box</span> </span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">border</span><span class="token punctuation">:</span> 2px solid green<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">darken</span><span class="token punctuation">(</span>green, 30%<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token selector">.box </span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">@extend</span> <span class="token placeholder selector">%green-box</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token selector">.error-box </span><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">@extend</span> <span class="token placeholder selector">%red-box</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token comment">/* You'd expect .error-box to be 2nd,</span><br><span class="highlight-line">but since the selector is hoisted</span><br><span class="highlight-line">to the %placeholder location,</span><br><span class="highlight-line">it ends up first and won't be red.*/</span></span></code></pre>
+<pre><code class="hljs language-scss">%red-box {
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid red;
+  <span class="hljs-attribute">color</span>: darken(red, <span class="hljs-number">30%</span>);
+}
+
+%green-box {
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid green;
+  <span class="hljs-attribute">color</span>: darken(green, <span class="hljs-number">30%</span>);
+}
+
+<span class="hljs-selector-class">.box</span> {
+  <span class="hljs-keyword">@extend</span> %green-box;
+}
+
+<span class="hljs-selector-class">.error-box</span> {
+  <span class="hljs-keyword">@extend</span> %red-box;
+}
+<span class="hljs-comment">/* You'd expect .error-box to be 2nd,
+but since the selector is hoisted
+to the %placeholder location,
+it ends up first and won't be red.*/</span>
+</code></pre>
 <p>This brings up the front-end game of <a href="/css/css-repetition-basically-whack-mole/">“Optimization Whack-A-Mole”</a> - whenever you remove duplication from one part of your styles, it shows up somewhere else. If you avoid repeating declarations (like with <code>@extend</code>), you’ll repeat selectors. If you avoid repeating selectors (like with <code>@mixin</code>s), you’ll repeat declarations. If you use utility classes, you’ll repeat classes throughout your HTML markup. All that to say, bending <code>@extend</code> to mimic utility classes doesn’t really shorten anything. It only adds cascade issues and selector repetition.</p>
 <p><em>Note: always gzip your stylesheets and markup. All the repeated strings (whether selectors, declaration, or markup classes) will be compressed.</em></p>
 
+  </div>
+</article>
 
-      <aside class="post-toc">
-        <h5 class="post-toc__title">Table of Contents</h5>
-        <nav class="toc"><ol><li><a href="#don%E2%80%99t-mix-nesting-and-extends.">Don’t mix nesting and extends.</a></li><li><a href="#only-extend-placeholders.">Only extend placeholders.</a></li><li><a href="#try-to-use-an-actual-selector-instead.">Try to use an actual selector instead.</a></li></ol></nav>
-      </aside>
-    </div>
-  </article>
-    </main><!-- main.site-main -->
-  <footer class="site-footer" role="contentinfo">
-  <div class="l-wrapper">
-    <form class="form form--mailchimp" action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-  <h2 class="site-footer__title">Get New Posts &amp; Other Content in Your Inbox!</h2>
+
+  </main><!-- main.site-main -->
+
+  <footer class="site-footer l-grid" role="contentinfo">
+  <form class="form form--mailchimp" action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <h2 class="site-footer__title">
+    Get New Posts &amp; Other Content in Your Inbox!
+    <span class="site-footer__title-icon"><svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 18"><g stroke-width="1" stroke="currentColor" fill="none"><path d="M0,0 32,0 32,18 0,18z" stroke-width="2"/><path d="M0,0 16,11 32,0"/><path d="M0,18 13,9"/><path d="M19,9 32,18"/></g></svg>
+</span>
+  </h2>
 
   <div class="form__fields" id="mc_embed_signup_scroll">
-    <div class="form__fields-wrapper">
-      <p class="form__required-message hidden"><span class="form__required-asterisk">*</span> indicates required</p>
+    <p class="form__required-message hidden"><span class="form__required-asterisk">*</span> indicates required</p>
 
-      <div class="form__field form__field--email">
-        <label class="form__label" for="mce-EMAIL">Email Address<span class="form__required-asterisk">*</span></label>
-        <input class="form__input form__input--required form__input--email" type="email" name="EMAIL" id="mce-EMAIL">
-      </div>
+    <div class="form__field form__field--email">
+      <label class="form__label" for="mce-EMAIL">Email Address<span class="form__required-asterisk">*</span></label>
+      <input class="form__input form__input--required form__input--email" type="email" name="EMAIL" id="mce-EMAIL">
+    </div>
 
-      <div class="form__field form__field--fname">
-        <label class="form__label" for="mce-FNAME">First Name</label>
-        <input class="form__input" type="text" name="FNAME" id="mce-FNAME">
-      </div>
+    <div class="form__field form__field--fname">
+      <label class="form__label" for="mce-FNAME">First Name</label>
+      <input class="form__input" type="text" name="FNAME" id="mce-FNAME">
+    </div>
 
-      <div class="form__field form__field--lname">
-        <label class="form__label" for="mce-LNAME">Last Name </label>
-        <input class="form__input" type="text" name="LNAME" id="mce-LNAME">
-      </div>
+    <div class="form__field form__field--lname">
+      <label class="form__label" for="mce-LNAME">Last Name </label>
+      <input class="form__input" type="text" name="LNAME" id="mce-LNAME">
     </div>
 
     <p class="form__response-message" id="mce-response"></p>
@@ -136,23 +1602,24 @@
       <input type="text" name="b_e06400c5106eb26339f4a0aea_35bef0e04e" tabindex="-1" value="">
     </label>
 
-    <button class="form__submit button button-alt" type="submit">Subscribe</button>
+    <button class="form__submit button" type="submit">Subscribe</button>
 
     <p class="form__monkey-rewards mc-ref">Powered by <a href="https://www.mailchimp.com/monkey-rewards/?utm_source=freemium_newsletter&utm_medium=email&utm_campaign=monkey_rewards&aid=e06400c5106eb26339f4a0aea&afl=1" target="_blank" rel="noopener nofollow noreferrer" title="MailChimp - email marketing made easy and fun">MailChimp</a></p>
   </div>
 </form>
 
-  </div>
-  <div class="l-wrapper">
+
+  <div class="site-footer__columns">
     <div class="site-footer__column">
       <p>James Steinbach</p>
       <p><a href="mailto:jdsteinbach@gmail.com">jdsteinbach@gmail.com</a></p>
     </div>
+
     <div class="site-footer__column">
         <p>
           <a href="https://github.com/jdsteinbach">
             <span class="icon icon--github">
-              <svg viewBox="0 0 16 16" height="16" width="16">
+              <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16">
   <path fill="currentColor" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
 </svg>
 
@@ -163,7 +1630,7 @@
         <p>
           <a href="https://twitter.com/jdsteinbach">
             <span class="icon icon--twitter">
-              <svg viewBox="0 0 16 16" height="16" width="16">
+              <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16">
   <path fill="currentColor" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
   c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
 </svg>
@@ -173,24 +1640,24 @@
           </a>
         </p>
     </div>
+
     <div class="site-footer__column">
       <p class="text">Front-end architect. <br />Speaker & writer. <br />Sass, CSS animation, RWD & WP.</p>
     </div>
   </div>
 </footer>
 
+
   <script>
   if (window.localStorage) {
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('theme-dark');
-    } else {
-      document.body.classList.remove('theme-dark');
-    }
+    const theme = localStorage.getItem('theme')
+    document.body.dataset.theme = theme ? theme : 'auto'
   }
   </script>
-  <script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
   <script async src="/js/site.js"></script>
+
+  <script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
 </body>
 </html>
-

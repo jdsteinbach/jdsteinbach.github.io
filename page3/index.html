@@ -23,136 +23,1455 @@
 
   <meta name="test-pagination" content="2">
 
-  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/css/main.css" />
   <link rel="canonical" href="https://jdsteinbach.com/page3/" itemprop="url" />
   <link rel="alternate" type="application/rss+xml" title="James Steinbach" href="https://jdsteinbach.com/feed.xml" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e65100" />
-  <meta name="msapplication-TileColor" content="#e65100" />
-  <meta name="theme-color" content="#e65100" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F75123" />
+  <meta name="msapplication-TileColor" content="#602F9A" />
+  <meta name="theme-color" content="#602F9A" />
 </head>
 
-<body class="site">
-  <header class="site-header" role="banner">
-  <div class="l-wrapper l-wrapper--wide">
+<body class="site l-site">
+  <a href="#main" class="skip-link">Skip to Content</a>
+  <header class="site-header l-grid" role="banner">
+  <div class="site-header__content">
     <a class="site-header__title" href="/">James Steinbach</a>
-    <nav class="header-nav" id="header-nav"><a class="header-nav__link" href="/css/" data-order="10">CSS</a><a class="header-nav__link" href="/sass/" data-order="20">Sass</a><a class="header-nav__link" href="/wordpress/" data-order="30">WP</a><a class="header-nav__link" href="/talks/" data-order="35">Talks</a><a class="header-nav__link" href="/about/" data-order="40">About</a><a class="header-nav__link" href="/contact/" data-order="50">Contact</a></nav>
+    <button id="header-menu-toggle" class="site-header__menu-toggle button--icon" aria-expanded="false" aria-controls="header-menu">
+      <span class="hidden">Toggle Menu</span>
+      <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect x="0" y="0" width="512" height="128"/><rect x="0" y="192" width="512" height="128"/><rect x="0" y="384" width="512" height="128"/></svg>
+
+    </button>
+    <div id="header-menu" class="header-menu" aria-hidden="true">
+      <nav class="header-nav" name="Primary"><a class="header-nav__link" href="/css/" data-order="10">CSS</a><a class="header-nav__link" href="/sass/" data-order="20">Sass</a><a class="header-nav__link" href="/wordpress/" data-order="30">WP</a><a class="header-nav__link" href="/talks/" data-order="35">Talks</a><a class="header-nav__link" href="/about/" data-order="40">About</a><a class="header-nav__link" href="/contact/" data-order="50">Contact</a></nav>
+
+      <div class="header-nav__toggle">
+        <form class="theme-toggle" name="Theme Picker">
+  <input class="theme-toggle__input" type="radio" name="theme" id="light" value="light" />
+  <label class="theme-toggle__label" for="light" title="Light Theme">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Light Theme</span>
+  </label>
+  <input class="theme-toggle__input" type="radio" name="theme" id="auto" value="auto" />
+  <label class="theme-toggle__label" for="auto" title="Auto: System Settings">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" class=""></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Auto: System Settings</span>
+  </label>
+  <input class="theme-toggle__input" type="radio" name="theme" id="dark" value="dark" />
+  <label class="theme-toggle__label" for="dark" title="Dark Theme">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Dark Theme</span>
+  </label>
+</form>
+
+      </div>
+    </div>
   </div>
 </header>
 
-  <main class="site-main" id="main" role="main">
 
-<div class="home l-page">
-  <header class="hero l-hero">
+  <main class="site-main l-main" id="main" role="main">
+
     
-    <svg viewBox="0 0 64 64" preserveAspectRatio="xMidYMid slice" alt="" role="presentation">
-  <g fill="#131313" fill-opacity=".1">
-    <circle r="16" cy="0" cx="0" />
-    <circle r="16" cy="16" cx="0" />
-    <circle r="16" cy="32" cx="0" />
-    <circle r="16" cy="48" cx="0" />
-    <circle r="16" cy="64" cx="0" />
-
-    <circle r="16" cy="0" cx="16" />
-    <circle r="16" cy="16" cx="16" />
-    <circle r="16" cy="32" cx="16" />
-    <circle r="16" cy="48" cx="16" />
-    <circle r="16" cy="64" cx="16" />
-
-    <circle r="16" cy="0" cx="32" />
-    <circle r="16" cy="16" cx="32" />
-    <circle r="16" cy="32" cx="32" />
-    <circle r="16" cy="48" cx="32" />
-    <circle r="16" cy="64" cx="32" />
-
-    <circle r="16" cy="0" cx="48" />
-    <circle r="16" cy="16" cx="48" />
-    <circle r="16" cy="32" cx="48" />
-    <circle r="16" cy="48" cx="48" />
-    <circle r="16" cy="64" cx="48" />
-
-    <circle r="16" cy="0" cx="64" />
-    <circle r="16" cy="16" cx="64" />
-    <circle r="16" cy="32" cx="64" />
-    <circle r="16" cy="48" cx="64" />
-    <circle r="16" cy="64" cx="64" />
-  </g>
-</svg>
-
-
-    <h1 class="hero__title">Recent Posts</h1>
-  </header>
-
-  <div class="l-content">
+<header class="hero l-hero">
+  <h1 class="hero__title">Recent Posts</h1>
+  <svg class="hero__bg starfield" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation=".5" />
+    </filter>
+    <rect class="starfield__bg" x="0" y="0" width="1000" height="1000" />
     
-      <ul class="posts-archive">
+      <g class="starfield__layer">
         
-          <li class="archive-item">
-    <h2 class="archive-item__title">
-      <a class="archive-item__link" href="/sass/numbered-headings/">CSS (Sass) for Content-Agnostic Numbered Headings</a>
-    </h2><p class="archive-item__meta">
-    <span class="date">February 22, 2016</span>
-        <span class="categories">
           
-  <a href="/css/" class="category-link">[CSS]</a>
-  <a href="/sass/" class="category-link">[Sass]</a>
-
-        </span>
-  </p>
-</li>
-
-        
-          <li class="archive-item">
-    <h2 class="archive-item__title">
-      <a class="archive-item__link" href="/css/firefox-flexbox-bug/">Firefox Flexbox Bug - Percent-Based Padding/Margin</a>
-    </h2><p class="archive-item__meta">
-    <span class="date">February 22, 2016</span>
-        <span class="categories">
           
-  <a href="/css/" class="category-link">[CSS]</a>
-
-        </span>
-  </p>
-</li>
-
-        
-          <li class="archive-item">
-    <h2 class="archive-item__title">
-      <a class="archive-item__link" href="/wordpress/function-automatically-update-copyright-years/">WordPress Function for Automatically Updating Copyright Years</a>
-    </h2><p class="archive-item__meta">
-    <span class="date">January 29, 2016</span>
-        <span class="categories">
           
-  <a href="/wordpress/" class="category-link">[WordPress]</a>
-
-        </span>
-  </p>
-</li>
-
+          <path
+            class="starfield__star"
+            d="m931,37l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
         
-          <li class="archive-item">
-    <h2 class="archive-item__title">
-      <a class="archive-item__link" href="/css/front-end-web-development-resources/">Front-End Web Development Resources</a>
-    </h2><p class="archive-item__meta">
-    <span class="date">January  6, 2016</span>
-        <span class="categories">
           
-  <a href="/css/" class="category-link">[CSS]</a>
-
-        </span>
-  </p>
-</li>
-
+          
+          
+          <path
+            class="starfield__star"
+            d="m711,806l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
         
-          <li class="archive-item">
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m75,428l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m250,236l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m894,208l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m816,209l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m617,253l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m736,200l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m999,981l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m110,900l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m333,940l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m885,80l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m791,630l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m509,36l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m85,638l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m143,789l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m785,219l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m115,740l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m757,731l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m297,864l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m943,504l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m901,921l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m150,263l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m790,464l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m538,745l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m295,384l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m417,756l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m610,787l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m414,369l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m243,447l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m459,777l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m229,25l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m538,353l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m437,202l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m393,136l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m274,910l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m193,181l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m434,772l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m717,827l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m421,107l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m299,283l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m159,957l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m393,22l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m456,783l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m67,159l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m35,187l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m316,809l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m457,984l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m756,234l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m335,695l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m19,335l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m743,330l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m327,256l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m471,410l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m119,29l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m121,452l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m98,179l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m888,616l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m40,969l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m870,300l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m388,702l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m499,801l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m384,481l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m53,413l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m57,104l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m304,990l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m851,42l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m900,759l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m886,287l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m488,984l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m662,574l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m775,479l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m11,671l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m83,154l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m488,43l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m874,517l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m346,633l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m922,19l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m346,941l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m469,257l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m138,99l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m870,553l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m845,761l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m999,375l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m145,887l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m230,490l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m729,781l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m886,672l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m524,968l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m106,536l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m620,628l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m178,223l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m6,821l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m761,454l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m838,232l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m224,327l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m937,155l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m442,24l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m404,732l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m664,791l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m976,673l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m783,363l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m576,688l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m188,389l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m917,37l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m942,320l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m638,640l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m684,323l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m682,121l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m555,966l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m818,877l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m513,148l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m261,104l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m363,30l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m619,81l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m542,632l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m925,427l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m278,413l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m945,766l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m190,980l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m776,18l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m370,893l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m421,523l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m653,979l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m213,938l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m305,642l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m299,527l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m327,913l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m461,954l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m466,159l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m6,896l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m244,69l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m68,649l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m805,829l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m511,971l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m576,192l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m706,224l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m678,533l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m311,851l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m440,471l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m688,814l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m162,281l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m316,699l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m182,565l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m127,916l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m692,996l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m729,686l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m625,256l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m132,52l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m10,759l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+  </svg>
+</header>
+
+
+<div class="l-grid">
+  
+    <ul class="posts-archive">
+      
+        <li class="archive-item">
     <h2 class="archive-item__title">
       <a class="archive-item__link" href="/sass/use-extend/">When I Use (and Don’t Use) Sass Extend</a>
     </h2><p class="archive-item__meta">
-    <span class="date">November 11, 2015</span>
-        <span class="categories">
+    <span class="archive-item__date">Nov 11, 2015</span>
+        <span class="archive-item__categories">
           
   <a href="/sass/" class="category-link">[Sass]</a>
 
@@ -160,18 +1479,19 @@
   </p>
 </li>
 
-        
-          <li class="archive-item">
+      
+        <li class="archive-item">
     <h2 class="archive-item__title">
       <a class="archive-item__link archive-item__link--outbound" href="http://www.sitepoint.com/validating-input-in-sass-mixins-and-functions" target="_blank" rel="noopener noreferrer">
         Validating Input in Sass Mixins and Functions
-        <svg viewBox="0 0 1024 1024" height="16" width="16">
-          <path class="path1" stroke="inherit" d="M953.396 74.642l-4.028-4.042c-94.148-94.134-248.194-94.134-342.326 0l-218.106 218.136c-94.134 94.132-94.134 248.176 0 342.31l4.026 4.026c7.832 7.848 16.146 14.924 24.736 21.458l79.848-79.85c-9.302-5.494-18.126-12.072-26.116-20.060l-4.042-4.042c-51.114-51.098-51.114-134.272 0-185.39l218.128-218.112c51.116-51.118 134.274-51.118 185.386 0l4.042 4.024c51.1 51.116 51.1 134.292 0 185.39l-98.686 98.686c17.132 42.308 25.248 87.4 24.538 132.386l152.604-152.604c94.134-94.136 94.134-248.178-0.004-342.316zM631.042 388.934c-7.832-7.832-16.146-14.922-24.736-21.44l-79.848 79.832c9.304 5.496 18.126 12.074 26.116 20.062l4.042 4.040c51.116 51.116 51.116 134.272 0 185.388l-218.13 218.134c-51.118 51.102-134.276 51.102-185.388 0l-4.042-4.042c-51.098-51.12-51.098-134.276 0-185.388l98.688-98.686c-17.134-42.306-25.246-87.402-24.538-132.386l-152.602 152.598c-94.136 94.132-94.136 248.178 0 342.324l4.026 4.032c94.152 94.128 248.192 94.128 342.328 0l218.11-218.118c94.134-94.132 94.134-248.194 0-342.326l-4.026-4.024z"></path>
-        </svg>
+        <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" height="16" width="16">
+<path class="path1" stroke="inherit" d="M953.396 74.642l-4.028-4.042c-94.148-94.134-248.194-94.134-342.326 0l-218.106 218.136c-94.134 94.132-94.134 248.176 0 342.31l4.026 4.026c7.832 7.848 16.146 14.924 24.736 21.458l79.848-79.85c-9.302-5.494-18.126-12.072-26.116-20.060l-4.042-4.042c-51.114-51.098-51.114-134.272 0-185.39l218.128-218.112c51.116-51.118 134.274-51.118 185.386 0l4.042 4.024c51.1 51.116 51.1 134.292 0 185.39l-98.686 98.686c17.132 42.308 25.248 87.4 24.538 132.386l152.604-152.604c94.134-94.136 94.134-248.178-0.004-342.316zM631.042 388.934c-7.832-7.832-16.146-14.922-24.736-21.44l-79.848 79.832c9.304 5.496 18.126 12.074 26.116 20.062l4.042 4.040c51.116 51.116 51.116 134.272 0 185.388l-218.13 218.134c-51.118 51.102-134.276 51.102-185.388 0l-4.042-4.042c-51.098-51.12-51.098-134.276 0-185.388l98.688-98.686c-17.134-42.306-25.246-87.402-24.538-132.386l-152.602 152.598c-94.136 94.132-94.136 248.178 0 342.324l4.026 4.032c94.152 94.128 248.192 94.128 342.328 0l218.11-218.118c94.134-94.132 94.134-248.194 0-342.326l-4.026-4.024z"></path>
+</svg>
+
       </a>
     </h2><p class="archive-item__meta">
-    <span class="date">September 17, 2015</span>
-        <span class="categories">
+    <span class="archive-item__date">Sep 17, 2015</span>
+        <span class="archive-item__categories">
           
   <a href="/css/" class="category-link">[CSS]</a>
   <a href="/sass/" class="category-link">[Sass]</a>
@@ -180,18 +1500,19 @@
   </p>
 </li>
 
-        
-          <li class="archive-item">
+      
+        <li class="archive-item">
     <h2 class="archive-item__title">
       <a class="archive-item__link archive-item__link--outbound" href="http://www.sitepoint.com/using-sass-error-warn-and-debug-directives/" target="_blank" rel="noopener noreferrer">
         Using Sass&#8217;s @error, @warn, and @debug Directives
-        <svg viewBox="0 0 1024 1024" height="16" width="16">
-          <path class="path1" stroke="inherit" d="M953.396 74.642l-4.028-4.042c-94.148-94.134-248.194-94.134-342.326 0l-218.106 218.136c-94.134 94.132-94.134 248.176 0 342.31l4.026 4.026c7.832 7.848 16.146 14.924 24.736 21.458l79.848-79.85c-9.302-5.494-18.126-12.072-26.116-20.060l-4.042-4.042c-51.114-51.098-51.114-134.272 0-185.39l218.128-218.112c51.116-51.118 134.274-51.118 185.386 0l4.042 4.024c51.1 51.116 51.1 134.292 0 185.39l-98.686 98.686c17.132 42.308 25.248 87.4 24.538 132.386l152.604-152.604c94.134-94.136 94.134-248.178-0.004-342.316zM631.042 388.934c-7.832-7.832-16.146-14.922-24.736-21.44l-79.848 79.832c9.304 5.496 18.126 12.074 26.116 20.062l4.042 4.040c51.116 51.116 51.116 134.272 0 185.388l-218.13 218.134c-51.118 51.102-134.276 51.102-185.388 0l-4.042-4.042c-51.098-51.12-51.098-134.276 0-185.388l98.688-98.686c-17.134-42.306-25.246-87.402-24.538-132.386l-152.602 152.598c-94.136 94.132-94.136 248.178 0 342.324l4.026 4.032c94.152 94.128 248.192 94.128 342.328 0l218.11-218.118c94.134-94.132 94.134-248.194 0-342.326l-4.026-4.024z"></path>
-        </svg>
+        <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" height="16" width="16">
+<path class="path1" stroke="inherit" d="M953.396 74.642l-4.028-4.042c-94.148-94.134-248.194-94.134-342.326 0l-218.106 218.136c-94.134 94.132-94.134 248.176 0 342.31l4.026 4.026c7.832 7.848 16.146 14.924 24.736 21.458l79.848-79.85c-9.302-5.494-18.126-12.072-26.116-20.060l-4.042-4.042c-51.114-51.098-51.114-134.272 0-185.39l218.128-218.112c51.116-51.118 134.274-51.118 185.386 0l4.042 4.024c51.1 51.116 51.1 134.292 0 185.39l-98.686 98.686c17.132 42.308 25.248 87.4 24.538 132.386l152.604-152.604c94.134-94.136 94.134-248.178-0.004-342.316zM631.042 388.934c-7.832-7.832-16.146-14.922-24.736-21.44l-79.848 79.832c9.304 5.496 18.126 12.074 26.116 20.062l4.042 4.040c51.116 51.116 51.116 134.272 0 185.388l-218.13 218.134c-51.118 51.102-134.276 51.102-185.388 0l-4.042-4.042c-51.098-51.12-51.098-134.276 0-185.388l98.688-98.686c-17.134-42.306-25.246-87.402-24.538-132.386l-152.602 152.598c-94.136 94.132-94.136 248.178 0 342.324l4.026 4.032c94.152 94.128 248.192 94.128 342.328 0l218.11-218.118c94.134-94.132 94.134-248.194 0-342.326l-4.026-4.024z"></path>
+</svg>
+
       </a>
     </h2><p class="archive-item__meta">
-    <span class="date">August 26, 2015</span>
-        <span class="categories">
+    <span class="archive-item__date">Aug 26, 2015</span>
+        <span class="archive-item__categories">
           
   <a href="/css/" class="category-link">[CSS]</a>
   <a href="/sass/" class="category-link">[Sass]</a>
@@ -200,18 +1521,19 @@
   </p>
 </li>
 
-        
-          <li class="archive-item">
+      
+        <li class="archive-item">
     <h2 class="archive-item__title">
       <a class="archive-item__link archive-item__link--outbound" href="https://jdsteinbach.com/css-animation/" target="_blank" rel="noopener noreferrer">
         Planning &amp; Implementing Meaningful UI Animations
-        <svg viewBox="0 0 1024 1024" height="16" width="16">
-          <path class="path1" stroke="inherit" d="M953.396 74.642l-4.028-4.042c-94.148-94.134-248.194-94.134-342.326 0l-218.106 218.136c-94.134 94.132-94.134 248.176 0 342.31l4.026 4.026c7.832 7.848 16.146 14.924 24.736 21.458l79.848-79.85c-9.302-5.494-18.126-12.072-26.116-20.060l-4.042-4.042c-51.114-51.098-51.114-134.272 0-185.39l218.128-218.112c51.116-51.118 134.274-51.118 185.386 0l4.042 4.024c51.1 51.116 51.1 134.292 0 185.39l-98.686 98.686c17.132 42.308 25.248 87.4 24.538 132.386l152.604-152.604c94.134-94.136 94.134-248.178-0.004-342.316zM631.042 388.934c-7.832-7.832-16.146-14.922-24.736-21.44l-79.848 79.832c9.304 5.496 18.126 12.074 26.116 20.062l4.042 4.040c51.116 51.116 51.116 134.272 0 185.388l-218.13 218.134c-51.118 51.102-134.276 51.102-185.388 0l-4.042-4.042c-51.098-51.12-51.098-134.276 0-185.388l98.688-98.686c-17.134-42.306-25.246-87.402-24.538-132.386l-152.602 152.598c-94.136 94.132-94.136 248.178 0 342.324l4.026 4.032c94.152 94.128 248.192 94.128 342.328 0l218.11-218.118c94.134-94.132 94.134-248.194 0-342.326l-4.026-4.024z"></path>
-        </svg>
+        <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" height="16" width="16">
+<path class="path1" stroke="inherit" d="M953.396 74.642l-4.028-4.042c-94.148-94.134-248.194-94.134-342.326 0l-218.106 218.136c-94.134 94.132-94.134 248.176 0 342.31l4.026 4.026c7.832 7.848 16.146 14.924 24.736 21.458l79.848-79.85c-9.302-5.494-18.126-12.072-26.116-20.060l-4.042-4.042c-51.114-51.098-51.114-134.272 0-185.39l218.128-218.112c51.116-51.118 134.274-51.118 185.386 0l4.042 4.024c51.1 51.116 51.1 134.292 0 185.39l-98.686 98.686c17.132 42.308 25.248 87.4 24.538 132.386l152.604-152.604c94.134-94.136 94.134-248.178-0.004-342.316zM631.042 388.934c-7.832-7.832-16.146-14.922-24.736-21.44l-79.848 79.832c9.304 5.496 18.126 12.074 26.116 20.062l4.042 4.040c51.116 51.116 51.116 134.272 0 185.388l-218.13 218.134c-51.118 51.102-134.276 51.102-185.388 0l-4.042-4.042c-51.098-51.12-51.098-134.276 0-185.388l98.688-98.686c-17.134-42.306-25.246-87.402-24.538-132.386l-152.602 152.598c-94.136 94.132-94.136 248.178 0 342.324l4.026 4.032c94.152 94.128 248.192 94.128 342.328 0l218.11-218.118c94.134-94.132 94.134-248.194 0-342.326l-4.026-4.024z"></path>
+</svg>
+
       </a>
     </h2><p class="archive-item__meta">
-    <span class="date">July 16, 2015</span>
-        <span class="categories">
+    <span class="archive-item__date">Jul 16, 2015</span>
+        <span class="archive-item__categories">
           
   <a href="/css/" class="category-link">[CSS]</a>
 
@@ -219,45 +1541,158 @@
   </p>
 </li>
 
-        
-      </ul>
+      
+        <li class="archive-item">
+    <h2 class="archive-item__title">
+      <a class="archive-item__link archive-item__link--outbound" href="http://www.creativebloq.com/web-design/switch-css-sass-wordpress-71515681" target="_blank" rel="noopener noreferrer">
+        Switch from CSS to Sass in WordPress
+        <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" height="16" width="16">
+<path class="path1" stroke="inherit" d="M953.396 74.642l-4.028-4.042c-94.148-94.134-248.194-94.134-342.326 0l-218.106 218.136c-94.134 94.132-94.134 248.176 0 342.31l4.026 4.026c7.832 7.848 16.146 14.924 24.736 21.458l79.848-79.85c-9.302-5.494-18.126-12.072-26.116-20.060l-4.042-4.042c-51.114-51.098-51.114-134.272 0-185.39l218.128-218.112c51.116-51.118 134.274-51.118 185.386 0l4.042 4.024c51.1 51.116 51.1 134.292 0 185.39l-98.686 98.686c17.132 42.308 25.248 87.4 24.538 132.386l152.604-152.604c94.134-94.136 94.134-248.178-0.004-342.316zM631.042 388.934c-7.832-7.832-16.146-14.922-24.736-21.44l-79.848 79.832c9.304 5.496 18.126 12.074 26.116 20.062l4.042 4.040c51.116 51.116 51.116 134.272 0 185.388l-218.13 218.134c-51.118 51.102-134.276 51.102-185.388 0l-4.042-4.042c-51.098-51.12-51.098-134.276 0-185.388l98.688-98.686c-17.134-42.306-25.246-87.402-24.538-132.386l-152.602 152.598c-94.136 94.132-94.136 248.178 0 342.324l4.026 4.032c94.152 94.128 248.192 94.128 342.328 0l218.11-218.118c94.134-94.132 94.134-248.194 0-342.326l-4.026-4.024z"></path>
+</svg>
 
-      <div class="pagination">
-        
-          <a href="/page2" class="previous">Previous</a>
-        
-        <span class="page-number">{ 3 of 9 }</span>
-        
-          <a href="/page4" class="next">Next</a>
-        
-      </div>
-    
-  </div>
+      </a>
+    </h2><p class="archive-item__meta">
+    <span class="archive-item__date">Jul 15, 2015</span>
+        <span class="archive-item__categories">
+          
+  <a href="/css/" class="category-link">[CSS]</a>
+  <a href="/sass/" class="category-link">[Sass]</a>
+
+        </span>
+  </p>
+</li>
+
+      
+        <li class="archive-item">
+    <h2 class="archive-item__title">
+      <a class="archive-item__link archive-item__link--outbound" href="http://www.sitepoint.com/sass-maps-vs-nested-lists/" target="_blank" rel="noopener noreferrer">
+        Sass Maps vs. Nested Lists
+        <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" height="16" width="16">
+<path class="path1" stroke="inherit" d="M953.396 74.642l-4.028-4.042c-94.148-94.134-248.194-94.134-342.326 0l-218.106 218.136c-94.134 94.132-94.134 248.176 0 342.31l4.026 4.026c7.832 7.848 16.146 14.924 24.736 21.458l79.848-79.85c-9.302-5.494-18.126-12.072-26.116-20.060l-4.042-4.042c-51.114-51.098-51.114-134.272 0-185.39l218.128-218.112c51.116-51.118 134.274-51.118 185.386 0l4.042 4.024c51.1 51.116 51.1 134.292 0 185.39l-98.686 98.686c17.132 42.308 25.248 87.4 24.538 132.386l152.604-152.604c94.134-94.136 94.134-248.178-0.004-342.316zM631.042 388.934c-7.832-7.832-16.146-14.922-24.736-21.44l-79.848 79.832c9.304 5.496 18.126 12.074 26.116 20.062l4.042 4.040c51.116 51.116 51.116 134.272 0 185.388l-218.13 218.134c-51.118 51.102-134.276 51.102-185.388 0l-4.042-4.042c-51.098-51.12-51.098-134.276 0-185.388l98.688-98.686c-17.134-42.306-25.246-87.402-24.538-132.386l-152.602 152.598c-94.136 94.132-94.136 248.178 0 342.324l4.026 4.032c94.152 94.128 248.192 94.128 342.328 0l218.11-218.118c94.134-94.132 94.134-248.194 0-342.326l-4.026-4.024z"></path>
+</svg>
+
+      </a>
+    </h2><p class="archive-item__meta">
+    <span class="archive-item__date">Jul 14, 2015</span>
+        <span class="archive-item__categories">
+          
+  <a href="/css/" class="category-link">[CSS]</a>
+  <a href="/sass/" class="category-link">[Sass]</a>
+
+        </span>
+  </p>
+</li>
+
+      
+        <li class="archive-item">
+    <h2 class="archive-item__title">
+      <a class="archive-item__link" href="/colorado-sun/">Colorado Sun on Cotton Bureau</a>
+    </h2><p class="archive-item__meta">
+    <span class="archive-item__date">Jul 13, 2015</span>
+        <span class="archive-item__categories">
+          
+  <a href="/misc/" class="category-link">[Misc]</a>
+
+        </span>
+  </p>
+</li>
+
+      
+        <li class="archive-item">
+    <h2 class="archive-item__title">
+      <a class="archive-item__link archive-item__link--outbound" href="http://www.sitepoint.com/style-tiles-sass/" target="_blank" rel="noopener noreferrer">
+        Style Tiles with Sass
+        <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" height="16" width="16">
+<path class="path1" stroke="inherit" d="M953.396 74.642l-4.028-4.042c-94.148-94.134-248.194-94.134-342.326 0l-218.106 218.136c-94.134 94.132-94.134 248.176 0 342.31l4.026 4.026c7.832 7.848 16.146 14.924 24.736 21.458l79.848-79.85c-9.302-5.494-18.126-12.072-26.116-20.060l-4.042-4.042c-51.114-51.098-51.114-134.272 0-185.39l218.128-218.112c51.116-51.118 134.274-51.118 185.386 0l4.042 4.024c51.1 51.116 51.1 134.292 0 185.39l-98.686 98.686c17.132 42.308 25.248 87.4 24.538 132.386l152.604-152.604c94.134-94.136 94.134-248.178-0.004-342.316zM631.042 388.934c-7.832-7.832-16.146-14.922-24.736-21.44l-79.848 79.832c9.304 5.496 18.126 12.074 26.116 20.062l4.042 4.040c51.116 51.116 51.116 134.272 0 185.388l-218.13 218.134c-51.118 51.102-134.276 51.102-185.388 0l-4.042-4.042c-51.098-51.12-51.098-134.276 0-185.388l98.688-98.686c-17.134-42.306-25.246-87.402-24.538-132.386l-152.602 152.598c-94.136 94.132-94.136 248.178 0 342.324l4.026 4.032c94.152 94.128 248.192 94.128 342.328 0l218.11-218.118c94.134-94.132 94.134-248.194 0-342.326l-4.026-4.024z"></path>
+</svg>
+
+      </a>
+    </h2><p class="archive-item__meta">
+    <span class="archive-item__date">Jun  9, 2015</span>
+        <span class="archive-item__categories">
+          
+  <a href="/css/" class="category-link">[CSS]</a>
+  <a href="/sass/" class="category-link">[Sass]</a>
+
+        </span>
+  </p>
+</li>
+
+      
+        <li class="archive-item">
+    <h2 class="archive-item__title">
+      <a class="archive-item__link" href="/follow-passion/">I Honestly Don&#8217;t Know How to &#8220;Follow My Passion&#8221;</a>
+    </h2><p class="archive-item__meta">
+    <span class="archive-item__date">May 29, 2015</span>
+        <span class="archive-item__categories">
+          
+  <a href="/misc/" class="category-link">[Misc]</a>
+
+        </span>
+  </p>
+</li>
+
+      
+        <li class="archive-item">
+    <h2 class="archive-item__title">
+      <a class="archive-item__link" href="/stop-writing/">Stop Writing &#8220;Stop Using&#8221; Posts</a>
+    </h2><p class="archive-item__meta">
+    <span class="archive-item__date">May 28, 2015</span>
+        <span class="archive-item__categories">
+          
+  <a href="/misc/" class="category-link">[Misc]</a>
+
+        </span>
+  </p>
+</li>
+
+      
+    </ul>
+
+    <div class="pagination">
+  
+    <a href="/page2" class="pagination__link previous">
+      <span>Previous</span>
+    </a>
+  
+  <span class="pagination__number">3 of 8</span>
+  
+    <a href="/page4" class="pagination__link next">
+      <span>Next</span>
+    </a>
+  
 </div>
+
+  
+</div>
+
+
   </main><!-- main.site-main -->
-  <footer class="site-footer" role="contentinfo">
-  <div class="l-wrapper">
-    <form class="form form--mailchimp" action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-  <h2 class="site-footer__title">Get New Posts &amp; Other Content in Your Inbox!</h2>
+
+  <footer class="site-footer l-grid" role="contentinfo">
+  <form class="form form--mailchimp" action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <h2 class="site-footer__title">
+    Get New Posts &amp; Other Content in Your Inbox!
+    <span class="site-footer__title-icon"><svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 18"><g stroke-width="1" stroke="currentColor" fill="none"><path d="M0,0 32,0 32,18 0,18z" stroke-width="2"/><path d="M0,0 16,11 32,0"/><path d="M0,18 13,9"/><path d="M19,9 32,18"/></g></svg>
+</span>
+  </h2>
 
   <div class="form__fields" id="mc_embed_signup_scroll">
-    <div class="form__fields-wrapper">
-      <p class="form__required-message hidden"><span class="form__required-asterisk">*</span> indicates required</p>
+    <p class="form__required-message hidden"><span class="form__required-asterisk">*</span> indicates required</p>
 
-      <div class="form__field form__field--email">
-        <label class="form__label" for="mce-EMAIL">Email Address<span class="form__required-asterisk">*</span></label>
-        <input class="form__input form__input--required form__input--email" type="email" name="EMAIL" id="mce-EMAIL">
-      </div>
+    <div class="form__field form__field--email">
+      <label class="form__label" for="mce-EMAIL">Email Address<span class="form__required-asterisk">*</span></label>
+      <input class="form__input form__input--required form__input--email" type="email" name="EMAIL" id="mce-EMAIL">
+    </div>
 
-      <div class="form__field form__field--fname">
-        <label class="form__label" for="mce-FNAME">First Name</label>
-        <input class="form__input" type="text" name="FNAME" id="mce-FNAME">
-      </div>
+    <div class="form__field form__field--fname">
+      <label class="form__label" for="mce-FNAME">First Name</label>
+      <input class="form__input" type="text" name="FNAME" id="mce-FNAME">
+    </div>
 
-      <div class="form__field form__field--lname">
-        <label class="form__label" for="mce-LNAME">Last Name </label>
-        <input class="form__input" type="text" name="LNAME" id="mce-LNAME">
-      </div>
+    <div class="form__field form__field--lname">
+      <label class="form__label" for="mce-LNAME">Last Name </label>
+      <input class="form__input" type="text" name="LNAME" id="mce-LNAME">
     </div>
 
     <p class="form__response-message" id="mce-response"></p>
@@ -266,23 +1701,24 @@
       <input type="text" name="b_e06400c5106eb26339f4a0aea_35bef0e04e" tabindex="-1" value="">
     </label>
 
-    <button class="form__submit button button-alt" type="submit">Subscribe</button>
+    <button class="form__submit button" type="submit">Subscribe</button>
 
     <p class="form__monkey-rewards mc-ref">Powered by <a href="https://www.mailchimp.com/monkey-rewards/?utm_source=freemium_newsletter&utm_medium=email&utm_campaign=monkey_rewards&aid=e06400c5106eb26339f4a0aea&afl=1" target="_blank" rel="noopener nofollow noreferrer" title="MailChimp - email marketing made easy and fun">MailChimp</a></p>
   </div>
 </form>
 
-  </div>
-  <div class="l-wrapper">
+
+  <div class="site-footer__columns">
     <div class="site-footer__column">
       <p>James Steinbach</p>
       <p><a href="mailto:jdsteinbach@gmail.com">jdsteinbach@gmail.com</a></p>
     </div>
+
     <div class="site-footer__column">
         <p>
           <a href="https://github.com/jdsteinbach">
             <span class="icon icon--github">
-              <svg viewBox="0 0 16 16" height="16" width="16">
+              <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16">
   <path fill="currentColor" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
 </svg>
 
@@ -293,7 +1729,7 @@
         <p>
           <a href="https://twitter.com/jdsteinbach">
             <span class="icon icon--twitter">
-              <svg viewBox="0 0 16 16" height="16" width="16">
+              <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16">
   <path fill="currentColor" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
   c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
 </svg>
@@ -303,24 +1739,24 @@
           </a>
         </p>
     </div>
+
     <div class="site-footer__column">
       <p class="text">Front-end architect. <br />Speaker & writer. <br />Sass, CSS animation, RWD & WP.</p>
     </div>
   </div>
 </footer>
 
+
   <script>
   if (window.localStorage) {
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('theme-dark');
-    } else {
-      document.body.classList.remove('theme-dark');
-    }
+    const theme = localStorage.getItem('theme')
+    document.body.dataset.theme = theme ? theme : 'auto'
   }
   </script>
-  <script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
   <script async src="/js/site.js"></script>
+
+  <script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
 </body>
 </html>
-

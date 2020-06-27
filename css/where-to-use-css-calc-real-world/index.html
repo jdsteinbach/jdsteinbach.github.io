@@ -23,125 +23,1569 @@
 
   <meta name="test-pagination" content="">
 
-  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/css/main.css" />
   <link rel="canonical" href="https://jdsteinbach.com/css/where-to-use-css-calc-real-world/" itemprop="url" />
   <link rel="alternate" type="application/rss+xml" title="James Steinbach" href="https://jdsteinbach.com/feed.xml" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e65100" />
-  <meta name="msapplication-TileColor" content="#e65100" />
-  <meta name="theme-color" content="#e65100" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F75123" />
+  <meta name="msapplication-TileColor" content="#602F9A" />
+  <meta name="theme-color" content="#602F9A" />
 </head>
 
-<body class="site">
-  <header class="site-header" role="banner">
-  <div class="l-wrapper l-wrapper--wide">
+<body class="site l-site">
+  <a href="#main" class="skip-link">Skip to Content</a>
+  <header class="site-header l-grid" role="banner">
+  <div class="site-header__content">
     <a class="site-header__title" href="/">James Steinbach</a>
-    <nav class="header-nav" id="header-nav"><a class="header-nav__link" href="/css/" data-order="10">CSS</a><a class="header-nav__link" href="/sass/" data-order="20">Sass</a><a class="header-nav__link" href="/wordpress/" data-order="30">WP</a><a class="header-nav__link" href="/talks/" data-order="35">Talks</a><a class="header-nav__link" href="/about/" data-order="40">About</a><a class="header-nav__link" href="/contact/" data-order="50">Contact</a></nav>
+    <button id="header-menu-toggle" class="site-header__menu-toggle button--icon" aria-expanded="false" aria-controls="header-menu">
+      <span class="hidden">Toggle Menu</span>
+      <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect x="0" y="0" width="512" height="128"/><rect x="0" y="192" width="512" height="128"/><rect x="0" y="384" width="512" height="128"/></svg>
+
+    </button>
+    <div id="header-menu" class="header-menu" aria-hidden="true">
+      <nav class="header-nav" name="Primary"><a class="header-nav__link" href="/css/" data-order="10">CSS</a><a class="header-nav__link" href="/sass/" data-order="20">Sass</a><a class="header-nav__link" href="/wordpress/" data-order="30">WP</a><a class="header-nav__link" href="/talks/" data-order="35">Talks</a><a class="header-nav__link" href="/about/" data-order="40">About</a><a class="header-nav__link" href="/contact/" data-order="50">Contact</a></nav>
+
+      <div class="header-nav__toggle">
+        <form class="theme-toggle" name="Theme Picker">
+  <input class="theme-toggle__input" type="radio" name="theme" id="light" value="light" />
+  <label class="theme-toggle__label" for="light" title="Light Theme">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Light Theme</span>
+  </label>
+  <input class="theme-toggle__input" type="radio" name="theme" id="auto" value="auto" />
+  <label class="theme-toggle__label" for="auto" title="Auto: System Settings">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" class=""></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Auto: System Settings</span>
+  </label>
+  <input class="theme-toggle__input" type="radio" name="theme" id="dark" value="dark" />
+  <label class="theme-toggle__label" for="dark" title="Dark Theme">
+    <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path></svg>
+
+    <span class="theme-toggle__label-text hidden">Dark Theme</span>
+  </label>
+</form>
+
+      </div>
+    </div>
   </div>
 </header>
 
-  <main class="site-main" id="main" role="main">
 
-  <article class="post l-page" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="hero l-hero">
-      
-    <svg viewBox="0 0 64 64" preserveAspectRatio="xMidYMid slice" alt="" role="presentation">
-  <defs>
-    <linearGradient x="0" y="0" x2="1" y2="1" spreadMethod="pad" id="lg">
-      <stop offset="0" stop-color="#131313" stop-opacity="0" />
-      <stop offset=".5" stop-color="#131313" stop-opacity=".05" />
-      <stop offset="1" stop-color="#131313" stop-opacity=".15" />
-    </linearGradient>
-  </defs>
-  <g transform="translate(-14 -14)">
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="0" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="0" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="0" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="0" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="0" />
+  <main class="site-main l-main" id="main" role="main">
 
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="16" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="16" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="16" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="16" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="16" />
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
 
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="32" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="32" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="32" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="32" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="32" />
+  <header class="hero l-hero">
+  <h1 class="hero__title is-long">Where to Use CSS calc() in the Real World</h1>
+  <svg class="hero__bg starfield" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation=".5" />
+    </filter>
+    <rect class="starfield__bg" x="0" y="0" width="1000" height="1000" />
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m645,780l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m557,386l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m104,845l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m353,909l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m848,21l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m743,633l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m425,586l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m297,888l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m693,655l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m967,622l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m124,595l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m206,933l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m110,29l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m233,909l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m133,99l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m276,995l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m282,549l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m692,876l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m403,484l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m129,852l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m666,597l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m391,380l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m654,277l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m174,840l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m61,267l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m795,632l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m120,104l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m875,411l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m316,127l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m576,324l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m728,970l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m886,837l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m519,778l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m713,991l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m765,775l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m765,306l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m922,664l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m466,906l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m351,556l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m975,988l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m652,571l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m290,272l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m833,93l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m963,979l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m422,115l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m136,119l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m242,790l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m789,336l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m398,623l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m731,104l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m119,798l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m845,884l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m101,33l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m861,635l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m273,621l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m675,918l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m665,943l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m970,154l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m135,943l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m397,794l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m525,729l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m842,806l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m133,449l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m408,811l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m453,534l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m964,985l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m963,61l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m266,159l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m375,11l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m846,889l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m105,953l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m795,839l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m732,208l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m88,764l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m401,802l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m836,268l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m458,772l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m183,543l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m269,704l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m585,345l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m119,11l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m657,41l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m265,534l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m231,251l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m710,140l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m121,291l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m771,848l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m960,791l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m203,868l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m676,421l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m474,124l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m274,620l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m589,818l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m8,194l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m96,223l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m811,293l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m313,999l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m886,404l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m540,283l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m656,530l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m578,766l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m708,460l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m862,582l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m570,556l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m663,628l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m722,65l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m123,276l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m75,791l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m704,280l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m443,719l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m675,515l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m173,536l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m707,472l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m723,740l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m160,968l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m149,223l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m211,635l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m13,835l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m809,63l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m353,314l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m506,50l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m658,618l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m303,869l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m103,798l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m453,674l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m811,120l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m707,995l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m893,898l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m936,543l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m45,363l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m92,592l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m779,368l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m654,531l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m937,486l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m816,416l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m576,987l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m746,698l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m66,149l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m228,556l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m327,876l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m377,685l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m755,339l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m889,699l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m295,595l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m926,954l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m173,910l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m150,802l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m654,932l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m671,874l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m295,286l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+      </g>
+    
+  </svg>
+</header>
 
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="48" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="48" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="48" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="48" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="48" />
 
-    <rect width="28" height="28" fill="url(#lg)" y="0" x="64" />
-    <rect width="28" height="28" fill="url(#lg)" y="16" x="64" />
-    <rect width="28" height="28" fill="url(#lg)" y="32" x="64" />
-    <rect width="28" height="28" fill="url(#lg)" y="48" x="64" />
-    <rect width="28" height="28" fill="url(#lg)" y="64" x="64" />
-  </g>
-</svg>
+  <div class="main-content l-grid l-grid--content" itemprop="articleBody">
+    
+  <aside class="post-toc">
+    <button id="toc-toggle" class="post-toc__toggle" aria-controls="toc-list"
+    aria-expanded="false" type="button">Table of Contents</button>
+    <div id="toc-list" class="post-toc__list" aria-hidden="true">
+      <nav class="toc"><ol><li><a href="#using-calc()">Using calc()</a></li><li><a href="#use-cases">Use Cases</a><ol><li><a href="#centered-content-in-full-screen-stripes">Centered Content in Full-Screen Stripes</a></li><li><a href="#mixing-fixed-%26-fluid-grid-columns">Mixing Fixed & Fluid Grid Columns</a></li><li><a href="#pinning-header-and-footer-in-the-viewport">Pinning Header and Footer in the Viewport</a></li></ol></li><li><a href="#don%E2%80%99t-use-cases">Don’t Use Cases</a><ol><li><a href="#for-math-on-compatible-numbers">For math on compatible numbers</a></li><li><a href="#where-your-preprocessor-can-do-the-math-for-you">Where your preprocessor can do the math for you</a></li></ol></li><li><a href="#fallback">Fallback</a></li><li><a href="#additional-resources">Additional Resources</a></li></ol></nav>
+    </div>
+  </aside>
 
 
-      <h1 class="hero__title" itemprop="name title headline">Where to Use CSS calc() in the Real World</h1>
 
-      <p class="hero__meta">
-          <time class="date" datetime=Wed Feb 18 2015 00:00:00 GMT+0000 (Coordinated Universal Time) itemprop="dateCreated pubdate datePublished">February 18, 2015</time>
-          <span class="author" itemprop="author creator">James Steinbach</span>
-          <span class="categories">
-  <a href="/css/" class="category-link">[CSS]</a>
-</span>
-      </p>
-    </header>
-
-    <div class="main-content l-content has-toc" itemprop="articleBody">
-      <p>You can use the <code>calc()</code> function to do math on CSS measurement values in the browser. In this article, we’ll look at the syntax for this useful tool, check out some real world use cases, note some places not to use <code>calc()</code>, and a fallback for older browsers.</p>
-<h2 id="using-calc()">Using <code>calc()</code> <a class="anchor-link" href="#using-calc()" aria-hidden="true">#</a></h2>
+    <p>You can use the <code>calc()</code> function to do math on CSS measurement values in the browser. In this article, we’ll look at the syntax for this useful tool, check out some real world use cases, note some places not to use <code>calc()</code>, and a fallback for older browsers.</p>
+<h2 id="using-calc()">Using <code>calc()</code> <a class="anchor-link" href="#using-calc()">#</a></h2>
 <p>The CSS <code>calc()</code> function puts the user’s browser to work doing math that can’t be done ahead of time by a developer or preprocessor. It’s especially useful for calculating measurements that need to be done in real time, or that use different units.</p>
 <p>The syntax for <code>calc()</code> looks like this:</p>
-<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">.element</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>100% - 2em<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-number">2em</span>);
+}
+</code></pre>
 <p>Supporting browsers will calculate the distance of <code>2em</code> and subtract it from <code>100%</code>. The example above isn’t terribly useful by itself (padding on the parent could probably do the same thing), but it shows how the function is written. The <code>calc()</code> function can do addition, subtraction, multiplication, or division.</p>
-<h2 id="use-cases">Use Cases <a class="anchor-link" href="#use-cases" aria-hidden="true">#</a></h2>
+<h2 id="use-cases">Use Cases <a class="anchor-link" href="#use-cases">#</a></h2>
 <p>Knowing how to use <code>calc()</code> is great, but where is it really useful? Let’s take a look at some great use cases for CSS <code>calc()</code>.</p>
-<h3 id="centered-content-in-full-screen-stripes">Centered Content in Full-Screen Stripes <a class="anchor-link" href="#centered-content-in-full-screen-stripes" aria-hidden="true">#</a></h3>
+<h3 id="centered-content-in-full-screen-stripes">Centered Content in Full-Screen Stripes <a class="anchor-link" href="#centered-content-in-full-screen-stripes">#</a></h3>
 <p>I’ve often been asked to develop sites that have a “striped” content structure: several rows of content are centered, have a fixed max-width, and have background colors or images that extend to the edges of the viewport. A great way to handle this set-up is to use <code>calc()</code> for left/padding on each row:</p>
-<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">.content-row</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">padding-right</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>50% - 600px<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">padding-left</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>50% - 600px<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> #eee<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.content-row:nth-child(even)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> #ccc<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.content-row</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">padding-right</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">50%</span> - <span class="hljs-number">600px</span>);
+  <span class="hljs-attribute">padding-left</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">50%</span> - <span class="hljs-number">600px</span>);
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#eee</span>;
+}
+<span class="hljs-selector-class">.content-row</span><span class="hljs-selector-pseudo">:nth-child(even)</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ccc</span>;
+}
+</code></pre>
 <p>That code sample uses <code>padding</code> with <code>calc()</code> to create a 1200px “container” centered inside the full-width stripes. Alternating stripes will have different gray shades for the background: these colors will extend all the way out the parent element’s edges.</p>
-<h3 id="mixing-fixed-%26-fluid-grid-columns">Mixing Fixed &amp; Fluid Grid Columns <a class="anchor-link" href="#mixing-fixed-%26-fluid-grid-columns" aria-hidden="true">#</a></h3>
+<h3 id="mixing-fixed-%26-fluid-grid-columns">Mixing Fixed &amp; Fluid Grid Columns <a class="anchor-link" href="#mixing-fixed-%26-fluid-grid-columns">#</a></h3>
 <p>You can use <code>calc()</code> to create a layout with both fixed-width and flexible columns.</p>
-<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">.container</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.fixed-column</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.fluid-column</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>100% - 400px<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+}
+<span class="hljs-selector-class">.fixed-column</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">float</span>: left;
+}
+<span class="hljs-selector-class">.fluid-column</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-number">400px</span>);
+  <span class="hljs-attribute">float</span>: left;
+}
+</code></pre>
 <p class="codepen">See the Pen <a href="https://codepen.io/jdsteinbach/pen/OPPQdg/">CSS calc() – Fixed & Fluid Columns</a> by James Steinbach (<a href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a href="https://codepen.io/">CodePen</a>.
 <p>With that code, the <code>.fixed-column</code> element will always be 400px wide, while the width of the <code>.fluid-column</code> element’s width will fill the remaining space in <code>.container</code>.</p>
 <p>You could use this technique to put two fixed sidebars around a fluid center column:</p>
-<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">.container</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.sidebar-left,</span><br><span class="highlight-line">.sidebar-right</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.fluid-column</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>100% - 600px<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+}
+<span class="hljs-selector-class">.sidebar-left</span>,
+<span class="hljs-selector-class">.sidebar-right</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">float</span>: left;
+}
+<span class="hljs-selector-class">.fluid-column</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-number">600px</span>);
+  <span class="hljs-attribute">float</span>: left;
+}
+</code></pre>
 <p class="codepen">See the Pen <a href="https://codepen.io/jdsteinbach/pen/oggEOX/">CSS Calc – Fixed & Fluid Columns</a> by James Steinbach (<a href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a href="https://codepen.io/">CodePen</a>.
-<h3 id="pinning-header-and-footer-in-the-viewport">Pinning Header and Footer in the Viewport <a class="anchor-link" href="#pinning-header-and-footer-in-the-viewport" aria-hidden="true">#</a></h3>
+<h3 id="pinning-header-and-footer-in-the-viewport">Pinning Header and Footer in the Viewport <a class="anchor-link" href="#pinning-header-and-footer-in-the-viewport">#</a></h3>
 <p>If you want to create an app-like layout for a web page, you might want to create a fixed-height header and footer pinned to the top and bottom of the viewport. This layout technique will use <code>calc()</code> and the <code>overflow</code> property to create a webapp layout:</p>
-<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">html, body</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.header,</span><br><span class="highlight-line">.footer</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.content</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>100% - 100px<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">overflow-y</span><span class="token punctuation">:</span> scroll<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">html</span>, <span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">overflow</span>: hidden;
+}
+<span class="hljs-selector-class">.header</span>,
+<span class="hljs-selector-class">.footer</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+}
+<span class="hljs-selector-class">.content</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-number">100px</span>);
+  <span class="hljs-attribute">overflow-y</span>: scroll;
+}
+</code></pre>
 <p class="codepen">See the Pen <a href="https://codepen.io/jdsteinbach/pen/YPPegq/">CSS calc() – Pinning Header and Footer in the Viewport</a> by James Steinbach (<a href="https://codepen.io/jdsteinbach">@jdsteinbach</a>) on <a href="https://codepen.io/">CodePen</a>.
-<h2 id="don%E2%80%99t-use-cases">Don’t Use Cases <a class="anchor-link" href="#don%E2%80%99t-use-cases" aria-hidden="true">#</a></h2>
+<h2 id="don%E2%80%99t-use-cases">Don’t Use Cases <a class="anchor-link" href="#don%E2%80%99t-use-cases">#</a></h2>
 <p>Of course, as with any tool, there’s a temptation to use <code>calc()</code> for things it doesn’t need to do. Here are a couple places where you probably don’t need to use <code>calc()</code>.</p>
-<h3 id="for-math-on-compatible-numbers">For math on compatible numbers <a class="anchor-link" href="#for-math-on-compatible-numbers" aria-hidden="true">#</a></h3>
+<h3 id="for-math-on-compatible-numbers">For math on compatible numbers <a class="anchor-link" href="#for-math-on-compatible-numbers">#</a></h3>
 <p>You don’t need to use <code>calc()</code> to do math on numbers that you could do the math for. It’s tempting to use <code>calc()</code> as a way to show your math transparently: <code>width: calc(100% / 12);</code> is a lot more understandable than <code>width: 8.33%;</code>, especially in a complex grid system. However, comments are a better way to explain the math than <code>calc</code>. Also, <code>calc()</code> could be an easy way to avoid doing math (lazy). If you need to be so “fast” that you can’t take time to do division, use a preprocessor! So instead of <code>calc(100% / 3)</code>, just use <code>33.33%</code>. Similarly, don’t use <code>calc(1200px - 40px)</code>, just do math &amp; write <code>1160px</code>.</p>
-<h3 id="where-your-preprocessor-can-do-the-math-for-you">Where your preprocessor can do the math for you <a class="anchor-link" href="#where-your-preprocessor-can-do-the-math-for-you" aria-hidden="true">#</a></h3>
+<h3 id="where-your-preprocessor-can-do-the-math-for-you">Where your preprocessor can do the math for you <a class="anchor-link" href="#where-your-preprocessor-can-do-the-math-for-you">#</a></h3>
 <p>If you’re using Sass or another CSS preprocessor, you’ve got a toolkit of functions to convert units and do math for you without needing <code>calc()</code>.</p>
-<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">.element</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>1200px - 4em<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">1200px</span> - <span class="hljs-number">4em</span>);
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;
+}
+</code></pre>
 <p>A preprocessor can convert pixels to ems &amp; do that for you. For example, if you’re using Bourbon, use <a href="https://bourbon.io/docs/#px-to-em"><code>em()</code></a>.</p>
-<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">.element</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">em</span><span class="token punctuation">(</span>1200px<span class="token punctuation">)</span> - 4em<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
-<h2 id="fallback">Fallback <a class="anchor-link" href="#fallback" aria-hidden="true">#</a></h2>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">em</span>(<span class="hljs-number">1200px</span>) - <span class="hljs-number">4em</span>;
+}
+</code></pre>
+<h2 id="fallback">Fallback <a class="anchor-link" href="#fallback">#</a></h2>
 <p>All this <code>calc()</code> stuff is cool, but what about support for older browsers that can’t handle it? <a href="https://caniuse.com/#feat=calc">Here are a few holdouts.</a> You can provide a fallback pretty easily. Let’s take a fixed + fluid column layout as an example:</p>
-<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">.fixed-column</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.fluid-column</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>100% - 300px<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.fixed-column</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+}
+<span class="hljs-selector-class">.fluid-column</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-number">300px</span>);
+}
+</code></pre>
 <p>To provide a good fallback, wrap the fixed value in <code>calc()</code> even though it’s not necessary, then provide whatever non-<code>calc()</code> fallbacks you need:</p>
-<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">.fixed-column</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> 33%<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>300px<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token selector">.fluid-column</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> 67%<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>100% - 300px<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.fixed-column</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">33%</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">300px</span>);
+}
+<span class="hljs-selector-class">.fluid-column</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">67%</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-number">300px</span>);
+}
+</code></pre>
 <p>Now browsers that can’t handle <code>calc()</code> will ignore it (including the fixed pixel measurement) and use the simple percentage fallback.</p>
-<h2 id="additional-resources">Additional Resources <a class="anchor-link" href="#additional-resources" aria-hidden="true">#</a></h2>
+<h2 id="additional-resources">Additional Resources <a class="anchor-link" href="#additional-resources">#</a></h2>
 <p>The following posts have some more examples of <code>calc()</code> usage:</p>
 <ul>
 <li><a target="_blank" rel="noopener nofollow noreferrer" href="https://www.sitepoint.com/css3-calc-function/">SitePoint</a></li>
@@ -151,37 +1595,36 @@
 <li><a target="_blank" rel="noopener nofollow noreferrer" href="https://www.hongkiat.com/blog/css3-calc-function/">Hongkiat</a></li>
 </ul>
 
+  </div>
+</article>
 
-      <aside class="post-toc">
-        <h5 class="post-toc__title">Table of Contents</h5>
-        <nav class="toc"><ol><li><a href="#using-calc()">Using calc()</a></li><li><a href="#use-cases">Use Cases</a><ol><li><a href="#centered-content-in-full-screen-stripes">Centered Content in Full-Screen Stripes</a></li><li><a href="#mixing-fixed-%26-fluid-grid-columns">Mixing Fixed & Fluid Grid Columns</a></li><li><a href="#pinning-header-and-footer-in-the-viewport">Pinning Header and Footer in the Viewport</a></li></ol></li><li><a href="#don%E2%80%99t-use-cases">Don’t Use Cases</a><ol><li><a href="#for-math-on-compatible-numbers">For math on compatible numbers</a></li><li><a href="#where-your-preprocessor-can-do-the-math-for-you">Where your preprocessor can do the math for you</a></li></ol></li><li><a href="#fallback">Fallback</a></li><li><a href="#additional-resources">Additional Resources</a></li></ol></nav>
-      </aside>
-    </div>
-  </article>
-    </main><!-- main.site-main -->
-  <footer class="site-footer" role="contentinfo">
-  <div class="l-wrapper">
-    <form class="form form--mailchimp" action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-  <h2 class="site-footer__title">Get New Posts &amp; Other Content in Your Inbox!</h2>
+
+  </main><!-- main.site-main -->
+
+  <footer class="site-footer l-grid" role="contentinfo">
+  <form class="form form--mailchimp" action="//jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <h2 class="site-footer__title">
+    Get New Posts &amp; Other Content in Your Inbox!
+    <span class="site-footer__title-icon"><svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 18"><g stroke-width="1" stroke="currentColor" fill="none"><path d="M0,0 32,0 32,18 0,18z" stroke-width="2"/><path d="M0,0 16,11 32,0"/><path d="M0,18 13,9"/><path d="M19,9 32,18"/></g></svg>
+</span>
+  </h2>
 
   <div class="form__fields" id="mc_embed_signup_scroll">
-    <div class="form__fields-wrapper">
-      <p class="form__required-message hidden"><span class="form__required-asterisk">*</span> indicates required</p>
+    <p class="form__required-message hidden"><span class="form__required-asterisk">*</span> indicates required</p>
 
-      <div class="form__field form__field--email">
-        <label class="form__label" for="mce-EMAIL">Email Address<span class="form__required-asterisk">*</span></label>
-        <input class="form__input form__input--required form__input--email" type="email" name="EMAIL" id="mce-EMAIL">
-      </div>
+    <div class="form__field form__field--email">
+      <label class="form__label" for="mce-EMAIL">Email Address<span class="form__required-asterisk">*</span></label>
+      <input class="form__input form__input--required form__input--email" type="email" name="EMAIL" id="mce-EMAIL">
+    </div>
 
-      <div class="form__field form__field--fname">
-        <label class="form__label" for="mce-FNAME">First Name</label>
-        <input class="form__input" type="text" name="FNAME" id="mce-FNAME">
-      </div>
+    <div class="form__field form__field--fname">
+      <label class="form__label" for="mce-FNAME">First Name</label>
+      <input class="form__input" type="text" name="FNAME" id="mce-FNAME">
+    </div>
 
-      <div class="form__field form__field--lname">
-        <label class="form__label" for="mce-LNAME">Last Name </label>
-        <input class="form__input" type="text" name="LNAME" id="mce-LNAME">
-      </div>
+    <div class="form__field form__field--lname">
+      <label class="form__label" for="mce-LNAME">Last Name </label>
+      <input class="form__input" type="text" name="LNAME" id="mce-LNAME">
     </div>
 
     <p class="form__response-message" id="mce-response"></p>
@@ -190,23 +1633,24 @@
       <input type="text" name="b_e06400c5106eb26339f4a0aea_35bef0e04e" tabindex="-1" value="">
     </label>
 
-    <button class="form__submit button button-alt" type="submit">Subscribe</button>
+    <button class="form__submit button" type="submit">Subscribe</button>
 
     <p class="form__monkey-rewards mc-ref">Powered by <a href="https://www.mailchimp.com/monkey-rewards/?utm_source=freemium_newsletter&utm_medium=email&utm_campaign=monkey_rewards&aid=e06400c5106eb26339f4a0aea&afl=1" target="_blank" rel="noopener nofollow noreferrer" title="MailChimp - email marketing made easy and fun">MailChimp</a></p>
   </div>
 </form>
 
-  </div>
-  <div class="l-wrapper">
+
+  <div class="site-footer__columns">
     <div class="site-footer__column">
       <p>James Steinbach</p>
       <p><a href="mailto:jdsteinbach@gmail.com">jdsteinbach@gmail.com</a></p>
     </div>
+
     <div class="site-footer__column">
         <p>
           <a href="https://github.com/jdsteinbach">
             <span class="icon icon--github">
-              <svg viewBox="0 0 16 16" height="16" width="16">
+              <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16">
   <path fill="currentColor" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
 </svg>
 
@@ -217,7 +1661,7 @@
         <p>
           <a href="https://twitter.com/jdsteinbach">
             <span class="icon icon--twitter">
-              <svg viewBox="0 0 16 16" height="16" width="16">
+              <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16">
   <path fill="currentColor" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
   c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
 </svg>
@@ -227,24 +1671,24 @@
           </a>
         </p>
     </div>
+
     <div class="site-footer__column">
       <p class="text">Front-end architect. <br />Speaker & writer. <br />Sass, CSS animation, RWD & WP.</p>
     </div>
   </div>
 </footer>
 
+
   <script>
   if (window.localStorage) {
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('theme-dark');
-    } else {
-      document.body.classList.remove('theme-dark');
-    }
+    const theme = localStorage.getItem('theme')
+    document.body.dataset.theme = theme ? theme : 'auto'
   }
   </script>
-  <script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
   <script async src="/js/site.js"></script>
+
+  <script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
 </body>
 </html>
-
