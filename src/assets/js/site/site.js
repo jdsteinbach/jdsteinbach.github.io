@@ -116,10 +116,14 @@ if ('localStorage' in window) {
 /*
  * Visibility Toggle
  */
-const visibilityToggle = toggle => {
+const visibilityToggle = (toggle, externalClick, escapeKey, focusLeaves) => {
+  externalClick = externalClick || false
+  escapeKey = escapeKey || false
+  focusLeaves = focusLeaves || false
+
   const widget = toggle
     ? document.getElementById(toggle.getAttribute('aria-controls'))
-    : false;
+    : false
 
   if (widget) {
     const open = () => {
@@ -150,7 +154,7 @@ const visibilityToggle = toggle => {
       }).length
     }
 
-    if (lastFocusableEl) {
+    if (focusLeaves && lastFocusableEl) {
       lastFocusableEl.addEventListener('blur', e => {
         if (!widgetHasFocusedLink(e.relatedTarget)) {
           close()
@@ -161,6 +165,7 @@ const visibilityToggle = toggle => {
     // Close on Escape key
     document.addEventListener('keyup', e => {
       if (
+        escapeKey &&
         "keyCode" in e &&
         e.keyCode === 27 &&
         widget.getAttribute('aria-hidden') !== 'true'
@@ -172,6 +177,7 @@ const visibilityToggle = toggle => {
     // Close on click outside of widget
     document.addEventListener('click', e => {
       if (
+        externalClick &&
         e.target !== toggle &&
         !widget.contains(e.target) &&
         widget.getAttribute('aria-hidden') !== 'true'
@@ -184,7 +190,10 @@ const visibilityToggle = toggle => {
 }
 
 visibilityToggle(
-  document.getElementById('toc-toggle')
+  document.getElementById('toc-toggle'),
+  true,
+  true,
+  true
 )
 
 visibilityToggle(
