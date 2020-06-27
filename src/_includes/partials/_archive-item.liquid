@@ -1,0 +1,28 @@
+<li class="archive-item">
+  {%- if post.data.outbound_url %}
+    <h2 class="archive-item__title">
+      <a class="archive-item__link archive-item__link--outbound" href="{{ post.data.outbound_url }}" target="_blank" rel="noopener noreferrer">
+        {{ post.data.title }}
+        {% include images/icon-link %}
+      </a>
+    </h2>
+  {%- else %}
+    <h2 class="archive-item__title">
+      <a class="archive-item__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.data.title }}</a>
+    </h2>
+  {%- endif %}
+  {%- if post.data.excerpt -%}
+    <p class="archive-item__excerpt">{{ post.data.excerpt }}</p>
+  {%- endif -%}
+  <p class="archive-item__meta">
+    <span class="archive-item__date">{{ post.date | date: "%b %e, %Y" }}</span>
+    {%- if cat %}
+    {%- else %}
+      {%- if post.data.categories %}
+        <span class="archive-item__categories">
+          {% include partials/_categories %}
+        </span>
+      {%- endif %}
+    {%- endif %}
+  </p>
+</li>

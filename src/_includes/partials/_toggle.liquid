@@ -1,0 +1,17 @@
+<form class="theme-toggle" name="Theme Picker">
+  <input class="theme-toggle__input" type="radio" name="theme" id="light" value="light" />
+  <label class="theme-toggle__label" for="light" title="Light Theme">
+    {% include images/toggle-light %}
+    <span class="theme-toggle__label-text hidden">Light Theme</span>
+  </label>
+  <input class="theme-toggle__input" type="radio" name="theme" id="auto" value="auto" />
+  <label class="theme-toggle__label" for="auto" title="Auto: System Settings">
+    {% include images/toggle-auto %}
+    <span class="theme-toggle__label-text hidden">Auto: System Settings</span>
+  </label>
+  <input class="theme-toggle__input" type="radio" name="theme" id="dark" value="dark" />
+  <label class="theme-toggle__label" for="dark" title="Dark Theme">
+    {% include images/toggle-dark %}
+    <span class="theme-toggle__label-text hidden">Dark Theme</span>
+  </label>
+</form>

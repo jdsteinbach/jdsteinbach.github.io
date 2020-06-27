@@ -1,22 +1,41 @@
-const {URL} = require('url')
-const {DateTime} = require('luxon')
-const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const { URL } = require('url')
+const { DateTime } = require('luxon')
 const pluginTOC = require('eleventy-plugin-toc')
+const markdownIt = require('markdown-it')
+const markdownItAnchor = require('markdown-it-anchor')
+const markdownItHighlightJS = require('markdown-it-highlightjs')
+const typogr = require('typogr')
+
+const mdOptions = {
+  html: true,
+  breaks: true,
+  linkify: true,
+  typographer: true
+}
+const mdAnchorOpts = {
+  permalink: true,
+  permalinkClass: 'anchor-link',
+  permalinkSymbol: '#',
+  level: [1, 2, 3, 4]
+}
 
 const formatDate = date => DateTime.fromJSDate(new Date(date)).toISO({includeOffset: true, suppressMilliseconds: true})
 
 module.exports = eleventyConfig => {
-  eleventyConfig.addPlugin(pluginSyntaxHighlight)
+  // Markdown
+  eleventyConfig.setLibrary(
+    'md',
+    markdownIt(mdOptions)
+      .use(markdownItAnchor, mdAnchorOpts)
+      .use(markdownItHighlightJS)
+  )
+
+  // Plugins
   eleventyConfig.addPlugin(pluginTOC)
 
-  eleventyConfig.addLayoutAlias('post', 'layouts/post.liquid')
-  eleventyConfig.addLayoutAlias('page', 'layouts/page.liquid')
-  eleventyConfig.addLayoutAlias('category', 'layouts/category.liquid')
-  eleventyConfig.addLayoutAlias('blog', 'layouts/blog.liquid')
-  eleventyConfig.addLayoutAlias('feed', 'layouts/feed.liquid')
-
-  eleventyConfig.addFilter('imageID', titleString => {
-    return titleString.length % 5 + 1
+  // Filters
+  eleventyConfig.addFilter('random', max => {
+    return Math.round(Math.random() * max)
   })
 
   eleventyConfig.addFilter('xml_friendly', string => {
@@ -25,11 +44,11 @@ module.exports = eleventyConfig => {
       .replace(/<br>/g, '<br />')
   })
 
-  eleventyConfig.addFilter('paginate_better', id => (id > 0) ? `page${id + 1}` : '')
+  eleventyConfig.addFilter('paginate_legacy', id => (id > 0) ? `page${id + 1}` : '')
+
+  eleventyConfig.addFilter('paginate_better', id => (id > 0) ? `${id + 1}/` : '')
 
   eleventyConfig.addFilter('fix_links', url => url.replace('/index.html', ''))
-
-  eleventyConfig.addFilter('debug', something => typeof something)
 
   eleventyConfig.addFilter('rss_last_updated_date', posts => {
     const latest = posts.sort((a, b) => {
@@ -42,93 +61,62 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addFilter('rss_date', date => formatDate(date))
 
+  eleventyConfig.addFilter('title_class', string => string.length > 30 ? ' is-long' : '')
+
+  // eleventyConfig.addTransform('no_orphan', (content, outputPath) => {
+  //   if( outputPath.endsWith(".html") ) {
+  //     return typogr(content).chain().widont().value()
+  //   }
+  //   return content
+  // })
+
   // Create Posts Collection
   eleventyConfig.addCollection('posts', collection => {
     return collection
       .getAllSorted()
       .reverse()
       .filter(item => {
-        return item.inputPath.match(/^\.\/posts\//) !== null
+        return item.inputPath.match(/^\.\/src\/posts\//) !== null
       })
   })
 
-  // Create Posts Collection
+  // Create Posts Index Collection
   eleventyConfig.addCollection('postsIndex', collection => {
     return collection
       .getAllSorted()
       .reverse()
       .filter(item => {
-        return item.inputPath.match(/^\.\/posts\//) !== null
+        return item.inputPath.match(/^\.\/src\/posts\//) !== null
       })
       .slice(0, 8)
   })
 
-  // Create Posts Collection
+  // Create Posts Feed Collection
   eleventyConfig.addCollection('postsFeed', collection => {
     return collection
       .getAllSorted()
       .reverse()
       .filter(item => {
-        return item.inputPath.match(/^\.\/posts\//) !== null
+        return item.inputPath.match(/^\.\/src\/posts\//) !== null
       })
       .slice(0, 10)
   })
 
   // Create Category Collections
-  eleventyConfig.addCollection('CSS', collection => {
-    return collection
-      .getAllSorted()
-      .reverse()
-      .filter(item => {
-        if ('categories' in item.data) {
-          return item.data.categories.filter(category => {
-            return category.toLowerCase() === 'CSS'.toLowerCase()
-          }).length > 0
-        }
-        return false
-      })
-  })
-
-  eleventyConfig.addCollection('Sass', collection => {
-    return collection
-      .getAllSorted()
-      .reverse()
-      .filter(item => {
-        if ('categories' in item.data) {
-          return item.data.categories.filter(category => {
-            return category.toLowerCase() === 'Sass'.toLowerCase()
-          }).length > 0
-        }
-        return false
-      })
-  })
-
-  eleventyConfig.addCollection('Misc', collection => {
-    return collection
-      .getAllSorted()
-      .reverse()
-      .filter(item => {
-        if ('categories' in item.data) {
-          return item.data.categories.filter(category => {
-            return category.toLowerCase() === 'Misc'.toLowerCase()
-          }).length > 0
-        }
-        return false
-      })
-  })
-
-  eleventyConfig.addCollection('WordPress', collection => {
-    return collection
-      .getAllSorted()
-      .reverse()
-      .filter(item => {
-        if ('categories' in item.data) {
-          return item.data.categories.filter(category => {
-            return category.toLowerCase() === 'WordPress'.toLowerCase()
-          }).length > 0
-        }
-        return false
-      })
+  Array.from(['CSS', 'Sass', 'Misc', 'WordPress', 'Performance']).map(cat => {
+    eleventyConfig.addCollection(cat, collection => {
+      return collection
+        .getAllSorted()
+        .filter(item => {
+          if ('categories' in item.data) {
+            return item.data.categories.filter(category => {
+              return category.toLowerCase() === cat.toLowerCase()
+            }).length > 0
+          }
+          return false
+        })
+        .reverse()
+    })
   })
 
   // Create Nav Collection
@@ -144,42 +132,32 @@ module.exports = eleventyConfig => {
   })
 
   // Pass through directories
-  eleventyConfig.addPassthroughCopy('images')
-  eleventyConfig.addPassthroughCopy('webfonts')
-  eleventyConfig.addPassthroughCopy('site.webmanifest')
-  eleventyConfig.addPassthroughCopy('android-chrome-192x192.png')
-  eleventyConfig.addPassthroughCopy('android-chrome-512x512.png')
-  eleventyConfig.addPassthroughCopy('apple-touch-icon.png')
-  eleventyConfig.addPassthroughCopy('safari-pinned-tab.svg')
-  eleventyConfig.addPassthroughCopy('favicon.ico')
-  eleventyConfig.addPassthroughCopy('favicon-16x16.png')
-  eleventyConfig.addPassthroughCopy('A')
-  eleventyConfig.addPassthroughCopy('CNAME')
+  eleventyConfig.addPassthroughCopy('src/images')
+  eleventyConfig.addPassthroughCopy('src/assets/fonts')
+  eleventyConfig.addPassthroughCopy({'src/assets/js/site/site.js': 'js/site.js'})
+  eleventyConfig.addPassthroughCopy('src/site.webmanifest')
+  eleventyConfig.addPassthroughCopy('src/android-chrome-192x192.png')
+  eleventyConfig.addPassthroughCopy('src/android-chrome-512x512.png')
+  eleventyConfig.addPassthroughCopy('src/apple-touch-icon.png')
+  eleventyConfig.addPassthroughCopy('src/safari-pinned-tab.svg')
+  eleventyConfig.addPassthroughCopy('src/favicon.ico')
+  eleventyConfig.addPassthroughCopy('src/favicon.svg')
+  eleventyConfig.addPassthroughCopy('src/A')
+  eleventyConfig.addPassthroughCopy('src/CNAME')
+  eleventyConfig.addPassthroughCopy('src/.nojekyll')
 
-  /* Markdown */
-  let markdownIt = require('markdown-it')
-  let markdownItAnchor = require('markdown-it-anchor')
-  let options = {
-    html: true,
-    breaks: true,
-    linkify: true,
-    typographer: true
-  }
-  let opts = {
-    permalink: true,
-    permalinkClass: 'anchor-link',
-    permalinkSymbol: '#',
-    level: [1, 2, 3, 4]
-  }
-
-  eleventyConfig.setLibrary('md', markdownIt(options).use(markdownItAnchor, opts))
+  // More watched files
+  eleventyConfig.addWatchTarget('./src/assets/js/**/*.js')
+  eleventyConfig.addWatchTarget('./src/assets/scss/**/*.scss')
 
   return {
     templateFormats: [
-      'md'
+      'liquid',
+      'md',
+      '11ty.js'
     ],
     dir: {
-      input: '.',
+      input: './src',
       includes: '_includes',
       data: '_data',
       output: '_site'

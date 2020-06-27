@@ -1,0 +1,119 @@
+.header-menu {
+  margin-left: auto;
+  padding-right: var(--horizontal-spacing);
+  padding-bottom: $small-spacing;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  border-bottom: 2px solid var(--color-accent-1);
+  transform-origin: center top;
+  transition: opacity $duration, transform $duration $easing;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--header-bg);
+    opacity: var(--header-opacity, 1);
+
+    @include bp(nav) {
+      content: none;
+    }
+  }
+
+  .js & {
+    transform: none;
+    opacity: 1;
+
+    @include bp(nav) {
+      padding-bottom: 0;
+      justify-content: flex-start;
+      position: static;
+      transform: none;
+      opacity: 1;
+      border-bottom: 0;
+    }
+  }
+
+  .js &[aria-hidden="true"] {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+
+  @include bp(nav) {
+    padding-right: auto;
+  }
+}
+
+.header-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+
+  @include bp(nav) {
+    display: inline-block;
+  }
+}
+
+.header-nav__link {
+  --color-link: var(--color-link-light);
+  --color-link-alt: var(--color-link-light-alt);
+
+  margin: 0 $tiny-spacing;
+  padding: $tiny-spacing;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  font-size: var(--fs-small);
+  font-variation-settings: "wght" var(--fw-light);
+  font-weight: var(--fw-light);
+  letter-spacing: (1em / 8);
+  text-transform: lowercase;
+  font-feature-settings: "smcp" 1;
+  text-decoration: none;
+
+  &[href*="hire"] {
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    font-variation-settings: "wght" var(--fw-heavy);
+    font-weight: var(--fw-heavy);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: $tiny-spacing solid currentColor;
+    color: var(--color-accent-3);
+    transform: scaleX(0) translateY(.25em);
+    opacity: 0;
+    z-index: 0;
+    transition: opacity $duration, transform $duration $easing;
+  }
+
+  @include ha {
+    &::before {
+      transform: scaleX(1) translateY(0);
+      opacity: .5;
+    }
+  }
+}
+
+.header-nav__toggle {
+  @include bp(nav) {
+    margin-left: $small-spacing;
+  }
+}

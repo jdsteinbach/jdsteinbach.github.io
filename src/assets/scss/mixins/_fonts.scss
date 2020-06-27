@@ -1,0 +1,17 @@
+@mixin fonts($family, $file, $style, $weight) {
+  @font-face {
+    font-family: $family;
+    src: url("/assets/fonts/#{$file}.woff2") format("woff2");
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
+  }
+}
+
+@mixin v-fonts($family, $file-name, $style, $format) {
+  @font-face {
+    font-family: $family;
+    src: url("/assets/fonts/#{$file-name}") format("#{$format}");
+    font-style: $style;
+  }
+}

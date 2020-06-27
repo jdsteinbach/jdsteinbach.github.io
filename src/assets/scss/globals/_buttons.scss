@@ -1,0 +1,67 @@
+button,
+.button,
+[type="submit"] {
+  --button-box-shadow: var(--color-accent-2);
+
+  margin-bottom: var(--button-bottom-margin);
+  padding: $small-spacing;
+  display: inline-block;
+  appearance: none;
+  border: 0;
+  border-radius: $border-radius-default;
+  font-size: var(--fs-small);
+  font-family: var(--ff-body);
+  font-variation-settings: "wght" var(--fw-bold);
+  font-weight: var(--fw-bold);
+  letter-spacing: (1em / 16);
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
+  background-color: var(--button-bg, var(--color-text-accent));
+  color: var(--button-fg, var(--color-text-light));
+  cursor: pointer;
+  box-shadow:
+    -1px 1px 0 0 var(--button-box-shadow),
+    -2px 2px 0 0 var(--button-box-shadow),
+    -3px 3px 0 0 var(--button-box-shadow);
+  transition:
+    color $duration,
+    opacity $duration,
+    border-color $duration,
+    background-color $duration,
+    transform $duration $easing;
+
+  &.button-alt {
+    --button-box-shadow: var(--color-accent-1);
+
+    background-color: var(--button-bg-alt, var(--color-accent-1));
+  }
+
+  @include ha {
+    color: var(--color-text-light);
+    background-color: var(--button-bg-hover, var(--color-purple-dark));
+
+    &.button-alt {
+      background-color: var(--button-bg-hover-alt, var(--color-highlight-alt));
+    }
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3 px;
+  }
+
+  &::-moz-focus-inner { // Firefox
+    border: 0;
+  }
+}
+
+.button--icon {
+  padding: $tiny-spacing;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  box-shadow: none;
+}

@@ -1,0 +1,40 @@
+// COLORS
+$color-gray: #312D2B;
+$color-purple: #602F9A;
+$color-pink: #B22AA8;
+$color-orange: #F75123;
+$color-goldenrod: #FA6D26;
+$color-yellow: #FCA22B;
+
+$color-white: #FFF;
+$color-black: mix($color-gray, #000);
+
+$color-background: mix($color-yellow, $color-white);
+$color-background-pale: mix($color-yellow, $color-white, 33%);
+
+// BORDERS
+$border-default: 1px solid $color-orange;
+$border-radius-default: 0;
+
+// RWD
+$breakpoints: (
+  medium: 40em,
+  nav: 50em,
+  large: 60em,
+  xlarge: 80em
+);
+
+// SPACING
+$base-spacing: 1.6rem;
+$large-spacing: $base-spacing * 2;
+$giant-spacing: $base-spacing * 4;
+$small-spacing: $base-spacing / 2;
+$tiny-spacing: $base-spacing / 4;
+
+// LAYOUT
+$max-width: 40rem;
+$max-width--wide: 60rem;
+
+// ANIMATION
+$duration: .15s;
+$easing: ease-in-out;

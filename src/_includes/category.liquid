@@ -1,0 +1,16 @@
+---
+layout: _base
+---
+
+{%- assign title = title | append: " Archive" -%}
+{% include partials/_hero %}
+
+<div class="l-grid">
+  <ul class="posts-archive">
+    {%- for post in pagination.items %}
+      {% include partials/_archive-item %}
+    {%- endfor %}
+  </ul>
+
+  {% include partials/_pagination %}
+</div>

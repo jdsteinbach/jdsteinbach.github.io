@@ -1,0 +1,20 @@
+<header class="site-header l-grid" role="banner">
+  <div class="site-header__content">
+    <a class="site-header__title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <button id="header-menu-toggle" class="site-header__menu-toggle button--icon" aria-expanded="false" aria-controls="header-menu">
+      <span class="hidden">Toggle Menu</span>
+      {% include images/icon-menu %}
+    </button>
+    <div id="header-menu" class="header-menu" aria-hidden="true">
+      <nav class="header-nav" name="Primary">
+        {%- for link in collections.nav -%}
+          <a class="header-nav__link" href="{{ link.url | prepend: site.baseurl }}" data-order="{{ link.data.menu_order }}">{{ link.data.menu_title }}</a>
+        {%- endfor -%}
+      </nav>
+
+      <div class="header-nav__toggle">
+        {% include partials/_toggle %}
+      </div>
+    </div>
+  </div>
+</header>

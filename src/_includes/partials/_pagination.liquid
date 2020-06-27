@@ -1,0 +1,17 @@
+<div class="pagination">
+  {% if pagination.previousPageLink %}
+    <a href="{{ pagination.previousPageLink | fix_links }}" class="pagination__link previous">
+      <span>Previous</span>
+    </a>
+  {% else %}
+    <span class="previous"></span>
+  {% endif %}
+  <span class="pagination__number">{{ pagination.pageNumber | plus: 1 }} of {{ pagination.pageLinks | size }}</span>
+  {% if pagination.nextPageLink %}
+    <a href="{{ pagination.nextPageLink | fix_links }}" class="pagination__link next">
+      <span>Next</span>
+    </a>
+  {% else %}
+    <span class="next"></span>
+  {% endif %}
+</div>

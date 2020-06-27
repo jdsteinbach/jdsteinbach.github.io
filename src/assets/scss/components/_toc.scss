@@ -1,0 +1,96 @@
+.post-toc {
+  .js & {
+    --top: calc(-50vw * var(--tilt-tan));
+
+    position: absolute;
+    top: var(--top);
+    top: m#{i}n(-$large-spacing, var(--top));
+    right: 0;
+  }
+}
+
+.post-toc__toggle {
+  padding: $small-spacing 0;
+  position: relative;
+  border: 0;
+  font-variation-settings: "wght" var(--fw-body);
+  font-weight: var(--fw-body);
+  font-feature-settings: "smcp" 1;
+  text-transform: lowercase;
+  color: var(--color-link);
+  background-color: transparent;
+  box-shadow: none;
+
+  &::after {
+    .js & {
+      content: "▾";
+      padding: 0 0 0 $tiny-spacing;
+      display: inline-block;
+      transform: rotate(0deg) translateY(-.125em);
+      transform-origin: center;
+      alt: "";
+    }
+
+    .js [aria-hidden="false"] & {
+      transform: rotate(180deg) translateY(-.0625em);
+    }
+  }
+
+  @include ha {
+    color: var(--color-link-alt);
+    background-color: transparent;
+  }
+}
+
+// BEM Exception: generated TOC component does not have classes
+.toc {
+  ol {
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-size: var(--fs-small);
+    list-style: decimal;
+    color: var(--color-text);
+
+    ol {
+      list-style: upper-alpha;
+
+      ol {
+        list-style: lower-roman;
+      }
+    }
+  }
+
+  li {
+    margin-top: $tiny-spacing;
+    margin-left: $small-spacing;
+  }
+
+  a {
+    display: inline-block;
+    vertical-align: top;
+
+    .post-toc__list[aria-hidden="true"] & {
+      display: none;
+    }
+  }
+
+  .js & {
+    padding: $tiny-spacing $base-spacing $small-spacing;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 1;
+    background-color: var(--color-background);
+    transform-origin: top center;
+    transform: scaleY(1);
+    transition: opacity $duration, transform $duration ease-in-out;
+  }
+
+  .js [aria-hidden="true"] & {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}

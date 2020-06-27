@@ -1,0 +1,115 @@
+.site-footer {
+  --max-width: #{$max-width--wide};
+  --color-link: var(--color-link-light);
+  --color-link-alt: var(--color-link-light-alt);
+  --color-focus: var(--color-link-light-alt);
+  --field-bg-alt: var(--color-background-code);
+
+  margin: calc(-50vw * var(--tilt-tan)) 0 0;
+  padding: calc(50vw * var(--tilt-tan) + #{3 * $base-spacing}) 0 calc(100vw * var(--tilt-tan));
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  color: var(--color-text-light);
+  background-color: var(--color-background-dark);
+  -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
+
+  &::before {
+    content: "";
+    margin: 0;
+    width: 100%;
+    height: (3 * $base-spacing);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: skew(0, var(--tilt));
+    transform-origin: left bottom;
+    background-image: linear-gradient(
+      0deg,
+      var(--color-accent-1) 33.3%,
+      var(--color-accent-2) 33.3%,
+      var(--color-accent-2) 66.7%,
+      var(--color-accent-3) 66.7%
+    );
+  }
+
+  &::after {
+    content: "";
+    height: calc(100vw * var(--tilt-tan));
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: inherit;
+    transform: skew(0, var(--tilt));
+    transform-origin: left bottom;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+  }
+
+  br {
+    margin-bottom: $tiny-spacing;
+  }
+}
+
+.site-footer__columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-footer__column {
+  flex-basis: 100%;
+  font-size: var(--fs-small);
+
+  p {
+    margin: 0 0 $tiny-spacing;
+    font-size: inherit;
+  }
+
+  @include bp(medium) {
+    flex-basis: 50%;
+  }
+
+  @include bp(large) {
+    flex-basis: 33%;
+  }
+}
+
+.site-footer__title {
+  margin-top: $small-spacing;
+  margin-bottom: calc(25vw * var(--tilt-tan));
+  position: relative;
+  font-size: var(--fs-heading);
+  font-family: var(--ff-title);
+  transform: skewY(var(--tilt));
+  transform-origin: left bottom;
+}
+
+.site-footer__title-icon {
+  margin-top: $small-spacing;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  color: var(--color-accent-1);
+
+  svg {
+    width: auto;
+    height: calc(33vw * var(--tilt-tan));
+  }
+}

@@ -1,0 +1,17 @@
+// Mailchimp archive styles
+[id="newsletter-archive"] {
+  margin-top: $base-spacing;
+  margin-bottom: $base-spacing;
+  padding-top: $base-spacing;
+  border-top: $border-default;
+
+  .campaign {
+    margin-bottom: $tiny-spacing;
+    // font-family: var(--ff-code);
+    font-feature-settings: "tnum" 1;
+
+    a {
+      font-family: var(--ff-body);
+    }
+  }
+}

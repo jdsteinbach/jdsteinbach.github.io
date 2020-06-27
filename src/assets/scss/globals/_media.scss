@@ -1,0 +1,45 @@
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.alignleft {
+  margin-right: $small-spacing;
+  margin-bottom: $small-spacing;
+  margin-left: 0;
+  float: left;
+  clear: right;
+}
+
+.alignright {
+  margin-right: 0;
+  margin-bottom: $small-spacing;
+  margin-left: $small-spacing;
+  float: right;
+  clear: left;
+}
+
+.aligncenter {
+  margin-right: auto;
+  margin-bottom: $base-spacing;
+  margin-left: auto;
+}
+
+svg {
+  width: .75em;
+  height: .75em;
+  pointer-events: none;
+
+  .outbound-link & {
+    width: .5em;
+    height: .5em;
+  }
+
+  path {
+    button &,
+    a & {
+      fill: currentColor;
+    }
+  }
+}

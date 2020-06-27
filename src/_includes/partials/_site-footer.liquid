@@ -1,0 +1,37 @@
+<footer class="site-footer l-grid" role="contentinfo">
+  {% include partials/_subscribe %}
+
+  <div class="site-footer__columns">
+    <div class="site-footer__column">
+      <p>{{ site.author_name }}</p>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </div>
+
+    <div class="site-footer__column">
+      {%- if site.github_username %}
+        <p>
+          <a href="https://github.com/{{ site.github_username }}">
+            <span class="icon icon--github">
+              {% include images/icon-gh %}
+            </span>
+            <span class="username">{{ site.github_username }}</span>
+          </a>
+        </p>
+      {%- endif %}
+      {%- if site.twitter_username %}
+        <p>
+          <a href="https://twitter.com/{{ site.twitter_username }}">
+            <span class="icon icon--twitter">
+              {% include images/icon-twitter %}
+            </span>
+            <span class="username">{{ site.twitter_username }}</span>
+          </a>
+        </p>
+      {%- endif %}
+    </div>
+
+    <div class="site-footer__column">
+      <p class="text">{{ site.description }}</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,71 @@
+.theme-toggle {
+  display: none;
+
+  .js & {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    z-index: 1;
+    transform: skewY(var(--tilt));
+  }
+
+  &:focus-within {
+    outline: 2px solid var(--color-light);
+    outline-offset: 2px;
+  }
+}
+
+.theme-toggle__input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.theme-toggle__label {
+  width: $base-spacing;
+  height: $base-spacing;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  color: var(--color-dark);
+
+  &[for="light"] {
+    background-color: var(--color-accent-3);
+  }
+
+  &[for="auto"] {
+    background-color: var(--color-accent-2);
+  }
+
+  &[for="dark"] {
+    background-color: var(--color-accent-1);
+  }
+
+  &:hover,
+  &:active {
+    color: var(--color-purple-dark);
+    outline: 2px solid var(--color-background);
+    outline-offset: -2px;
+  }
+
+  &:focus,
+  .theme-toggle__input:focus + & {
+    outline: 2px solid var(--color-light);
+    z-index: 2;
+  }
+
+  :checked + & {
+    outline: 2px solid var(--color-light);
+    outline-offset: -2px;
+  }
+
+  svg {
+    display: block;
+    width: $small-spacing;
+    height: $small-spacing;
+    fill: currentColor;
+    transform: skewY(calc(-1 * var(--tilt)));
+  }
+}
