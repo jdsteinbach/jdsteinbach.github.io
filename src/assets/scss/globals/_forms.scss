@@ -64,10 +64,11 @@
 }
 
 .form__label {
+  --smcp: 1;
+
   display: block;
   font-size: var(--fs-body);
   text-transform: lowercase;
-  font-feature-settings: "smcp" 1;
 }
 
 .form__input {

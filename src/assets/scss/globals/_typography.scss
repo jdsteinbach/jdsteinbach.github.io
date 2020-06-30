@@ -1,10 +1,7 @@
 body {
   font-size: var(--fs-body);
   font-family: var(--ff-body);
-  font-variation-settings: "wght" var(--fw-body);
-  font-weight: var(--fw-body);
   line-height: var(--lh-body);
-  font-feature-settings: "kern", "liga", "clig", "calt";
   color: var(--color-text);
   background-color: var(--color-background-page);
   scroll-behavior: smooth;
@@ -12,47 +9,79 @@ body {
   z-index: 2;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+span,
+blockquote,
+a,
+button,
+input,
+label,
+b,
+strong,
+i,
+em {
+  font-feature-settings:
+    "kern" var(--kern, 1),
+    "liga" var(--liga, 1),
+    "clig" var(--clig, 1),
+    "calt" var(--calt, 1),
+    "case" var(--case, 1),
+    "ss03" var(--ss03, 1),
+    "tnum" var(--tnum, 0),
+    "smcp" var(--smcp, 0);
+  font-variation-settings:
+    "wght" var(--wght, var(--fw-body));
+  font-weight: var(--fw-body);
+}
+
 h1 {
+  --wght: var(--fw-bold);
+
   font-size: var(--fs-title);
-  font-variation-settings: "wght" var(--fw-bold);
-  font-weight: var(--fw-bold);
   line-height: var(--lh-title);
   color: var(--color-text-alt);
 }
 
 h2 {
+  --wght: var(--fw-medium);
+
   margin-top: $large-spacing;
   margin-bottom: $base-spacing;
   font-size: var(--fs-heading);
-  font-variation-settings: "wght" var(--fw-medium);
-  font-weight: var(--fw-medium);
   color: var(--color-text-alt);
 }
 
 h3 {
+  --wght: var(--fw-medium);
+
   margin-top: $large-spacing;
   margin-bottom: $small-spacing;
   font-size: var(--fs-subheading);
-  font-variation-settings: "wght" var(--fw-medium);
-  font-weight: var(--fw-medium);
   color: var(--color-text-alt);
 }
 
 h4 {
+  --wght: var(--fw-bold);
+
   margin-top: $base-spacing;
   margin-bottom: $small-spacing;
   font-size: var(--fs-subheading);
-  font-variation-settings: "wght" var(--fw-bold);
-  font-weight: var(--fw-bold);
   color: var(--color-text-alt);
 }
 
 h5 {
+  --wght: var(--fw-medium);
+
   margin-top: $small-spacing;
   margin-bottom: $tiny-spacing;
   font-size: var(--fs-body);
-  font-variation-settings: "wght" var(--fw-medium);
-  font-weight: var(--fw-medium);
   letter-spacing: (1em / 32);
   text-transform: uppercase;
   color: var(--color-text-alt);
@@ -82,8 +111,8 @@ p {
 
 b,
 strong {
-  font-variation-settings: "wght" var(--fw-medium);
-  font-weight: var(--fw-medium);
+  --wght: var(--fw-medium);
+
   color: var(--color-text-alt);
 }
 
@@ -94,10 +123,10 @@ em {
 
 .main-content {
   > p:first-child {
+    --wght: var(--fw-lightest);
+
     font-size: var(--fs-blockquote);
     color: var(--color-text-alt);
-    font-variation-settings: "wght" var(--fw-lightest);
-    font-weight: var(--fw-lightest);
   }
 
   > ul,
@@ -150,7 +179,7 @@ em {
     scroll-margin-top: $large-spacing * 2;
 
     em {
-      color: var(-- color-text-accent);
+      color: var(--color-text-accent);
     }
   }
 }

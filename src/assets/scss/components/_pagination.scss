@@ -7,7 +7,6 @@
     1fr 1fr 1fr;
   border-top: $border-default;
   font-size: var(--fs-small);
-  font-feature-settings: "smcp" 1;
 
   .previous {
     --dir: -1;
@@ -35,6 +34,8 @@
 }
 
 .pagination__link {
+  --smcp: 1;
+
   display: grid;
   grid-template:
     "top    text" auto
@@ -83,6 +84,8 @@
 }
 
 .pagination__number {
+  --smcp: 1;
+
   grid-area: center;
   justify-self: center;
 

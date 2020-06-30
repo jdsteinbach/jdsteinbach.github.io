@@ -6,9 +6,9 @@
   border-top: $border-default;
 
   .campaign {
+    --tnum: 1;
+
     margin-bottom: $tiny-spacing;
-    // font-family: var(--ff-code);
-    font-feature-settings: "tnum" 1;
 
     a {
       font-family: var(--ff-body);
