@@ -10,12 +10,12 @@
 }
 
 .post-toc__toggle {
+  --wght: var(--fw-body);
+  --smcp: 1;
+
   padding: $small-spacing 0;
   position: relative;
   border: 0;
-  font-variation-settings: "wght" var(--fw-body);
-  font-weight: var(--fw-body);
-  font-feature-settings: "smcp" 1;
   text-transform: lowercase;
   color: var(--color-link);
   background-color: transparent;

@@ -7,11 +7,11 @@
 }
 
 .archive-item__title {
+  --wght: var(--fw-medium);
+
   margin-bottom: $small-spacing;
   position: relative;
   font-size: var(--fs-heading);
-  font-variation-settings: "wght" var(--fw-medium);
-  font-weight: var(--fw-medium);
 }
 
 .archive-item__excerpt {
@@ -35,8 +35,8 @@
   text-transform: uppercase;
 }
 
-.archive-item__categories {
-  font-feature-settings: "smcp" 1;
+.archive-item__categories a {
+  --smcp: 1;
 }
 
 .archive-item__link {

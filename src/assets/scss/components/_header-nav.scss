@@ -68,6 +68,8 @@
 .header-nav__link {
   --color-link: var(--color-link-light);
   --color-link-alt: var(--color-link-light-alt);
+  --wght: var(--fw-light);
+  --smcp: 1;
 
   margin: 0 $tiny-spacing;
   padding: $tiny-spacing;
@@ -75,18 +77,14 @@
   position: relative;
   z-index: 1;
   font-size: var(--fs-small);
-  font-variation-settings: "wght" var(--fw-light);
-  font-weight: var(--fw-light);
   letter-spacing: (1em / 8);
   text-transform: lowercase;
-  font-feature-settings: "smcp" 1;
   text-decoration: none;
 
   &[href*="hire"] {
+    --wght: var(--fw-heavy);
+
     border: 1px solid currentColor;
-    border-radius: 3px;
-    font-variation-settings: "wght" var(--fw-heavy);
-    font-weight: var(--fw-heavy);
   }
 
   &::before {
