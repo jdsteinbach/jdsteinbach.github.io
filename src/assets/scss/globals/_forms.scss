@@ -173,6 +173,8 @@
   grid-column: 1 / -1;
 }
 
-.error-button {
+.error__link {
+  --smcp: 1;
+
   grid-column: -2 / -1;
 }

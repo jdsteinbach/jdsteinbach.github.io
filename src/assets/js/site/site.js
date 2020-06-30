@@ -77,7 +77,7 @@ fetchForm({
   responseID: 'mc_embed_signup_scroll',
   fieldIDs: [],
   successMsg: 'Thanks, check your inbox to confirm your subscription!',
-  failMsg: '<p class="error error--mailchimp">Sorry, an error occurred and you weren’t subscribed.</p><a class="button error-button" href="https://jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&id=35bef0e04e" target="_blank" rel="noopener noreferrer nofollow">Subscribe Here</a>'
+  failMsg: '<p class="error error--mailchimp">Sorry, an error occurred and you weren’t subscribed.</p><a class="error__link" href="https://jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&id=35bef0e04e" target="_blank" rel="noopener noreferrer nofollow">Subscribe Here Instead</a>'
 })
 
 
