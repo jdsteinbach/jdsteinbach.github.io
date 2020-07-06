@@ -17,7 +17,7 @@ button,
   text-decoration: none;
   text-align: center;
   -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
-  background-color: var(--button-bg, var(--color-text-accent));
+  background-color: var(--button-bg, var(--color-purple-dark));
   color: var(--button-fg, var(--color-text-light));
   cursor: pointer;
   box-shadow:
@@ -39,7 +39,7 @@ button,
 
   @include ha {
     color: var(--color-text-light);
-    background-color: var(--button-bg-hover, var(--color-purple-dark));
+    background-color: var(--button-bg-hover, var(--color-text-accent));
 
     &.button-alt {
       background-color: var(--button-bg-hover-alt, var(--color-highlight-alt));

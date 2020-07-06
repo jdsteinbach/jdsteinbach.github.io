@@ -1,7 +1,7 @@
 .site-header {
   --max-width: #{$max-width--wide};
-  --color-link: var(--color-accent-3);
-  --color-link-alt: var(--color-link-light);
+  --color-link: var(--color-link-light);
+  --color-link-alt: var(--color-link-light-alt);
   --color-focus: var(--color-link-light);
   --header-bg: var(--color-background-hero);
 

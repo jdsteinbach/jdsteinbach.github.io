@@ -8,7 +8,7 @@
     <div id="header-menu" class="header-menu" aria-hidden="true">
       <nav class="header-nav" name="Primary">
         {%- for link in collections.nav -%}
-          <a class="header-nav__link" href="{{ link.url | prepend: site.baseurl }}" data-order="{{ link.data.menu_order }}">{{ link.data.menu_title }}</a>
+          <a class="header-nav__link" href="{{ link.url | prepend: site.baseurl }}">{{ link.data.menu_title }}</a>
         {%- endfor -%}
       </nav>
 
