@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
-
 <head itemscope itemtype="http://schema.org/WebSite">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark light">
+
   <title itemprop="name">Creating a Repeatable Style Pattern with Sass: Placeholders vs. Mixins • James Steinbach</title>
-  <meta name="version" content="1.1.2" />
   <meta name="description" content="Front-end architect. Speaker & writer. Sass, CSS animation, RWD & WP." />
+
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Creating a Repeatable Style Pattern with Sass: Placeholders vs. Mixins • James Steinbach" />
@@ -20,8 +21,6 @@
   <meta name="twitter:url" content="https://jdsteinbach.com/css/sass/creating-repeatable-style-pattern-sass-placeholders-vs-mixins/" />
   <meta name="twitter:site" content="@jdsteinbach" />
   <meta name="twitter:creator" content="@jdsteinbach" />
-
-  <meta name="test-pagination" content="">
 
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="canonical" href="https://jdsteinbach.com/css/sass/creating-repeatable-style-pattern-sass-placeholders-vs-mixins/" itemprop="url" />
@@ -36,9 +35,9 @@
   <meta name="theme-color" content="#602F9A" />
 </head>
 
+
 <body class="site l-site">
-  <a href="#main" class="skip-link">Skip to Content</a>
-  <header class="site-header l-grid" role="banner">
+  <a href="#main" class="skip-link">Skip to Content</a><header class="site-header l-grid" role="banner">
   <div class="site-header__content">
     <a class="site-header__title" href="/">James Steinbach</a>
     <button id="header-menu-toggle" class="site-header__menu-toggle button--icon" aria-expanded="false" aria-controls="header-menu">
@@ -78,9 +77,7 @@
     </div>
   </div>
 </header>
-
-
-  <main class="site-main l-main" id="main" role="main">
+<main class="site-main l-main" id="main" role="main">
 
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   
@@ -100,7 +97,7 @@
           
           <path
             class="starfield__star"
-            d="m782,90l2,2l-2,2l-2,-2z"
+            d="m448,453l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -109,7 +106,7 @@
           
           <path
             class="starfield__star"
-            d="m46,417l2,2l-2,2l-2,-2z"
+            d="m193,581l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -118,7 +115,7 @@
           
           <path
             class="starfield__star"
-            d="m323,943l2,2l-2,2l-2,-2z"
+            d="m466,160l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -127,7 +124,7 @@
           
           <path
             class="starfield__star"
-            d="m679,305l2,2l-2,2l-2,-2z"
+            d="m443,342l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -136,7 +133,25 @@
           
           <path
             class="starfield__star"
-            d="m570,936l2,2l-2,2l-2,-2z"
+            d="m509,420l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m799,685l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m670,372l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -145,7 +160,7 @@
           
           <path
             class="starfield__star"
-            d="m479,722l2,2l-2,2l-2,-2z"
+            d="m887,604l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -154,7 +169,7 @@
           
           <path
             class="starfield__star"
-            d="m978,913l2,2l-2,2l-2,-2z"
+            d="m249,705l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -163,7 +178,7 @@
           
           <path
             class="starfield__star"
-            d="m763,264l2,2l-2,2l-2,-2z"
+            d="m223,664l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -172,7 +187,7 @@
           
           <path
             class="starfield__star"
-            d="m712,207l2,2l-2,2l-2,-2z"
+            d="m441,37l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -181,34 +196,7 @@
           
           <path
             class="starfield__star"
-            d="m840,271l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m610,335l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m673,472l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m198,570l2,2l-2,2l-2,-2z"
+            d="m513,459l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -217,16 +205,7 @@
           
           <path
             class="starfield__star"
-            d="m284,206l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m225,12l2,2l-2,2l-2,-2z"
+            d="m245,777l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -235,16 +214,7 @@
           
           <path
             class="starfield__star"
-            d="m34,414l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m806,224l2,2l-2,2l-2,-2z"
+            d="m649,747l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -253,7 +223,16 @@
           
           <path
             class="starfield__star"
-            d="m182,466l2,2l-2,2l-2,-2z"
+            d="m544,404l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m252,868l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -262,7 +241,7 @@
           
           <path
             class="starfield__star"
-            d="m260,282l2,2l-2,2l-2,-2z"
+            d="m816,445l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -271,7 +250,7 @@
           
           <path
             class="starfield__star"
-            d="m378,524l2,2l-2,2l-2,-2z"
+            d="m806,903l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -280,7 +259,7 @@
           
           <path
             class="starfield__star"
-            d="m748,422l2,2l-2,2l-2,-2z"
+            d="m610,941l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -289,7 +268,16 @@
           
           <path
             class="starfield__star"
-            d="m804,50l2,2l-2,2l-2,-2z"
+            d="m815,271l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m673,585l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -298,7 +286,7 @@
           
           <path
             class="starfield__star"
-            d="m210,219l2,2l-2,2l-2,-2z"
+            d="m710,516l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -307,7 +295,7 @@
           
           <path
             class="starfield__star"
-            d="m40,53l2,2l-2,2l-2,-2z"
+            d="m507,576l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -316,7 +304,7 @@
           
           <path
             class="starfield__star"
-            d="m387,472l2,2l-2,2l-2,-2z"
+            d="m632,368l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -325,16 +313,7 @@
           
           <path
             class="starfield__star"
-            d="m353,209l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m351,55l2,2l-2,2l-2,-2z"
+            d="m501,333l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -343,7 +322,7 @@
           
           <path
             class="starfield__star"
-            d="m435,876l2,2l-2,2l-2,-2z"
+            d="m353,479l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -352,47 +331,7 @@
           
           <path
             class="starfield__star"
-            d="m962,724l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m459,226l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-      </g>
-    
-      <g class="starfield__layer">
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m710,252l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m871,306l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m722,113l2,2l-2,2l-2,-2z"
+            d="m948,768l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -401,7 +340,16 @@
           
           <path
             class="starfield__star"
-            d="m447,85l2,2l-2,2l-2,-2z"
+            d="m351,205l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m423,544l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -410,232 +358,7 @@
           
           <path
             class="starfield__star"
-            d="m69,481l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m652,755l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m737,937l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m584,493l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m428,867l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m691,789l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m641,393l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m515,392l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m765,722l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m163,171l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m628,34l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m981,966l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m244,662l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m251,331l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m459,116l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m21,662l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m522,345l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m657,412l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m101,195l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m90,40l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m410,5l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m226,190l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m328,317l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m590,586l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m788,638l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m154,425l2,2l-2,2l-2,-2z"
+            d="m416,516l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -648,7 +371,7 @@
           
           <path
             class="starfield__star"
-            d="m463,702l2,2l-2,2l-2,-2z"
+            d="m461,125l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -657,7 +380,7 @@
           
           <path
             class="starfield__star"
-            d="m447,745l2,2l-2,2l-2,-2z"
+            d="m261,815l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -666,7 +389,7 @@
           
           <path
             class="starfield__star"
-            d="m569,145l2,2l-2,2l-2,-2z"
+            d="m886,531l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -675,25 +398,7 @@
           
           <path
             class="starfield__star"
-            d="m399,600l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m101,502l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m714,425l2,2l-2,2l-2,-2z"
+            d="m245,125l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -702,25 +407,7 @@
           
           <path
             class="starfield__star"
-            d="m556,766l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m513,518l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m384,479l2,2l-2,2l-2,-2z"
+            d="m576,58l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -729,43 +416,7 @@
           
           <path
             class="starfield__star"
-            d="m52,574l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m155,499l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m814,891l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m617,653l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m603,160l2,2l-2,2l-2,-2z"
+            d="m370,207l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -774,34 +425,7 @@
           
           <path
             class="starfield__star"
-            d="m498,333l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m939,249l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m69,421l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m949,83l2,2l-2,2l-2,-2z"
+            d="m383,281l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -810,43 +434,7 @@
           
           <path
             class="starfield__star"
-            d="m677,207l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m879,288l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m38,805l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m153,818l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m916,84l2,2l-2,2l-2,-2z"
+            d="m729,401l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -855,25 +443,7 @@
           
           <path
             class="starfield__star"
-            d="m459,202l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m1000,16l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m765,851l2,2l-2,2l-2,-2z"
+            d="m407,463l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -882,7 +452,34 @@
           
           <path
             class="starfield__star"
-            d="m459,534l2,2l-2,2l-2,-2z"
+            d="m598,79l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m340,79l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m944,926l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m189,241l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -891,7 +488,7 @@
           
           <path
             class="starfield__star"
-            d="m21,421l2,2l-2,2l-2,-2z"
+            d="m545,239l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -900,7 +497,7 @@
           
           <path
             class="starfield__star"
-            d="m740,828l2,2l-2,2l-2,-2z"
+            d="m452,835l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -909,20 +506,7 @@
           
           <path
             class="starfield__star"
-            d="m658,628l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-      </g>
-    
-      <g class="starfield__layer">
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m760,544l2,2l-2,2l-2,-2z"
+            d="m860,672l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -931,7 +515,34 @@
           
           <path
             class="starfield__star"
-            d="m894,130l2,2l-2,2l-2,-2z"
+            d="m914,349l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m779,378l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m680,633l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m343,947l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -940,7 +551,7 @@
           
           <path
             class="starfield__star"
-            d="m603,251l2,2l-2,2l-2,-2z"
+            d="m254,893l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -949,7 +560,7 @@
           
           <path
             class="starfield__star"
-            d="m387,906l2,2l-2,2l-2,-2z"
+            d="m850,774l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -958,7 +569,7 @@
           
           <path
             class="starfield__star"
-            d="m256,741l2,2l-2,2l-2,-2z"
+            d="m808,701l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -967,7 +578,16 @@
           
           <path
             class="starfield__star"
-            d="m970,33l2,2l-2,2l-2,-2z"
+            d="m581,128l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m862,418l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -976,7 +596,7 @@
           
           <path
             class="starfield__star"
-            d="m598,708l2,2l-2,2l-2,-2z"
+            d="m598,921l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -985,25 +605,7 @@
           
           <path
             class="starfield__star"
-            d="m995,152l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m528,421l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m840,701l2,2l-2,2l-2,-2z"
+            d="m12,715l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -1012,7 +614,7 @@
           
           <path
             class="starfield__star"
-            d="m621,748l2,2l-2,2l-2,-2z"
+            d="m299,830l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -1021,7 +623,7 @@
           
           <path
             class="starfield__star"
-            d="m294,272l2,2l-2,2l-2,-2z"
+            d="m909,920l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1030,160 +632,7 @@
           
           <path
             class="starfield__star"
-            d="m713,19l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m28,518l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m140,801l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m248,919l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m947,329l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m881,113l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m564,285l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m798,859l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m899,484l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m964,325l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m764,437l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m654,648l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m7,224l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m784,480l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m424,346l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m403,300l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m908,87l2,2l-2,2l-2,-2z"
-            transform="scale(1.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m477,165l2,2l-2,2l-2,-2z"
+            d="m627,813l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1196,16 +645,7 @@
           
           <path
             class="starfield__star"
-            d="m213,381l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m933,127l2,2l-2,2l-2,-2z"
+            d="m250,279l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1214,7 +654,43 @@
           
           <path
             class="starfield__star"
-            d="m84,182l2,2l-2,2l-2,-2z"
+            d="m552,463l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m697,946l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m451,105l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m245,505l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m119,102l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1223,7 +699,7 @@
           
           <path
             class="starfield__star"
-            d="m575,999l2,2l-2,2l-2,-2z"
+            d="m926,496l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1232,7 +708,25 @@
           
           <path
             class="starfield__star"
-            d="m536,798l2,2l-2,2l-2,-2z"
+            d="m750,619l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m888,838l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m618,423l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1241,7 +735,7 @@
           
           <path
             class="starfield__star"
-            d="m359,262l2,2l-2,2l-2,-2z"
+            d="m401,587l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -1250,7 +744,7 @@
           
           <path
             class="starfield__star"
-            d="m784,121l2,2l-2,2l-2,-2z"
+            d="m29,816l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -1259,7 +753,16 @@
           
           <path
             class="starfield__star"
-            d="m318,706l2,2l-2,2l-2,-2z"
+            d="m551,383l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m255,751l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1268,43 +771,7 @@
           
           <path
             class="starfield__star"
-            d="m987,249l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m864,196l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m105,386l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m980,666l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m254,182l2,2l-2,2l-2,-2z"
+            d="m620,336l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1313,25 +780,7 @@
           
           <path
             class="starfield__star"
-            d="m857,807l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m233,247l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m9,6l2,2l-2,2l-2,-2z"
+            d="m627,352l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1340,7 +789,7 @@
           
           <path
             class="starfield__star"
-            d="m670,883l2,2l-2,2l-2,-2z"
+            d="m300,406l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1349,7 +798,7 @@
           
           <path
             class="starfield__star"
-            d="m663,216l2,2l-2,2l-2,-2z"
+            d="m428,250l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -1358,7 +807,7 @@
           
           <path
             class="starfield__star"
-            d="m872,658l2,2l-2,2l-2,-2z"
+            d="m41,301l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1367,7 +816,7 @@
           
           <path
             class="starfield__star"
-            d="m866,297l2,2l-2,2l-2,-2z"
+            d="m613,500l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -1376,7 +825,7 @@
           
           <path
             class="starfield__star"
-            d="m648,302l2,2l-2,2l-2,-2z"
+            d="m798,201l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -1385,7 +834,7 @@
           
           <path
             class="starfield__star"
-            d="m117,311l2,2l-2,2l-2,-2z"
+            d="m851,134l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -1394,7 +843,7 @@
           
           <path
             class="starfield__star"
-            d="m538,787l2,2l-2,2l-2,-2z"
+            d="m181,904l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1403,16 +852,7 @@
           
           <path
             class="starfield__star"
-            d="m748,96l2,2l-2,2l-2,-2z"
-            transform="scale(0.5)"
-          />
-        
-          
-          
-          
-          <path
-            class="starfield__star"
-            d="m221,464l2,2l-2,2l-2,-2z"
+            d="m814,854l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1421,7 +861,7 @@
           
           <path
             class="starfield__star"
-            d="m318,445l2,2l-2,2l-2,-2z"
+            d="m612,350l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -1430,7 +870,7 @@
           
           <path
             class="starfield__star"
-            d="m698,729l2,2l-2,2l-2,-2z"
+            d="m194,448l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1439,7 +879,25 @@
           
           <path
             class="starfield__star"
-            d="m158,164l2,2l-2,2l-2,-2z"
+            d="m703,440l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m431,693l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m650,762l2,2l-2,2l-2,-2z"
             transform="scale(1.5)"
           />
         
@@ -1448,7 +906,47 @@
           
           <path
             class="starfield__star"
-            d="m80,608l2,2l-2,2l-2,-2z"
+            d="m662,800l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m991,428l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m790,617l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m687,408l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m863,865l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
           />
         
@@ -1457,8 +955,507 @@
           
           <path
             class="starfield__star"
-            d="m523,384l2,2l-2,2l-2,-2z"
+            d="m294,858l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m667,989l2,2l-2,2l-2,-2z"
             transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m758,706l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m220,828l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m508,630l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m183,34l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m433,306l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m979,257l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m385,399l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m941,385l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m119,384l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m614,842l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m270,152l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m612,918l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m913,175l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m680,283l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m180,439l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m549,660l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m4,516l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m273,439l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m267,530l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m96,208l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m242,637l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m680,401l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m943,859l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m813,118l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+      </g>
+    
+      <g class="starfield__layer">
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m867,283l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m710,678l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m497,977l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m852,890l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m193,156l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m826,262l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m789,858l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m905,925l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m814,849l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m291,380l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m587,255l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m987,709l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m253,32l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m902,394l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m207,771l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m489,962l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m687,173l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m490,281l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m956,446l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m828,478l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m442,449l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m239,978l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m176,383l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m601,793l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m614,455l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m906,433l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m749,825l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m482,70l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m878,101l2,2l-2,2l-2,-2z"
+            transform="scale(0.5)"
+          />
+        
+          
+          
+          
+          <path
+            class="starfield__star"
+            d="m168,909l2,2l-2,2l-2,-2z"
+            transform="scale(1.5)"
           />
         
       </g>
@@ -1501,9 +1498,7 @@
 </article>
 
 
-  </main><!-- main.site-main -->
-
-  <footer class="site-footer l-grid" role="contentinfo">
+  </main><footer class="site-footer l-grid" role="contentinfo">
   <form class="form form--mailchimp" action="https://jamessteinbach.us7.list-manage.com/subscribe/post?u=e06400c5106eb26339f4a0aea&amp;id=35bef0e04e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
   <h2 class="site-footer__title">
     Get New Posts &amp; Other Content in Your Inbox!
@@ -1596,9 +1591,7 @@
   }
   </script>
 
-  <script async src="/js/site.js"></script>
-
-  <script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script async src="/js/site.js"></script><script data-goatcounter="https://jds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
     <script defer src="https://cdn.sassmeister.com/js/embed.js"></script>
 </body>
