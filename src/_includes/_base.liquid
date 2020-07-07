@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
-{% include partials/_head %}
+
+{%- include partials/_head %}
+
 <body class="site l-site">
   <a href="#main" class="skip-link">Skip to Content</a>
-  {% include partials/_site-header %}
+
+  {%- include partials/_site-header -%}
 
   <main class="site-main l-main" id="main" role="main">
 
     {{ content }}
 
-  </main><!-- main.site-main -->
+  </main>
 
-  {% include partials/_site-footer %}
+  {%- include partials/_site-footer %}
 
   <script>
   if (window.localStorage) {
@@ -22,11 +25,12 @@
 
   <script async src="/js/site.js"></script>
 
-  {% include partials/_analytics %}
+  {%- include partials/_analytics %}
 
   {%- if sassmeister %}
     <script defer src="https://cdn.sassmeister.com/js/embed.js"></script>
   {%- endif %}
+
   {%- if codepen %}
     <script defer src="https://assets.codepen.io/assets/embed/ei.js"></script>
   {%- endif %}

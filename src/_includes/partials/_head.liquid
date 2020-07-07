@@ -14,9 +14,11 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark light">
+
   <title itemprop="name">{{ meta_title }}</title>
-  <meta name="version" content="1.1.2" />
   <meta name="description" content="{{ meta_desc }}" />
+
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{{ meta_title }}" />
@@ -29,8 +31,6 @@
   <meta name="twitter:url" content="{{ page.url | abs_url: site.url }}" />
   <meta name="twitter:site" content="@{{ site.twitter_username }}" />
   <meta name="twitter:creator" content="@{{ site.twitter_username }}" />
-
-  <meta name="test-pagination" content="{{ pagination.pageNumber }}">
 
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="canonical" href="{{ page.url | abs_url: site.url }}" itemprop="url" />
