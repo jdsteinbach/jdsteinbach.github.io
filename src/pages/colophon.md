@@ -10,9 +10,9 @@ I'm really grateful for the many tools that allow me to publish this blog! Most 
 
 Built by: [11ty](https://www.11ty.dev/) and [GitHub Actions](https://github.com/features/actions)
 
-Styled with: [Sass](http://sass-lang.com/)
+Styled with: [Sass](http://sass-lang.com/) and [PostCSS](https://postcss.org/)
 
-Hosted on: [Github Pages](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/)
+Hosted on: [GitHub Pages](https://pages.github.com/)
 
 Typeset in: [“Teko” by Indian Type Foundry](https://fonts.google.com/specimen/Teko) and [“Work Sans” (Variable) by Wei Huang](https://github.com/weiweihuanghuang/Work-Sans)
 
