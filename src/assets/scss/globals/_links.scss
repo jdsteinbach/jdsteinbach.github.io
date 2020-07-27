@@ -4,6 +4,7 @@ a {
   transition:
     color $duration,
     background-color $duration,
+    background-size $duration,
     opacity $duration;
 
   @include ha {
@@ -16,6 +17,10 @@ a {
   }
 
   .main-content &:not([class]) {
+    --link-bg-1: #{rgba($color-orange, .5)};
+    --link-bg-2: #{rgba($color-goldenrod, .5)};
+    --link-bg-3: #{rgba($color-yellow, .5)};
+
     margin-right: ($tiny-spacing / -2);
     margin-left: ($tiny-spacing / -2);
     padding-right: ($tiny-spacing / 2);
@@ -27,15 +32,15 @@ a {
       var(--link-bg-2, transparent) 66.7%,
       var(--link-bg-3, transparent) 66.7%
     );
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    text-decoration: none;
+    background-size: 100% 3px;
     box-decoration-break: clone;
 
     @include ha {
-      --link-bg-1: #{rgba($color-orange, .5)};
-      --link-bg-2: #{rgba($color-goldenrod, .5)};
-      --link-bg-3: #{rgba($color-yellow, .5)};
-
-      text-decoration-color: transparent;
       color: var(--color-text-alt);
+      background-size: 100% 100%;
     }
   }
 }
