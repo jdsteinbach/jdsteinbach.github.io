@@ -1,4 +1,3 @@
-const fs = require('fs')
 const path = require('path')
 const sass = require('sass')
 const postcss = require('postcss')
@@ -21,7 +20,9 @@ module.exports = class {
     })
 
     let postcssOpts = [
-      require('autoprefixer')
+      require('autoprefixer')({
+        grid: false
+      })
     ]
 
     if (process.env.ELEVENTY_ENV === 'prod') {
