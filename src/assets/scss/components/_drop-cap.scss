@@ -1,5 +1,5 @@
 .drop-cap {
-  margin: $small-spacing $small-spacing 0 0;//(-1 * $small-spacing);
+  margin: $small-spacing $small-spacing 0 0;
   padding: ($tiny-spacing * 1.14) $small-spacing 0;
   display: inline-block;
   font-family: var(--ff-title);
@@ -25,10 +25,10 @@
     color: transparent;
     background-image: linear-gradient(
       180deg,
-      $color-orange 38%,
-      $color-goldenrod 38%,
-      $color-goldenrod 60%,
-      $color-yellow 60%
+      $color-orange 33%,
+      $color-goldenrod 33%,
+      $color-goldenrod 55%,
+      $color-yellow 55%
     );
   }
 }
