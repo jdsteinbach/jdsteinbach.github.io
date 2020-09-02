@@ -10,6 +10,7 @@ excerpt: James is an experienced teacher and speaker. He has spoken at conferenc
 
 I enjoy writing here on the blog, but I really love speaking with real audiences about front-end development techniques I’m passionate about. Here is a list of talks I’ve given in the past. Please [contact me](/contact/) if you’d like me to speak at an event or meet-up you run. Thanks!
 
+* CascadiaJS 2020: [Modal Windows for Everyone](https://jdsteinbach.com/a11y-modal-slides/#/)
 * [A Practical Introduction to CSS Grid](https://jdsteinbach.com/intro-css-grid/#/)
 * EmberConf 2020: [An Ember Dev's Guide to CSS Grid](https://jdsteinbach.com/emberconf-grid/#/)
 * [Intro to Web Components](https://jdsteinbach.com/intro-web-components/#/)
