@@ -1,6 +1,7 @@
 const { URL } = require('url')
 const { DateTime } = require('luxon')
 const pluginTOC = require('eleventy-plugin-toc')
+const pluginDropcap = require('eleventy-plugin-dropcap')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const markdownItHighlightJS = require('markdown-it-highlightjs')
@@ -32,6 +33,7 @@ module.exports = eleventyConfig => {
 
   // Plugins
   eleventyConfig.addPlugin(pluginTOC)
+  eleventyConfig.addPlugin(pluginDropcap)
 
   // Filters
   eleventyConfig.addFilter('random', max => {

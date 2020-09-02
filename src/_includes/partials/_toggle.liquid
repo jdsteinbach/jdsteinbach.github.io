@@ -1,20 +1,20 @@
 <form name="Theme Picker">
   <fieldset class="theme-toggle">
-    <legend class="hidden">Choose a Color Theme</legend>
+    <legend class="screen-reader-only">Choose a Color Theme</legend>
     <input class="theme-toggle__input" type="radio" name="theme" id="light" value="light" />
     <label class="theme-toggle__label" for="light" title="Light Theme">
       {% include images/toggle-light %}
-      <span class="theme-toggle__label-text hidden">Light Theme</span>
+      <span class="theme-toggle__label-text screen-reader-only">Light Theme</span>
     </label>
     <input class="theme-toggle__input" type="radio" name="theme" id="auto" value="auto" />
     <label class="theme-toggle__label" for="auto" title="Auto: System Settings">
       {% include images/toggle-auto %}
-      <span class="theme-toggle__label-text hidden">Auto: System Settings</span>
+      <span class="theme-toggle__label-text screen-reader-only">Auto: System Settings</span>
     </label>
     <input class="theme-toggle__input" type="radio" name="theme" id="dark" value="dark" />
     <label class="theme-toggle__label" for="dark" title="Dark Theme">
       {% include images/toggle-dark %}
-      <span class="theme-toggle__label-text hidden">Dark Theme</span>
+      <span class="theme-toggle__label-text screen-reader-only">Dark Theme</span>
     </label>
   </fieldset>
 </form>

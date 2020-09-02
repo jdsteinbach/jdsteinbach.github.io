@@ -6,13 +6,13 @@ layout: _base
   {% comment %} <header class="hero l-hero">
     <h1 class="hero__title" itemprop="name title headline">{{ title }}</h1>
     {%- if author %}
-      <span class="author hidden" itemprop="author creator">{{ author }}</span>
+      <span class="author screen-reader-only" itemprop="author creator">{{ author }}</span>
     {%- endif %}
   </header> {% endcomment %}
 
   {% include partials/_hero %}
 
   <div class="main-content l-grid l-grid--content" itemprop="articleBody">
-    {{ content }}
+    {{ content | dropcap }}
   </div>
 </article>
