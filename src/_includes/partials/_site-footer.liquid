@@ -10,7 +10,7 @@
     <div class="site-footer__column">
       {%- if site.github_username %}
         <p>
-          <a href="https://github.com/{{ site.github_username }}">
+          <a href="https://github.com/{{ site.github_username }}" rel="me">
             <span class="icon icon--github">
               {% include images/icon-gh %}
             </span>
@@ -21,7 +21,7 @@
       {%- endif %}
       {%- if site.twitter_username %}
         <p>
-          <a href="https://twitter.com/{{ site.twitter_username }}">
+          <a href="https://twitter.com/{{ site.twitter_username }}" rel="me">
             <span class="icon icon--twitter">
               {% include images/icon-twitter %}
             </span>
