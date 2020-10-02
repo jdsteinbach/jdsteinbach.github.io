@@ -5,27 +5,13 @@ layout: _base
 {%- assign toc = content | toc -%}
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  {% comment %} <header class="hero l-hero">
-    <h1 class="hero__title" itemprop="name title headline">{{ title }}</h1>
-
-    <p class="hero__meta">
-      {%- if page.date %}
-        <time class="date" datetime={{ page.date }} itemprop="dateCreated pubdate datePublished">{{ page.date | date: "%B %e, %Y" }}</time>
-      {%- endif %}
-      {%- if author %}
-        <span class="author" itemprop="author creator">{{ author }}</span>
-      {%- endif %}
-      {%- if categories %}
-        <span class="categories">{% include partials/_categories %}</span>
-      {%- endif %}
-    </p>
-  </header> {% endcomment %}
-
   {% include partials/_hero %}
 
   <div class="main-content l-grid l-grid--content" itemprop="articleBody">
     {% include partials/_toc %}
 
     {{ content | dropcap }}
+
+    {% include partials/_webmentions %}
   </div>
 </article>

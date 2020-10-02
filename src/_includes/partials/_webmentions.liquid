@@ -1,0 +1,19 @@
+{% assign postUrl = page.url | abs_url: site.url %}
+{% assign mentions = postUrl | webmentionsPerPost %}
+
+<div class="mentions">
+  <h2>Webmentions</h2>
+  {% if mentions.length > 0 %}
+    <ul class="mention-list">
+      {% for m in mentions %}
+        <li class="mention">
+          <a href="{{ m.url }}">
+            {{ m.author.name }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No webmentions were found for this post.</p>
+  {% endif %}
+</div>

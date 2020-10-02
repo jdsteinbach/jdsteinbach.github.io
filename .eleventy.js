@@ -7,6 +7,8 @@ const markdownItAnchor = require('markdown-it-anchor')
 const markdownItHighlightJS = require('markdown-it-highlightjs')
 const typogr = require('typogr')
 
+const webmentions = require('./src/_data/webmentions')
+
 const mdOptions = {
   html: true,
   breaks: true,
@@ -64,6 +66,16 @@ module.exports = eleventyConfig => {
   eleventyConfig.addFilter('rss_date', date => formatDate(date))
 
   eleventyConfig.addFilter('title_class', string => string.length > 30 ? ' is-long' : '')
+
+  eleventyConfig.addFilter('webmentionsPerPost', url => {
+    if (webmentions.children) {
+      return webmentions.children.filter(mention => {
+        return mention['wm-target'] && mention['wm-target'] === url
+      })
+    } else {
+      return []
+    }
+  })
 
   // eleventyConfig.addTransform('no_orphan', (content, outputPath) => {
   //   if( outputPath.endsWith(".html") ) {
