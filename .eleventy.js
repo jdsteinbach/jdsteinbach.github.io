@@ -22,6 +22,8 @@ const mdAnchorOpts = {
 
 const formatDate = date => DateTime.fromJSDate(new Date(date)).toISO({includeOffset: true, suppressMilliseconds: true})
 
+const formatDateYear = date => DateTime.fromJSDate(new Date(date)).get('year')
+
 module.exports = eleventyConfig => {
   // Markdown
   eleventyConfig.setLibrary(
@@ -57,6 +59,13 @@ module.exports = eleventyConfig => {
       return new Date(a.date) < new Date(b.date)
     })[0].date
     return formatDate(latest)
+  })
+
+  eleventyConfig.addFilter('copyright_years', posts => {
+    const first = posts[(posts.length - 1)].date
+    const last = posts[0].date
+
+    return `${formatDateYear(first)}&ndash;${formatDateYear(last)}`
   })
 
   eleventyConfig.addFilter('abs_url', (href, base) => new URL(href, base).toString())
