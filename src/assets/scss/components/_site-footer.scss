@@ -113,3 +113,11 @@
     height: calc(33vw * var(--tilt-tan));
   }
 }
+
+.site-footer__copyright {
+  margin-top: $large-spacing;
+  font-size: var(--fs-small);
+  text-align: center;
+  font-style: italic;
+  color: var(--color-accent-3);
+}
