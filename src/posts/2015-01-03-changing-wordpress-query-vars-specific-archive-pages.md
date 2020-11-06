@@ -13,7 +13,7 @@ A cleaner solution is to use WordPress&#8217;s own <a title="WordPress Codex: T
 ~~~php
 add_action( 'pre_get_posts', 'custom_query_vars' );
 function custom_query_vars( $query ) {
-  if ( !is_admin() && $query->is_main_query() {
+  if ( !is_admin() && $query->is_main_query() ) {
     if ( get_post_type() == 'portfolio' ) {
       $query->set( 'posts_per_page', 12 );
     }
