@@ -4,12 +4,20 @@
   <subtitle>Front-end architect. Speaker &amp; writer. Sass, CSS animation, RWD &amp; WP.</subtitle>
   <link href="https://jdsteinbach.com/feed.xml" rel="self"/>
   <link href="https://jdsteinbach.com"/>
-  <updated>2020-03-02T00:00:00-00:00</updated>
+  <updated>2020-10-27T00:00:00-00:00</updated>
   <id>https://jdsteinbach.com</id>
   <author>
     <name>James Steinbach</name>
     <email>jdsteinbach@gmail.com</email>
   </author>
+  <entry>
+    <title>An Introduction to CSS Logical Properties</title>
+    <link href="https://jdsteinbach.com/css/logical-properties/"/>
+    <updated>2020-10-27T00:00:00-00:00</updated>
+    <id>https://jdsteinbach.com/css/logical-properties/</id>
+    <content type="html"><p>Read my article “<a href="https://dockyard.com/blog/2020/10/27/an-introduction-to-css-logical-properties" title="An Introduction to CSS Logical Properties" target="_blank">An Introduction to CSS Logical Properties</a>” at <a href="http://DockYard.com">DockYard.com</a>.</p>
+</content>
+  </entry>
   <entry>
     <title>Accessible Loading Indicators – with No Extra Elements!</title>
     <link href="https://jdsteinbach.com/css/accessible-loading-indicators/"/>
@@ -116,110 +124,6 @@
 <p>I’ve benefited a lot from “distributed mentoring.” Twitter people, online publishers, conference speakers &amp; friends, co-workers and peers - they’ve all played important roles in my career, even though it hasn’t looked like a stereotypical mentorship.</p>
 <p>If you’re starting your journey as a developer, start building a good network of people whose tweets/posts/blogs/work you can follow online and learn from remotely. Also, it can be a tough investment to swing, but attending conferences is a huge help, especially in your first couple years of “full-time” development work.</p>
 <p>If you’ve gotten enough experience to start specializing in a particular language, stack, or framework, use that expertise to grow collaboratively with others. Don’t get stuck behind fear that you’re “not expert enough yet” - if you know just a couple things that a friend or peer doesn’t, you can help them along. And of course, stay friends with people who know at least a little more than you about some topics so they can help you along.</p>
-</content>
-  </entry>
-  <entry>
-    <title>Keeping RWD Simple &amp; Sassy – Animation</title>
-    <link href="https://jdsteinbach.com/sass/rwd-sass-animation/"/>
-    <updated>2016-04-14T00:00:00-00:00</updated>
-    <id>https://jdsteinbach.com/sass/rwd-sass-animation/</id>
-    <content type="html"><p>This is the fifth &amp; final post in a series based on my recent RWD Summit talk “Keeping RWD Simple &amp; Sassy.” It covers some useful techniques for managing responsive animations with Sass.</p>
-<h2 id="responsive-animations">Responsive Animations <a class="anchor-link" href="#responsive-animations">#</a></h2>
-<p>Complex animations may need to move differently at different breakpoints. The only way to use different animations at different breakpoints is to define multiple <code>@keyframes</code> animations and use a media query on the animated selector to change the <code>animation-name</code> at the appropriate breakpoints.</p>
-<p>Before we get into some useful Sass techniques to help manage responsive animations, let’s talk about a few things you should <strong>not</strong> be doing with Sass.</p>
-<p>Do not use Sass mixins for browser prefixes. I know, you can still find dozens of articles claiming that browser prefixes are a “must-use” Sass technique. Use <a href="http://jds.li/autoprefix">Autoprefixer instead</a>. If you’re using Sass, there’s a pretty high likelihood you’re using a task runner (Gulp, Grunt, Brocolli, npm scripts) to automate your workflow. Add Autoprefixer to it and just write spec CSS. It will add all the prefixes you need.</p>
-<p>Also, try to avoid using Sass maps to store CSS property-value pairs. Sure, you <em>can</em> do that, but Sass mixins provide a much better way to store reusable property-value pairs. As I see it, writing big nested Sass maps that hold all your keyframes data in them isn’t ideal. Unless you need to manipulate the values, putting repeated CSS in a mixin is better than in a map as key-value pairs.</p>
-<p>So how can Sass help with responsive animations? There are two kinds of animations and two ways Sass can make them more maintainable.</p>
-<h3 id="unique-animations">Unique Animations <a class="anchor-link" href="#unique-animations">#</a></h3>
-<p>If your animations are detailed and unique (not reusable), you can use a Sass mixin to nest your animation code right inside the selector that uses that animation.</p>
-<pre><code class="hljs language-scss"><span class="hljs-keyword">@mixin</span> animate() {
-  <span class="hljs-variable">$name</span>: unique-id();
-  <span class="hljs-attribute">animation-name</span>: <span class="hljs-variable">$name</span>;
-
-  <span class="hljs-keyword">@at-root</span> {
-    <span class="hljs-keyword">@keyframes</span> #{<span class="hljs-variable">$name</span>} {
-      <span class="hljs-keyword">@content</span>;
-    }
-  }
-}
-
-<span class="hljs-selector-class">.animated-thing</span> {
-  <span class="hljs-keyword">@include</span> animate {
-    0%, 100% {
-      <span class="hljs-attribute">transform</span>: none;
-    }
-    50% {
-      <span class="hljs-attribute">transform</span>: translateX(<span class="hljs-number">100%</span>);
-    }
-  }
-
-  <span class="hljs-keyword">@include</span> bp(large) {
-    <span class="hljs-keyword">@include</span> animate {
-      0%, 100% {
-        <span class="hljs-attribute">transform</span>: none;
-      }
-      50% {
-        <span class="hljs-attribute">transform</span>: translateX(-<span class="hljs-number">100%</span>);
-      }
-    }
-  }
-}
-</code></pre>
-<p>For one-off animations, this mixin keeps everything you need in the selector’s normal partial and saves you the trouble of thinking up animation names!</p>
-<h3 id="reusable-animations">Reusable Animations <a class="anchor-link" href="#reusable-animations">#</a></h3>
-<p>On the other hand, some animations are reusable. If you’ve used Dan Eden’s <a href="http://jds.li/animcss"><code>animate.css</code></a>, you’ve experienced a supply of animations designed to be reusable. If you want to see how Sass can organize something like that, checkout the <a href="http://jds.li/animsass"><code>animate.scss</code> project</a>.</p>
-<h3 id="animation-consistency">Animation Consistency <a class="anchor-link" href="#animation-consistency">#</a></h3>
-<p>You can also use Sass to solve CSS animation’s speed problem. As you may know, you can only define 2 speed-related properties in CSS animations: duration (with the <code>animation-duration</code> property) and distance (in the <code>@keyframes</code> themselves). What you can’t do is define an actual speed: pixels per second. But you can use Sass to calculate duration or distance based on a desired speed.</p>
-<pre><code class="hljs language-scss"><span class="hljs-variable">$default-speed</span>: <span class="hljs-number">300px</span> <span class="hljs-number">1s</span>;
-
-<span class="hljs-keyword">@function</span> calc-distance(<span class="hljs-variable">$duration</span>, <span class="hljs-variable">$speed</span>: <span class="hljs-variable">$default-speed</span>) {
-  <span class="hljs-keyword">@return</span> <span class="hljs-variable">$duration</span> / nth(<span class="hljs-variable">$speed</span>, <span class="hljs-number">2</span>) * nth(<span class="hljs-variable">$speed</span>, <span class="hljs-number">1</span>);
-}
-
-<span class="hljs-keyword">@function</span> calc-duration(<span class="hljs-variable">$distance</span>, <span class="hljs-variable">$speed</span>: <span class="hljs-variable">$default-speed</span>) {
-  <span class="hljs-keyword">@return</span> <span class="hljs-variable">$distance</span> / nth(<span class="hljs-variable">$speed</span>, <span class="hljs-number">1</span>) * nth(<span class="hljs-variable">$speed</span>, <span class="hljs-number">2</span>);
-}
-</code></pre>
-<p>This isn’t purely responsive, but if you are aiming for consistent speed for your animation at various breakpoints, this saves you a lot of math.</p>
-<p>The last way I’ve found Sass helpful for animations is for creating a style guide of consistent motion possibilities. You can set up a map of transition / animation distances and a map of transition / animation durations. (Or just one of those maps &amp; the functions from above!) Then, with a helper function, you can quickly get the right value for your current animation.</p>
-<pre><code class="hljs language-scss"><span class="hljs-variable">$transition-durations</span>: (
-  short: .<span class="hljs-number">16s</span>,
-  medium: .<span class="hljs-number">26s</span>,
-  long: .<span class="hljs-number">42s</span>
-);
-
-<span class="hljs-variable">$transition-distances</span>: (
-  short: .<span class="hljs-number">6rem</span>,
-  medium: <span class="hljs-number">2.6rem</span>,
-  long: <span class="hljs-number">6.8rem</span>
-);
-</code></pre>
-<p>Here are the functions we can use to retrieve those values. I’ve written 1 function to house the validation and warning, and two alias functions to make it easier to use.</p>
-<pre><code class="hljs language-scss"><span class="hljs-keyword">@function</span> get-transition-value(<span class="hljs-variable">$map</span>, <span class="hljs-variable">$key</span>) {
-  <span class="hljs-keyword">@if</span> map-has-key(<span class="hljs-variable">$map</span>, <span class="hljs-variable">$key</span>) {
-    <span class="hljs-keyword">@return</span> map-get(<span class="hljs-variable">$map</span>, <span class="hljs-variable">$key</span>);
-  } <span class="hljs-keyword">@else</span> {
-    <span class="hljs-keyword">@warn</span> <span class="hljs-string">'Current $map does not contain key: #{$key}'</span>;
-  }
-}
-
-<span class="hljs-keyword">@function</span> duration(<span class="hljs-variable">$key</span>) {
-  <span class="hljs-keyword">@return</span> get-transition-value(<span class="hljs-variable">$transition-durations</span>, <span class="hljs-variable">$key</span>);
-}
-
-<span class="hljs-keyword">@function</span> distance(<span class="hljs-variable">$key</span>) {
-  <span class="hljs-keyword">@return</span> get-transition-value(<span class="hljs-variable">$transition-distances</span>, <span class="hljs-variable">$key</span>);
-}
-</code></pre>
-<p>And here’s what it looks like in use:</p>
-<pre><code class="hljs language-scss"><span class="hljs-selector-class">.slow-element</span> {
-  <span class="hljs-attribute">transition</span>: transform duration(long) ease-in-out;
-
-  &amp;<span class="hljs-selector-class">.moved</span> {
-    <span class="hljs-attribute">transform</span>: translateY(distance(short));
-  }
-}
-</code></pre>
 </content>
   </entry>
 </feed>
