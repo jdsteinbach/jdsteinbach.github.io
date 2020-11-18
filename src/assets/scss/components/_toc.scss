@@ -15,10 +15,10 @@
 
   padding: $small-spacing 0;
   position: relative;
-  border: 0;
   text-transform: lowercase;
   color: var(--color-link);
   background-color: transparent;
+  border: 0;
   box-shadow: none;
 
   &::after {
@@ -26,23 +26,25 @@
       content: "▾";
       padding: 0 0 0 $tiny-spacing;
       display: inline-block;
-      transform: rotate(0deg) translateY(-.125em);
+      transform: rotate(0deg) translateY(-0.125em);
       transform-origin: center;
       alt: "";
     }
 
     .js [aria-hidden="false"] & {
-      transform: rotate(180deg) translateY(-.0625em);
+      transform: rotate(180deg) translateY(-0.0625em);
     }
   }
 
-  @include ha {
+  &:hover,
+  &:active {
     color: var(--color-link-alt);
     background-color: transparent;
   }
 }
 
 // BEM Exception: generated TOC component does not have classes
+/* stylelint-disable selector-max-compound-selectors */
 .toc {
   ol {
     margin: 0;
@@ -82,15 +84,16 @@
     right: 0;
     left: 0;
     z-index: 1;
-    opacity: 1;
     background-color: var(--color-background);
     transform-origin: top center;
     transform: scaleY(1);
     transition: opacity $duration, transform $duration ease-in-out;
+    opacity: 1;
   }
 
   .js [aria-hidden="true"] & {
-    opacity: 0;
     transform: scaleY(0);
+    opacity: 0;
   }
 }
+/* stylelint-enable selector-max-compound-selectors */

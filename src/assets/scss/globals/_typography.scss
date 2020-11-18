@@ -1,12 +1,12 @@
 body {
+  position: relative;
+  z-index: 2;
   font-size: var(--fs-body);
   font-family: var(--ff-body);
   line-height: var(--lh-body);
   color: var(--color-text);
   background-color: var(--color-background-page);
   scroll-behavior: smooth;
-  position: relative;
-  z-index: 2;
 }
 
 h1,
@@ -36,8 +36,7 @@ em {
     "ss03" var(--ss03, 1),
     "tnum" var(--tnum, 0),
     "smcp" var(--smcp, 0);
-  font-variation-settings:
-    "wght" var(--wght, var(--fw-body));
+  font-variation-settings: "wght" var(--wght, var(--fw-body));
   font-weight: var(--fw-body);
 }
 
@@ -94,10 +93,6 @@ h4,
 h5,
 h6 {
   line-height: var(--lh-heading);
-
-  em {
-    font-style: italic;
-  }
 }
 
 p {
@@ -121,6 +116,7 @@ em {
   font-style: italic;
 }
 
+/* stylelint-disable selector-max-compound-selectors */
 .main-content {
   > p:first-child {
     --wght: var(--fw-lightest);
@@ -129,27 +125,27 @@ em {
     color: var(--color-text-alt);
   }
 
-  > ul,
-  > ol {
-    margin-bottom: $base-spacing;
-    padding-left: 1em;
-
-    @include bp(medium) {
-      padding-left: 0;
-    }
-
-    li {
-      margin-top: $small-spacing;
-      margin-bottom: $base-spacing;
-    }
-  }
-
   ul {
     list-style-type: disc;
   }
 
   ol {
     list-style-type: decimal;
+  }
+
+  > ul,
+  > ol {
+    margin-bottom: $base-spacing;
+    padding-left: 1em;
+
+    li {
+      margin-top: $small-spacing;
+      margin-bottom: $base-spacing;
+    }
+
+    @include bp(medium) {
+      padding-left: 0;
+    }
   }
 
   li {
@@ -183,12 +179,13 @@ em {
     }
   }
 }
+/* stylelint-enable selector-max-compound-selectors */
 
 .screen-reader-only {
-  position: absolute;
   height: 1px;
   width: 1px;
-  clip-path: inset(50%);
+  position: absolute;
   overflow: hidden;
   white-space: nowrap;
+  clip-path: inset(50%);
 }

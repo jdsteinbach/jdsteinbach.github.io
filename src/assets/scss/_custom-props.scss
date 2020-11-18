@@ -1,4 +1,5 @@
 :root {
+  // Text Colors
   --color-text: #{$color-gray};
   --color-text-alt: #{$color-black};
   --color-text-accent: #{$color-purple};
@@ -7,37 +8,37 @@
   --color-dark: #{$color-black};
   --color-light: #{$color-background};
 
+  // Background Colors
   --color-background: #{$color-background};
   --color-background-page: #{$color-background-pale};
-  --color-background-fade: #{rgba($color-background, .9)};
+  --color-background-fade: #{rgba($color-background, 0.9)};
   --color-background-hero: var(--color-purple-dark);
   --color-background-dark: #{$color-gray};
-  --color-background-code: #{rgba($color-gray, .15)};
+  --color-background-code: #{rgba($color-gray, 0.15)};
+  --color-purple-dark: #{mix($color-purple, $color-gray)};
 
+  // Accent Colors
   --color-accent-1: #{$color-orange};
   --color-accent-2: #{$color-goldenrod};
   --color-accent-3: #{$color-yellow};
 
+  // Interaction Colors
   --color-link: #{$color-purple};
   --color-link-alt: #{$color-pink};
-
   --color-link-2: #{$color-orange};
   --color-link-2-alt: #{$color-goldenrod};
-
   --color-link-light: #{$color-background};
   --color-link-light-alt: #{$color-yellow};
-
   --color-focus: #{$color-purple};
-
-  --color-purple-dark: #{mix($color-purple, $color-gray)};
-
   --color-highlight: #{$color-goldenrod};
   --color-highlight-alt: #{$color-orange};
-  --color-highlight-pale: #{rgba($color-orange, .15)};
+  --color-highlight-pale: #{rgba($color-orange, 0.15)};
 
+  // Tilt Values
   --tilt: -10deg;
-  --tilt-tan: .176;
+  --tilt-tan: 0.176;
 
+  // Type Sizes
   --fs-ratio: 1.25;
   --fs-body: 1rem;
   --fs-blockquote: calc(var(--fs-body) * (((var(--fs-ratio) - 1) / 2) + 1));
@@ -47,6 +48,7 @@
   --fs-hero: calc(var(--fs-title) * var(--fs-ratio));
   --fs-small: calc(var(--fs-body) / var(--fs-ratio));
 
+  // Font Weights
   --fw-lightest: 250;
   --fw-light: 320;
   --fw-body: 375;
@@ -54,23 +56,96 @@
   --fw-bold: 700;
   --fw-heavy: 800;
 
+  // Font Families
+  /* stylelint-disable value-keyword-case */
   --ff-body: Work Sans, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
   --ff-title: Teko, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
   --ff-code: monospace;
+  /* stylelint-enable value-keyword-case */
 
+  // Line heights
   --lh-body: 1.5;
   --lh-title: 1;
   --lh-heading: 1.2;
 
+  // Spacing
   --horizontal-spacing: #{$small-spacing};
+
+  [data-theme="auto"] {
+    @media (prefers-color-scheme: dark) {
+      // Text Colors
+      --color-text: #{$color-background};
+      --color-text-alt: #{$color-background-pale};
+      --color-text-accent: #{$color-pink};
+
+      // Background Colors
+      --color-background: #{$color-gray};
+      --color-background-page: #{$color-black};
+      --color-background-fade: #{rgba($color-gray, 0.9)};
+      --color-background-hero: var(--color-purple-dark);
+      --color-background-dark: #{$color-gray};
+      --color-background-code: #{rgba($color-goldenrod, 0.15)};
+      --color-purple-dark: #{mix($color-purple, $color-black, 35%)};
+
+      // Accent Colors
+      --color-accent-1: #{mix($color-orange, $color-gray, 75%)};
+      --color-accent-2: #{mix($color-goldenrod, $color-gray, 75%)};
+      --color-accent-3: #{mix($color-yellow, $color-gray, 75%)};
+
+      // Interaction Colors
+      --color-link: #{rgba($color-yellow, 0.75)};
+      --color-link-alt: #{$color-background-pale};
+      --color-link-2: #{$color-pink};
+      --color-link-2-alt: #{mix($color-purple, $color-white)};
+      --color-focus: var(--color-link-alt);
+      --blend-mode: lighten;
+    }
+  }
+
+  [data-theme="dark"] {
+    // Text Colors
+    --color-text: #{$color-background};
+    --color-text-alt: #{$color-background-pale};
+    --color-text-accent: #{$color-pink};
+
+    // Background Colors
+    --color-background: #{$color-gray};
+    --color-background-page: #{$color-black};
+    --color-background-fade: #{rgba($color-gray, 0.9)};
+    --color-background-hero: var(--color-purple-dark);
+    --color-background-dark: #{$color-gray};
+    --color-background-code: #{rgba($color-goldenrod, 0.15)};
+    --color-purple-dark: #{mix($color-purple, $color-black, 35%)};
+
+    // Accent Colors
+    --color-accent-1: #{mix($color-orange, $color-gray, 75%)};
+    --color-accent-2: #{mix($color-goldenrod, $color-gray, 75%)};
+    --color-accent-3: #{mix($color-yellow, $color-gray, 75%)};
+
+    // Interaction Colors
+    --color-link: #{rgba($color-yellow, 0.75)};
+    --color-link-alt: #{$color-background-pale};
+    --color-link-2: #{$color-pink};
+    --color-link-2-alt: #{mix($color-purple, $color-white)};
+    --color-focus: var(--color-link-alt);
+    --blend-mode: lighten;
+  }
+
+  // Notch Support
 
   @supports (padding: env(safe-area-inset-left)) {
     --horizontal-spacing: calc(#{$small-spacing} + env(safe-area-inset-right));
   }
 
+  // Variable Font Support
+
   @supports (font-variation-settings: normal) {
+    /* stylelint-disable value-keyword-case */
     --ff-body: Work Sans VF, Work Sans, -apple-system, Helvetica Neue, Helvetica, Roboto, Segoe UI, sans-serif;
+    /* stylelint-enable value-keyword-case */
   }
+
+  // Media Queries
 
   @include bp(medium) {
     --fs-body: calc(21rem / 16);
@@ -82,65 +157,5 @@
     --fs-body: calc(24rem / 16);
     --fs-ratio: 1.4;
     --lh-body: 1.7;
-  }
-
-  [data-theme="auto"] {
-    @media (prefers-color-scheme: dark) {
-      --color-text: #{$color-background};
-      --color-text-alt: #{$color-background-pale};
-      --color-text-accent: #{$color-pink};
-
-      --color-background: #{$color-gray};
-      --color-background-page: #{$color-black};
-      --color-background-fade: #{rgba($color-gray, .9)};
-      --color-background-hero: var(--color-purple-dark);
-      --color-background-dark: #{$color-gray};
-      --color-background-code: #{rgba($color-goldenrod, .15)};
-
-      --color-accent-1: #{mix($color-orange, $color-gray, 75%)};
-      --color-accent-2: #{mix($color-goldenrod, $color-gray, 75%)};
-      --color-accent-3: #{mix($color-yellow, $color-gray, 75%)};
-
-      --color-purple-dark: #{mix($color-purple, $color-black, 35%)};
-
-      --color-link: #{rgba($color-yellow, .75)};
-      --color-link-alt: #{$color-background-pale};
-
-      --color-link-2: #{$color-pink};
-      --color-link-2-alt: #{mix($color-purple, $color-white)};
-
-      --color-focus: var(--color-link-alt);
-
-      --blend-mode: lighten;
-    }
-  }
-
-  [data-theme="dark"] {
-    --color-text: #{$color-background};
-    --color-text-alt: #{$color-background-pale};
-    --color-text-accent: #{$color-pink};
-
-    --color-background: #{$color-gray};
-    --color-background-page: #{$color-black};
-    --color-background-fade: #{rgba($color-gray, .9)};
-    --color-background-hero: var(--color-purple-dark);
-    --color-background-dark: #{$color-gray};
-    --color-background-code: #{rgba($color-goldenrod, .15)};
-
-    --color-accent-1: #{mix($color-orange, $color-gray, 75%)};
-    --color-accent-2: #{mix($color-goldenrod, $color-gray, 75%)};
-    --color-accent-3: #{mix($color-yellow, $color-gray, 75%)};
-
-    --color-purple-dark: #{mix($color-purple, $color-black, 35%)};
-
-    --color-link: #{rgba($color-yellow, .75)};
-    --color-link-alt: #{$color-background-pale};
-
-    --color-link-2: #{$color-pink};
-    --color-link-2-alt: #{mix($color-purple, $color-white)};
-
-    --color-focus: var(--color-link-alt);
-
-    --blend-mode: lighten;
   }
 }

@@ -1,15 +1,25 @@
 @charset "utf-8";
 
+// Functions
+
 @import "functions/text-shadow";
+
+// Mixins
 
 @import "mixins/bp";
 @import "mixins/fonts";
 @import "mixins/ha";
 
+// Reset CSS
+
 @import "reset";
+
+// Variables
 
 @import "variables";
 @import "custom-props";
+
+// Global Styles
 
 @import "globals/fonts";
 @import "globals/typography";
@@ -19,7 +29,11 @@
 @import "globals/media";
 @import "globals/forms";
 
+// Layout Styles
+
 @import "layout";
+
+// Component Styles
 
 @import "components/starfield";
 @import "components/pagination";
@@ -34,5 +48,7 @@
 @import "components/theme-toggle";
 @import "components/anchor-link";
 @import "components/newsletter";
+
+// Support Queries
 
 @import "supports";

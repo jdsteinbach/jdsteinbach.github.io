@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:styles": "stylelint '**/*.scss' --report-needless-disables",
     "start": "npm run serve",
     "serve": "cross-env ELEVENTY_ENV=dev eleventy --serve",
     "serve:debug": "cross-env ELEVENTY_ENV=dev DEBUG=Eleventy* eleventy",
@@ -33,6 +34,11 @@
     "markdown-it-anchor": "^5.0.1",
     "markdown-it-highlightjs": "^3.1.0",
     "sass": "^1.26.3",
+    "stylelint": "^13.8.0",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-selector-bem-pattern": "^2.1.0",
     "typogr": "^0.6.8"
   },
   "standard": {

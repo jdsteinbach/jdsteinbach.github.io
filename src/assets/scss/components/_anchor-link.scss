@@ -6,8 +6,8 @@
   display: inline-block;
   justify-self: start;
   position: relative;
-  background-color: transparent !important; // sass-lint:disable-line no-important
-  text-decoration: none !important; // sass-lint:disable-line no-important
+  text-decoration: none !important;
+  background-color: transparent !important;
 
   @include bp(medium) {
     padding-right: $tiny-spacing;

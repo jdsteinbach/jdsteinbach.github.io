@@ -1,7 +1,6 @@
 @media (prefers-reduced-motion: reduce) {
   * {
-    // sass-lint:disable-block no-important
-    animation: none !important;
     transition: none !important;
+    animation: none !important;
   }
 }

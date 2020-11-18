@@ -5,8 +5,8 @@
   grid-template:
     "left center right" auto /
     1fr 1fr 1fr;
-  border-top: $border-default;
   font-size: var(--fs-small);
+  border-top: $border-default;
 
   .previous {
     --dir: -1;
@@ -23,7 +23,7 @@
     grid-template:
       "text top" auto
       "text bottom" auto /
-       1fr auto;
+      1fr auto;
     grid-area: right;
     justify-self: end;
 
@@ -40,11 +40,11 @@
   grid-template:
     "top    text" auto
     "bottom text" auto /
-     auto   1fr;
-  column-gap: $small-spacing;
-  align-items: center;
+    auto   1fr;
   grid-area: left;
+  align-items: center;
   justify-self: start;
+  column-gap: $small-spacing;
 
   span {
     grid-area: text;
@@ -58,17 +58,19 @@
     display: inline-block;
     grid-area: top;
     align-self: end;
-    background-image: linear-gradient(
-      90deg,
-      transparent,
-      var(--color-accent-1) 0,
-      var(--color-accent-1) 33.33%,
-      var(--color-accent-2) 33.33%,
-      var(--color-accent-2) 66.67%,
-      var(--color-accent-3) 66.67%,
-      var(--color-accent-3) 100%,
-      transparent
+    background-image:
+      linear-gradient(
+        90deg,
+        transparent,
+        var(--color-accent-1) 0,
+        var(--color-accent-1) 33.33%,
+        var(--color-accent-2) 33.33%,
+        var(--color-accent-2) 66.67%,
+        var(--color-accent-3) 66.67%,
+        var(--color-accent-3) 100%,
+        transparent
       );
+    /* stylelint-disable-next-line length-zero-no-unit */
     transform: translateX(calc(var(--dir, 1) * var(--distance, 0px))) skewX(calc(var(--skew, 1) * var(--tilt)));
     transition: transform $duration $easing;
   }
@@ -78,7 +80,8 @@
     align-self: start;
   }
 
-  @include ha {
+  &:hover,
+  &:active {
     --distance: #{$tiny-spacing};
   }
 }

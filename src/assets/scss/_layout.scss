@@ -22,20 +22,21 @@
     display: grid;
     grid-template-columns: var(--horizontal-spacing) 1fr auto;
     align-items: center;
-    column-gap: inherit;
     grid-column: 1 / -1;
+    column-gap: inherit;
 
     &::before {
       content: "";
       height: 3 * $base-spacing;
       grid-column: 1 / span 1;
-      background-image: linear-gradient(
-        180deg,
-        var(--color-accent-1) 33.3%,
-        var(--color-accent-2) 33.3%,
-        var(--color-accent-2) 66.7%,
-        var(--color-accent-3) 66.7%
-      );
+      background-image:
+        linear-gradient(
+          180deg,
+          var(--color-accent-1) 33.3%,
+          var(--color-accent-2) 33.3%,
+          var(--color-accent-2) 66.7%,
+          var(--color-accent-3) 66.7%
+        );
       transform: skew(0, var(--tilt));
       transform-origin: right center;
     }

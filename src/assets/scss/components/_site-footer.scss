@@ -7,12 +7,11 @@
 
   margin: calc(-50vw * var(--tilt-tan)) 0 0;
   padding: calc(50vw * var(--tilt-tan) + #{3 * $base-spacing}) 0 calc(100vw * var(--tilt-tan));
+  height: 100%;
   position: relative;
   z-index: 1;
-  height: 100%;
   color: var(--color-text-light);
   background-color: var(--color-background-dark);
-  -webkit-font-smoothing: antialiased; //sass-lint:disable-line no-vendor-prefixes
 
   &::before {
     content: "";
@@ -25,15 +24,16 @@
     top: 0;
     left: 0;
     z-index: 1;
+    background-image:
+      linear-gradient(
+        0deg,
+        var(--color-accent-1) 33.3%,
+        var(--color-accent-2) 33.3%,
+        var(--color-accent-2) 66.7%,
+        var(--color-accent-3) 66.7%
+      );
     transform: skew(0, var(--tilt));
     transform-origin: left bottom;
-    background-image: linear-gradient(
-      0deg,
-      var(--color-accent-1) 33.3%,
-      var(--color-accent-2) 33.3%,
-      var(--color-accent-2) 66.7%,
-      var(--color-accent-3) 66.7%
-    );
   }
 
   &::after {

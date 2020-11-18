@@ -53,26 +53,28 @@
     bottom: 0;
     left: -$base-spacing;
     z-index: 1;
-    background-image: linear-gradient(
-      180deg,
-      var(--color-accent-1) 33.3%,
-      var(--color-accent-2) 33.3%,
-      var(--color-accent-2) 66.7%,
-      var(--color-accent-3) 66.7%
-    );
+    background-image:
+      linear-gradient(
+        180deg,
+        var(--color-accent-1) 33.3%,
+        var(--color-accent-2) 33.3%,
+        var(--color-accent-2) 66.7%,
+        var(--color-accent-3) 66.7%
+      );
     transform: skew(0, var(--tilt)) scaleY(0);
     transform-origin: center;
-    opacity: 0;
     transition: opacity $duration, transform $duration $easing;
+    opacity: 0;
     mix-blend-mode: var(--blend-mode, darken);
   }
 
-  @include ha {
+  &:hover,
+  &:active {
     color: var(--color-text-alt);
 
     &::before {
       transform: skew(0, var(--tilt)) scaleY(1);
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 

@@ -38,9 +38,9 @@
       padding-bottom: 0;
       justify-content: flex-start;
       position: static;
+      border-bottom: 0;
       transform: none;
       opacity: 1;
-      border-bottom: 0;
     }
   }
 
@@ -102,18 +102,19 @@
     right: 0;
     bottom: 0;
     left: 0;
-    border-bottom: $tiny-spacing solid currentColor;
-    color: var(--color-accent-3);
-    transform: scaleX(0) translateY(.25em);
-    opacity: 0;
     z-index: 0;
+    color: var(--color-accent-3);
+    border-bottom: $tiny-spacing solid currentColor;
+    transform: scaleX(0) translateY(0.25em);
     transition: opacity $duration, transform $duration $easing;
+    opacity: 0;
   }
 
-  @include ha {
+  &:hover,
+  &:active {
     &::before {
       transform: scaleX(1) translateY(0);
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 }

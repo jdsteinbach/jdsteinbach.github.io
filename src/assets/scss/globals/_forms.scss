@@ -24,8 +24,8 @@
     "fname lname" auto
     "rewards submit" auto /
     1fr      1fr;
-  column-gap: $small-spacing;
   row-gap: $base-spacing;
+  column-gap: $small-spacing;
   border-bottom: $border-default;
 
   @include bp(medium) {
@@ -80,13 +80,13 @@
   padding: $tiny-spacing;
   width: 100%;
   display: block;
-  appearance: none;
-  border: 1px solid var(--color-shadow-1);
-  border-radius: $border-radius-default;
   font-size: var(--fs-body);
   font-family: inherit;
+  appearance: none;
   color: var(--color-text);
   background-color: var(--field-bg, transparent);
+  border: 1px solid var(--color-shadow-1);
+  border-radius: $border-radius-default;
   box-shadow:
     -1px 1px 0 1px var(--color-shadow-1),
     -2px 2px 0 1px var(--color-shadow-1),
@@ -102,7 +102,8 @@
     background-color $duration,
     transform $duration $easing;
 
-  @include ha {
+  &:hover,
+  &:active {
     background-color: var(--field-bg-alt, var(--color-background-code));
     outline: none;
   }
@@ -128,8 +129,8 @@
 .form__submit {
   margin: 0;
   grid-area: submit;
-  justify-self: flex-end;
   align-self: flex-start;
+  justify-self: flex-end;
 
   .form--mailchimp & {
     width: 100%;
@@ -152,7 +153,7 @@
   grid-column: 1 / -1;
   font-size: var(--fs-blockquote);
   text-align: center;
-  animation: fade-down .35s ease-out;
+  animation: fade-down 0.35s ease-out;
 
   &:empty {
     display: none;
@@ -165,7 +166,7 @@
   align-self: end;
   font-size: var(--fs-small);
   font-style: italic;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .error {

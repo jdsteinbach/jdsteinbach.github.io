@@ -1,11 +1,9 @@
 @include fonts(Teko, Teko-500-subset, normal, 500);
-
 @include fonts(Work Sans, WorkSans-Regular-subset, normal, 400);
 @include fonts(Work Sans, WorkSans-Italic-subset, italic, 400);
 @include fonts(Work Sans, WorkSans-Bold-subset, normal, 700);
 @include fonts(Work Sans, WorkSans-BoldItalic-subset, italic, 700);
 @include fonts(Work Sans, WorkSans-Light-subset, normal, 300);
 @include fonts(Work Sans, WorkSans-LightItalic-subset, italic, 300);
-
 @include v-fonts(Work Sans VF, "WorkSansV-subset.woff2", normal, woff2);
 @include v-fonts(Work Sans VF, "WorkSansV-Italic-subset.woff2", italic, woff2);

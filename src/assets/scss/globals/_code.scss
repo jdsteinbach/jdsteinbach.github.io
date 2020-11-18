@@ -2,12 +2,12 @@ code {
   padding: 0 $tiny-spacing;
   display: inline;
   vertical-align: baseline;
-  border-radius: $border-radius-default;
   font-family: var(--ff-code);
   line-height: inherit;
   font-weight: inherit;
   font-feature-settings: initial;
   color: var(--color-text-alt);
+  border-radius: $border-radius-default;
   background-color: var(--color-background-code);
 
   a & {
@@ -21,12 +21,6 @@ code {
 }
 
 pre {
-  @include bp(large) {
-    grid-column: 1 / -1 !important;
-    display: grid;
-    grid-template-columns: 1fr minmax(0, #{$max-width--wide}) 1fr;
-  }
-
   > code {
     margin: $base-spacing 0;
     padding: $small-spacing;
@@ -34,9 +28,9 @@ pre {
     display: block;
     overflow-x: scroll;
     font-size: var(--fs-small);
-    border-radius: 0;
     line-height: 1.5;
     color: var(--color-text-light);
+    border-radius: 0;
     background-color: var(--color-purple-dark);
     box-shadow:
       -1px 1px 0 1px var(--color-accent-1),
@@ -58,6 +52,12 @@ pre {
       grid-column: 2 / -2;
     }
   }
+
+  @include bp(large) {
+    display: grid;
+    grid-column: 1 / -1 !important;
+    grid-template-columns: 1fr minmax(0, #{$max-width--wide}) 1fr;
+  }
 }
 
 $code-selectors: (
@@ -69,17 +69,16 @@ $code-selectors: (
   (function, literal, subst, params, template-variable, quote)
 );
 
-// .highlight-line {
-  @each $batch in $code-selectors {
-    @each $s in $batch {
-      .hljs-#{$s} {
-        $pct: 100% / length($code-selectors) * index($code-selectors, $batch);
-        color: mix($color-white, $color-goldenrod, $pct); // sass-lint:disable-line variable-for-property
-      }
+@each $batch in $code-selectors {
+  @each $s in $batch {
+    .hljs-#{$s} {
+      $pct: 100% / length($code-selectors) * index($code-selectors, $batch);
+
+      color: mix($color-white, $color-goldenrod, $pct);
     }
   }
+}
 
-  .hljs-punctuation {
-    opacity: .7;
-  }
-// }
+.hljs-punctuation {
+  opacity: 0.7;
+}

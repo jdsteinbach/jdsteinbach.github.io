@@ -17,8 +17,8 @@
 
 .theme-toggle__input {
   position: absolute;
-  opacity: 0;
   z-index: -1;
+  opacity: 0;
 }
 
 .theme-toggle__label {
@@ -28,8 +28,8 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  cursor: pointer;
   color: var(--color-dark);
+  cursor: pointer;
 
   &[for="light"] {
     background-color: var(--color-accent-3);
@@ -52,8 +52,8 @@
 
   &:focus,
   .theme-toggle__input:focus + & {
-    outline: 2px solid var(--color-light);
     z-index: 2;
+    outline: 2px solid var(--color-light);
   }
 
   :checked + & {
@@ -62,9 +62,9 @@
   }
 
   svg {
-    display: block;
     width: $small-spacing;
     height: $small-spacing;
+    display: block;
     fill: currentColor;
     transform: skewY(calc(-1 * var(--tilt)));
   }
