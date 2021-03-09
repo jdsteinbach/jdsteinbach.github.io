@@ -46,7 +46,7 @@ I gave the talk *From CSS to Sass in WordPress* at <a title="WP Summit 2014" hre
 * [“Introduction to Sass for New WordPress Theme Designers,” WPBeginner](http://www.wpbeginner.com/wp-tutorials/introduction-to-sass-for-new-wordpress-theme-designers/)
 * [“A WordPress Development Process Using Sass and Compass”, Yanko Dimitrov](http://code.tutsplus.com/tutorials/a-wordpress-development-process-using-sass-and-compass--cms-21861)
 * [“Get Your Sass in Line,” Micah Godbolt](https://micahgodbolt.com/blog/get-your-sass-in-line-tips-and-strategies-for-teams/)
-* [“Architecture for a Sass Project,” Hugo Giraudel](http://sitepoint.com/architecture-sass-project/)
+* [“Architecture for a Sass Project,” Kitty Giraudel](http://sitepoint.com/architecture-sass-project/)
 * [“Sass Partials and the Problems Surrounding Them”, Tim Whitney](https://medium.com/@timodwhit/sass-partials-and-the-problems-surrounding-them-1d9217aa6dee)
 * [“How Evernote handles their Sass Architecture”](http://blog.evernote.com/tech/2014/12/17/evernote-handles-sass-architecture/)
 
