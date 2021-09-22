@@ -19,7 +19,7 @@ It also comes in black &amp; light blue, and ladies' styles as well! It&#8217;s 
 And&hellip; if t-shirts aren&#8217;t your thing, [there are stickers too](http://www.stickermule.com/marketplace/6469-co-sticker)! Great for bumpers, windows, fridges, &amp; laptops!
 
 <p style="max-width:320px;margin-left:auto;margin-right:auto;border-radius:4px;background-color:#e9e9e9;text-align:center;padding:1em">
-    <img src="https://www.stickermule.com/marketplace/embed_img/6469" style="display:inline-block"/>
+    <img src="https://www.stickermule.com/marketplace/embed_img/6469" style="display:inline-block" alt="Colorado Sun stickers">
     <a href="https://www.stickermule.com/marketplace/6469-colorado-sun" style="display:block" class="button" target="_blank">Buy this sticker</a>
 </p>
 

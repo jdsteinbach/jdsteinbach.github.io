@@ -1,5 +1,6 @@
 const { URL } = require('url')
 const { DateTime } = require('luxon')
+const { encode } = require('html-entities')
 const pluginTOC = require('eleventy-plugin-toc')
 const pluginDropcap = require('eleventy-plugin-dropcap')
 const markdownIt = require('markdown-it')
@@ -73,6 +74,8 @@ module.exports = eleventyConfig => {
   eleventyConfig.addFilter('rss_date', date => formatDate(date))
 
   eleventyConfig.addFilter('title_class', string => string.length > 30 ? ' is-long' : '')
+
+  eleventyConfig.addFilter('encode', string => encode(string))
 
   // eleventyConfig.addTransform('no_orphan', (content, outputPath) => {
   //   if( outputPath.endsWith(".html") ) {

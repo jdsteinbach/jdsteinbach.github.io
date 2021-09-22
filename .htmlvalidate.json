@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "html-validate:recommended"
+  ],
+  "rules": {
+    "no-trailing-whitespace": "off",
+    "attr-spacing": "off",
+    "void-style": [
+      "warn",
+      {
+        "style": "omit"
+      }
+    ],
+    "no-inline-style": "off",
+    "long-title": [
+      "error",
+      {
+        "maxlength": 100
+      }
+    ]
+  }
+}

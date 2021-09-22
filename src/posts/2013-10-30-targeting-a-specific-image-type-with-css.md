@@ -17,15 +17,15 @@ categories:
 So I&#8217;m coding up a new site from our designer and he&#8217;s set some nice quasi-polaroid photo effects: white border, box-shadow, etc. This looks great on rectangular images, of course, but not so much on other images with transparency.
 
 <div class="image-box">
-  <img class="size-full wp-image-1128 alignnone" alt="Normal rectangular photo image" src="/images/stanley-sm.jpg" width="400" height="300" />
-  <img class="size-full wp-image-1127 alignnone" alt="Fake logo image with transparency" src="/images/fake-logo.png" width="400" height="300" />
+  <img class="size-full wp-image-1128 alignnone" alt="Normal rectangular photo image" src="/images/stanley-sm.jpg" width="400" height="300">
+  <img class="size-full wp-image-1127 alignnone" alt="Fake logo image with transparency" src="/images/fake-logo.png" width="400" height="300">
 </div>
 
 One quick fix is to set the background to the same color as the border. That fixes the lonely frame problem and puts the transparent image on &#8220;card&#8221; of sorts. It&#8217;s a step in the right direction:
 
 <div class="meh image-box">
-  <img class="size-full wp-image-1128 alignnone" alt="Normal rectangular photo image" src="/images/stanley-sm.jpg" width="400" height="300" />
-  <img class="size-full wp-image-1127 alignnone" alt="Fake logo image with transparency" src="/images/fake-logo.png" width="400" height="300" />
+  <img class="size-full wp-image-1128 alignnone" alt="Normal rectangular photo image" src="/images/stanley-sm.jpg" width="400" height="300">
+  <img class="size-full wp-image-1127 alignnone" alt="Fake logo image with transparency" src="/images/fake-logo.png" width="400" height="300">
 </div>
 
 My old workaround was to ask our content specialist to add the class &#8220;no-border&#8221; to any image that was transparent and thus shouldn&#8217;t have the border effect. That was less than ideal, however. WordPress doesn&#8217;t make it super-easy to add classes to images, so this would put extra work on him, require new training for anyone else who touches content, and provide an extra avenue for operator error. What I really needed was a way to target the transparent images via CSS without adding anything to them in the CMS.
@@ -49,8 +49,8 @@ img[src*="png"] {
 Now, as you can see below, the JPG photo image has the correct border / box-shadow, while the PNG displays in all its transparent, frame-less glory.
 
 <div class="good image-box">
-  <img class="size-full wp-image-1128 alignnone" alt="Normal rectangular photo image" src="/images/stanley-sm.jpg" width="400" height="300" />
-  <img class="size-full wp-image-1127 alignnone" alt="Fake logo image with transparency" src="/images/fake-logo.png" width="400" height="300" />
+  <img class="size-full wp-image-1128 alignnone" alt="Normal rectangular photo image" src="/images/stanley-sm.jpg" width="400" height="300">
+  <img class="size-full wp-image-1127 alignnone" alt="Fake logo image with transparency" src="/images/fake-logo.png" width="400" height="300">
 </div>
 
 Of course, there is a possibility that someone might upload a rectangular photo formatted as PNG, but in my opinion, that&#8217;s a good opportunity to teach them about file formats. Other than education, any ideas on how to improve this snippet to cover non-transparent PNGs?

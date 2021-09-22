@@ -7,7 +7,7 @@ menu_order: 40
 menu_title: About <span class="screen-reader-only">James</span>
 excerpt: James is a real person, not just a developer. He has a lovely family, a sense of humor, and an opinionated palate.
 ---
-<img class="alignleft" src="/images/headshot.png" alt="James Steinbach: Profile Photo" width="200" height="174" style="shape-outside:url(/images/headshot.png);shape-margin:1em;"/>I&#8217;m a Chicago native currently enjoying the mountains of Denver after a long sojourn in the Carolinas. When I&#8217;m not building websites, I love to read, build LEGO, solve puzzles, and spend time with [my wife Audrey][1] & kids. And I rarely say no to fantastic food &amp; drink.
+<img class="alignleft" src="/images/headshot.png" alt="James Steinbach: Profile Photo" width="200" height="174" style="shape-outside:url(/images/headshot.png);shape-margin:1em;">I&#8217;m a Chicago native currently enjoying the mountains of Denver after a long sojourn in the Carolinas. When I&#8217;m not building websites, I love to read, build LEGO, solve puzzles, and spend time with [my wife Audrey][1] & kids. And I rarely say no to fantastic food &amp; drink.
 
 When I am building websites, I love developing clever animations: motion is one of the best ways to delight users and help them understand their interaction with content. I want to make content accessible to every user, so responsive design is a must. I also want to keep things organized for future me or future developers, so I&#8217;m using Sass/PostCSS to keep styles clean and light.
 

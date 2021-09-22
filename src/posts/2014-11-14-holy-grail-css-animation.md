@@ -9,7 +9,7 @@ categories:
 ---
 If you&#8217;ve been doing front-end development for long, you may have heard of the &#8220;Holy Grail&#8221; of web layout. [A List Apart][1] identified this layout as a flexible-width content column between two fixed-width sidebar columns, with all three columns occupying the same height between the header and footer rows. (Today we have Flexbox, so that problem is pretty solvable.)
 
-<img class="alignright wp-image-1379 size-medium" src="/images/holy-grail-168x300.png" alt="holy grail" width="168" height="300" />
+<img class="alignright wp-image-1379 size-medium" src="/images/holy-grail-168x300.png" alt="holy grail" width="168" height="300">
 
 I&#8217;ve identified a &#8220;Holy Grail&#8221; of CSS animation that (to my knowledge) hasn&#8217;t been solved successfully yet. What I want to do is mimic jQuery&#8217;s `slideToggle()` (`slideDown()` / `slideUp()`) feature with pure CSS on in-page content. I&#8217;m picturing collapsible FAQs or Wikipedia&#8217;s mobile view where content is collapsed under the header (except animated, unlike Wikipedia). Here are my five requirements for this behavior:
 

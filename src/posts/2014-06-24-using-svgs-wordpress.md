@@ -24,7 +24,7 @@ That snippet comes from <a title="CSS-Tricks: Allow SVG through WordPress Upload
 ## Displaying SVGs in WordPress Dashboard
 
 <div id="attachment_1251" style="width: 298px" class="wp-caption alignright">
-  <img class="size-medium wp-image-1251" src="/images/Screen-Shot-2014-06-23-at-4.00.54-PM-288x300.png" alt="Default display of SVGs in WordPress custom field" width="288" height="300" />
+  <img class="size-medium wp-image-1251" src="/images/Screen-Shot-2014-06-23-at-4.00.54-PM-288x300.png" alt="Default display of SVGs in WordPress custom field" width="288" height="300">
   <p class="wp-caption-text">Whoops, this SVG is huge!</p>
 </div>
 
@@ -45,7 +45,7 @@ add_action('admin_head', 'svg_size');
 What we just did was insert a small CSS declaration into every Dashboard page. The selector finds <code>&lt;svg&gt;</code> elements, as well as images with <code>.svg</code> in their src attribute. It then overrides their default attributes (1px × 1px in the Editor, no limits in a custom field) and fits them all into a 150px × 150px box.
 
 <div id="attachment_1250" style="width: 1230px" class="wp-caption aligncenter">
-  <img class="size-full wp-image-1250" src="/images/Screen-Shot-2014-06-23-at-3.58.53-PM.png" alt="Improved display of SVGs in WordPress custom field" width="1220" height="230" />
+  <img class="size-full wp-image-1250" src="/images/Screen-Shot-2014-06-23-at-3.58.53-PM.png" alt="Improved display of SVGs in WordPress custom field" width="1220" height="230">
   <p class="wp-caption-text">Ah, this is much better!</p>
 </div>
 
@@ -82,7 +82,7 @@ Of course, if you&#8217;re using a different plugin for your custom fields (Type
 
 Now you should get this delightful hover effect:
 
-<img class="alignright size-full wp-image-1254" src="/images/svg-hover.gif" alt="CSS Hover Effects for Inline SVGs in WordPress" width="301" height="200" />
+<img class="alignright size-full wp-image-1254" src="/images/svg-hover.gif" alt="CSS Hover Effects for Inline SVGs in WordPress" width="301" height="200">
 
 ## Conclusion
 

@@ -9,18 +9,18 @@ excerpt: Do you need to get in touch with James? Email him here.
 ---
 
 <div id="form-message"></div>
-<form class="form form--contact" id="contact-form" method="POST" action="https://api.jdsteinbach.com/mail/">
+<form class="form form--contact" id="contact-form" method="post" action="https://api.jdsteinbach.com/mail/">
   <div class="catch-flies screen-reader-only" aria-hidden="true">
-    <label for="web">Leave this field blank.</label>
-    <input type="text" id="web" class="sweetinput" name="web" tabindex="-1" />
+    <label for="web2">Leave this field blank.</label>
+    <input type="text" id="web2" class="sweetinput" name="web" tabindex="-1">
   </div>
   <div class="form__field">
     <label class="form__label" for="name">Your Name</label>
-    <input type="text" id="name" class="form__input form__input--name" name="name" required />
+    <input type="text" id="name" class="form__input form__input--name" name="name" required>
   </div>
   <div class="form__field">
     <label class="form__label" for="email">Email Address</label>
-    <input type="email" class="form__input form__input--email" id="email" name="email" required />
+    <input type="email" class="form__input form__input--email" id="email" name="email" required>
   </div>
   <div class="form__field">
     <label class="form__label" for="message">Your Message</label>

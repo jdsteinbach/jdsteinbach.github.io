@@ -2,13 +2,13 @@
   {%- if post.data.outbound_url %}
     <h2 class="archive-item__title">
       <a class="archive-item__link archive-item__link--outbound" href="{{ post.data.outbound_url }}" target="_blank" rel="noopener noreferrer">
-        {{ post.data.title }}
+        {{ post.data.title | encode }}
         {% include images/icon-link %}
       </a>
     </h2>
   {%- else %}
     <h2 class="archive-item__title">
-      <a class="archive-item__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.data.title }}</a>
+      <a class="archive-item__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.data.title | encode }}</a>
     </h2>
   {%- endif %}
   {%- if post.data.excerpt -%}

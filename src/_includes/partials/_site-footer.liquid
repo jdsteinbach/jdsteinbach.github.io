@@ -1,4 +1,4 @@
-<footer class="site-footer l-grid" role="contentinfo">
+<footer class="site-footer l-grid">
   {% include partials/_subscribe %}
 
   <div class="site-footer__columns">
@@ -33,7 +33,7 @@
     </div>
 
     <div class="site-footer__column">
-      <p class="text">{{ site.description }}</p>
+      <p class="text">{{ site.description | encode }}</p>
     </div>
   </div>
 
