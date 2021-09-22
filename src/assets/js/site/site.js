@@ -7,7 +7,7 @@ document.body.classList.add('js')
 /*
  * IntersectionObserver for Header Opacity
  */
-let io = new IntersectionObserver((entries, observer) => {
+let io = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     const opacity = 1 - (entry.intersectionRatio / 2).toFixed(2)
     document.body.style.setProperty('--header-opacity', opacity)
@@ -135,7 +135,7 @@ const visibilityToggle = (toggle, externalClick, escapeKey, focusLeaves) => {
       widget.setAttribute('aria-hidden', 'true')
     }
 
-    toggle.addEventListener('click', e => {
+    toggle.addEventListener('click', () => {
       if (widget.getAttribute('aria-hidden') === 'true') {
         open()
       } else {
@@ -166,7 +166,7 @@ const visibilityToggle = (toggle, externalClick, escapeKey, focusLeaves) => {
     document.addEventListener('keyup', e => {
       if (
         escapeKey &&
-        "keyCode" in e &&
+        'keyCode' in e &&
         e.keyCode === 27 &&
         widget.getAttribute('aria-hidden') !== 'true'
       ) {
