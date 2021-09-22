@@ -5,7 +5,7 @@ const pluginDropcap = require('eleventy-plugin-dropcap')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const markdownItHighlightJS = require('markdown-it-highlightjs')
-const typogr = require('typogr')
+// const typogr = require('typogr')
 
 const mdOptions = {
   html: true,

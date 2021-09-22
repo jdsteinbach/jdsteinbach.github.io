@@ -12,6 +12,7 @@
     "parserOptions": {
         "ecmaVersion": 2018
     },
+    "ignorePatterns": ["!.eleventy.js"],
     "rules": {
         "indent": [
             "error",

@@ -11,6 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:styles": "stylelint 'src/assets/scss/**/*.scss' --report-needless-disables",
     "lint:scripts": "eslint 'src/assets/js/**/*.js'",
+    "lint:config": "eslint '.eleventy.js'",
     "start": "npm run serve",
     "serve": "cross-env ELEVENTY_ENV=dev eleventy --serve",
     "serve:debug": "cross-env ELEVENTY_ENV=dev DEBUG=Eleventy* eleventy",
