@@ -128,7 +128,7 @@ $color-green:     #3D9970;
 
 Using a preprocessor means you no longer need to deal with 1000s of lines of CSS in a single file. (You'll still compile everything to a single CSS file, but you won't have to maintain directly.)
 
-Let's talk about how to organize your preprocessor partials. Credit for this pattern goes to Hugo Giraudel's [Sass Guidelines site](http://sass-guidelin.es/#the-7-1-pattern).
+Let's talk about how to organize your preprocessor partials. Credit for this pattern goes to Kitty Giraudel's [Sass Guidelines site](http://sass-guidelin.es/#the-7-1-pattern).
 
 ~~~
 // 7-1 Sass Folder Pattern

@@ -73,7 +73,7 @@ $breakpoints: (
 }
 ~~~
 
-*Update*: One problem with the code above is that if fails silently. If you misspell your breakpoint name, nothing happens. No errors, no compiled styles. Just failure with no warning. I got some help from [Hugo Giraudel][3] in a [comment thread][4]. Here&#8217;s his suggested rewrite handling errors correctly:
+*Update*: One problem with the code above is that it fails silently. If you misspell your breakpoint name, nothing happens. No errors, no compiled styles. Just failure with no warning. I got some help from [Kitty Giraudel][3] in a [comment thread][4]. Here&#8217;s his suggested rewrite handling errors correctly:
 
 ~~~scss
 $breakpoints: (
@@ -99,5 +99,5 @@ See the code in action:
 
  [1]: http://css-tricks.com/media-queries-sass-3-2-and-codekit/ "Chris Coyier names his media queries after bears."
  [2]: http://blog.sass-lang.com/posts/184094-sass-33-is-released "Sass 3.3 Release"
- [3]: http://hugogiraudel.com/ "Hugo Giraudel - Sass Guru"
+ [3]: http://kittygiraudel.com/ "Kitty Giraudel"
  [4]: http://www.sitepoint.com/css-sass-styleguide/#comment-1288013797 "My Current CSS and Sass Styleguide"

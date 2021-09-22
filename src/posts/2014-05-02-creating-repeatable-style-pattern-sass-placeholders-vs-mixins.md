@@ -7,7 +7,7 @@ categories:
   - Sass
 sassmeister: true
 ---
-One the biggest benefits of Sass its ability to create reusable blocks of code. I often use <a title="Sass Placeholder Selector Documentation" href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_" target="_blank">`%placeholders`</a> or <a title="Sass Mixin Documentation" href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">`@mixins`</a> to create reusable code modules. (Here&#8217;s a great article on the <a title="Sass: Mixin or Placeholder? by Hugo Giraurdel" href="http://www.sitepoint.com/sass-mixin-placeholder/" target="_blank">difference between placeholders and mixins</a>. My short version: use mixins when you need to pass variables and placeholders when you don&#8217;t.)
+One the biggest benefits of Sass its ability to create reusable blocks of code. I often use <a title="Sass Placeholder Selector Documentation" href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_" target="_blank">`%placeholders`</a> or <a title="Sass Mixin Documentation" href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">`@mixins`</a> to create reusable code modules. (Here&#8217;s a great article on the <a title="Sass: Mixin or Placeholder? by Kitty Giraurdel" href="http://www.sitepoint.com/sass-mixin-placeholder/" target="_blank">difference between placeholders and mixins</a>. My short version: use mixins when you need to pass variables and placeholders when you don&#8217;t.)
 
 I&#8217;m working on a site now that uses the same grid pattern in multiple pages: products, services, and industries all have the same archive layout. I don&#8217;t need any variable-controlled style, so my first thought was to use a placeholder. With Sass 3.3, you can create OOCSS/BEM selectors by referencing parent selectors with `&`. In previous versions, you could create nested selectors, now you can create new selectors:
 
@@ -41,11 +41,11 @@ Of course, this isn&#8217;t just for grid patterns: it applies to any nested sty
 
 **Update:**
 
-Thanks to Hugo & Stuart &#8211; [Hugo][1] posted a comment with a cleaner version that handles the parent class list in a stringier way and makes the final `@if` loop unnecessary. [Stuart][2] recommended including the `comma` to keep the list of classes comma-separated in the output.
+Thanks to Kitty & Stuart &#8211; [Kitty][1] posted a comment with a cleaner version that handles the parent class list in a stringier way and makes the final `@if` loop unnecessary. [Stuart][2] recommended including the `comma` to keep the list of classes comma-separated in the output.
 
 <p class="sassmeister" data-gist-id="3e6b586921f9556856fd" data-height="480">
   <a href="http://sassmeister.com/gist/3e6b586921f9556856fd">Play with this gist on SassMeister.</a>
 </p>
 
- [1]: https://hugogiraudel.com/ "Read Hugo's blog"
+ [1]: https://kittygiraudel.com/ "Read Kitty's blog"
  [2]: https://alwaystwisted.com/ "Read Stuart's blog"
