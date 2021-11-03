@@ -28,8 +28,8 @@ $breakpoints: (
 $base-spacing: 1.6rem;
 $large-spacing: $base-spacing * 2;
 $giant-spacing: $base-spacing * 4;
-$small-spacing: $base-spacing / 2;
-$tiny-spacing: $base-spacing / 4;
+$small-spacing: math.div($base-spacing, 2);
+$tiny-spacing: math.div($base-spacing, 4);
 
 // LAYOUT
 $max-width: 40rem;

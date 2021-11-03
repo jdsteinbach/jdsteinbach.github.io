@@ -81,7 +81,7 @@ h5 {
   margin-top: $small-spacing;
   margin-bottom: $tiny-spacing;
   font-size: var(--fs-body);
-  letter-spacing: (1em / 16);
+  letter-spacing: math.div(1em, 16);
   text-transform: uppercase;
   color: var(--color-text-alt);
 }
