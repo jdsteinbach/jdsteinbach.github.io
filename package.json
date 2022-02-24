@@ -55,6 +55,7 @@
     "parser": "babel-eslint"
   },
   "dependencies": {
+    "dotenv": "^16.0.0",
     "form-data": "^4.0.0",
     "mailgun.js": "^5.0.1"
   }

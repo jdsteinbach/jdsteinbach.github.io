@@ -22,9 +22,8 @@ const client = mailgun.client({
 })
 
 exports.handler = async (event, context) => {
-  const { payload } = JSON.parse(event.body)
+  const { name, email, message } = JSON.parse(event.body)
 
-  const { name, email, message } = payload.data
   const subject = `Email from ${name}`
 
   try {
