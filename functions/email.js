@@ -25,7 +25,7 @@ exports.handler = async (event, context) => {
   const { payload } = JSON.parse(event.body)
 
   const { name, email, message } = payload.data
-  const subject =
+  const subject = `Email from ${name}`
 
   try {
     const res = await client.messages.create(
