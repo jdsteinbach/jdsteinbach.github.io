@@ -20,3 +20,6 @@ yarn-error.log*
 .sass-cache
 *.DS_Store
 .publish
+
+_netlify/
+.env*
