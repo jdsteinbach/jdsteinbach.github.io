@@ -1,3 +1,4 @@
+const busboy = require('busboy')
 const formData = require('form-data')
 const Mailgun = require('mailgun.js')
 
@@ -21,10 +22,47 @@ const client = mailgun.client({
   username: 'api'
 })
 
+const parseFormBody = event => {
+  return new Promise((resolve) => {
+    const fields = {}
+
+    const bb = busboy({
+      headers: event.headers
+    })
+
+    bb.on(
+      'file',
+      (fieldname, filestream, filename, transferEncoding, mimeType) => {
+        filestream.on('data', (data) => {
+          fields[fieldname] = {
+            filename,
+            type: mimeType,
+            content: data,
+          }
+        })
+      }
+    )
+
+    bb.on('field', (fieldName, value) => {
+      fields[fieldName] = value
+    })
+
+    bb.on('finish', () => {
+      resolve(fields)
+    })
+
+    bb.write(Buffer.from(event.body, 'base64'))
+  })
+}
+
 exports.handler = async (event, context) => {
-  const { name, email, message } = JSON.parse(event.body)
+  const body = await parseFormBody(event)
+
+  const { name, email, message } = body
 
   const subject = `Email from ${name}`
+
+  const text = message.replace(/\\n/gi, '\n')
 
   try {
     const res = await client.messages.create(
@@ -32,8 +70,8 @@ exports.handler = async (event, context) => {
       {
         from: `${name} <${email}>`,
         to: MAILGUN_TO,
-        subject: subject,
-        text: message
+        subject,
+        text
       })
       .then(data => {
         return data

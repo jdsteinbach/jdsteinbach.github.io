@@ -9,7 +9,7 @@ excerpt: Do you need to get in touch with James? Email him here.
 ---
 
 <div id="form-message"></div>
-<form class="form form--contact" id="contact-form" method="POST" action="https://api.jdsteinbach.com/mail/">
+<form class="form form--contact" id="contact-form" method="POST" action="{{ site.mailurl }}/">
   <div class="catch-flies screen-reader-only" aria-hidden="true">
     <label for="web">Leave this field blank.</label>
     <input type="text" id="web" class="sweetinput" name="web" tabindex="-1" />
