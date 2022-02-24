@@ -63,9 +63,8 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addFilter('copyright_years', posts => {
     const first = posts[(posts.length - 1)].date
-    const last = posts[0].date
 
-    return `${formatDateYear(first)}&ndash;${formatDateYear(last)}`
+    return `${formatDateYear(first)}&ndash;${new Date().getFullYear()}`
   })
 
   eleventyConfig.addFilter('abs_url', (href, base) => new URL(href, base).toString())

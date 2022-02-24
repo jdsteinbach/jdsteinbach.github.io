@@ -6,9 +6,9 @@
   $shadow: ();
 
   @for $i from 1 through $steps {
-    $x: ($depth / $steps * -$i);
-    $y-a: ($depth / $steps * if(is-even($i), $i, ($i - 1)));
-    $y-b: ($depth / $steps * $i);
+    $x: math.div($depth, $steps) * -$i;
+    $y-a: math.div($depth, $steps) * if(is-even($i), $i, ($i - 1));
+    $y-b: math.div($depth, $steps) * $i;
     $shadow-layer-a: $x $y-a $highlight-color;
     $shadow-layer-b: $x $y-b $shadow-color;
     $shadow: append($shadow, ($shadow-layer-a, $shadow-layer-b), comma);

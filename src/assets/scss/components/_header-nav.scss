@@ -75,7 +75,7 @@
   position: relative;
   z-index: 1;
   font-size: var(--fs-small);
-  letter-spacing: (1em / 8);
+  letter-spacing: math.div(1em, 8);
   text-transform: lowercase;
   text-decoration: none;
 

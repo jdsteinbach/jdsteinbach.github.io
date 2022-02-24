@@ -36,11 +36,15 @@
   <link rel="canonical" href="{{ page.url | abs_url: site.url }}" itemprop="url" />
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | abs_url: site.url }}" />
 
+  <link rel="preload" href="{{ "/assets/fonts/Teko-500-subset.woff2" | abs_url: site.url }}" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate icon" href="/favicon.ico" />
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F75123" />
-  <meta name="msapplication-TileColor" content="#602F9A" />
-  <meta name="theme-color" content="#602F9A" />
+  <meta name="msapplication-TileColor" content="#492e63" />
+
+  <meta name="theme-color" content="#321f44" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#492e63" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#492e63" />
 </head>

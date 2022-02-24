@@ -10,7 +10,7 @@ button,
   appearance: none;
   font-size: var(--fs-small);
   font-family: var(--ff-body);
-  letter-spacing: (1em / 16);
+  letter-spacing: math.div(1em, 16);
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;

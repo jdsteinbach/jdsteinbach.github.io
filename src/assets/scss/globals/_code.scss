@@ -72,7 +72,7 @@ $code-selectors: (
 @each $batch in $code-selectors {
   @each $s in $batch {
     .hljs-#{$s} {
-      $pct: 100% / length($code-selectors) * index($code-selectors, $batch);
+      $pct: math.div(100%, length($code-selectors)) * index($code-selectors, $batch);
 
       color: mix($color-white, $color-goldenrod, $pct);
     }
