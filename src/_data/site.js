@@ -1,7 +1,7 @@
 module.exports = {
   title: 'James Steinbach',
   email: 'jdsteinbach@gmail.com',
-  description: 'Front-end architect. <br />Speaker & writer. <br />Sass, CSS animation, RWD & WP.',
+  description: 'Front-end architect. <br />Speaker & writer. <br />React & Vue, Sass & CSS, performance & accessibility.',
   baseurl: '',
   url: 'https://jdsteinbach.com',
   twitter_username: 'jdsteinbach',
