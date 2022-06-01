@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>James Steinbach</title>
-  <subtitle>Front-end architect. Speaker &amp; writer. Sass, CSS animation, RWD &amp; WP.</subtitle>
+  <subtitle>Front-end architect. Speaker &amp; writer. React &amp; Vue, Sass &amp; CSS, performance &amp; accessibility.</subtitle>
   <link href="https://jdsteinbach.com/feed.xml" rel="self"/>
   <link href="https://jdsteinbach.com"/>
   <updated>2020-10-27T00:00:00+00:00</updated>
