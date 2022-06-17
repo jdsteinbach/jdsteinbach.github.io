@@ -22,7 +22,6 @@ Daily email with 5 links related to design, development & tech.
 
 Weekly list of responsive design links, includes interviews, tutorials & libraries.
 
-
 ### [CSS Layout News](http://csslayout.news/)*
 
 Weekly email from [Rachel Andrew](https://twitter.com/rachelandrew) with news, tutorials, case studies and articles about CSS Grid, Flexbox and other layout techniques.
@@ -39,9 +38,11 @@ Weekly email with from [Rachel Nabors](https://twitter.com/rachelnabors) UI anim
 
 Weekly email with front-end links about HTML, CSS, JS, fonts, UI/UX, and more! (Curated by me!)
 
-### [Sass News](http://sass.news/)*
+### Sass News](http://sass.news/)
 
 Weekly email of Sass-related links, includes articles, tutorials, & events.
+
+_Sass News is no longer active._
 
 ### [CSS Weekly](http://css-weekly.com/)
 
@@ -58,14 +59,6 @@ Weekly list of HTML5 links, includes spec discussions, polyfills & job postings.
 ### [JavaScript Weekly](http://javascriptweekly.com)
 
 Weekly list of JS links, includes browser API news, tutorials, and polyfills.
-
-### [Web Tools Weekly](http://webtoolsweekly.com/)
-
-Weekly curation of links, focused on JS & CSS libraries or frameworks.
-
-### [eWebDesign](http://ewebdesign.com/)
-
-Collection of web design resources, includes free downloads, inspiration & tutorials.
 
 ### [WPMail.me](http://wpmail.me/)*
 
@@ -139,6 +132,10 @@ Just like CSS Guidelines, but for Sass.
 
 Look up any CSS, HTML5, SVG or browser API property and see what browsers support it (and which ones need prefixes or fallbacks).
 
+### [WebsiteSetup](https://websitesetup.org/)
+
+This introduction to setting up your first website covers all the topics you'll need: hosting, domains, CMSes and more. It focuses most on WordPress.
+
 ### [Sass Docs](http://sass-lang.com/)*
 
 Everything you need to know about Sass. I learn something new every time I come here.
@@ -160,10 +157,6 @@ Free. Write interactive code in the browser as you complete lessons. Topics incl
 ### [Learnable](https://learnable.com/home)
 
 $29/mo; $149/yr. Screencast videos, PDFs and courses. Topics include: HTML+CSS, JS, PHP, Ruby, Design+UX, Mobile & Workflow.
-
-### [Drawar](https://www.drawar.com/)*
-
-Priced per course. At the time of writing, their [Sass course](https://www.drawar.com/web/course/sass) was free. They also have an iOS design course.
 
 ### [Lynda](https://www.lynda.com/)
 
