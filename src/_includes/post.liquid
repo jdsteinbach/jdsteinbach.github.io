@@ -16,15 +16,15 @@ layout: _base
         <span class="author" itemprop="author creator">{{ author }}</span>
       {%- endif %}
       {%- if categories %}
-        <span class="categories">{% include partials/_categories %}</span>
+        <span class="categories">{% include "partials/_categories" %}</span>
       {%- endif %}
     </p>
   </header> {% endcomment %}
 
-  {% include partials/_hero %}
+  {% include "partials/_hero" %}
 
   <div class="main-content l-grid l-grid--content" itemprop="articleBody">
-    {% include partials/_toc %}
+    {% include "partials/_toc" %}
 
     {{ content | dropcap }}
   </div>
