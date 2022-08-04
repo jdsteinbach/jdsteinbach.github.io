@@ -73,6 +73,8 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addFilter('title_class', string => string.length > 30 ? ' is-long' : '')
 
+  eleventyConfig.addFilter('no_orphan', content =>  typogr(String(content)).chain().widont().value())
+
   // eleventyConfig.addTransform('no_orphan', (content, outputPath) => {
   //   if( outputPath.endsWith(".html") ) {
   //     return typogr(content).chain().widont().value()

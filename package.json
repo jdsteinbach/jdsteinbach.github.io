@@ -20,7 +20,7 @@
   "author": "James Steinbach",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^1.0.1",
     "autoprefixer": "^10.3.5",
     "axios": "^0.22.0",
     "babel-core": "^6.26.0",

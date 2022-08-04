@@ -7,10 +7,10 @@
     <rect class="starfield__bg" x="0" y="0" width="1000" height="1000" />
     {% for i in (1..5) %}
       <g class="starfield__layer">
-        {% for i in (1..30) %}
+        {% for j in (1..30) %}
           {% assign x = 1000 | random %}
           {% assign y = 1000 | random %}
-          {% assign scale = 1 | random | plus: .5 %}
+          {% assign scale = 1 | random | plus: '.5' %}
           <path
             class="starfield__star"
             d="m{{x}},{{y}}l2,2l-2,2l-2,-2z"
