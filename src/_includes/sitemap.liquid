@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {%- for post in collections.all %}
+    <url>
+      <loc>{{ post.url | abs_url: site.url }}
+      </loc>
+      <lastmod>{{ post.date | rss_date }}
+      </lastmod>
+      {%- if post.data.changeFreq -%}
+        <changefreq>
+          {{ post.data.changefreq }}
+        </changefreq>
+      {%- endif -%}
+    </url>
+  {%- endfor -%}
+</urlset>
