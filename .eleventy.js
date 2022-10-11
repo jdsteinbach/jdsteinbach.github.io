@@ -73,14 +73,7 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addFilter('title_class', string => string.length > 30 ? ' is-long' : '')
 
-  eleventyConfig.addFilter('no_orphan', content =>  typogr(String(content)).chain().widont().value())
-
-  // eleventyConfig.addTransform('no_orphan', (content, outputPath) => {
-  //   if( outputPath.endsWith(".html") ) {
-  //     return typogr(content).chain().widont().value()
-  //   }
-  //   return content
-  // })
+  eleventyConfig.addFilter('no_orphan', content => typogr(String(content)).chain().widont().value())
 
   // Create Posts Collection
   eleventyConfig.addCollection('posts', collection => {
@@ -157,6 +150,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/A')
   eleventyConfig.addPassthroughCopy('src/CNAME')
   eleventyConfig.addPassthroughCopy('src/.nojekyll')
+  eleventyConfig.addPassthroughCopy('src/robots.txt')
 
   // More watched files
   eleventyConfig.addWatchTarget('./src/assets/js/**/*.js')

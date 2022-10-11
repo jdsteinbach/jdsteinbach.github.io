@@ -1,27 +1,13 @@
-const https = require('https')
+const axios = require('axios')
 
-const url = 'https://api.jdsteinbach.com/newsletter/'
+const url = 'https://api.jdsteinbach.com/.netlify/functions/newsletter'
 
-const getNewsletter = () => {
-  return new Promise((resolve, reject) => {
-    https.get(
-      url,
-      res => {
-        let data = ''
-
-        res.on('data', d => {
-          data += d
-        })
-
-        res.on('end', () => {
-          resolve(JSON.parse(data))
-        })
-      }
-    ).on('error', error => {
-      console.error(error)
-      reject(error)
-    })
+const getNewsletter = () => axios.get(url)
+  .then(({ data }) => {
+    return data
   })
-}
+  .catch(error => {
+    console.error(error)
+  })
 
 module.exports = getNewsletter()
