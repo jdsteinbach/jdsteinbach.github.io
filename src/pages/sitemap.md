@@ -1,5 +1,5 @@
 ---
-permalink: feed.xml
-layout: feed
+permalink: sitemap.xml
+layout: sitemap
 eleventyExcludeFromCollections: true
 ---

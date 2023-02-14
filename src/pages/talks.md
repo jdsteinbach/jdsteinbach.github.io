@@ -18,7 +18,7 @@ I enjoy writing here on the blog, but I really love speaking with real audiences
 * [Modal Windows for Everyone](https://jdsteinbach.com/a11y-modal-slides/#/) (Longer Version) / [Video](https://www.youtube.com/watch?v=kHqLKi1MwT4)
 * CascadiaJS 2020: [Modal Windows for Everyone](https://jdsteinbach.com/a11y-modal-slides/#/) / [Video](https://www.youtube.com/watch?v=UoIV6IWuJCY)
 * [A Practical Introduction to CSS Grid](https://jdsteinbach.com/intro-css-grid/#/)
-* EmberConf 2020: [An Ember Dev's Guide to CSS Grid](https://jdsteinbach.com/emberconf-grid/#/)
+* EmberConf 2020: [An Ember Dev's Guide to CSS Grid](https://jdsteinbach.com/emberconf-grid/#/) / [Video](https://www.youtube.com/watch?v=qAkRdaokkgI)
 * [Intro to Web Components](https://jdsteinbach.com/intro-web-components/#/)
 * EmberCamp 2019: [Content Choreography](https://jdsteinbach.com/ember-anim/#/)
 * Activate 2019: [A Practical Introduction to CSS Grid](https://jdsteinbach.com/intro-css-grid/#/)
