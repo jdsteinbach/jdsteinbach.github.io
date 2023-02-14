@@ -14,6 +14,7 @@ const getNewsletter = () => {
         })
 
         res.on('end', () => {
+          if(typeof data === 'string' && data.indexOf('<') === 0) throw new Error('ERROR: Newsletter API did not receive JSON.')
           resolve(JSON.parse(data))
         })
       }
