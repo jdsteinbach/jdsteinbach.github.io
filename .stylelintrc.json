@@ -9,11 +9,21 @@
   ],
   "rules": {
     "max-nesting-depth": 3,
-    "string-quotes": "double",
-    "function-parentheses-space-inside": "never-single-line",
+    "@stylistic/string-quotes": "double",
+    "@stylistic/function-parentheses-space-inside": "never-single-line",
+    "import-notation": "string",
+    "no-invalid-position-at-import-rule": null,
     "selector-class-pattern": "[a-z-_]+",
     "no-descending-specificity": null,
     "selector-no-qualifying-type": null,
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": [
+          "text-shadow"
+        ]
+      }
+    ],
     "at-rule-empty-line-before": [
       "always",
       {
@@ -24,7 +34,13 @@
         ]
       }
     ],
-    "color-hex-case": "upper",
+    "@stylistic/color-hex-case": "upper",
+    "value-keyword-case": [
+      "lower",
+      {
+        "camelCaseSvgKeywords": true
+      }
+    ],
     "order/order": [
       [
         "dollar-variables",
@@ -80,14 +96,14 @@
 
         {
           "properties": [
-            "box-sizing", "grid-template-columns", "grid-template-rows", "grid-template-areas", "grid-template", "grid-auto-columns", "grid-auto-rows", "grid-auto-flow", "grid", "grid-row-start", "grid-column-start", "grid-row-end", "grid-column-end", "grid-row", "grid-column", "grid-area", "grid-row-gap", "grid-column-gap", "grid-gap", "row-gap", "column-gap", "gap", "flex", "flex-basis", "flex-direction", "flex-flow", "flex-grow", "flex-shrink", "flex-wrap", "align-content", "align-items", "align-self", "justify-content", "justify-self", "place-items", "place-content", "order"
+            "box-sizing", "grid-template-columns", "grid-template-rows", "grid-template-areas", "grid-template", "grid-auto-columns", "grid-auto-rows", "grid-auto-flow", "grid", "grid-row-start", "grid-column-start", "grid-row-end", "grid-column-end", "grid-row", "grid-column", "grid-area", "grid-row-gap", "grid-column-gap", "grid-gap", "row-gap", "column-gap", "gap", "flex", "flex-basis", "flex-direction", "flex-flow", "flex-grow", "flex-shrink", "flex-wrap", "align-content", "align-items", "align-self", "justify-content", "justify-self", "place-items", "place-content", "order", "place-self"
           ],
           "order": "flexible"
         },
 
         {
           "properties": [
-            "float", "clear", "overflow", "overflow-x", "overflow-y",  "clip", "zoom", "columns", "column-gap", "column-fill", "column-rule", "column-span", "column-count", "column-width", "table-layout", "empty-cells", "caption-side", "border-spacing", "border-collapse", "position", "z-index", "top", "right", "bottom", "left"
+            "float", "clear", "overflow", "overflow-x", "overflow-y",  "clip", "zoom", "columns", "column-gap", "column-fill", "column-rule", "column-span", "column-count", "column-width", "table-layout", "empty-cells", "caption-side", "border-spacing", "border-collapse", "position", "z-index", "top", "right", "bottom", "left", "inset"
           ],
           "order": "flexible"
         },

@@ -48,10 +48,7 @@
     margin: auto;
     height: 3 * $base-spacing;
     position: absolute;
-    top: 0;
-    right: -$base-spacing;
-    bottom: 0;
-    left: -$base-spacing;
+    inset: 0 (-$base-spacing);
     z-index: 1;
     background-image:
       linear-gradient(

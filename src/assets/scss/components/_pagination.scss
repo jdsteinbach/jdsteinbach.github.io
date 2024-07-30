@@ -70,7 +70,6 @@
         var(--color-accent-3) 100%,
         transparent
       );
-    /* stylelint-disable-next-line length-zero-no-unit */
     transform: translateX(calc(var(--dir, 1) * var(--distance, 0px))) skewX(calc(var(--skew, 1) * var(--tilt)));
     transition: transform $duration $easing;
   }
