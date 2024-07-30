@@ -141,7 +141,8 @@ categories:
 <p>We’ve created a simple job posting card layout with CSS Grid. The column containing the title and department will take up as much room as is available, and the column with the location and hours will be only as wide as it needs to be. We’ll need to align both the location and hours to the end of their column.</p>
 <p>Let’s find the logical properties here. First, in <code class="inline">justify-content</code> - the grid columns will all be shifted to the <code class="inline">start</code> of the inline axis. In LTR, they’ll be at the left; in RTL, they’ll be at the right. Second, we’re overriding that <code class="inline">start</code> value for the location and hours. We always want that text to be aligned to the end of the grid, so we justify it with <code class="inline">end</code>. In the past, you might’ve just put <code class="inline">text-align: right</code> on that element (and then needed more CSS to override that in RTL mode). However, using Grid with <code class="inline">justify-self: end</code>, we get the same visual effect <em>and</em> it automatically switches for non-LTR writing modes.</p>
 <p>And yes, <code class="inline">text-align: end</code> would produce the same effect as <code class="inline">justify-self: end</code> in this context.</p>
-<p><iframe src="https://codepen.io/team/DockYard/pen/b3958c0e1702efe87f91b94a861603bb?editors=1100#0" width="100%" height="500"></iframe></p>
+<p><iframe src="https://codepen.io/jdsteinbach/pen/LYKxXKz?editors=1100#0" width="100%" height="500"></iframe></p>
+
 <h3>Absolutely-Positioned Buttons</h3>
 <p>I recently worked on a project with horizontally-scrollable rows. Each row had scroll-left / scroll-right buttons absolutely positioned at the left and right edges. The row used Grid layout, so as soon as we went RTL, it flipped automatically, but the buttons stayed put. Let’s use logical properties to solve that problem.</p>
 
@@ -179,7 +180,7 @@ categories:
 ```
 
 <p>Using <code class="inline">left</code> and <code class="inline">right</code> would have caused RTL problems, but using <code class="inline">inset-inline-*</code> creates positioning that responds correctly to changes in writing mode.</p>
-<p><iframe src="https://codepen.io/team/DockYard/pen/feec89c6d776e2bdc2cce623ada3b752?editors=1100#0" width="100%" height="500"></iframe></p>
+<p><iframe src="https://codepen.io/jdsteinbach/pen/XWLpyvN?editors=1100#0" width="100%" height="500"></iframe></p>
 <h3>Floated Images</h3>
 <p>You can use logical properties to make sure floated images are positioned correctly as well. With the existing physical properties, it was common to float images like this:</p>
 
@@ -217,7 +218,7 @@ img.end {
 }
 ```
 
-<p><iframe src="https://codepen.io/team/DockYard/pen/b468a48420bbef653b2c63fdfb6efee8?editors=1100#0" width="100%" height="500"></iframe></p>
+<p><iframe src="https://codepen.io/jdsteinbach/pen/vYqgQor?editors=1100#0" width="100%" height="500"></iframe></p>
 <h2>Conclusion</h2>
 <h3>Browser Support</h3>
 <p>Logical properties appear to have remarkably good browser support. According to caniuse, <a href="https://caniuse.com/#search=logical%20properties">logical property support</a> is as good as Grid support: all major desktop browsers, Mobile Safari, and modern Android browsers.</p>
