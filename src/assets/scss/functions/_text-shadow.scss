@@ -11,7 +11,7 @@
     $y-b: math.div($depth, $steps) * $i;
     $shadow-layer-a: $x $y-a $highlight-color;
     $shadow-layer-b: $x $y-b $shadow-color;
-    $shadow: append($shadow, ($shadow-layer-a, $shadow-layer-b), comma);
+    $shadow: list.append($shadow, ($shadow-layer-a, $shadow-layer-b), comma);
   }
 
   @return $shadow;

@@ -24,8 +24,7 @@
     "fname lname" auto
     "rewards submit" auto /
     1fr      1fr;
-  row-gap: $base-spacing;
-  column-gap: $small-spacing;
+  gap: $base-spacing $small-spacing;
   border-bottom: $border-default;
 
   @include bp(medium) {
@@ -129,8 +128,7 @@
 .form__submit {
   margin: 0;
   grid-area: submit;
-  align-self: flex-start;
-  justify-self: flex-end;
+  place-self: flex-start flex-end;
 
   .form--mailchimp & {
     width: 100%;

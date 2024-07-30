@@ -18,10 +18,7 @@
     content: "";
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
     background-color: var(--header-bg);
     opacity: var(--header-opacity, 1);
 
@@ -86,10 +83,7 @@
       content: "";
       display: block;
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      inset: 0;
       box-shadow: 0 0 0 2px currentColor;
       opacity: 0.5;
     }
@@ -98,10 +92,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
     z-index: 0;
     color: var(--color-accent-3);
     border-bottom: $tiny-spacing solid currentColor;

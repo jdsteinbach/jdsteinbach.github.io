@@ -7,10 +7,10 @@ $color-goldenrod: #FA6D26;
 $color-yellow: #FCA22B;
 
 $color-white: #FFF;
-$color-black: mix($color-gray, #000);
+$color-black: color.mix($color-gray, #000);
 
-$color-background: mix($color-yellow, $color-white);
-$color-background-pale: mix($color-yellow, $color-white, 33%);
+$color-background: color.mix($color-yellow, $color-white);
+$color-background-pale: color.mix($color-yellow, $color-white, 33%);
 
 // BORDERS
 $border-default: 1px solid $color-orange;
