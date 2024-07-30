@@ -5,7 +5,7 @@
 {%- endif %}
 {%- if excerpt %}
   {%- assign meta_desc = excerpt | strip_html | strip_newlines | truncate: 160 %}
-{%- else if content %}
+{%- elsif content %}
   {%- assign meta_desc = content | strip_html | strip_newlines | truncate: 160 %}
 {%- else %}
   {%- assign meta_desc = site.description | strip_html | strip_newlines | truncate: 160 %}

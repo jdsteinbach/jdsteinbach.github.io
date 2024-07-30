@@ -141,6 +141,9 @@
         "severity": "warning"
       }
     ],
-    "order/properties-alphabetical-order": null
+    "order/properties-alphabetical-order": null,
+    "plugin/selector-bem-pattern": {
+      "preset": "bem"
+    }
   }
 }

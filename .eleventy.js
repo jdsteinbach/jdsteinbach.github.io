@@ -14,9 +14,10 @@ const mdOptions = {
   typographer: true
 }
 const mdAnchorOpts = {
-  permalink: true,
-  permalinkClass: 'anchor-link',
-  permalinkSymbol: '#',
+  permalink: markdownItAnchor.permalink.linkInsideHeader({
+    symbol: '#',
+    class: 'anchor-link',
+  }),
   level: [1, 2, 3, 4]
 }
 
@@ -35,7 +36,10 @@ module.exports = eleventyConfig => {
 
   // Plugins
   eleventyConfig.addPlugin(pluginTOC)
-  eleventyConfig.addPlugin(pluginDropcap)
+  eleventyConfig.addPlugin(
+    pluginDropcap,
+    {skipFirstParagraphClass: 'precursor'}
+  )
 
   // Filters
   eleventyConfig.addFilter('random', max => {

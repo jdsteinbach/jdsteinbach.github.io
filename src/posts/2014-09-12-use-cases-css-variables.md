@@ -8,7 +8,7 @@ categories:
 codepen: true
 ---
 
-_Published September 12, 2014; updated April 16, 2018: updated browser support & changed most instances of "CSS variables" to "custom properties"_
+<p class="precursor"><em>Published September 12, 2014; updated April 16, 2018: updated browser support & changed most instances of "CSS variables" to "custom properties"_</em></p>
 
 It&#8217;s time to start exploring use cases for CSS <span style="text-decoration:line-through">variables</span> custom properties, now that <span style="text-decoration:line-through">Firefox</span> <a title="CSS Variable data on Can I Use" href="http://caniuse.com/#feat=css-variables" target="_blank">Firefox, Chrome, Safari, and Edge support them</a>. That means that <span style="text-decoration:line-through">this post & all the embedded pens will only work in Firefox</span> **this post & all the embedded pens will work almost everywhere but IE**.
 
