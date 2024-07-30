@@ -38,7 +38,7 @@ Weekly email with from [Rachel Nabors](https://twitter.com/rachelnabors) UI anim
 
 Weekly email with front-end links about HTML, CSS, JS, fonts, UI/UX, and more! (Curated by me!)
 
-### Sass News](http://sass.news/)
+### [Sass News](http://sass.news/)
 
 Weekly email of Sass-related links, includes articles, tutorials, & events.
 
