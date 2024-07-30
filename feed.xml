@@ -137,7 +137,7 @@
 
 <span class="hljs-selector-class">.job__location</span>,
 <span class="hljs-selector-class">.job__hours</span> {
-  justify-self: end;
+  <span class="hljs-attribute">justify-self</span>: end;
 }
 </code></pre>
 <p>We’ve created a simple job posting card layout with CSS Grid. The column containing the title and department will take up as much room as is available, and the column with the location and hours will be only as wide as it needs to be. We’ll need to align both the location and hours to the end of their column.</p>
@@ -167,12 +167,12 @@
 
 <span class="hljs-selector-class">.scroll-row__button--back</span> {
   <span class="hljs-comment">/* left: -50px; */</span>
-  inset-inline-start: -<span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">inset-inline-start</span>: -<span class="hljs-number">50px</span>;
 }
 
 <span class="hljs-selector-class">.scroll-row__button--forward</span> {
   <span class="hljs-comment">/* right: -50px; */</span>
-  inset-inline-end: -<span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">inset-inline-end</span>: -<span class="hljs-number">50px</span>;
 }
 </code></pre>
 <p>Using <code class="inline">left</code> and <code class="inline">right</code> would have caused RTL problems, but using <code class="inline">inset-inline-*</code> creates positioning that responds correctly to changes in writing mode.</p>
