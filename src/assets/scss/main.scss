@@ -4,6 +4,10 @@
 @use "sass:map";
 @use "sass:meta";
 
+// Start CSS
+
+@charset "utf-8";
+
 // Functions
 
 @import "functions/text-shadow";
@@ -55,7 +59,3 @@
 // Support Queries
 
 @import "supports";
-
-// Start CSS
-
-@charset "utf-8";
