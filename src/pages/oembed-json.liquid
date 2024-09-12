@@ -1,0 +1,18 @@
+---
+permalink: oembed/post{{ post.url }}/index.json
+pagination:
+  data: collections.posts
+  size: 1
+  alias: post
+---
+
+{
+  "html": "<iframe width='533' height='300' allowtransparency='true' frameborder='0' allow='encrypted-media' title='Embed: {{ post.data.title }}' src='{{ "oembed/post" | append: post.url | append: "index.html" | abs_url: site.url }}'></iframe>",
+  "width": 533,
+  "height": 300,
+  "version": "1.0",
+  "provider_name": "James Steinbach",
+  "provider_url": "https://jdsteinbach.com",
+  "type": "rich",
+  "title": "{{ post.data.title }}"
+}
