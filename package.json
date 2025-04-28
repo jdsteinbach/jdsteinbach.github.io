@@ -22,7 +22,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "autoprefixer": "^10.4.20",
-    "axios": "^1.7.7",
+    "axios": "^1.8.2",
     "cross-env": "^7.0.3",
     "cssnano": "^7.0.6",
     "eleventy-plugin-dropcap": "^1.1.0",
