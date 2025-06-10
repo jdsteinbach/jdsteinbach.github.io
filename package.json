@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:styles": "stylelint '**/*.scss' --report-needless-disables",
+    "lint:styles": "npx stylelint '**/*.scss' --report-needless-disables",
     "start": "npm run serve",
     "serve": "cross-env ELEVENTY_ENV=dev eleventy --serve",
     "serve:debug": "cross-env ELEVENTY_ENV=dev DEBUG=Eleventy* eleventy",
@@ -22,7 +22,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "autoprefixer": "^10.4.20",
-    "axios": "^1.7.7",
+    "axios": "^1.9.0",
     "cross-env": "^7.0.3",
     "cssnano": "^7.0.6",
     "eleventy-plugin-dropcap": "^1.1.0",
@@ -33,10 +33,11 @@
     "markdown-it-highlightjs": "^4.2.0",
     "postcss": "^8.4.47",
     "sass": "^1.80.4",
-    "stylelint": "^16.8.1",
-    "stylelint-config-sass-guidelines": "^12.0.0",
-    "stylelint-config-standard": "^36.0.1",
+    "stylelint": "^16.20.0",
+    "stylelint-config-sass-guidelines": "^12.1.0",
+    "stylelint-config-standard": "^38.0.0",
     "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.12.0",
     "stylelint-selector-bem-pattern": "^4.0.0",
     "typogr": "^0.6.8"
   },
@@ -52,7 +53,7 @@
   "dependencies": {
     "busboy": "^1.4.0",
     "dotenv": "^16.0.0",
-    "form-data": "^4.0.2",
+    "form-data": "^4.0.3",
     "mailgun.js": "^5.0.1"
   }
 }

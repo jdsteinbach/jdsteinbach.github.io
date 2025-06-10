@@ -5,6 +5,7 @@
   ],
   "plugins": [
     "stylelint-order",
+    "stylelint-scss",
     "stylelint-selector-bem-pattern"
   ],
   "rules": {
@@ -16,14 +17,9 @@
     "selector-class-pattern": "[a-z-_]+",
     "no-descending-specificity": null,
     "selector-no-qualifying-type": null,
-    "function-no-unknown": [
-      true,
-      {
-        "ignoreFunctions": [
-          "text-shadow"
-        ]
-      }
-    ],
+    "function-no-unknown": null,
+    "declaration-property-value-no-unknown": null,
+    "at-rule-descriptor-value-no-unknown": null,
     "at-rule-empty-line-before": [
       "always",
       {
