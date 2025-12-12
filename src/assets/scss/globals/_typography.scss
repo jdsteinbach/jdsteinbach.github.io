@@ -1,3 +1,7 @@
+@use "sass:math";
+@use "../variables" as v;
+@use "../mixins/bp";
+
 body {
   position: relative;
   z-index: 2;
@@ -40,6 +44,17 @@ em {
   font-weight: var(--fw-body);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  text-wrap: pretty;
+}
+
 h1 {
   --wght: var(--fw-bold);
 
@@ -51,8 +66,8 @@ h1 {
 h2 {
   --wght: var(--fw-medium);
 
-  margin-top: $large-spacing;
-  margin-bottom: $base-spacing;
+  margin-top: v.$large-spacing;
+  margin-bottom: v.$base-spacing;
   font-size: var(--fs-heading);
   color: var(--color-text-alt);
 }
@@ -60,8 +75,8 @@ h2 {
 h3 {
   --wght: var(--fw-medium);
 
-  margin-top: $large-spacing;
-  margin-bottom: $small-spacing;
+  margin-top: v.$large-spacing;
+  margin-bottom: v.$small-spacing;
   font-size: var(--fs-subheading);
   color: var(--color-text-alt);
 }
@@ -69,8 +84,8 @@ h3 {
 h4 {
   --wght: var(--fw-bold);
 
-  margin-top: $base-spacing;
-  margin-bottom: $small-spacing;
+  margin-top: v.$base-spacing;
+  margin-bottom: v.$small-spacing;
   font-size: var(--fs-subheading);
   color: var(--color-text-alt);
 }
@@ -78,8 +93,8 @@ h4 {
 h5 {
   --wght: var(--fw-medium);
 
-  margin-top: $small-spacing;
-  margin-bottom: $tiny-spacing;
+  margin-top: v.$small-spacing;
+  margin-bottom: v.$tiny-spacing;
   font-size: var(--fs-body);
   letter-spacing: math.div(1em, 16);
   text-transform: uppercase;
@@ -96,8 +111,8 @@ h6 {
 }
 
 p {
-  margin-top: $small-spacing;
-  margin-bottom: $small-spacing;
+  margin-top: v.$small-spacing;
+  margin-bottom: v.$small-spacing;
 
   &:empty {
     margin-bottom: 0;
@@ -135,15 +150,15 @@ em {
 
   > ul,
   > ol {
-    margin-bottom: $base-spacing;
+    margin-bottom: v.$base-spacing;
     padding-left: 1em;
 
     li {
-      margin-top: $small-spacing;
-      margin-bottom: $base-spacing;
+      margin-top: v.$small-spacing;
+      margin-bottom: v.$base-spacing;
     }
 
-    @include bp(medium) {
+    @include bp.bp(medium) {
       padding-left: 0;
     }
   }
@@ -172,7 +187,7 @@ em {
   h4,
   h5,
   h6 {
-    scroll-margin-top: $large-spacing * 2;
+    scroll-margin-top: v.$large-spacing * 2;
 
     em {
       color: var(--color-text-accent);

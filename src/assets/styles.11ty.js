@@ -15,9 +15,7 @@ module.exports = class {
   }
 
   async render ({ rawFilepath }) {
-    const compiledSass = sass.renderSync({
-      file: rawFilepath
-    })
+    const compiledSass = await sass.compileAsync(rawFilepath)
 
     let postcssOpts = [
       require('autoprefixer')({

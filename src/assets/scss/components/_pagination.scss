@@ -1,12 +1,14 @@
+@use "../variables" as v;
+
 .pagination {
-  margin-top: $base-spacing;
-  padding: $base-spacing 0;
+  margin-top: v.$base-spacing;
+  padding: v.$base-spacing 0;
   display: grid;
   grid-template:
     "left center right" auto /
     1fr 1fr 1fr;
   font-size: var(--fs-small);
-  border-top: $border-default;
+  border-top: v.$border-default;
 
   .previous {
     --dir: -1;
@@ -44,7 +46,7 @@
   grid-area: left;
   align-items: center;
   justify-self: start;
-  column-gap: $small-spacing;
+  column-gap: v.$small-spacing;
 
   span {
     grid-area: text;
@@ -53,8 +55,8 @@
   &::before,
   &::after {
     content: "";
-    width: $small-spacing;
-    height: $small-spacing;
+    width: v.$small-spacing;
+    height: v.$small-spacing;
     display: inline-block;
     grid-area: top;
     align-self: end;
@@ -71,7 +73,7 @@
         transparent
       );
     transform: translateX(calc(var(--dir, 1) * var(--distance, 0px))) skewX(calc(var(--skew, 1) * var(--tilt)));
-    transition: transform $duration $easing;
+    transition: transform v.$duration v.$easing;
   }
 
   &::after {
@@ -81,7 +83,7 @@
 
   &:hover,
   &:active {
-    --distance: #{$tiny-spacing};
+    --distance: #{v.$tiny-spacing};
   }
 }
 

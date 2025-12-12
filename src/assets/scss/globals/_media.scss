@@ -1,3 +1,5 @@
+@use "../variables" as v;
+
 img {
   max-width: 100%;
   height: auto;
@@ -5,8 +7,8 @@ img {
 }
 
 .alignleft {
-  margin-right: $small-spacing;
-  margin-bottom: $small-spacing;
+  margin-right: v.$small-spacing;
+  margin-bottom: v.$small-spacing;
   margin-left: 0;
   float: left;
   clear: right;
@@ -14,15 +16,15 @@ img {
 
 .alignright {
   margin-right: 0;
-  margin-bottom: $small-spacing;
-  margin-left: $small-spacing;
+  margin-bottom: v.$small-spacing;
+  margin-left: v.$small-spacing;
   float: right;
   clear: left;
 }
 
 .aligncenter {
   margin-right: auto;
-  margin-bottom: $base-spacing;
+  margin-bottom: v.$base-spacing;
   margin-left: auto;
 }
 

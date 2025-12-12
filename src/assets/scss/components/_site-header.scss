@@ -1,11 +1,14 @@
+@use "../mixins/bp";
+@use "../variables" as v;
+
 .site-header {
-  --max-width: #{$max-width--wide};
+  --max-width: #{v.$max-width--wide};
   --color-link: var(--color-link-light);
   --color-link-alt: var(--color-link-light-alt);
   --color-focus: var(--color-link-light);
   --header-bg: var(--color-background-hero);
 
-  padding: $small-spacing 0;
+  padding: v.$small-spacing 0;
   width: 100%;
   position: fixed;
   top: 0;
@@ -41,8 +44,8 @@
   display: none;
 
   svg {
-    width: $small-spacing;
-    height: $small-spacing;
+    width: v.$small-spacing;
+    height: v.$small-spacing;
     overflow: visible;
   }
 
@@ -62,7 +65,7 @@
     display: inline-flex;
     position: relative;
 
-    @include bp(nav) {
+    @include bp.bp(nav) {
       display: none;
     }
   }

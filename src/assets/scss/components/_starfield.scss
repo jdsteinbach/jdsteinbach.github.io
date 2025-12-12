@@ -1,3 +1,5 @@
+@use "../variables" as v;
+
 .starfield__bg {
   fill: var(--color-purple-dark);
   opacity: 0;
@@ -20,7 +22,7 @@
 }
 
 .starfield__star {
-  fill: $color-white;
+  fill: v.$color-white;
 }
 
 @keyframes field {

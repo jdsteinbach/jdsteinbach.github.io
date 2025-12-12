@@ -1,3 +1,6 @@
+@use "sass:math";
+@use "../variables" as v;
+
 button,
 .button,
 [type="submit"] {
@@ -5,7 +8,7 @@ button,
   --wght: var(--fw-bold);
 
   margin-bottom: var(--button-bottom-margin);
-  padding: $small-spacing;
+  padding: v.$small-spacing;
   display: inline-block;
   appearance: none;
   font-size: var(--fs-small);
@@ -17,17 +20,17 @@ button,
   color: var(--button-fg, var(--color-text-light));
   background-color: var(--button-bg, var(--color-purple-dark));
   border: 0;
-  border-radius: $border-radius-default;
+  border-radius: v.$border-radius-default;
   box-shadow:
     -1px 1px 0 0 var(--button-box-shadow),
     -2px 2px 0 0 var(--button-box-shadow),
     -3px 3px 0 0 var(--button-box-shadow);
   transition:
-    color $duration,
-    opacity $duration,
-    border-color $duration,
-    background-color $duration,
-    transform $duration $easing;
+    color v.$duration,
+    opacity v.$duration,
+    border-color v.$duration,
+    background-color v.$duration,
+    transform v.$duration v.$easing;
   cursor: pointer;
 
   &.button-alt {
@@ -38,7 +41,7 @@ button,
 
   &:focus {
     outline: 2px solid var(--color-focus);
-    outline-offset: 3 px;
+    outline-offset: 3px;
   }
 
   &::-moz-focus-inner { // Firefox
@@ -57,7 +60,7 @@ button,
 }
 
 .button--icon {
-  padding: $tiny-spacing;
+  padding: v.$tiny-spacing;
   display: inline-flex;
   align-items: center;
   justify-content: center;

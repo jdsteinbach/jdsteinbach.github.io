@@ -1,5 +1,11 @@
+@use "sass:color";
+@use "sass:list";
+@use "sass:math";
+@use "../mixins/bp";
+@use "../variables" as v;
+
 code {
-  padding: 0 $tiny-spacing;
+  padding: 0 v.$tiny-spacing;
   display: inline;
   vertical-align: baseline;
   font-family: var(--ff-code);
@@ -7,7 +13,7 @@ code {
   font-weight: inherit;
   font-feature-settings: initial;
   color: var(--color-text-alt);
-  border-radius: $border-radius-default;
+  border-radius: v.$border-radius-default;
   background-color: var(--color-background-code);
 
   a & {
@@ -22,8 +28,8 @@ code {
 
 pre {
   > code {
-    margin: $base-spacing 0;
-    padding: $small-spacing;
+    margin: v.$base-spacing 0;
+    padding: v.$small-spacing;
     width: auto;
     display: block;
     overflow-x: scroll;
@@ -43,20 +49,20 @@ pre {
       -8px 8px 0 1px var(--color-accent-3),
       -9px 9px 0 1px var(--color-accent-3);
 
-    @include bp(medium) {
-      margin: $base-spacing (0 - $small-spacing);
+    @include bp.bp(medium) {
+      margin: v.$base-spacing (0 - v.$small-spacing);
     }
 
-    @include bp(large) {
-      margin: $base-spacing 0;
+    @include bp.bp(large) {
+      margin: v.$base-spacing 0;
       grid-column: 2 / -2;
     }
   }
 
-  @include bp(large) {
+  @include bp.bp(large) {
     display: grid;
     grid-column: 1 / -1 !important;
-    grid-template-columns: 1fr minmax(0, #{$max-width--wide}) 1fr;
+    grid-template-columns: 1fr minmax(0, #{v.$max-width--wide}) 1fr;
   }
 }
 
@@ -74,7 +80,7 @@ $code-selectors: (
     .hljs-#{$s} {
       $pct: math.div(100%, list.length($code-selectors)) * list.index($code-selectors, $batch);
 
-      color: color.mix($color-white, $color-goldenrod, $pct);
+      color: color.mix(v.$color-white, v.$color-goldenrod, $pct);
     }
   }
 }

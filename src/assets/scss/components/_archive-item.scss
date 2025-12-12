@@ -1,22 +1,25 @@
-.archive-item {
-  margin-bottom: $large-spacing;
+@use "../mixins/bp";
+@use "../variables" as v;
 
-  @include bp(large) {
-    margin-bottom: $giant-spacing;
+.archive-item {
+  margin-bottom: v.$large-spacing;
+
+  @include bp.bp(large) {
+    margin-bottom: v.$giant-spacing;
   }
 }
 
 .archive-item__title {
   --wght: var(--fw-medium);
 
-  margin-bottom: $small-spacing;
+  margin-bottom: v.$small-spacing;
   position: relative;
   font-size: var(--fs-heading);
 }
 
 .archive-item__excerpt {
-  margin-top: $tiny-spacing;
-  margin-bottom: $tiny-spacing;
+  margin-top: v.$tiny-spacing;
+  margin-bottom: v.$tiny-spacing;
   color: var(--color-text);
 }
 
@@ -46,9 +49,9 @@
   &::before {
     content: "";
     margin: auto;
-    height: 3 * $base-spacing;
+    height: 3 * v.$base-spacing;
     position: absolute;
-    inset: 0 (-$base-spacing);
+    inset: 0 (0 - v.$base-spacing);
     z-index: 1;
     background-image:
       linear-gradient(
@@ -60,7 +63,7 @@
       );
     transform: skew(0, var(--tilt)) scaleY(0);
     transform-origin: center;
-    transition: opacity $duration, transform $duration $easing;
+    transition: opacity v.$duration, transform v.$duration v.$easing;
     opacity: 0;
     mix-blend-mode: var(--blend-mode, darken);
   }

@@ -1,7 +1,11 @@
+@use "sass:math";
+@use "../mixins/bp";
+@use "../variables" as v;
+
 .header-menu {
   margin-left: auto;
   padding-right: var(--horizontal-spacing);
-  padding-bottom: $small-spacing;
+  padding-bottom: v.$small-spacing;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -12,7 +16,7 @@
   left: 0;
   border-bottom: 2px solid var(--color-accent-1);
   transform-origin: center top;
-  transition: opacity $duration, transform $duration $easing;
+  transition: opacity v.$duration, transform v.$duration v.$easing;
 
   &::before {
     content: "";
@@ -22,7 +26,7 @@
     background-color: var(--header-bg);
     opacity: var(--header-opacity, 1);
 
-    @include bp(nav) {
+    @include bp.bp(nav) {
       content: none;
     }
   }
@@ -31,7 +35,7 @@
     transform: none;
     opacity: 1;
 
-    @include bp(nav) {
+    @include bp.bp(nav) {
       padding-bottom: 0;
       justify-content: flex-start;
       position: static;
@@ -46,7 +50,7 @@
     opacity: 0;
   }
 
-  @include bp(nav) {
+  @include bp.bp(nav) {
     padding-right: auto;
   }
 }
@@ -57,7 +61,7 @@
   justify-content: center;
   text-align: center;
 
-  @include bp(nav) {
+  @include bp.bp(nav) {
     display: inline-block;
   }
 }
@@ -66,8 +70,8 @@
   --wght: var(--fw-light);
   --smcp: 1;
 
-  margin: 0 $tiny-spacing;
-  padding: $tiny-spacing;
+  margin: 0 v.$tiny-spacing;
+  padding: v.$tiny-spacing;
   display: inline-block;
   position: relative;
   z-index: 1;
@@ -95,9 +99,9 @@
     inset: 0;
     z-index: 0;
     color: var(--color-accent-3);
-    border-bottom: $tiny-spacing solid currentColor;
+    border-bottom: v.$tiny-spacing solid currentColor;
     transform: scaleX(0) translateY(0.25em);
-    transition: opacity $duration, transform $duration $easing;
+    transition: opacity v.$duration, transform v.$duration v.$easing;
     opacity: 0;
   }
 
@@ -111,7 +115,7 @@
 }
 
 .header-nav__toggle {
-  @include bp(nav) {
-    margin-left: $small-spacing;
+  @include bp.bp(nav) {
+    margin-left: v.$small-spacing;
   }
 }

@@ -5,7 +5,6 @@ const pluginDropcap = require('eleventy-plugin-dropcap')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const markdownItHighlightJS = require('markdown-it-highlightjs')
-const typogr = require('typogr')
 
 const mdOptions = {
   html: true,
@@ -76,8 +75,6 @@ module.exports = eleventyConfig => {
   eleventyConfig.addFilter('rss_date', date => formatDate(date))
 
   eleventyConfig.addFilter('title_class', string => string.length > 30 ? ' is-long' : '')
-
-  eleventyConfig.addFilter('no_orphan', content => typogr(String(content)).chain().widont().value())
 
   // Create Posts Collection
   eleventyConfig.addCollection('posts', collection => {

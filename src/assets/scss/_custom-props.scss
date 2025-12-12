@@ -1,38 +1,42 @@
+@use "mixins/bp";
+@use "variables" as v;
+@use "sass:color";
+
 :root {
   // Text Colors
-  --color-text: #{$color-gray};
-  --color-text-alt: #{$color-black};
-  --color-text-accent: #{$color-purple};
-  --color-text-light: #{$color-background-pale};
-  --color-page-title: #{$color-background};
-  --color-dark: #{$color-black};
-  --color-light: #{$color-background};
+  --color-text: #{v.$color-gray};
+  --color-text-alt: #{v.$color-black};
+  --color-text-accent: #{v.$color-purple};
+  --color-text-light: #{v.$color-background-pale};
+  --color-page-title: #{v.$color-background};
+  --color-dark: #{v.$color-black};
+  --color-light: #{v.$color-background};
 
   // Background Colors
-  --color-background: #{$color-background};
-  --color-background-page: #{$color-background-pale};
-  --color-background-fade: #{rgba($color-background, 0.9)};
+  --color-background: #{v.$color-background};
+  --color-background-page: #{v.$color-background-pale};
+  --color-background-fade: #{rgba(v.$color-background, 0.9)};
   --color-background-hero: var(--color-purple-dark);
-  --color-background-dark: #{$color-gray};
-  --color-background-code: #{rgba($color-gray, 0.15)};
-  --color-purple-dark: #{color.mix($color-purple, $color-gray)};
+  --color-background-dark: #{v.$color-gray};
+  --color-background-code: #{rgba(v.$color-gray, 0.15)};
+  --color-purple-dark: #{color.mix(v.$color-purple, v.$color-gray)};
 
   // Accent Colors
-  --color-accent-1: #{$color-orange};
-  --color-accent-2: #{$color-goldenrod};
-  --color-accent-3: #{$color-yellow};
+  --color-accent-1: #{v.$color-orange};
+  --color-accent-2: #{v.$color-goldenrod};
+  --color-accent-3: #{v.$color-yellow};
 
   // Interaction Colors
-  --color-link: #{$color-purple};
-  --color-link-alt: #{$color-pink};
-  --color-link-2: #{$color-orange};
-  --color-link-2-alt: #{$color-goldenrod};
-  --color-link-light: #{$color-background};
-  --color-link-light-alt: #{$color-yellow};
-  --color-focus: #{$color-purple};
-  --color-highlight: #{$color-goldenrod};
-  --color-highlight-alt: #{$color-orange};
-  --color-highlight-pale: #{rgba($color-orange, 0.15)};
+  --color-link: #{v.$color-purple};
+  --color-link-alt: #{v.$color-pink};
+  --color-link-2: #{v.$color-orange};
+  --color-link-2-alt: #{v.$color-goldenrod};
+  --color-link-light: #{v.$color-background};
+  --color-link-light-alt: #{v.$color-yellow};
+  --color-focus: #{v.$color-purple};
+  --color-highlight: #{v.$color-goldenrod};
+  --color-highlight-alt: #{v.$color-orange};
+  --color-highlight-pale: #{rgba(v.$color-orange, 0.15)};
 
   // Tilt Values
   --tilt: -10deg;
@@ -69,34 +73,34 @@
   --lh-heading: 1.2;
 
   // Spacing
-  --horizontal-spacing: #{$small-spacing};
+  --horizontal-spacing: #{v.$small-spacing};
 
   [data-theme="auto"] {
     @media (prefers-color-scheme: dark) {
       // Text Colors
-      --color-text: #{$color-background};
-      --color-text-alt: #{$color-background-pale};
-      --color-text-accent: #{$color-pink};
+      --color-text: #{v.$color-background};
+      --color-text-alt: #{v.$color-background-pale};
+      --color-text-accent: #{v.$color-pink};
 
       // Background Colors
-      --color-background: #{$color-gray};
-      --color-background-page: #{$color-black};
-      --color-background-fade: #{rgba($color-gray, 0.9)};
+      --color-background: #{v.$color-gray};
+      --color-background-page: #{v.$color-black};
+      --color-background-fade: #{rgba(v.$color-gray, 0.9)};
       --color-background-hero: var(--color-purple-dark);
-      --color-background-dark: #{$color-gray};
-      --color-background-code: #{rgba($color-goldenrod, 0.15)};
-      --color-purple-dark: #{color.mix($color-purple, $color-black, 35%)};
+      --color-background-dark: #{v.$color-gray};
+      --color-background-code: #{rgba(v.$color-goldenrod, 0.15)};
+      --color-purple-dark: #{color.mix(v.$color-purple, v.$color-black, 35%)};
 
       // Accent Colors
-      --color-accent-1: #{color.mix($color-orange, $color-gray, 75%)};
-      --color-accent-2: #{color.mix($color-goldenrod, $color-gray, 75%)};
-      --color-accent-3: #{color.mix($color-yellow, $color-gray, 75%)};
+      --color-accent-1: #{color.mix(v.$color-orange, v.$color-gray, 75%)};
+      --color-accent-2: #{color.mix(v.$color-goldenrod, v.$color-gray, 75%)};
+      --color-accent-3: #{color.mix(v.$color-yellow, v.$color-gray, 75%)};
 
       // Interaction Colors
-      --color-link: #{rgba($color-yellow, 0.75)};
-      --color-link-alt: #{$color-background-pale};
-      --color-link-2: #{$color-pink};
-      --color-link-2-alt: #{color.mix($color-purple, $color-white)};
+      --color-link: #{rgba(v.$color-yellow, 0.75)};
+      --color-link-alt: #{v.$color-background-pale};
+      --color-link-2: #{v.$color-pink};
+      --color-link-2-alt: #{color.mix(v.$color-purple, v.$color-white)};
       --color-focus: var(--color-link-alt);
       --blend-mode: lighten;
     }
@@ -104,29 +108,29 @@
 
   [data-theme="dark"] {
     // Text Colors
-    --color-text: #{$color-background};
-    --color-text-alt: #{$color-background-pale};
-    --color-text-accent: #{$color-pink};
+    --color-text: #{v.$color-background};
+    --color-text-alt: #{v.$color-background-pale};
+    --color-text-accent: #{v.$color-pink};
 
     // Background Colors
-    --color-background: #{$color-gray};
-    --color-background-page: #{$color-black};
-    --color-background-fade: #{rgba($color-gray, 0.9)};
+    --color-background: #{v.$color-gray};
+    --color-background-page: #{v.$color-black};
+    --color-background-fade: #{rgba(v.$color-gray, 0.9)};
     --color-background-hero: var(--color-purple-dark);
-    --color-background-dark: #{$color-gray};
-    --color-background-code: #{rgba($color-goldenrod, 0.15)};
-    --color-purple-dark: #{color.mix($color-purple, $color-black, 35%)};
+    --color-background-dark: #{v.$color-gray};
+    --color-background-code: #{rgba(v.$color-goldenrod, 0.15)};
+    --color-purple-dark: #{color.mix(v.$color-purple, v.$color-black, 35%)};
 
     // Accent Colors
-    --color-accent-1: #{color.mix($color-orange, $color-gray, 75%)};
-    --color-accent-2: #{color.mix($color-goldenrod, $color-gray, 75%)};
-    --color-accent-3: #{color.mix($color-yellow, $color-gray, 75%)};
+    --color-accent-1: #{color.mix(v.$color-orange, v.$color-gray, 75%)};
+    --color-accent-2: #{color.mix(v.$color-goldenrod, v.$color-gray, 75%)};
+    --color-accent-3: #{color.mix(v.$color-yellow, v.$color-gray, 75%)};
 
     // Interaction Colors
-    --color-link: #{rgba($color-yellow, 0.75)};
-    --color-link-alt: #{$color-background-pale};
-    --color-link-2: #{$color-pink};
-    --color-link-2-alt: #{color.mix($color-purple, $color-white)};
+    --color-link: #{rgba(v.$color-yellow, 0.75)};
+    --color-link-alt: #{v.$color-background-pale};
+    --color-link-2: #{v.$color-pink};
+    --color-link-2-alt: #{color.mix(v.$color-purple, v.$color-white)};
     --color-focus: var(--color-link-alt);
     --blend-mode: lighten;
   }
@@ -134,7 +138,7 @@
   // Notch Support
 
   @supports (padding: env(safe-area-inset-left)) {
-    --horizontal-spacing: calc(#{$small-spacing} + env(safe-area-inset-right));
+    --horizontal-spacing: calc(#{v.$small-spacing} + env(safe-area-inset-right));
   }
 
   // Variable Font Support
@@ -147,13 +151,13 @@
 
   // Media Queries
 
-  @include bp(medium) {
+  @include bp.bp(medium) {
     --fs-body: calc(21rem / 16);
     --fs-ratio: 1.3;
     --lh-body: 1.6;
   }
 
-  @include bp(large) {
+  @include bp.bp(large) {
     --fs-body: calc(24rem / 16);
     --fs-ratio: 1.4;
     --lh-body: 1.7;

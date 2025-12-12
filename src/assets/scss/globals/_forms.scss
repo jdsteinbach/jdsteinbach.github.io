@@ -1,5 +1,8 @@
+@use "../mixins/bp";
+@use "../variables" as v;
+
 .form {
-  margin-bottom: $base-spacing;
+  margin-bottom: v.$base-spacing;
 
   &:focus {
     outline: 2px solid var(--color-focus);
@@ -8,7 +11,7 @@
 }
 
 .form--contact {
-  padding-top: $base-spacing;
+  padding-top: v.$base-spacing;
 }
 
 .form--mailchimp {
@@ -16,25 +19,25 @@
 }
 
 .form__fields {
-  margin-bottom: $base-spacing;
-  padding-bottom: $base-spacing;
+  margin-bottom: v.$base-spacing;
+  padding-bottom: v.$base-spacing;
   display: grid;
   grid-template:
     "email email" auto
     "fname lname" auto
     "rewards submit" auto /
     1fr      1fr;
-  gap: $base-spacing $small-spacing;
-  border-bottom: $border-default;
+  gap: v.$base-spacing v.$small-spacing;
+  border-bottom: v.$border-default;
 
-  @include bp(medium) {
+  @include bp.bp(medium) {
     grid-template:
       "email fname lname" auto
       "rewards . submit" auto /
       1fr    1fr   1fr;
   }
 
-  @include bp(large) {
+  @include bp.bp(large) {
     grid-template-columns: 2fr 1fr 1fr;
   }
 }
@@ -75,8 +78,8 @@
   --color-shadow-2: var(--color-accent-2);
   --color-shadow-3: var(--color-accent-3);
 
-  margin-bottom: $large-spacing;
-  padding: $tiny-spacing;
+  margin-bottom: v.$large-spacing;
+  padding: v.$tiny-spacing;
   width: 100%;
   display: block;
   font-size: var(--fs-body);
@@ -85,7 +88,7 @@
   color: var(--color-text);
   background-color: var(--field-bg, transparent);
   border: 1px solid var(--color-shadow-1);
-  border-radius: $border-radius-default;
+  border-radius: v.$border-radius-default;
   box-shadow:
     -1px 1px 0 1px var(--color-shadow-1),
     -2px 2px 0 1px var(--color-shadow-1),
@@ -96,10 +99,10 @@
     -7px 7px 0 1px var(--color-shadow-3),
     -8px 8px 0 1px var(--color-shadow-3);
   transition:
-    color $duration,
-    opacity $duration,
-    background-color $duration,
-    transform $duration $easing;
+    color v.$duration,
+    opacity v.$duration,
+    background-color v.$duration,
+    transform v.$duration v.$easing;
 
   &:hover,
   &:active {
@@ -144,10 +147,10 @@
 }
 
 .form__response-message {
-  margin-top: $small-spacing;
-  margin-bottom: $small-spacing;
-  padding-top: $small-spacing;
-  padding-bottom: $small-spacing;
+  margin-top: v.$small-spacing;
+  margin-bottom: v.$small-spacing;
+  padding-top: v.$small-spacing;
+  padding-bottom: v.$small-spacing;
   grid-column: 1 / -1;
   font-size: var(--fs-blockquote);
   text-align: center;

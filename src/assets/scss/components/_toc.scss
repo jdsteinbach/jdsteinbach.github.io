@@ -1,10 +1,12 @@
+@use "../variables" as v;
+
 .post-toc {
   .js & {
     --top: calc(-50vw * var(--tilt-tan));
 
     position: absolute;
     top: var(--top);
-    top: m#{i}n(-$large-spacing, var(--top));
+    top: m#{i}n((0 - v.$large-spacing), var(--top));
     right: 0;
   }
 }
@@ -13,7 +15,7 @@
   --wght: var(--fw-body);
   --smcp: 1;
 
-  padding: $small-spacing 0;
+  padding: v.$small-spacing 0;
   position: relative;
   text-transform: lowercase;
   color: var(--color-link);
@@ -24,7 +26,7 @@
   &::after {
     .js & {
       content: "▾";
-      padding: 0 0 0 $tiny-spacing;
+      padding: 0 0 0 v.$tiny-spacing;
       display: inline-block;
       transform: rotate(0deg) translateY(-0.125em);
       transform-origin: center;
@@ -64,8 +66,8 @@
   }
 
   li {
-    margin-top: $tiny-spacing;
-    margin-left: $small-spacing;
+    margin-top: v.$tiny-spacing;
+    margin-left: v.$small-spacing;
   }
 
   a {
@@ -78,7 +80,7 @@
   }
 
   .js & {
-    padding: $tiny-spacing $base-spacing $small-spacing;
+    padding: v.$tiny-spacing v.$base-spacing v.$small-spacing;
     position: absolute;
     top: 100%;
     right: 0;
@@ -87,7 +89,7 @@
     background-color: var(--color-background);
     transform-origin: top center;
     transform: scaleY(1);
-    transition: opacity $duration, transform $duration ease-in-out;
+    transition: opacity v.$duration, transform v.$duration ease-in-out;
     opacity: 1;
   }
 

@@ -1,61 +1,47 @@
-@use "sass:color";
-@use "sass:list";
-@use "sass:math";
-@use "sass:map";
-@use "sass:meta";
-
-// Start CSS
-
 @charset "utf-8";
-
-// Functions
-
-@import "functions/text-shadow";
 
 // Mixins
 
-@import "mixins/bp";
-@import "mixins/fonts";
-@import "mixins/ha";
+@use "mixins/ha";
 
 // Reset CSS
 
-@import "reset";
+@use "reset";
 
 // Variables
 
-@import "variables";
-@import "custom-props";
+@use "variables";
+@use "custom-props";
 
 // Global Styles
 
-@import "globals/fonts";
-@import "globals/typography";
-@import "globals/code";
-@import "globals/links";
-@import "globals/buttons";
-@import "globals/media";
-@import "globals/forms";
+@use "globals/fonts";
+@use "globals/typography";
+@use "globals/code";
+@use "globals/links";
+@use "globals/buttons";
+@use "globals/media";
+@use "globals/forms";
 // Layout Styles
 
-@import "layout";
+@use "layout";
 
 // Component Styles
 
-@import "components/starfield";
-@import "components/pagination";
-@import "components/site-header";
-@import "components/site-footer";
-@import "components/header-nav";
-@import "components/hero";
-@import "components/archive-item";
-@import "components/skip-link";
-@import "components/toc";
-@import "components/drop-cap";
-@import "components/theme-toggle";
-@import "components/anchor-link";
-@import "components/newsletter";
+@use "components/starfield";
+@use "components/pagination";
+@use "components/site-header";
+@use "components/site-footer";
+@use "components/header-nav";
+@use "components/hero";
+@use "components/archive-item";
+@use "components/skip-link";
+@use "components/toc";
+@use "components/drop-cap";
+@use "components/theme-toggle";
+@use "components/anchor-link";
+@use "components/newsletter";
 
 // Support Queries
 
-@import "supports";
+@use "supports";

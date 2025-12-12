@@ -1,3 +1,5 @@
+@use "../variables" as v;
+
 .theme-toggle {
   display: none;
 
@@ -22,8 +24,8 @@
 }
 
 .theme-toggle__label {
-  width: $base-spacing;
-  height: $base-spacing;
+  width: v.$base-spacing;
+  height: v.$base-spacing;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -62,8 +64,8 @@
   }
 
   svg {
-    width: $small-spacing;
-    height: $small-spacing;
+    width: v.$small-spacing;
+    height: v.$small-spacing;
     display: block;
     fill: currentColor;
     transform: skewY(calc(-1 * var(--tilt)));

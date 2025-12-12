@@ -1,15 +1,18 @@
+@use "../mixins/bp";
+@use "../variables" as v;
+
 .anchor-link {
   --color-link: var(--color-text-accent);
   --color-link-alt: var(--color-accent-1);
 
-  padding: 0 var(--horizontal-spacing) 0 $tiny-spacing;
+  padding: 0 var(--horizontal-spacing) 0 v.$tiny-spacing;
   display: inline-block;
   justify-self: start;
   position: relative;
   text-decoration: none !important;
   background-color: transparent !important;
 
-  @include bp(medium) {
-    padding-right: $tiny-spacing;
+  @include bp.bp(medium) {
+    padding-right: v.$tiny-spacing;
   }
 }

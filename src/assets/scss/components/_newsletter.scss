@@ -1,14 +1,16 @@
+@use "../variables" as v;
+
 // Mailchimp archive styles
 [id="newsletter-archive"] {
-  margin-top: $base-spacing;
-  margin-bottom: $base-spacing;
-  padding-top: $base-spacing;
-  border-top: $border-default;
+  margin-top: v.$base-spacing;
+  margin-bottom: v.$base-spacing;
+  padding-top: v.$base-spacing;
+  border-top: v.$border-default;
 
   .campaign {
     --tnum: 1;
 
-    margin-bottom: $tiny-spacing;
+    margin-bottom: v.$tiny-spacing;
 
     a {
       font-family: var(--ff-body);

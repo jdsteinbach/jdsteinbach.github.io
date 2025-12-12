@@ -1,11 +1,14 @@
+@use "sass:math";
+@use "../variables" as v;
+
 a {
   position: relative;
   color: var(--color-link);
   transition:
-    color $duration,
-    background-color $duration,
-    background-size $duration,
-    opacity $duration;
+    color v.$duration,
+    background-color v.$duration,
+    background-size v.$duration,
+    opacity v.$duration;
 
   &:hover,
   &:active {
@@ -18,18 +21,18 @@ a {
   }
 
   .main-content &:not([class]) {
-    margin-right: math.div($tiny-spacing, -2);
-    margin-left: math.div($tiny-spacing, -2);
-    padding-right: math.div($tiny-spacing, 2);
-    padding-left: math.div($tiny-spacing, 2);
+    margin-right: math.div(v.$tiny-spacing, -2);
+    margin-left: math.div(v.$tiny-spacing, -2);
+    padding-right: math.div(v.$tiny-spacing, 2);
+    padding-left: math.div(v.$tiny-spacing, 2);
     text-decoration: none;
     background-image:
       linear-gradient(
         180deg,
-        rgba($color-orange, 0.5) 33.3%,
-        rgba($color-goldenrod, 0.5) 33.3%,
-        rgba($color-goldenrod, 0.5) 66.7%,
-        rgba($color-yellow, 0.5) 66.7%
+        rgba(v.$color-orange, 0.5) 33.3%,
+        rgba(v.$color-goldenrod, 0.5) 33.3%,
+        rgba(v.$color-goldenrod, 0.5) 66.7%,
+        rgba(v.$color-yellow, 0.5) 66.7%
       );
     background-repeat: no-repeat;
     background-position: center bottom;

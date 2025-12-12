@@ -1,9 +1,11 @@
+@use "../variables" as v;
+
 .skip-link {
   --wght: var(--fw-body);
   --smcp: 1;
 
-  margin: $small-spacing;
-  padding: $tiny-spacing $base-spacing;
+  margin: v.$small-spacing;
+  padding: v.$tiny-spacing v.$base-spacing;
   display: inline-block;
   position: fixed;
   top: -100%;
@@ -15,7 +17,7 @@
   background-color: var(--color-page-title);
   outline: 2px solid var(--color-accent-1);
   outline-offset: -2px;
-  transition: outline-offset $duration;
+  transition: outline-offset v.$duration;
 
   &:focus {
     top: 0;

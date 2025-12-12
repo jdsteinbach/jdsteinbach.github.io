@@ -1,6 +1,8 @@
+@use "../variables" as v;
+
 .drop-cap {
-  margin: $small-spacing $small-spacing 0 0;
-  padding: ($tiny-spacing * 1.14) $small-spacing 0;
+  margin: v.$small-spacing v.$small-spacing 0 0;
+  padding: (v.$tiny-spacing * 1.14) v.$small-spacing 0;
   display: inline-block;
   float: left;
   font-family: var(--ff-title);
@@ -10,27 +12,27 @@
   background-image:
     linear-gradient(
       180deg,
-      $color-orange 33.3%,
-      $color-goldenrod 33.3%,
-      $color-goldenrod 66.7%,
-      $color-yellow 66.7%
+      v.$color-orange 33.3%,
+      v.$color-goldenrod 33.3%,
+      v.$color-goldenrod 66.7%,
+      v.$color-yellow 66.7%
     );
   background-repeat: no-repeat;
   background-position: center bottom;
   transform: skewY(var(--tilt));
 
   @supports (background-clip: text) {
-    margin: $tiny-spacing $tiny-spacing (-1 * $base-spacing) 0;
+    margin: v.$tiny-spacing v.$tiny-spacing (-1 * v.$base-spacing) 0;
     padding: 0;
     color: transparent;
     background-clip: text;
     background-image:
       linear-gradient(
         180deg,
-        $color-orange 33%,
-        $color-goldenrod 33%,
-        $color-goldenrod 55%,
-        $color-yellow 55%
+        v.$color-orange 33%,
+        v.$color-goldenrod 33%,
+        v.$color-goldenrod 55%,
+        v.$color-yellow 55%
       );
   }
 }

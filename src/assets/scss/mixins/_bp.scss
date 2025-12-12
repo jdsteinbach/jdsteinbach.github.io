@@ -1,3 +1,8 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+@use "../variables" as v;
+
 /* stylelint-disable media-query-no-invalid */
 // Breakpoint MQ function
 
@@ -6,8 +11,8 @@
     @content;
   }
 
-  @else if list.index(map.keys($breakpoints), $name) {
-    @media (min-width: map.get($breakpoints, $name)) {
+  @else if list.index(map.keys(v.$breakpoints), $name) {
+    @media (min-width: map.get(v.$breakpoints, $name)) {
       @content;
     }
   }
