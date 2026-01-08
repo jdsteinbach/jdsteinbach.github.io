@@ -1,6 +1,10 @@
 @use "mixins/bp";
 @use "variables" as v;
 
+@view-transition {
+  navigation: auto;
+}
+
 // @TODO - maybe better place for this?
 .l-main {
   padding-bottom: calc(200vw * var(--tilt-tan));

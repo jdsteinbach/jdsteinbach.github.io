@@ -1,20 +1,22 @@
 {%- if title %}
-  {%- assign meta_title = title | concat: "•" | concat: site.author_name | join: " " %}
+{%- assign meta_title = title | concat: "•" | concat: site.author_name | join: " " %}
 {%- else %}
-  {%- assign meta_title = site.author_name %}
+{%- assign meta_title = site.author_name %}
 {%- endif %}
 {%- if excerpt %}
-  {%- assign meta_desc = excerpt | strip_html | strip_newlines | truncate: 160 %}
+{%- assign meta_desc = excerpt | strip_html | strip_newlines | truncate: 160 %}
 {%- elsif content %}
-  {%- assign meta_desc = content | strip_html | strip_newlines | truncate: 160 %}
+{%- assign meta_desc = content | strip_html | strip_newlines | truncate: 160 %}
 {%- else %}
-  {%- assign meta_desc = site.description | strip_html | strip_newlines | truncate: 160 %}
+{%- assign meta_desc = site.description | strip_html | strip_newlines | truncate: 160 %}
 {%- endif %}
+
 <head itemscope itemtype="http://schema.org/WebSite">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="dark light">
+  <meta name="view-transition" content="same-origin" />
 
   <title itemprop="name">{{ meta_title }}</title>
   <meta name="description" content="{{ meta_desc }}" />
@@ -34,10 +36,13 @@
 
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="canonical" href="{{ page.url | abs_url: site.url }}" itemprop="url" />
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | abs_url: site.url }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml" | abs_url: site.url
+    }}" />
 
-  <link rel="preload" href="{{ "/assets/fonts/Teko-500-subset.woff2" | abs_url: site.url }}" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="{{ "/assets/fonts/WorkSansV-subset.woff2" | abs_url: site.url }}" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="{{ " /assets/fonts/Teko-500-subset.woff2" | abs_url: site.url }}" as="font"
+    type="font/woff2" crossorigin />
+  <link rel="preload" href="{{ " /assets/fonts/WorkSansV-subset.woff2" | abs_url: site.url }}" as="font"
+    type="font/woff2" crossorigin />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate icon" href="/favicon.ico" />
