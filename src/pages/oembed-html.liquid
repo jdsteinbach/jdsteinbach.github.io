@@ -1,0 +1,23 @@
+---
+permalink: oembed/post/{{ post.url }}/index.html
+pagination:
+  data: collections.posts
+  size: 1
+  alias: post
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ post.data.title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>{{ post.data.title }}</h1>
+    <p>
+      <a href="{{ post.url | abs_url: site.url }}">Read More</a>
+    </p>
+  </body>
+</html>
