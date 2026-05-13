@@ -52,7 +52,7 @@
     height: 3 * v.$base-spacing;
     position: absolute;
     inset: 0 (0 - v.$base-spacing);
-    z-index: 1;
+    z-index: 0;
     background-image:
       linear-gradient(
         180deg,
@@ -76,6 +76,11 @@
       transform: skew(0, var(--tilt)) scaleY(1);
       opacity: 0.5;
     }
+  }
+
+  & > * {
+    position: relative;
+    z-index: 1;
   }
 
   svg {

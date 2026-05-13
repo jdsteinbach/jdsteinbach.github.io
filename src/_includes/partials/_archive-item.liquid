@@ -8,7 +8,7 @@
     </h2>
   {%- else %}
     <h2 class="archive-item__title">
-      <a class="archive-item__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.data.title }}</a>
+      <a class="archive-item__link" href="{{ post.url | prepend: site.baseurl }}"><span>{{ post.data.title }}</span></a>
     </h2>
   {%- endif %}
   {%- if post.data.excerpt -%}
