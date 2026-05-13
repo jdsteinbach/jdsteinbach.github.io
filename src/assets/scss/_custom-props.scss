@@ -3,37 +3,41 @@
 @use "sass:color";
 
 :root {
-  // Text Colors
-  --color-text: #{v.$color-gray};
-  --color-text-alt: #{v.$color-black};
-  --color-text-accent: #{v.$color-purple};
-  --color-text-light: #{v.$color-background-pale};
-  --color-page-title: #{v.$color-background};
+  color-scheme: light dark;
+
+  // Base Colors
   --color-dark: #{v.$color-black};
   --color-light: #{v.$color-background};
 
+  // Text Colors
+  --color-text: light-dark(#{v.$color-gray}, #{v.$color-background});
+  --color-text-alt: light-dark(#{v.$color-black}, #{v.$color-background-pale});
+  --color-text-accent: light-dark(#{v.$color-purple},  #{v.$color-pink});
+  --color-text-light: #{v.$color-background-pale};
+  --color-page-title: #{v.$color-background};
+
   // Background Colors
-  --color-background: #{v.$color-background};
-  --color-background-page: #{v.$color-background-pale};
-  --color-background-fade: #{rgba(v.$color-background, 0.9)};
+  --color-background: light-dark(#{v.$color-background}, #{v.$color-gray});
+  --color-background-page: light-dark(#{v.$color-background-pale}, #{v.$color-black});
+  --color-background-fade: light-dark(#{rgba(v.$color-background, 0.9)}, #{rgba(v.$color-gray, 0.9)});
   --color-background-hero: var(--color-purple-dark);
   --color-background-dark: #{v.$color-gray};
-  --color-background-code: #{rgba(v.$color-gray, 0.15)};
-  --color-purple-dark: #{color.mix(v.$color-purple, v.$color-gray)};
+  --color-background-code: light-dark(#{rgba(v.$color-gray, 0.15)}, #{rgba(v.$color-goldenrod, 0.15)});
+  --color-purple-dark: light-dark(#{color.mix(v.$color-purple, v.$color-gray)}, #{color.mix(v.$color-purple, v.$color-black, 35%)});
 
   // Accent Colors
-  --color-accent-1: #{v.$color-orange};
-  --color-accent-2: #{v.$color-goldenrod};
-  --color-accent-3: #{v.$color-yellow};
+  --color-accent-1: light-dark(#{v.$color-orange}, #{color.mix(v.$color-orange, v.$color-gray, 75%)});
+  --color-accent-2: light-dark(#{v.$color-goldenrod}, #{color.mix(v.$color-goldenrod, v.$color-gray, 75%)});
+  --color-accent-3: light-dark(#{v.$color-yellow}, #{color.mix(v.$color-yellow, v.$color-gray, 75%)});
 
   // Interaction Colors
-  --color-link: #{v.$color-purple};
-  --color-link-alt: #{v.$color-pink};
-  --color-link-2: #{v.$color-orange};
-  --color-link-2-alt: #{v.$color-goldenrod};
+  --color-link: light-dark(#{v.$color-purple}, #{rgba(v.$color-yellow, 0.75)});
+  --color-link-alt: light-dark(#{v.$color-pink}, #{v.$color-background-pale});
+  --color-link-2: light-dark(#{v.$color-orange}, #{v.$color-pink});
+  --color-link-2-alt: light-dark(#{v.$color-goldenrod}, #{color.mix(v.$color-purple, v.$color-white)});
   --color-link-light: #{v.$color-background};
   --color-link-light-alt: #{v.$color-yellow};
-  --color-focus: #{v.$color-purple};
+  --color-focus: light-dark(#{v.$color-purple},  var(--color-link-alt));
   --color-highlight: #{v.$color-goldenrod};
   --color-highlight-alt: #{v.$color-orange};
   --color-highlight-pale: #{rgba(v.$color-orange, 0.15)};
@@ -75,66 +79,6 @@
   // Spacing
   --horizontal-spacing: #{v.$small-spacing};
 
-  [data-theme="auto"] {
-    @media (prefers-color-scheme: dark) {
-      // Text Colors
-      --color-text: #{v.$color-background};
-      --color-text-alt: #{v.$color-background-pale};
-      --color-text-accent: #{v.$color-pink};
-
-      // Background Colors
-      --color-background: #{v.$color-gray};
-      --color-background-page: #{v.$color-black};
-      --color-background-fade: #{rgba(v.$color-gray, 0.9)};
-      --color-background-hero: var(--color-purple-dark);
-      --color-background-dark: #{v.$color-gray};
-      --color-background-code: #{rgba(v.$color-goldenrod, 0.15)};
-      --color-purple-dark: #{color.mix(v.$color-purple, v.$color-black, 35%)};
-
-      // Accent Colors
-      --color-accent-1: #{color.mix(v.$color-orange, v.$color-gray, 75%)};
-      --color-accent-2: #{color.mix(v.$color-goldenrod, v.$color-gray, 75%)};
-      --color-accent-3: #{color.mix(v.$color-yellow, v.$color-gray, 75%)};
-
-      // Interaction Colors
-      --color-link: #{rgba(v.$color-yellow, 0.75)};
-      --color-link-alt: #{v.$color-background-pale};
-      --color-link-2: #{v.$color-pink};
-      --color-link-2-alt: #{color.mix(v.$color-purple, v.$color-white)};
-      --color-focus: var(--color-link-alt);
-      --blend-mode: lighten;
-    }
-  }
-
-  [data-theme="dark"] {
-    // Text Colors
-    --color-text: #{v.$color-background};
-    --color-text-alt: #{v.$color-background-pale};
-    --color-text-accent: #{v.$color-pink};
-
-    // Background Colors
-    --color-background: #{v.$color-gray};
-    --color-background-page: #{v.$color-black};
-    --color-background-fade: #{rgba(v.$color-gray, 0.9)};
-    --color-background-hero: var(--color-purple-dark);
-    --color-background-dark: #{v.$color-gray};
-    --color-background-code: #{rgba(v.$color-goldenrod, 0.15)};
-    --color-purple-dark: #{color.mix(v.$color-purple, v.$color-black, 35%)};
-
-    // Accent Colors
-    --color-accent-1: #{color.mix(v.$color-orange, v.$color-gray, 75%)};
-    --color-accent-2: #{color.mix(v.$color-goldenrod, v.$color-gray, 75%)};
-    --color-accent-3: #{color.mix(v.$color-yellow, v.$color-gray, 75%)};
-
-    // Interaction Colors
-    --color-link: #{rgba(v.$color-yellow, 0.75)};
-    --color-link-alt: #{v.$color-background-pale};
-    --color-link-2: #{v.$color-pink};
-    --color-link-2-alt: #{color.mix(v.$color-purple, v.$color-white)};
-    --color-focus: var(--color-link-alt);
-    --blend-mode: lighten;
-  }
-
   // Notch Support
 
   @supports (padding: env(safe-area-inset-left)) {
@@ -163,3 +107,11 @@
     --lh-body: 1.7;
   }
 }
+
+ [data-theme="light"] {
+color-scheme: light;
+  }
+
+  [data-theme="dark"] {
+color-scheme: dark;
+  }
