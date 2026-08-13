@@ -85,7 +85,7 @@
   text-shadow:
     ts.text-shadow(
       $depth: 5px,
-      $steps: 10,
+      $steps: 20,
       $highlight-color: var(--color-accent-3),
       $shadow-color: var(--color-accent-1)
     );

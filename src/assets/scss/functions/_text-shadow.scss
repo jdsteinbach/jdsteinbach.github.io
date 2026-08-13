@@ -10,7 +10,7 @@
 
   @for $i from 1 through $steps {
     $x: math.div($depth, $steps) * -$i;
-    $y-a: math.div($depth, $steps) * if(is-even($i), $i, ($i - 1));
+    $y-a: math.div($depth, $steps) * if(sass(is-even($i)): $i; else: ($i - 1));
     $y-b: math.div($depth, $steps) * $i;
     $shadow-layer-a: $x $y-a $highlight-color;
     $shadow-layer-b: $x $y-b $shadow-color;
